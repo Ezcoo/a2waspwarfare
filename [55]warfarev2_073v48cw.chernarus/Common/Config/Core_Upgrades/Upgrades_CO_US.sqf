@@ -27,9 +27,9 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_ENABLED", _side], [
 
 missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_COSTS", _side], [
 	[[540,0],[1350,0],[2070,0]], //--- Barracks
-	[[1990,0],[3870,0],[4470,0]], //--- Light
-	[[9500,0],[10500,0]], //--- Heavy
-	[[9200,0],[10500,0],[17600,0]], //--- Air
+	[[250,0],[950,0],[1900,0],[3500,0]], //--- Light
+	[[4400,0],[9500,0],[10500,0]], //--- Heavy
+	[[1200,0],[4000,0],[9200,0],[10500,0],[17600,0]], //--- Air
 	[[1500,0],[2500,0],[3500,0]], //--- Paratroopers
 	[[2000,0]], //--- UAV
 	[[2700,0],[4800,0],[6000,0]], //--- Supply
@@ -39,7 +39,7 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_COSTS", _side], [
 	[[2000,0],[2500,0],[3500,0]], //--- Artillery Time
 	[[50000,80000]], //--- ICBM
 	[[1500,0]], //--- Fast Travel
-	[[1200,0],[2100,0],[2400,0]], //--- Gear
+	[[250,0],[650,0],[1200,0],[2100,0],[2400,0]], //--- Gear
 	[[750,0]], //--- Build Ammo
 	[[4000,0]], //--- EASA
 	[[2000,0]], //--- Supply Paradrop
@@ -86,7 +86,7 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LINKS", _side], [
 	[[WFBE_UP_LIGHT,1],[],[]], //--- Respawn Range
 	[[WFBE_UP_AIR,1]], //--- Airlift
 	[[WFBE_UP_AIR,2]], //--- Custom Flares
-	
+
          [
 		[[WFBE_UP_BARRACKS,1],[WFBE_UP_LIGHT,1]],
 		[[WFBE_UP_BARRACKS,2],[WFBE_UP_LIGHT,2]],
@@ -97,7 +97,7 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LINKS", _side], [
 		[[WFBE_UP_LIGHT,1],[WFBE_UP_SUPPLYRATE,1]]
 	], //--- Fast Travel
 	[[],[],[],[],[]], //--- Gear
-	[[WFBE_UP_GEAR,3]], //--- Build Ammo
+	[[WFBE_UP_GEAR,5]], //--- Build Ammo
 	[[WFBE_UP_AIR,1]], //--- EASA
 	[[WFBE_UP_AIRLIFT,1]], //--- Supply Paradrop
 	[
@@ -111,9 +111,9 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LINKS", _side], [
 
 missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_TIMES", _side], [
 	[30,60,90], //--- Barracks
-	[70,100,100], //--- Light
-	[80,100], //--- Heavy
-	[100,100,100], //--- Air
+	[40,70,100,100], //--- Light
+	[50,80,100], //--- Heavy
+	[60,80,100,100,100], //--- Air
 	[35,55,75], //--- Paratroopers
 	[60], //--- UAV
 	[60,80,120], //--- Supply
@@ -123,7 +123,7 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_TIMES", _side], [
 	[40,80,120], //--- Artillery Time
 	[300], //--- ICBM
 	[60], //--- Fast Travel
-	[75,100,125], //--- Gear
+	[25,50,75,100,125], //--- Gear
 	[40], //--- Build Ammo
 	[90], //--- EASA
 	[50], //--- Supply Paradrop

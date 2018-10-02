@@ -27,8 +27,8 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_ENABLED", _side], [
 
 missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_COSTS", _side], [
 	[[540,0],[1350,0],[2070,0]], //--- Barracks
-	[[590,0],[1990,0],[3870,0],[4470,0]], //--- Light
-	[[5600,0],[10200,0],[11700,0]], //--- Heavy
+	[[250,0],[950,0],[1900,0],[3500,0]], //--- Light
+	[[4400,0],[9500,0],[10500,0]], //--- Heavy
 	[[1200,0],[4000,0],[9200,0],[10500,0],[17600,0]], //--- Air
 	[[1500,0],[2500,0],[3500,0]], //--- Paratroopers
 	[[2000,0]], //--- UAV
