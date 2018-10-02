@@ -1,0 +1,15 @@
+class CfgSounds
+{
+sounds[] = {};
+class inbound {
+		name = "inbound";
+		sound[] = {"\sounds\inbound.ogg",10,1};
+		titles[] = {};
+	};
+
+class Bipod_ON {
+		name = "Bipod_ON";
+		sound[] = {"\sounds\Bipod_ON.ogg",10,1};
+		titles[] = {};
+	};
+};
