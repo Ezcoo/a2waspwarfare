@@ -150,7 +150,7 @@ class Params {
 		title = "$STR_WF_PARAMETER_Max_Supply_Limit";
 		values[] = {30000, 35000,40000,45000,50000,60000,80000,100000};
 		texts[] = {"S 30000","S 35000","S 40000","S 45000","S 50000","S 60000","S 80000","S 100000"};
-		default = 40000;
+		default = 50000;
 	};
 
 	class WFBE_C_ENVIRONMENT_STARTING_HOUR {
