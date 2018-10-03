@@ -100,20 +100,20 @@ _c = _c + ['BTR90'];
 _i = _i + [['','',3450,25,-2,4,1,0,'Russians',[]]];
 
 _c = _c + ['GRAD_RU'];
-_i = _i + [['','',7800,25,-2,4,1,0,'Russians',[]]];
+_i = _i + [['','',7800,25,-2,5,1,0,'Russians',[]]];
 
 /* Heavy Vehicles */
 _c = _c + ['BMP3'];
-_i = _i + [['','',4600,35,-2,if (WF_A2_Vanilla) then {0} else {2},2,0,'Russians',[]]];
+_i = _i + [['','',4600,35,-2,if (WF_A2_Vanilla) then {1} else {3},2,0,'Russians',[]]];
 
 _c = _c + ['T72_RU'];
-_i = _i + [['','',5200,40,-2,if (WF_A2_Vanilla) then {1} else {2},2,0,'Russians',[]]];
+_i = _i + [['','',5200,40,-2,if (WF_A2_Vanilla) then {2} else {3},2,0,'Russians',[]]];
 
 _c = _c + ['T90'];
-_i = _i + [['','',6500,40,-2,if (WF_A2_Vanilla) then {2} else {3},2,0,'Russians',[]]];
+_i = _i + [['','',6500,40,-2,if (WF_A2_Vanilla) then {3} else {4},2,0,'Russians',[]]];
 
 _c = _c + ['2S6M_Tunguska'];
-_i = _i + [['','',7800,35,-2,3,2,0,'Russians',[]]];
+_i = _i + [['','',7800,35,-2,4,2,0,'Russians',[]]];
 
 /* Air Vehicles */
 _c = _c + ['Mi17_medevac_RU'];

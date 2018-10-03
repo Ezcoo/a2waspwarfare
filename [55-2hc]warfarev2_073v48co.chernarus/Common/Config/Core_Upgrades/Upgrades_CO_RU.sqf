@@ -27,8 +27,8 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_ENABLED", _side], [
 
 missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_COSTS", _side], [
 	[[540,0],[1350,0],[2070,0]], //--- Barracks
-	[[250,0],[950,0],[1900,0],[3500,0]], //--- Light
-	[[4400,0],[9500,0],[10500,0]], //--- Heavy
+	[[250,0],[950,0],[1900,0],[3500,0],[5260,0]], //--- Light
+	[[1200,0],[4400,0],[9500,0],[10500,0]], //--- Heavy
 	[[1200,0],[4000,0],[9200,0],[10500,0],[17600,0]], //--- Air
 	[[1500,0],[2500,0],[3500,0]], //--- Paratroopers
 	[[2000,0]], //--- UAV
@@ -50,8 +50,8 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_COSTS", _side], [
 
 missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LEVELS", _side], [
 	3, //--- Barracks
-	4, //--- Light
-	3, //--- Heavy
+	5, //--- Light
+	4, //--- Heavy
 	5, //--- Air
 	3, //--- Paratroopers
 	1, //--- UAV
@@ -111,8 +111,8 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LINKS", _side], [
 
 missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_TIMES", _side], [
 	[30,60,90], //--- Barracks
-	[40,70,100,100], //--- Light
-	[50,80,100], //--- Heavy
+	[40,70,100,100,100], //--- Light
+	[30,50,80,100], //--- Heavy
 	[60,80,100,100,100], //--- Air
 	[35,55,75], //--- Paratroopers
 	[60], //--- UAV

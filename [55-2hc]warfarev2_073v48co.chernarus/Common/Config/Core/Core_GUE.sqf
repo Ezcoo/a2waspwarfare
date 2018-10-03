@@ -112,7 +112,7 @@ _c = _c + ['BMP2_Gue'];
 _i = _i + [['','',3400,30,-2,1,2,0,'Guerilla',[]]];
 
 _c = _c + ['T72_Gue'];
-_i = _i + [['','',5200,35,-2,2,2,0,'Guerilla',[]]];
+_i = _i + [['','',5200,35,-2,3,2,0,'Guerilla',[]]];
 
 /* Static Defenses */
 _c = _c + ['GUE_WarfareBMGNest_PK'];
