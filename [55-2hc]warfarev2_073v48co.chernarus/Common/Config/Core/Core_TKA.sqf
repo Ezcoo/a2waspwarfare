@@ -127,7 +127,7 @@ _c = _c + ['Ural_ZU23_TK_EP1'];
 _i = _i + [['','',1750,25,-2,2,1,0,'Takistani Army',[]]];
 
 _c = _c + ['GRAD_TK_EP1'];
-_i = _i + [['','',7800,25,-2,5,1,0,'Takistani Army',[]]];
+_i = _i + [['','',7800,25,-2,4,1,0,'Takistani Army',[]]];
 
 /* Heavy Vehicles */
 _c = _c + ['M113_TK_EP1'];
