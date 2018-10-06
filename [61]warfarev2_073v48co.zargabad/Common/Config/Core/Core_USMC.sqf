@@ -128,13 +128,13 @@ _c = _c + ['AAV'];
 _i = _i + [['','',1300,25,-2,0,2,0,'USMC',[]]];
 
 _c = _c + ['M1A1'];
-_i = _i + [['','',5600,40,-2,if (WF_A2_Vanilla) then {1} else {2},2,0,'USMC',[]]];
+_i = _i + [['','',5600,40,-2,if (WF_A2_Vanilla) then {2} else {3},2,0,'USMC',[]]];
 
 _c = _c + ['MLRS'];
-_i = _i + [['','',8500,40,-2,5,2,0,'USMC',[]]];
+_i = _i + [['','',8500,40,-2,3,2,0,'USMC',[]]];
 
 _c = _c + ['M1A2_TUSK_MG'];
-_i = _i + [['','',6500,40,-2,if (WF_A2_Vanilla) then {2} else {3},2,0,'USMC',[]]];
+_i = _i + [['','',6500,40,-2,if (WF_A2_Vanilla) then {3} else {4},2,0,'USMC',[]]];
 
 /* Air Vehicles */
 _c = _c + ['MH60S'];
@@ -198,7 +198,7 @@ _c = _c + ['M252'];
 _i = _i + [['','',1150,0,1,0,'Defense',0,'USMC',[]]];
 
 _c = _c + ['M119'];
-_i = _i + [['','',5600,0,1,0,'Defense',0,'USMC',[]]];
+_i = _i + [['','',2800,0,1,0,'Defense',0,'USMC',[]]];
 
 /* Defense Structures */
 _c = _c + ['Land_CamoNet_NATO'];
