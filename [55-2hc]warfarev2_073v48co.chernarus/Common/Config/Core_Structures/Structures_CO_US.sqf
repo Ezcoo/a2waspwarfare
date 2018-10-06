@@ -12,7 +12,6 @@ _HEAVY = if (WF_Camo) then {"USMC_WarfareBHeavyFactory"} else {"US_WarfareBHeavy
 _AIR = if (WF_Camo) then {"USMC_WarfareBAircraftFactory"} else {"US_WarfareBAircraftFactory_EP1"};
 _SP = if (WF_Camo) then {"USMC_WarfareBVehicleServicePoint"} else {"US_WarfareBVehicleServicePoint_EP1"};
 _AAR = if (WF_Camo) then {"USMC_WarfareBAntiAirRadar"} else {"US_WarfareBAntiAirRadar_EP1"};
-_ARR = if (WF_Camo) then {"USMC_WarfareBArtilleryRadar"} else {"USMC_WarfareBArtilleryRadar"};
 
 /* Mash used after being deployed */
 missionNamespace setVariable [Format["WFBE_%1FARP", _side], 'Camp_EP1'];
@@ -95,22 +94,13 @@ if ((missionNamespace getVariable "WFBE_C_STRUCTURES_ANTIAIRRADAR") > 0) then {
 	_dir = _dir	+ [90];
 };
 
-_v = _v		+ ["ArtyRadar"];
-_n = _n		+ [_ARR];
-_d = _d		+ [localize "STR_WF_MAIN_Arty_Radar"];
-_c = _c		+ [2500];
-_t = _t		+ [if (WF_Debug) then {1} else {60}];
-_s = _s		+ ["MediumSite"];
-_dis = _dis	+ [21];
-_dir = _dir	+ [90];
-
 for [{_count = count _v - 1},{_count >= 0},{_count = _count - 1}] do {
 	missionNamespace setVariable [Format["WFBE_%1%2TYPE",_side,_v select _count],_count];
 };
 
 {
 	missionNamespace setVariable [Format ["%1%2",_side, _x select 0], _x select 1];
-} forEach [["HQ",_HQ],["BAR",_BAR],["LVF",_LVF],["CC",_CC],["HEAVY",_HEAVY],["SP",_SP],["AAR",_AAR],["ARR",_ARR]];
+} forEach [["HQ",_HQ],["BAR",_BAR],["LVF",_LVF],["CC",_CC],["HEAVY",_HEAVY],["SP",_SP],["AAR",_AAR]];
 
 missionNamespace setVariable [Format["WFBE_%1MHQNAME", _side], _MHQ];
 missionNamespace setVariable [Format["WFBE_%1STRUCTURES", _side], _v];
@@ -168,8 +158,7 @@ _n = _n		+ ["USBasicAmmunitionBox_EP1"];
 _n = _n		+ ["USBasicWeapons_EP1"];
 _n = _n		+ ["USLaunchers_EP1"];
 _n = _n		+ ["USSpecialWeapons_EP1"];
-_n = _n		+ ["US_WarfareBVehicleServicePoint_Base_EP1"];
-
+_n = _n		+ ["CDF_WarfareBVehicleServicePoint"];
 
 /* Class used for AI, AI will attempt to build those */
 missionNamespace setVariable [Format["WFBE_%1DEFENSES_MG", _side], ['M2StaticMG_US_EP1']];
