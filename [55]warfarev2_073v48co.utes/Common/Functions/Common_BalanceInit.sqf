@@ -129,7 +129,7 @@ case "AH6J_EP1":{
 
 case "BMP2_INS":{
 	_current_heavy_level = ((side player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_HEAVY;
-    if(_current_heavy_level < 1)then{
+    if(_current_heavy_level < 2)then{
 
     	_this removeWeapon "AT5LauncherSingle";
 	};

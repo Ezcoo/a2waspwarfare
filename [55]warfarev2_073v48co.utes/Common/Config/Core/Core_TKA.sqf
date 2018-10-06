@@ -127,7 +127,7 @@ _c = _c + ['Ural_ZU23_TK_EP1'];
 _i = _i + [['','',1750,25,-2,2,1,0,'Takistani Army',[]]];
 
 _c = _c + ['GRAD_TK_EP1'];
-_i = _i + [['','',7800,25,-2,5,1,0,'Takistani Army',[]]];
+_i = _i + [['','',7800,25,-2,4,1,0,'Takistani Army',[]]];
 
 /* Heavy Vehicles */
 _c = _c + ['M113_TK_EP1'];
@@ -137,16 +137,16 @@ _c = _c + ['BMP2_TK_EP1'];
 _i = _i + [['','',3400,25,-2,1,2,0,'Takistani Army',[]]];
 
 _c = _c + ['ZSU_TK_EP1'];
-_i = _i + [['','',3500,25,-2,2,2,0,'Takistani Army',[]]];
+_i = _i + [['','',3500,25,-2,3,2,0,'Takistani Army',[]]];
 
 _c = _c + ['T34_TK_EP1'];
-_i = _i + [['','',2600,25,-2,0,2,0,'Takistani Army',[]]];
+_i = _i + [['','',2600,25,-2,1,2,0,'Takistani Army',[]]];
 
 _c = _c + ['T55_TK_EP1'];
-_i = _i + [['','',3600,27,-2,1,2,0,'Takistani Army',[]]];
+_i = _i + [['','',3600,27,-2,2,2,0,'Takistani Army',[]]];
 
 _c = _c + ['T72_TK_EP1'];
-_i = _i + [['','',5200,30,-2,2,2,0,'Takistani Army',[]]];
+_i = _i + [['','',5200,30,-2,3,2,0,'Takistani Army',[]]];
 
 /* Air Vehicles */
 _c = _c + ['An2_TK_EP1'];
