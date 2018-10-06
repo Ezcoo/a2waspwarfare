@@ -1094,6 +1094,13 @@
         <Russian>Пункт обслуживания</Russian>
         <Italian>Punto di servizio</Italian>
       </Key>
+      <Key ID="STR_WF_MAIN_Arty_Radar"><!--shared W-->
+            <English>Arty Radar</English>
+            <French>Arty Radar</French>
+            <German>Arty Radar</German>
+            <Russian>Арт Радар</Russian>
+            <Italian>Arty Radar</Italian>
+        </Key>
       <Key ID="STR_WF_MAIN_TeamMenu"><!--shared U-->
         <English>Team</English>
         <French>Equipe</French>
