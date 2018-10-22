@@ -92,7 +92,7 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LINKS", _side], [
 		[[WFBE_UP_BARRACKS,2],[WFBE_UP_LIGHT,2]],
 		[[WFBE_UP_BARRACKS,3],[WFBE_UP_LIGHT,3]]
 	], //--- Artillery Time
-	[[WFBE_UP_AIR,3]], //--- ICBM
+	[[WFBE_UP_AIR,5]], //--- ICBM
 	[
 		[[WFBE_UP_LIGHT,1],[WFBE_UP_SUPPLYRATE,1]]
 	], //--- Fast Travel
@@ -105,7 +105,7 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LINKS", _side], [
 		[[WFBE_UP_GEAR,2],[WFBE_UP_HEAVY,2]],
 		[[WFBE_UP_GEAR,3],[WFBE_UP_HEAVY,3]]
 	], //--- Artillery Ammo
-	[[WFBE_UP_HEAVY, 3]], //--- IR Smoke
+	[[WFBE_UP_HEAVY, 4]], //--- IR Smoke
 	[[WFBE_UP_AIR, 3]] //--- Aircraft AA Missiles
 ]];
 
