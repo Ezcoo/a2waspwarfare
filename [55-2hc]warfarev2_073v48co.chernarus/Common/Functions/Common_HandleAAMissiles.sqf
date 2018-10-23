@@ -1,6 +1,7 @@
 private ["_u","_wp","_rkt","_am","_i","_vlnrd","_vl","_vlnr","_vcnr",
 "_vc","_vcnrd","_vg","_vgnr","_vgnrd","_trg","_fp","_spd","_dis","_trvldis","_sltd",
-"_sspd","_acc","_agl","_trgtp","_rtp","_trgp","_trgv","_ttimp","_prd","_t"];
+"_sspd","_acc","_agl","_trgtp","_rtp",
+"_msl","_trgp","_trgv","_ttimp","_prd","_t"];
 
 _u = _this select 0;
 _wp = currentWeapon _u;
@@ -10,6 +11,7 @@ _rkt = nearestObject [_u,_am];
 if (isNull _rkt) exitwith {};
 
 /* Add missiles you want here */
+_msl = ["M_9M311_AA","M_Sidewinder_AA","M_R73_AA"];
 _rtp =[];
 _sltd = 0;
 _t=0;
@@ -18,8 +20,13 @@ _agl= 0.002;
 _i = 0;
 
 
-_rtp =["Building"];_sltd = 920;_acc = 1.2;_agl = 0.015;_i = 0.1;_prd= 0.3;
+if (!(_am in _msl)) exitWith{};
 
+Switch (true) do {
+    case (_am isKindOf "M_9M311_AA") : 		{_rtp =["Building"];_sltd = 920;_acc = 1.2;_agl = 0.015;_i = 0.1;_prd= 0.3;};
+    case (_am isKindOf "M_Sidewinder_AA") : {_rtp =["Building"];_sltd = 850;_acc = 1;_agl = 0.0095;_i = 0.1;_prd= 0.5;};
+    case (_am isKindOf "M_R73_AA") :        {_rtp =["Building"];_sltd = 865;_acc = 0.9;_agl = 0.0095;_i = 0.1;_prd= 0.5;};
+};
 
 
 if (isPlayer _u) then {_trg =cursorTarget}else{_trg = assignedTarget _u};
