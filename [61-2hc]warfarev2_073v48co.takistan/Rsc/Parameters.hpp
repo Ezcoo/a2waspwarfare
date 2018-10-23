@@ -310,7 +310,7 @@ class WFBE_C_ECONOMY_FUNDS_START_EAST {
 		title = "$STR_WF_PARAMETER_ViewDistance";
 		values[] = {200,500,800,1000,1500,2000,2500,3000,3500,4000,4500,5000};
 		texts[] = {"200m","500m","800m","1000m","1500m","2000m","2500m","3000m","3500m","4000m","4500m","5000m"};
-		default = 4000;
+		default = 5000;
 	};
 		class WFBE_C_MODULE_WFBE_FLARES {
 			title = "$STR_WF_PARAMETER_Countermeasures";
