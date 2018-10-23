@@ -49,11 +49,20 @@ if !(alive _artillery) exitWith {
 
 _reloadTime = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_TIME_RELOAD",_side]) select _index;
 _burst = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_BURST",_side]) select _index;
+_art_pos = getPosATL _artillery;
+
+if(_side == west)then{
+	// [_art_pos, east] remoteExecCall ["WFBE_CL_FNC_TRACK_ARTY", east]
+	[nil, "HandleSpecial", ["track-arty", _art_pos, east]] Call WFBE_CO_FNC_SendToClients;
+}else{
+	// [_art_pos, west] remoteExecCall ["WFBE_CL_FNC_TRACK_ARTY", west]
+	[nil, "HandleSpecial", ["track-arty", _art_pos, west]] Call WFBE_CO_FNC_SendToClients;
+};
 
 for '_i' from 1 to _burst do {
 	sleep (_reloadTime+random 3);
 	if (!alive _gunner || !alive _artillery) exitWith {};
-	
+
 	_artillery fire _weapon;
 };
 
