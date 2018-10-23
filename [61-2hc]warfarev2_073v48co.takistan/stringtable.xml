@@ -246,7 +246,7 @@
         <Italian>You were deducted from $%1 due to your gear</Italian>
       </Key>
       <Key ID="STR_WF_CHAT_ICBM_Launch">
-        <English>WARNING! An intercontinental ballistic missile launch has been detected!</English>
+        <English>WARNNING! An Intercontinental ballistic missile launch has been detected!</English>
         <French>ATTENTION! Le lancement d'un Missile balistique intercontinental a été detecté!</French>
         <German>WARNUNG! Der Abschuss einer Interkontinentalrakete wurde gemeldet!</German>
         <Russian>ВНИМАНИЕ! Зафиксирован запуск ядерной ракеты!</Russian>
@@ -1094,6 +1094,13 @@
         <Russian>Пункт обслуживания</Russian>
         <Italian>Punto di servizio</Italian>
       </Key>
+      <Key ID="STR_WF_MAIN_Arty_Radar"><!--shared W-->
+            <English>Arty Radar</English>
+            <French>Arty Radar</French>
+            <German>Arty Radar</German>
+            <Russian>Арт Радар</Russian>
+            <Italian>Arty Radar</Italian>
+        </Key>
       <Key ID="STR_WF_MAIN_TeamMenu"><!--shared U-->
         <English>Team</English>
         <French>Equipe</French>
