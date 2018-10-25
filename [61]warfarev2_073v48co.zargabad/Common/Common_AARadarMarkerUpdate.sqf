@@ -18,7 +18,7 @@ while {alive _object && !(isNull _object)} do {
 		if (((getPos _object) select 2) > _height) then {
 			_markerName setMarkerAlphaLocal 1;
 			_markerName setMarkerPosLocal (getPos _object);
-			_markerName setMarkerTextLocal (str (getPosATL _object select 2));
+			_markerName setMarkerTextLocal (str (round (getPosATL _object select 2)));
 		} else {
 			_markerName setMarkerAlphaLocal 0;
 		};
