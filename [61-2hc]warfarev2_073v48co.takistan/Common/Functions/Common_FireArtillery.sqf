@@ -52,9 +52,9 @@ _burst = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_BURST",_side])
 _art_pos = getPosATL _artillery;
 
 if(_side == west)then{
-	[_art_pos, east] remoteExecCall ["WFBE_CL_FNC_TRACK_ARTY", east]
+	[east, "HandleSpecial", ['track-arty', _art_pos, east]] Call WFBE_CO_FNC_SendToClients;
 }else{
-	[_art_pos, west] remoteExecCall ["WFBE_CL_FNC_TRACK_ARTY", west]
+	[west, "HandleSpecial", ['track-arty', _art_pos, west]] Call WFBE_CO_FNC_SendToClients;
 };
 
 for '_i' from 1 to _burst do {
