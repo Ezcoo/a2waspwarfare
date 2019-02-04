@@ -105,6 +105,7 @@ WFBE_CL_FNC_UI_Gear_UpdatePrice = Compile preprocessFileLineNumbers "Client\Func
 WFBE_CL_FNC_UI_Gear_UpdateTarget = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Gear_UpdateTarget.sqf";
 WFBE_CL_FNC_UI_Gear_UpdateView = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Gear_UpdateView.sqf";
 WFBE_CL_FNC_UI_Respawn_Selector = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Respawn_Selector.sqf";
+WFBE_CL_FNC_TRACK_ARTY = Compile preprocessFileLineNumbers "Client\Functions\Client_ARRadarMarkerUpdate.sqf";
 
 //Affichage Rubber maps:
 	Local_GUIWorking = false;
@@ -178,7 +179,7 @@ paramBoundariesRunning = false;
 disableserialization;
 keyPressed = compile preprocessFile "Common\Functions\Common_DisableTablock.sqf";
 _display = findDisplay 46;
-_display displaySetEventHandler ["KeyDown","_this call keyPressed"];
+_display displayAddEventHandler ["KeyDown","_this call keyPressed"];
 
 (vehicle player) addEventHandler ["Fired",{_this Spawn HandleAT}];
 execVM "WASP\global_marking_monitor.sqf";
@@ -232,6 +233,7 @@ serviceInRange = false;
 commandInRange = false;
 depotInRange = false;
 antiAirRadarInRange = false;
+antiArtyRadarInRange = false;
 hangarInRange = false;
 
 enableTeamSwitch false;
