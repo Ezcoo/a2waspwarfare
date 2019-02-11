@@ -12,6 +12,7 @@ _HEAVY = if (WF_Camo) then {"USMC_WarfareBHeavyFactory"} else {"US_WarfareBHeavy
 _AIR = if (WF_Camo) then {"USMC_WarfareBAircraftFactory"} else {"US_WarfareBAircraftFactory_EP1"};
 _SP = if (WF_Camo) then {"USMC_WarfareBVehicleServicePoint"} else {"US_WarfareBVehicleServicePoint_EP1"};
 _AAR = if (WF_Camo) then {"USMC_WarfareBAntiAirRadar"} else {"US_WarfareBAntiAirRadar_EP1"};
+_ARR = if (WF_Camo) then {"USMC_WarfareBArtilleryRadar"} else {"USMC_WarfareBArtilleryRadar"};
 
 /* Mash used after being deployed */
 missionNamespace setVariable [Format["WFBE_%1FARP", _side], 'Camp_EP1'];
@@ -93,6 +94,15 @@ if ((missionNamespace getVariable "WFBE_C_STRUCTURES_ANTIAIRRADAR") > 0) then {
 	_dis = _dis	+ [21];
 	_dir = _dir	+ [90];
 };
+
+_v = _v		+ ["ArtyRadar"];
+_n = _n		+ [_ARR];
+_d = _d		+ [localize "STR_WF_MAIN_Arty_Radar"];
+_c = _c		+ [2500];
+_t = _t		+ [if (WF_Debug) then {1} else {60}];
+_s = _s		+ ["MediumSite"];
+_dis = _dis	+ [21];
+_dir = _dir	+ [90];
 
 for [{_count = count _v - 1},{_count >= 0},{_count = _count - 1}] do {
 	missionNamespace setVariable [Format["WFBE_%1%2TYPE",_side,_v select _count],_count];

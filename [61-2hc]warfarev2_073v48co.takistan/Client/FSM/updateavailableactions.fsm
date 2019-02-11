@@ -179,6 +179,9 @@ class FSM
        "	if (count _checks > 0) then {antiAirRadarInRange = true} else {antiAirRadarInRange = false};" \n
        "};" \n
        "" \n
+       "_checks = [sideJoined, missionNamespace getVariable Format [""WFBE_%1ArtyRadarTYPE"",sideJoinedText],_buildings] Call GetFactories;" \n
+       "if (count _checks > 0) then {antiArtyRadarInRange = true} else {antiArtyRadarInRange = false};" \n
+       "" \n
        "//--- Town Depot." \n
        "depotInRange = if !(isNull ([vehicle player, _tcr] Call WFBE_CL_FNC_GetClosestDepot)) then {true} else {false};" \n
        "if (depotInRange) then {serviceInRange = true};" \n

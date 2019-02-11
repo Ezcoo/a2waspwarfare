@@ -41,6 +41,8 @@ while {!gameOver} do {
 		_command=[_side,missionNamespace getVariable Format["WFBE_%1COMMANDCENTERTYPE",str _side],_buildings] Call GetFactories;
 		_service=[_side,missionNamespace getVariable Format["WFBE_%1SERVICEPOINTTYPE",str _side],_buildings] Call GetFactories;
 		_aar = [_side,missionNamespace getVariable Format["WFBE_%1AARADARTYPE",str _side],_buildings] Call GetFactories;
+		_arr = [_side,missionNamespace getVariable Format["WFBE_%1ArtyRadarTYPE",str _side],_buildings] Call GetFactories;
+		_buildings = _buildings - _command - _service - _aar - _arr;
 		_areas_old = _logik getVariable "wfbe_basearea";
 		_areas = _areas_old;
 	

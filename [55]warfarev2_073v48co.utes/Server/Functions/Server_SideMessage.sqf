@@ -46,6 +46,7 @@ switch (true) do {
 				case "Aircraft": {_localizedString = localize "STRHelipad";_value = "Helipad"};
 				case "ServicePoint": {_localizedString = localize "STRServicePoint";_value = "ServicePoint"};
 				case "AARadar": {_localizedString = localize "STRAntiAirRadar";_value = "AntiAirRadar"};
+				case "ArtyRadar": { _localizedString = localize "STRArtilleryRadar";_value = "ArtilleryRadar"};
 			};
 		} else {
 			_localizedString = (_parameters select 1) getVariable "name";
