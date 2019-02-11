@@ -119,7 +119,7 @@ _site setPos _position;
 _site setVariable ["wfbe_side", _side];
 _site setVariable ["wfbe_structure_type", _rlType];
 
-if(isAutoWallConstructingEnabled)then{
+if(isAutoWallConstructingEnabled && !(_rlType in ["AARadar","ArtyRadar"]))then{
 _defenses = [_site, missionNamespace getVariable format ["WFBE_NEURODEF_%1_WALLS", _rlType]] call CreateDefenseTemplate;
 _site setVariable ["WFBE_Walls", _defenses];
 };

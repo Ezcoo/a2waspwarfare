@@ -51,12 +51,14 @@ _reloadTime = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_TIME_RELO
 _burst = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_BURST",_side]) select _index;
 _art_pos = getPosATL _artillery;
 
-if(_side == west)then{
+
+};
 	[east, "HandleSpecial", ['track-arty', _art_pos, east]] Call WFBE_CO_FNC_SendToClients;
+	//[west, "HandleSpecial", ['track-arty', _art_pos, west]] Call WFBE_CO_FNC_SendToClients;
 }else{
 	[west, "HandleSpecial", ['track-arty', _art_pos, west]] Call WFBE_CO_FNC_SendToClients;
-};
-
+	//[east, "HandleSpecial", ['track-arty', _art_pos, east]] Call WFBE_CO_FNC_SendToClients;
+if(_side == west)then{
 for '_i' from 1 to _burst do {
 	sleep (_reloadTime+random 3);
 	if (!alive _gunner || !alive _artillery) exitWith {};
