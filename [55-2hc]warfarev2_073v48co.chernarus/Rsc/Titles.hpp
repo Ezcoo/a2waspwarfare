@@ -370,7 +370,7 @@ class RscTitles {
 			h = 0.0255556 * safezoneH;
 			sizeEx = 0.026;
 			colorText[] = {1,1,1,1};
-		}
+		};
 		
 		class RUBHUD_FPS_Client_Value: RscText {
 			idc = 1364;

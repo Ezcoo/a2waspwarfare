@@ -1397,7 +1397,7 @@ class RscMenu_Team {
 			w = 0.279;
 			text = "";
 			action = "MenuAction = 13";
-		}
+		};
 		/* Seperator */
 		class Line_TRH1 : RscText {
 			x = 0.192941;
