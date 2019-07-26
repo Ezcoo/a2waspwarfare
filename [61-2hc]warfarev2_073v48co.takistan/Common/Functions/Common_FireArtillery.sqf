@@ -49,11 +49,6 @@ if !(alive _artillery) exitWith {
 
 _reloadTime = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_TIME_RELOAD",_side]) select _index;
 _burst = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_BURST",_side]) select _index;
-<<<<<<< HEAD
-_art_pos = getPosATL _artillery;
-
-=======
->>>>>>> parent of 44dc427... Merge branch 'arty_radar_impl'
 
 for '_i' from 1 to _burst do {
 	sleep (_reloadTime+random 3);
