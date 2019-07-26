@@ -27,5 +27,4 @@ switch (_request) do {
 	case "upgrade-complete": {_args spawn WFBE_CL_FNC_Upgrade_Complete};
 	case "set-hq-killed-eh": {if !(isServer) then {(_args select 0) addEventHandler ["killed", {["RequestSpecial", ["process-killed-hq", _this]] Call WFBE_CO_FNC_SendToServer}]};};
 	case "auto-wall-constructing-changed":{ isAutoWallConstructingEnabled = (_args select 0)};
-	case "track-arty": {_args call WFBE_CL_FNC_TRACK_ARTY};
 };
