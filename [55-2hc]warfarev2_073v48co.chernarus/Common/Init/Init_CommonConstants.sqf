@@ -189,9 +189,9 @@ with missionNamespace do {
 	WFBE_C_PLAYERS_MARKER_TOWN_RANGE = 0.05; //--- A town marker is updated (SV) on map if a unit is within the range (town range * coef).
 	WFBE_C_PLAYERS_OFFMAP_TIMEOUT = 50; //--- Player may remain x second outside of the map before being killed.
 	WFBE_C_PLAYERS_PENALTY_TEAMKILL = 1000; //--- Teamkill penalty.
-	WFBE_C_PLAYERS_SCORE_CAPTURE = 10;
-	WFBE_C_PLAYERS_SCORE_CAPTURE_ASSIST = 5;
-	WFBE_C_PLAYERS_SCORE_CAPTURE_CAMP = 2;
+	WFBE_C_PLAYERS_SCORE_CAPTURE = 23;
+	WFBE_C_PLAYERS_SCORE_CAPTURE_ASSIST = 17;
+	WFBE_C_PLAYERS_SCORE_CAPTURE_CAMP = 5;
 	WFBE_C_PLAYERS_SCORE_DELIVERY = 3;
 	WFBE_C_PLAYERS_SKILL_SOLDIER_UNITS_MAX = 6; //--- Skill (Soldiers), have more units than the others.
 	WFBE_C_PLAYERS_SQUADS_MAX_PLAYERS = 4; //--- One player squad may contain up to x players.
@@ -288,6 +288,7 @@ if (WF_A2_Vanilla) then {
 	if (isNil "WFBE_C_UNITS_TRACK_INFANTRY") then {WFBE_C_UNITS_TRACK_INFANTRY = 1}; //--- Track units on map (infantry).
 	if (isNil "WFBE_C_UNITS_TRACK_LEADERS") then {WFBE_C_UNITS_TRACK_LEADERS = 1}; //--- Track playable Team Leaders on map (infantry).
 	WFBE_C_UNITS_BOUNTY_COEF = 1; //--- Bounty is the unit price * coef.
+	WFBE_C_BUILDINGS_SCORE_COEF = 3; // Score for killing base structures and HQ is building bounty * coef
 	WFBE_C_UNITS_BOUNTY_ASSISTANCE_COEF = 0.5; //--- Bounty assistance is the unit price * coef * assist coef.
 	WFBE_C_UNITS_COUNTERMEASURE_PLANES = 64;
 	WFBE_C_UNITS_COUNTERMEASURE_CHOPPERS = 32;
