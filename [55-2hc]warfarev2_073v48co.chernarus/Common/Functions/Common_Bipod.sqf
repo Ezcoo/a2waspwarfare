@@ -51,7 +51,7 @@ Bipod_ON = {
 		Lying_stand = ((animationState player == "amovppnemstpsraswrfldnon") && (_weapon in _affected));
 		Crouch_stand = ((Stands_behind) && (_weapon in _affected) && (!(typeof _behind isKindOf "Man")) && (!(typeof _behind isKindOf "Air")));
 		if (Lying_stand or Crouch_stand) then {
-			nul = HintSilent (localize "str_bipod"); player setUnitRecoilCoefficient 0; player say "Bipod_ON";
+			SetBipodOn = HintSilent (localize "str_bipod"); player setUnitRecoilCoefficient 0; player say "Bipod_ON";
 			};
 //		};                                          //Debug
 //		case 57: {     								//Hit SPACE
