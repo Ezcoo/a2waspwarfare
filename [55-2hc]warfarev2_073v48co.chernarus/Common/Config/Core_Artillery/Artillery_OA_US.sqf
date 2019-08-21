@@ -4,7 +4,7 @@ _side = _this;
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_DISPLAY_NAME', _side], ['M119','M252','MLRS','Stryker MC']]; //--- Display Name to use in the GUI.
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_WEAPONS', _side], ['M119','M252','MLRS','M120']]; //--- Weapon classname.
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_RANGES_MIN', _side], [1000,50,1200,550]]; //--- Unit cannot fire if the target is within it's min range.
-missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_RANGES_MAX', _side], [7000,5500,9000,6500]]; //--- Unit max firing range.
+missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_RANGES_MAX', _side], [8000,7500,9000,6500]]; //--- Unit max firing range.
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_TIME_RELOAD', _side], [7,4,2,4]]; //--- Approximate time needed for unit to fire again.
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_BURST', _side], [8,4,6,6]]; //--- Burst sent per fire mission.
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_VELOCITIES', _side], [500,475,550,475]]; //--- Projectile fall velocity.
