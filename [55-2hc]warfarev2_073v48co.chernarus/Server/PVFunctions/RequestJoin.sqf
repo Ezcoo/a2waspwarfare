@@ -1,4 +1,4 @@
-private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_playersinside","_playersinotherside"];
+private ["_response","_dataRead","_totalFriendlyTeamSkill","_totalEnemyTeamSkill","_joinedTeam","_respFriendly","_respEnemy","_teamswapAndStackCheckReady","_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_playersinside","_playersinotherside"];
 
 _player = _this select 0;
 _side = _this select 1;
@@ -23,58 +23,56 @@ _get = missionNamespace getVariable Format["WFBE_JIP_USER%1",_uid];
 _teamswapAndStackCheckReady = false;
 
 [] spawn {
-    _response = ["RetrievePlayerScore", _puid] call persistent_fnc_callDatabase;
-    _dataRead = _response select 0;
-    _dataRead = call compile _dataRead;
-
-    _totalFriendlyTeamScore = 0;
-    _totalEnemyTeamScore = 0;
+    _totalFriendlyTeamSkill = 0;
+    _totalEnemyTeamSkill = 0;
     _joinedTeam = [];
     _respFriendly = "";
     _respEnemy = "";
-
+    
+    // Calculate total skill for each team
     switch (_side) do {
         case "WEST";
         {
             {
                 if (side _x == "WEST" && isPlayer _x) then {
-                    _respFriendly = ["RetrievePlayerScore", getPlayerUID _x] call persistent_fnc_callDatabase;
+                    _respFriendly = ["RetrievePlayerSkill", "Retrieve", getPlayerUID _x] call persistent_fnc_callDatabase;
                     _friendlyPlayerScore = call compile _respFriendly;
-                    _totalFriendlyTeamScore = _totalFriendlyTeamScore + _friendlyPlayerScore;
+                    _totalFriendlyTeamSkill = _totalFriendlyTeamSkill + _friendlyPlayerScore;
                 };
 
                 if (side _x == "EAST" && isPlayer _x) then {
-                    _respEnemy = ["RetrievePlayerScore", getPlayerUID _x] call persistent_fnc_callDatabase;
+                    _respEnemy = ["RetrievePlayerSkill", "Retrieve", getPlayerUID _x] call persistent_fnc_callDatabase;
                     _enemyPlayerScore = call compile _respEnemy;
-                    _totalEnemyTeamScore = _totalEnemyTeamScore + _enemyPlayerScore;
+                    _totalEnemyTeamSkill = _totalEnemyTeamSkill + _enemyPlayerScore;
                 };
-            } forEach (playableUnits + switchableUnits);
+            } forEach (playableUnits + switchableUnits) - _player;
         };
         case "EAST";
             {
                         if (side _x == "EAST" && isPlayer _x) then {
-                            _respFriendly = ["RetrievePlayerScore", getPlayerUID _x] call persistent_fnc_callDatabase;
+                            _respFriendly = ["RetrievePlayerSkill", "Retrieve", getPlayerUID _x] call persistent_fnc_callDatabase;
                             _friendlyPlayerScore = call compile _respFriendly;
-                            _totalFriendlyTeamScore = _totalFriendlyTeamScore + _friendlyPlayerScore;
+                            _totalFriendlyTeamSkill = _totalFriendlyTeamSkill + _friendlyPlayerScore;
                         };
 
                         if (side _x == "WEST" && isPlayer _x) then {
-                            _respEnemy = ["RetrievePlayerScore", getPlayerUID _x] call persistent_fnc_callDatabase;
+                            _respEnemy = ["RetrievePlayerSkill", "Retrieve", getPlayerUID _x] call persistent_fnc_callDatabase;
                             _enemyPlayerScore = call compile _respEnemy;
-                            _totalEnemyTeamScore = _totalEnemyTeamScore + _enemyPlayerScore;
+                            _totalEnemyTeamSkill = _totalEnemyTeamSkill + _enemyPlayerScore;
                         };
-                } forEach (playableUnits + switchableUnits);
+                } forEach (playableUnits + switchableUnits) - _player;
         };
-
-        if (_totalFriendlyTeamScore > 1.2 * _totalEnemyTeamScore) then {
-            missionNamespace setVariable [format["WFBE_JIP_USER%1",_uid], nil];
-            _canJoin = false;
-            [_player, "LocalizeMessage", ['Teamstack',_name,_uid,_side]] Call WFBE_CO_FNC_SendToClient;
-            sleep 5;
-            failMission "END1";
-        } else {
-            _canJoin = true;
-        };
+        
+        // If team skills have too much difference, prevent player from joining the better team
+            if (_totalFriendlyTeamSkill > 1.2 * _totalEnemyTeamSkill) then {
+                missionNamespace setVariable [format["WFBE_JIP_USER%1",_uid], nil];
+                _canJoin = false;
+                [_player, "LocalizeMessage", ['Teamstack',_name,_uid,_side]] Call WFBE_CO_FNC_SendToClient;
+                sleep 5;
+                failMission "END1";
+            } else {
+                _canJoin = true;
+            };
 
     if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
