@@ -20,8 +20,76 @@ _playersinside = ({side _x == _side && isPlayer _x} count (playableUnits + switc
 _playersinotherside = ({side _x == _otherside && isPlayer _x} count (playableUnits + switchableUnits));
 _get = missionNamespace getVariable Format["WFBE_JIP_USER%1",_uid];
 
-if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
+_teamswapAndStackCheckReady = false;
 
+[] spawn {
+    _response = ["RetrievePlayerScore", _puid] call persistent_fnc_callDatabase;
+    _dataRead = _response select 0;
+    _dataRead = call compile _dataRead;
+
+    _totalFriendlyTeamScore = 0;
+    _totalEnemyTeamScore = 0;
+    _joinedTeam = [];
+    _respFriendly = "";
+    _respEnemy = "";
+
+    switch (_side) do {
+        case "WEST";
+        {
+            {
+                if (side _x == "WEST" && isPlayer _x) then {
+                    _respFriendly = ["RetrievePlayerScore", getPlayerUID _x] call persistent_fnc_callDatabase;
+                    _friendlyPlayerScore = call compile _respFriendly;
+                    _totalFriendlyTeamScore = _totalFriendlyTeamScore + _friendlyPlayerScore;
+                };
+
+                if (side _x == "EAST" && isPlayer _x) then {
+                    _respEnemy = ["RetrievePlayerScore", getPlayerUID _x] call persistent_fnc_callDatabase;
+                    _enemyPlayerScore = call compile _respEnemy;
+                    _totalEnemyTeamScore = _totalEnemyTeamScore + _enemyPlayerScore;
+                };
+            } forEach (playableUnits + switchableUnits);
+        };
+        case "EAST";
+            {
+                        if (side _x == "EAST" && isPlayer _x) then {
+                            _respFriendly = ["RetrievePlayerScore", getPlayerUID _x] call persistent_fnc_callDatabase;
+                            _friendlyPlayerScore = call compile _respFriendly;
+                            _totalFriendlyTeamScore = _totalFriendlyTeamScore + _friendlyPlayerScore;
+                        };
+
+                        if (side _x == "WEST" && isPlayer _x) then {
+                            _respEnemy = ["RetrievePlayerScore", getPlayerUID _x] call persistent_fnc_callDatabase;
+                            _enemyPlayerScore = call compile _respEnemy;
+                            _totalEnemyTeamScore = _totalEnemyTeamScore + _enemyPlayerScore;
+                        };
+                } forEach (playableUnits + switchableUnits);
+        };
+
+        if (_totalFriendlyTeamScore > 1.2 * _totalEnemyTeamScore) then {
+            missionNamespace setVariable [format["WFBE_JIP_USER%1",_uid], nil];
+            _canJoin = false;
+            [_player, "LocalizeMessage", ['Teamstack',_name,_uid,_side]] Call WFBE_CO_FNC_SendToClient;
+            sleep 5;
+            failMission "END1";
+        } else {
+            _canJoin = true;
+        };
+
+    if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
+
+		if (_sideOrigin != _side) then { //--- The joined side differs from the original one.
+
+			_canJoin = false;
+
+			[nil, "LocalizeMessage", ['Teamswap',_name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_SendToClients; //--- Inform the clients about the teamswap.
+
+			["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamswapping, original side [%3], joined side [%4].", _name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_LogContent;
+            _get set [4,0];
+		} else {
+			_canJoin = true;
+		};
+/*
 	_skip = _get select 4;
 	_sideOrigin = _get select 2; //--- Get the original side.
 
@@ -31,30 +99,24 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 
 		if(_players_difference > 2) then {
-	        _canJoin = false;
 			missionNamespace setVariable [format["WFBE_JIP_USER%1",_uid], nil];
 			[_player, "LocalizeMessage", ['Teamstack',_name,_uid,_side]] Call WFBE_CO_FNC_SendToClient;
 			["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamstacking,joined side [%3].", _name,_uid,_side]] Call WFBE_CO_FNC_LogContent;
 			_get set [4,0];
 		};
 
-	}else{
-		if (_sideOrigin != _side) then { //--- The joined side differs from the original one.
-
-			_canJoin = false;
-
-			[nil, "LocalizeMessage", ['Teamswap',_name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_SendToClients; //--- Inform the clients about the teamswap.
-
-			["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamswapping, original side [%3], joined side [%4].", _name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_LogContent;
-		}else {
-			_canJoin = true;
-		};
 	};
 
-} else {
-	["WARNING", Format["RequestJoin.sqf: Unable to find JIP information for player [%1] [%2].", _name, _uid]] Call WFBE_CO_FNC_LogContent;
+*/
+    } else {
+        ["WARNING", Format["RequestJoin.sqf: Unable to find JIP information for player [%1] [%2].", _name, _uid]] Call WFBE_CO_FNC_LogContent;
+    };
+
+    _teamswapAndStackCheckReady = true;
+
 };
 
+waitUntil {_teamswapAndStackCheckReady};
 
 ["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] can join? [%3].", _name, _uid, _canJoin]] Call WFBE_CO_FNC_LogContent;
 
