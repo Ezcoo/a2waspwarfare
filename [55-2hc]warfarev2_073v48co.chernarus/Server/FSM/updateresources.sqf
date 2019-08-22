@@ -1,4 +1,4 @@
-private["_is","_ii","_awaits","_incomeCoef","_divisor","_commander_enabled","_currency_system","_logik","_playerOldScore","_playerNewScore","_income","_income_player","_income_commander","_supply","_comTeam","_paycheck"];
+private["_is","_ii","_awaits","_incomeCoef","_divisor","_commander_enabled","_currency_system","_logik","_playerOldScore","_playerNewScore","_scoreDiff","_income","_income_player","_income_commander","_supply","_comTeam","_paycheck"];
 
 _is = missionNamespace getVariable "WFBE_C_ECONOMY_INCOME_SYSTEM";
 _ii = missionNamespace getVariable "WFBE_C_ECONOMY_INCOME_INTERVAL";
