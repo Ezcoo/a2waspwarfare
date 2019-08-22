@@ -31,7 +31,8 @@ HandleDefense = Compile preprocessFile "Server\Functions\Server_HandleDefense.sq
 HandleSpecial = Compile preprocessFile "Server\Functions\Server_HandleSpecial.sqf";
 MHQRepair = Compile preprocessFile "Server\Functions\Server_MHQRepair.sqf";
 SideMessage = Compile preprocessFile "Server\Functions\Server_SideMessage.sqf";
-persistent_fnc_callDatabase = Compile preprocessFile "Server\Module\PersistanceDB\callDatabase.sqf";
+persistent_fnc_callDatabase = Compile preprocessFileLineNumbers "Server\Module\PersistanceDB\callDatabase.sqf";
+persistent_fnc_storeToDatabase = Compile preprocessFileLineNumbers "Server\Module\PersistanceDB\storeToDatabase.sqf";
 persistent_fnc_convertFormat = compile preprocessfilelinenumbers "Server\Module\PersistanceDB\fn_convertFormat.sqf";
 SetTownPatrols = compile preprocessfilelinenumbers "Server\FSM\server_patrols.sqf";
 

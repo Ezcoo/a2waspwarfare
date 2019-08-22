@@ -1,4 +1,4 @@
-private["_is","_ii","_awaits","_incomeCoef","_divisor","_commander_enabled","_currency_system","_logik","_income","_income_player","_income_commander","_supply","_comTeam","_paycheck"];
+private["_is","_ii","_awaits","_incomeCoef","_divisor","_commander_enabled","_currency_system","_logik","_playerOldScore","_playerNewScore","_income","_income_player","_income_commander","_supply","_comTeam","_paycheck"];
 
 _is = missionNamespace getVariable "WFBE_C_ECONOMY_INCOME_SYSTEM";
 _ii = missionNamespace getVariable "WFBE_C_ECONOMY_INCOME_INTERVAL";
@@ -9,6 +9,8 @@ _divisor = 0;
 _commander_enabled = if ((missionNamespace getVariable "WFBE_C_AI_COMMANDER_ENABLED") > 0) then {true} else {false};
 _currency_system = missionNamespace getVariable "WFBE_C_ECONOMY_CURRENCY_SYSTEM";
 _suppluy_max_limit = missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_MAX_TEAM_LIMIT";
+_playerOldScore = 0;
+_playerNewScore = 0;
 
 if (_is == 3) then {
 	_incomeCoef = missionNamespace getVariable "WFBE_C_ECONOMY_INCOME_COEF";
@@ -66,6 +68,15 @@ while {!gameOver} do {
 		};
 
 	} forEach WFBE_PRESENTSIDES;
+
+    {
+        if (isPlayer _x) then {
+            _playerNewScore = score _x;
+            _scoreDiff = _playerNewScore - _playerOldScore;
+            _playerOldScore = _playerNewScore;
+            ["StorePlayerSkill", "Store", getPlayerUID _x, _scoreDiff] call persistent_fnc_storeToDatabase;
+        };
+    } forEach (playableUnits + switchableUnits);
 
 	_awaits = (_ii) Call GetSleepFPS;
 	sleep _awaits;
