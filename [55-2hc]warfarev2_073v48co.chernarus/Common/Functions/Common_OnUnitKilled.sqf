@@ -84,8 +84,10 @@ if (!isNil '_get' && _killer_iswfteam) then { //--- Make sure that type killed t
 					case (_killed_type isKindOf "Plane"): {round((_get select QUERYUNITPRICE) *0.35* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);};
 					case (_killed_type isKindOf "StaticWeapon"): {round((_get select QUERYUNITPRICE) *0.5* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);};
 					case (_killed_type isKindOf "Building"): {round((_get select QUERYUNITPRICE) *0.55* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100 * (missionNamespace getVariable "WFBE_C_BUILDINGS_SCORE_COEF"));};
-					default {5};
+					default {0};
 				};
+
+				Format["You got %1 points for neutralizing %2", _points, _name] Call GroupChatMessage;
 
 				if (isServer) then {
 					['SRVFNCREQUESTCHANGESCORE',[leader _killer_group, (score leader _killer_group) + _points]] Spawn WFBE_SE_FNC_HandlePVF;
