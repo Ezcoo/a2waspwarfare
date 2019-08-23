@@ -87,7 +87,7 @@ if (!isNil '_get' && _killer_iswfteam) then { //--- Make sure that type killed t
 					default {0};
 				};
 
-				Format["You got %1 points for neutralizing %2", _points, _name] Call GroupChatMessage;
+				["INFORMATION", Format["Player got %1 points for neutralizing %2", _points, _killed]] Call WFBE_CO_FNC_LogContent;
 
 				if (isServer) then {
 					['SRVFNCREQUESTCHANGESCORE',[leader _killer_group, (score leader _killer_group) + _points]] Spawn WFBE_SE_FNC_HandlePVF;
