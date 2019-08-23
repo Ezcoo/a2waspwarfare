@@ -67,26 +67,12 @@ if (!isNil '_get' && _killer_iswfteam) then { //--- Make sure that type killed t
 			if !(_killer_isplayer) then { //--- An AI is the killer.
 				_killer_award = _killer;
                 };
-				_points = switch (true) do {
-					case (_killed_type isKindOf "Infantry"): {
-					    if(round((_get select QUERYUNITPRICE) *0.7* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100) < 1) then {
-					        1;
-					    } else {
-					        round((_get select QUERYUNITPRICE) *0.7* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);
-					    }
-					};
-					case (_killed_type isKindOf "Car"): {round((_get select QUERYUNITPRICE) *0.45* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);};
-					case (_killed_type isKindOf "Ship"): {round((_get select QUERYUNITPRICE) *0.4* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);};
-					case (_killed_type isKindOf "Motorcycle"): {round((_get select QUERYUNITPRICE) *0.7* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);};
-					case (_killed_type isKindOf "Tank"): {round((_get select QUERYUNITPRICE) *0.4* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);};
-					case (_killed_type isKindOf "Helicopter"): {round((_get select QUERYUNITPRICE) *0.4* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);};
-					case (_killed_type isKindOf "Plane"): {round((_get select QUERYUNITPRICE) *0.35* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);};
-					case (_killed_type isKindOf "StaticWeapon"): {round((_get select QUERYUNITPRICE) *0.5* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);};
-					case (_killed_type isKindOf "Building"): {round((_get select QUERYUNITPRICE) *0.55* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100 * (missionNamespace getVariable "WFBE_C_BUILDINGS_SCORE_COEF"));};
-					default {0};
-				};
 
-				["INFORMATION", Format["Player got %1 points for neutralizing %2", _points, _killed]] Call WFBE_CO_FNC_LogContent;
+				_points = [_killed_type, _get] call WFBE_CO_FNC_AwardScorePlayer;
+
+				_nameOfKilledUnit = _get select QUERYUNITLABEL;
+				["INFORMATION", Format["Player got %1 points for neutralizing %2", _points, _nameOfKilledUnit]] Call WFBE_CO_FNC_LogContent;
+				[_killer_uid, "AwardScore", [_points, _get] Call WFBE_CO_FNC_SendToClients;
 
 				if (isServer) then {
 					['SRVFNCREQUESTCHANGESCORE',[leader _killer_group, (score leader _killer_group) + _points]] Spawn WFBE_SE_FNC_HandlePVF;
