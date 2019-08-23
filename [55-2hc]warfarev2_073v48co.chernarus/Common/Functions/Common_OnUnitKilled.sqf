@@ -69,12 +69,11 @@ if (!isNil '_get' && _killer_iswfteam) then { //--- Make sure that type killed t
                 };
 				_points = switch (true) do {
 					case (_killed_type isKindOf "Infantry"): {
-					    _bountyInfantry = round((_get select QUERYUNITPRICE) *0.7* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);
-					    if (_bountyInfantry < 1) then {
+					    if(round((_get select QUERYUNITPRICE) *0.7* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100) < 1) then {
 					        1;
 					    } else {
-					        _bountyInfantry;
-					    };
+					        round((_get select QUERYUNITPRICE) *0.7* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);
+					    }
 					};
 					case (_killed_type isKindOf "Car"): {round((_get select QUERYUNITPRICE) *0.45* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);};
 					case (_killed_type isKindOf "Ship"): {round((_get select QUERYUNITPRICE) *0.4* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);};
