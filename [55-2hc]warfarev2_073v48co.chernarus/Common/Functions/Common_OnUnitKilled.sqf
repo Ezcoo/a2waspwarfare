@@ -17,7 +17,7 @@ if (_killer == _killed || isNull _killer) then { //--- The killed may be the kil
 	_last_hit = _killed getVariable "wfbe_lasthitby";
 	if !(isNil '_last_hit') then {
 		if (alive _last_hit) then {
-			if (side _last_hit != _killed_side && time - (_killed getVariable "wfbe_lasthittime") < 25) then {_killer = _last_hit};
+			if (side _last_hit != _killed_side && (time - (_killed getVariable "wfbe_lasthittime")) < 25) then {_killer = _last_hit};
 		};
 	};
 };
@@ -66,9 +66,10 @@ if (!isNil '_get' && _killer_iswfteam) then { //--- Make sure that type killed t
 			_killer_award = objNull;
 			if !(_killer_isplayer) then { //--- An AI is the killer.
 				_killer_award = _killer;
+                };
 				_points = switch (true) do {
 					case (_killed_type isKindOf "Infantry"): {
-					    _bountyInfantry = round((_get select QUERYUNITPRICE) *0.7* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100)
+					    _bountyInfantry = round((_get select QUERYUNITPRICE) *0.7* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);
 					    if (_bountyInfantry < 1) then {
 					        1;
 					    } else {
@@ -83,7 +84,7 @@ if (!isNil '_get' && _killer_iswfteam) then { //--- Make sure that type killed t
 					case (_killed_type isKindOf "Plane"): {round((_get select QUERYUNITPRICE) *0.35* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);};
 					case (_killed_type isKindOf "StaticWeapon"): {round((_get select QUERYUNITPRICE) *0.5* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);};
 					case (_killed_type isKindOf "Building"): {round((_get select QUERYUNITPRICE) *0.55* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100 * (missionNamespace getVariable "WFBE_C_BUILDINGS_SCORE_COEF"));};
-					default {1};
+					default {5};
 				};
 
 				if (isServer) then {
@@ -94,7 +95,6 @@ if (!isNil '_get' && _killer_iswfteam) then { //--- Make sure that type killed t
 				} else {
 					["RequestChangeScore", [leader _killer_group, (score leader _killer_group) + _points]] Call WFBE_CO_FNC_SendToServer;
 				};
-			};
 
 			if ((missionNamespace getVariable "WFBE_C_UNITS_BOUNTY") > 0) then {
 			//--- Award the bounty if needed.

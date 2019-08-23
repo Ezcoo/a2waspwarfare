@@ -5,7 +5,7 @@
 		- Shooter
 */
 
-Private ["_building","_dammages","_dammages_current","_get","_killer","_logik","_origin","_structure","_structure_kind"];
+Private ["_building","_points","_dammages","_dammages_current","_get","_killer","_logik","_origin","_structure","_structure_kind"];
 
 _structure = _this select 0;
 _killer = _this select 1;
@@ -16,7 +16,7 @@ _logik = (_side) Call WFBE_CO_FNC_GetSideLogic;
 
 _killer_group = group _killer;
 // HQ kill price ($30,000) / 100 * building kill coef
-_points = 30000 / 100 * WFBE_C_BUILDINGS_SCORE_COEF;
+_points = round(30000 / 100 * WFBE_C_BUILDINGS_SCORE_COEF);
 
 //--- If HQ was mobibilized, spawn a dead hq.
 if ((_side) Call WFBE_CO_FNC_GetSideHQDeployStatus) then {
