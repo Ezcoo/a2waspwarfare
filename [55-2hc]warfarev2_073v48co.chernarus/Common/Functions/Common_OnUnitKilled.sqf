@@ -72,7 +72,7 @@ if (!isNil '_get' && _killer_iswfteam) then { //--- Make sure that type killed t
 
 				_nameOfKilledUnit = _get select QUERYUNITLABEL;
 				["INFORMATION", Format["Player got %1 points for neutralizing %2", _points, _nameOfKilledUnit]] Call WFBE_CO_FNC_LogContent;
-				[_killer_uid, "AwardScore", [_points, _get] Call WFBE_CO_FNC_SendToClients;
+				[_killer_uid, "AwardScore", [_points, _get]] Call WFBE_CO_FNC_SendToClients;
 
 				if (isServer) then {
 					['SRVFNCREQUESTCHANGESCORE',[leader _killer_group, (score leader _killer_group) + _points]] Spawn WFBE_SE_FNC_HandlePVF;
