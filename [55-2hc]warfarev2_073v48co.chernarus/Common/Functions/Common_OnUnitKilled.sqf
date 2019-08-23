@@ -71,17 +71,14 @@ if (!isNil '_get' && _killer_iswfteam) then { //--- Make sure that type killed t
 				_points = [_killed_type, _get] call WFBE_CO_FNC_AwardScorePlayer;
 
 				_nameOfKilledUnit = _get select QUERYUNITLABEL;
-				["INFORMATION", Format["Player got %1 points for neutralizing %2", _points, _nameOfKilledUnit]] Call WFBE_CO_FNC_LogContent;
+				["INFORMATION", Format["Player %1 got %2 points for neutralizing %3", _killer, _points, _nameOfKilledUnit]] Call WFBE_CO_FNC_LogContent;
 				[_killer_uid, "AwardScore", [_points, _get]] Call WFBE_CO_FNC_SendToClients;
 
 				if (isServer) then {
-					['SRVFNCREQUESTCHANGESCORE',[leader _killer_group, (score leader _killer_group) + _points]] Spawn WFBE_SE_FNC_HandlePVF;
-
-
-
-				} else {
-					["RequestChangeScore", [leader _killer_group, (score leader _killer_group) + _points]] Call WFBE_CO_FNC_SendToServer;
-				};
+                	['SRVFNCREQUESTCHANGESCORE',[leader _killer_group, (score leader _killer_group) + _points]] Spawn WFBE_SE_FNC_HandlePVF;
+                } else {
+                	["RequestChangeScore", [leader _killer_group, (score leader _killer_group) + _points]] Call WFBE_CO_FNC_SendToServer;
+                };
 
 			if ((missionNamespace getVariable "WFBE_C_UNITS_BOUNTY") > 0) then {
 			//--- Award the bounty if needed.
@@ -90,10 +87,10 @@ if (!isNil '_get' && _killer_iswfteam) then { //--- Make sure that type killed t
 			};
 
 			[_killer_uid, "AwardBounty", [_killed_type, false, _killer_award]] Call WFBE_CO_FNC_SendToClients;
+
 			if (vehicle _killed != _killed && alive _killed) then { //--- Kill assist (players in the same vehicle).
 				{if (alive _x && isPlayer _x) then {[getPlayerUID(_x), "AwardBounty", [_objectType, true]] Call WFBE_CO_FNC_SendToClients}} forEach ((crew (vehicle _killed)) - [_killer, player]);
 			};
-
 
 			};
 		} else { //--- The team is lead by an AI.
