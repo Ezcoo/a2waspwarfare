@@ -5,10 +5,13 @@
 		- User Name
 */
 
-Private ['_buildings','_commander','_funds','_get','_hq','_id','_name','_old_unit','_old_unit_group','_respawnLoc','_side','_team','_units','_uid'];
+Private ['_buildings','_commander','_funds','_get','_hq','_id','_name','_old_unit','_old_unit_group','_respawnLoc','_side','_team','_units','_uid',"_playerNewScore","_scoreDiff","_playerOldScore"];
 _uid = _this select 0;
 _name = _this select 1;
 _id = _this select 2;
+_player = _this select 3;
+
+
 
 sleep 0.5;
 
@@ -18,6 +21,14 @@ waitUntil {commonInitComplete && serverInitFull};
 if (_name == '__SERVER__' || _uid == '' || local player) exitWith {};
 
 ["INFORMATION", Format ["Server_PlayerDisconnected.sqf: Player [%1] [%2] has left the game", _name, _uid]] Call WFBE_CO_FNC_LogContent;
+
+_playerOldScore = 0;
+
+_playerOldScore = missionNamespace getVariable format["WFBE_SCORE_UID_%1", _uid];
+
+_playerNewScore = score _player;
+_scoreDiff = _playerNewScore - _playerOldScore;
+["StorePlayerSkill", "Store", _uid, _scoreDiff] call persistent_fnc_storeToDatabase;
 
 //--- Headless Clients disconnection?.
 if ((missionNamespace getVariable "WFBE_C_AI_DELEGATION") == 2) then {
@@ -113,12 +124,12 @@ if ((missionNamespace getVariable "WFBE_C_AI_TEAMS_JIP_PRESERVE") == 0) then {
 _funds = _team Call GetTeamFunds;
 _get set [1,_funds];
 
-_response = ["GET_PLAYER_FROM_CURRENT_GAME_MATCH", format["[game_guid=%1,GAME_MATCH_id=%2]",_uid,PERSISTANCE_CURRENT_MATCH_ID]] call persistent_fnc_callDatabase;
+// _response = ["GET_PLAYER_FROM_CURRENT_GAME_MATCH", format["[game_guid=%1,GAME_MATCH_id=%2]",_uid,PERSISTANCE_CURRENT_MATCH_ID]] call persistent_fnc_callDatabase;
 _dataRead = _response select 0;
 
 if (count _dataRead > 0 && _funds > 0) then {
 	_player_id = parseNumber (_dataRead select 0);
-	["UPDATE_PLAYER_MONEY", format["[player_id=%1,money=%2]",_uid,_funds]] call persistent_fnc_callDatabase;
+	// ["UPDATE_PLAYER_MONEY", format["[player_id=%1,money=%2]",_uid,_funds]] call persistent_fnc_callDatabase;
 };
 
 //--- We place the unit at the base now.

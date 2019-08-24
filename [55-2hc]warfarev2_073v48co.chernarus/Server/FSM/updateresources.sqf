@@ -74,6 +74,7 @@ while {!gameOver} do {
             _playerNewScore = score _x;
             _scoreDiff = _playerNewScore - _playerOldScore;
             _playerOldScore = _playerNewScore;
+            missionNamespace setVariable [format["WFBE_SCORE_UID_%1", getPlayerUID _x], _playerNewScore];
             ["StorePlayerSkill", "Store", getPlayerUID _x, _scoreDiff] call persistent_fnc_storeToDatabase;
         };
     } forEach (playableUnits + switchableUnits);
