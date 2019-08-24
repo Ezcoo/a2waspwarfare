@@ -9,9 +9,17 @@ Private ['_buildings','_commander','_funds','_get','_hq','_id','_name','_old_uni
 _uid = _this select 0;
 _name = _this select 1;
 _id = _this select 2;
-_player = _this select 3;
 
+_player = objNull;
 
+if (_name != "__SERVER__") then {
+	_player = objNull;
+	{
+		if (getPlayerUID _x == _uid) exitWith {
+			_player = _x;
+		};
+	} forEach playableUnits;
+};
 
 sleep 0.5;
 

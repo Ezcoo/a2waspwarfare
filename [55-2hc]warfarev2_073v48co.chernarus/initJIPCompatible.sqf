@@ -40,8 +40,10 @@ if (isHeadLessClient) then {["INITIALIZATION", "initJIPCompatible.sqf: Detected 
 //--- Server JIP Information
 if ((isHostedServer || isDedicated) && !isHeadLessClient) then { //--- JIP Handler, handle connection & disconnection.
 	WFBE_SE_FNC_OnPlayerConnected = Compile preprocessFileLineNumbers "Server\Functions\Server_OnPlayerConnected.sqf";
+	WFBE_SE_FNC_OnPlayerDisconnected = Compile preprocessFileLineNumbers "Server\Functions\Server_OnPlayerDisconnected.sqf";
 
 	onPlayerConnected {[_uid, _name, _id] Spawn WFBE_SE_FNC_OnPlayerConnected};
+	onPlayerDisconnected {[_uid, _name, _id] spawn WFBE_SE_FNC_OnPlayerDisconnected};
 };
 
 //--- Client initialization, either hosted or pure client. Part I
@@ -50,12 +52,6 @@ if (isHostedServer || (!isHeadLessClient && !isDedicated)) then {
 
     waitUntil {!isNull player};
     ["INITIALIZATION", "initJIPCompatible.sqf: Client is not null..."] Call WFBE_CO_FNC_LogContent;
-
-    if ((isHostedServer || isDedicated) && !isHeadLessClient) then { //--- JIP Handler, handle connection & disconnection.
-        WFBE_SE_FNC_OnPlayerDisconnected = Compile preprocessFileLineNumbers "Server\Functions\Server_OnPlayerDisconnected.sqf";
-
-        onPlayerDisconnected {[_uid, _name, _id, player] Spawn WFBE_SE_FNC_OnPlayerDisconnected};
-    };
 
 	//--- Client Init - Begin the blackout on Layer 12452.
 	12452 cutText [(localize 'STR_WF_Loading')+"...","BLACK FADED",50000];
