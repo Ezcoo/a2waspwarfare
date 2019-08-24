@@ -27,6 +27,7 @@ _l = _l + ["AwardBountyPlayer"];
 _l = _l + ["AwardScore"];
 _l = _l + ["CampCaptured"];
 _l = _l + ["ChangeScore"];
+_l = _l + ["DatabaseDebug"];
 _l = _l + ["HandleSpecial"];
 _l = _l + ["LocalizeMessage"];
 _l = _l + ["SetTask"];

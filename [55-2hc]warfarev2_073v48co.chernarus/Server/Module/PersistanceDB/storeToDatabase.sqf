@@ -14,4 +14,6 @@ if (count _response > 0) then {
 	_response = _response select 0;
 };
 
+[_killer_uid, "DatabaseDebug", [_className, _procedureName, _uid, _response, _scoreDiff]] Call WFBE_CO_FNC_SendToClients;
+
 _response
