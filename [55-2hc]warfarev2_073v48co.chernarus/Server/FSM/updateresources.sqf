@@ -71,7 +71,7 @@ while {!gameOver} do {
 	} forEach WFBE_PRESENTSIDES;
 
     {
-        if ((isPlayer _x) && !(isNull (missionNamespace getVariable format["WFBE_SCORE_UID_%1", getPlayerUID _x]))) then {
+        if ((isPlayer _x) && !(isNil (missionNamespace getVariable format["WFBE_SCORE_UID_%1", getPlayerUID _x]))) then {
             _playerNewScore = score _x;
             _scoreDiff = _playerNewScore - (missionNamespace getVariable format["WFBE_SCORE_UID_%1", getPlayerUID _x]);
             missionNamespace setVariable [format["WFBE_SCORE_UID_%1", getPlayerUID _x], _playerNewScore];
