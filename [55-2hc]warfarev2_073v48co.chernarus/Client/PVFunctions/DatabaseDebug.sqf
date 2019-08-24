@@ -12,7 +12,7 @@ if (count _this > 4) then {
 };
 
 if (_hasScoreDiff) then {
-    _scoreDiff = this select 3;
+    _scoreDiff = this select 4;
 };
 
 sleep (random 3);
