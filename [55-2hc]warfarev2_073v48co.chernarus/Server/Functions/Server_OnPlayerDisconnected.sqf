@@ -20,15 +20,22 @@ waitUntil {commonInitComplete && serverInitFull};
 
 if (_name == '__SERVER__' || _uid == '' || local player) exitWith {};
 
+diag_log format ["&& persistent_fnc_storeToDatabase exists: %1", !isNil "persistent_fnc_storeToDatabase"];
+diag_log format ["&& _uid value is: %1", _uid];
+
 ["INFORMATION", Format ["Server_PlayerDisconnected.sqf: Player [%1] [%2] has left the game", _name, _uid]] Call WFBE_CO_FNC_LogContent;
 
 _playerOldScore = 0;
 
 _playerOldScore = missionNamespace getVariable format["WFBE_SCORE_UID_%1", _uid];
+diag_log format ["&& _playerOldScore value is: %1", _playerOldScore];
 
 _playerNewScore = score _player;
+diag_log format ["&& _playerNewScore value is: %1", _playerNewScore];
 _scoreDiff = _playerNewScore - _playerOldScore;
-["StorePlayerSkill", "Store", _uid, _scoreDiff] call persistent_fnc_storeToDatabase;
+diag_log format ["&& _scoreDiff value is: %1", _scoreDiff];
+_ret = ["StorePlayerSkill", "Store", _uid, _scoreDiff] call persistent_fnc_storeToDatabase;
+diag_log format ["&& _ret (skillValue) returned: %1", _ret];
 
 //--- Headless Clients disconnection?.
 if ((missionNamespace getVariable "WFBE_C_AI_DELEGATION") == 2) then {
