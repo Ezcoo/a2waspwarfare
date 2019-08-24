@@ -18,6 +18,7 @@ if (_is == 3) then {
 };
 
 while {!gameOver} do {
+
 	{
 		_logik = (_x) Call WFBE_CO_FNC_GetSideLogic;
 		_income = 0;
@@ -70,12 +71,17 @@ while {!gameOver} do {
 	} forEach WFBE_PRESENTSIDES;
 
     {
-        if (isPlayer _x) then {
+        if ((isPlayer _x) && !(isNull (missionNamespace getVariable format["WFBE_SCORE_UID_%1", getPlayerUID _x]))) then {
             _playerNewScore = score _x;
-            _scoreDiff = _playerNewScore - _playerOldScore;
-            _playerOldScore = _playerNewScore;
+            _scoreDiff = _playerNewScore - (missionNamespace getVariable format["WFBE_SCORE_UID_%1", getPlayerUID _x]);
             missionNamespace setVariable [format["WFBE_SCORE_UID_%1", getPlayerUID _x], _playerNewScore];
             ["StorePlayerSkill", "Store", getPlayerUID _x, _scoreDiff] call persistent_fnc_storeToDatabase;
+        } else {
+            _playerNewScore = score _x;
+            _scoreDiff = _playerNewScore;
+            missionNamespace setVariable [format["WFBE_SCORE_UID_%1", getPlayerUID _x], _playerNewScore];
+            ["StorePlayerSkill", "Store", getPlayerUID _x, _scoreDiff] call persistent_fnc_storeToDatabase;
+
         };
     } forEach (playableUnits + switchableUnits);
 
