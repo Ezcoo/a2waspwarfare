@@ -266,7 +266,7 @@ emptyQueu = [];
 
 _procedureName = "CREATE_GAME_MATCH";
 _parameters = format["[mission_name=%1,world_name=%2]",missionName,worldName];
-_response = [_procedureName,_parameters] call persistent_fnc_callDatabase;
+// _response = [_procedureName,_parameters] call persistent_fnc_callDatabase;
 _dataRead = _response select 0;
 PERSISTANCE_CURRENT_MATCH_ID = -1;
 
@@ -454,11 +454,11 @@ _vehicle addAction ["<t color='"+"#00E4FF"+"'>STEALTH ON</t>","Client\Module\Eng
 						_money = _group getVariable "wfbe_funds";
 
 						_parameters = format["[nickname=%1,game_guid=%2,current_position_in_match=%3,side=%4,money=%5,GAME_MATCH_id=%6]",_nickname,_game_guid,_current_position_in_match,_side,_money,PERSISTANCE_CURRENT_MATCH_ID];
-						[_procedureName,_parameters] call persistent_fnc_callDatabase;
+						// [_procedureName,_parameters] call persistent_fnc_callDatabase;
 
 						_procedureName = "INSERT_PLAYER_IN_GLOBAL_LIST";
 						_parameters = format["[nickname=%1,game_guid=%2]",_nickname,_game_guid];
-						[_procedureName,_parameters] call persistent_fnc_callDatabase;
+						// [_procedureName,_parameters] call persistent_fnc_callDatabase;
 					};
 
 					["INITIALIZATION", Format["Init_Server.sqf: [%1] Team [%2] was initialized.", _side, _group]] Call WFBE_CO_FNC_LogContent;
