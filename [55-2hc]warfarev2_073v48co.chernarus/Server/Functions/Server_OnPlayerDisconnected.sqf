@@ -5,7 +5,8 @@
 		- User Name
 */
 
-Private ['_buildings','_commander','_funds','_get','_hq','_id','_name','_old_unit','_old_unit_group','_respawnLoc','_side','_team','_units','_uid',"_playerNewScore","_scoreDiff","_playerOldScore"];
+private ["_buildings", "_commander", "_funds", "_get", "_hq", "_id", "_name", "_old_unit", "_old_unit_group", "_respawnLoc", "_side", "_team", "_units", "_uid", "_playerNewScore", "_scoreDiff", "_playerOldScore", "_player"];
+
 _uid = _this select 0;
 _name = _this select 1;
 _id = _this select 2;
@@ -13,10 +14,11 @@ _id = _this select 2;
 _player = objNull;
 
 if (_name != "__SERVER__") then {
-	_player = objNull;
 	{
 		if (getPlayerUID _x == _uid) exitWith {
+			diag_log "### DISCONNECTING PLAYER FOUND ###";
 			_player = _x;
+			diag_log format ["### DISCONNECTING PLAYER FOUND %1 ###", _player];
 		};
 	} forEach playableUnits;
 };
