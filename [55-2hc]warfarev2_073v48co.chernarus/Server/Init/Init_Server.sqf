@@ -1,4 +1,4 @@
-if (!isServer || time > 30) exitWith {diag_log Format["[WFBE (WARNING)][frameno:%1 | ticktime:%2] Init_Server: The server initialization cannot be called more than once.",diag_frameno,diag_tickTime]};
+if (!isServer || (time > 30)) exitWith {diag_log Format["[WFBE (WARNING)][frameno:%1 | ticktime:%2] Init_Server: The server initialization cannot be called more than once.",diag_frameno,diag_tickTime]};
 
 ["INITIALIZATION", Format ["Init_Server.sqf: Server initialization begins at [%1]", time]] Call WFBE_CO_FNC_LogContent;
 
@@ -143,7 +143,7 @@ if ((missionNamespace getVariable "WFBE_C_BASE_START_TOWN") > 0) then {
 		_nearLogics = _x nearEntities[["LocationLogicStart"],2000];
 		if (count _nearLogics > 0) then {{if !(_x in _locationLogics) then {_locationLogics = _locationLogics + [_x]}} forEach _nearLogics};
 	} forEach towns;
-	if (count _locationLogics < 3) then {_locationLogics = startingLocations},
+	if (count _locationLogics < 3) then {_locationLogics = startingLocations};
 	["INITIALIZATION", Format ["Init_Server.sqf: Spawn locations were refined [%1].",count _locationLogics]] Call WFBE_CO_FNC_LogContent;
 } else {
 	_locationLogics = startingLocations;
@@ -182,7 +182,7 @@ _skip_e = false;
 	};
 } forEach startingLocations;
 
-//todo, improve starting locations system.
+// todo, improve starting locations system.
 switch (missionNamespace getVariable "WFBE_C_BASE_STARTING_MODE") do {
 	case 0: {
 		//--- West north, east south.
@@ -311,7 +311,7 @@ if (count _dataRead > 0) then {
 
 		if !(_upgrades) then {
 			_upgrades = [];
-			for '_i' from 0 to count(missionNamespace getVariable Format["WFBE_C_UPGRADES_%1_LEVELS", _side])-1 do {[_upgrades, 0] Call WFBE_CO_FNC_ArrayPush};
+			for '_i' from 0 to (count(missionNamespace getVariable Format["WFBE_C_UPGRADES_%1_LEVELS", _side])-1) do {[_upgrades, 0] Call WFBE_CO_FNC_ArrayPush};
 		} else {
 			_upgrades = missionNamespace getVariable Format["WFBE_C_UPGRADES_%1_LEVELS", _side];
 		};
@@ -352,7 +352,7 @@ if (count _dataRead > 0) then {
 
 		//--- Structures limit (live).
 		_str = [];
-		for '_i' from 0 to count(missionNamespace getVariable Format["WFBE_%1STRUCTURES",_side])-2 do {_str set [_i, 0]};
+		for '_i' from 0 to (count(missionNamespace getVariable Format["WFBE_%1STRUCTURES",_side])-2) do {_str set [_i, 0]};
 		_logik setVariable ["wfbe_structures_live", _str, true];
 
 		//--- Radio: Initialize the announcers entities.
