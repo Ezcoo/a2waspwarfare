@@ -26,8 +26,8 @@ _teamswapAndStackCheckReady = false;
     _totalFriendlyTeamSkill = 0;
     _totalEnemyTeamSkill = 0;
     _joinedTeam = [];
-    _respFriendly = "";
-    _respEnemy = "";
+    _respFriendly = 0;
+    _respEnemy = 0;
     
     // Calculate total skill for each team
     switch (_side) do {
