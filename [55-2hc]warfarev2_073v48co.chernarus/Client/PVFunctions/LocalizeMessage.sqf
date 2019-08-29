@@ -27,6 +27,7 @@ switch (_localize) do {
         if ((name player) == _killer_name) then
         {
             _txt = format [localize "STR_WF_HeadHunterReceiveBounty", _bounty, ([_structure_kind, "displayName"] call GetConfigInfo)];
+
             _bounty call ChangePlayerFunds;
             _commandChat = false;
         }
