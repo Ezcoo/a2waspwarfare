@@ -69,19 +69,6 @@ while {true} do {
 		_currentMode = (_cameraModes select (lbCurSel 21006));
 		_cameraSwap = true;
 	};
-	//--- Unflip button clicked
-    if (WF_MenuAction == 140 && !(isNil "_currentUnit")) then {
-        WF_MenuAction = -1;
-        if(!(isNil "_currentUnit")) then {
-            if(!(isPlayer (_currentUnit))) then {
-                _vehicle = vehicle _currentUnit;            
-            
-                _vehicle setPos [getPos _vehicle select 0, getPos _vehicle select 1, 0.5];
-                _vehicle setVelocity [0,0,-0.5];                
-            };            
-        };    
-        _cameraSwap = true;
-    };
 	
 	if !(alive _currentUnit) then {
 		_currentUnit = (player) Call GetUnitVehicle;
