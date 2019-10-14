@@ -3064,23 +3064,37 @@ class RscMenu_UnitCamera {
 			onLBSelChanged = "MenuAction = 103";
 		};
 		class CA_MiniMap : RscMapControl {
-			idc = 21007;
-			x = 0.625041;
-			y = 0.75514;
-			w = 0.374504;
-			h = 0.191614;
-			ShowCountourInterval = 1;
-			onMouseMoving = "mouseX = (_this Select 1);mouseY = (_this Select 2)";
-			onMouseButtonDown = "mouseButtonDown = _this Select 1";
-			onMouseButtonUp = "mouseButtonUp = _this Select 1";
-		};		
-		/* Exit */
-		class Exit_Button : RscButton_Exit {
-			x = 0.954933;
-			y = 0.953825;
-			onButtonClick = "closeDialog 0;";
-			tooltip = $STR_WF_TOOLTIP_CloseButton;
-		};
+            idc = 21007;
+            x = 0.625041;
+            y = 0.75514;
+            w = 0.374504;
+            h = 0.191614;
+            ShowCountourInterval = 1;
+            widthRailWay = 1;
+
+            onMouseMoving = "mouseX = (_this Select 1);mouseY = (_this Select 2)";
+            onMouseButtonDown = "mouseButtonDown = _this Select 1";
+            onMouseButtonUp = "mouseButtonUp = _this Select 1";
+        };
+        //--Unflip button in Unit Camera Menu--
+        class CA_UN_Button : RscClickableText {
+            idc = 160003;
+            x = 0.76602464;
+            y = 0.953825;
+            w = 0.045;
+            h = 0.045;
+            text = "\ca\ui\data\stats_soft_ca.paa";
+            onButtonClick = "WF_MenuAction = 140";
+            colorDisabled[] = {1,1,1,0.3};
+            tooltip = $STR_WF_TOOLTIP_UnitCamUnflip;
+        };
+        /* Exit */
+        class CA_UN_Exit_Button : RscButton_Exit {
+            x = 0.954933;
+            y = 0.953825;
+            onButtonClick = "closeDialog 0;";
+            tooltip = $STR_WF_TOOLTIP_CloseButton;
+        };
 	};
 };
 
