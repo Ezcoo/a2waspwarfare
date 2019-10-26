@@ -8,7 +8,7 @@ _missile = nearestObject [_source,_ammo];
 if ((_unit getvariable "busy") || isNull _missile) exitWith {};
 if (isPlayer (driver _unit)) then {_unit setvariable ["busy",true];
 while {_source distance _missile < _limit} do {
-playSound ["inbound",true];sleep 2;
+playSound ["inbound",true];sleep 2.5;
         };
 		_unit setvariable ["busy",false]
 };
