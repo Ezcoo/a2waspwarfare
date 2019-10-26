@@ -18,4 +18,10 @@ class newCommander {
         sound[] = {"\sounds\newCommander.ogg",10,1};
         titles[] = {};
     };
+
+class airRaid {
+        name = "airRaid";
+        sound[] = {"\sounds\airRaid.ogg",10,1};
+        titles[] = {};
+    };
 };
