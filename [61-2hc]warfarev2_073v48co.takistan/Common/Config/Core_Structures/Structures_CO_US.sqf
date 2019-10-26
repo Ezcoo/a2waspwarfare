@@ -100,7 +100,7 @@ for [{_count = count _v - 1},{_count >= 0},{_count = _count - 1}] do {
 
 {
 	missionNamespace setVariable [Format ["%1%2",_side, _x select 0], _x select 1];
-} forEach [["HQ",_HQ],["BAR",_BAR],["LVF",_LVF],["CC",_CC],["HEAVY",_HEAVY],["AIR",_AIR],["SP",_SP],["AAR",_AAR]];
+} forEach [["HQ",_HQ],["BAR",_BAR],["LVF",_LVF],["CC",_CC],["HEAVY",_HEAVY],["SP",_SP],["AAR",_AAR]];
 
 missionNamespace setVariable [Format["WFBE_%1MHQNAME", _side], _MHQ];
 missionNamespace setVariable [Format["WFBE_%1STRUCTURES", _side], _v];
