@@ -255,11 +255,11 @@
         <Italian>You were deducted from $%1 due to your gear</Italian>
       </Key>
       <Key ID="STR_WF_CHAT_ICBM_Launch">
-        <English>WARNING! An Intercontinental ballistic missile launch has been detected! Five minutes to impact!</English>
-        <French>ATTENTION! Le lancement d'un Missile balistique intercontinental a été detecté! Cinq minutes pour avoir un impact!</French>
-        <German>WARNUNG! Der Abschuss einer Interkontinentalrakete wurde gemeldet! Fünf Minuten bis zum Aufprall!</German>
-        <Russian>ВНИМАНИЕ! Зафиксирован запуск ядерной ракеты! Пять минут до удара!</Russian>
-        <Italian>ATTENZIONE! Un Missile Balistico intercontinentale è stato avvistato! Cinque minuti per avere un impatto!</Italian>
+        <English>WARNING! An Intercontinental ballistic missile launch has been detected!</English>
+        <French>ATTENTION! Le lancement d'un Missile balistique intercontinental a été detecté!</French>
+        <German>WARNUNG! Der Abschuss einer Interkontinentalrakete wurde gemeldet!</German>
+        <Russian>ВНИМАНИЕ! Зафиксирован запуск ядерной ракеты!</Russian>
+        <Italian>ATTENZIONE! Un Missile Balistico intercontinentale è stato avvistato!</Italian>
       </Key>
       <Key ID="STR_WF_CHAT_IRS_Deployed" >
         <English>Deploying IR Smoke! %1 ammunitions remaining.</English>
