@@ -1,1 +1,0 @@
-player groupChat _this
