@@ -68,6 +68,7 @@ _teamswapAndStackCheckReady = false;
                 missionNamespace setVariable [format["WFBE_JIP_USER%1",_uid], nil];
                 _canJoin = false;
                 [_player, "LocalizeMessage", ['Teamstack',_name,_uid,_side]] Call WFBE_CO_FNC_SendToClient;
+                ["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamstacking, joined side [%4].", _name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_LogContent;
                 sleep 5;
                 failMission "END1";
             } else {
