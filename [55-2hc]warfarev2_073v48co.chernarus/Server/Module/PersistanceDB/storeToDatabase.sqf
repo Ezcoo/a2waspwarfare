@@ -4,7 +4,7 @@ private ["_className","_procedureName","_response","_uid","_scoreDiff"];
 _className = _this select 0;
 _procedureName = _this select 1;
 _uid = _this select 2;
-_scoreDiff = this select 3;
+_scoreDiff = _this select 3;
 
     [_uid, "DatabaseDebug", [_className, _procedureName, _uid, "TEST", _scoreDiff]] Call WFBE_CO_FNC_SendToClients;
 	_response = "Arma2Net.Unmanaged" callExtension format ["%1 [%2,%3,%4]",_classname,_procedureName,_uid,_scoreDiff];
