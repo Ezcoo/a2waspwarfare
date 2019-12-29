@@ -3274,7 +3274,7 @@ class Mission
 					position[]={2259.1614,512.45703,15296.355};
 					id=229;
 					side="WEST";
-					vehicle="FR_R";
+					vehicle="FR_Miles";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3296,7 +3296,7 @@ class Mission
 					position[]={2259.1116,512.63934,15297.525};
 					id=230;
 					side="WEST";
-					vehicle="FR_R";
+					vehicle="FR_Miles";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3928,7 +3928,7 @@ class Mission
 					position[]={2259.1794,512.27637,15295.221};
 					id=259;
 					side="WEST";
-					vehicle="FR_R";
+					vehicle="FR_Miles";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -4538,7 +4538,7 @@ class Mission
 					position[]={2259.1797,512.0885,15294.057};
 					id=288;
 					side="WEST";
-					vehicle="FR_R";
+					vehicle="FR_Miles";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -4560,7 +4560,7 @@ class Mission
 					position[]={2259.2188,511.95605,15293.204};
 					id=289;
 					side="WEST";
-					vehicle="FR_R";
+					vehicle="FR_Miles";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
