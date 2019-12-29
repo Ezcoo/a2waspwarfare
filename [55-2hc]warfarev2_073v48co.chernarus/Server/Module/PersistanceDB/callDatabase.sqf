@@ -7,7 +7,7 @@ _uid = _this select 2;
 
     [_uid, "DatabaseDebug", [_className, _procedureName, _uid, "TEST"]] Call WFBE_CO_FNC_SendToClients;
 
-	_response = "Arma2Net.Unmanaged" callExtension format["%1 [%2,%3]",_classname,_procedureName,_uid];
+	_response = "Arma2Net.Unmanaged" callExtension format['"%1 [%2,%3]"',_classname,_procedureName,_uid];
 	_response = call compile _response;
 
 
