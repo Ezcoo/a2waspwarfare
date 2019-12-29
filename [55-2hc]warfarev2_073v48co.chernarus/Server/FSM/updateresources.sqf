@@ -71,19 +71,21 @@ while {!gameOver} do {
 	} forEach WFBE_PRESENTSIDES;
 
     {
-        if ((isPlayer _x) && !(isNil (missionNamespace getVariable format["WFBE_SCORE_UID_%1", getPlayerUID _x]))) then {
-            _playerNewScore = score _x;
-            _scoreDiff = _playerNewScore - (missionNamespace getVariable format["WFBE_SCORE_UID_%1", getPlayerUID _x]);
-            missionNamespace setVariable [format["WFBE_SCORE_UID_%1", getPlayerUID _x], _playerNewScore];
-            ["INFORMATION", format["Global variable WFBE_SCORE_UID_%1 was saved with value: %2", getPlayerUID _x, _playerNewScore], 1] call WFBE_CO_FNC_LogContent;
-            ["StorePlayerSkill", "Store", getPlayerUID _x, _scoreDiff] call persistent_fnc_storeToDatabase;
-        } else {
-            _playerNewScore = score _x;
-            _scoreDiff = _playerNewScore;
-            missionNamespace setVariable [format["WFBE_SCORE_UID_%1", getPlayerUID _x], _playerNewScore];
-            ["INFORMATION", format["Global variable WFBE_SCORE_UID_%1 was initialized with value: %2", getPlayerUID _x, _playerNewScore], 1] call WFBE_CO_FNC_LogContent;
-            ["StorePlayerSkill", "Store", getPlayerUID _x, _scoreDiff] call persistent_fnc_storeToDatabase;
+        if (isPlayer _x) then {
+            if (!(isNil (missionNamespace getVariable format["WFBE_SCORE_UID_%1", getPlayerUID _x]))) then {
+                _playerNewScore = score _x;
+                _scoreDiff = _playerNewScore - (missionNamespace getVariable format["WFBE_SCORE_UID_%1", getPlayerUID _x]);
+                missionNamespace setVariable [format["WFBE_SCORE_UID_%1", getPlayerUID _x], _playerNewScore];
+                ["INFORMATION", format["Global variable WFBE_SCORE_UID_%1 was saved with value: %2", getPlayerUID _x, _playerNewScore], 1] call WFBE_CO_FNC_LogContent;
+                ["StorePlayerSkill", "Store", getPlayerUID _x, _scoreDiff] call persistent_fnc_storeToDatabase;
+            } else {
+                _playerNewScore = score _x;
+                _scoreDiff = _playerNewScore;
+                missionNamespace setVariable [format["WFBE_SCORE_UID_%1", getPlayerUID _x], _playerNewScore];
+                ["INFORMATION", format["Global variable WFBE_SCORE_UID_%1 was initialized with value: %2", getPlayerUID _x, _playerNewScore], 1] call WFBE_CO_FNC_LogContent;
+                ["StorePlayerSkill", "Store", getPlayerUID _x, _scoreDiff] call persistent_fnc_storeToDatabase;
 
+            };
         };
     } forEach (playableUnits + switchableUnits);
 
