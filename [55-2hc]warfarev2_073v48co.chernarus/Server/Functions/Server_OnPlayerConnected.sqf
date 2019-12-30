@@ -91,6 +91,7 @@ _sideOrigin = _get select 2;
 _get set [4,1];
 //--- Update the new informations.
 missionNamespace setVariable [format["WFBE_JIP_USER%1",_uid], _get];
+missionNamespace setVariable [format["WFBE_SCORE_UID_%1", _uid], 0];
 
 //--- Make sure that the player didn't teamswap.
 if (_sideOrigin != _sideJoined) then {
