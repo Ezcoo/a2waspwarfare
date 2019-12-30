@@ -6,6 +6,7 @@ _nukeMarker = _this select 1;
 [nil, "LocalizeMessage", ['TacticalLaunch']] Call WFBE_CO_FNC_SendToClients;
 [nil, "NukeIncoming", []] Call WFBE_CO_FNC_SendToClients;
 if (isMultiplayer) then {(localize "STR_WF_CHAT_ICBM_Launch") Call CommandChatMessage};
+playSound ["airRaid",true];
 
 
 sleep 300;
