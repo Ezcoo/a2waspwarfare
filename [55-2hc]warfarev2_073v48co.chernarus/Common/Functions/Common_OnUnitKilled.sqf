@@ -69,11 +69,11 @@ if (!isNil '_get' && _killer_iswfteam) then { //--- Make sure that type killed t
 				_killer_award = _killer;
             };
 
-			_points = [_killed_type, _get] call WFBE_CO_FNC_AwardScorePlayer;
+			_points = [_killed_type, _get] call WFBE_CO_FNC_AwardScore;
 
 			if (_killed_isplayer && _killer_isplayer) then {
-			    _points =
-			}
+			    _points = [leader _killed_group] call WFBE_CO_FNC_AwardScorePlayer;
+			};
 
 			_nameOfKilledUnit = _get select QUERYUNITLABEL;
 			// ["INFORMATION", Format["Player %1 got %2 points for neutralizing %3", _killer, _points, _nameOfKilledUnit]] Call WFBE_CO_FNC_LogContent;
