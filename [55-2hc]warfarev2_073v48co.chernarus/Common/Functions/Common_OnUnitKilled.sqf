@@ -79,9 +79,11 @@ if (!isNil '_get' && _killer_iswfteam) then { //--- Make sure that type killed t
 					default {1};
 				};
 
-				if (isServer) then {
-					['SRVFNCREQUESTCHANGESCORE',[leader _killer_group, (score leader _killer_group) + _points]] Spawn WFBE_SE_FNC_HandlePVF;
+			_points = [_killed_type, _get] call WFBE_CO_FNC_AwardScore;
 
+			if (_killed_isplayer && _killer_isplayer) then {
+			    _points = [leader _killed_group] call WFBE_CO_FNC_AwardScorePlayer;
+			};
 
 
 				} else {
