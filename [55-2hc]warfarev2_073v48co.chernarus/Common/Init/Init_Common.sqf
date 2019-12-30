@@ -86,6 +86,7 @@ WFBE_CO_FNC_ArrayPush = Compile preprocessFileLineNumbers "Common\Functions\Comm
 WFBE_CO_FNC_ArrayRemoveIndex = Compile preprocessFileLineNumbers "Common\Functions\Common_ArrayRemoveIndex.sqf";
 WFBE_CO_FNC_ArrayShift = Compile preprocessFileLineNumbers "Common\Functions\Common_ArrayShift.sqf";
 WFBE_CO_FNC_ArrayShuffle = Compile preprocessFileLineNumbers "Common\Functions\Common_ArrayShuffle.sqf";
+WFBE_CO_FNC_AwardScore = Compile preprocessFileLineNumbers "Common\Functions\Common_AwardScore.sqf";
 WFBE_CO_FNC_AwardScorePlayer = Compile preprocessFileLineNumbers "Common\Functions\Common_AwardScorePlayer.sqf";
 WFBE_CO_FNC_ChangeTeamFunds = Compile preprocessFileLineNumbers "Common\Functions\Common_ChangeTeamFunds.sqf";
 WFBE_CO_FNC_ChangeUnitGroup = Compile preprocessFileLineNumbers "Common\Functions\Common_ChangeUnitGroup.sqf";
