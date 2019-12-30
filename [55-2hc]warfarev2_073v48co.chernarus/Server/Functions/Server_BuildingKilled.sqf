@@ -1,7 +1,9 @@
-Private ['_current','_find','_killer','_logik','_structure','_structures','_side','_tked','_type','_killer_uid','_side_killer'];
+Private ['_current','_find','_killer','_logik','_structure','_structures','_side','_tked','_type','_killer_uid','_side_killer','_bounty','_score'];
 _structure = _this select 0;
 _killer = _this select 1;
 _type = _this select 2;
+
+_killer_group = group _killer;
 
 _side = _structure getVariable "wfbe_side";
 if(_side != resistance)then{
