@@ -17,7 +17,7 @@ if (_killer == _killed || isNull _killer) then { //--- The killed may be the kil
 	_last_hit = _killed getVariable "wfbe_lasthitby";
 	if !(isNil '_last_hit') then {
 		if (alive _last_hit) then {
-			if (side _last_hit != _killed_side && time - (_killed getVariable "wfbe_lasthittime") < 25) then {_killer = _last_hit};
+			if ((side _last_hit != _killed_side) && (time - (_killed getVariable "wfbe_lasthittime") < 25)) then {_killer = _last_hit};
 		};
 	};
 };
