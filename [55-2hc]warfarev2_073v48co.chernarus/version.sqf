@@ -1,6 +1,6 @@
 /*
 	Description:
-		Define which 'part' to run. 
+		Define which 'part' to run.
 */
 
 /* DEBUG */
