@@ -5220,19 +5220,19 @@ class Mission
 		items=3;
 		class Item0
 		{
-			position[]={14155.423,17.164606,2797.7344};
+			position[]={13409.816,46.235313,3382.3167};
 			name="WestTempRespawnMarker";
 			type="Empty";
 		};
 		class Item1
 		{
-			position[]={13616.443,32.674095,3345.4595};
+			position[]={13625.201,53.742764,4040.3396};
 			name="EastTempRespawnMarker";
 			type="Empty";
 		};
 		class Item2
 		{
-			position[]={13818.272,27.086155,3012.8872};
+			position[]={13823.066,39.239582,3347.1924};
 			name="GuerTempRespawnMarker";
 			type="Empty";
 		};
