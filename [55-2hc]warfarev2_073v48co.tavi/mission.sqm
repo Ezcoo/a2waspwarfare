@@ -3209,7 +3209,7 @@ class Mission
 					id=224;
 					side="WEST";
 					vehicle="FR_Miles";
-					player="PLAYER COMMANDER";
+					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
