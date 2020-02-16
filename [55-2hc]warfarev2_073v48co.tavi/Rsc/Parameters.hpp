@@ -334,7 +334,7 @@ class Params {
 		title = "$STR_WF_PARAMETER_ICBM";
 		values[] = {0,1};
 		texts[] = {"$STR_WF_Disabled","$STR_WF_Enabled"};
-		default = 0;
+		default = 1;
 	};
 	class WFBE_C_MODULE_WFBE_IRS {
 		title = "$STR_WF_PARAMETER_IRS";
