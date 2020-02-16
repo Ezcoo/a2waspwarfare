@@ -24,7 +24,9 @@ class Mission
 		briefingDescription="by Benny and Awesome&WASP";
 		resistanceWest=0;
 		startWeather=0;
+		startFog=0.05;
 		forecastWeather=0;
+		forecastFog=0.05;
 		year=2016;
 		month=12;
 		day=28;
