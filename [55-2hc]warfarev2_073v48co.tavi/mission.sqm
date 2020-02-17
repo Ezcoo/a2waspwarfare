@@ -125,7 +125,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="Kopech";
-					init="nullReturn = [this,""Kopech"",""+"",10,50,300,[""SmallTown1"",""MediumTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					init="nullReturn = [this,""Kopech"",""+"",10,50,150,[""SmallTown1"",""MediumTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={5,6,15,14};
 				};
 				class Item1
@@ -142,7 +142,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={16586.531,170.00725,8223.2676};
+					position[]={16714.104,184.5015,8253.7695};
 					azimut=90;
 					special="NONE";
 					id=5;
@@ -588,7 +588,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="StariSad";
-					init="nullReturn = [this,""StariSad"",""+"",10,50,250,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					init="nullReturn = [this,""Stari Sad"",""+"",10,50,250,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={36,37,39,38};
 				};
 				class Item1
@@ -704,7 +704,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="BilgradNaMoru";
-					init="nullReturn = [this,""BilgradNaMoru"",""+"",30,150,1000,[""HugeTown1"",""HugeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					init="nullReturn = [this,""Bilgrad Na Moru"",""+"",30,150,1000,[""HugeTown1"",""HugeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={46,45,44,47,48,49};
 				};
 				class Item1
@@ -1313,7 +1313,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="NoviDvor";
-					init="nullReturn = [this,""NoviDvor"",""+"",10,50,250,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					init="nullReturn = [this,""Novi Dvor"",""+"",10,50,250,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={88,89,91,90};
 				};
 				class Item1
@@ -1453,7 +1453,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="DugeSelo";
-					init="nullReturn = [this,""DugeSalo"",""+"",10,30,100,""TinyTown1""] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					init="nullReturn = [this,""Duge Salo"",""+"",10,30,100,""TinyTown1""] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={98,99,100,101,102};
 				};
 				class Item1
@@ -1945,7 +1945,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="NovyBor";
-					init="nullReturn = [this,""NovyBor"",""+"",10,50,250,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					init="nullReturn = [this,""Novy Bor"",""+"",10,50,250,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={134,135,136,137,138};
 				};
 				class Item1
@@ -2609,7 +2609,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="Krasnoznamensk";
-					init="nullReturn = [this,""Krasnoznamensk"",""+"",30,150,1000,[""HugeTown1"",""HugeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					init="nullReturn = [this,""Krasnoznamen'sk"",""+"",30,150,1000,[""HugeTown1"",""HugeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={183,182,185,184,186};
 				};
 				class Item1
@@ -4264,7 +4264,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="Lyobol";
-					init="nullReturn = [this,""Lyobol"",""+"",10,60,300,[""SmallTown1"",""MediumTown1"",""MediumTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					init="nullReturn = [this,""Lyobol'"",""+"",10,60,300,[""SmallTown1"",""MediumTown1"",""MediumTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={266,267,269,268};
 				};
 				class Item1
@@ -4334,7 +4334,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="ChrveniGradok";
-					init="nullReturn = [this,""ChrveniGradok"",""+"",20,90,300,[""LargeTown1"",""LargeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					init="nullReturn = [this,""Chrveni Gradok"",""+"",20,90,300,[""LargeTown1"",""LargeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={272,271,273,275,277,274};
 				};
 				class Item1
@@ -4448,7 +4448,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="Sevastopol";
-					init="nullReturn = [this,""Sevastopol"",""+"",20,100,500,[""LargeTown1"",""LargeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					init="nullReturn = [this,""Sevastopol'"",""+"",20,100,500,[""LargeTown1"",""LargeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={279,280,281,282,283};
 				};
 				class Item1
