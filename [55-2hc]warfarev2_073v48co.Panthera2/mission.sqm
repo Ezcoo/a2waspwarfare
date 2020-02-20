@@ -744,22 +744,22 @@ class Mission
 				items=6;
 				class Item0
 				{
-					position[]={4864.4888,158.9588,6940.4805};
-					azimut=335;
+					position[]={5943.3291,6.071537,935.1875};
+					azimut=305;
 					special="NONE";
 					id=48;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Montignac";
-					init="nullReturn = [this,""Montignac"",""+"",30,120,500,[""HugeTown1"",""HugeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					text="Zappado";
+					init="nullReturn = [this,""Zappado"",""+"",30,120,500,[""HugeTown1"",""HugeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={49,50,51,52,53};
 				};
 				class Item1
 				{
-					position[]={4785.396,159.14975,7151.7441};
-					azimut=235;
+					position[]={5764.4287,6.071537,901.56934};
+					azimut=180;
 					special="NONE";
 					id=50;
 					side="LOGIC";
@@ -770,8 +770,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={5000.8862,153.49928,6827.5479};
-					azimut=230;
+					position[]={6220.8569,6.1323533,988.98584};
 					special="NONE";
 					id=49;
 					side="LOGIC";
@@ -782,8 +781,8 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={5014.335,148.46103,6804.1128};
-					azimut=145;
+					position[]={5750.0054,11.859391,770.19983};
+					azimut=50;
 					special="NONE";
 					id=51;
 					side="LOGIC";
@@ -794,8 +793,8 @@ class Mission
 				};
 				class Item4
 				{
-					position[]={5040.4614,159.66281,7044.6094};
-					azimut=52;
+					position[]={6198.7627,6.8471889,957.78149};
+					azimut=65;
 					special="NONE";
 					id=52;
 					side="LOGIC";
@@ -806,14 +805,14 @@ class Mission
 				};
 				class Item5
 				{
-					position[]={4740.0332,159.50266,7123.8076};
-					azimut=10;
+					position[]={5792.6689,6.071537,925.30872};
+					azimut=220;
 					special="NONE";
 					id=53;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['AA']];";
+					init="this setVariable ['wfbe_defense_kind', ['MG']];";
 					synchronizations[]={48};
 				};
 			};
