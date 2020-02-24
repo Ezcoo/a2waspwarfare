@@ -20,7 +20,7 @@ class Mission
 	randomSeed=10034581;
 	class Intel
 	{
-		briefingName="[55] Warfare V48 Taviana 1.1";
+		briefingName="[55] Warfare V48 Taviana 1.11";
 		briefingDescription="Map by -Martin-. Scripting by Benny and Awesome&WASP + Net_2, Miksuu";
 		resistanceWest=0;
 		startWeather=0;
