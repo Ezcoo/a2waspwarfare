@@ -20,7 +20,7 @@ class Mission
 	randomSeed=10034581;
 	class Intel
 	{
-		briefingName="[55] Warfare V48 Sahrani 0.1";
+		briefingName="[55] Warfare V48 Sahrani 1.0";
 		briefingDescription="Map by by M1lkm8n & The Sahrani Mod Dev Team. Scripting by Benny and Awesome&WASP + Net_2, Miksuu";
 		resistanceWest=0;
 		startWeather=0;
