@@ -20,7 +20,7 @@ class Mission
 	randomSeed=10034581;
 	class Intel
 	{
-		briefingName="[55] Warfare V48 Sahrani 1.0";
+		briefingName="[55] Warfare V48 Sahrani 1.01";
 		briefingDescription="Map by by M1lkm8n & The Sahrani Mod Dev Team. Scripting by Benny and Awesome&WASP + Net_2, Miksuu";
 		resistanceWest=0;
 		startWeather=0;
@@ -4049,7 +4049,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="Pacamac";
-					init="nullReturn = [this,""Pacamac"",""+"",10,50,150,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					init="nullReturn = [this,""Pacamac"",""+"",10,50,100,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={250,251,253,252};
 				};
 				class Item1
@@ -4329,19 +4329,19 @@ class Mission
 		items=3;
 		class Item0
 		{
-			position[]={18248.596,27.402845,2876.959};
+			position[]={18099.047,9.9900341,3091.9529};
 			name="WestTempRespawnMarker";
 			type="Empty";
 		};
 		class Item1
 		{
-			position[]={18260.611,51.538448,2974.5278};
+			position[]={18237.629,11.703537,3158.2815};
 			name="EastTempRespawnMarker";
 			type="Empty";
 		};
 		class Item2
 		{
-			position[]={18208.295,20.894392,3083.855};
+			position[]={18102.822,9.570488,3270.3186};
 			name="GuerTempRespawnMarker";
 			type="Empty";
 		};
