@@ -20,8 +20,8 @@ class Mission
 	randomSeed=10034581;
 	class Intel
 	{
-		briefingName="[55] Warfare V48 Sahrani 1.01";
-		briefingDescription="Map by by M1lkm8n & The Sahrani Mod Dev Team. Scripting by Benny and Awesome&WASP + Net_2, Miksuu";
+		briefingName="[55] Warfare V48 Sahrani 1.02";
+		briefingDescription="Map by M1lkm8n & The Sahrani Mod Dev Team. Scripting by Benny and Awesome&WASP + Net_2, Miksuu";
 		resistanceWest=0;
 		startWeather=0;
 		startFog=0.050000001;
@@ -4270,7 +4270,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="MilitaryBaseCabo";
-					init="nullReturn = [this,""Military Base Cabo"",""+"",20,80,400,[""LargeTown1"",""LargeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					init="nullReturn = [this,""Military Base Cabo"",""+"",10,60,200,[""MediumTown1"",""MediumTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={266,267,268,269};
 				};
 				class Item1
