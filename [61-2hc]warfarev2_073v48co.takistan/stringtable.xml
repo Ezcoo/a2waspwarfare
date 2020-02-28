@@ -667,7 +667,7 @@
         <Italian>%1 ha Vinto!</Italian>
       </Key>
 
-<!--BuyGear Menu - ALL DONE-->	  
+<!--BuyGear Menu - ALL DONE-->
 	  <Key ID="STR_WF_GEAR_CostLabel">
         <English>Cost:</English>
         <French>Coût:</French>
@@ -810,6 +810,13 @@
         <Russian>Информация:\n\n %1 %2 необходимо для восстановления КШМ.</Russian>
         <Italian>Informazioni:\n\n %1 %2 Needed in order to repair the MHQ.</Italian>
       </Key>
+        <Key ID="STR_WF_INFO_MHQ_Repairs_Used">
+            <English>Information:\n\n The MHQ has been repaired 3 times already, it can't be repaired anymore.</English>
+            <French>Information:\n\n The MHQ has been repaired 3 times already, it can't be repaired anymore.</French>
+            <German>Information:\n\n Das MHQ wurde bereits 3 mal repariert. Es kann nicht mehr repariert werden.</German>
+            <Russian>Информация:\n\n The MHQ has been repaired 3 times already, it can't be repaired anymore.</Russian>
+            <Italian>Informazioni:\n\n The MHQ has been repaired 3 times already, it can't be repaired anymore.</Italian>
+        </Key>
       <Key ID="STR_WF_INFO_Repair_MHQ_None"><!--need rework -0.71-->
         <English>Information:\n\n There is no MHQ to repair around.</English>
         <French>Information:\n\n Il n'y a aucun PC à réparer a proximité.</French>
@@ -1941,28 +1948,28 @@
         <German>There must be no crew in the vehicle for field repairs!</German>
         <Russian>При полевом ремонте в машине не должно быть экипажа!</Russian>
         <Italian>There must be no crew in the vehicle for field repairs!</Italian>
-      </Key>  
+      </Key>
       <Key ID="STR_HINT_Medpacks">
         <English>Medpacks left: %1</English>
         <French>Medpacks left: %1</French>
         <German>Medpacks left: %1</German>
         <Russian>Осталось медпакетов: %1</Russian>
         <Italian>Medpacks left: %1</Italian>
-      </Key>       
+      </Key>
       <Key ID="STR_HINT_FirstAid">
         <English>First aid</English>
         <French>First aid</French>
         <German>First aid</German>
         <Russian>Первая помощь</Russian>
         <Italian>First aid</Italian>
-      </Key>      
+      </Key>
       <Key ID="STR_HINT_GPSight">
         <English>Grenade launcher zeroing: %1m</English>
         <French>Grenade launcher zeroing: %1m</French>
         <German>Grenade launcher zeroing: %1m</German>
         <Russian>Прицел подствольного гранатомета: %1м</Russian>
         <Italian>Grenade launcher zeroing: %1m</Italian>
-      </Key>      
+      </Key>
       <Key ID="STR_HINT_ATSight">
         <English>Missile launcher zeroing: %1m</English>
         <French>Grenade launcher zeroing: %1m</French>
@@ -2237,7 +2244,7 @@
         <Italian>UAV: The drone is damaged!</Italian>
       </Key>
 	<!--Values-->
-     
+
  <Key ID="STR_WF_PARAMETER_AI_Delegation_Client">
         <English>Client-side Delegation</English>
         <French>Délégation côté client</French>
@@ -2924,7 +2931,7 @@
         <German>Schnelles Reisen</German>
         <Russian>Быстрое перемещение</Russian>
         <Italian>Fast Travel</Italian>
-      </Key>      
+      </Key>
       <Key ID="STR_WF_TACTICAL_ParadropAmmo">
         <English>Paradrop - Ammunition</English>
         <French>Parachutage - Munitions</French>
@@ -3871,7 +3878,7 @@
         <Russian>Назначить</Russian>
         <Italian>Assign</Italian>
       </Key>
-	  
+
 <!--COIN Strings - ALL DONE-->
       <Key ID="STR_WF_AircraftFactory"><!--shared W-->
         <English>Aircraft Factory</English>
@@ -3893,7 +3900,7 @@
         <German>Feldbefestigungen</German>
         <Russian>Укрепления</Russian>
         <Italian>Fortificazione</Italian>
-      </Key>      
+      </Key>
       <Key ID="STR_WF_Strategic">
         <English>Strategic</English>
         <French>Stratégique</French>
@@ -4146,14 +4153,14 @@
         <Russian>Town SV: %1/%2</Russian>
         <Italian>Town SV: %1/%2</Italian>
       </Key>
-  
+
 	  <Key ID="STR_WF_MissleCamEnable">
         <English>Missle Camera On</English>
         <French>Missle Camera On</French>
         <German>Missle Camera On</German>
         <Russian>Камера на ракете Вкл.</Russian>
         <Italian>Missle Camera On</Italian>
-      </Key>	
+      </Key>
 
       <Key ID="STR_WF_MissleCamDisable">
         <English>Missle Camera Off</English>
@@ -4161,7 +4168,7 @@
         <German>Missle Camera Off</German>
         <Russian>Камера на ракете Выкл.</Russian>
         <Italian>Missle Camera Off</Italian>
-      </Key>	 
+      </Key>
 
       <Key ID="STR_WF_Gameplay_MissleCamera">
         <English>Gameplay: Missle Camera</English>
@@ -4313,7 +4320,7 @@
         <Italian>We have lost %1</Italian>
     </Key>
     <Key ID="STR_WF_PARAMETER_ReinforcedBuildings">
-        <English>GAMEPLAY: Reinforced Buildings</English> 
+        <English>GAMEPLAY: Reinforced Buildings</English>
         <French>JOUABILITÉ: Reinforced Buildings</French>
         <German>SPIEL: Reinforced Buildings</German>
         <Russian>Геймплей: Укреплённые постройки</Russian>
