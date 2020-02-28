@@ -16,7 +16,7 @@
 
 /* Description.ext Specific */
 #define WF_MAXPLAYERS 55
-#define WF_MISSIONNAME "[55] Warfare V48 Taviana"
+#define WF_MISSIONNAME "[55] Warfare V48 Taviana 1.11"
 #define WF_RESPAWNDELAY 2
 
 /* Load Screen (OA/CO) */
