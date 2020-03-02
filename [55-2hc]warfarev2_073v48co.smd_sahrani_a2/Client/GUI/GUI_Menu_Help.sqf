@@ -146,7 +146,7 @@ Usefull Fast Commands From Construction Menu:<br />
 ",
 //--------------------WarFare Info
 "<br />
-<t size='1.2' color='#2394ef' align='center'>Warfare WASP-AWESOME EDITION | v48 | - CO - Sahrani 1.02</t><br />
+<t size='1.2' color='#2394ef' align='center'>Warfare WASP-AWESOME EDITION | v48 | - CO - Sahrani 1.03</t><br />
 <t align='center'>
 <br />
 <br />
