@@ -7,11 +7,13 @@ createCenter resistance;
 resistance setFriend [west,0];
 resistance setFriend [east,0];
 
-// Init iniDB database
+// Init iniDB database and related functions
 call compile preprocessFileLineNumbers "\iniDB\init.sqf";
-IniDB_GetData = compile preprocessFileLineNumbers "Server\Module\SkillDB\getData.sqf";
 IniDB_AddScore = compile preprocessFileLineNumbers "Server\Module\SkillDB\addScore.sqf";
-IniDB_GetScore = compile preprocessFileLineNumbers "Server\Module\SkillDB\readScore.sqf";
+IniDB_GetScore = compile preprocessFileLineNumbers "Server\Module\SkillDB\getScore.sqf";
+IniDB_AddTick = compile preprocessFileLineNumbers "Server\Module\SkillDB\addTick.sqf";
+IniDB_GetTicks = compile preprocessFileLineNumbers "Server\Module\SkillDB\getTicks.sqf";
+IniDB_CalcSkill = compile preprocessFileLineNumbers "Server\Module\SkillDB\calcSkill.sqf";
 
 AIBuyUnit = Compile preprocessFile "Server\Functions\Server_BuyUnit.sqf";
 if (WF_A2_Vanilla) then {AISquadRespawn = Compile preprocessFile "Server\AI\AI_SquadRespawn.sqf"};

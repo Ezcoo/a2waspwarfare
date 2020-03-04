@@ -1,4 +1,4 @@
-private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_playersinside","_playersinotherside"];
+private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_playersinside","_playersinotherside","_skillDifference","_totalSkillPlayerSide","_totalSkillPlayerOtherSide","_playerSkill"];
 
 _player = _this select 0;
 _side = _this select 1;
@@ -18,6 +18,9 @@ if (_side == west) then {_otherside = east;};
 
 _playersinside = ({side _x == _side && isPlayer _x} count (playableUnits + switchableUnits));
 _playersinotherside = ({side _x == _otherside && isPlayer _x} count (playableUnits + switchableUnits));
+_totalSkillPlayerSide = 0;
+_totalSkillPlayerOtherSide = 0;
+_skillDifference = 0;
 _get = missionNamespace getVariable Format["WFBE_JIP_USER%1",_uid];
 
 if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
@@ -27,10 +30,23 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 	if (_skip == 0) then {
 
-		_players_difference =  _playersinside - _playersinotherside;
+		// _players_difference =  _playersinside - _playersinotherside;
 
+		{
+		    if (side _x == _side && isPlayer _x) then {
+		        _playerSkill = [getPlayerUID _x] call IniDB_CalcSkill;
+		        _totalSkillPlayerSide = _totalSkillPlayerSide + _playerSkill;
+		    };
 
-		if(_players_difference > 2) then {
+		    if (side _x == _otherside && isPlayer _x) then {
+		        _playerSkill = [getPlayerUID _x] call IniDB_CalcSkill;
+		        _totalSkillPlayerOtherSide = _totalSkillPlayerOtherSide + _playerSkill;
+		    };
+		} forEach (playableUnits + switchableUnits);
+
+		_skillDifference = _totalSkillPlayerSide / _totalSkillPlayerOtherSide;
+
+		if(_skillDifference > 1.2) then {
 	        _canJoin = false;
 			missionNamespace setVariable [format["WFBE_JIP_USER%1",_uid], nil];
 			[_player, "LocalizeMessage", ['Teamstack',_name,_uid,_side]] Call WFBE_CO_FNC_SendToClient;

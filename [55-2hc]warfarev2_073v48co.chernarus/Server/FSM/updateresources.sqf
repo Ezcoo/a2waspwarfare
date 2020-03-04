@@ -1,4 +1,4 @@
-private["_is","_ii","_awaits","_incomeCoef","_divisor","_commander_enabled","_currency_system","_logik","_income","_income_player","_income_commander","_supply","_comTeam","_paycheck"];
+private["_is","_ii","_awaits","_incomeCoef","_divisor","_commander_enabled","_currency_system","_logik","_income","_income_player","_income_commander","_supply","_comTeam","_paycheck","_oldPlayerScore","_playerScore"];
 
 _is = missionNamespace getVariable "WFBE_C_ECONOMY_INCOME_SYSTEM";
 _ii = missionNamespace getVariable "WFBE_C_ECONOMY_INCOME_INTERVAL";
@@ -9,6 +9,8 @@ _divisor = 0;
 _commander_enabled = if ((missionNamespace getVariable "WFBE_C_AI_COMMANDER_ENABLED") > 0) then {true} else {false};
 _currency_system = missionNamespace getVariable "WFBE_C_ECONOMY_CURRENCY_SYSTEM";
 _suppluy_max_limit = missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_MAX_TEAM_LIMIT";
+_playerScore = 0;
+_oldPlayerScore = 0;
 
 if (_is == 3) then {
 	_incomeCoef = missionNamespace getVariable "WFBE_C_ECONOMY_INCOME_COEF";
@@ -66,6 +68,18 @@ while {!gameOver} do {
 		};
 
 	} forEach WFBE_PRESENTSIDES;
+
+	// Start code block for storing player scores
+	{
+
+	    if (isPlayer _x) then {
+	        [getPlayerUID _x, _x, _oldPlayerScore] call IniDB_AddScore;
+	        [getPlayerUID _x] call IniDB_AddTick;
+	    };
+
+	    _oldPlayerScore = _playerScore;
+
+	} forEach playableUnits;
 
 	_awaits = (_ii) Call GetSleepFPS;
 	sleep _awaits;

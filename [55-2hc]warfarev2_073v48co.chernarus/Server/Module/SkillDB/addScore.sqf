@@ -4,11 +4,13 @@
 	returns: nothing
 */
 
-private ["_playerUID", "_playerScore"];
+private ["_playerUID", "_playerTotalScore","_oldPlayerScore","_newPlayerScore","_player"];
 
-_playerUID = this select 0;
-_playerScore = missionNamespace getVariable format["WFBE_SCORE_UID_%1", _playerUID];
+_playerUID = _this select 0;
+_player = _this select 1;
+_oldPlayerScore = _this select 2;
+_playerTotalScore = [_playerUID] call IniDB_GetScore;
 
-if (["read", ["playerScores", _playerUID]] call _inidbi)
+_newPlayerScore = _playerTotalScore + (score _player - _oldplayerScore);
 
-if (["write", ["playerScores", _playerUID]])
+["WASP_playerSkills", _playerUID, "score", _newPlayerScore] call iniDB_write;
