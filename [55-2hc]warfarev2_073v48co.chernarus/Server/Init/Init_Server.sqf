@@ -8,7 +8,10 @@ resistance setFriend [west,0];
 resistance setFriend [east,0];
 
 // Init iniDB database
-call compile preProcessFile "\iniDB\init.sqf";
+call compile preprocessFileLineNumbers "\iniDB\init.sqf";
+IniDB_GetData = compile preprocessFileLineNumbers "Server\Module\SkillDB\getData.sqf";
+IniDB_AddScore = compile preprocessFileLineNumbers "Server\Module\SkillDB\addScore.sqf";
+IniDB_GetScore = compile preprocessFileLineNumbers "Server\Module\SkillDB\readScore.sqf";
 
 AIBuyUnit = Compile preprocessFile "Server\Functions\Server_BuyUnit.sqf";
 if (WF_A2_Vanilla) then {AISquadRespawn = Compile preprocessFile "Server\AI\AI_SquadRespawn.sqf"};
