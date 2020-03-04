@@ -7,6 +7,8 @@ createCenter resistance;
 resistance setFriend [west,0];
 resistance setFriend [east,0];
 
+// Init iniDB database
+call compile preProcessFile "\iniDB\init.sqf";
 
 AIBuyUnit = Compile preprocessFile "Server\Functions\Server_BuyUnit.sqf";
 if (WF_A2_Vanilla) then {AISquadRespawn = Compile preprocessFile "Server\AI\AI_SquadRespawn.sqf"};
