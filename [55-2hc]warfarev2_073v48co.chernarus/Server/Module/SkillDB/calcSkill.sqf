@@ -13,8 +13,8 @@ _playerTicks = [_playerUID] call IniDB_getTicks;
 
 // Make sure we don't count new players in skill calculation (to prevent inaccurate results)
 // and prevent zero divisor error as well (when _playerTicks = 0 for new player)
-if (_playerTicks < 60) then {
-    _playerTicks = 1000;
+if (_playerTicks < 120) then {
+    _playerTicks = 5000;
 };
 
 _playerSkill = _playerScore / _playerTicks;
