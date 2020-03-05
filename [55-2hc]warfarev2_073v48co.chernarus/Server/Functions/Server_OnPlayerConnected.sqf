@@ -105,5 +105,3 @@ if (_sideOrigin != _sideJoined) then {
 
 //--- Set the current player funds.
 _team setVariable ["wfbe_funds", _funds, true];
-
-//---
