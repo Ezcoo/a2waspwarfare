@@ -8,7 +8,7 @@ private ["_playerUID", "_playerTotalScore","_oldPlayerScore","_currentPlayerScor
 
 _player = _this select 0;
 _playerUID = getPlayerUID _player;
-_oldPlayerScore = _this select 1;
+_oldPlayerScore = missionNamespace getVariable format ["WFBE_SCORE_UID_%1", getPlayerUID _x];
 _currentPlayerScore = score _player;
 _playerTotalScore = [_playerUID] call IniDB_GetScore;
 

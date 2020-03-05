@@ -74,13 +74,14 @@ while {!gameOver} do {
 
 	    if (isPlayer _x) then {
 	        _playerScore = score _x;
-	        [_x, _oldPlayerScore] call IniDB_AddScore;
+	        missionNamespace setVariable [format ["WFBE_SCORE_UID_%1", getPlayerUID _x], _oldPlayerScore];
+	        [_x] call IniDB_AddScore;
 	        [getPlayerUID _x] call IniDB_AddTick;
 	    };
 
 	    _oldPlayerScore = _playerScore;
 
-	} forEach playableUnits;
+	} forEach (playableUnits + switchableUnits);
 
 	_awaits = (_ii) Call GetSleepFPS;
 	sleep _awaits;
