@@ -29,7 +29,7 @@ if ((missionNamespace getVariable "WFBE_C_AI_DELEGATION") == 2) then {
 };
 
 // Add player score to the skill database before disconnect
-_oldPlayerScore = missionNamespace getVariable format ["WFBE_SCORE_UID_%1", _uid];
+_oldPlayerScore = missionNamespace getVariable format ["WFBE_OLD_SCORE_UID_%1", _uid];
 _currentPlayerScore = missionNamespace getVariable format ["WFBE_CURRENT_SCORE_UID_%1", _uid];
 _playerTotalScore = [_uid] call IniDB_GetScore;
 
