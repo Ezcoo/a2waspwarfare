@@ -12,6 +12,6 @@ _oldPlayerScore = missionNamespace getVariable format ["WFBE_OLD_SCORE_UID_%1", 
 _currentPlayerScore = score _player;
 _playerTotalScore = [_playerUID] call IniDB_GetScore;
 
-_newPlayerScore = _playerTotalScore + (_currentPlayerScore - _oldplayerScore);
+_newPlayerScore = _playerTotalScore + (_currentPlayerScore - _oldPlayerScore);
 
 ["WASP_playerSkills", _playerUID, "score", _newPlayerScore] call iniDB_write;
