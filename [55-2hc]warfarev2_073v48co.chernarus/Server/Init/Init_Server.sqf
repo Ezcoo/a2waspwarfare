@@ -79,6 +79,9 @@ if (ARMA_VERSION >= 162 && ARMA_RELEASENUMBER >= 101334 || ARMA_VERSION > 162) t
 	WFBE_CO_FNC_DelegateAIStaticDefenceHeadless = Compile preprocessFileLineNumbers "Server\Functions\Server_DelegateAIStaticDefenceHeadless.sqf";
 };
 
+WFBE_CO_VAR_DISCONNECTED_SKILL_WEST = [0];
+WFBE_CO_VAR_DISCONNECTED_SKILL_EAST = [0];
+
 Call Compile preprocessFileLineNumbers 'Server\Functions\Server_FNC_Delegation.sqf'; //--- FUNCTIONS: Delegation.
 
 //--- Call in NEURO System (Taxi Advanced Script).

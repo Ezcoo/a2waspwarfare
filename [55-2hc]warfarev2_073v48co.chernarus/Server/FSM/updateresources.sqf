@@ -84,6 +84,22 @@ while {!gameOver} do {
 
 	} forEach (playableUnits + switchableUnits);
 
+	{
+	    _x = _x - (_x * 0.033);
+
+	    if (_x < 0) then {
+            _x = 0;
+        };
+	} forEach WFBE_CO_VAR_DISCONNECTED_SKILL_WEST;
+
+	{
+    	_x = _x - (_x * 0.033);
+
+    	if (_x < 0) then {
+    	    _x = 0;
+    	};
+    } forEach WFBE_CO_VAR_DISCONNECTED_SKILL_EAST;
+
     // Sleep
 	_awaits = (_ii) Call GetSleepFPS;
 	sleep _awaits;
