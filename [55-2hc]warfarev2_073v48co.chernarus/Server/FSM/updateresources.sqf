@@ -77,7 +77,7 @@ while {!gameOver} do {
 	        [getPlayerUID _x] call IniDB_AddTick;
 	    };
 
-	    _oldPlayerScore = _playerScore;
+	    _oldPlayerScore = score _x;
 
 	} forEach playableUnits;
 
