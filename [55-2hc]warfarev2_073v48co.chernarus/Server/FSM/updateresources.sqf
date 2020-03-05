@@ -1,4 +1,4 @@
-private["_is","_ii","_awaits","_incomeCoef","_divisor","_commander_enabled","_currency_system","_logik","_income","_income_player","_income_commander","_supply","_comTeam","_paycheck","_oldPlayerScore","_playerScore"];
+private["_is","_ii","_awaits","_incomeCoef","_divisor","_commander_enabled","_currency_system","_logik","_income","_income_player","_income_commander","_supply","_comTeam","_paycheck"];
 
 _is = missionNamespace getVariable "WFBE_C_ECONOMY_INCOME_SYSTEM";
 _ii = missionNamespace getVariable "WFBE_C_ECONOMY_INCOME_INTERVAL";
@@ -9,8 +9,6 @@ _divisor = 0;
 _commander_enabled = if ((missionNamespace getVariable "WFBE_C_AI_COMMANDER_ENABLED") > 0) then {true} else {false};
 _currency_system = missionNamespace getVariable "WFBE_C_ECONOMY_CURRENCY_SYSTEM";
 _suppluy_max_limit = missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_MAX_TEAM_LIMIT";
-_playerScore = 0;
-_oldPlayerScore = 0;
 
 if (_is == 3) then {
 	_incomeCoef = missionNamespace getVariable "WFBE_C_ECONOMY_INCOME_COEF";
@@ -73,13 +71,12 @@ while {!gameOver} do {
 	{
 
 	    if (isPlayer _x) then {
-	        _playerScore = score _x;
-	        missionNamespace setVariable [format ["WFBE_SCORE_UID_%1", getPlayerUID _x], _oldPlayerScore];
+	        missionNamespace setVariable [format ["WFBE_SCORE_UID_%1", getPlayerUID _x], score _x];
 	        [_x] call IniDB_AddScore;
 	        [getPlayerUID _x] call IniDB_AddTick;
 	    };
 
-	    _oldPlayerScore = _playerScore;
+	    missionNamespace setVariable [format ["WFBE_OLD_SCORE_UID_%1", getPlayerUID _x], missionNamespace getVariable format ["WFBE_SCORE_UID_%1", getPlayerUID _x]];
 
 	} forEach (playableUnits + switchableUnits);
 
