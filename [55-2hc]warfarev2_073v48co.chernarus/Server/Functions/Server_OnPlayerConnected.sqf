@@ -5,10 +5,11 @@
 		- User Name
 */
 
-Private ['_funds','_get','_id','_max','_name','_sideJoined','_sideOrigin','_team','_uid','_units'];
+Private ['_funds','_get','_id','_max','_name','_sideJoined','_sideOrigin','_team','_uid','_units','_player'];
 _uid = _this select 0;
 _name = _this select 1;
 _id = _this select 2;
+_player = -1;
 
 //--- Wait for a proper common & server initialization before going any further.
 waitUntil {commonInitComplete && serverInitFull};
@@ -40,6 +41,17 @@ if (isNil '_sideJoined') exitWith {["WARNING", Format ["Server_PlayerConnected.s
 
 //--- We attempt to get the player informations in case that he joined before.
 _get = missionNamespace getVariable format["WFBE_JIP_USER%1",_uid];
+
+// Init player score variable for skill calculation database if it doesn't exist yet
+{
+    if (isPlayer _x && getPlayerUID _x == _uid) then {
+        _player = _x;
+    }
+} forEach (playableUnits + switchableUnits);
+
+if (isNil (missionNamespace getVariable format ["WFBE_SCORE_UID_%1", getPlayerUID _player])) then {
+    missionNamespace setVariable [format ["WFBE_SCORE_UID_%1", getPlayerUID _player], 0];
+};
 
 //--- We force the unit out of it's vehicle.
 if !(isNull(assignedVehicle (leader _team))) then {
