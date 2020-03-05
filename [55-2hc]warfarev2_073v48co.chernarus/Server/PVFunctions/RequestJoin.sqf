@@ -46,7 +46,7 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 		_skillDifference = _totalSkillPlayerSide / _totalSkillPlayerOtherSide;
 
-		if(_skillDifference > 1.2) then {
+		if((_skillDifference > 1.2 && _totalSkillPlayerSide - _totalSkillPlayerOtherSide > 5) || (_skillDifference > 1.2 && _totalSkillPlayerOtherSide - _totalSkillPlayerSide > 5)) then {
 	        _canJoin = false;
 			missionNamespace setVariable [format["WFBE_JIP_USER%1",_uid], nil];
 			[_player, "LocalizeMessage", ['Teamstack',_name,_uid,_side]] Call WFBE_CO_FNC_SendToClient;
