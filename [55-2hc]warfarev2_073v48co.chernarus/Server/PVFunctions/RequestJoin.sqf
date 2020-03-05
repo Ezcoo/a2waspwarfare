@@ -46,6 +46,7 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 		_skillDifference = _totalSkillPlayerSide / _totalSkillPlayerOtherSide;
 
+		// If skill difference is too high (more than 20 % difference) and there are enough players online, prevent player from joining to team
 		if((_skillDifference > 1.2 && _totalSkillPlayerSide - _totalSkillPlayerOtherSide > 5) || (_skillDifference > 1.2 && _totalSkillPlayerOtherSide - _totalSkillPlayerSide > 5)) then {
 	        _canJoin = false;
 			missionNamespace setVariable [format["WFBE_JIP_USER%1",_uid], nil];
