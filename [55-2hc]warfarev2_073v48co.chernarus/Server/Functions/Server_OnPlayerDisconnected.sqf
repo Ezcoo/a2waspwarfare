@@ -28,6 +28,15 @@ if ((missionNamespace getVariable "WFBE_C_AI_DELEGATION") == 2) then {
 	};
 };
 
+// Add player score to the skill database before disconnect
+_oldPlayerScore = missionNamespace getVariable format ["WFBE_SCORE_UID_%1", _uid];
+_currentPlayerScore = missionNamespace getVariable format ["WFBE_CURRENT_SCORE_UID_%1", _uid];
+_playerTotalScore = [_uid] call IniDB_GetScore;
+
+_newPlayerScore = _playerTotalScore + (_currentPlayerScore - _oldplayerScore);
+
+["WASP_playerSkills", _uid, "score", _newPlayerScore] call iniDB_write;
+
 //--- Player had any objects created?
 _get = missionNamespace getVariable Format ["WFBE_CLIENT_%1_OBJECTS", _uid];
 if !(isNil '_get') then {
