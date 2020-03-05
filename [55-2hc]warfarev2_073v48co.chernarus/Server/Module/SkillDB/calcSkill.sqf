@@ -19,4 +19,8 @@ if (_playerTicks < 60) then {
 
 _playerSkill = _playerScore / _playerTicks;
 
-_playerSkill;
+if (_playerSkill > 25) then {
+    _playerSkill = 25;
+};
+
+_playerSkill
