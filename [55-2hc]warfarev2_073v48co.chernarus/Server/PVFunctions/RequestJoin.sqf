@@ -44,6 +44,26 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 		    };
 		} forEach (playableUnits + switchableUnits);
 
+		if (_side == west) then {
+		    {
+		        _totalSkillPlayerSide = _totalSkillPlayerSide + _x;
+		    } forEach WFBE_CO_VAR_DISCONNECTED_SKILL_WEST;
+
+		    {
+		        _totalSkillPlayerOtherSide = _totalSkillPlayerOtherSide + _x;
+		    } forEach WFBE_CO_VAR_DISCONNECTED_SKILL_EAST;
+		};
+
+		if (_side == east) then {
+		    {
+		        _totalSkillPlayerSide = _totalSkillPlayerSide + _x;
+		    } forEach WFBE_CO_VAR_DISCONNECTED_SKILL_EAST;
+
+		    {
+		        _totalSkillPlayerOtherSide = _totalSkillPlayerOtherSide + _x;
+		    } forEach WFBE_CO_VAR_DISCONNECTED_SKILL_WEST;
+		};
+
 		_skillDifference = _totalSkillPlayerSide / _totalSkillPlayerOtherSide;
 
 		// If skill difference is too high (more than 20 % difference) and there are enough players online, prevent player from joining to team
@@ -80,3 +100,6 @@ if (WF_A2_Vanilla) then {
 } else {
 	[_player, "HandleSpecial", ["join-answer", _canJoin]] Call WFBE_CO_FNC_SendToClient;
 };
+
+// Set variable to store player side (Net_2)
+missionNamespace setVariable [format [WFBE_CO_VAR_SIDE_UID_%1, _uid], side _player];
