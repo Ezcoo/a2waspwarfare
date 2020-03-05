@@ -43,14 +43,8 @@ if (isNil '_sideJoined') exitWith {["WARNING", Format ["Server_PlayerConnected.s
 _get = missionNamespace getVariable format["WFBE_JIP_USER%1",_uid];
 
 // Init player score variable for skill calculation database if it doesn't exist yet
-{
-    if (isPlayer _x && getPlayerUID _x == _uid) then {
-        _player = _x;
-    }
-} forEach (playableUnits + switchableUnits);
-
-if (isNil (missionNamespace getVariable format ["WFBE_SCORE_UID_%1", getPlayerUID _player])) then {
-    missionNamespace setVariable [format ["WFBE_SCORE_UID_%1", getPlayerUID _player], 0];
+if (isNil (missionNamespace getVariable format ["WFBE_SCORE_UID_%1", _uid])) then {
+    missionNamespace setVariable [format ["WFBE_SCORE_UID_%1", _uid], 0];
 };
 
 //--- We force the unit out of it's vehicle.
