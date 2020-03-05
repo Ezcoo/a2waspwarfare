@@ -71,7 +71,7 @@ while {!gameOver} do {
 	{
 
 	    if (isPlayer _x) then {
-	        if (isNil (missionNamespace getVariable format ["WFBE_OLD_SCORE_UID_%1", getPlayerUID _x])) then {
+	        if (isNil format ["WFBE_OLD_SCORE_UID_%1", getPlayerUID _x]) then {
 	            missionNamespace setVariable [format ["WFBE_OLD_SCORE_UID_%1", getPlayerUID _x], 0];
 	        };
 
