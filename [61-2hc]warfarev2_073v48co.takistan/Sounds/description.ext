@@ -31,3 +31,9 @@ class BluWin {
         sound[] = {"\sounds\americafuckyeah.ogg",10,1};
         titles[] = {};
 }
+
+class TakiStart {
+        name = "TakiStart";
+        sound[] = {"\sounds\takistart.ogg",10,1};
+        titles[] = {};
+}
