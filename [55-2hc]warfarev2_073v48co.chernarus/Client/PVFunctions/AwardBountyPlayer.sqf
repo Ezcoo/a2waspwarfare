@@ -4,7 +4,7 @@ _killed = _this;
 _name = name _killed;
 
 _coef = 7*(score _killed);
-_coef = _coef^(-0.3);
+_coef = _coef^(-0.1);
 
 _bounty = if (score _killed < 0) then {
             180;
