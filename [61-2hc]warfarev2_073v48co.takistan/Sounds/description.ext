@@ -25,3 +25,9 @@ class airRaid {
         titles[] = {};
     };
 };
+
+class BluWin {
+        name = "BluWin";
+        sound[] = {"\sounds\americafuckyeah.ogg",10,1};
+        titles[] = {};
+}
