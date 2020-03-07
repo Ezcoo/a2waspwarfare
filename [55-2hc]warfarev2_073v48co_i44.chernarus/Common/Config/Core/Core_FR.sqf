@@ -14,7 +14,7 @@ _i = _i + [['','',270,6,-1,2,0,1,'USMC Force Recon',[]]];
 _c = _c + ['FR_Commander'];
 _i = _i + [['','',295,6,-1,2,0,1.00,'USMC Force Recon',[]]];
 
-_c = _c + ['FR_TL'];
+_c = _c + ['I44_Man_B_Army_Sapper_M2'];
 _i = _i + [['','',285,6,-1,2,0,1.00,'USMC Force Recon',[]]];
 
 _c = _c + ['FR_Assault_R'];

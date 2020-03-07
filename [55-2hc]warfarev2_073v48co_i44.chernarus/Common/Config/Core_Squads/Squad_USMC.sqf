@@ -21,10 +21,10 @@ _aiTeamTypes = _aiTeamTypes + [2];
 _aiTeamUpgrades = _aiTeamUpgrades + [[0,0,1,0]];
 
 _u		= ["UH1Y"];
-_u = _u + ["USMC_Soldier_TL"];
+_u = _u + ["I44_Man_B_Army_Engr_GrenadeNo75"];
 _u = _u + ["USMC_Soldier_AR"];
 _u = _u + ["USMC_Soldier_LAT"];
-_u = _u + ["USMC_Soldier_Medic"];
+_u = _u + ["I44_Man_B_Army_Medic"];
 _u = _u + ["USMC_Soldier"];
 _u = _u + ["USMC_Soldier"];
 _u = _u + ["USMC_Soldier"];
@@ -36,10 +36,10 @@ _aiTeamTypes = _aiTeamTypes + [3];
 _aiTeamUpgrades = _aiTeamUpgrades + [[0,0,0,1]];
 
 _u		= ["MH60S"];
-_u = _u + ["USMC_Soldier_TL"];
+_u = _u + ["I44_Man_B_Army_Engr_GrenadeNo75"];
 _u = _u + ["USMC_Soldier_MG"];
 _u = _u + ["USMC_Soldier_AT"];
-_u = _u + ["USMC_Soldier_Medic"];
+_u = _u + ["I44_Man_B_Army_Medic"];
 _u = _u + ["USMC_Soldier"];
 _u = _u + ["USMC_Soldier"];
 _u = _u + ["USMC_Soldier"];
