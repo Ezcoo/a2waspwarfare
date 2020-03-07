@@ -4,6 +4,15 @@ class Mission
 	addOns[]=
 	{
 		"cacharacters2",
+		"i44_base_v",
+		"i44_base_m",
+		"i44_base_w",
+		"I44_base_scripts",
+		"i44_base_o",
+		"i44_anims",
+		"i44_module_weaponrest",
+		"I44_base_Dialogs",
+        "I44_P47",
 		"chernarus",
 		"ca_modules_functions",
 		"ca_highcommand",
@@ -14,6 +23,13 @@ class Mission
 	addOnsAuto[]=
 	{
 		"ca_modules_functions",
+		"i44_base_v",
+		"i44_base_m",
+		"I44_base_scripts",
+        "I44_P47",
+		"ca_modules_functions",
+		"i44_module_weaponrest",
+		"I44_base_Dialogs",
 		"cacharacters2",
 		"chernarus"
 	};
