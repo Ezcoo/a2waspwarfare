@@ -1,0 +1,71 @@
+einfügen sobald final
+
+vierlingsflak 
+I44_Gun_A_M2A1_Army
+I44_Tank_G_PzKpfwV_Late_AAMG 
+I44_Tank_G_PzKpfwV_G_AAMG45_WH
+I44_Tank_A_M4_105_Sherman 
+
+
+airborne eventuell durch airborne 101st-m43
+
+
+us Ithaca einheinten hinzufügen
+
+
+parameter hinzu fügen:
+penetration module
+tactical display
+hand signals
+
+
+I44_MP43 ausgeklammert da identisch mit stg44
+I44_LeeEnfield ausgeklammert da doppelt bzw. grund klasse
+I44_M1903 ausgeklammert da doppelt bzw. grund klasse
+
+
+
+merderet:
+startingdisdtance 5500
+
+sbrodj:
+startingdistance 7000
+
+tarkistan panzer:
+I44_Tank_G_PzKpfwV_G_WH
+
+
+
+
+
+
+
+  Mörser M1  
+
+  I44_12rd_81L15_M43A1 = standard  mun
+  I44_12rd_81L15_M56 = HE DEMO
+  I44_12rd_81L15_M57 = WP (White Phosphorus)
+  I44_12rd_81L15_M57FS = Nebel
+  I44_12rd_81L15_M301 = ILL
+
+Mörser M2
+
+I44_12rd_60L12_M49A2 = standard mun 
+I44_12rd_60L12_M302 = WP (White Phosphorus) 
+I44_12rd_60L12_M83A1 = ILL
+
+Mörser ML3
+
+I44_12rd_81L17_HEMk6
+I44_12rd_81L17_SmokeMk1
+I44_12rd_81L17_IllumMk1
+
+
+
+
+
+
+
+bei nächster version prüfen
+"[WFBE (ERROR)][frameno:1.10849e+006 | ticktime:44504.1] Core_Vanilla_G: Loadout Element 'I44_Bag_ABBergen' with class 'CfgVehicles' is not a defined a class!"
+WFBE (ERROR)][frameno:1.10849e+006 | ticktime:44504.1] Core_Vanilla_G: Loadout Element 'I44_Bag_GrWM34' with class 'CfgVehicles' is not a defined a class!"

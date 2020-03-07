@@ -1,0 +1,298 @@
+version=11;
+class Mission
+{
+	addOns[]=
+	{
+		"i44_base_v",
+		"I44_P47",
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"i44_base_v",
+		"I44_P47",
+		"chernarus"
+	};
+	randomSeed=14991282;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+	class Groups
+	{
+		items=4;
+		class Item0
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={4179.3706,339,10875.584};
+					special="NONE";
+					id=0;
+					side="WEST";
+					vehicle="I44_Plane_A_B17_AAF";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+				};
+				class Item1
+				{
+					position[]={4196.7646,339,10848.483};
+					special="NONE";
+					id=1;
+					side="WEST";
+					vehicle="I44_Plane_A_C47A_AAF";
+					player="PLAY D";
+					skill=0.60000002;
+				};
+				class Item2
+				{
+					position[]={4220.1709,339,10815.084};
+					special="NONE";
+					id=2;
+					side="WEST";
+					vehicle="I44_Plane_A_P38_AAF";
+					player="PLAYER COMMANDER";
+					skill=0.60000002;
+				};
+				class Item3
+				{
+					position[]={4232.4502,339,10793.586};
+					special="NONE";
+					id=3;
+					side="WEST";
+					vehicle="I44_Plane_A_P38_M64_AAF";
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item1
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=5;
+				class Item0
+				{
+					position[]={4247.415,339,10764.025};
+					special="NONE";
+					id=4;
+					side="WEST";
+					vehicle="I44_Plane_A_P38_HVAR_AAF";
+					leader=1;
+					skill=0.60000002;
+				};
+				class Item1
+				{
+					position[]={4260.4609,339,10741.375};
+					special="NONE";
+					id=5;
+					side="WEST";
+					vehicle="I44_Plane_A_P51D_AAF";
+					skill=0.60000002;
+				};
+				class Item2
+				{
+					position[]={4275.4263,339,10724.483};
+					special="NONE";
+					id=6;
+					side="WEST";
+					vehicle="I44_Plane_A_P51D_250lb_AAF";
+					skill=0.60000002;
+				};
+				class Item3
+				{
+					position[]={4283.4844,339,10704.904};
+					special="NONE";
+					id=7;
+					side="WEST";
+					vehicle="I44_Plane_A_P51D_HVAR_AAF";
+					skill=0.60000002;
+				};
+				class Item4
+				{
+					position[]={4298.0659,339,10683.79};
+					special="NONE";
+					id=8;
+					side="WEST";
+					vehicle="I44_P47";
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item2
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=6;
+				class Item0
+				{
+					position[]={4305.7407,339,10667.281};
+					special="NONE";
+					id=9;
+					side="WEST";
+					vehicle="I44_P47A";
+					leader=1;
+					skill=0.60000002;
+				};
+				class Item1
+				{
+					position[]={4321.062,339,10647.06};
+					special="NONE";
+					id=10;
+					side="WEST";
+					vehicle="I44_Plane_B_HHmkIIa_RAF";
+					skill=0.60000002;
+				};
+				class Item2
+				{
+					position[]={4331.3057,339,10633.881};
+					special="NONE";
+					id=11;
+					side="WEST";
+					vehicle="I44_Plane_B_HHmkIIa_M57_RAF";
+					skill=0.60000002;
+				};
+				class Item3
+				{
+					position[]={4342.0376,339,10618.753};
+					special="NONE";
+					id=12;
+					side="WEST";
+					vehicle="I44_Plane_B_HHmkIIa_HVAR_RAF";
+					skill=0.60000002;
+				};
+				class Item4
+				{
+					position[]={4351.7935,339,10605.575};
+					special="NONE";
+					id=13;
+					side="WEST";
+					vehicle="I44_Plane_B_TyphoonMk1A_RAF";
+					skill=0.60000002;
+				};
+				class Item5
+				{
+					position[]={4362.5249,339,10589.471};
+					special="NONE";
+					id=14;
+					side="WEST";
+					vehicle="I44_Plane_B_TyphoonMk1A_RP3_RAF";
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item3
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={4371.3052,339,10577.27};
+					special="NONE";
+					id=15;
+					side="WEST";
+					vehicle="I44_Plane_B_SpitfireMk1a_RAF";
+					leader=1;
+					skill=0.60000002;
+				};
+				class Item1
+				{
+					position[]={4383.0127,339,10564.093};
+					special="NONE";
+					id=16;
+					side="WEST";
+					vehicle="I44_Plane_B_SpitfireMk1a_M64_RAF";
+					skill=0.60000002;
+				};
+				class Item2
+				{
+					position[]={4386.4268,339,10551.892};
+					special="NONE";
+					id=17;
+					side="WEST";
+					vehicle="I44_Plane_B_SpitfireMk1a_M57_RAF";
+					skill=0.60000002;
+				};
+			};
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"chernarus"
+	};
+	randomSeed=8352071;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"chernarus"
+	};
+	randomSeed=4790925;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"chernarus"
+	};
+	randomSeed=8191740;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};

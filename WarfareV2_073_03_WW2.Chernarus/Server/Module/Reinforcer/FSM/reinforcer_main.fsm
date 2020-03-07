@@ -1,0 +1,147 @@
+/*%FSM<COMPILE "D:\ArmA2\FSM Editor Personal Edition\scriptedFSM.cfg, reinforcer_main.fsm">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Init",0,250,-25.000000,-150.000000,75.000000,-100.000000,0.000000,"Init"};
+item1[] = {"_",-1,250,-11.537962,23.713089,-8.193480,23.713089,0.000000,""};
+item2[] = {"Loop_Reinforceme",2,4346,275.000000,-150.000000,375.000000,-100.000000,0.000000,"Loop" \n "Reinforcement"};
+item3[] = {"Gameover",4,218,425.000000,-150.000000,525.000000,-100.000000,0.000000,"Gameover"};
+item4[] = {"End",1,250,575.000000,-150.000000,675.000000,-100.000000,0.000000,"End"};
+item5[] = {"Loop",4,218,125.000000,-150.000000,225.000000,-100.000000,1.000000,"Loop"};
+version=1;
+class LayoutItems
+{
+	class Item1
+	{
+		class ItemInfo
+		{
+			FontFace="Arial";
+			FontHeight=10;
+			lStyle=1;
+		};
+	};
+};
+link0[] = {0,5};
+link1[] = {2,3};
+link2[] = {2,5};
+link3[] = {3,4};
+link4[] = {5,2};
+globals[] = {25.000000,1,0,0,0,640,480,1,34,6316128,1,-94.229019,691.494507,157.330200,-566.147278,770,734,1};
+window[] = {0,-1,-1,-1,-1,979,125,1586,125,1,788};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "reinforcer_main.fsm";
+  class States
+  {
+    /*%FSM<STATE "Init">*/
+    class Init
+    {
+      name = "Init";
+      init = /*%FSM<STATEINIT""">*/"_snap = 0;" \n
+       "" \n
+       "_occupation = [east, west, resistance] - [WFBE_DEFENDER];"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Loop">*/
+        class Loop
+        {
+          priority = 1.000000;
+          to="Loop_Reinforceme";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time > _snap && !WFBE_GameOver"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Loop_Reinforceme">*/
+    class Loop_Reinforceme
+    {
+      name = "Loop_Reinforceme";
+      init = /*%FSM<STATEINIT""">*/"scopeName ""reinforcer_main"";" \n
+       "" \n
+       "_snap = time + 30;" \n
+       "" \n
+       "//--- Mix the town order (we don't want to favoritize only one town heh)." \n
+       "_towns = (towns) Call WFBE_CO_FNC_ArrayShuffle;" \n
+       "" \n
+       "{" \n
+       "	if !(isNil{_x getVariable ""reinforcer_needed""}) then {" \n
+       "		_side = _x getVariable ""reinforcer_needed"";" \n
+       "		_town_side = (_x getVariable ""sideID"") Call WFBE_CO_FNC_GetSideFromID;" \n
+       "		" \n
+       "		//--- Make sure that the request side is the same as the town one." \n
+       "		if (_side == _town_side) then {" \n
+       "			//--- Have we reached the limit yet?" \n
+       "			_limit = false;" \n
+       "			if (_side == WFBE_DEFENDER) then {" \n
+       "				if ((missionNamespace getVariable Format [""REINFORCER_ACTIVE_%1"", _side]) >= (missionNamespace getVariable ""WFBE_C_TOWNS_REINFORCEMENT_DEFENDER"")) then {_limit = true};" \n
+       "			} else {" \n
+       "				_current = 0;" \n
+       "				{_current = _current + (missionNamespace getVariable Format [""REINFORCER_ACTIVE_%1"", _x])} forEach _occupation;" \n
+       "				if (_current >= (missionNamespace getVariable ""WFBE_C_TOWNS_REINFORCEMENT_OCCUPATION"")) then {_limit = true};" \n
+       "			};" \n
+       "			" \n
+       "			//--- We can still roll on." \n
+       "			if !(_limit) then {" \n
+       "				//--- Can the town still receive reinforcement?" \n
+       "				_limit = [_side, _x] Call REINFORCER_Func_GetTownLimit;" \n
+       "				" \n
+       "				_town_current = if !(isNil {_x getVariable ""wfbe_reinforcer_count""}) then {_x getVariable ""wfbe_reinforcer_count""} else {0};" \n
+       "				_last_reinforcement = if !(isNil {_x getVariable ""reinforcer_last""}) then {_x getVariable ""reinforcer_last""} else {-600};" \n
+       "				if (_town_current < _limit && time - _last_reinforcement > (missionNamespace getVariable ""REINFORCER_INTERVAL"")) then { //--- We can process it." \n
+       "					_x setVariable [""reinforcer_last"", time];" \n
+       "					[_x, _side] Spawn REINFORCER_Func_StartReinforcement;" \n
+       "					breakOut ""reinforcer_main"";" \n
+       "				};" \n
+       "			};" \n
+       "		};" \n
+       "	};" \n
+       "} forEach towns;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Loop">*/
+        class Loop
+        {
+          priority = 1.000000;
+          to="Loop_Reinforceme";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"time > _snap && !WFBE_GameOver"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Gameover">*/
+        class Gameover
+        {
+          priority = 0.000000;
+          to="End";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"WFBE_GameOver"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "End">*/
+    class End
+    {
+      name = "End";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Init";
+  finalStates[] =
+  {
+    "End",
+  };
+};
+/*%FSM</COMPILE>*/

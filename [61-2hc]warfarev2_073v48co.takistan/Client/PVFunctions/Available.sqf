@@ -1,1 +1,0 @@
-hintSilent parseText format ["Available Items : " +"<t color='#00FF00'>"+" %1"+"</t>", _this];

@@ -1,0 +1,213 @@
+version=11;
+class Mission
+{
+	addOns[]=
+	{
+		"i44_base_v",
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"i44_base_v",
+		"chernarus"
+	};
+	randomSeed=7147355;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+	class Groups
+	{
+		items=2;
+		class Item0
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=8;
+				class Item0
+				{
+					position[]={4333.5806,339,10800.143};
+					special="NONE";
+					id=0;
+					side="WEST";
+					vehicle="I44_GunAT_A_M1_Army";
+					player="PLAYER GUNNER";
+					leader=1;
+					skill=0.60000002;
+				};
+				class Item1
+				{
+					position[]={4347.3301,339,10783.085};
+					special="NONE";
+					id=1;
+					side="WEST";
+					vehicle="I44_GunMortar_A_M1_Army";
+					skill=0.60000002;
+				};
+				class Item2
+				{
+					position[]={4361.0801,339,10761.625};
+					special="NONE";
+					id=2;
+					side="WEST";
+					vehicle="I44_GunMG_A_M1919A4_TripodM2_c_Army";
+					skill=0.60000002;
+				};
+				class Item3
+				{
+					position[]={4377.0303,339,10745.118};
+					special="NONE";
+					id=3;
+					side="WEST";
+					vehicle="I44_GunMG_A_M1919A4_TripodM2_Army";
+					skill=0.60000002;
+				};
+				class Item4
+				{
+					position[]={4390.7798,339,10729.16};
+					special="NONE";
+					id=4;
+					side="WEST";
+					vehicle="I44_GunMortar_A_M2_Army";
+					skill=0.60000002;
+				};
+				class Item5
+				{
+					position[]={4312.7256,339,10776.052};
+					special="NONE";
+					id=8;
+					side="WEST";
+					vehicle="I44_GunMortar_B_ML3in_Army";
+					skill=0.60000002;
+				};
+				class Item6
+				{
+					position[]={4325.3882,339,10763.384};
+					special="NONE";
+					id=9;
+					side="WEST";
+					vehicle="I44_GunAT_B_QF6pdrMk4_Army";
+					skill=0.60000002;
+				};
+				class Item7
+				{
+					position[]={4338.8184,339,10753.019};
+					special="NONE";
+					id=10;
+					side="WEST";
+					vehicle="I44_GunMG_B_Vickers_Army";
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item1
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={4401.2285,339,10719.483};
+					special="NONE";
+					id=5;
+					side="WEST";
+					vehicle="I44_GunMG_A_M2HB_TripodAA_Army";
+					leader=1;
+					skill=0.60000002;
+				};
+				class Item1
+				{
+					position[]={4408.4727,339,10709.818};
+					special="NONE";
+					id=6;
+					side="WEST";
+					vehicle="I44_GunMG_A_M2HB_TripodM3_Army";
+					skill=0.60000002;
+				};
+				class Item2
+				{
+					position[]={4418.1318,339,10698.646};
+					special="NONE";
+					id=7;
+					side="WEST";
+					vehicle="I44_GunAT_A_M3_Army";
+					skill=0.60000002;
+				};
+			};
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"chernarus"
+	};
+	randomSeed=8352071;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"chernarus"
+	};
+	randomSeed=4790925;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"chernarus"
+	};
+	randomSeed=8191740;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};

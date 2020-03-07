@@ -1,0 +1,510 @@
+version=11;
+class Mission
+{
+	addOns[]=
+	{
+		"i44_base_m",
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"i44_base_m",
+		"chernarus"
+	};
+	randomSeed=2906105;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+	class Groups
+	{
+		items=2;
+		class Item0
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=23;
+				class Item0
+				{
+					position[]={4201.7529,339,10808.26};
+					special="NONE";
+					id=0;
+					side="WEST";
+					vehicle="I44_Man_A_AAF_B17Pilot_M1911A1";
+					player="PLAYER COMMANDER";
+					leader=1;
+					skill=0.60000002;
+				};
+				class Item1
+				{
+					position[]={4206.4683,339,10800.295};
+					special="NONE";
+					id=1;
+					side="WEST";
+					vehicle="I44_Man_A_AAF_COPilot_M1911A1";
+					skill=0.60000002;
+				};
+				class Item2
+				{
+					position[]={4213.9639,339,10793.064};
+					special="NONE";
+					id=2;
+					side="WEST";
+					vehicle="I44_Man_A_AAF_Pilot_M1911A1";
+					skill=0.60000002;
+				};
+				class Item3
+				{
+					position[]={4220.3887,339,10786.635};
+					special="NONE";
+					id=3;
+					side="WEST";
+					vehicle="I44_Man_A_AAF_Gunner_M1911A1";
+					skill=0.60000002;
+				};
+				class Item4
+				{
+					position[]={4214.748,339,10816.392};
+					special="NONE";
+					id=4;
+					side="WEST";
+					vehicle="I44_Man_A_Army_MGCrew_AG";
+					skill=0.60000002;
+				};
+				class Item5
+				{
+					position[]={4219.7349,339,10812.116};
+					special="NONE";
+					id=5;
+					side="WEST";
+					vehicle="I44_Man_A_Army_ATCrew_M3";
+					skill=0.60000002;
+				};
+				class Item6
+				{
+					position[]={4224.0083,339,10806.652};
+					special="NONE";
+					id=6;
+					side="WEST";
+					vehicle="I44_Man_A_Army_M1A1Bazooka";
+					skill=0.60000002;
+				};
+				class Item7
+				{
+					position[]={4226.3828,339,10801.188};
+					special="NONE";
+					id=7;
+					side="WEST";
+					vehicle="I44_Man_A_Army_Engr_M1Mine";
+					skill=0.60000002;
+				};
+				class Item8
+				{
+					position[]={4230.6567,339,10796.913};
+					special="NONE";
+					id=8;
+					side="WEST";
+					vehicle="I44_Man_A_Army_Engr_M1A1Bangalore";
+					skill=0.60000002;
+				};
+				class Item9
+				{
+					position[]={4233.7432,339,10793.111};
+					special="NONE";
+					id=9;
+					side="WEST";
+					vehicle="I44_Man_A_Army_Engr_M2DemoCharges";
+					skill=0.60000002;
+				};
+				class Item10
+				{
+					position[]={4236.1177,339,10784.797};
+					special="NONE";
+					id=10;
+					side="WEST";
+					vehicle="I44_Man_A_Army_Engr_M37DemoKit";
+					skill=0.60000002;
+				};
+				class Item11
+				{
+					position[]={4240.6289,339,10778.621};
+					special="NONE";
+					id=11;
+					side="WEST";
+					vehicle="I44_Man_A_Army_Engr_M2_2";
+					skill=0.60000002;
+				};
+				class Item12
+				{
+					position[]={4247.04,339,10772.206};
+					special="NONE";
+					id=12;
+					side="WEST";
+					vehicle="I44_Man_A_Army_M1Garand_M7";
+					skill=0.60000002;
+				};
+				class Item13
+				{
+					position[]={4252.2632,339,10766.269};
+					special="NONE";
+					id=13;
+					side="WEST";
+					vehicle="I44_Man_A_Army_M1903A3_M1";
+					skill=0.60000002;
+				};
+				class Item14
+				{
+					position[]={4260.0986,339,10759.616};
+					special="NONE";
+					id=14;
+					side="WEST";
+					vehicle="I44_Man_A_Army_GunCrew_M1Carbine";
+					skill=0.60000002;
+				};
+				class Item15
+				{
+					position[]={4263.6602,339,10755.814};
+					special="NONE";
+					id=15;
+					side="WEST";
+					vehicle="I44_Man_A_Army_GunCrew_NCO_M1911A1";
+					skill=0.60000002;
+				};
+				class Item16
+				{
+					position[]={4267.2222,339,10749.164};
+					special="NONE";
+					id=16;
+					side="WEST";
+					vehicle="I44_Man_A_Army_M1919A4";
+					skill=0.60000002;
+				};
+				class Item17
+				{
+					position[]={4269.8335,339,10744.888};
+					special="NONE";
+					id=17;
+					side="WEST";
+					vehicle="I44_Man_A_Army_Medic";
+					skill=0.60000002;
+				};
+				class Item18
+				{
+					position[]={4271.3872,339,10741.474};
+					special="NONE";
+					id=18;
+					side="WEST";
+					vehicle="I44_Man_A_Army_MCrew_C";
+					skill=0.60000002;
+				};
+				class Item19
+				{
+					position[]={4273.356,339,10739.897};
+					special="NONE";
+					id=19;
+					side="WEST";
+					vehicle="I44_Man_A_Army_MCrew_G";
+					skill=0.60000002;
+				};
+				class Item20
+				{
+					position[]={4223.9541,339,10772.657};
+					special="NONE";
+					id=37;
+					side="WEST";
+					vehicle="I44_Man_B_Army_ATCrew_SMLEdNo4Mk1";
+					skill=0.60000002;
+				};
+				class Item21
+				{
+					position[]={4226.4805,339,10768.233};
+					special="NONE";
+					id=38;
+					side="WEST";
+					vehicle="I44_Man_B_Army_PIAT";
+					skill=0.60000002;
+				};
+				class Item22
+				{
+					position[]={4229.2188,339,10764.23};
+					special="NONE";
+					id=39;
+					side="WEST";
+					vehicle="I44_Man_B_Army_Sapper_M1A1";
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item1
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=21;
+				class Item0
+				{
+					position[]={4275.0996,339,10738.379};
+					special="NONE";
+					id=20;
+					side="WEST";
+					vehicle="I44_Man_A_Army_NCO_M1Carbine";
+					leader=1;
+					skill=0.60000002;
+				};
+				class Item1
+				{
+					position[]={4276.5063,339,10736.689};
+					special="NONE";
+					id=21;
+					side="WEST";
+					vehicle="I44_Man_A_Army_NCO_M1Garand";
+					skill=0.60000002;
+				};
+				class Item2
+				{
+					position[]={4277.9126,339,10735.001};
+					special="NONE";
+					id=22;
+					side="WEST";
+					vehicle="I44_Man_A_Army_NCO_M1A1Thompson";
+					skill=0.60000002;
+				};
+				class Item3
+				{
+					position[]={4279.5444,339,10733.088};
+					special="NONE";
+					id=23;
+					side="WEST";
+					vehicle="I44_Man_A_Army_CO_M1Carbine";
+					skill=0.60000002;
+				};
+				class Item4
+				{
+					position[]={4280.9507,339,10731.174};
+					special="NONE";
+					id=24;
+					side="WEST";
+					vehicle="I44_Man_A_Army_CO_M1911A1";
+					skill=0.60000002;
+				};
+				class Item5
+				{
+					position[]={4282.4561,339,10729.924};
+					special="NONE";
+					id=25;
+					side="WEST";
+					vehicle="I44_Man_A_Army_RTO_M1Carbine";
+					skill=0.60000002;
+				};
+				class Item6
+				{
+					position[]={4284.3687,339,10727.842};
+					special="NONE";
+					id=26;
+					side="WEST";
+					vehicle="I44_Man_A_Army_Sniper_M1903A4";
+					skill=0.60000002;
+				};
+				class Item7
+				{
+					position[]={4285.5503,339,10726.66};
+					special="NONE";
+					id=27;
+					side="WEST";
+					vehicle="I44_Man_A_Army_M1Carbine";
+					skill=0.60000002;
+				};
+				class Item8
+				{
+					position[]={4286.6191,339,10725.309};
+					special="NONE";
+					id=28;
+					side="WEST";
+					vehicle="I44_Man_A_Army_M1Garand";
+					skill=0.60000002;
+				};
+				class Item9
+				{
+					position[]={4288.4189,339,10723.676};
+					special="NONE";
+					id=29;
+					side="WEST";
+					vehicle="I44_Man_A_Army_M1903A3";
+					skill=0.60000002;
+				};
+				class Item10
+				{
+					position[]={4289.6567,339,10722.495};
+					special="NONE";
+					id=30;
+					side="WEST";
+					vehicle="I44_Man_A_Army_M1918A2";
+					skill=0.60000002;
+				};
+				class Item11
+				{
+					position[]={4291.2881,339,10721.369};
+					special="NONE";
+					id=31;
+					side="WEST";
+					vehicle="I44_Man_A_Army_M1A1Thompson";
+					skill=0.60000002;
+				};
+				class Item12
+				{
+					position[]={4292.9194,339,10720.243};
+					special="NONE";
+					id=32;
+					side="WEST";
+					vehicle="I44_Man_A_Army_M3Greasegun";
+					skill=0.60000002;
+				};
+				class Item13
+				{
+					position[]={4294.8887,339,10718.442};
+					special="NONE";
+					id=33;
+					side="WEST";
+					vehicle="I44_Man_A_Army_Crew_M1911A1";
+					skill=0.60000002;
+				};
+				class Item14
+				{
+					position[]={4296.0137,339,10717.654};
+					special="NONE";
+					id=34;
+					side="WEST";
+					vehicle="I44_Man_A_Army_Crew_M3Greasegun";
+					skill=0.60000002;
+				};
+				class Item15
+				{
+					position[]={4297.251,339,10716.416};
+					special="NONE";
+					id=35;
+					side="WEST";
+					vehicle="I44_Man_A_Army_Crew_Eng";
+					skill=0.60000002;
+				};
+				class Item16
+				{
+					position[]={4294.0444,339,10719.398};
+					special="NONE";
+					id=36;
+					side="WEST";
+					vehicle="I44_Man_A_Army_Crew_NCO_M1911A1";
+					skill=0.60000002;
+				};
+				class Item17
+				{
+					position[]={4232.377,339,10759.805};
+					special="NONE";
+					id=40;
+					side="WEST";
+					vehicle="I44_Man_B_Army_Sapper_M2";
+					skill=0.60000002;
+				};
+				class Item18
+				{
+					position[]={4237.2207,339,10754.748};
+					special="NONE";
+					id=41;
+					side="WEST";
+					vehicle="I44_Man_B_Army_Sapper_M37";
+					skill=0.60000002;
+				};
+				class Item19
+				{
+					position[]={4244.8022,339,10746.531};
+					special="NONE";
+					id=42;
+					side="WEST";
+					vehicle="I44_Man_B_RAF_Pilot_M1911A1";
+					skill=0.60000002;
+				};
+				class Item20
+				{
+					position[]={4247.5396,339,10739.368};
+					special="NONE";
+					id=43;
+					side="WEST";
+					vehicle="I44_Man_B_RAF_PCrew_M1911A1";
+					skill=0.60000002;
+				};
+			};
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"chernarus"
+	};
+	randomSeed=8352071;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"chernarus"
+	};
+	randomSeed=4790925;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"chernarus"
+	};
+	randomSeed=8191740;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};
