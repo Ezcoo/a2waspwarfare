@@ -12,7 +12,7 @@ class Mission
 		"i44_anims",
 		"i44_module_weaponrest",
 		"I44_base_Dialogs",
-        "I44_P47",
+		"I44_P47",
 		"chernarus",
 		"ca_modules_functions",
 		"ca_highcommand",
@@ -23,13 +23,7 @@ class Mission
 	addOnsAuto[]=
 	{
 		"ca_modules_functions",
-		"i44_base_v",
 		"i44_base_m",
-		"I44_base_scripts",
-        "I44_P47",
-		"ca_modules_functions",
-		"i44_module_weaponrest",
-		"I44_base_Dialogs",
 		"cacharacters2",
 		"chernarus"
 	};
@@ -3290,7 +3284,7 @@ class Mission
 					position[]={2259.1614,512.45703,15296.355};
 					id=229;
 					side="WEST";
-					vehicle="FR_Miles";
+					vehicle="I44_Man_B_Army_StenMk5";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3312,8 +3306,8 @@ class Mission
 					position[]={2259.1116,512.63934,15297.525};
 					id=230;
 					side="WEST";
-					vehicle="FR_Miles";
-					player="PLAY CDG";
+					vehicle="I44_Man_B_Army_StenMk5";
+					player="PLAYER COMMANDER";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
@@ -3334,7 +3328,7 @@ class Mission
 					position[]={2260.5251,512.80225,15297.613};
 					id=231;
 					side="WEST";
-					vehicle="FR_TL";
+					vehicle="I44_Man_B_Army_Sapper_M2";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3378,7 +3372,7 @@ class Mission
 					position[]={2261.9004,512.91449,15297.685};
 					id=233;
 					side="WEST";
-					vehicle="USMC_SoldierS_Sniper";
+					vehicle="I44_Man_B_Army_Sniper_SMLENo4Mk1T";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3422,7 +3416,7 @@ class Mission
 					position[]={2263.1621,513.0119,15297.698};
 					id=235;
 					side="WEST";
-					vehicle="USMC_Soldier_TL";
+					vehicle="I44_Man_B_Army_Engr_GrenadeNo75";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3554,7 +3548,7 @@ class Mission
 					position[]={2265.4199,513.18121,15297.688};
 					id=241;
 					side="WEST";
-					vehicle="USMC_Soldier_Medic";
+					vehicle="I44_Man_B_Army_Medic";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3731,7 +3725,6 @@ class Mission
 					id=249;
 					side="EAST";
 					vehicle="Ins_Soldier_Sapper";
-					player="PLAYER COMMANDER";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
