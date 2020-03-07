@@ -362,7 +362,7 @@ class Params {
 		title = "$STR_WF_PARAMETER_Upgrades";
 		values[] = {0,1,2,3,4,5,6,7};
 		texts[] = {"$STR_WF_Disabled","West","East","Resistance","West + East","West + Resistance","East + Resistance","All"};
-		default = 7;
+		default = 0;
 	};
 	class WFBE_C_GAMEPLAY_VICTORY_CONDITION {
 		title = "$STR_WF_PARAMETER_VictoryCondition";
