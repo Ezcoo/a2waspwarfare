@@ -196,7 +196,7 @@ if (_restriction_air == 0 || _restriction_air == 1) then {
 	_u = _u		+ ['AH64D_EP1'];
 };
 if (_restriction_air == 0) then {
-	_u = _u		+ ['C130J_US_EP1'];
+	_u = _u		+ ['I44_Plane_B_HHmkIIa_HVAR_RAF'];
 	_u = _u		+ ['A10_US_EP1'];
 };
 if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_BAF") > 0) then {
@@ -213,7 +213,7 @@ if (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Cli
 
 _u = [];
 if (_restriction_air == 0) then {
-	_u = _u		+ ['C130J_US_EP1'];
+	_u = _u		+ ['I44_Plane_B_HHmkIIa_HVAR_RAF'];
 	_u = _u		+ ['A10_US_EP1'];
 };
 
