@@ -4,7 +4,7 @@ class Mission
 	addOns[]=
 	{
 		"cacharacters2",
-		"chernarus",
+		"ibr_lingor",
 		"ca_modules_functions",
 		"ca_highcommand",
 		"warfare2vehicles",
@@ -15,12 +15,12 @@ class Mission
 	{
 		"ca_modules_functions",
 		"cacharacters2",
-		"chernarus"
+		"ibr_lingor"
 	};
 	randomSeed=10034581;
 	class Intel
 	{
-		briefingName="[55] Warfare V48 Chernarus";
+		briefingName="[55] Warfare V48 Lingor 0.1";
 		briefingDescription="by Benny and Awesome&WASP";
 		resistanceWest=0;
 		startWeather=0;
@@ -4684,11 +4684,11 @@ class Intro
 {
 	addOns[]=
 	{
-		"chernarus"
+		"ibr_lingor"
 	};
 	addOnsAuto[]=
 	{
-		"chernarus"
+		"ibr_lingor"
 	};
 	randomSeed=13267190;
 	class Intel
@@ -4706,11 +4706,11 @@ class OutroWin
 {
 	addOns[]=
 	{
-		"chernarus"
+		"ibr_lingor"
 	};
 	addOnsAuto[]=
 	{
-		"chernarus"
+		"ibr_lingor"
 	};
 	randomSeed=10462969;
 	class Intel
@@ -4728,11 +4728,11 @@ class OutroLoose
 {
 	addOns[]=
 	{
-		"chernarus"
+		"ibr_lingor"
 	};
 	addOnsAuto[]=
 	{
-		"chernarus"
+		"ibr_lingor"
 	};
 	randomSeed=12603217;
 	class Intel
