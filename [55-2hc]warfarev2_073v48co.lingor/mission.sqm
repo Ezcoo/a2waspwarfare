@@ -33,7 +33,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=114;
+		items=106;
 		class Item0
 		{
 			side="LOGIC";
@@ -114,22 +114,22 @@ class Mission
 				items=5;
 				class Item0
 				{
-					position[]={-4451.0166,0.83414853,2007.137};
-					azimut=160;
+					position[]={905.47882,41.278629,5592.3701};
+					azimut=169;
 					special="NONE";
 					id=4;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Kamenka";
-					init="nullReturn = [this,""Kamenka"",""+"",10,50,300,[""SmallTown1"",""MediumTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					text="Benio";
+					init="nullReturn = [this,""Benio"",""+"",10,50,300,[""SmallTown1"",""MediumTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={5,6,17,16};
 				};
 				class Item1
 				{
-					position[]={-4535.2061,0.81868905,2103.5054};
-					azimut=260;
+					position[]={755.3197,37.619236,5553.4746};
+					azimut=167;
 					special="NONE";
 					id=6;
 					side="LOGIC";
@@ -140,7 +140,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={-4283.1582,0.82204676,2016.8525};
+					position[]={998.51202,41.628601,5580.7876};
 					azimut=350;
 					special="NONE";
 					id=5;
@@ -152,8 +152,8 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={-4507.4541,0.91152883,2118.8267};
-					azimut=345;
+					position[]={741.83881,37.240631,5550.46};
+					azimut=260;
 					special="NONE";
 					id=16;
 					side="LOGIC";
@@ -164,8 +164,8 @@ class Mission
 				};
 				class Item4
 				{
-					position[]={-4236.2637,0.83571523,2016.4753};
-					azimut=90;
+					position[]={1009.9352,41.636154,5579.2036};
+					azimut=120;
 					special="NONE";
 					id=17;
 					side="LOGIC";
@@ -292,22 +292,22 @@ class Mission
 				items=5;
 				class Item0
 				{
-					position[]={-8276.7305,0.85518342,5015.3716};
-					azimut=15;
+					position[]={3589.1038,52.221142,2728.9187};
+					azimut=281;
 					special="NONE";
 					id=13;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Pavlovo";
-					init="nullReturn = [this,""Pavlovo"",""+"",10,50,250,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					text="Montehofo";
+					init="nullReturn = [this,""Montehofo"",""+"",10,50,250,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={14,15,19,18};
 				};
 				class Item1
 				{
-					position[]={-8227.4004,0.66546899,5186.5459};
-					azimut=215;
+					position[]={3617.0588,52.311741,2871.011};
+					azimut=105;
 					special="NONE";
 					id=15;
 					side="LOGIC";
@@ -318,8 +318,8 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={-8281.0859,0.81791371,4840.4854};
-					azimut=273.13303;
+					position[]={3442.8735,52.221142,2822.3396};
+					azimut=5;
 					special="NONE";
 					id=14;
 					side="LOGIC";
@@ -330,7 +330,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={-8260.4824,0.78283006,5202.9614};
+					position[]={3633.5066,52.440929,2862.2834};
 					azimut=30;
 					special="NONE";
 					id=19;
@@ -342,8 +342,8 @@ class Mission
 				};
 				class Item4
 				{
-					position[]={-8270.6914,0.65576541,4860.0859};
-					azimut=464.91599;
+					position[]={3429.0071,51.732231,2822.1184};
+					azimut=295;
 					special="NONE";
 					id=18;
 					side="LOGIC";
@@ -362,22 +362,22 @@ class Mission
 				items=5;
 				class Item0
 				{
-					position[]={-570.83539,0.79151189,1084.7621};
-					azimut=340;
+					position[]={7514.4966,4.9693618,3024.3784};
+					azimut=155;
 					special="NONE";
 					id=20;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Komarovo";
-					init="nullReturn = [this,""Komarovo"",""+"",10,65,300,[""MediumTown1"",""MediumTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					text="Monga";
+					init="nullReturn = [this,""Monga"",""+"",10,55,300,[""MediumTown1"",""MediumTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={21,22,23,24};
 				};
 				class Item1
 				{
-					position[]={-782.7912,0.97683138,1150.6174};
-					azimut=125;
+					position[]={7347.4785,7.5685291,3005.2876};
+					azimut=180;
 					special="NONE";
 					id=22;
 					side="LOGIC";
@@ -388,8 +388,8 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={-269.9801,0.68573391,1137.4011};
-					azimut=210;
+					position[]={7474.2637,5.7459998,2869.7314};
+					azimut=91;
 					special="NONE";
 					id=21;
 					side="LOGIC";
@@ -400,7 +400,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={-722.23175,0.83641481,1156.1482};
+					position[]={7339.4497,7.8119531,2987.241};
 					azimut=270;
 					special="NONE";
 					id=23;
@@ -412,8 +412,8 @@ class Mission
 				};
 				class Item4
 				{
-					position[]={-316.55545,0.91634476,1153.1003};
-					azimut=70;
+					position[]={7472.3867,6.064312,2854.6946};
+					azimut=180;
 					special="NONE";
 					id=24;
 					side="LOGIC";
@@ -513,22 +513,22 @@ class Mission
 				items=7;
 				class Item0
 				{
-					position[]={12370.578,0.83808559,1552.7777};
-					azimut=50;
+					position[]={4235.5439,44.058369,4827.7144};
+					azimut=85;
 					special="NONE";
 					id=31;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Chernogorsk";
-					init="nullReturn = [this,""Chernogorsk"",""+"",30,120,1000,[""HugeTown1"",""HugeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					text="SanArulco";
+					init="nullReturn = [this,""San Arulco"",""+"",30,120,500,[""HugeTown1"",""HugeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={33,32,34,36,38,35};
 				};
 				class Item1
 				{
-					position[]={12167.634,1.0019082,1596.2274};
-					azimut=310;
+					position[]={3992.7744,29.421909,4772.7192};
+					azimut=320;
 					special="NONE";
 					id=33;
 					side="LOGIC";
@@ -539,8 +539,8 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={12583.513,0.73984545,1791.2632};
-					azimut=140;
+					position[]={4515.8867,25.40229,4835.5625};
+					azimut=195;
 					special="NONE";
 					id=32;
 					side="LOGIC";
@@ -551,7 +551,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={12301.752,0.73609143,1797.168};
+					position[]={4121.8022,25.821882,4975.5063};
 					azimut=310;
 					special="NONE";
 					id=34;
@@ -563,7 +563,7 @@ class Mission
 				};
 				class Item4
 				{
-					position[]={12522.462,0.97383541,1743.7744};
+					position[]={4515.3579,25.387875,4811.3525};
 					azimut=45;
 					special="NONE";
 					id=36;
@@ -575,8 +575,8 @@ class Mission
 				};
 				class Item5
 				{
-					position[]={12448.793,0.91498488,1527.6473};
-					azimut=45;
+					position[]={4227.0425,64.661453,4696.3359};
+					azimut=195;
 					special="NONE";
 					id=37;
 					side="LOGIC";
@@ -586,14 +586,14 @@ class Mission
 				};
 				class Item6
 				{
-					position[]={12371.747,0.69637871,1437.4243};
+					position[]={4383.5518,40.984562,4692.7261};
 					azimut=245;
 					special="NONE";
 					id=38;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					init="this setVariable ['wfbe_defense_kind', ['AA']];";
 					synchronizations[]={31};
 				};
 			};
@@ -606,15 +606,15 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12215.854,0.66570354,1610.3798};
-					azimut=305;
+					position[]={3981.7385,29.751432,4767.498};
+					azimut=225;
 					special="NONE";
 					id=35;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG']];";
+					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
 					synchronizations[]={31};
 				};
 			};
@@ -627,22 +627,22 @@ class Mission
 				items=5;
 				class Item0
 				{
-					position[]={-5629.562,0.76939929,5897.4712};
-					azimut=305;
+					position[]={4100.7954,3.3304341,9207.1523};
+					azimut=260;
 					special="NONE";
 					id=39;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Kozlovka";
-					init="nullReturn = [this,""Kozlovka"",""+"",10,50,250,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					text="Gatoro";
+					init="nullReturn = [this,""Gatoro"",""+"",10,50,100,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={40,41,43,42};
 				};
 				class Item1
 				{
-					position[]={-5770.7153,0.72360158,6119.1221};
-					azimut=45;
+					position[]={3993.2102,3.4245694,9326.7793};
+					azimut=260;
 					special="NONE";
 					id=41;
 					side="LOGIC";
@@ -653,8 +653,8 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={-5530.0864,0.71447438,5702.5371};
-					azimut=220;
+					position[]={4036.8992,3.0799592,9043.0264};
+					azimut=330;
 					special="NONE";
 					id=40;
 					side="LOGIC";
@@ -665,7 +665,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={-5729.3228,0.86220086,6115.9561};
+					position[]={3973.3462,6.5241299,9304.8418};
 					azimut=275;
 					special="NONE";
 					id=42;
@@ -677,8 +677,8 @@ class Mission
 				};
 				class Item4
 				{
-					position[]={-5519.2007,0.90007138,5695.0313};
-					azimut=100;
+					position[]={4022.0918,3.8900828,9036.5596};
+					azimut=235;
 					special="NONE";
 					id=43;
 					side="LOGIC";
@@ -697,22 +697,22 @@ class Mission
 				items=5;
 				class Item0
 				{
-					position[]={-4163.249,0.99309874,6043.8369};
-					azimut=345;
+					position[]={3863.512,14.742285,6466.5073};
+					azimut=245;
 					special="NONE";
 					id=44;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Nadezhdino";
-					init="nullReturn = [this,""Nadezhdino"",""+"",10,50,300,[""MediumTown1"",""MediumTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					text="Garibosa";
+					init="nullReturn = [this,""Garibosa"",""+"",10,50,300,[""MediumTown1"",""MediumTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={45,46,47,48};
 				};
 				class Item1
 				{
-					position[]={-4295.3267,1.0284601,5955.916};
-					azimut=270;
+					position[]={3767.4216,14.212489,6399.4863};
+					azimut=95;
 					special="NONE";
 					id=46;
 					side="LOGIC";
@@ -723,8 +723,8 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={-4286.6201,0.83846432,6134.2363};
-					azimut=205;
+					position[]={4065.5083,15.482749,6515.7266};
+					azimut=341;
 					special="NONE";
 					id=45;
 					side="LOGIC";
@@ -735,8 +735,8 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={-4349.1191,0.85561275,6190.7827};
-					azimut=290;
+					position[]={4061.7637,15.357231,6529.3799};
+					azimut=70;
 					special="NONE";
 					id=47;
 					side="LOGIC";
@@ -747,8 +747,8 @@ class Mission
 				};
 				class Item4
 				{
-					position[]={-4233.4565,0.83190495,5966.6563};
-					azimut=175;
+					position[]={3782.6245,14.314716,6423.2788};
+					azimut=220;
 					special="NONE";
 					id=48;
 					side="LOGIC";
@@ -767,21 +767,21 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={13655.734,0.8693403,2420.7285};
-					azimut=15;
+					position[]={5353.1416,6.6893511,2143.9299};
+					azimut=215;
 					special="NONE";
 					id=49;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Prigorodki";
-					init="nullReturn = [this,""Prigorodki"",""+"",10,30,100,""TinyTown1""] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					text="Lagosa";
+					init="nullReturn = [this,""Lagosa"",""+"",10,30,100,""TinyTown1""] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={50,51,52};
 				};
 				class Item1
 				{
-					position[]={13399.965,0.85546392,2564.5913};
+					position[]={5237.5112,29.479332,2001.0082};
 					azimut=350;
 					special="NONE";
 					id=51;
@@ -793,8 +793,8 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={13707.756,0.8565917,2253.1641};
-					azimut=25;
+					position[]={5317.5103,6.4279699,2259.9299};
+					azimut=275;
 					special="NONE";
 					id=50;
 					side="LOGIC";
@@ -805,8 +805,8 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={13712.92,0.87284046,2209.3735};
-					azimut=100;
+					position[]={5301.8921,6.49154,2263.439};
+					azimut=20;
 					special="NONE";
 					id=52;
 					side="LOGIC";
@@ -822,37 +822,25 @@ class Mission
 			side="LOGIC";
 			class Vehicles
 			{
-				items=5;
+				items=3;
 				class Item0
 				{
-					position[]={14647.978,0.99902755,2922.9189};
-					azimut=15;
+					position[]={8347.0264,6.0633879,8904.4639};
+					azimut=325;
 					special="NONE";
 					id=53;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Pusta";
-					init="nullReturn = [this,""Pusta"",""+"",10,50,250,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={54,55,57,56};
+					text="Cemarin";
+					init="nullReturn = [this,""Cemarin"",""+"",10,40,200,""TinyTown1""] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={54,55};
 				};
 				class Item1
 				{
-					position[]={14524.754,0.74409348,3022.1104};
-					azimut=120;
-					special="NONE";
-					id=55;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={53};
-				};
-				class Item2
-				{
-					position[]={14711.799,0.84896201,2778.9375};
-					azimut=45;
+					position[]={8388.0977,12.762888,8770.6455};
+					azimut=210;
 					special="NONE";
 					id=54;
 					side="LOGIC";
@@ -861,24 +849,12 @@ class Mission
 					init="this enableSimulation false;";
 					synchronizations[]={53};
 				};
-				class Item3
+				class Item2
 				{
-					position[]={14513.193,0.73208749,3038.2119};
-					azimut=320;
+					position[]={8400.9736,12.921083,8768.5605};
+					azimut=165;
 					special="NONE";
-					id=57;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={53};
-				};
-				class Item4
-				{
-					position[]={14717.768,0.99343985,2765.3115};
-					azimut=115;
-					special="NONE";
-					id=56;
+					id=55;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
@@ -892,91 +868,44 @@ class Mission
 			side="LOGIC";
 			class Vehicles
 			{
-				items=7;
+				items=3;
 				class Item0
 				{
-					position[]={15817.499,0.86782372,1084.2684};
+					position[]={831.30139,3.2832069,8261.293};
+					azimut=215;
 					special="NONE";
-					id=58;
+					id=56;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Elektrozavodsk";
-					init="nullReturn = [this,""Elektrozavodsk"",""+"",30,120,1000,[""HugeTown1"",""HugeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={61,60,59,62,63,64};
+					text="Arapesca";
+					init="nullReturn = [this,""Arapesca"",""+"",10,40,50,""SmallTown1""] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={57,58};
 				};
 				class Item1
 				{
-					position[]={15618.246,0.87015128,1097.5881};
-					azimut=65;
+					position[]={919.53961,3.3916483,8238.9707};
+					azimut=175;
 					special="NONE";
-					id=60;
+					id=57;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={58};
+					synchronizations[]={56};
 				};
 				class Item2
 				{
-					position[]={16052.9,0.82175487,1201.2954};
-					azimut=335;
+					position[]={921.41821,3.6783745,8223.3135};
+					azimut=75;
 					special="NONE";
-					id=59;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={58};
-				};
-				class Item3
-				{
-					position[]={15602.86,0.77008307,1053.6879};
-					azimut=355;
-					special="NONE";
-					id=61;
+					id=58;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={58};
-				};
-				class Item4
-				{
-					position[]={15592.742,0.73771691,1354.063};
-					azimut=170;
-					special="NONE";
-					id=62;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['AA']];";
-					synchronizations[]={58};
-				};
-				class Item5
-				{
-					position[]={15784.82,0.73275739,1307.3673};
-					azimut=240;
-					special="NONE";
-					id=63;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={58};
-				};
-				class Item6
-				{
-					position[]={16021.414,0.89127398,1255.5485};
-					azimut=325;
-					special="NONE";
-					id=64;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={58};
+					synchronizations[]={56};
 				};
 			};
 		};
@@ -985,258 +914,83 @@ class Mission
 			side="LOGIC";
 			class Vehicles
 			{
-				items=5;
+				items=6;
 				class Item0
 				{
-					position[]={17497.258,0.75002629,2636.835};
-					azimut=350;
+					position[]={5720.123,11.76923,3145.9919};
+					azimut=270;
 					special="NONE";
-					id=65;
+					id=59;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Kamyshovo";
-					init="nullReturn = [this,""Kamyshovo"",""+"",10,40,200,""TinyTown1""] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={66,67,69,68};
+					text="Prospero";
+					init="nullReturn = [this,""Prospero"",""+"",20,80,500,[""LargeTown1"",""LargeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={60,61,62,63,64};
 				};
 				class Item1
 				{
-					position[]={17416.949,1.0046881,2591.8589};
-					azimut=255;
+					position[]={5590.2031,12.87642,3164.2029};
+					azimut=270;
 					special="NONE";
-					id=67;
+					id=61;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={65};
+					synchronizations[]={59};
 				};
 				class Item2
 				{
-					position[]={17704.648,0.6468848,2648.1372};
-					azimut=185;
+					position[]={5905.876,13.39045,3199.9812};
 					special="NONE";
-					id=66;
+					id=60;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={65};
+					synchronizations[]={59};
 				};
 				class Item3
 				{
-					position[]={17392.531,0.96357703,2587.2905};
-					azimut=250;
+					position[]={5953.311,10.454747,3221.9573};
+					azimut=110;
 					special="NONE";
-					id=69;
+					id=62;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={65};
+					init="this setVariable ['wfbe_defense_kind', ['AA']];";
+					synchronizations[]={59};
 				};
 				class Item4
 				{
-					position[]={17812.281,0.77657396,2644.1021};
-					azimut=85;
+					position[]={5855.2593,21.209236,3126.1982};
+					azimut=70;
 					special="NONE";
-					id=68;
+					id=63;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={65};
+					synchronizations[]={59};
+				};
+				class Item5
+				{
+					position[]={5588.7373,11.803244,3147.4272};
+					azimut=345;
+					special="NONE";
+					id=64;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MG']];";
+					synchronizations[]={59};
 				};
 			};
 		};
 		class Item22
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=3;
-				class Item0
-				{
-					position[]={18322.477,0.77450669,3587.4717};
-					azimut=15;
-					special="NONE";
-					id=70;
-					side="LOGIC";
-					vehicle="LocationLogicDepot";
-					leader=1;
-					skill=0.60000002;
-					text="Tulga";
-					init="nullReturn = [this,""Tulga"",""+"",10,50,100,""SmallTown1""] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={71,72};
-				};
-				class Item1
-				{
-					position[]={18120.793,0.94347835,3497.9272};
-					azimut=105;
-					special="NONE";
-					id=71;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={70};
-				};
-				class Item2
-				{
-					position[]={18147.367,0.92813337,3504.3584};
-					azimut=280;
-					special="NONE";
-					id=72;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={70};
-				};
-			};
-		};
-		class Item23
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=4;
-				class Item0
-				{
-					position[]={15094.356,0.69143057,6066.9116};
-					azimut=15;
-					special="NONE";
-					id=73;
-					side="LOGIC";
-					vehicle="LocationLogicDepot";
-					leader=1;
-					skill=0.60000002;
-					text="Msta";
-					init="nullReturn = [this,""Msta"",""+"",10,30,100,""TinyTown1""] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={74,75,76};
-				};
-				class Item1
-				{
-					position[]={14931.175,0.68011671,5934.5122};
-					azimut=100;
-					special="NONE";
-					id=75;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={73};
-				};
-				class Item2
-				{
-					position[]={15387.263,0.6875658,6074.5283};
-					azimut=150;
-					special="NONE";
-					id=74;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={73};
-				};
-				class Item3
-				{
-					position[]={15365.037,0.74347836,6117.5796};
-					azimut=70;
-					special="NONE";
-					id=76;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={73};
-				};
-			};
-		};
-		class Item24
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=6;
-				class Item0
-				{
-					position[]={13760.795,0.99766093,5995.4072};
-					azimut=25;
-					special="NONE";
-					id=77;
-					side="LOGIC";
-					vehicle="LocationLogicDepot";
-					leader=1;
-					skill=0.60000002;
-					text="Staroye";
-					init="nullReturn = [this,""Staroye"",""+"",20,80,500,[""LargeTown1"",""LargeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={78,79,80,81,82};
-				};
-				class Item1
-				{
-					position[]={13722.691,0.78557974,6278.1021};
-					azimut=145;
-					special="NONE";
-					id=79;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={77};
-				};
-				class Item2
-				{
-					position[]={13895.854,0.91246003,5771.7271};
-					azimut=325;
-					special="NONE";
-					id=78;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={77};
-				};
-				class Item3
-				{
-					position[]={13872.083,0.70449698,5734.7393};
-					azimut=110;
-					special="NONE";
-					id=80;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={77};
-				};
-				class Item4
-				{
-					position[]={13738.72,0.91929477,6289.3501};
-					azimut=70;
-					special="NONE";
-					id=81;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={77};
-				};
-				class Item5
-				{
-					position[]={13684.655,0.67828476,6260.2432};
-					azimut=345;
-					special="NONE";
-					id=82;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={77};
-				};
-			};
-		};
-		class Item25
 		{
 			side="LOGIC";
 			class Vehicles
@@ -1247,74 +1001,283 @@ class Mission
 					position[]={1784.5247,12.971544,599.36096};
 					azimut=120;
 					special="NONE";
-					id=83;
+					id=65;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
 					text="Medlina";
-					init="nullReturn = [this,""Medlina"",""+"",20,80,500,[""LargeTown1"",""LargeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={84,85,86,87,88};
+					init="nullReturn = [this,""Medlina"",""+"",20,80,200,[""LargeTown1"",""LargeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={66,67,68,69,70};
 				};
 				class Item1
 				{
 					position[]={1714.8125,12.971544,592.50183};
 					azimut=220;
 					special="NONE";
-					id=85;
+					id=67;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={83};
+					synchronizations[]={65};
 				};
 				class Item2
 				{
 					position[]={1905.3671,12.971544,706.79114};
 					azimut=145;
 					special="NONE";
-					id=84;
+					id=66;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={83};
+					synchronizations[]={65};
 				};
 				class Item3
 				{
 					position[]={1843.9458,12.971544,682.02478};
 					azimut=270;
 					special="NONE";
-					id=86;
+					id=68;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={83};
+					synchronizations[]={65};
 				};
 				class Item4
 				{
 					position[]={1701.4845,12.971544,577.9375};
 					azimut=310;
 					special="NONE";
-					id=87;
+					id=69;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={83};
+					synchronizations[]={65};
 				};
 				class Item5
 				{
 					position[]={1722.0997,12.971544,656.60742};
 					azimut=205;
 					special="NONE";
-					id=88;
+					id=70;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['AA']];";
-					synchronizations[]={83};
+					synchronizations[]={65};
+				};
+			};
+		};
+		class Item23
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={9191.8535,2.4711461,7089.1812};
+					azimut=171;
+					special="NONE";
+					id=71;
+					side="LOGIC";
+					vehicle="LocationLogicDepot";
+					leader=1;
+					skill=0.60000002;
+					text="Madron";
+					init="nullReturn = [this,""Madron"",""+"",10,30,50,""TinyTown1""] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={72,73};
+				};
+				class Item1
+				{
+					position[]={9119.1299,2.938365,7104.0044};
+					azimut=350;
+					special="NONE";
+					id=72;
+					side="LOGIC";
+					vehicle="LocationLogicCamp";
+					skill=0.60000002;
+					init="this enableSimulation false;";
+					synchronizations[]={71};
+				};
+				class Item2
+				{
+					position[]={9101.0889,3.6112607,7100.0762};
+					azimut=255;
+					special="NONE";
+					id=73;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					synchronizations[]={71};
+				};
+			};
+		};
+		class Item24
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=5;
+				class Item0
+				{
+					position[]={4752.6567,20.082712,3097.9197};
+					special="NONE";
+					id=74;
+					side="LOGIC";
+					vehicle="LocationLogicDepot";
+					leader=1;
+					skill=0.60000002;
+					text="Faunaverde";
+					init="nullReturn = [this,""Faunaverde"",""+"",10,65,250,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={75,76,78,77};
+				};
+				class Item1
+				{
+					position[]={4644.438,20.082712,3064.7061};
+					azimut=180;
+					special="NONE";
+					id=76;
+					side="LOGIC";
+					vehicle="LocationLogicCamp";
+					skill=0.60000002;
+					init="this enableSimulation false;";
+					synchronizations[]={74};
+				};
+				class Item2
+				{
+					position[]={4841.6807,11.213511,3011.7412};
+					azimut=25;
+					special="NONE";
+					id=75;
+					side="LOGIC";
+					vehicle="LocationLogicCamp";
+					skill=0.60000002;
+					init="this enableSimulation false;";
+					synchronizations[]={74};
+				};
+				class Item3
+				{
+					position[]={4633.4907,20.328526,3064.5095};
+					azimut=265;
+					special="NONE";
+					id=78;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					synchronizations[]={74};
+				};
+				class Item4
+				{
+					position[]={4847.2217,11.482343,3029.6387};
+					azimut=125;
+					special="NONE";
+					id=77;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					synchronizations[]={74};
+				};
+			};
+		};
+		class Item25
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=7;
+				class Item0
+				{
+					position[]={1373.293,6.988235,7393.2437};
+					azimut=270;
+					special="NONE";
+					id=79;
+					side="LOGIC";
+					vehicle="LocationLogicDepot";
+					leader=1;
+					skill=0.60000002;
+					text="Zanjeer";
+					init="nullReturn = [this,""Zanjeer"",""+"",10,50,300,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={80,81,82,83,84,85};
+				};
+				class Item1
+				{
+					position[]={1249.4127,3.988122,7324.606};
+					azimut=175;
+					special="NONE";
+					id=81;
+					side="LOGIC";
+					vehicle="LocationLogicCamp";
+					skill=0.60000002;
+					init="this enableSimulation false;";
+					synchronizations[]={79};
+				};
+				class Item2
+				{
+					position[]={1351.5073,3.2179039,7553.3984};
+					azimut=105;
+					special="NONE";
+					id=80;
+					side="LOGIC";
+					vehicle="LocationLogicCamp";
+					skill=0.60000002;
+					init="this enableSimulation false;";
+					synchronizations[]={79};
+				};
+				class Item3
+				{
+					position[]={1354.5576,3.1445546,7566.3213};
+					azimut=15;
+					special="NONE";
+					id=82;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					synchronizations[]={79};
+				};
+				class Item4
+				{
+					position[]={1487.5793,10.764033,7377.7285};
+					azimut=110;
+					special="NONE";
+					id=83;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MG']];";
+					synchronizations[]={79};
+				};
+				class Item5
+				{
+					position[]={1233.3743,3.988122,7321.771};
+					azimut=215;
+					special="NONE";
+					id=84;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MG']];";
+					synchronizations[]={79};
+				};
+				class Item6
+				{
+					position[]={1191.8722,9.4727125,7413.2627};
+					azimut=340;
+					special="NONE";
+					id=85;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					synchronizations[]={79};
 				};
 			};
 		};
@@ -1326,66 +1289,65 @@ class Mission
 				items=5;
 				class Item0
 				{
-					position[]={13434.656,0.71246409,7073.3262};
-					azimut=15;
+					position[]={3257.438,4.9975581,9333.8486};
+					azimut=180;
 					special="NONE";
-					id=89;
+					id=86;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Shakhovka";
-					init="nullReturn = [this,""Shakhovka"",""+"",10,45,250,""TinyTown1""] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={90,91,93,92};
+					text="Medicolin";
+					init="nullReturn = [this,""Medicolin"",""+"",10,50,300,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={87,88,90,89};
 				};
 				class Item1
 				{
-					position[]={13203.001,0.83080411,7203.4346};
-					azimut=215;
+					position[]={3136.679,4.9863214,9360.54};
+					azimut=355;
 					special="NONE";
-					id=91;
+					id=88;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={89};
+					synchronizations[]={86};
 				};
 				class Item2
 				{
-					position[]={13316.841,0.67471367,6940.2886};
-					azimut=200;
+					position[]={3384.2634,3.2114453,9304.7686};
+					azimut=165;
 					special="NONE";
-					id=90;
+					id=87;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={89};
+					synchronizations[]={86};
 				};
 				class Item3
 				{
-					position[]={13284.675,0.78438509,7195.2495};
-					azimut=315;
+					position[]={3124.5918,4.8681178,9361.7617};
+					azimut=270;
 					special="NONE";
-					id=93;
+					id=90;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={89};
+					synchronizations[]={86};
 				};
 				class Item4
 				{
-					position[]={13319.602,0.97901535,6908.9258};
-					placement=20;
-					azimut=100;
+					position[]={3395.7957,3.566231,9307.4424};
+					azimut=85;
 					special="NONE";
-					id=92;
+					id=89;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={89};
+					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					synchronizations[]={86};
 				};
 			};
 		};
@@ -1397,65 +1359,65 @@ class Mission
 				items=5;
 				class Item0
 				{
-					position[]={4726.165,0.85552245,12393.01};
-					azimut=350;
+					position[]={3114.8599,14.764845,4594.5645};
+					azimut=30;
 					special="NONE";
-					id=94;
+					id=91;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Guglovo";
-					init="nullReturn = [this,""Guglovo"",""+"",10,40,250,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={95,96,98,97};
+					text="Morada";
+					init="nullReturn = [this,""Morada"",""+"",10,50,250,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={92,93,95,94};
 				};
 				class Item1
 				{
-					position[]={4500.6499,0.70830548,12709.297};
-					azimut=65;
+					position[]={3027.1802,14.764845,4651.481};
+					azimut=200;
 					special="NONE";
-					id=96;
+					id=93;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={94};
+					synchronizations[]={91};
 				};
 				class Item2
 				{
-					position[]={4907.5596,0.86986184,12293.661};
-					azimut=35;
+					position[]={3254.7234,21.100256,4579.0449};
+					azimut=175;
 					special="NONE";
-					id=95;
+					id=92;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={94};
+					synchronizations[]={91};
 				};
 				class Item3
 				{
-					position[]={4456.5229,1.0108728,12777.439};
-					azimut=305;
+					position[]={3123.5688,19.386684,4746.2495};
+					azimut=25;
 					special="NONE";
-					id=98;
+					id=95;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={94};
+					synchronizations[]={91};
 				};
 				class Item4
 				{
-					position[]={4893.0156,0.83323771,12270.087};
-					azimut=125;
+					position[]={3251.8081,21.08087,4598.5664};
+					azimut=175;
 					special="NONE";
-					id=97;
+					id=94;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={94};
+					init="this setVariable ['wfbe_defense_kind', ['MG']];";
+					synchronizations[]={91};
 				};
 			};
 		};
@@ -1464,92 +1426,68 @@ class Mission
 			side="LOGIC";
 			class Vehicles
 			{
-				items=7;
+				items=5;
 				class Item0
 				{
-					position[]={-2947.7749,0.89567196,9074.9678};
-					azimut=340;
+					position[]={2694.647,4.4716768,2476.8401};
+					azimut=195;
 					special="NONE";
-					id=99;
+					id=96;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="NovySobor";
-					init="nullReturn = [this,""Novy Sobor"",""+"",10,50,300,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={100,101,102,103,104,105};
+					text="Aguado";
+					init="nullReturn = [this,""Aguado"",""+"",10,30,250,[""TinyTown1"",""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={97,98,99,100};
 				};
 				class Item1
 				{
-					position[]={-2914.5557,0.87622201,8737.3232};
-					azimut=30;
+					position[]={2715.7319,1.7411717,2541.5779};
+					azimut=280;
 					special="NONE";
-					id=101;
+					id=98;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={99};
+					synchronizations[]={96};
 				};
 				class Item2
 				{
-					position[]={-3146.4067,0.97065103,9281.9854};
-					azimut=105;
+					position[]={2655.4333,2.3942223,2307.011};
+					azimut=79;
 					special="NONE";
-					id=100;
+					id=97;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={99};
+					synchronizations[]={96};
 				};
 				class Item3
 				{
-					position[]={-3171.1479,0.88045102,9276.6221};
-					azimut=40;
+					position[]={2655.8562,2.3290434,2291.25};
+					azimut=165;
 					special="NONE";
-					id=102;
+					id=99;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={99};
+					synchronizations[]={96};
 				};
 				class Item4
 				{
-					position[]={-2821.3887,0.84959614,9001.6611};
-					azimut=110;
+					position[]={2697.6208,2.485157,2543.1689};
+					azimut=30;
 					special="NONE";
-					id=103;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={99};
-				};
-				class Item5
-				{
-					position[]={-3215.7544,0.85226822,8949.374};
-					azimut=215;
-					special="NONE";
-					id=104;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={99};
-				};
-				class Item6
-				{
-					position[]={-2889.0259,0.82862109,8745.9482};
-					azimut=215;
-					special="NONE";
-					id=105;
+					id=100;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={99};
+					synchronizations[]={96};
 				};
 			};
 		};
@@ -1558,67 +1496,78 @@ class Mission
 			side="LOGIC";
 			class Vehicles
 			{
-				items=5;
+				items=6;
 				class Item0
 				{
-					position[]={-3556.0435,0.96953416,7468.6602};
+					position[]={3153.752,6.9092851,5877.5342};
+					azimut=180;
 					special="NONE";
-					id=106;
+					id=101;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Vyshnoye";
-					init="nullReturn = [this,""Vyshnoye"",""Vyshnoe"",10,50,250,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={107,108,110,109};
+					text="Fernando";
+					init="nullReturn = [this,""Fernando"",""+"",10,60,200,[""SmallTown1"",""MediumTown1"",""MediumTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={102,103,104,105,106};
 				};
 				class Item1
 				{
-					position[]={-3708.7197,0.83513576,7525.4873};
-					azimut=235;
+					position[]={3108.1987,7.236166,5805.6592};
 					special="NONE";
-					id=108;
+					id=103;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={106};
+					synchronizations[]={101};
 				};
 				class Item2
 				{
-					position[]={-3504.0615,0.69640869,7297.5015};
-					azimut=240;
+					position[]={3208.1206,14.741648,6013.5566};
+					azimut=285;
 					special="NONE";
-					id=107;
+					id=102;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={106};
+					synchronizations[]={101};
 				};
 				class Item3
 				{
-					position[]={-3728.4443,0.74312872,7542.7715};
-					azimut=315;
+					position[]={3208.1133,14.545836,6025.3481};
 					special="NONE";
-					id=110;
+					id=104;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={106};
+					synchronizations[]={101};
 				};
 				class Item4
 				{
-					position[]={-3464.4468,0.85226613,7283.9224};
-					azimut=170;
+					position[]={3124.5972,14.781761,5990.7559};
+					azimut=270;
 					special="NONE";
-					id=109;
+					id=105;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={106};
+					synchronizations[]={101};
+				};
+				class Item5
+				{
+					position[]={3093.7275,7.2131639,5803.4141};
+					azimut=80;
+					special="NONE";
+					id=106;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MG']];";
+					synchronizations[]={101};
 				};
 			};
 		};
@@ -1627,67 +1576,80 @@ class Mission
 			side="LOGIC";
 			class Vehicles
 			{
-				items=5;
+				items=6;
 				class Item0
 				{
-					position[]={-5616.8306,0.78009456,7655.625};
+					position[]={5800.4795,17.967972,4706.709};
+					azimut=270;
 					special="NONE";
-					id=111;
+					id=107;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Pogorevka";
-					init="nullReturn = [this,""Pogorevka"",""+"",10,50,250,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={112,113,115,114};
+					text="Corazon";
+					init="nullReturn = [this,""Corazon"",""+"",30,120,500,[""HugeTown1"",""HugeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={108,109,110,111,112};
 				};
 				class Item1
 				{
-					position[]={-5777.3091,0.76689452,7856.8662};
-					azimut=35;
+					position[]={5926.6436,16.388966,4801.0376};
+					azimut=141;
 					special="NONE";
-					id=113;
+					id=109;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={111};
+					synchronizations[]={107};
 				};
 				class Item2
 				{
-					position[]={-5353.4888,0.65164435,7598.1084};
-					azimut=358.14951;
+					position[]={5786.7417,24.075344,4462.3159};
+					azimut=325;
 					special="NONE";
-					id=112;
+					id=108;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={111};
+					synchronizations[]={107};
 				};
 				class Item3
 				{
-					position[]={-5807.7856,0.79986477,7833.1191};
-					azimut=295;
+					position[]={5786.2881,24.075344,4485.2993};
+					azimut=100;
 					special="NONE";
-					id=115;
+					id=110;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					synchronizations[]={107};
+				};
+				class Item4
+				{
+					position[]={5946.1108,15.81804,4793.6724};
+					azimut=69;
+					special="NONE";
+					id=111;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					synchronizations[]={107};
+				};
+				class Item5
+				{
+					position[]={5738.8018,5.9562402,4805.4438};
+					azimut=225;
+					special="NONE";
+					id=112;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['AA']];";
-					synchronizations[]={111};
-				};
-				class Item4
-				{
-					position[]={-5395.8569,0.84861082,7597.8799};
-					azimut=175;
-					special="NONE";
-					id=114;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={111};
+					synchronizations[]={107};
 				};
 			};
 		};
@@ -1696,67 +1658,79 @@ class Mission
 			side="LOGIC";
 			class Vehicles
 			{
-				items=5;
+				items=6;
 				class Item0
 				{
-					position[]={-8172.1621,0.89693558,8756.7588};
-					azimut=325;
+					position[]={947.39941,23.680593,1755.0172};
+					azimut=145;
 					special="NONE";
-					id=116;
+					id=113;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Myshkino";
-					init="nullReturn = [this,""Myshkino"",""+"",10,40,250,[""TinyTown1"",""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={117,118,119,120};
+					text="Drassen";
+					init="nullReturn = [this,""Drassen"",""+"",20,80,200,[""LargeTown1"",""LargeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={114,115,116,117,118};
 				};
 				class Item1
 				{
-					position[]={-8200.8047,0.86843967,8957.0771};
-					azimut=35;
+					position[]={764.25031,23.572798,1668.8527};
+					azimut=319;
 					special="NONE";
-					id=118;
+					id=115;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={116};
+					synchronizations[]={113};
 				};
 				class Item2
 				{
-					position[]={-7947.7954,1.0258757,8642.9521};
-					azimut=205;
+					position[]={1109.4479,12.40319,1787.3911};
+					azimut=2;
 					special="NONE";
-					id=117;
+					id=114;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={116};
+					synchronizations[]={113};
 				};
 				class Item3
 				{
-					position[]={-7934.4937,0.83111793,8629.499};
-					azimut=115;
+					position[]={1122.4763,11.334656,1785.8796};
+					azimut=80;
 					special="NONE";
-					id=119;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={116};
-				};
-				class Item4
-				{
-					position[]={-8201.1504,0.66165632,8977.6904};
-					special="NONE";
-					id=120;
+					id=116;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={116};
+					synchronizations[]={113};
+				};
+				class Item4
+				{
+					position[]={750.07538,23.646757,1648.9713};
+					azimut=30;
+					special="NONE";
+					id=117;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MG']];";
+					synchronizations[]={113};
+				};
+				class Item5
+				{
+					position[]={1016.0064,25.349825,1631.3419};
+					special="NONE";
+					id=118;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['AA']];";
+					synchronizations[]={113};
 				};
 			};
 		};
@@ -1765,81 +1739,91 @@ class Mission
 			side="LOGIC";
 			class Vehicles
 			{
-				items=6;
+				items=7;
 				class Item0
 				{
-					position[]={-6976.2749,0.79510337,9263.9854};
-					azimut=25;
+					position[]={6835.3174,14.477237,4722.3926};
+					azimut=180;
 					special="NONE";
-					id=121;
+					id=119;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Pustoshka";
-					init="nullReturn = [this,""Pustoshka"",""+"",10,60,300,[""SmallTown1"",""MediumTown1"",""MediumTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={122,123,124,125,126};
+					text="Manteria";
+					init="nullReturn = [this,""Manteria"",""+"",10,60,300,[""MediumTown1"",""MediumTown2"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={120,121,122,123,124,125};
 				};
 				class Item1
 				{
-					position[]={-7099.7905,0.84729457,9149.0205};
-					azimut=285;
+					position[]={6629.3184,16.050583,4611.8149};
+					azimut=90;
 					special="NONE";
-					id=123;
+					id=121;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={121};
+					synchronizations[]={119};
 				};
 				class Item2
 				{
-					position[]={-6807.8413,0.83195025,9257.7881};
-					azimut=210;
+					position[]={6799.6763,14.773689,4859.4888};
+					azimut=270;
 					special="NONE";
-					id=122;
+					id=120;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={121};
+					synchronizations[]={119};
 				};
 				class Item3
 				{
-					position[]={-7100.8569,0.9410904,9131.5596};
-					azimut=180;
+					position[]={6734.0542,12.614069,4863.1387};
+					azimut=285;
+					special="NONE";
+					id=122;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					synchronizations[]={119};
+				};
+				class Item4
+				{
+					position[]={6915.9238,31.50243,4563.3696};
+					azimut=135;
+					special="NONE";
+					id=123;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					synchronizations[]={119};
+				};
+				class Item5
+				{
+					position[]={6630.001,17.61253,4584.2383};
+					azimut=215;
 					special="NONE";
 					id=124;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={121};
+					init="this setVariable ['wfbe_defense_kind', ['MG']];";
+					synchronizations[]={119};
 				};
-				class Item4
+				class Item6
 				{
-					position[]={-6793.4292,0.72699773,9249.7939};
-					azimut=125;
+					position[]={6799.9673,14.797015,4871.3662};
 					special="NONE";
 					id=125;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={121};
-				};
-				class Item5
-				{
-					position[]={-6804.2104,0.84426928,9319.7607};
-					placement=10;
-					azimut=80;
-					special="NONE";
-					id=126;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={121};
+					synchronizations[]={119};
 				};
 			};
 		};
@@ -1848,80 +1832,92 @@ class Mission
 			side="LOGIC";
 			class Vehicles
 			{
-				items=6;
+				items=7;
 				class Item0
 				{
-					position[]={-3866.0625,0.72970617,9139.1357};
-					azimut=25;
+					position[]={7427.4863,4.946804,1922.5541};
+					azimut=159;
 					special="NONE";
-					id=127;
+					id=126;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="StarySobor";
-					init="nullReturn = [this,""Stary Sobor"",""+"",30,120,500,[""HugeTown1"",""HugeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={128,129,130,131,132};
+					text="ElVillon";
+					init="nullReturn = [this,""El Villon"",""+"",20,80,500,[""LargeTown1"",""LargeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={127,128,129,130,131,132};
 				};
 				class Item1
 				{
-					position[]={-4168.1021,0.89610565,9233.8467};
-					azimut=210;
+					position[]={7306.377,4.6586814,2086.1836};
+					azimut=281;
 					special="NONE";
-					id=129;
+					id=127;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={127};
+					synchronizations[]={126};
 				};
 				class Item2
 				{
-					position[]={-3717.6411,1.0182514,8870.6807};
-					azimut=325;
+					position[]={7620.9443,4.9580822,1789.0992};
+					azimut=165;
 					special="NONE";
 					id=128;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={127};
-				};
-				class Item3
-				{
-					position[]={-3676.0493,0.98383582,8856.0303};
-					azimut=100;
-					special="NONE";
-					id=130;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={127};
+					synchronizations[]={126};
+				};
+				class Item3
+				{
+					position[]={7309.3237,4.6580114,2097.9326};
+					azimut=345;
+					special="NONE";
+					id=129;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					synchronizations[]={126};
 				};
 				class Item4
 				{
-					position[]={-4158.6484,0.87637699,9332.7217};
-					azimut=320;
+					position[]={7620.6641,4.9580822,1807.8414};
+					azimut=185;
+					special="NONE";
+					id=130;
+					side="LOGIC";
+					vehicle="LocationLogicCamp";
+					skill=0.60000002;
+					init="this enableSimulation false;";
+					synchronizations[]={126};
+				};
+				class Item5
+				{
+					position[]={7468.96,4.946804,2025.3059};
+					azimut=20;
 					special="NONE";
 					id=131;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={127};
+					init="this setVariable ['wfbe_defense_kind', ['AA']];";
+					synchronizations[]={126};
 				};
-				class Item5
+				class Item6
 				{
-					position[]={-3891.0415,0.71681881,9425.915};
-					azimut=225;
+					position[]={7290.7925,4.6811037,1945.6095};
+					azimut=265;
 					special="NONE";
 					id=132;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['AA']];";
-					synchronizations[]={127};
+					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					synchronizations[]={126};
 				};
 			};
 		};
@@ -1930,25 +1926,24 @@ class Mission
 			side="LOGIC";
 			class Vehicles
 			{
-				items=5;
+				items=6;
 				class Item0
 				{
-					position[]={-6363.5952,0.76079339,10304.995};
-					azimut=25;
+					position[]={9184.9912,12.99974,3903.5371};
 					special="NONE";
 					id=133;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Vybor";
-					init="nullReturn = [this,""Vybor"",""+"",10,50,250,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={134,135,136,137};
+					text="Fantasmo";
+					init="nullReturn = [this,""Fantasmo"",""+"",10,65,200,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={134,135,136,137,138};
 				};
 				class Item1
 				{
-					position[]={-6485.1685,1.0045296,10252.837};
-					azimut=215;
+					position[]={9116.3047,10.763709,4033.6948};
+					azimut=200;
 					special="NONE";
 					id=135;
 					side="LOGIC";
@@ -1959,8 +1954,8 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={-6068.8208,0.81149757,10129.655};
-					azimut=15;
+					position[]={9330.8135,15.137036,3754.4253};
+					azimut=10;
 					special="NONE";
 					id=134;
 					side="LOGIC";
@@ -1971,26 +1966,38 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={-6474.9771,0.91864967,10230.321};
-					azimut=265;
+					position[]={9119.6201,10.199663,4045.196};
+					azimut=295;
 					special="NONE";
 					id=136;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					init="this setVariable ['wfbe_defense_kind', ['MG']];";
 					synchronizations[]={133};
 				};
 				class Item4
 				{
-					position[]={-6052.4028,0.74441123,10126.097};
-					azimut=110;
+					position[]={9342.0176,14.935626,3751.593};
+					azimut=95;
 					special="NONE";
 					id=137;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					synchronizations[]={133};
+				};
+				class Item5
+				{
+					position[]={9082.7305,15.272116,3773.9182};
+					azimut=160;
+					special="NONE";
+					id=138;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['AA']];";
 					synchronizations[]={133};
 				};
 			};
@@ -2003,76 +2010,77 @@ class Mission
 				items=6;
 				class Item0
 				{
-					position[]={947.39941,23.680593,1755.0172};
-					azimut=145;
+					position[]={3010.1331,152.97646,3805.6616};
+					azimut=165;
 					special="NONE";
-					id=138;
+					id=139;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Drassen";
-					init="nullReturn = [this,""Drassen"",""+"",20,80,200,[""LargeTown1"",""LargeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={139,140,141,142,143};
+					text="LosPeligron";
+					init="nullReturn = [this,""Los Peligron"",""+"",20,80,500,[""LargeTown1"",""LargeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={140,141,142,143,144};
 				};
 				class Item1
 				{
-					position[]={764.25031,23.572798,1668.8527};
-					azimut=319;
+					position[]={3098.4124,154.94016,3898.9192};
+					azimut=190;
+					special="NONE";
+					id=141;
+					side="LOGIC";
+					vehicle="LocationLogicCamp";
+					skill=0.60000002;
+					init="this enableSimulation false;";
+					synchronizations[]={139};
+				};
+				class Item2
+				{
+					position[]={3026.1226,155.91753,3650.0337};
+					azimut=229;
 					special="NONE";
 					id=140;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={138};
-				};
-				class Item2
-				{
-					position[]={1109.4479,12.40319,1787.3911};
-					azimut=2;
-					special="NONE";
-					id=139;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={138};
+					synchronizations[]={139};
 				};
 				class Item3
 				{
-					position[]={1122.4763,11.334656,1785.8796};
-					azimut=80;
-					special="NONE";
-					id=141;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={138};
-				};
-				class Item4
-				{
-					position[]={750.07538,23.646757,1648.9713};
-					azimut=30;
+					position[]={3082.0613,155.7263,3898.6191};
+					azimut=280;
 					special="NONE";
 					id=142;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={138};
+					synchronizations[]={139};
 				};
-				class Item5
+				class Item4
 				{
-					position[]={1016.0064,25.349825,1631.3419};
+					position[]={2928.1038,152.33835,3810.418};
+					azimut=260;
 					special="NONE";
 					id=143;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['AA']];";
-					synchronizations[]={138};
+					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					synchronizations[]={139};
+				};
+				class Item5
+				{
+					position[]={3035.2939,155.71049,3633.4058};
+					azimut=140;
+					special="NONE";
+					id=144;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					synchronizations[]={139};
 				};
 			};
 		};
@@ -2081,91 +2089,80 @@ class Mission
 			side="LOGIC";
 			class Vehicles
 			{
-				items=7;
+				items=6;
 				class Item0
 				{
-					position[]={-4663.979,0.84080321,9933.4971};
+					position[]={8513.1504,9.2390537,7869.9121};
+					azimut=30;
 					special="NONE";
-					id=144;
+					id=145;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Kabanino";
-					init="nullReturn = [this,""Kabanino"",""+"",10,60,300,[""MediumTown1"",""MediumTown2"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={145,146,147,148,149,150};
+					text="Conoteta";
+					init="nullReturn = [this,""Conoteta"",""+"",10,60,300,[""MediumTown1"",""MediumTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={146,147,148,149,150};
 				};
 				class Item1
 				{
-					position[]={-4921.606,0.68456,9948.5029};
-					azimut=105;
+					position[]={8587.085,10.936974,7739.481};
+					azimut=137;
+					special="NONE";
+					id=147;
+					side="LOGIC";
+					vehicle="LocationLogicCamp";
+					skill=0.60000002;
+					init="this enableSimulation false;";
+					synchronizations[]={145};
+				};
+				class Item2
+				{
+					position[]={8489.0313,11.092821,8029.5527};
+					azimut=265;
 					special="NONE";
 					id=146;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={144};
-				};
-				class Item2
-				{
-					position[]={-4651.522,0.7276876,9759.1963};
-					azimut=340;
-					special="NONE";
-					id=145;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={144};
+					synchronizations[]={145};
 				};
 				class Item3
 				{
-					position[]={-4942.4438,0.76244122,9949.4971};
+					position[]={8378.0625,7.9024,7990.2495};
 					azimut=270;
-					special="NONE";
-					id=147;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={144};
-				};
-				class Item4
-				{
-					position[]={-4613.687,0.95551819,9701.7881};
-					azimut=135;
 					special="NONE";
 					id=148;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={144};
+					init="this setVariable ['wfbe_defense_kind', ['MG']];";
+					synchronizations[]={145};
 				};
-				class Item5
+				class Item4
 				{
-					position[]={-4922.0483,0.74864846,9883.9932};
-					azimut=215;
+					position[]={8488.2109,11.370941,8039.1089};
+					azimut=325;
 					special="NONE";
 					id=149;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={144};
+					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					synchronizations[]={145};
 				};
-				class Item6
+				class Item5
 				{
-					position[]={-4723.1538,1.0021867,10056.454};
-					azimut=10;
+					position[]={8594.5781,10.932052,7758.1157};
+					azimut=145;
 					special="NONE";
 					id=150;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={144};
+					init="this setVariable ['wfbe_defense_kind', ['MG','GL']];";
+					synchronizations[]={145};
 				};
 			};
 		};
@@ -2177,33 +2174,21 @@ class Mission
 				items=5;
 				class Item0
 				{
-					position[]={-3753.9971,0.90403569,15500.156};
+					position[]={6727.8857,7.975112,3405.3533};
 					special="NONE";
 					id=151;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Petrovka";
-					init="nullReturn = [this,""Petrovka"",""+"",10,50,250,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={152,153,154,155};
+					text="Victorin";
+					init="nullReturn = [this,""Victorin"",""+"",20,80,300,[""LargeTown1"",""LargeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={152,153,154,155,156};
 				};
 				class Item1
 				{
-					position[]={-3898.0337,0.8164382,15430.194};
-					azimut=290;
-					special="NONE";
-					id=153;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={151};
-				};
-				class Item2
-				{
-					position[]={-3699.6841,0.67126578,15370.518};
-					azimut=205;
+					position[]={6621.9287,7.975112,3264.3508};
+					azimut=90;
 					special="NONE";
 					id=152;
 					side="LOGIC";
@@ -2212,10 +2197,22 @@ class Mission
 					init="this enableSimulation false;";
 					synchronizations[]={151};
 				};
+				class Item2
+				{
+					position[]={6585.2656,8.71381,3366.0308};
+					azimut=300;
+					special="NONE";
+					id=153;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					synchronizations[]={151};
+				};
 				class Item3
 				{
-					position[]={-3842.0239,0.8213563,15442.338};
-					azimut=240;
+					position[]={6921.6704,26.844816,3436.7695};
+					azimut=75;
 					special="NONE";
 					id=154;
 					side="LOGIC";
@@ -2226,14 +2223,14 @@ class Mission
 				};
 				class Item4
 				{
-					position[]={-3653.8838,0.6915549,15374.515};
-					azimut=110;
+					position[]={6596.9526,7.975112,3266.4517};
+					azimut=205;
 					special="NONE";
 					id=155;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					init="this setVariable ['wfbe_defense_kind', ['MG']];";
 					synchronizations[]={151};
 				};
 			};
@@ -2243,104 +2240,19 @@ class Mission
 			side="LOGIC";
 			class Vehicles
 			{
-				items=8;
+				items=1;
 				class Item0
 				{
-					position[]={-2661.5195,0.78602397,13284.791};
-					azimut=25;
+					position[]={6914.3374,25.534901,3432.4436};
+					azimut=320;
 					special="NONE";
 					id=156;
 					side="LOGIC";
-					vehicle="LocationLogicDepot";
+					vehicle="LocationLogicCamp";
 					leader=1;
 					skill=0.60000002;
-					text="Grishino";
-					init="nullReturn = [this,""Grishino"",""+"",20,80,500,[""LargeTown1"",""LargeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={157,158,159,160,161,162,163};
-				};
-				class Item1
-				{
-					position[]={-2684.0288,0.98402023,13454.084};
-					azimut=200;
-					special="NONE";
-					id=157;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={156};
-				};
-				class Item2
-				{
-					position[]={-2431.189,0.96704572,13338.771};
-					azimut=120;
-					special="NONE";
-					id=158;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['AA']];";
-					synchronizations[]={156};
-				};
-				class Item3
-				{
-					position[]={-2747.7686,0.89369828,13450.895};
-					azimut=320;
-					special="NONE";
-					id=159;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['AA']];";
-					synchronizations[]={156};
-				};
-				class Item4
-				{
-					position[]={-2820.7017,0.86900842,13173.494};
-					azimut=561.995;
-					special="NONE";
-					id=160;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={156};
-				};
-				class Item5
-				{
-					position[]={-2786.4946,1.0261172,13123.222};
-					azimut=130;
-					special="NONE";
-					id=161;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={156};
-				};
-				class Item6
-				{
-					position[]={-2648.7246,0.79189301,13485.986};
-					azimut=20;
-					special="NONE";
-					id=162;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={156};
-				};
-				class Item7
-				{
-					position[]={-2700.3765,0.64921761,13151.788};
-					azimut=215;
-					special="NONE";
-					id=163;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={156};
+					synchronizations[]={151};
 				};
 			};
 		};
@@ -2349,805 +2261,93 @@ class Mission
 			side="LOGIC";
 			class Vehicles
 			{
-				items=6;
-				class Item0
-				{
-					position[]={8639.627,185.96912,11946.326};
-					special="NONE";
-					id=164;
-					side="LOGIC";
-					vehicle="LocationLogicDepot";
-					leader=1;
-					skill=0.60000002;
-					text="Gvozdno";
-					init="nullReturn = [this,""Gvozdno"",""+"",10,50,250,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={165,166,167,168,169};
-				};
-				class Item1
-				{
-					position[]={8525.3623,169.69026,12008.954};
-					azimut=130;
-					special="NONE";
-					id=166;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={164};
-				};
-				class Item2
-				{
-					position[]={8692.8809,197.06963,11850.575};
-					azimut=290;
-					special="NONE";
-					id=165;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={164};
-				};
-				class Item3
-				{
-					position[]={8524.998,171.39261,11993.912};
-					azimut=295;
-					special="NONE";
-					id=167;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={164};
-				};
-				class Item4
-				{
-					position[]={8717.1875,197.86301,11854.214};
-					azimut=95;
-					special="NONE";
-					id=168;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={164};
-				};
-				class Item5
-				{
-					position[]={8702.2441,199.53337,11819.343};
-					azimut=160;
-					special="NONE";
-					id=169;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={164};
-				};
-			};
-		};
-		class Item40
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=5;
-				class Item0
-				{
-					position[]={14968.07,0.9451344,7149.9111};
-					azimut=350;
-					special="NONE";
-					id=170;
-					side="LOGIC";
-					vehicle="LocationLogicDepot";
-					leader=1;
-					skill=0.60000002;
-					text="Dolina";
-					init="nullReturn = [this,""Dolina"",""+"",10,50,250,[""SmallTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={171,172,174,173};
-				};
-				class Item1
-				{
-					position[]={14781.642,1.0209537,7225.6934};
-					azimut=10;
-					special="NONE";
-					id=172;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={170};
-				};
-				class Item2
-				{
-					position[]={15149.602,0.99244714,7153.9878};
-					azimut=345;
-					special="NONE";
-					id=171;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={170};
-				};
-				class Item3
-				{
-					position[]={14757.939,0.7312094,7282.1611};
-					azimut=220;
-					special="NONE";
-					id=174;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={170};
-				};
-				class Item4
-				{
-					position[]={15123.696,0.88800859,7117.6553};
-					azimut=80;
-					special="NONE";
-					id=173;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={170};
-				};
-			};
-		};
-		class Item41
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=6;
-				class Item0
-				{
-					position[]={17105.207,0.79582852,6734.3682};
-					azimut=25;
-					special="NONE";
-					id=175;
-					side="LOGIC";
-					vehicle="LocationLogicDepot";
-					leader=1;
-					skill=0.60000002;
-					text="Solnichniy";
-					init="nullReturn = [this,""Solnichniy"",""+"",20,80,500,[""LargeTown1"",""LargeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={176,177,178,179,180};
-				};
-				class Item1
-				{
-					position[]={17085.281,0.72510171,6895.1602};
-					azimut=190;
-					special="NONE";
-					id=177;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={175};
-				};
-				class Item2
-				{
-					position[]={17116.691,0.8472243,6602.1611};
-					azimut=5;
-					special="NONE";
-					id=176;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={175};
-				};
-				class Item3
-				{
-					position[]={16876.707,0.85621148,6801.4478};
-					azimut=280;
-					special="NONE";
-					id=178;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={175};
-				};
-				class Item4
-				{
-					position[]={17148.859,0.94780868,6947.5933};
-					azimut=350;
-					special="NONE";
-					id=179;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={175};
-				};
-				class Item5
-				{
-					position[]={17134.477,0.93804193,6502.6743};
-					azimut=200;
-					special="NONE";
-					id=180;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={175};
-				};
-			};
-		};
-		class Item42
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=5;
-				class Item0
-				{
-					position[]={15936.182,0.78983611,7780.0879};
-					azimut=350;
-					special="NONE";
-					id=181;
-					side="LOGIC";
-					vehicle="LocationLogicDepot";
-					leader=1;
-					skill=0.60000002;
-					text="Orlovets";
-					init="nullReturn = [this,""Orlovets"",""+"",10,40,200,[""TinyTown1"",""SmallTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={182,183,185,184};
-				};
-				class Item1
-				{
-					position[]={15641.273,1.0344586,7816.769};
-					azimut=15;
-					special="NONE";
-					id=183;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={181};
-				};
-				class Item2
-				{
-					position[]={16021.896,0.87072104,7958.582};
-					azimut=265;
-					special="NONE";
-					id=182;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={181};
-				};
-				class Item3
-				{
-					position[]={15630.471,0.81604767,7872.5151};
-					azimut=270;
-					special="NONE";
-					id=185;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={181};
-				};
-				class Item4
-				{
-					position[]={16032.927,0.77669132,7975.5962};
-					azimut=25;
-					special="NONE";
-					id=184;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={181};
-				};
-			};
-		};
-		class Item43
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=6;
-				class Item0
-				{
-					position[]={14401.529,0.94276011,8539.8779};
-					azimut=30;
-					special="NONE";
-					id=186;
-					side="LOGIC";
-					vehicle="LocationLogicDepot";
-					leader=1;
-					skill=0.60000002;
-					text="Polana";
-					init="nullReturn = [this,""Polana"",""+"",10,60,300,[""MediumTown1"",""MediumTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={187,188,189,190,191};
-				};
-				class Item1
-				{
-					position[]={14216.041,0.94917053,8357.8213};
-					azimut=280;
-					special="NONE";
-					id=188;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={186};
-				};
-				class Item2
-				{
-					position[]={14523.511,0.75237274,8800.9268};
-					azimut=230;
-					special="NONE";
-					id=187;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={186};
-				};
-				class Item3
-				{
-					position[]={14487.507,0.88240182,8784.4678};
-					azimut=270;
-					special="NONE";
-					id=189;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={186};
-				};
-				class Item4
-				{
-					position[]={14226.36,0.98283631,8311.1006};
-					azimut=215;
-					special="NONE";
-					id=190;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={186};
-				};
-				class Item5
-				{
-					position[]={14553.55,0.84634918,8721.7139};
-					azimut=145;
-					special="NONE";
-					id=191;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG','GL']];";
-					synchronizations[]={186};
-				};
-			};
-		};
-		class Item44
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=5;
-				class Item0
-				{
-					position[]={13328.541,0.64714557,9422.1631};
-					azimut=25;
-					special="NONE";
-					id=192;
-					side="LOGIC";
-					vehicle="LocationLogicDepot";
-					leader=1;
-					skill=0.60000002;
-					text="Gorka";
-					init="nullReturn = [this,""Gorka"",""+"",20,80,500,[""LargeTown1"",""LargeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={193,194,195,196,197};
-				};
-				class Item1
-				{
-					position[]={13169.842,0.90742666,9315.6768};
-					azimut=95;
-					special="NONE";
-					id=193;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={192};
-				};
-				class Item2
-				{
-					position[]={13092.255,0.8845548,9373.5322};
-					azimut=300;
-					special="NONE";
-					id=194;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={192};
-				};
-				class Item3
-				{
-					position[]={13524.734,1.0159543,9348.292};
-					azimut=75;
-					special="NONE";
-					id=195;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={192};
-				};
-				class Item4
-				{
-					position[]={13163.198,0.85174602,9299.5732};
-					azimut=205;
-					special="NONE";
-					id=196;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={192};
-				};
-			};
-		};
-		class Item45
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={13507.538,0.85538006,9379.0967};
-					azimut=5;
-					special="NONE";
-					id=197;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					leader=1;
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={192};
-				};
-			};
-		};
-		class Item46
-		{
-			side="LOGIC";
-			class Vehicles
-			{
 				items=7;
 				class Item0
 				{
-					position[]={14191.74,0.81925046,10387.876};
-					azimut=25;
+					position[]={6778.4717,12.187677,6303.6382};
+					azimut=270;
 					special="NONE";
-					id=198;
+					id=157;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Dubrovka";
-					init="nullReturn = [this,""Dubrovka"",""+"",10,40,300,[""MediumTown1"",""MediumTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={199,200,202,201,203,204};
+					text="Maruko";
+					init="nullReturn = [this,""Maruko"",""+"",30,120,1000,[""HugeTown1"",""HugeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={160,158,159,162,161,163};
 				};
 				class Item1
 				{
-					position[]={13946.082,0.84072918,10402.372};
-					azimut=305;
+					position[]={6587.583,12.187677,6040.0503};
 					special="NONE";
-					id=200;
+					id=158;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={198};
+					synchronizations[]={157};
 				};
 				class Item2
 				{
-					position[]={13563.644,0.97804564,10186.727};
-					azimut=130;
+					position[]={6931.5186,12.354668,6527.6724};
 					special="NONE";
-					id=199;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={198};
-				};
-				class Item3
-				{
-					position[]={13459.973,0.97333091,10238.245};
-					special="NONE";
-					id=201;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={198};
-				};
-				class Item4
-				{
-					position[]={13703.072,0.76812303,10191.04};
-					azimut=90;
-					special="NONE";
-					id=202;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={198};
-				};
-				class Item5
-				{
-					position[]={13955.467,1.0279016,10413.468};
-					azimut=30;
-					special="NONE";
-					id=203;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={198};
-				};
-				class Item6
-				{
-					position[]={13961.881,0.74607134,10382.774};
-					azimut=215;
-					special="NONE";
-					id=204;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={198};
-				};
-			};
-		};
-		class Item47
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=7;
-				class Item0
-				{
-					position[]={15824.214,0.78981632,9701.4893};
-					azimut=45;
-					special="NONE";
-					id=205;
-					side="LOGIC";
-					vehicle="LocationLogicDepot";
-					leader=1;
-					skill=0.60000002;
-					text="Berezino";
-					init="nullReturn = [this,""Berezino"",""+"",30,120,1000,[""HugeTown1"",""HugeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={208,206,207,210,209,211};
-				};
-				class Item1
-				{
-					position[]={15743.985,0.72324258,9437.0127};
-					azimut=2.0556321;
-					special="NONE";
-					id=206;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={205};
-				};
-				class Item2
-				{
-					position[]={16012.646,0.69403696,9517.2119};
-					azimut=135;
-					special="NONE";
-					id=207;
+					id=159;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['AT']];";
-					synchronizations[]={205};
+					synchronizations[]={157};
 				};
 				class Item3
 				{
-					position[]={15563.048,0.86183363,9528.5088};
-					placement=10;
+					position[]={6859.8892,12.187677,6144.3135};
 					azimut=35;
 					special="NONE";
-					id=208;
+					id=160;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['AA']];";
-					synchronizations[]={205};
+					synchronizations[]={157};
 				};
 				class Item4
 				{
-					position[]={15815.834,0.81909126,9880.2275};
-					azimut=215;
+					position[]={6917.4072,12.187677,6531.4746};
 					special="NONE";
-					id=209;
+					id=161;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={205};
+					synchronizations[]={157};
 				};
 				class Item5
 				{
-					position[]={15833.187,0.83624196,9908.9404};
+					position[]={6874.5537,12.3557,6619.564};
 					azimut=35;
 					special="NONE";
-					id=210;
+					id=162;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={205};
+					synchronizations[]={157};
 				};
 				class Item6
 				{
-					position[]={15720.543,0.71274275,9425.8467};
+					position[]={6587.6621,12.187677,6026};
 					azimut=190;
 					special="NONE";
-					id=211;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={205};
-				};
-			};
-		};
-		class Item48
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=6;
-				class Item0
-				{
-					position[]={10984.048,224.35332,12372.459};
-					special="NONE";
-					id=212;
-					side="LOGIC";
-					vehicle="LocationLogicDepot";
-					leader=1;
-					skill=0.60000002;
-					text="Krasnostav";
-					init="nullReturn = [this,""Krasnostav"",""+"",30,120,1000,[""HugeTown1"",""HugeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={214,213,216,215,217};
-				};
-				class Item1
-				{
-					position[]={11254.597,189.14552,12181.737};
-					azimut=115;
-					special="NONE";
-					id=213;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={212};
-				};
-				class Item2
-				{
-					position[]={11223.075,191.14099,12173.762};
-					azimut=210;
-					special="NONE";
-					id=214;
+					id=163;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={212};
-				};
-				class Item3
-				{
-					position[]={10840.3,246.03712,12454.831};
-					azimut=95;
-					special="NONE";
-					id=215;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={212};
-				};
-				class Item4
-				{
-					position[]={10742.086,251.728,12415.338};
-					azimut=260;
-					special="NONE";
-					id=216;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={212};
-				};
-				class Item5
-				{
-					position[]={11321.293,188.45177,12228.223};
-					azimut=100;
-					special="NONE";
-					id=217;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
-					synchronizations[]={212};
+					synchronizations[]={157};
 				};
 			};
 		};
-		class Item49
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=4;
-				class Item0
-				{
-					position[]={12376.249,97.300339,10878.046};
-					azimut=25;
-					special="NONE";
-					id=218;
-					side="LOGIC";
-					vehicle="LocationLogicDepot";
-					leader=1;
-					skill=0.60000002;
-					text="Khelm";
-					init="nullReturn = [this,""Khelm"",""+"",10,50,100,""MediumTown1""] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={219,220,221};
-				};
-				class Item1
-				{
-					position[]={12243.575,133.26489,11101.064};
-					azimut=145;
-					special="NONE";
-					id=220;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={218};
-				};
-				class Item2
-				{
-					position[]={12285.774,91.940094,10660.942};
-					azimut=270;
-					special="NONE";
-					id=219;
-					side="LOGIC";
-					vehicle="LocationLogicCamp";
-					skill=0.60000002;
-					init="this enableSimulation false;";
-					synchronizations[]={218};
-				};
-				class Item3
-				{
-					position[]={12327.721,87.227333,10660.977};
-					azimut=170;
-					special="NONE";
-					id=221;
-					side="LOGIC";
-					vehicle="Logic";
-					skill=0.60000002;
-					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={218};
-				};
-			};
-		};
-		class Item50
+		class Item40
 		{
 			side="LOGIC";
 			class Vehicles
@@ -3158,42 +2358,42 @@ class Mission
 					position[]={500.45905,22.15234,928.7168};
 					azimut=90;
 					special="NONE";
-					id=222;
+					id=164;
 					side="LOGIC";
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
 					text="Mercadio";
 					init="nullReturn = [this,""Mercadio"",""+"",10,40,100,""SmallTown1""] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
-					synchronizations[]={223,224};
+					synchronizations[]={165,166};
 				};
 				class Item1
 				{
 					position[]={662.69629,34.209183,1039.6952};
 					azimut=305;
 					special="NONE";
-					id=223;
+					id=165;
 					side="LOGIC";
 					vehicle="LocationLogicCamp";
 					skill=0.60000002;
 					init="this enableSimulation false;";
-					synchronizations[]={222};
+					synchronizations[]={164};
 				};
 				class Item2
 				{
 					position[]={638.65851,34.203888,1002.2107};
 					azimut=210;
 					special="NONE";
-					id=224;
+					id=166;
 					side="LOGIC";
 					vehicle="Logic";
 					skill=0.60000002;
 					init="this setVariable ['wfbe_defense_kind', ['MG']];";
-					synchronizations[]={222};
+					synchronizations[]={164};
 				};
 			};
 		};
-		class Item51
+		class Item41
 		{
 			side="LOGIC";
 			class Vehicles
@@ -3202,13 +2402,233 @@ class Mission
 				class Item0
 				{
 					position[]={1916.9998,0.12864132,54.746704};
-					id=225;
+					id=167;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.60000002;
 					text="WF_Logic";
 					init="this setVariable [""totalTowns"",43];this enableSimulation false;   this setVariable [""Towns_RemovedXSmall"",[]];  this setVariable [""Towns_RemovedSmall"",[]];        this setVariable [""Towns_RemovedMedium"",[]];        this setVariable [""Towns_RemovedLarge"",[]];this setVariable [""Towns_RemovedBigTowns"",[]];     this setVariable [""Towns_RemovedCentralLine"",[]];  this setVariable [""Towns_RemovedSmallTowns"",[]];  nullReturn = [this] ExecVM ""Common\Init\Init_TownMode.sqf""";
+				};
+			};
+		};
+		class Item42
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={5731.2134,8.326231,826.92639};
+					id=168;
+					side="WEST";
+					vehicle="FR_Miles";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init="removeAllWeapons this";
+					description="Soldier (Double team size, Camps restore)";
+					synchronizations[]={194};
+				};
+			};
+		};
+		class Item43
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={5731.1636,8.6933041,828.09631};
+					id=169;
+					side="WEST";
+					vehicle="FR_Miles";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init="removeAllWeapons this";
+					description="Soldier (Double team size, Camps restore)";
+					synchronizations[]={194};
+				};
+			};
+		};
+		class Item44
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={5732.5776,8.9615793,828.1842};
+					id=170;
+					side="WEST";
+					vehicle="FR_TL";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init="removeAllWeapons this";
+					description="SpecOPS (Lockpick)";
+					synchronizations[]={194};
+				};
+			};
+		};
+		class Item45
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={5732.6919,8.7195463,826.94592};
+					id=171;
+					side="WEST";
+					vehicle="FR_TL";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init="removeAllWeapons this";
+					description="SpecOPS (Lockpick)";
+					synchronizations[]={194};
+				};
+			};
+		};
+		class Item46
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={5733.9526,9.0974131,828.25549};
+					id=172;
+					side="WEST";
+					vehicle="USMC_SoldierS_Sniper";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init="removeAllWeapons this";
+					description="Sniper (Spot marks on map, Camps restore)";
+					synchronizations[]={194};
+				};
+			};
+		};
+		class Item47
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={5734.0308,8.9075537,826.9762};
+					id=173;
+					side="WEST";
+					vehicle="USMC_SoldierS_Sniper";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init="removeAllWeapons this";
+					description="Sniper (Spot marks on map, Camps restore)";
+					synchronizations[]={194};
+				};
+			};
+		};
+		class Item48
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={5735.2144,9.2140598,828.26917};
+					id=174;
+					side="WEST";
+					vehicle="USMC_Soldier_TL";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init="removeAllWeapons this";
+					description="Engineer (Fast repair)";
+					synchronizations[]={194};
+				};
+			};
+		};
+		class Item49
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={5735.2739,8.1326065,823.0592};
+					id=175;
+					side="WEST";
+					vehicle="USMC_Soldier_TL";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init="removeAllWeapons this";
+					description="Engineer (Fast repair)";
+					synchronizations[]={194};
+				};
+			};
+		};
+		class Item50
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={5735.3188,8.4048595,823.86096};
+					id=176;
+					side="WEST";
+					vehicle="USMC_Soldier_TL";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init="removeAllWeapons this";
+					description="Engineer (Fast repair)";
+					synchronizations[]={194};
+				};
+			};
+		};
+		class Item51
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={5732.6421,7.7100849,823.87854};
+					id=177;
+					side="WEST";
+					vehicle="FR_TL";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init="removeAllWeapons this";
+					description="SpecOPS (Lockpick)";
+					synchronizations[]={194};
 				};
 			};
 		};
@@ -3220,17 +2640,17 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={5731.2134,8.326231,826.92639};
-					id=226;
+					position[]={5735.3013,9.0573559,827.19983};
+					id=178;
 					side="WEST";
-					vehicle="FR_Miles";
+					vehicle="USMC_Soldier_TL";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Soldier (Double team size, Camps restore)";
-					synchronizations[]={252};
+					description="Engineer (Fast repair)";
+					synchronizations[]={194};
 				};
 			};
 		};
@@ -3242,17 +2662,17 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={5731.1636,8.6933041,828.09631};
-					id=227;
+					position[]={5737.4673,9.2842484,827.39612};
+					id=179;
 					side="WEST";
-					vehicle="FR_Miles";
+					vehicle="USMC_Soldier_Medic";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="Soldier (Double team size, Camps restore)";
-					synchronizations[]={252};
+					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
+					description="Medic (Fast heal, Camps restore)";
+					synchronizations[]={194};
 				};
 			};
 		};
@@ -3264,17 +2684,17 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={5732.5776,8.9615793,828.1842};
-					id=228;
+					position[]={5737.4722,9.4175949,828.2594};
+					id=180;
 					side="WEST";
-					vehicle="FR_TL";
+					vehicle="USMC_Soldier_Medic";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
-					synchronizations[]={252};
+					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
+					description="Medic (Fast heal, Camps restore)";
+					synchronizations[]={194};
 				};
 			};
 		};
@@ -3286,17 +2706,17 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={5732.6919,8.7195463,826.94592};
-					id=229;
+					position[]={5737.5415,9.1260204,826.32483};
+					id=181;
 					side="WEST";
-					vehicle="FR_TL";
+					vehicle="USMC_Soldier_Medic";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
-					synchronizations[]={252};
+					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
+					description="Medic (Fast heal, Camps restore)";
+					synchronizations[]={194};
 				};
 			};
 		};
@@ -3308,237 +2728,237 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={5733.9526,9.0974131,828.25549};
-					id=230;
+					position[]={5737.6821,9.0235023,825.57581};
+					id=182;
 					side="WEST";
-					vehicle="USMC_SoldierS_Sniper";
+					vehicle="USMC_Soldier_Medic";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="Sniper (Spot marks on map, Camps restore)";
-					synchronizations[]={252};
+					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
+					description="Medic (Fast heal, Camps restore)";
+					synchronizations[]={194};
 				};
 			};
 		};
 		class Item57
 		{
-			side="WEST";
+			side="EAST";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={5734.0308,8.9075537,826.9762};
-					id=231;
-					side="WEST";
-					vehicle="USMC_SoldierS_Sniper";
+					position[]={614.07672,14.725369,2666.8335};
+					id=183;
+					side="EAST";
+					vehicle="RUS_Soldier1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Sniper (Spot marks on map, Camps restore)";
-					synchronizations[]={252};
+					description="Soldier (Double team size, Camps restore)";
+					synchronizations[]={195};
 				};
 			};
 		};
 		class Item58
 		{
-			side="WEST";
+			side="EAST";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={5735.2144,9.2140598,828.26917};
-					id=232;
-					side="WEST";
-					vehicle="USMC_Soldier_TL";
+					position[]={613.99268,14.725369,2665.7661};
+					id=184;
+					side="EAST";
+					vehicle="RUS_Soldier1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
-					synchronizations[]={252};
+					description="Soldier (Double team size, Camps restore)";
+					synchronizations[]={195};
 				};
 			};
 		};
 		class Item59
 		{
-			side="WEST";
+			side="EAST";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={5735.2739,8.1326065,823.0592};
-					id=233;
-					side="WEST";
-					vehicle="USMC_Soldier_TL";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
-					synchronizations[]={252};
-				};
-			};
-		};
-		class Item60
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={5735.3188,8.4048595,823.86096};
-					id=234;
-					side="WEST";
-					vehicle="USMC_Soldier_TL";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
-					synchronizations[]={252};
-				};
-			};
-		};
-		class Item61
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={5732.6421,7.7100849,823.87854};
-					id=235;
-					side="WEST";
-					vehicle="FR_TL";
+					position[]={616.00592,14.725369,2665.8164};
+					id=185;
+					side="EAST";
+					vehicle="RUS_Soldier_TL";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
 					description="SpecOPS (Lockpick)";
-					synchronizations[]={252};
+					synchronizations[]={195};
 				};
 			};
 		};
-		class Item62
+		class Item60
 		{
-			side="WEST";
+			side="EAST";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={5735.3013,9.0573559,827.19983};
-					id=236;
-					side="WEST";
-					vehicle="USMC_Soldier_TL";
+					position[]={615.80688,14.725369,2664.6143};
+					id=186;
+					side="EAST";
+					vehicle="RUS_Soldier_TL";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init="removeAllWeapons this";
+					description="SpecOPS (Lockpick)";
+					synchronizations[]={195};
+				};
+			};
+		};
+		class Item61
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={618.1712,14.725369,2664.7495};
+					id=187;
+					side="EAST";
+					vehicle="RU_Soldier_Sniper";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init="removeAllWeapons this";
+					description="Sniper (Spot marks on map, Camps restore)";
+					synchronizations[]={195};
+				};
+			};
+		};
+		class Item62
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={619.55707,14.725369,2661.1067};
+					id=188;
+					side="EAST";
+					vehicle="Ins_Soldier_Sapper";
+					player="PLAYER COMMANDER";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init="removeAllWeapons this";
+					description="Engineer (Fast repair)";
+					synchronizations[]={195};
+				};
+			};
+		};
+		class Item63
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={619.48505,14.725369,2663.0376};
+					id=189;
+					side="EAST";
+					vehicle="Ins_Soldier_Sapper";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
 					description="Engineer (Fast repair)";
-					synchronizations[]={252};
-				};
-			};
-		};
-		class Item63
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={5737.4673,9.2842484,827.39612};
-					id=237;
-					side="WEST";
-					vehicle="USMC_Soldier_Medic";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
-					description="Medic (Fast heal, Camps restore)";
-					synchronizations[]={252};
+					synchronizations[]={195};
 				};
 			};
 		};
 		class Item64
 		{
-			side="WEST";
+			side="EAST";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={5737.4722,9.4175949,828.2594};
-					id=238;
-					side="WEST";
-					vehicle="USMC_Soldier_Medic";
+					position[]={616.01965,14.725369,2666.7446};
+					id=190;
+					side="EAST";
+					vehicle="RUS_Soldier_TL";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
-					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
-					description="Medic (Fast heal, Camps restore)";
-					synchronizations[]={252};
+					init="removeAllWeapons this";
+					description="SpecOPS (Lockpick)";
+					synchronizations[]={195};
 				};
 			};
 		};
 		class Item65
 		{
-			side="WEST";
+			side="EAST";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={5737.5415,9.1260204,826.32483};
-					id=239;
-					side="WEST";
-					vehicle="USMC_Soldier_Medic";
+					position[]={617.36884,14.725369,2663.6055};
+					id=191;
+					side="EAST";
+					vehicle="RU_Soldier_Medic";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
 					description="Medic (Fast heal, Camps restore)";
-					synchronizations[]={252};
+					synchronizations[]={195};
 				};
 			};
 		};
 		class Item66
 		{
-			side="WEST";
+			side="EAST";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={5737.6821,9.0235023,825.57581};
-					id=240;
-					side="WEST";
-					vehicle="USMC_Soldier_Medic";
+					position[]={617.16656,14.725369,2666.6982};
+					id=192;
+					side="EAST";
+					vehicle="RU_Soldier_Medic";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
 					description="Medic (Fast heal, Camps restore)";
-					synchronizations[]={252};
+					synchronizations[]={195};
 				};
 			};
 		};
@@ -3550,171 +2970,165 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={614.07672,14.725369,2666.8335};
-					id=241;
+					position[]={617.35565,14.725369,2662.6833};
+					id=193;
 					side="EAST";
-					vehicle="RUS_Soldier1";
+					vehicle="RU_Soldier_Medic";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="Soldier (Double team size, Camps restore)";
-					synchronizations[]={253};
+					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
+					description="Medic (Fast heal, Camps restore)";
+					synchronizations[]={195};
 				};
 			};
 		};
 		class Item68
 		{
-			side="EAST";
+			side="LOGIC";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={613.99268,14.725369,2665.7661};
-					id=242;
-					side="EAST";
-					vehicle="RUS_Soldier1";
-					player="PLAY CDG";
+					position[]={5735.1714,9.5272932,840.37952};
+					id=194;
+					side="LOGIC";
+					vehicle="LocationLogicOwnerWest";
 					leader=1;
-					rank="LIEUTENANT";
 					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="Soldier (Double team size, Camps restore)";
-					synchronizations[]={253};
+					text="WFBE_L_BLU";
+					synchronizations[]={168,178,169,170,179,180,171,172,181,182,173,174,175,176,177,196,197,198,199,200,209,213,212,221,223,224,225};
 				};
 			};
 		};
 		class Item69
 		{
-			side="EAST";
+			side="LOGIC";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={616.00592,14.725369,2665.8164};
-					id=243;
-					side="EAST";
-					vehicle="RUS_Soldier_TL";
-					player="PLAY CDG";
+					position[]={618.44684,10.895575,2679.3833};
+					id=195;
+					side="LOGIC";
+					vehicle="LocationLogicOwnerEast";
 					leader=1;
-					rank="LIEUTENANT";
 					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
-					synchronizations[]={253};
+					text="WFBE_L_OPF";
+					synchronizations[]={183,190,184,185,191,192,186,187,193,188,189,201,203,204,202,205,206,208,211,210,214,215,216,222,226,227,228};
 				};
 			};
 		};
 		class Item70
 		{
-			side="EAST";
+			side="WEST";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={615.80688,14.725369,2664.6143};
-					id=244;
-					side="EAST";
-					vehicle="RUS_Soldier_TL";
+					position[]={5732.6519,7.9908442,824.73499};
+					id=196;
+					side="WEST";
+					vehicle="FR_TL";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
 					description="SpecOPS (Lockpick)";
-					synchronizations[]={253};
+					synchronizations[]={194};
 				};
 			};
 		};
 		class Item71
 		{
-			side="EAST";
+			side="WEST";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={618.1712,14.725369,2664.7495};
-					id=245;
-					side="EAST";
-					vehicle="RU_Soldier_Sniper";
+					position[]={5733.9888,8.7348862,825.94885};
+					id=197;
+					side="WEST";
+					vehicle="USMC_SoldierS_Sniper";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
 					description="Sniper (Spot marks on map, Camps restore)";
-					synchronizations[]={253};
+					synchronizations[]={194};
 				};
 			};
 		};
 		class Item72
 		{
-			side="EAST";
+			side="WEST";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={619.55707,14.725369,2661.1067};
-					id=246;
-					side="EAST";
-					vehicle="Ins_Soldier_Sapper";
-					player="PLAYER COMMANDER";
+					position[]={5731.2319,7.9625735,825.79163};
+					id=198;
+					side="WEST";
+					vehicle="FR_Miles";
+					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
-					synchronizations[]={253};
+					description="Soldier (Double team size, Camps restore)";
+					synchronizations[]={194};
 				};
 			};
 		};
 		class Item73
 		{
-			side="EAST";
+			side="WEST";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={619.48505,14.725369,2663.0376};
-					id=247;
-					side="EAST";
-					vehicle="Ins_Soldier_Sapper";
+					position[]={5737.6929,8.886879,824.68225};
+					id=199;
+					side="WEST";
+					vehicle="USMC_Soldier_Medic";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
+					description="Medic (Fast heal, Camps restore)";
+					synchronizations[]={194};
+				};
+			};
+		};
+		class Item74
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={5735.2749,8.9146948,826.2887};
+					id=200;
+					side="WEST";
+					vehicle="USMC_Soldier_TL";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
 					description="Engineer (Fast repair)";
-					synchronizations[]={253};
-				};
-			};
-		};
-		class Item74
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={616.01965,14.725369,2666.7446};
-					id=248;
-					side="EAST";
-					vehicle="RUS_Soldier_TL";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
-					synchronizations[]={253};
+					synchronizations[]={194};
 				};
 			};
 		};
@@ -3726,17 +3140,17 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={617.36884,14.725369,2663.6055};
-					id=249;
+					position[]={613.91382,14.725369,2664.7854};
+					id=201;
 					side="EAST";
-					vehicle="RU_Soldier_Medic";
+					vehicle="RUS_Soldier1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
-					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
-					description="Medic (Fast heal, Camps restore)";
-					synchronizations[]={253};
+					init="removeAllWeapons this";
+					description="Soldier (Double team size, Camps restore)";
+					synchronizations[]={195};
 				};
 			};
 		};
@@ -3748,17 +3162,17 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={617.16656,14.725369,2666.6982};
-					id=250;
+					position[]={618.22211,14.725369,2665.7583};
+					id=202;
 					side="EAST";
-					vehicle="RU_Soldier_Medic";
+					vehicle="RU_Soldier_Sniper";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
-					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
-					description="Medic (Fast heal, Camps restore)";
-					synchronizations[]={253};
+					init="removeAllWeapons this";
+					description="Sniper (Spot marks on map, Camps restore)";
+					synchronizations[]={195};
 				};
 			};
 		};
@@ -3770,8 +3184,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={617.35565,14.725369,2662.6833};
-					id=251;
+					position[]={617.07977,14.725369,2665.7244};
+					id=203;
 					side="EAST";
 					vehicle="RU_Soldier_Medic";
 					player="PLAY CDG";
@@ -3780,225 +3194,11 @@ class Mission
 					skill=0.60000002;
 					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
 					description="Medic (Fast heal, Camps restore)";
-					synchronizations[]={253};
+					synchronizations[]={195};
 				};
 			};
 		};
 		class Item78
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={5735.1714,9.5272932,840.37952};
-					id=252;
-					side="LOGIC";
-					vehicle="LocationLogicOwnerWest";
-					leader=1;
-					skill=0.60000002;
-					text="WFBE_L_BLU";
-					synchronizations[]={226,236,227,228,237,238,229,230,239,240,231,232,233,234,235,254,255,256,257,258,267,271,270,279,281,282,283};
-				};
-			};
-		};
-		class Item79
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={618.44684,10.895575,2679.3833};
-					id=253;
-					side="LOGIC";
-					vehicle="LocationLogicOwnerEast";
-					leader=1;
-					skill=0.60000002;
-					text="WFBE_L_OPF";
-					synchronizations[]={241,248,242,243,249,250,244,245,251,246,247,259,261,262,260,263,264,266,269,268,272,273,274,280,284,285,286};
-				};
-			};
-		};
-		class Item80
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={5732.6519,7.9908442,824.73499};
-					id=254;
-					side="WEST";
-					vehicle="FR_TL";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
-					synchronizations[]={252};
-				};
-			};
-		};
-		class Item81
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={5733.9888,8.7348862,825.94885};
-					id=255;
-					side="WEST";
-					vehicle="USMC_SoldierS_Sniper";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="Sniper (Spot marks on map, Camps restore)";
-					synchronizations[]={252};
-				};
-			};
-		};
-		class Item82
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={5731.2319,7.9625735,825.79163};
-					id=256;
-					side="WEST";
-					vehicle="FR_Miles";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="Soldier (Double team size, Camps restore)";
-					synchronizations[]={252};
-				};
-			};
-		};
-		class Item83
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={5737.6929,8.886879,824.68225};
-					id=257;
-					side="WEST";
-					vehicle="USMC_Soldier_Medic";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
-					description="Medic (Fast heal, Camps restore)";
-					synchronizations[]={252};
-				};
-			};
-		};
-		class Item84
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={5735.2749,8.9146948,826.2887};
-					id=258;
-					side="WEST";
-					vehicle="USMC_Soldier_TL";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
-					synchronizations[]={252};
-				};
-			};
-		};
-		class Item85
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={613.91382,14.725369,2664.7854};
-					id=259;
-					side="EAST";
-					vehicle="RUS_Soldier1";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="Soldier (Double team size, Camps restore)";
-					synchronizations[]={253};
-				};
-			};
-		};
-		class Item86
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={618.22211,14.725369,2665.7583};
-					id=260;
-					side="EAST";
-					vehicle="RU_Soldier_Sniper";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="Sniper (Spot marks on map, Camps restore)";
-					synchronizations[]={253};
-				};
-			};
-		};
-		class Item87
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={617.07977,14.725369,2665.7244};
-					id=261;
-					side="EAST";
-					vehicle="RU_Soldier_Medic";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
-					description="Medic (Fast heal, Camps restore)";
-					synchronizations[]={253};
-				};
-			};
-		};
-		class Item88
 		{
 			side="EAST";
 			class Vehicles
@@ -4007,7 +3207,7 @@ class Mission
 				class Item0
 				{
 					position[]={617.18915,14.725369,2664.6655};
-					id=262;
+					id=204;
 					side="EAST";
 					vehicle="RU_Soldier_Medic";
 					player="PLAY CDG";
@@ -4016,11 +3216,11 @@ class Mission
 					skill=0.60000002;
 					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
 					description="Medic (Fast heal, Camps restore)";
-					synchronizations[]={253};
+					synchronizations[]={195};
 				};
 			};
 		};
-		class Item89
+		class Item79
 		{
 			side="EAST";
 			class Vehicles
@@ -4029,7 +3229,7 @@ class Mission
 				class Item0
 				{
 					position[]={618.24872,14.725369,2666.6191};
-					id=263;
+					id=205;
 					side="EAST";
 					vehicle="RU_Soldier_Sniper";
 					player="PLAY CDG";
@@ -4038,11 +3238,11 @@ class Mission
 					skill=0.60000002;
 					init="removeAllWeapons this";
 					description="Sniper (Spot marks on map, Camps restore)";
-					synchronizations[]={253};
+					synchronizations[]={195};
 				};
 			};
 		};
-		class Item90
+		class Item80
 		{
 			side="EAST";
 			class Vehicles
@@ -4051,7 +3251,7 @@ class Mission
 				class Item0
 				{
 					position[]={619.32428,14.725369,2664.7917};
-					id=264;
+					id=206;
 					side="EAST";
 					vehicle="Ins_Soldier_Sapper";
 					player="PLAY CDG";
@@ -4060,11 +3260,11 @@ class Mission
 					skill=0.60000002;
 					init="removeAllWeapons this";
 					description="Engineer (Fast repair)";
-					synchronizations[]={253};
+					synchronizations[]={195};
 				};
 			};
 		};
-		class Item91
+		class Item81
 		{
 			side="CIV";
 			class Vehicles
@@ -4072,8 +3272,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={7539.0625,5.3984327,8298.0469};
-					id=265;
+					position[]={7520.835,5.3246369,8312.2549};
+					id=207;
 					side="CIV";
 					vehicle="Functionary1";
 					player="PLAY CDG";
@@ -4085,7 +3285,7 @@ class Mission
 				};
 			};
 		};
-		class Item92
+		class Item82
 		{
 			side="EAST";
 			class Vehicles
@@ -4094,7 +3294,7 @@ class Mission
 				class Item0
 				{
 					position[]={619.40802,14.725369,2663.9585};
-					id=266;
+					id=208;
 					side="EAST";
 					vehicle="Ins_Soldier_Sapper";
 					player="PLAY CDG";
@@ -4103,11 +3303,11 @@ class Mission
 					skill=0.60000002;
 					init="removeAllWeapons this";
 					description="Engineer (Fast repair)";
-					synchronizations[]={253};
+					synchronizations[]={195};
 				};
 			};
 		};
-		class Item93
+		class Item83
 		{
 			side="WEST";
 			class Vehicles
@@ -4116,7 +3316,7 @@ class Mission
 				class Item0
 				{
 					position[]={5735.2905,8.7955103,825.50549};
-					id=267;
+					id=209;
 					side="WEST";
 					vehicle="USMC_Soldier_TL";
 					player="PLAY CDG";
@@ -4125,11 +3325,11 @@ class Mission
 					skill=0.60000002;
 					init="removeAllWeapons this";
 					description="Engineer (Fast repair)";
-					synchronizations[]={252};
+					synchronizations[]={194};
 				};
 			};
 		};
-		class Item94
+		class Item84
 		{
 			side="EAST";
 			class Vehicles
@@ -4138,7 +3338,7 @@ class Mission
 				class Item0
 				{
 					position[]={615.89703,14.725369,2663.6301};
-					id=268;
+					id=210;
 					side="EAST";
 					vehicle="RUS_Soldier_TL";
 					player="PLAY CDG";
@@ -4147,11 +3347,11 @@ class Mission
 					skill=0.60000002;
 					init="removeAllWeapons this";
 					description="SpecOPS (Lockpick)";
-					synchronizations[]={253};
+					synchronizations[]={195};
 				};
 			};
 		};
-		class Item95
+		class Item85
 		{
 			side="EAST";
 			class Vehicles
@@ -4160,7 +3360,7 @@ class Mission
 				class Item0
 				{
 					position[]={619.46417,14.725369,2662.1431};
-					id=269;
+					id=211;
 					side="EAST";
 					vehicle="Ins_Soldier_Sapper";
 					player="PLAY CDG";
@@ -4169,11 +3369,11 @@ class Mission
 					skill=0.60000002;
 					init="removeAllWeapons this";
 					description="Engineer (Fast repair)";
-					synchronizations[]={253};
+					synchronizations[]={195};
 				};
 			};
 		};
-		class Item96
+		class Item86
 		{
 			side="WEST";
 			class Vehicles
@@ -4182,7 +3382,7 @@ class Mission
 				class Item0
 				{
 					position[]={5735.3364,8.6804352,824.73108};
-					id=270;
+					id=212;
 					side="WEST";
 					vehicle="USMC_Soldier_TL";
 					player="PLAY CDG";
@@ -4191,7 +3391,212 @@ class Mission
 					skill=0.60000002;
 					init="removeAllWeapons this";
 					description="Engineer (Fast repair)";
-					synchronizations[]={252};
+					synchronizations[]={194};
+				};
+			};
+		};
+		class Item87
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={5732.6245,8.3633442,825.90393};
+					id=213;
+					side="WEST";
+					vehicle="FR_TL";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init="removeAllWeapons this";
+					description="SpecOPS (Lockpick)";
+					synchronizations[]={194};
+				};
+			};
+		};
+		class Item88
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={619.31427,14.725369,2666.5652};
+					id=214;
+					side="EAST";
+					vehicle="Ins_Soldier_Sapper";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init="removeAllWeapons this";
+					description="Engineer (Fast repair)";
+					synchronizations[]={195};
+				};
+			};
+		};
+		class Item89
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={619.44025,14.725369,2665.6863};
+					id=215;
+					side="EAST";
+					vehicle="Ins_Soldier_Sapper";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init="removeAllWeapons this";
+					description="Engineer (Fast repair)";
+					synchronizations[]={195};
+				};
+			};
+		};
+		class Item90
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={615.81818,14.725369,2662.6497};
+					id=216;
+					side="EAST";
+					vehicle="RUS_Soldier_TL";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init="removeAllWeapons this";
+					description="SpecOPS (Lockpick)";
+					synchronizations[]={195};
+				};
+			};
+		};
+		class Item91
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={8038.1216,4.9693618,1040.4211};
+					azimut=90;
+					id=217;
+					side="LOGIC";
+					vehicle="LocationLogicStart";
+					leader=1;
+					skill=0.60000002;
+					init="this setVariable [""wfbe_default"", east]; this setVariable [""wfbe_spawn"", ""south""];";
+				};
+			};
+		};
+		class Item92
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2946.4719,14.071206,7148.8784};
+					azimut=90;
+					id=218;
+					side="LOGIC";
+					vehicle="LocationLogicStart";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item93
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={4580.1973,50.385315,8034.6753};
+					azimut=90;
+					id=219;
+					side="LOGIC";
+					vehicle="LocationLogicStart";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item94
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={6351.0454,9.4379005,1773.7332};
+					azimut=90;
+					id=220;
+					side="LOGIC";
+					vehicle="LocationLogicStart";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item95
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={5737.6675,8.7695923,823.93518};
+					id=221;
+					side="WEST";
+					vehicle="USMC_Soldier_Medic";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
+					description="Medic (Fast heal, Camps restore)";
+					synchronizations[]={194};
+				};
+			};
+		};
+		class Item96
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={617.29755,14.725369,2660.7927};
+					id=222;
+					side="EAST";
+					vehicle="RU_Soldier_Medic";
+					player="PLAY CDG";
+					leader=1;
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
+					description="Medic (Fast heal, Camps restore)";
+					synchronizations[]={195};
 				};
 			};
 		};
@@ -4203,61 +3608,61 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={5732.6245,8.3633442,825.90393};
-					id=271;
+					position[]={5733.9888,8.3783455,824.8512};
+					id=223;
 					side="WEST";
-					vehicle="FR_TL";
+					vehicle="USMC_SoldierS_Sniper";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
-					synchronizations[]={252};
+					description="Sniper (Spot marks on map, Camps restore)";
+					synchronizations[]={194};
 				};
 			};
 		};
 		class Item98
 		{
-			side="EAST";
+			side="WEST";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={619.31427,14.725369,2666.5652};
-					id=272;
-					side="EAST";
-					vehicle="Ins_Soldier_Sapper";
+					position[]={5731.2319,7.5844727,824.62756};
+					id=224;
+					side="WEST";
+					vehicle="FR_Miles";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
-					synchronizations[]={253};
+					description="Soldier (Double team size, Camps restore)";
+					synchronizations[]={194};
 				};
 			};
 		};
 		class Item99
 		{
-			side="EAST";
+			side="WEST";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={619.44025,14.725369,2665.6863};
-					id=273;
-					side="EAST";
-					vehicle="Ins_Soldier_Sapper";
+					position[]={5731.271,7.3177538,823.77502};
+					id=225;
+					side="WEST";
+					vehicle="FR_Miles";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
-					synchronizations[]={253};
+					description="Soldier (Double team size, Camps restore)";
+					synchronizations[]={194};
 				};
 			};
 		};
@@ -4269,54 +3674,61 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={615.81818,14.725369,2662.6497};
-					id=274;
+					position[]={618.26813,14.725369,2663.6638};
+					id=226;
 					side="EAST";
-					vehicle="RUS_Soldier_TL";
+					vehicle="RU_Soldier_Sniper";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
-					synchronizations[]={253};
+					description="Sniper (Spot marks on map, Camps restore)";
+					synchronizations[]={195};
 				};
 			};
 		};
 		class Item101
 		{
-			side="LOGIC";
+			side="EAST";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={8038.1216,4.9693618,1040.4211};
-					azimut=90;
-					id=275;
-					side="LOGIC";
-					vehicle="LocationLogicStart";
+					position[]={613.93323,14.725369,2663.3701};
+					id=227;
+					side="EAST";
+					vehicle="RUS_Soldier1";
+					player="PLAY CDG";
 					leader=1;
+					rank="LIEUTENANT";
 					skill=0.60000002;
-					init="this setVariable [""wfbe_default"", east]; this setVariable [""wfbe_spawn"", ""south""];";
+					init="removeAllWeapons this";
+					description="Soldier (Double team size, Camps restore)";
+					synchronizations[]={195};
 				};
 			};
 		};
 		class Item102
 		{
-			side="LOGIC";
+			side="EAST";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={2946.4719,14.071206,7148.8784};
-					azimut=90;
-					id=276;
-					side="LOGIC";
-					vehicle="LocationLogicStart";
+					position[]={613.97198,14.725369,2662.4014};
+					id=228;
+					side="EAST";
+					vehicle="RUS_Soldier1";
+					player="PLAY CDG";
 					leader=1;
+					rank="LIEUTENANT";
 					skill=0.60000002;
+					init="removeAllWeapons this";
+					description="Soldier (Double team size, Camps restore)";
+					synchronizations[]={195};
 				};
 			};
 		};
@@ -4328,13 +3740,14 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={4580.1973,50.385315,8034.6753};
-					azimut=90;
-					id=277;
+					position[]={1807.5934,31.814814,5273.5225};
+					azimut=180;
+					id=229;
 					side="LOGIC";
 					vehicle="LocationLogicStart";
 					leader=1;
 					skill=0.60000002;
+					init="this setVariable [""wfbe_default"", resistance]; this setVariable [""wfbe_spawn"", ""central""];";
 				};
 			};
 		};
@@ -4343,211 +3756,162 @@ class Mission
 			side="LOGIC";
 			class Vehicles
 			{
-				items=1;
+				items=6;
 				class Item0
 				{
-					position[]={6351.0454,9.4379005,1773.7332};
-					azimut=90;
-					id=278;
+					position[]={5200.166,18.080759,6990.4004};
+					azimut=5;
+					special="NONE";
+					id=230;
 					side="LOGIC";
-					vehicle="LocationLogicStart";
+					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
+					text="SanIsabel";
+					init="nullReturn = [this,""San Isabel"",""+"",20,80,200,[""LargeTown1"",""LargeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={231,232,233,234,235};
+				};
+				class Item1
+				{
+					position[]={5004.4316,18.069479,6959.6865};
+					azimut=5;
+					special="NONE";
+					id=232;
+					side="LOGIC";
+					vehicle="LocationLogicCamp";
+					skill=0.60000002;
+					init="this enableSimulation false;";
+					synchronizations[]={230};
+				};
+				class Item2
+				{
+					position[]={5246.9512,7.2393136,7124.7104};
+					azimut=40;
+					special="NONE";
+					id=231;
+					side="LOGIC";
+					vehicle="LocationLogicCamp";
+					skill=0.60000002;
+					init="this enableSimulation false;";
+					synchronizations[]={230};
+				};
+				class Item3
+				{
+					position[]={5221.4072,7.422462,7151.4004};
+					azimut=270;
+					special="NONE";
+					id=233;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					synchronizations[]={230};
+				};
+				class Item4
+				{
+					position[]={5005.9873,18.069479,6985.5845};
+					azimut=260;
+					special="NONE";
+					id=234;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					synchronizations[]={230};
+				};
+				class Item5
+				{
+					position[]={5137.4658,18.080759,7182.8198};
+					azimut=205;
+					special="NONE";
+					id=235;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['AA']];";
+					synchronizations[]={230};
 				};
 			};
 		};
 		class Item105
 		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={5737.6675,8.7695923,823.93518};
-					id=279;
-					side="WEST";
-					vehicle="USMC_Soldier_Medic";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
-					description="Medic (Fast heal, Camps restore)";
-					synchronizations[]={252};
-				};
-			};
-		};
-		class Item106
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={617.29755,14.725369,2660.7927};
-					id=280;
-					side="EAST";
-					vehicle="RU_Soldier_Medic";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
-					description="Medic (Fast heal, Camps restore)";
-					synchronizations[]={253};
-				};
-			};
-		};
-		class Item107
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={5733.9888,8.3783455,824.8512};
-					id=281;
-					side="WEST";
-					vehicle="USMC_SoldierS_Sniper";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="Sniper (Spot marks on map, Camps restore)";
-					synchronizations[]={252};
-				};
-			};
-		};
-		class Item108
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={5731.2319,7.5844727,824.62756};
-					id=282;
-					side="WEST";
-					vehicle="FR_Miles";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="Soldier (Double team size, Camps restore)";
-					synchronizations[]={252};
-				};
-			};
-		};
-		class Item109
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={5731.271,7.3177538,823.77502};
-					id=283;
-					side="WEST";
-					vehicle="FR_Miles";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="Soldier (Double team size, Camps restore)";
-					synchronizations[]={252};
-				};
-			};
-		};
-		class Item110
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={618.26813,14.725369,2663.6638};
-					id=284;
-					side="EAST";
-					vehicle="RU_Soldier_Sniper";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="Sniper (Spot marks on map, Camps restore)";
-					synchronizations[]={253};
-				};
-			};
-		};
-		class Item111
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={613.93323,14.725369,2663.3701};
-					id=285;
-					side="EAST";
-					vehicle="RUS_Soldier1";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="Soldier (Double team size, Camps restore)";
-					synchronizations[]={253};
-				};
-			};
-		};
-		class Item112
-		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={613.97198,14.725369,2662.4014};
-					id=286;
-					side="EAST";
-					vehicle="RUS_Soldier1";
-					player="PLAY CDG";
-					leader=1;
-					rank="LIEUTENANT";
-					skill=0.60000002;
-					init="removeAllWeapons this";
-					description="Soldier (Double team size, Camps restore)";
-					synchronizations[]={253};
-				};
-			};
-		};
-		class Item113
-		{
 			side="LOGIC";
 			class Vehicles
 			{
-				items=1;
+				items=6;
 				class Item0
 				{
-					position[]={1807.5934,31.814814,5273.5225};
-					azimut=180;
-					id=287;
+					position[]={4386.9897,6.2666245,5644.8594};
+					azimut=120;
+					special="NONE";
+					id=236;
 					side="LOGIC";
-					vehicle="LocationLogicStart";
+					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					init="this setVariable [""wfbe_default"", resistance]; this setVariable [""wfbe_spawn"", ""central""];";
+					text="Tucos";
+					init="nullReturn = [this,""Tucos"",""+"",20,80,200,[""LargeTown1"",""LargeTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					synchronizations[]={237,238,239,240,241};
+				};
+				class Item1
+				{
+					position[]={4507.5781,8.2475958,5791.9536};
+					azimut=300;
+					special="NONE";
+					id=238;
+					side="LOGIC";
+					vehicle="LocationLogicCamp";
+					skill=0.60000002;
+					init="this enableSimulation false;";
+					synchronizations[]={236};
+				};
+				class Item2
+				{
+					position[]={4513.4287,13.065562,5455.7686};
+					azimut=30;
+					special="NONE";
+					id=237;
+					side="LOGIC";
+					vehicle="LocationLogicCamp";
+					skill=0.60000002;
+					init="this enableSimulation false;";
+					synchronizations[]={236};
+				};
+				class Item3
+				{
+					position[]={4446.4111,5.964612,5727.5234};
+					azimut=270;
+					special="NONE";
+					id=239;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MGNest']];";
+					synchronizations[]={236};
+				};
+				class Item4
+				{
+					position[]={4483.1226,8.6960335,5794.543};
+					azimut=20;
+					special="NONE";
+					id=240;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MG']];";
+					synchronizations[]={236};
+				};
+				class Item5
+				{
+					position[]={4521.9517,13.10421,5479.8242};
+					azimut=205;
+					special="NONE";
+					id=241;
+					side="LOGIC";
+					vehicle="Logic";
+					skill=0.60000002;
+					init="this setVariable ['wfbe_defense_kind', ['MG']];";
+					synchronizations[]={236};
 				};
 			};
 		};
