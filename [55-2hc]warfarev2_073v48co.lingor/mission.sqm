@@ -21,7 +21,7 @@ class Mission
 	class Intel
 	{
 		briefingName="[55] Warfare V48 Lingor 0.1";
-		briefingDescription="by Benny and Awesome&WASP";
+		briefingDescription="Map by IceBreakr. Scripting by Benny and Awesome&WASP + Net_2, Miksuu";
 		resistanceWest=0;
 		startWeather=0;
 		forecastWeather=0;
@@ -114,8 +114,8 @@ class Mission
 				items=5;
 				class Item0
 				{
-					position[]={905.47882,41.278629,5592.3701};
-					azimut=169;
+					position[]={889.70056,41.385902,5557.0283};
+					azimut=120;
 					special="NONE";
 					id=4;
 					side="LOGIC";
@@ -363,7 +363,7 @@ class Mission
 				class Item0
 				{
 					position[]={7514.4966,4.9693618,3024.3784};
-					azimut=155;
+					azimut=330;
 					special="NONE";
 					id=20;
 					side="LOGIC";
@@ -433,7 +433,7 @@ class Mission
 				class Item0
 				{
 					position[]={3662.2488,12.176402,1512.9562};
-					azimut=90;
+					azimut=180;
 					special="NONE";
 					id=25;
 					side="LOGIC";
@@ -767,8 +767,8 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={5353.1416,6.6893511,2143.9299};
-					azimut=215;
+					position[]={5315.1289,3.8317554,2190.0815};
+					azimut=275;
 					special="NONE";
 					id=49;
 					side="LOGIC";
@@ -776,7 +776,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="Lagosa";
-					init="nullReturn = [this,""Lagosa"",""+"",10,30,100,""TinyTown1""] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					init="nullReturn = [this,""Lagosa"",""+"",10,40,100,""TinyTown1""] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={50,51,52};
 				};
 				class Item1
@@ -918,7 +918,7 @@ class Mission
 				class Item0
 				{
 					position[]={5720.123,11.76923,3145.9919};
-					azimut=270;
+					azimut=90;
 					special="NONE";
 					id=59;
 					side="LOGIC";
@@ -943,7 +943,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={5905.876,13.39045,3199.9812};
+					position[]={5956.0928,10.539322,3223.5535};
 					special="NONE";
 					id=60;
 					side="LOGIC";
@@ -954,7 +954,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={5953.311,10.454747,3221.9573};
+					position[]={5901.9995,13.634363,3201.0337};
 					azimut=110;
 					special="NONE";
 					id=62;
@@ -1126,7 +1126,7 @@ class Mission
 				items=5;
 				class Item0
 				{
-					position[]={4752.6567,20.082712,3097.9197};
+					position[]={4769.3735,20.082712,3114.835};
 					special="NONE";
 					id=74;
 					side="LOGIC";
@@ -1373,7 +1373,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={3027.1802,14.764845,4651.481};
+					position[]={3024.3135,17.544844,4653.1104};
 					azimut=200;
 					special="NONE";
 					id=93;
@@ -1430,7 +1430,7 @@ class Mission
 				class Item0
 				{
 					position[]={2694.647,4.4716768,2476.8401};
-					azimut=195;
+					azimut=117;
 					special="NONE";
 					id=96;
 					side="LOGIC";
@@ -1661,7 +1661,7 @@ class Mission
 				items=6;
 				class Item0
 				{
-					position[]={947.39941,23.680593,1755.0172};
+					position[]={950.37207,23.858934,1756.4027};
 					azimut=145;
 					special="NONE";
 					id=113;
@@ -1711,8 +1711,8 @@ class Mission
 				};
 				class Item4
 				{
-					position[]={750.07538,23.646757,1648.9713};
-					azimut=30;
+					position[]={750.45911,23.681194,1681.0343};
+					azimut=140;
 					special="NONE";
 					id=117;
 					side="LOGIC";
@@ -1742,8 +1742,8 @@ class Mission
 				items=7;
 				class Item0
 				{
-					position[]={6835.3174,14.477237,4722.3926};
-					azimut=180;
+					position[]={6983.2651,14.798681,4736.1523};
+					azimut=270;
 					special="NONE";
 					id=119;
 					side="LOGIC";
@@ -2264,8 +2264,8 @@ class Mission
 				items=7;
 				class Item0
 				{
-					position[]={6778.4717,12.187677,6303.6382};
-					azimut=270;
+					position[]={6776.5615,12.366017,6304.7407};
+					azimut=150;
 					special="NONE";
 					id=157;
 					side="LOGIC";
@@ -2355,7 +2355,7 @@ class Mission
 				items=3;
 				class Item0
 				{
-					position[]={500.45905,22.15234,928.7168};
+					position[]={498.25519,22.15234,927.3844};
 					azimut=90;
 					special="NONE";
 					id=164;
@@ -2408,7 +2408,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="WF_Logic";
-					init="this setVariable [""totalTowns"",43];this enableSimulation false;   this setVariable [""Towns_RemovedXSmall"",[]];  this setVariable [""Towns_RemovedSmall"",[]];        this setVariable [""Towns_RemovedMedium"",[]];        this setVariable [""Towns_RemovedLarge"",[]];this setVariable [""Towns_RemovedBigTowns"",[]];     this setVariable [""Towns_RemovedCentralLine"",[]];  this setVariable [""Towns_RemovedSmallTowns"",[]];  nullReturn = [this] ExecVM ""Common\Init\Init_TownMode.sqf""";
+					init="this setVariable [""totalTowns"",31];this enableSimulation false;   this setVariable [""Towns_RemovedXSmall"",[]];  this setVariable [""Towns_RemovedSmall"",[]];        this setVariable [""Towns_RemovedMedium"",[]];        this setVariable [""Towns_RemovedLarge"",[]];this setVariable [""Towns_RemovedBigTowns"",[]];     this setVariable [""Towns_RemovedCentralLine"",[]];  this setVariable [""Towns_RemovedSmallTowns"",[]];  nullReturn = [this] ExecVM ""Common\Init\Init_TownMode.sqf""";
 				};
 			};
 		};
@@ -3759,8 +3759,8 @@ class Mission
 				items=6;
 				class Item0
 				{
-					position[]={5200.166,18.080759,6990.4004};
-					azimut=5;
+					position[]={5190.8896,18.080759,6989.5713};
+					azimut=95;
 					special="NONE";
 					id=230;
 					side="LOGIC";
@@ -3855,7 +3855,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={4507.5781,8.2475958,5791.9536};
+					position[]={4508.7856,10.8675,5794.3706};
 					azimut=300;
 					special="NONE";
 					id=238;
