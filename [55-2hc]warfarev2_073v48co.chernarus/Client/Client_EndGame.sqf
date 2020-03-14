@@ -33,14 +33,6 @@ if (_side == west) then {
 _track = if (WF_A2_Vanilla) then {["Track21_Rise_Of_The_Fallen",41]} else {["EP1_Track13",91]}; //---changed-MrNiceGuy
 // playMusic _track;
 
-if (_side == west) then {
-    playSound ["BluWin",true];
-};
-
-if (_side == east) then {
-    playSound ["OPFwin",true];
-};
-
 _track_hq = [];
 _track = [];
 {

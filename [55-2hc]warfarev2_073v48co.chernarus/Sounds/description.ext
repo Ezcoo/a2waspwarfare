@@ -25,15 +25,3 @@ class airRaid {
         titles[] = {};
     };
 };
-
-class BluWin {
-        name = "BluWin";
-        sound[] = {"\sounds\americafuckyeah.ogg",10,1};
-        titles[] = {};
-}
-
-class OPFwin {
-        name = "OPFwin";
-        sound[] = {"\sounds\cheekibreeki.ogg",10,1};
-        titles[] = {};
-}
