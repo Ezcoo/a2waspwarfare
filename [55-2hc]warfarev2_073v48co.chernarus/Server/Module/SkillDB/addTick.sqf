@@ -11,4 +11,4 @@ _playerTotalTicks = [_playerUID] call IniDB_getTicks;
 
 _playerTicksNew = _playerTotalTicks + 1;
 
-["WASP_playerSkills", _playerUID, "ticks", _playerTicksNew] call iniDB_write;
+["write", [_playerUID, "ticks", _playerTicksNew]] call _inidbi;

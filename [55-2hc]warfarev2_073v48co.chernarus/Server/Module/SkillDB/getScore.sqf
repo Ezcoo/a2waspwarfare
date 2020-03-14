@@ -8,6 +8,6 @@ private ["_playerUID"];
 
 _playerUID = _this select 0;
 
-_totalScore = ["WASP_playerSkills", _playerUID, "score", "NUMBER"] call iniDB_read;
+_totalScore = ["read", [_playerUID, "score", 1]] call _inidbi;
 
 _totalScore

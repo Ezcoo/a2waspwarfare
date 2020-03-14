@@ -21,4 +21,4 @@ if (_scoreDifference < -5) then {
 _newPlayerScore = _playerTotalScore + _scoreDifference;
 
 
-["WASP_playerSkills", _playerUID, "score", _newPlayerScore] call iniDB_write;
+["write", [_playerUID, "score", _newPlayerScore]] call _inidbi;

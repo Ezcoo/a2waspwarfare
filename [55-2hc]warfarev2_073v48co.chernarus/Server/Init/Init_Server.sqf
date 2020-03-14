@@ -7,8 +7,18 @@ createCenter resistance;
 resistance setFriend [west,0];
 resistance setFriend [east,0];
 
-// Init iniDB database and related functions
-call compile preprocessFileLineNumbers "\iniDB\init.sqf";
+// Init iniDBI database and related functions
+["INFORMATION", "Init_Server.sqf: Checking whether iniDBI database file exists and that Arma has the required file permissions..."] Call WFBE_CO_FNC_LogContent;
+if (!("exists" call _inidbi)) then {
+    ["ERROR", "Init_Server.sqf: iniDBI database file does not exist or Arma doesn't have the required permissions!"] Call WFBE_CO_FNC_LogContent;
+    _inidbi = ["new", "WASPplayerSkills"] call OO_INIDBI;
+    ["INFORMATION", "Init_Server.sqf: Attempting to create new database file. Check \@inidbi2\db whether the file exists now.!"] Call WFBE_CO_FNC_LogContent;
+} else {
+    ["INITIALIZATION", "Init_Server.sqf: iniDBI database initialization succeeded!"] Call WFBE_CO_FNC_LogContent;
+};
+
+["INITIALIZATION", "Init_Server.sqf: iniDBI database initialization ended. See above whether it was success or not."] Call WFBE_CO_FNC_LogContent;
+
 IniDB_AddScore = compile preprocessFileLineNumbers "Server\Module\SkillDB\addScore.sqf";
 IniDB_GetScore = compile preprocessFileLineNumbers "Server\Module\SkillDB\getScore.sqf";
 IniDB_AddTick = compile preprocessFileLineNumbers "Server\Module\SkillDB\addTick.sqf";
