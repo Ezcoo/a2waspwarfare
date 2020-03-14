@@ -8,6 +8,8 @@ resistance setFriend [west,0];
 resistance setFriend [east,0];
 
 // Init iniDBI database and related functions
+call compile preprocessFileLineNumbers "\inidbi2\oo_inidbi.sqf";
+
 ["INFORMATION", "Init_Server.sqf: Checking whether iniDBI database file exists and that Arma has the required file permissions..."] Call WFBE_CO_FNC_LogContent;
 if (!("exists" call _inidbi)) then {
     ["ERROR", "Init_Server.sqf: iniDBI database file does not exist or Arma doesn't have the required permissions!"] Call WFBE_CO_FNC_LogContent;
