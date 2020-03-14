@@ -20,7 +20,7 @@ class Mission
 	randomSeed=10034581;
 	class Intel
 	{
-		briefingName="[55] Warfare V48 Lingor 1.0";
+		briefingName="[55] Warfare V48 Lingor 1.01";
 		briefingDescription="Map by IceBreakr. Scripting by Benny and Awesome&WASP + Net_2, Miksuu";
 		resistanceWest=0;
 		startWeather=0;

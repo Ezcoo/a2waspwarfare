@@ -14,7 +14,7 @@ switch (toLower(worldName)) do {
 	case 'utes': {_boundariesXY = 5120};
 	case 'yapal': {_boundariesXY = 5120};
 	case 'zargabad': {_boundariesXY = 8192};
-	case 'ibr_lingor': {_boundariesXY = 20000};
+	case 'lingor': {_boundariesXY = 10500};
 };
 
 if ((missionNamespace getVariable "WFBE_C_GAMEPLAY_BOUNDARIES_ENABLED") > 0) then {
