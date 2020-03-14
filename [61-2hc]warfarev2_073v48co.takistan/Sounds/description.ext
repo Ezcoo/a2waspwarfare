@@ -24,4 +24,10 @@ class airRaid {
         sound[] = {"\sounds\airRaid.ogg",10,1};
         titles[] = {};
     };
+
+class TakiStart {
+        name = "TakiStart";
+        sound[] = {"\sounds\takistart_new.ogg",10,1};
+        titles[] = {};
+    };
 };
