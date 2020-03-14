@@ -26,14 +26,8 @@ class airRaid {
     };
 };
 
-class BluWin {
-        name = "BluWin";
-        sound[] = {"\sounds\americafuckyeah.ogg",10,1};
-        titles[] = {};
-}
-
 class TakiStart {
         name = "TakiStart";
-        sound[] = {"\sounds\takistart.ogg",10,1};
+        sound[] = {"\sounds\takistart_new.ogg",10,1};
         titles[] = {};
 }
