@@ -1,0 +1,13 @@
+class CfgMusic
+{
+	tracks[] = {};
+
+	class TakiStart
+	{
+		// display name
+		name="Takistan starting music";
+		// filename, volume, pitch
+		sound[]={"\music\takistart.ogg", db + 10, 1.0};
+	};
+
+};
