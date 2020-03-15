@@ -130,14 +130,6 @@ if ((missionNamespace getVariable "WFBE_C_AI_TEAMS_JIP_PRESERVE") == 0) then {
 _funds = _team Call GetTeamFunds;
 _get set [1,_funds];
 
-_response = ["GET_PLAYER_FROM_CURRENT_GAME_MATCH", format["[game_guid=%1,GAME_MATCH_id=%2]",_uid,PERSISTANCE_CURRENT_MATCH_ID]] call persistent_fnc_callDatabase;
-_dataRead = _response select 0;
-
-if (count _dataRead > 0 && _funds > 0) then {
-	_player_id = parseNumber (_dataRead select 0);
-	["UPDATE_PLAYER_MONEY", format["[player_id=%1,money=%2]",_uid,_funds]] call persistent_fnc_callDatabase;
-};
-
 //--- We place the unit at the base now.
 _buildings = (_side) Call WFBE_CO_FNC_GetSideStructures;
 _respawnLoc = _hq;
