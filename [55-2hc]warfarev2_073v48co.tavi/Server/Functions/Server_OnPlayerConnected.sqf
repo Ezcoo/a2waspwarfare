@@ -100,28 +100,3 @@ if (_sideOrigin != _sideJoined) then {
 //--- Set the current player funds.
 _team setVariable ["wfbe_funds", _funds, true];
 
-//--- Insert player's data into DB
-_puid = _uid;
-_pname = _name;
-
-_pposition = [getPosATL (leader _team), "write"] call persistent_fnc_convertFormat;
-
-// If Player found in DB then read in data else initialise player
-_response = ["GET_PLAYER_FROM_CURRENT_GAME_MATCH", format["[game_guid=%1,GAME_MATCH_id=%2]",_puid,PERSISTANCE_CURRENT_MATCH_ID]] call persistent_fnc_callDatabase;
-_dataRead = _response select 0;
-
-_procedureName = "INSERT_PLAYER_IN_GLOBAL_LIST";
-_parameters = format["[nickname=%1,game_guid=%2]",_pname,_puid];
-[_procedureName,_parameters] call persistent_fnc_callDatabase;
-
-if (count _dataRead > 0) then {
-	_funds = parseNumber (_dataRead select 6);
-
-	if(_funds > 0) then{
-		_team setVariable ["wfbe_funds", _funds, true]
-	};
-}else{
-	_procedureName = "INSERT_PLAYER";
-	_parameters = format["[nickname=%1,game_guid=%2,current_position_in_match=%3,side=%4,money=%5,GAME_MATCH_id=%6]",_pname,_puid,_pposition,_sideJoined,_funds,PERSISTANCE_CURRENT_MATCH_ID];
-	[_procedureName,_parameters] call persistent_fnc_callDatabase;
-};
