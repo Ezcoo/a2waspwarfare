@@ -98,6 +98,14 @@ _i = _i + [['','',245,6,-1,1,0,1,'British',[]]];
 
 /* Air Vehicles */
 
+_c = _c + ['I44_Plane_B_HHmkIIa_HVAR_RAF'];
+_i = _i + [['','',17000,50,-2,1,3,0,'British RAF',[]]];
+
+_c = _c + ['I44_Plane_B_SpitfireMk1a_M64_RAF'];
+_i = _i + [['','',20000,70,-2,2,3,0,'British RAF',[]]];
+
+_c = _c + ['I44_Plane_B_TyphoonMk1A_RP3_RAF'];
+_i = _i + [['','',20000,70,-2,3,3,0,'British RAF',[]]];
 
 for '_z' from 0 to (count _c)-1 do {
 	if (isClass (configFile >> 'CfgVehicles' >> (_c select _z))) then {
