@@ -104,7 +104,17 @@ _u = _u + ['ItemWatch'];
 [_u, _m, _side] Call Compile preprocessFile "Common\Config\Config_SortWeapons.sqf";
 
 //--- Loadout - Templates (note that backpacks content require the weapons to be first), use -1 to use the default BP content.
-_u 		= [[[],[[],[]]]];
-
+_u 		= [[['m16a4','Colt1911','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_Stanag','HandGrenade_West','SmokeShellBlue','7Rnd_45ACP_1911'],[8,2,2,8]]]];
+_u = _u + [[['M16A4_GL','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_Stanag','HandGrenade_West','1Rnd_HE_M203'],[10,2,8]]]];
+_u = _u + [[['G36C','M136','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_G36','M136'],[6,1]]]];
+_u = _u + [[['M4A1_HWS_GL_SD_Camo','SMAW','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_StanagSD','SMAW_HEAA','1Rnd_HE_M203'],[6,3,8]]]];
+_u = _u + [[['M4A1_Aim','Javelin','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_Stanag','Javelin'],[6,1]]]];
+_u = _u + [[['M4A1_Aim','Stinger','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_Stanag','Stinger'],[6,1]]]];
+_u = _u + [[['m16a4_acg','M9','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_Stanag','Mine','15Rnd_9x19_M9'],[6,3,8]]]];
+_u = _u + [[['M4A1_AIM_SD_camo','M9SD','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_StanagSD','PipeBomb','15Rnd_9x19_M9SD'],[6,3,8]]]];
+_u = _u + [[['M240','Colt1911','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['100Rnd_762x51_M240','SmokeShellBlue','7Rnd_45ACP_1911'],[5,2,8]]]];
+_u = _u + [[['MG36','Colt1911','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['100Rnd_556x45_BetaCMag','SmokeShellBlue','7Rnd_45ACP_1911'],[5,2,8]]]];
+_u = _u + [[['DMR','M9SD','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['20Rnd_762x51_DMR','HandGrenade_West','15Rnd_9x19_M9SD'],[10,2,8]]]];
+_u = _u + [[['m107','M9SD','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['10Rnd_127x99_m107','HandGrenade_West','15Rnd_9x19_M9SD'],[10,2,8]]]];
 
 [_u, _side] Call Compile preprocessFile "Common\Config\Config_SetTemplates.sqf";
