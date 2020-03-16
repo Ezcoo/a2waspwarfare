@@ -5,7 +5,7 @@ _c = [];
 _i = [];
 
 /* Infantry */
-_c = _c + ['USMC_Soldier'];
+_c = _c + ['I44_Man_A_Army_GunCrew_M1Carbine'];
 _i = _i + [['','',150,4,-1,0,0,1,'USMC',[]]];
 
 _c = _c + ['USMC_Soldier2'];
@@ -19,9 +19,6 @@ _i = _i + [['','',700,5,-1,3,0,1,'USMC',[]]];
 
 _c = _c + ['USMC_Soldier_HAT'];
 _i = _i + [['','',1050,6,-1,3,0,1,'USMC',[]]];
-
-_c = _c + ['USMC_Soldier_AA'];
-_i = _i + [['','',400,6,-1,2,0,1,'USMC',[]]];
 
 _c = _c + ['USMC_Soldier_AR'];
 _i = _i + [['','',210,5,-1,1,0,1,'USMC',[]]];

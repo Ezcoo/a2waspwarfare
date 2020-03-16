@@ -25,9 +25,9 @@ _u = _u + ["I44_Man_B_Army_Engr_GrenadeNo75"];
 _u = _u + ["USMC_Soldier_AR"];
 _u = _u + ["I44_Man_A_Army_M1A1Bazooka"];
 _u = _u + ["I44_Man_B_Army_Medic"];
-_u = _u + ["USMC_Soldier"];
-_u = _u + ["USMC_Soldier"];
-_u = _u + ["USMC_Soldier"];
+_u = _u + ["I44_Man_A_Army_GunCrew_M1Carbine"];
+_u = _u + ["I44_Man_A_Army_GunCrew_M1Carbine"];
+_u = _u + ["I44_Man_A_Army_GunCrew_M1Carbine"];
 
 _aiTeamTemplateName = _aiTeamTemplateName + ["Air - Infantry UH1Y Squadron"];
 _aiTeamTemplates = _aiTeamTemplates + [_u];
@@ -40,9 +40,9 @@ _u = _u + ["I44_Man_B_Army_Engr_GrenadeNo75"];
 _u = _u + ["I44_Man_A_Army_M1919A4"];
 _u = _u + ["I44_Man_B_Army_PIAT"];
 _u = _u + ["I44_Man_B_Army_Medic"];
-_u = _u + ["USMC_Soldier"];
-_u = _u + ["USMC_Soldier"];
-_u = _u + ["USMC_Soldier"];
+_u = _u + ["I44_Man_A_Army_GunCrew_M1Carbine"];
+_u = _u + ["I44_Man_A_Army_GunCrew_M1Carbine"];
+_u = _u + ["I44_Man_A_Army_GunCrew_M1Carbine"];
 
 _aiTeamTemplateName = _aiTeamTemplateName + ["Air - Infantry MH-60S Squadron"];
 _aiTeamTemplates = _aiTeamTemplates + [_u];
