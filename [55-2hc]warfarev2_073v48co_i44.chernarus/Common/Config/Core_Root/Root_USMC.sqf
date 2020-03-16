@@ -21,7 +21,7 @@ missionNamespace setVariable [Format ["WFBE_%1_RadioAnnouncers", _side], ['WFHQ_
 missionNamespace setVariable [Format ["WFBE_%1_RadioAnnouncers_Config", _side], 'RadioProtocolEN'];
 
 //--- Paratroopers.
-missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL1", _side],['USMC_Soldier_SL','USMC_Soldier_LAT','USMC_Soldier','USMC_Soldier2','USMC_Soldier_AR','I44_Man_B_Army_Medic']];
+missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL1", _side],['USMC_Soldier_SL','I44_Man_A_Army_M1A1Bazooka','USMC_Soldier','USMC_Soldier2','USMC_Soldier_AR','I44_Man_B_Army_Medic']];
 missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL2", _side],['USMC_Soldier_SL','USMC_Soldier_AT','USMC_Soldier_AT','USMC_Soldier_AT','USMC_Soldier_AA','I44_Man_A_Army_M1919A4','I44_Man_B_Army_Medic','USMC_SoldierS_Spotter','I44_Man_B_Army_Sniper_SMLENo4Mk1T']];
 missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL3", _side],['FR_Assault_R','USMC_Soldier_HAT','USMC_Soldier_HAT','USMC_Soldier_HAT','USMC_Soldier_HAT','USMC_Soldier_AA','USMC_Soldier_AA','FR_AR','FR_AC','I44_Man_B_Army_Medic','FR_Marksman','USMC_Soldier_AT','I44_Man_B_Army_Sniper_SMLENo4Mk1T']];
 
@@ -39,13 +39,13 @@ if (isServer) then {
 	//--- Patrols.
 	missionNamespace setVariable [Format["WFBE_%1_PATROL_LIGHT", _side], [
 		['I44_Man_B_Army_Engr_GrenadeNo75','I44_Man_A_Army_M1919A4','I44_Man_B_Army_Sniper_SMLENo4Mk1T','I44_Man_B_Army_Medic'],
-		['I44_Man_B_Army_Engr_GrenadeNo75','USMC_Soldier_AR','USMC_Soldier_GL','USMC_Soldier_LAT','USMC_Soldier'],
+		['I44_Man_B_Army_Engr_GrenadeNo75','USMC_Soldier_AR','USMC_Soldier_GL','I44_Man_A_Army_M1A1Bazooka','USMC_Soldier'],
 		['HMMWV_M2','HMMWV_MK19']
 	]];
 
 	missionNamespace setVariable [Format["WFBE_%1_PATROL_MEDIUM", _side], [
 		['LAV25','LAV25'],
-		['MTVR','I44_Man_B_Army_Engr_GrenadeNo75','USMC_Soldier_AT','I44_Man_A_Army_M1919A4','USMC_Soldier_LAT'],
+		['MTVR','I44_Man_B_Army_Engr_GrenadeNo75','USMC_Soldier_AT','I44_Man_A_Army_M1919A4','I44_Man_A_Army_M1A1Bazooka'],
 		['AAV','USMC_Soldier_AA','USMC_Soldier_AA','I44_Man_B_Army_Medic']
 	]];
 

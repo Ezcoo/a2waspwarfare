@@ -6,7 +6,7 @@ _restriction_air = missionNamespace getVariable "WFBE_C_UNITS_RESTRICT_AIR";
 //--- USMC Troops.
 _u = ['USMC_Soldier'];
 _u = _u		+ ['USMC_Soldier2'];
-_u = _u		+ ['USMC_Soldier_LAT'];
+_u = _u		+ ['I44_Man_A_Army_M1A1Bazooka'];
 _u = _u		+ ['USMC_Soldier_AT'];
 _u = _u		+ ['USMC_Soldier_HAT'];
 _u = _u		+ ['USMC_Soldier_AA'];
@@ -149,7 +149,7 @@ if ((missionNamespace getVariable "WFBE_C_UNITS_TOWN_PURCHASE") > 0) then {
 	_u = _u		+ [missionNamespace getVariable "WFBE_WESTSOLDIER"];
 	_u = _u		+ ['I44_Man_B_Army_Medic'];
 	_u = _u		+ ['BAF_Soldier_EN_W'];
-	_u = _u		+ ['USMC_Soldier_LAT'];
+	_u = _u		+ ['I44_Man_A_Army_M1A1Bazooka'];
     _u = _u		+ ['I44_Man_A_Army_M1919A4'];
     _u = _u		+ ['USMC_Soldier_AA'];
 _u = _u		+ ["UralCivil"];

@@ -12,9 +12,9 @@ _faction = "USMC";
 _k = _k + ["Squad_0"];
 _u		= ["USMC_Soldier_GL"];
 _u = _u + ["I44_Man_A_Army_M1919A4"];
-_u = _u + ["USMC_Soldier_LAT"];
+_u = _u + ["I44_Man_A_Army_M1A1Bazooka"];
 _u = _u + ["USMC_Soldier_GL"];
-_u = _u + ["USMC_Soldier_LAT"];
+_u = _u + ["I44_Man_A_Army_M1A1Bazooka"];
 _u = _u + ["I44_Man_B_Army_Medic"];
 _l = _l + [_u];
 
@@ -23,7 +23,7 @@ _u		= ["I44_Man_B_Army_Engr_GrenadeNo75"];
 _u = _u + ["USMC_Soldier_AR"];
 _u = _u + ["I44_Man_B_Army_Engr_GrenadeNo75"];
 _u = _u + ["I44_Man_B_Army_Engr_GrenadeNo75"];
-_u = _u + ["USMC_Soldier_LAT"];
+_u = _u + ["I44_Man_A_Army_M1A1Bazooka"];
 _u = _u + ["I44_Man_B_Army_Medic"];
 _l = _l + [_u];
 
@@ -58,7 +58,7 @@ _u 		= ["I44_Man_B_Army_Engr_GrenadeNo75"];
 _u = _u + ["I44_Man_A_Army_M1919A4"];
 _u = _u + ["USMC_Soldier2"];
 _u = _u + ["USMC_Soldier_GL"];
-_u = _u + ["USMC_Soldier_LAT"];
+_u = _u + ["I44_Man_A_Army_M1A1Bazooka"];
 _u = _u + ["I44_Man_B_Army_Medic"];
 _l = _l + [_u];
 
@@ -67,7 +67,7 @@ _u 		= ["I44_Man_B_Army_Engr_GrenadeNo75"];
 _u = _u + ["USMC_Soldier_AR"];
 _u = _u + ["USMC_Soldier2"];
 _u = _u + ["USMC_Soldier_GL"];
-_u = _u + ["USMC_Soldier_LAT"];
+_u = _u + ["I44_Man_A_Army_M1A1Bazooka"];
 _u = _u + ["I44_Man_B_Army_Medic"];
 _l = _l + [_u];
 
@@ -122,15 +122,15 @@ _u = _u + ["BAF_Soldier_MG_W"];
 _l = _l + [_u];
 
 _k = _k + ["Team_AT_0"];
-_u		= ["USMC_Soldier_LAT"];
-_u = _u + ["USMC_Soldier_LAT"];
-_u = _u + ["USMC_Soldier_LAT"];
+_u		= ["I44_Man_A_Army_M1A1Bazooka"];
+_u = _u + ["I44_Man_A_Army_M1A1Bazooka"];
+_u = _u + ["I44_Man_A_Army_M1A1Bazooka"];
 _u = _u + ["I44_Man_B_Army_Medic"];
 _l = _l + [_u];
 
 _k = _k + ["Team_AT_1"];
-_u		= ["USMC_Soldier_LAT"];
-_u = _u + ["USMC_Soldier_LAT"];
+_u		= ["I44_Man_A_Army_M1A1Bazooka"];
+_u = _u + ["I44_Man_A_Army_M1A1Bazooka"];
 _u = _u + ["BAF_Soldier_AT_W"];
 _u = _u + ["I44_Man_B_Army_Medic"];
 _l = _l + [_u];

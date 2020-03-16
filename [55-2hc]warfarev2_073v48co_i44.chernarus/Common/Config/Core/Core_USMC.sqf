@@ -11,7 +11,7 @@ _i = _i + [['','',150,4,-1,0,0,1,'USMC',[]]];
 _c = _c + ['USMC_Soldier2'];
 _i = _i + [['','',125,4,-1,0,0,1,'USMC',[]]];
 
-_c = _c + ['USMC_Soldier_LAT'];
+_c = _c + ['I44_Man_A_Army_M1A1Bazooka'];
 _i = _i + [['','',225,5,-1,0,0,1,'USMC',[]]];
 
 _c = _c + ['USMC_Soldier_AT'];
