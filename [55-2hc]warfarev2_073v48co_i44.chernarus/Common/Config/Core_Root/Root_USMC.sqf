@@ -4,7 +4,7 @@ _side = "WEST";
 
 //--- Generic.
 missionNamespace setVariable [Format["WFBE_%1CREW", _side], 'USMC_Soldier_Crew'];
-missionNamespace setVariable [Format["WFBE_%1PILOT", _side], 'USMC_Soldier_Pilot'];
+missionNamespace setVariable [Format["WFBE_%1PILOT", _side], 'I44_Man_A_AAF_Pilot_M1911A1'];
 missionNamespace setVariable [Format["WFBE_%1SOLDIER", _side], 'USMC_Soldier'];
 
 //--- Flag texture.

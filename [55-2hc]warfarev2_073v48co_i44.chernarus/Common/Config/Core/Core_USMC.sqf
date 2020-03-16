@@ -56,7 +56,7 @@ _i = _i + [['','',320,6,-1,3,0,1,'USMC',[]]];
 _c = _c + ['USMC_Soldier_Crew'];
 _i = _i + [['','',120,4,-1,0,0,1,'USMC',[]]];
 
-_c = _c + ['USMC_Soldier_Pilot'];
+_c = _c + ['I44_Man_A_AAF_Pilot_M1911A1'];
 _i = _i + [['','',120,4,-1,0,0,1,'USMC',[]]];
 
 _c = _c + ['I44_Man_B_Army_Engr_GrenadeNo75'];
