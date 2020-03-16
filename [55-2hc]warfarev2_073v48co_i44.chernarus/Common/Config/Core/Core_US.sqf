@@ -109,7 +109,46 @@ _i = _i + [['','',2200,25,-2,0,2,0,'US',[]]];
 _c = _c + ['I44_HT_A_M3A1_Army'];
 _i = _i + [['','',2200,25,-2,0,2,0,'US',[]]];
 
+_c = _c + ['I44_Car_A_WillysMB_Army'];
+_i = _i + [['','',2200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Car_B_WillysAB_Army'];
+_i = _i + [['','',2200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Car_A_WillysMB_Closed_Army'];
+_i = _i + [['','',2200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Truck_A_GMC_CCKW_Army'];
+_i = _i + [['','',2200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Truck_A_GMC_CCKW_Open2_Army'];
+_i = _i + [['','',2200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Truck_A_GMC_CCKW_Open_Army'];
+_i = _i + [['','',2200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Car_B_WillysAB_VGO_Army'];
+_i = _i + [['','',2200,25,-2,0,2,0,'US',[]]];
+
 _c = _c + ['I44_ACar_A_M8_Greyhound_Army'];
+_i = _i + [['','',2200,25,-2,0,2,0,'US',[]]];
+
+
+/* Boats */
+
+_c = _c + ['I44_Boat_A_InflatableBoat_Army'];
+_i = _i + [['','',2200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Boat_A_M1_AssaultBoat_Army'];
+_i = _i + [['','',2200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Boat_A_LCM3_Navy'];
+_i = _i + [['','',2200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Boat_A_LCVP_Navy'];
+_i = _i + [['','',2200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Boat_A_M1_AssaultBoat_Navy'];
 _i = _i + [['','',2200,25,-2,0,2,0,'US',[]]];
 
 /* Heavy Vehicles */

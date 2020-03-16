@@ -80,6 +80,15 @@ _u = _u		+ ['I44_Truck_A_GMC_CCKW_Warfare_Salvage_Army'];
 _u = _u		+ ['I44_HT_A_M3_Army'];
 _u = _u		+ ['I44_HT_A_M3A1_Army'];
 _u = _u		+ ['I44_ACar_A_M8_Greyhound_Army'];
+_u = _u		+ ['I44_HT_A_M3_Army'];
+_u = _u		+ ['I44_HT_A_M3A1_Army'];
+_u = _u		+ ['I44_Car_A_WillysMB_Army'];
+_u = _u		+ ['I44_Car_B_WillysAB_Army'];
+_u = _u		+ ['I44_Car_A_WillysMB_Closed_Army'];
+_u = _u		+ ['I44_Truck_A_GMC_CCKW_Army'];
+_u = _u		+ ['I44_Truck_A_GMC_CCKW_Open2_Army'];
+_u = _u		+ ['I44_Truck_A_GMC_CCKW_Open_Army'];
+_u = _u		+ ['I44_Car_B_WillysAB_VGO_Army'];
 
 missionNamespace setVariable [Format ["WFBE_%1LIGHTUNITS", _side], _u];
 if (local player) then {['LIGHT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
