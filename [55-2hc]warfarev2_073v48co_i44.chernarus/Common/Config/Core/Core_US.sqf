@@ -85,7 +85,10 @@ _i = _i + [['','',250,5,-1,1,0,1,'US',[]]];
 
 /* Light Vehicles */
 
-_c = _c + ['HMMWV_Ambulance_DES_EP1'];
+_c = _c + ['I44_Car_A_WillysMB_Medic_Army'];
+_i = _i + [['','',4000,22,-2,2,1,0,'US',[]]];
+
+_c = _c + ['I44_Car_B_WillysAB_Medic_Army'];
 _i = _i + [['','',4000,22,-2,2,1,0,'US',[]]];
 
 _c = _c + ['I44_Truck_A_GMC_CCKW_Warfare_Salvage_Army'];

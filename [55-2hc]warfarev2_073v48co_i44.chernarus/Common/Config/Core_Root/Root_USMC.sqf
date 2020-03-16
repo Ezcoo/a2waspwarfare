@@ -10,7 +10,7 @@ missionNamespace setVariable [Format["WFBE_%1SOLDIER", _side], 'USMC_Soldier'];
 //--- Flag texture.
 missionNamespace setVariable [Format["WFBE_%1FLAG", _side], '\Ca\Data\flag_usa_co.paa'];
 
-missionNamespace setVariable [Format["WFBE_%1AMBULANCES", _side], ['HMMWV_Ambulance','HMMWV_Ambulance_DES_EP1','UH60M_MEV_EP1','M1133_MEV_EP1']];
+missionNamespace setVariable [Format["WFBE_%1AMBULANCES", _side], ['I44_Car_A_WillysMB_Medic_Army','I44_Car_B_WillysAB_Medic_Army']];
 missionNamespace setVariable [Format["WFBE_%1REPAIRTRUCKS", _side], ['I44_Truck_A_GMC_CCKW_Repair_Army']];
 missionNamespace setVariable [Format["WFBE_%1SALVAGETRUCK", _side], ['I44_Truck_A_GMC_CCKW_Warfare_Salvage_Army']];
 missionNamespace setVariable [Format["WFBE_%1SUPPLYTRUCKS", _side], ['WarfareSupplyTruck_USMC','MtvrSupply_DES_EP1']];
@@ -27,7 +27,7 @@ missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL3", _side],['FR_Assau
 
 missionNamespace setVariable [Format["WFBE_%1PARACARGO", _side], 'I44_Plane_A_C47A_AAF'];	//--- Paratroopers, Vehicle.
 missionNamespace setVariable [Format["WFBE_%1REPAIRTRUCK", _side], 'I44_Truck_A_GMC_CCKW_Repair_Army'];//--- Repair Truck model.
-missionNamespace setVariable [Format["WFBE_%1STARTINGVEHICLES", _side], ['HMMWV_Ambulance','MTVR']];//--- Starting Vehicles.
+missionNamespace setVariable [Format["WFBE_%1STARTINGVEHICLES", _side], ['I44_Car_A_WillysMB_Medic_Army','MTVR']];//--- Starting Vehicles.
 missionNamespace setVariable [Format["WFBE_%1PARAAMMO", _side], ['USBasicAmmunitionBox','USBasicWeaponsBox','USLaunchersBox']];//--- Supply Paradropping, Dropped Ammunition.
 missionNamespace setVariable [Format["WFBE_%1PARAVEHICARGO", _side], 'I44_Truck_A_GMC_CCKW_Repair_Army'];//--- Supply Paradropping, Dropped Vehicle.
 missionNamespace setVariable [Format["WFBE_%1PARAVEHI", _side], 'MH60S'];//--- Supply Paradropping, Vehicle

@@ -134,7 +134,8 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_BAF") > 0) then {
 missionNamespace setVariable [Format ["WFBE_%1BARRACKSUNITS", _side], _u];
 if (local player) then {['BARRACKS', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
-_u  		= ['HMMWV_Ambulance_DES_EP1'];
+_u  		= ['I44_Car_A_WillysMB_Medic_Army'];
+_u = _u		+ ['I44_Car_B_WillysAB_Medic_Army'];
 _u = _u		+ ['I44_Truck_A_GMC_CCKW_Repair_Army'];
 _u = _u		+ ['I44_Truck_A_GMC_CCKW_Ammo_Army'];
 _u = _u		+ ['I44_Truck_A_GMC_CCKW_Ammo_Army'];
