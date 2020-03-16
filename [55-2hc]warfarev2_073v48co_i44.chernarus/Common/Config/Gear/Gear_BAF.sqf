@@ -83,6 +83,8 @@ _z = [];//--- Upgrade level
 _m = [];//--- Magazines (-1 = auto, [x,y,z] = forced magazines)
 
 //--- Weapons
+
+/*
 _u = _u + ["BAF_AS50_scoped"];
 _p = _p + [''];
 _n = _n + [''];
@@ -188,6 +190,8 @@ _o = _o + [350];
 _z = _z + [2];
 _m = _m + [-1];
 
+*/
+
 [_faction, _u, _p, _n, _o, _z, _m] Call Compile preprocessFile "Common\Config\Config_Weapons.sqf";
 
 _u = [];//--- Backpack
@@ -197,6 +201,8 @@ _o = [];//--- Price
 _z = [];//--- Upgrade level
 
 //--- Backpacks & Tripods
+
+/*
 _u = _u + ["BAF_AssaultPack_ARAmmo"];
 _p = _p + [''];
 _n = _n + ['+(Ammo AR)'];
@@ -280,5 +286,7 @@ _p = _p + [''];
 _n = _n + [''];
 _o = _o + [300];
 _z = _z + [1];
+
+*/
 
 [_faction, _u, _p, _n, _o, _z] Call Compile preprocessFile "Common\Config\Config_Backpack.sqf";
