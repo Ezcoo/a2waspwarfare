@@ -150,12 +150,6 @@ _u = _u + ["TK_Soldier_AT_EP1"];
 _u = _u + ["TK_Soldier_Medic_EP1"];
 _l = _l + [_u];
 
-_k = _k + ["Team_AA"];
-_u =      ["TK_Soldier_AA_EP1"];
-_u = _u + ["TK_Soldier_AA_EP1"];
-_u = _u + ["TK_Soldier_AA_EP1"];
-_l = _l + [_u];
-
 _k = _k + ["Team_Sniper_0"];
 _u		= ["TK_Soldier_Sniper_EP1"];
 _u = _u + ["TK_Soldier_Sniper_EP1"];

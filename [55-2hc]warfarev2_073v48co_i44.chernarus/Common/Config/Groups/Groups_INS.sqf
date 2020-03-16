@@ -64,13 +64,6 @@ _u = _u + ["Ins_Soldier_AT"];
 _u = _u + ["Ins_Soldier_AT"];
 _l = _l + [_u];
 
-_k = _k + ["Team_AA"];
-_u		= ["Ins_Soldier_AA"];
-_u = _u + ["Ins_Soldier_AA"];
-_u = _u + ["Ins_Soldier_AA"];
-_u = _u + ["Ins_Soldier_1"];
-_l = _l + [_u];
-
 _k = _k + ["Team_Sniper"];
 _u		= ["Ins_Soldier_Sniper"];
 _u = _u + ["Ins_Soldier_Sniper"];

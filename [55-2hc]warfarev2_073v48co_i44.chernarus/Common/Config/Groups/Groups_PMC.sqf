@@ -69,13 +69,6 @@ _u = _u + ["Soldier_AT_PMC"];
 _u = _u + ["Soldier_MG_PKM_PMC"];
 _l = _l + [_u];
 
-_k = _k + ["Team_AA"];
-_u		= ["Soldier_TL_PMC"];
-_u = _u + ["Soldier_AA_PMC"];
-
-_u = _u + ["Soldier_MG_PKM_PMC"];
-_l = _l + [_u];
-
 _k = _k + ["Team_Sniper"];
 _u		= ["Soldier_Sniper_PMC"];
 _u = _u + ["Soldier_Sniper_KSVK_PMC"];

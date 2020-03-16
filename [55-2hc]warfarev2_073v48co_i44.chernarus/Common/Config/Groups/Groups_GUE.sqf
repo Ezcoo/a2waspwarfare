@@ -43,12 +43,6 @@ _u = _u + ["GUE_Soldier_AT"];
 
 _l = _l + [_u];
 
-_k = _k + ["Team_AA"];
-_u		= ["GUE_Soldier_AA"];
-_u = _u + ["GUE_Soldier_AA"];
-
-_l = _l + [_u];
-
 _k = _k + ["Team_Sniper"];
 _u		= ["GUE_Soldier_Sniper"];
 

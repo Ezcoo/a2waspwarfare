@@ -68,14 +68,6 @@ _u = _u + ["CDF_Soldier_RPG"];
 _u = _u + ["CDF_Soldier"];
 _l = _l + [_u];
 
-_k = _k + ["Team_AA"];
-_u		= ["CDF_Soldier_TL"];
-_u = _u + ["CDF_Soldier_AR"];
-_u = _u + ["CDF_Soldier"];
-_u = _u + ["CDF_Soldier_Strela"];
-_u = _u + ["CDF_Soldier_Strela"];
-_l = _l + [_u];
-
 _k = _k + ["Team_Sniper"];
 _u		= ["CDF_Soldier_Sniper"];
 _u = _u + ["CDF_Soldier_Spotter"];

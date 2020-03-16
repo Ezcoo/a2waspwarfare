@@ -149,12 +149,6 @@ _u = _u + ["USMC_Soldier_HAT"];
 _u = _u + ["I44_Man_B_Army_Medic"];
 _l = _l + [_u];
 
-_k = _k + ["Team_AA"];
-_u =      ["USMC_Soldier_AA"];
-_u = _u + ["USMC_Soldier_AA"];
-_u = _u + ["USMC_Soldier_AA"];
-_l = _l + [_u];
-
 _k = _k + ["Team_Sniper_0"];
 _u		= ["USMC_Soldier2"];
 _u = _u + ["USMC_Soldier2"];

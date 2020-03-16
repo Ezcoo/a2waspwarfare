@@ -149,12 +149,6 @@ _u = _u + ["US_Soldier_HAT_EP1"];
 _u = _u + ["US_Soldier_Medic_EP1"];
 _l = _l + [_u];
 
-_k = _k + ["Team_AA"];
-_u =      ["US_Soldier_AA_EP1"];
-_u = _u + ["US_Soldier_AA_EP1"];
-_u = _u + ["US_Soldier_AA_EP1"];
-_l = _l + [_u];
-
 _k = _k + ["Team_Sniper_0"];
 _u		= ["US_Soldier_EP1"];
 _u = _u + ["US_Soldier_EP1"];

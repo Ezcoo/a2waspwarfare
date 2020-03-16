@@ -150,12 +150,6 @@ _u = _u + ["RU_Soldier_HAT"];
 _u = _u + ["RU_Soldier_Medic"];
 _l = _l + [_u];
 
-_k = _k + ["Team_AA"];
-_u =      ["RU_Soldier_AA"];
-_u = _u + ["RU_Soldier_AA"];
-_u = _u + ["RU_Soldier_AA"];
-_l = _l + [_u];
-
 _k = _k + ["Team_Sniper_0"];
 _u		= ["RU_Soldier_Sniper"];
 _u = _u + ["RU_Soldier_Sniper"];
