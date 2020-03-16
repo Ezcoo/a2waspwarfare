@@ -23,8 +23,8 @@ missionNamespace setVariable [Format ["WFBE_%1_RadioAnnouncers_Config", _side], 
 
 //--- Paratroopers.
 missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL1", _side],['USMC_Soldier_SL','I44_Man_A_Army_M1A1Bazooka','USMC_Soldier','USMC_Soldier2','USMC_Soldier_AR','I44_Man_B_Army_Medic']];
-missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL2", _side],['USMC_Soldier_SL','USMC_Soldier_AT','USMC_Soldier_AT','USMC_Soldier_AT','USMC_Soldier_AA','I44_Man_A_Army_M1919A4','I44_Man_B_Army_Medic','USMC_SoldierS_Spotter','I44_Man_B_Army_Sniper_SMLENo4Mk1T']];
-missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL3", _side],['FR_Assault_R','USMC_Soldier_HAT','USMC_Soldier_HAT','USMC_Soldier_HAT','USMC_Soldier_HAT','USMC_Soldier_AA','USMC_Soldier_AA','FR_AR','FR_AC','I44_Man_B_Army_Medic','FR_Marksman','USMC_Soldier_AT','I44_Man_B_Army_Sniper_SMLENo4Mk1T']];
+missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL2", _side],['USMC_Soldier_SL','I44_Man_B_Army_PIAT','I44_Man_B_Army_PIAT','I44_Man_B_Army_PIAT','USMC_Soldier_AA','I44_Man_A_Army_M1919A4','I44_Man_B_Army_Medic','USMC_SoldierS_Spotter','I44_Man_B_Army_Sniper_SMLENo4Mk1T']];
+missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL3", _side],['FR_Assault_R','USMC_Soldier_HAT','USMC_Soldier_HAT','USMC_Soldier_HAT','USMC_Soldier_HAT','USMC_Soldier_AA','USMC_Soldier_AA','FR_AR','FR_AC','I44_Man_B_Army_Medic','FR_Marksman','I44_Man_B_Army_PIAT','I44_Man_B_Army_Sniper_SMLENo4Mk1T']];
 
 missionNamespace setVariable [Format["WFBE_%1PARACARGO", _side], 'I44_Plane_A_C47A_AAF'];	//--- Paratroopers, Vehicle.
 missionNamespace setVariable [Format["WFBE_%1REPAIRTRUCK", _side], 'I44_Truck_A_GMC_CCKW_Repair_Army'];//--- Repair Truck model.
@@ -46,14 +46,14 @@ if (isServer) then {
 
 	missionNamespace setVariable [Format["WFBE_%1_PATROL_MEDIUM", _side], [
 		['LAV25','LAV25'], 
-		['MTVR','I44_Man_B_Army_Engr_GrenadeNo75','USMC_Soldier_AT','I44_Man_A_Army_M1919A4','I44_Man_A_Army_M1A1Bazooka'],
+		['MTVR','I44_Man_B_Army_Engr_GrenadeNo75','I44_Man_B_Army_PIAT','I44_Man_A_Army_M1919A4','I44_Man_A_Army_M1A1Bazooka'],
 		['AAV','USMC_Soldier_AA','USMC_Soldier_AA','I44_Man_B_Army_Medic']
 	]];
 
 	missionNamespace setVariable [Format["WFBE_%1_PATROL_HEAVY", _side], [
 		['M1A1','AAV'], 
 		['M1A1','M1A1'],
-		['AAV','AAV','I44_Man_B_Army_Engr_GrenadeNo75','I44_Man_A_Army_M1919A4','USMC_SoldierM_Marksman','I44_Man_B_Army_Medic','USMC_Soldier_AT','USMC_Soldier_HAT','USMC_Soldier'],
+		['AAV','AAV','I44_Man_B_Army_Engr_GrenadeNo75','I44_Man_A_Army_M1919A4','USMC_SoldierM_Marksman','I44_Man_B_Army_Medic','I44_Man_B_Army_PIAT','USMC_Soldier_HAT','USMC_Soldier'],
 		['LAV25','I44_Man_B_Army_Engr_GrenadeNo75','I44_Man_B_Army_Medic','USMC_Soldier_GL','USMC_Soldier','USMC_Soldier_AR']
 	]];
 	
