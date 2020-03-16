@@ -78,14 +78,6 @@ _u = _u + ['ItemWatch'];
 [_u, _m, _side] Call Compile preprocessFile "Common\Config\Config_SortWeapons.sqf";
 
 //--- Loadout - Templates (note that backpacks content require the weapons to be first), use -1 to use the default BP content.
-_u 		= [[['AKS_74_kobra','Makarov','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','HandGrenade_East','SmokeShellRed','8Rnd_9x18_Makarov'],[8,2,2,8]]]];
-_u = _u + [[['AK_74_GL','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','HandGrenade_East','1Rnd_HE_GP25'],[10,2,8]]]];
-_u = _u + [[['AKS_74_kobra','RPG18','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','RPG18'],[6,1]]]];
-_u = _u + [[['AKS_74_U','RPG7V','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','PG7VL','OG7'],[6,2,1]]]];
-_u = _u + [[['AKS_74_U','Strela','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','Strela'],[6,1]]]];
-_u = _u + [[['AKS_74_pso','Makarov','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','MineE','8Rnd_9x18_Makarov'],[6,3,8]]]];
-_u = _u + [[['PK','Makarov','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['100Rnd_762x54_PK','SmokeShellRed','8Rnd_9x18_Makarov'],[5,2,8]]]];
-_u = _u + [[['Pecheneg','Makarov','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['100Rnd_762x54_PK','SmokeShellRed','8Rnd_9x18_Makarov'],[5,2,8]]]];
-_u = _u + [[['SVD','MakarovSD','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['10Rnd_762x54_SVD','HandGrenade_East','8Rnd_9x18_MakarovSD'],[10,2,8]]]];
+_u 		= [[[],[[],[]]]];
 
 [_u, _side] Call Compile preprocessFile "Common\Config\Config_SetTemplates.sqf";
