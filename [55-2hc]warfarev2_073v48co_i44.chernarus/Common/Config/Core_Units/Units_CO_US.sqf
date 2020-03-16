@@ -71,56 +71,20 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_BAF") > 0) then {
 missionNamespace setVariable [Format ["WFBE_%1BARRACKSUNITS", _side], _u];
 if (local player) then {['BARRACKS', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
-_u 			= ['MMT_USMC'];
-_u = _u		+ ['M1030'];
-_u = _u		+ ['M1030_US_DES_EP1'];
-_u = _u		+ ['ATV_US_EP1'];
-_u = _u		+ ['Zodiac'];
-
-_u = _u		+ ['HMMWV_M998A2_SOV_DES_EP1'];
-_u = _u		+ ['HMMWV_M1151_M2_DES_EP1'];
-_u = _u		+ ['HMMWV'];
-_u = _u		+ ["hilux1_civil_1_open"];
-_u = _u		+ ["UralCivil"];
-_u = _u		+ ['HMMWV_M2'];
-_u = _u		+ ['HMMWV_Armored'];
-_u = _u		+ ['HMMWV_MK19'];
-_u = _u		+ ['HMMWV_TOW'];
-_u = _u		+ ['HMMWV_Avenger'];
-_u = _u		+ ['HMMWV_Ambulance'];
-_u = _u		+ ['HMMWV_M998_crows_MK19_DES_EP1'];
-_u = _u		+ ['HMMWV_M998_crows_M2_DES_EP1'];
-_u = _u		+ ['M1126_ICV_M2_EP1'];
-_u = _u		+ ['M1126_ICV_mk19_EP1'];
-_u = _u		+ ['M1129_MC_EP1'];
-_u = _u		+ ['M1135_ATGMV_EP1'];
-_u = _u		+ ['M1128_MGS_EP1'];
+_u  		= ['HMMWV_Ambulance_DES_EP1'];
+_u = _u		+ ['MtvrRepair_DES_EP1'];
+_u = _u		+ ['MtvrReammo_DES_EP1'];
+_u = _u		+ ['MtvrRefuel_DES_EP1'];
+_u = _u		+ ['MtvrSalvage_DES_EP1'];
 _u = _u		+ ['M1133_MEV_EP1'];
-_u = _u		+ ['LandRover_Special_CZ_EP1'];
-_u = _u		+ ['HMMWV_M1035_DES_EP1'];
+_u = _u		+ ['I44_HT_A_M3_Army'];
+_u = _u		+ ['I44_HT_A_M3A1_Army'];
+_u = _u		+ ['I44_ACar_A_M8_Greyhound_Army'];
 
-if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['MtvrSupply_DES_EP1']};
-_u = _u		+ ['MTVR'];
-_u = _u		+ ['MtvrRepair'];
-_u = _u		+ ['WarfareReammoTruck_USMC'];
-_u = _u		+ ['MtvrRefuel'];
-_u = _u		+ ['WarfareSalvageTruck_USMC'];
-if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['WarfareSupplyTruck_USMC']};
-_u = _u		+ ['RHIB'];
-_u = _u		+ ['RHIB2Turret'];
-_u = _u		+ ['LAV25'];
-if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_BAF") > 0) then {
-	_u = _u		+ ['BAF_ATV_W'];
-	_u = _u		+ ['BAF_Offroad_W'];
-	_u = _u		+ ['BAF_Jackal2_GMG_W'];
-	_u = _u		+ ['BAF_Jackal2_L2A1_W'];
-};
 missionNamespace setVariable [Format ["WFBE_%1LIGHTUNITS", _side], _u];
 if (local player) then {['LIGHT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
-_u  		= ['I44_HT_A_M3_Army'];
-_u = _u		+ ['I44_HT_A_M3A1_Army'];
-_u = _u		+ ['I44_Tank_A_M3A3_Stuart_Army'];
+_u  		= ['I44_Tank_A_M3A3_Stuart_Army'];
 _u = _u		+ ['I44_Tank_A_M5A1_Stuart_Army'];
 _u = _u		+ ['I44_Tank_B_ShermanIV_Army'];
 _u = _u		+ ['I44_Veh_A_Army_M4A3_Sherman_Army'];
@@ -131,7 +95,6 @@ _u = _u		+ ['I44_Veh_A_Army_M4A3_Wading_Sherman_Army'];
 _u = _u		+ ['I44_Tank_A_M4A3E8_76_HVSS_Sherman_Army'];
 _u = _u		+ ['I44_Tank_B_ShermanVC_Army'];
 _u = _u		+ ['I44_Tank_B_Army_UC'];
-_u = _u		+ ['I44_ACar_A_M8_Greyhound_Army'];
 
 missionNamespace setVariable [Format ["WFBE_%1HEAVYUNITS", _side], _u];
 if (local player) then {['HEAVY', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
