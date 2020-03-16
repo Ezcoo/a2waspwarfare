@@ -12,6 +12,9 @@ _bounty = if (score _killed < 0) then {
           } else {
             100+7*(score _killed) * _coef;
           };
+
+_bounty = round _bounty;
+
 sleep (random 3);
 
 Format[Localize "STR_WF_CHAT_Award_Bounty", _bounty, _name] Call GroupChatMessage;
