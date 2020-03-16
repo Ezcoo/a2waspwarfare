@@ -187,7 +187,7 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_BAF") > 0) then {
 missionNamespace setVariable [Format ["WFBE_%1HEAVYUNITS", _side], _u];
 if (local player) then {['HEAVY', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
-_u  		= ['CH_47F_EP1'];
+_u  		= ['I44_Plane_A_C47A_AAF'];
 _u = _u		+ ['I44_Plane_B_HHmkIIa_HVAR_RAF'];
 _u = _u		+ ['I44_Plane_A_P51D_HVAR_AAF'];
 _u = _u		+ ['I44_Plane_A_P38_M64_AAF'];
@@ -200,7 +200,7 @@ _u = _u		+ ['I44_Plane_B_TyphoonMk1A_RP3_RAF'];
 missionNamespace setVariable [Format ["WFBE_%1AIRCRAFTUNITS", _side], _u];
 if (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
-_u  		= ['CH_47F_EP1'];
+_u  		= ['I44_Plane_A_C47A_AAF'];
 _u = _u		+ ['I44_Plane_B_HHmkIIa_HVAR_RAF'];
 _u = _u		+ ['I44_Plane_A_P51D_HVAR_AAF'];
 _u = _u		+ ['I44_Plane_A_P38_M64_AAF'];
