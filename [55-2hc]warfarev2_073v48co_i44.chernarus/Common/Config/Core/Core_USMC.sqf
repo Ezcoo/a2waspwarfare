@@ -108,9 +108,6 @@ _i = _i + [['','',2500,22,-2,2,1,0,'USMC',[]]];
 _c = _c + ['WarfareReammoTruck_USMC'];
 _i = _i + [['','',750,22,-2,1,1,0,'USMC',[]]];
 
-_c = _c + ['MtvrRefuel'];
-_i = _i + [['','',500,22,-2,1,1,0,'USMC',[]]];
-
 _c = _c + ['WarfareSupplyTruck_USMC'];
 _i = _i + [['','',550,25,-2,1,1,0,'USMC',[]]];
 

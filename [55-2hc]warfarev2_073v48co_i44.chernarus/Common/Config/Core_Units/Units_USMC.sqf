@@ -50,7 +50,6 @@ _u = _u		+ ['HMMWV_Ambulance'];
 _u = _u		+ ['MTVR'];
 _u = _u		+ ['I44_Truck_A_GMC_CCKW_Repair_Army'];
 _u = _u		+ ['WarfareReammoTruck_USMC'];
-_u = _u		+ ['MtvrRefuel'];
 _u = _u		+ ['I44_Truck_A_GMC_CCKW_Warfare_Salvage_Army'];
 if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['WarfareSupplyTruck_USMC']};
 _u = _u		+ ['RHIB'];
