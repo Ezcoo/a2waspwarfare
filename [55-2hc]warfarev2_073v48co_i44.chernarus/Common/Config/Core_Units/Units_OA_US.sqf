@@ -187,35 +187,27 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_BAF") > 0) then {
 missionNamespace setVariable [Format ["WFBE_%1HEAVYUNITS", _side], _u];
 if (local player) then {['HEAVY', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
-_u 			= ['MH6J_EP1'];
-_u = _u		+ ['UH60M_EP1'];
-_u = _u		+ ['UH60M_MEV_EP1'];
-_u = _u		+ ['CH_47F_EP1'];
-if (_restriction_air == 0 || _restriction_air == 1) then {
-	_u = _u		+ ['AH6J_EP1'];
-	_u = _u		+ ['AH64D_EP1'];
-};
-if (_restriction_air == 0) then {
-	_u = _u		+ ['I44_Plane_B_HHmkIIa_HVAR_RAF'];
-	_u = _u		+ ['A10_US_EP1'];
-};
-if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_BAF") > 0) then {
-	_u = _u		+ ['BAF_Merlin_HC3_D'];
-	_u = _u		+ ['CH_47F_BAF'];
-	if (_restriction_air == 0 || _restriction_air == 1) then {
-		_u = _u		+ ['AW159_Lynx_BAF'];
-		_u = _u		+ ['BAF_Apache_AH1_D'];
-	};
-};
+_u  		+ ['CH_47F_EP1'];
+_u = _u		+ ['I44_Plane_B_HHmkIIa_HVAR_RAF'];
+_u = _u		+ ['I44_Plane_A_P51D_HVAR_AAF'];
+_u = _u		+ ['I44_Plane_A_P38_M64_AAF'];
+_u = _u		+ ['I44_P47A'];
+_u = _u		+ ['I44_Plane_A_B17_AAF'];
+_u = _u		+ ['I44_Plane_B_SpitfireMk1a_M64_RAF'];
+_u = _u		+ ['I44_Plane_B_TyphoonMk1A_RP3_RAF'];
+
 
 missionNamespace setVariable [Format ["WFBE_%1AIRCRAFTUNITS", _side], _u];
 if (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
-_u = [];
-if (_restriction_air == 0) then {
-	_u = _u		+ ['I44_Plane_B_HHmkIIa_HVAR_RAF'];
-	_u = _u		+ ['A10_US_EP1'];
-};
+_u  		+ ['CH_47F_EP1'];
+_u = _u		+ ['I44_Plane_B_HHmkIIa_HVAR_RAF'];
+_u = _u		+ ['I44_Plane_A_P51D_HVAR_AAF'];
+_u = _u		+ ['I44_Plane_A_P38_M64_AAF'];
+_u = _u		+ ['I44_P47A'];
+_u = _u		+ ['I44_Plane_A_B17_AAF'];
+_u = _u		+ ['I44_Plane_B_SpitfireMk1a_M64_RAF'];
+_u = _u		+ ['I44_Plane_B_TyphoonMk1A_RP3_RAF'];
 
 missionNamespace setVariable [Format ["WFBE_%1AIRPORTUNITS", _side], _u];
 if (local player) then {['AIRPORT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
