@@ -9,7 +9,6 @@ _u = _u		+ ['US_Soldier_B_EP1'];
 _u = _u		+ ['US_Soldier_LAT_EP1'];
 _u = _u		+ ['US_Soldier_AT_EP1'];
 _u = _u		+ ['US_Soldier_HAT_EP1'];
-_u = _u		+ ['US_Soldier_AA_EP1'];
 _u = _u		+ ['US_Soldier_AR_EP1'];
 _u = _u		+ ['US_Soldier_MG_EP1'];
 _u = _u		+ ['US_Soldier_GL_EP1'];

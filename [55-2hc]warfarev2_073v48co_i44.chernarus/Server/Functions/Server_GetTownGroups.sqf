@@ -52,7 +52,6 @@ switch (true) do {
 					[Format ["Team_MG_%1", _current_infantry_upgrade], 1, 0],
 					[Format ["Team_%1", _current_infantry_upgrade], 1, 0],
 					[Format ["Team_AT_%1", _current_infantry_upgrade], 1, 0],
-					["Team_AA", 1, 0],
 					[Format ["Team_Sniper_%1", _current_infantry_upgrade], 1, 0],
 					[Format ["Motorized_%1", _current_light_upgrade], 1, 1],
 					[Format ["Mechanized_%1", _current_heavy_upgrade], 1, 1]
@@ -81,7 +80,6 @@ switch (true) do {
 					[Format ["Squad_%1", _current_infantry_upgrade], 1, 0],
 					[Format ["Team_MG_%1", _current_infantry_upgrade], 1, 0],
 					[Format ["Team_%1", _current_infantry_upgrade], 1, 0],
-					["Team_AA", 2, 0],
 					[Format ["Team_AT_%1", _current_infantry_upgrade], 2, 0],
 					[Format ["Team_Sniper_%1", _current_infantry_upgrade], 1, 0],
 					[Format ["Motorized_%1", _current_light_upgrade], 2, 1],
@@ -110,7 +108,6 @@ switch (true) do {
 					[Format ["Squad_%1", _current_infantry_upgrade], 1, 0],
 					[Format ["Team_MG_%1", _current_infantry_upgrade], 1, 0],
 					[Format ["Team_%1", _current_infantry_upgrade], 1, 0],
-					["Team_AA", 1, 0],
 					[Format ["Team_AT_%1", _current_infantry_upgrade], 2, 0],
 					[if(_current_infantry_upgrade == 3)then{"Squad_Advanced"}else{Format ["Squad_%1", _current_infantry_upgrade]}, 2, 0],
 					[Format ["Team_Sniper_%1", _current_infantry_upgrade], 1, 0],
@@ -125,7 +122,6 @@ switch (true) do {
 					[Format ["Squad_%1", _current_infantry_upgrade], 1, 0],
 					[Format ["Team_MG_%1", _current_infantry_upgrade], 1, 0],
 					[Format ["Team_%1", _current_infantry_upgrade], 1, 0],
-					["Team_AA", 1, 0],
 					[Format ["Team_AT_%1", _current_infantry_upgrade], 3, 0],
 					[if(_current_infantry_upgrade == 3)then{"Squad_Advanced"}else{Format ["Squad_%1", _current_infantry_upgrade]}, 2, 0],
 					[Format ["Team_Sniper_%1", _current_infantry_upgrade], 1, 0],
@@ -149,9 +145,9 @@ _unit_vehicles = [];
 	if (!isNil {missionNamespace getVariable Format ["WFBE_%1_GROUPS_%2",_side,_x select 0]}) then {
 		_add = true;
 		if (_aa_get) then {
-			if !((_x select 0) in ["AA_Light","AA_Heavy","Team_AA"]) then {_add = false}
+			if !((_x select 0) in ["AA_Light","AA_Heavy"]) then {_add = false}
 		} else {
-			if (_town_airactive && (_x select 0) in ["AA_Light","AA_Heavy","Team_AA"]) then {_add = false};
+			if (_town_airactive && (_x select 0) in ["AA_Light","AA_Heavy"]) then {_add = false};
 		};
 		if (_add) then {
 			_array = if ((_x select 2) == 0) then {_unit_infantry} else {_unit_vehicles};

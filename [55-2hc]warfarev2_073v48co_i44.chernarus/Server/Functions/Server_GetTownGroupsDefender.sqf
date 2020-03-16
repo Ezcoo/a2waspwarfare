@@ -85,9 +85,9 @@ _unit_vehicles = [];
 	if (!isNil {missionNamespace getVariable Format ["WFBE_%1_GROUPS_%2",_side,_x select 0]}) then {
 		_add = true;
 		if (_aa_get) then {
-			if !((_x select 0) in ["AA_Light","AA_Heavy","Team_AA"]) then {_add = false}
+			if !((_x select 0) in ["AA_Light","AA_Heavy"]) then {_add = false}
 		} else {
-			if (_town_airactive && (_x select 0) in ["AA_Light","AA_Heavy","Team_AA"]) then {_add = false};
+			if (_town_airactive && (_x select 0) in ["AA_Light","AA_Heavy"]) then {_add = false};
 		};
 		if (_add) then {
 			_array = if ((_x select 2) == 0) then {_unit_infantry} else {_unit_vehicles};
