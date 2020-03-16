@@ -118,16 +118,6 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_BAF") > 0) then {
 missionNamespace setVariable [Format ["WFBE_%1LIGHTUNITS", _side], _u];
 if (local player) then {['LIGHT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
-_u 			= ['AAV'];
-_u = _u		+ ['M2A2_EP1'];
-_u = _u		+ ['M2A3_EP1'];
-_u = _u		+ ['M1A1'];
-_u = _u		+ ['MLRS'];
-_u = _u		+ ['M1A2_TUSK_MG'];
-_u = _u		+ ['M6_EP1'];
-if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_BAF") > 0) then {
-	_u = _u		+ ['BAF_FV510_W'];
-};
 
 missionNamespace setVariable [Format ["WFBE_%1HEAVYUNITS", _side], _u];
 if (local player) then {['HEAVY', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
