@@ -116,6 +116,16 @@ _u = _u + ['SPG9_TK_GUE_Bag_EP1'];
 [_u, _m, _side] Call Compile preprocessFile "Common\Config\Config_SortWeapons.sqf";
 
 //--- Loadout - Templates (note that backpacks content require the weapons to be first), use -1 to use the default BP content.
-_u 		= [[[],[[],[]]]];
+_u 		= [[['AKS_74_kobra','Makarov','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','HandGrenade_East','SmokeShellRed','8Rnd_9x18_Makarov'],[8,2,2,8]]]];
+_u = _u + [[['AK_74_GL_kobra','Binocular','TKG_ALICE_Pack_AmmoAK74_EP1','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','HandGrenade_East','1Rnd_HE_GP25'],[10,2,8]],-1]];
+_u = _u + [[['AKS_74_kobra','RPG18','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','RPG18'],[6,1]]]];
+_u = _u + [[['AKS_74_kobra','RPG7V','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','PG7VL','OG7'],[6,2,1]]]];
+_u = _u + [[['AKS_74_kobra','MetisLauncher','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','AT13'],[6,1]]]];
+_u = _u + [[['AKS_74_U','Strela','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','Strela'],[6,1]]]];
+_u = _u + [[['AKS_74_pso','TK_ALICE_Pack_Explosives_EP1','Makarov','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','MineE','8Rnd_9x18_Makarov'],[6,3,8]],-1]];
+_u = _u + [[['SVD_NSPU_EP1','MakarovSD','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['10Rnd_762x54_SVD','PipeBomb','8Rnd_9x18_MakarovSD'],[6,3,8]]]];
+_u = _u + [[['PK','Makarov','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['100Rnd_762x54_PK','SmokeShellRed','8Rnd_9x18_Makarov'],[5,2,8]]]];
+_u = _u + [[['RPK_74','Makarov','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['75Rnd_545x39_RPK','SmokeShellRed','8Rnd_9x18_Makarov'],[5,2,8]]]];
+_u = _u + [[['SVD','MakarovSD','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['10Rnd_762x54_SVD','HandGrenade_East','8Rnd_9x18_MakarovSD'],[10,2,8]]]];
 
 [_u, _side] Call Compile preprocessFile "Common\Config\Config_SetTemplates.sqf";
