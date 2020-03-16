@@ -50,7 +50,7 @@ _i = _i + [['','',190,4,-1,0,0,1,'US',[]]];
 _c = _c + ['US_Soldier_Engineer_EP1'];
 _i = _i + [['','',225,5,-1,0,0,1,'US',[]]];
 
-_c = _c + ['US_Soldier_AMG_EP1'];
+_c = _c + ['I44_Man_A_Army_MGCrew_AG'];
 _i = _i + [['','',185,6,-1,2,0,1,'US',[]]];
 
 _c = _c + ['US_Soldier_AAR_EP1'];
