@@ -162,6 +162,47 @@ _i = _i + [['','',4500,25,-2,3,2,0,'US',[]]];
 
 /* Heavy Vehicles */
 
+_c = _c + ['I44_HT_A_M3_Army'];
+_i = _i + [['','',4200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_HT_A_M3A1_Army'];
+_i = _i + [['','',4200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Tank_A_M3A3_Stuart_Army'];
+_i = _i + [['','',4200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Tank_A_M5A1_Stuart_Army'];
+_i = _i + [['','',4200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Tank_B_ShermanIV_Army'];
+_i = _i + [['','',4200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Veh_A_Army_M4A3_Sherman_Army'];
+_i = _i + [['','',4200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Veh_B_Army_MKIV_Churchill'];
+_i = _i + [['','',4200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Tank_B_Cromwell_Army'];
+_i = _i + [['','',4200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Veh_A_Army_M4A3_76_Sherman_Army'];
+_i = _i + [['','',4200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Veh_A_Army_M4A3_Wading_Sherman_Army'];
+_i = _i + [['','',4200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Tank_A_M4A3E8_76_HVSS_Sherman_Army'];
+_i = _i + [['','',4200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Tank_B_ShermanVC_Army'];
+_i = _i + [['','',4200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Tank_B_Army_UC'];
+_i = _i + [['','',4200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_ACar_A_M8_Greyhound_Army'];
+_i = _i + [['','',4200,25,-2,0,2,0,'US',[]]];
 
 /* Air Vehicles */
 
