@@ -65,6 +65,9 @@ _z = [];//--- Upgrade level
 _m = [];//--- Magazines (-1 = auto, [x,y,z] = forced magazines)
 
 //--- Weapons
+
+/*
+
 _u = _u + ["AA12_PMC"];
 _p = _p + [''];
 _n = _n + [''];
@@ -176,5 +179,7 @@ _n = _n + [''];
 _o = _o + [5];
 _z = _z + [0];
 _m = _m + [-1];
+
+*/
 
 [_faction, _u, _p, _n, _o, _z, _m] Call Compile preprocessFile "Common\Config\Config_Weapons.sqf";
