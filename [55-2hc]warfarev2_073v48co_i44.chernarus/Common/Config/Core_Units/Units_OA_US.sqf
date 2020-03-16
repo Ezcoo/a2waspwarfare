@@ -135,7 +135,7 @@ missionNamespace setVariable [Format ["WFBE_%1BARRACKSUNITS", _side], _u];
 if (local player) then {['BARRACKS', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
 _u  		= ['HMMWV_Ambulance_DES_EP1'];
-_u = _u		+ ['MtvrRepair_DES_EP1'];
+_u = _u		+ ['I44_Truck_A_GMC_CCKW_Repair_Army'];
 _u = _u		+ ['MtvrReammo_DES_EP1'];
 _u = _u		+ ['MtvrRefuel_DES_EP1'];
 _u = _u		+ ['I44_Truck_A_GMC_CCKW_Warfare_Salvage_Army'];

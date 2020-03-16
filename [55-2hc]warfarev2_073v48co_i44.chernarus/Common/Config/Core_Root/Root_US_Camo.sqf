@@ -12,8 +12,8 @@ missionNamespace setVariable [Format["WFBE_%1SOLDIER", _side], 'USMC_Soldier'];
 missionNamespace setVariable [Format["WFBE_%1FLAG", _side], '\Ca\ca_e\Data\flag_us_co.paa'];
 
 missionNamespace setVariable [Format["WFBE_%1AMBULANCES", _side], ['HMMWV_Ambulance','HMMWV_Ambulance_DES_EP1','UH60M_MEV_EP1','M1133_MEV_EP1']];
-missionNamespace setVariable [Format["WFBE_%1REPAIRTRUCKS", _side], ['MtvrRepair','MtvrRepair_DES_EP1']];
-missionNamespace setVariable [Format["WFBE_%1SALVAGETRUCK", _side], ['WarfareSalvageTruck_USMC','I44_Truck_A_GMC_CCKW_Warfare_Salvage_Army']];
+missionNamespace setVariable [Format["WFBE_%1REPAIRTRUCKS", _side], ['I44_Truck_A_GMC_CCKW_Repair_Army']];
+missionNamespace setVariable [Format["WFBE_%1SALVAGETRUCK", _side], ['I44_Truck_A_GMC_CCKW_Warfare_Salvage_Army']];
 missionNamespace setVariable [Format["WFBE_%1SUPPLYTRUCKS", _side], ['WarfareSupplyTruck_USMC','MtvrSupply_DES_EP1']];
 missionNamespace setVariable [Format["WFBE_%1UAV", _side], 'MQ9PredatorB_US_EP1'];
 
@@ -27,7 +27,7 @@ missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL2", _side],['USMC_Sol
 missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL3", _side],['FR_Assault_R','USMC_Soldier_HAT','USMC_Soldier_HAT','USMC_Soldier_HAT','USMC_Soldier_HAT','USMC_Soldier_AA','USMC_Soldier_AA','FR_AR','FR_AC','I44_Man_B_Army_Medic','FR_Marksman','USMC_Soldier_AT','I44_Man_B_Army_Sniper_SMLENo4Mk1T']];
 
 missionNamespace setVariable [Format["WFBE_%1PARACARGO", _side], 'I44_Plane_A_C47A_AAF'];	//--- Paratroopers, Vehicle.
-missionNamespace setVariable [Format["WFBE_%1REPAIRTRUCK", _side], 'MtvrRepair'];//--- Repair Truck model.
+missionNamespace setVariable [Format["WFBE_%1REPAIRTRUCK", _side], 'I44_Truck_A_GMC_CCKW_Repair_Army'];//--- Repair Truck model.
 missionNamespace setVariable [Format["WFBE_%1STARTINGVEHICLES", _side], ['HMMWV_Ambulance','MTVR']];//--- Starting Vehicles.
 missionNamespace setVariable [Format["WFBE_%1PARAAMMO", _side], ['USBasicAmmunitionBox','USBasicWeaponsBox','USLaunchersBox']];//--- Supply Paradropping, Dropped Ammunition.
 missionNamespace setVariable [Format["WFBE_%1PARAVEHICARGO", _side], 'HMMWV'];//--- Supply Paradropping, Dropped Vehicle.

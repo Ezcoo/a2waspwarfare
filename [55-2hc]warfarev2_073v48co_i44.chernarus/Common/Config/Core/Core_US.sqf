@@ -91,7 +91,7 @@ _i = _i + [['','',4000,22,-2,2,1,0,'US',[]]];
 _c = _c + ['I44_Truck_A_GMC_CCKW_Warfare_Salvage_Army'];
 _i = _i + [['','',750,21,-2,1,1,0,'US',[]]];
 
-_c = _c + ['MtvrRepair_DES_EP1'];
+_c = _c + ['I44_Truck_A_GMC_CCKW_Repair_Army'];
 _i = _i + [['','',2500,22,-2,2,1,0,'US',[]]];
 
 _c = _c + ['MtvrReammo_DES_EP1'];
