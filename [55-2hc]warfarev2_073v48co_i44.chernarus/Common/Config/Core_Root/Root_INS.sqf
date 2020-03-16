@@ -22,7 +22,7 @@ missionNamespace setVariable [Format ["WFBE_%1_RadioAnnouncers_Config", _side], 
 
 //--- Paratroopers.
 missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL1", _side],['USMC_Soldier_SL','USMC_Soldier_LAT','USMC_Soldier','USMC_Soldier2','USMC_Soldier_AR','I44_Man_B_Army_Medic']];
-missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL2", _side],['USMC_Soldier_SL','USMC_Soldier_AT','USMC_Soldier_AT','USMC_Soldier_AT','USMC_Soldier_AA','USMC_Soldier_MG','I44_Man_B_Army_Medic','USMC_SoldierS_Spotter','I44_Man_B_Army_Sniper_SMLENo4Mk1T']];
+missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL2", _side],['USMC_Soldier_SL','USMC_Soldier_AT','USMC_Soldier_AT','USMC_Soldier_AT','USMC_Soldier_AA','I44_Man_A_Army_M1919A4','I44_Man_B_Army_Medic','USMC_SoldierS_Spotter','I44_Man_B_Army_Sniper_SMLENo4Mk1T']];
 missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL3", _side],['FR_Assault_R','USMC_Soldier_HAT','USMC_Soldier_HAT','USMC_Soldier_HAT','USMC_Soldier_HAT','USMC_Soldier_AA','USMC_Soldier_AA','FR_AR','FR_AC','I44_Man_B_Army_Medic','FR_Marksman','USMC_Soldier_AT','I44_Man_B_Army_Sniper_SMLENo4Mk1T']];
 
 missionNamespace setVariable [Format["WFBE_%1PARACARGO", _side], 'Mi17_Ins'];	//--- Paratroopers, Vehicle.

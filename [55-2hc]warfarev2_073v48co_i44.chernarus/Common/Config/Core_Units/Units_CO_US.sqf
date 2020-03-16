@@ -11,7 +11,7 @@ _u = _u		+ ['USMC_Soldier_AT'];
 _u = _u		+ ['USMC_Soldier_HAT'];
 _u = _u		+ ['USMC_Soldier_AA'];
 _u = _u		+ ['USMC_Soldier_AR'];
-_u = _u		+ ['USMC_Soldier_MG'];
+_u = _u		+ ['I44_Man_A_Army_M1919A4'];
 _u = _u		+ ['USMC_Soldier_GL'];
 _u = _u		+ ['I44_Man_B_Army_Sniper_SMLENo4Mk1T'];
 _u = _u		+ ['I44_Man_B_Army_Sniper_SMLENo4Mk1TH'];
@@ -150,7 +150,7 @@ if ((missionNamespace getVariable "WFBE_C_UNITS_TOWN_PURCHASE") > 0) then {
 	_u = _u		+ ['I44_Man_B_Army_Medic'];
 	_u = _u		+ ['BAF_Soldier_EN_W'];
 	_u = _u		+ ['USMC_Soldier_LAT'];
-    _u = _u		+ ['USMC_Soldier_MG'];
+    _u = _u		+ ['I44_Man_A_Army_M1919A4'];
     _u = _u		+ ['USMC_Soldier_AA'];
 _u = _u		+ ["UralCivil"];
 _u = _u		+ ["V3S_Refuel_TK_GUE_EP1"];
