@@ -85,7 +85,6 @@ _u 		= ["USMC_Soldier_SL"];
 _u = _u + ["I44_Man_A_Army_M1A1Thompson"];
 _u = _u + ["I44_Man_A_Army_M1918A2"];
 _u = _u + ["I44_Man_B_Army_PIAT"];
-_u = _u + ["USMC_Soldier_HAT"];
 _u = _u + ["I44_Man_A_Army_M1Garand_M7"];
 _u = _u + ["I44_Man_B_Army_Sniper_SMLENo4Mk1TH"];
 _l = _l + [_u];
@@ -144,8 +143,8 @@ _l = _l + [_u];
 
 _k = _k + ["Team_AT_3"];
 _u		= ["I44_Man_B_Army_PIAT"];
-_u = _u + ["USMC_Soldier_HAT"];
-_u = _u + ["USMC_Soldier_HAT"];
+_u = _u + ["I44_Man_B_Army_PIAT"];
+_u = _u + ["I44_Man_A_Army_M1A1Bazooka"];
 _u = _u + ["I44_Man_A_Army_Medic"];
 _l = _l + [_u];
 
