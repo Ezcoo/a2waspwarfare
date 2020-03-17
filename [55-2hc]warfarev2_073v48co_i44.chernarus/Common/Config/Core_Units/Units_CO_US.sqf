@@ -5,7 +5,7 @@ _restriction_air = missionNamespace getVariable "WFBE_C_UNITS_RESTRICT_AIR";
 
 //--- USMC Troops.
 _u = ['I44_Man_A_Army_GunCrew_M1Carbine'];
-_u = _u		+ ['USMC_Soldier2'];
+_u = _u		+ ['I44_Man_A_Army_M1918A2'];
 _u = _u		+ ['I44_Man_A_Army_M1A1Bazooka'];
 _u = _u		+ ['I44_Man_B_Army_PIAT'];
 _u = _u		+ ['USMC_Soldier_HAT'];
