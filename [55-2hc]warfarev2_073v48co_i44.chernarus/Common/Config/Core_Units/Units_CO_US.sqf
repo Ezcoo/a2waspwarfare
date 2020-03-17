@@ -13,7 +13,7 @@ _u = _u		+ ['I44_Man_A_Army_M1A1Thompson'];
 _u = _u		+ ['I44_Man_A_Army_M1919A4'];
 _u = _u		+ ['USMC_Soldier_GL'];
 _u = _u		+ ['USMC_SoldierM_Marksman'];
-_u = _u		+ ['I44_Man_B_Army_Medic'];
+_u = _u		+ ['I44_Man_A_Army_Medic'];
 _u = _u		+ ['USMC_SoldierS_Engineer'];
 _u = _u		+ ['I44_Man_A_Army_Sniper_M1903A4'];
 _u = _u		+ ['USMC_SoldierS_Spotter'];
@@ -111,7 +111,7 @@ _u = _u		+ ["LandRover_TK_CIV_EP1"];
 _u = _u		+ ["Ikarus"];
 if ((missionNamespace getVariable "WFBE_C_UNITS_TOWN_PURCHASE") > 0) then {
 	_u = _u		+ [missionNamespace getVariable "WFBE_WESTSOLDIER"];
-	_u = _u		+ ['I44_Man_B_Army_Medic'];
+	_u = _u		+ ['I44_Man_A_Army_Medic'];
 	_u = _u		+ ['BAF_Soldier_EN_W'];
 	_u = _u		+ ['I44_Man_A_Army_M1A1Bazooka'];
     _u = _u		+ ['I44_Man_A_Army_M1919A4'];
