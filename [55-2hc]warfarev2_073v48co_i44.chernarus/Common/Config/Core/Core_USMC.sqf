@@ -81,7 +81,7 @@ _i = _i + [['','',1450,20,-2,3,1,0,'USMC',[]]];
 _c = _c + ['HMMWV_Avenger'];
 _i = _i + [['','',1750,25,-2,4,1,0,'USMC',[]]];
 
-_c = _c + ['MTVR'];
+_c = _c + ['I44_Truck_A_GMC_CCKW_Army'];
 _i = _i + [['','',500,20,-2,1,1,0,'USMC',[]]];
 
 _c = _c + ['WarfareReammoTruck_USMC'];

@@ -28,7 +28,7 @@ missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL3", _side],['FR_Assau
 
 missionNamespace setVariable [Format["WFBE_%1PARACARGO", _side], 'I44_Plane_A_C47A_AAF'];	//--- Paratroopers, Vehicle.
 missionNamespace setVariable [Format["WFBE_%1REPAIRTRUCK", _side], 'I44_Truck_A_GMC_CCKW_Repair_Army'];//--- Repair Truck model.
-missionNamespace setVariable [Format["WFBE_%1STARTINGVEHICLES", _side], ['I44_Car_A_WillysMB_Medic_Army','MTVR']];//--- Starting Vehicles.
+missionNamespace setVariable [Format["WFBE_%1STARTINGVEHICLES", _side], ['I44_Car_A_WillysMB_Medic_Army','I44_Truck_A_GMC_CCKW_Army']];//--- Starting Vehicles.
 missionNamespace setVariable [Format["WFBE_%1PARAAMMO", _side], ['USBasicAmmunitionBox','USBasicWeaponsBox','USLaunchersBox']];//--- Supply Paradropping, Dropped Ammunition.
 missionNamespace setVariable [Format["WFBE_%1PARAVEHICARGO", _side], 'HMMWV'];//--- Supply Paradropping, Dropped Vehicle.
 missionNamespace setVariable [Format["WFBE_%1PARAVEHI", _side], 'MH60S'];//--- Supply Paradropping, Vehicle
@@ -46,7 +46,7 @@ if (isServer) then {
 
 	missionNamespace setVariable [Format["WFBE_%1_PATROL_MEDIUM", _side], [
 		['LAV25','LAV25'], 
-		['MTVR','I44_Man_B_Army_Engr_GrenadeNo75','I44_Man_B_Army_PIAT','I44_Man_A_Army_M1919A4','I44_Man_A_Army_M1A1Bazooka'],
+		['I44_Truck_A_GMC_CCKW_Army','I44_Man_B_Army_Engr_GrenadeNo75','I44_Man_B_Army_PIAT','I44_Man_A_Army_M1919A4','I44_Man_A_Army_M1A1Bazooka'],
 		['AAV','I44_Man_A_Army_Medic']
 	]];
 

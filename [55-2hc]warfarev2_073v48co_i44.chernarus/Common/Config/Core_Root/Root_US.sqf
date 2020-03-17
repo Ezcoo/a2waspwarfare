@@ -27,7 +27,7 @@ missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL3", _side],['US_Delta
 
 missionNamespace setVariable [Format["WFBE_%1PARACARGO", _side], 'I44_Plane_A_C47A_AAF'];//--- Paratroopers, Vehicle.
 missionNamespace setVariable [Format["WFBE_%1REPAIRTRUCK", _side], 'I44_Truck_A_GMC_CCKW_Repair_Army'];//--- Repair Truck model.
-missionNamespace setVariable [Format["WFBE_%1STARTINGVEHICLES", _side], ['I44_Car_A_WillysMB_Medic_Army','MTVR_DES_EP1']];//--- Starting Vehicles.
+missionNamespace setVariable [Format["WFBE_%1STARTINGVEHICLES", _side], ['I44_Car_A_WillysMB_Medic_Army','I44_Truck_A_GMC_CCKW_Army']];//--- Starting Vehicles.
 missionNamespace setVariable [Format["WFBE_%1PARAAMMO", _side], ['USBasicAmmunitionBox_EP1','USBasicWeapons_EP1','USLaunchers_EP1']];//--- Supply Paradropping, Dropped Ammunition.
 missionNamespace setVariable [Format["WFBE_%1PARAVEHICARGO", _side], 'I44_Truck_A_GMC_CCKW_Repair_Army'];//--- Supply Paradropping, Dropped Vehicle.
 missionNamespace setVariable [Format["WFBE_%1PARAVEHI", _side], 'CH_47F_EP1'];//--- Supply Paradropping, Vehicle
@@ -45,7 +45,7 @@ if (isServer) then {
 
 	missionNamespace setVariable [Format["WFBE_%1_PATROL_MEDIUM", _side], [
 		['M1126_ICV_M2_EP1','M1135_ATGMV_EP1'],
-		['MTVR_DES_EP1','US_Soldier_TL_EP1','US_Soldier_AT_EP1','US_Soldier_MG_EP1','US_Soldier_AT_EP1'],
+		['I44_Truck_A_GMC_CCKW_Army','US_Soldier_TL_EP1','US_Soldier_AT_EP1','US_Soldier_MG_EP1','US_Soldier_AT_EP1'],
 		['M2A3_EP1','US_Soldier_Medic_EP1']
 	]];
 
