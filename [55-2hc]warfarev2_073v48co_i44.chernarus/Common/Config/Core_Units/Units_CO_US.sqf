@@ -17,16 +17,6 @@ _u = _u		+ ['I44_Man_A_Army_Sniper_M1903A4'];
 _u = _u		+ ['I44_Man_A_Army_NCO_M1A1Thompson'];
 _u = _u		+ ['I44_Man_A_Army_Crew_M3Greasegun'];
 _u = _u		+ ['I44_Man_A_AAF_Pilot_M1911A1'];
-_u = _u		+ ['FR_GL'];
-_u = _u		+ ['FR_Corpsman'];
-_u = _u		+ ['I44_Man_B_Army_Sapper_M2'];
-_u = _u		+ ['FR_Assault_R'];
-_u = _u		+ ['FR_Assault_GL'];
-_u = _u		+ ['FR_AR'];
-_u = _u		+ ['FR_R'];
-_u = _u		+ ['FR_Sapper'];
-_u = _u		+ ['FR_AC'];
-_u = _u		+ ['FR_Marksman'];
 
 missionNamespace setVariable [Format ["WFBE_%1BARRACKSUNITS", _side], _u];
 if (local player) then {['BARRACKS', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
