@@ -105,6 +105,9 @@ WFBE_CL_FNC_UI_Gear_UpdatePrice = Compile preprocessFileLineNumbers "Client\Func
 WFBE_CL_FNC_UI_Gear_UpdateTarget = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Gear_UpdateTarget.sqf";
 WFBE_CL_FNC_UI_Gear_UpdateView = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Gear_UpdateView.sqf";
 WFBE_CL_FNC_UI_Respawn_Selector = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Respawn_Selector.sqf";
+WFBE_CL_FNC_NET_KK_fnc_TrueZoom = Compile preprocessFileLineNumbers "Client\Module\Nametags\NET_KK_fnc_trueZoom.sqf";
+WFBE_CL_FNC_NET_VisibleCursorTarget = Compile preprocessFileLineNumbers "Client\Module\Nametags\NET_VisibleCursorTarget.sqf";
+WFBE_CL_FNC_NET_PlayerTagsAlpha = Compile preprocessFileLineNumbers "Client\Module\Nametags\NET_PlayerTagsAlpha.sqf";
 
 //Affichage Rubber maps:
 	Local_GUIWorking = false;
@@ -628,3 +631,6 @@ playMusic "Track11_Large_Scale_Assault";
 12452 cutText [(localize 'STR_WF_Loading')+"...","BLACK IN",5];
 
 ["INITIALIZATION", Format ["Init_Client.sqf: Client initialization ended at [%1]", time]] Call WFBE_CO_FNC_LogContent;
+
+// Initialize cursorTarget nametag
+0 cutrsc ["NameTag","PLAIN"];
