@@ -53,7 +53,7 @@ if (isServer) then {
 	missionNamespace setVariable [Format["WFBE_%1_PATROL_HEAVY", _side], [
 		['M1A1','AAV'], 
 		['M1A1','M1A1'],
-		['AAV','AAV','I44_Man_B_Army_Engr_GrenadeNo75','I44_Man_A_Army_M1919A4','USMC_SoldierM_Marksman','I44_Man_A_Army_Medic','I44_Man_B_Army_PIAT','USMC_Soldier'],
+		['AAV','AAV','I44_Man_B_Army_Engr_GrenadeNo75','I44_Man_A_Army_M1919A4','I44_Man_A_Army_Medic','I44_Man_B_Army_PIAT','USMC_Soldier'],
 		['LAV25','I44_Man_B_Army_Engr_GrenadeNo75','I44_Man_A_Army_Medic','I44_Man_A_Army_M1Garand_M7','USMC_Soldier','I44_Man_A_Army_M1A1Thompson']
 	]];
 	

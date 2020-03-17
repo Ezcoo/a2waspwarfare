@@ -11,7 +11,6 @@ _u = _u		+ ['I44_Man_B_Army_PIAT'];
 _u = _u		+ ['I44_Man_A_Army_M1A1Thompson'];
 _u = _u		+ ['I44_Man_A_Army_M1919A4'];
 _u = _u		+ ['I44_Man_A_Army_M1Garand_M7'];
-_u = _u		+ ['USMC_SoldierM_Marksman'];
 _u = _u		+ ['I44_Man_A_Army_Medic'];
 _u = _u		+ ['USMC_SoldierS_Engineer'];
 _u = _u		+ ['I44_Man_A_Army_Sniper_M1903A4'];
