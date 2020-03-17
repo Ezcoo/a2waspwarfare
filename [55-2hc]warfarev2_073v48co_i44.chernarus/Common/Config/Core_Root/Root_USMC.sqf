@@ -39,7 +39,7 @@ if (isServer) then {
 	//--- Patrols.
 	missionNamespace setVariable [Format["WFBE_%1_PATROL_LIGHT", _side], [
 		['I44_Man_B_Army_Engr_GrenadeNo75','I44_Man_A_Army_M1919A4','I44_Man_B_Army_Sniper_SMLENo4Mk1T','I44_Man_A_Army_Medic'],
-		['I44_Man_B_Army_Engr_GrenadeNo75','I44_Man_A_Army_M1A1Thompson','USMC_Soldier_GL','I44_Man_A_Army_M1A1Bazooka','USMC_Soldier'],
+		['I44_Man_B_Army_Engr_GrenadeNo75','I44_Man_A_Army_M1A1Thompson','I44_Man_A_Army_M1Garand_M7','I44_Man_A_Army_M1A1Bazooka','USMC_Soldier'],
 		['HMMWV_M2','HMMWV_MK19']
 	]];
 
@@ -53,7 +53,7 @@ if (isServer) then {
 		['M1A1','AAV'],
 		['M1A1','M1A1'],
 		['AAV','AAV','I44_Man_B_Army_Engr_GrenadeNo75','I44_Man_A_Army_M1919A4','USMC_SoldierM_Marksman','I44_Man_A_Army_Medic','I44_Man_B_Army_PIAT','USMC_Soldier_HAT','USMC_Soldier'],
-		['LAV25','I44_Man_B_Army_Engr_GrenadeNo75','I44_Man_A_Army_Medic','USMC_Soldier_GL','USMC_Soldier','I44_Man_A_Army_M1A1Thompson']
+		['LAV25','I44_Man_B_Army_Engr_GrenadeNo75','I44_Man_A_Army_Medic','I44_Man_A_Army_M1Garand_M7','USMC_Soldier','I44_Man_A_Army_M1A1Thompson']
 	]];
 
 	//--- AI Loadouts [weapons, magazines, eligible muzzles, {backpack}, {backpack content}].

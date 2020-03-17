@@ -26,7 +26,7 @@ _i = _i + [['','',210,5,-1,1,0,1,'USMC',[]]];
 _c = _c + ['I44_Man_A_Army_M1919A4'];
 _i = _i + [['','',220,5,-1,1,0,1,'US Army',[]]];
 
-_c = _c + ['USMC_Soldier_GL'];
+_c = _c + ['I44_Man_A_Army_M1Garand_M7'];
 _i = _i + [['','',160,5,-1,0,0,1,'USMC',[]]];
 
 _c = _c + ['I44_Man_B_Army_Sniper_SMLENo4Mk1T'];
