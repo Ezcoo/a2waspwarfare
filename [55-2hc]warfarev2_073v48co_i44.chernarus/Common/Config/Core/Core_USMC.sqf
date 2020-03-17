@@ -50,7 +50,7 @@ _i = _i + [['','',120,4,-1,0,0,1,'USMC',[]]];
 _c = _c + ['I44_Man_B_Army_Engr_GrenadeNo75'];
 _i = _i + [['','',240,5,-1,1,0,1,'USMC',[]]];
 
-_c = _c + ['USMC_Soldier_SL'];
+_c = _c + ['I44_Man_A_Army_NCO_M1A1Thompson'];
 _i = _i + [['','',220,5,-1,2,0,1,'USMC',[]]];
 
 /* Light Vehicles */

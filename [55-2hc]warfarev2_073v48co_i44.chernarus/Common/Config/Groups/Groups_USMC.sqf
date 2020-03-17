@@ -28,18 +28,18 @@ _u = _u + ["I44_Man_A_Army_Medic"];
 _l = _l + [_u];
 
 _k = _k + ["Squad_2"];
-_u		= ["USMC_Soldier_SL"];
+_u		= ["I44_Man_A_Army_NCO_M1A1Thompson"];
 _u = _u + ["I44_Man_A_Army_M1A1Thompson"];
-_u = _u + ["USMC_Soldier_SL"];
+_u = _u + ["I44_Man_A_Army_NCO_M1A1Thompson"];
 _u = _u + ["BAF_Soldier_AAT_W"];
 _u = _u + ["I44_Man_A_Army_M1A1Thompson"];
 _u = _u + ["I44_Man_A_Army_Medic"];
 _l = _l + [_u];
 
 _k = _k + ["Squad_3"];
-_u		= ["USMC_Soldier_SL"];
+_u		= ["I44_Man_A_Army_NCO_M1A1Thompson"];
 _u = _u + ["I44_Man_A_Army_M1A1Thompson"];
-_u = _u + ["USMC_Soldier_SL"];
+_u = _u + ["I44_Man_A_Army_M1A1Thompson"];
 _u = _u + ["I44_Man_B_Army_PIAT"];
 _u = _u + ["I44_Man_A_Army_M1A1Thompson"];
 _u = _u + ["I44_Man_A_Army_Medic"];
@@ -72,7 +72,7 @@ _u = _u + ["I44_Man_A_Army_Medic"];
 _l = _l + [_u];
 
 _k = _k + ["Team_2"];
-_u 		= ["USMC_Soldier_SL"];
+_u 		= ["I44_Man_A_Army_NCO_M1A1Thompson"];
 _u = _u + ["I44_Man_A_Army_M1A1Thompson"];
 _u = _u + ["I44_Man_A_Army_M1Garand_M7"];
 _u = _u + ["I44_Man_A_Army_M1918A2"];
@@ -80,7 +80,7 @@ _u = _u + ["I44_Man_A_Army_Medic"];
 _l = _l + [_u];
 
 _k = _k + ["Team_3"];
-_u 		= ["USMC_Soldier_SL"];
+_u 		= ["I44_Man_A_Army_NCO_M1A1Thompson"];
 _u = _u + ["I44_Man_A_Army_M1A1Thompson"];
 _u = _u + ["I44_Man_A_Army_M1918A2"];
 _u = _u + ["I44_Man_B_Army_PIAT"];
