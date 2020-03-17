@@ -3,7 +3,7 @@ Private ['_c','_count','_d','_dir','_dis','_n','_s','_side','_t','_v'];
 _side = _this;
 
 /* Root Definition */
-_MHQ = if (WF_Camo) then {'LAV25_HQ'} else {'LAV25_HQ'};
+_MHQ = if (WF_Camo) then {'I44_HT_A_M3A1_Army'} else {'I44_HT_A_M3A1_Army'};
 _HQ = if (WF_Camo) then {"LAV25_HQ_unfolded"} else {"M1130_HQ_unfolded_EP1"};
 _BAR = if (WF_Camo) then {"USMC_WarfareBBarracks"} else {"US_WarfareBBarracks_EP1"};
 _LVF = if (WF_Camo) then {"USMC_WarfareBLightFactory"} else {"US_WarfareBLightFactory_EP1"};

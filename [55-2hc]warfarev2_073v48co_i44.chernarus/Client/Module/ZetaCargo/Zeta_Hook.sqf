@@ -4,7 +4,7 @@ _lifter = _this select 0;
 _caller = _this select 1;
 _actionID = _this select 2;
 _ehq = ['BTR90_HQ','BMP2_HQ_TK_EP1','BMP2_HQ_INS'];
-_whq = ['LAV25_HQ','M1130_CV_EP1','BMP2_HQ_CDF'];
+_whq = ['I44_HT_A_M3A1_Army','M1130_CV_EP1','BMP2_HQ_CDF'];
 
 if (_caller != driver _lifter) exitWith {};
 if ((typeOf _lifter) in Zeta_Special) then {
