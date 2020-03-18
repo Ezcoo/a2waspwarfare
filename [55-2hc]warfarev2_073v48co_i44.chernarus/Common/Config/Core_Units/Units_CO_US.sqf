@@ -95,7 +95,7 @@ _u = _u		+ ["Ikarus"];
 if ((missionNamespace getVariable "WFBE_C_UNITS_TOWN_PURCHASE") > 0) then {
 	_u = _u		+ [missionNamespace getVariable "WFBE_WESTSOLDIER"];
 	_u = _u		+ ['I44_Man_A_Army_Medic'];
-	_u = _u		+ ['BAF_Soldier_EN_W'];
+	_u = _u		+ ['I44_Man_B_Army_Engr_GrenadeNo75'];
 	_u = _u		+ ['I44_Man_A_Army_M1A1Bazooka'];
     _u = _u		+ ['I44_Man_A_Army_M1919A4'];
 _u = _u		+ ["UralCivil"];
