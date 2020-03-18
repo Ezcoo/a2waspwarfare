@@ -58,37 +58,37 @@ if (isServer) then {
 
 	//--- AI Loadouts [weapons, magazines, eligible muzzles, {backpack}, {backpack content}].
 	missionNamespace setVariable [Format["WFBE_%1_AI_Loadout_0", _side], [
-		[['m16a4_acg','M136','Colt1911','Binocular','ItemRadio','ItemMap'],
+		[['m16a4_acg','M136','Colt1911','I44_Binocular_M3','ItemRadio','ItemMap'],
 		 ['30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','M136','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911'],
 		 ['m16a4_acg','M136','Colt1911']],
-		[['G36C','M136','Colt1911','Binocular','ItemRadio','ItemMap'],
+		[['G36C','M136','Colt1911','I44_Binocular_M3','ItemRadio','ItemMap'],
 		 ['30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','M136','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911'],
 		 ['G36C','M136','Colt1911']]
 	]];
 	missionNamespace setVariable [Format["WFBE_%1_AI_Loadout_1", _side], [
-		[['M4A1_Aim_camo','M136','Colt1911','Binocular','NVGoggles','ItemRadio','ItemMap'],
+		[['M4A1_Aim_camo','M136','Colt1911','I44_Binocular_M3','NVGoggles','ItemRadio','ItemMap'],
 		 ['30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','M136','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911'],
 		 ['M4A1_Aim_camo','M136','Colt1911']],
-		[['G36K','M136','Colt1911','Binocular','NVGoggles','ItemRadio','ItemMap'],
+		[['G36K','M136','Colt1911','I44_Binocular_M3','NVGoggles','ItemRadio','ItemMap'],
 		 ['30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','M136','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911'],
 		 ['G36K','M136','Colt1911']],
-		[['DMR','M9SD','Binocular','NVGoggles','ItemRadio','ItemMap'],
+		[['DMR','M9SD','I44_Binocular_M3','NVGoggles','ItemRadio','ItemMap'],
 		 ['20Rnd_762x51_DMR','20Rnd_762x51_DMR','20Rnd_762x51_DMR','20Rnd_762x51_DMR','20Rnd_762x51_DMR','20Rnd_762x51_DMR','20Rnd_762x51_DMR','20Rnd_762x51_DMR','20Rnd_762x51_DMR','20Rnd_762x51_DMR','HandGrenade_West','HandGrenade_West','15Rnd_9x19_M9SD','15Rnd_9x19_M9SD','15Rnd_9x19_M9SD','15Rnd_9x19_M9SD'],
 		 ['DMR','M9SD']]
 	]];
 	missionNamespace setVariable [Format["WFBE_%1_AI_Loadout_2", _side], [
-		[['M4A1_Aim_camo','SMAW','Colt1911','Binocular','NVGoggles','ItemRadio','ItemMap'],
+		[['M4A1_Aim_camo','SMAW','Colt1911','I44_Binocular_M3','NVGoggles','ItemRadio','ItemMap'],
 		 ['30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','SMAW_HEAA','SMAW_HEAA','SMAW_HEDP','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911'],
 		 ['M4A1_Aim_camo','SMAW','Colt1911']],
-		[['G36C','SMAW','Colt1911','Binocular','NVGoggles','ItemRadio','ItemMap'],
+		[['G36C','SMAW','Colt1911','I44_Binocular_M3','NVGoggles','ItemRadio','ItemMap'],
 		 ['30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','SMAW_HEAA','SMAW_HEAA','SMAW_HEDP','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911'],
 		 ['G36C','SMAW','Colt1911']]
 	]];
 	missionNamespace setVariable [Format["WFBE_%1_AI_Loadout_3", _side], [
-		[['M4A1_HWS_GL','SMAW','Binocular','NVGoggles','ItemRadio','ItemMap'],
+		[['M4A1_HWS_GL','SMAW','I44_Binocular_M3','NVGoggles','ItemRadio','ItemMap'],
 		 ['30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','SMAW_HEAA','SMAW_HEAA','SMAW_HEDP','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203'],
 		 ['M4A1_HWS_GL','SMAW']],
-		[['M4A1_HWS_GL_camo','Javelin','Colt1911','Binocular','NVGoggles','ItemRadio','ItemMap'],
+		[['M4A1_HWS_GL_camo','Javelin','Colt1911','I44_Binocular_M3','NVGoggles','ItemRadio','ItemMap'],
 		 ['30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','Javelin','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203'],
 		 ['M4A1_HWS_GL_camo','Javelin','Colt1911']]
 	]];
@@ -108,7 +108,7 @@ if (local player) then {
 
 //--- Default Loadout [weapons, magazines, eligible muzzles, {backpack}, {backpack content}].
 missionNamespace setVariable [Format["WFBE_%1_DefaultGear", _side], [
-	['M4A1_Aim','M9','Binocular','NVGoggles','ItemCompass','ItemMap','ItemRadio','ItemWatch'],
+	['M4A1_Aim','M9','I44_Binocular_M3','NVGoggles','ItemCompass','ItemMap','ItemRadio','ItemWatch'],
 	['30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','HandGrenade_West','HandGrenade_West','HandGrenade_West','SmokeShellBlue','15Rnd_9x19_M9SD','15Rnd_9x19_M9SD','15Rnd_9x19_M9SD','15Rnd_9x19_M9SD'],
 	['M4A1_Aim','M9']
 ]];
@@ -139,42 +139,42 @@ if (WF_A2_CombinedOps) then {
 
 //Engineer
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearEngineer", _side], [
-	['M16A2GL','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular'],
+	['M16A2GL','ItemCompass','ItemMap','ItemWatch','ItemRadio','I44_Binocular_M3'],
 	['30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','PipeBomb'],
 	['M16A2GL']
 ]];
 
 // Sniper
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearSpot", _side], [
-	['M24','glock17_EP1','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular'],
+	['M24','glock17_EP1','ItemCompass','ItemMap','ItemWatch','ItemRadio','I44_Binocular_M3'],
 	['5Rnd_762x51_M24','5Rnd_762x51_M24','5Rnd_762x51_M24','5Rnd_762x51_M24','17Rnd_9x19_glock17','17Rnd_9x19_glock17','17Rnd_9x19_glock17','17Rnd_9x19_glock17','SmokeShellRed'],
 	['M24']
 ]];
 
 // MASH MAN
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearOfficer", _side], [
-	['m16a4_acg','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular'],
+	['m16a4_acg','ItemCompass','ItemMap','ItemWatch','ItemRadio','I44_Binocular_M3'],
 	['30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','HandGrenade_West','HandGrenade_West','HandGrenade_West','HandGrenade_West'],
 	['m16a4_acg']
 ]];
 
 // Soldier
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearSoldier", _side], [
-	['I44_M1Carbine','I44_M1A1Bazooka','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular'],
+	['I44_M1Carbine','I44_M1A1Bazooka','ItemCompass','ItemMap','ItemWatch','ItemRadio','I44_Binocular_M3'],
 	['I44_8rd_762x63_Tracer_M1Garand','I44_8rd_762x63_Tracer_M1Garand','I44_8rd_762x63_Tracer_M1Garand','I44_8rd_762x63_Tracer_M1Garand','HandGrenade_West','HandGrenade_West','HandGrenade_West','HandGrenade_West'],
 	['I44_M1Carbine']
 ]];
 
 // Lock MAN
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearLock", _side], [
-	['M249','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular'],
+	['M249','ItemCompass','ItemMap','ItemWatch','ItemRadio','I44_Binocular_M3'],
 	['100Rnd_556x45_BetaCMag','100Rnd_556x45_BetaCMag','100Rnd_556x45_BetaCMag','100Rnd_556x45_BetaCMag','HandGrenade_West','HandGrenade_West','HandGrenade_West','HandGrenade_West'],
 	['M249']
 ]];
 
 // Medic
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearMedic", _side], [
-	['M4A1','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular','NVGoggles'],
+	['M4A1','ItemCompass','ItemMap','ItemWatch','ItemRadio','I44_Binocular_M3','NVGoggles'],
 	['30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','SmokeShell','SmokeShell','SmokeShell','SmokeShell'],
 	['M4A1']
 ]];

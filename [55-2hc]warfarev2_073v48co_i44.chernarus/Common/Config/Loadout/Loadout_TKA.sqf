@@ -96,7 +96,7 @@ _u = _u + ['M47Launcher_EP1'];
 _u = _u + ['MetisLauncher'];
 _u = _u + ['Igla'];
 _u = _u + ['Strela'];
-_u = _u + ['Binocular'];
+_u = _u + ['I44_Binocular_M3'];
 _u = _u + ['NVGoggles'];
 _u = _u + ['Makarov'];
 _u = _u + ['revolver_EP1'];
@@ -132,17 +132,17 @@ _u = _u + ['2b14_82mm_TK_Bag_EP1'];
 [_u, _m, _side] Call Compile preprocessFile "Common\Config\Config_SortWeapons.sqf";
 
 //--- Loadout - Templates (note that backpacks content require the weapons to be first), use -1 to use the default BP content.
-_u 		= [[['AKS_74_kobra','Makarov','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','HandGrenade_East','SmokeShellRed','8Rnd_9x18_Makarov'],[8,2,2,8]]]];
-_u = _u + [[['AK_74_GL_kobra','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','HandGrenade_East','1Rnd_HE_GP25'],[10,2,8]]]];
-_u = _u + [[['AKS_74_kobra','RPG18','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','RPG18'],[6,1]]]];
-_u = _u + [[['FN_FAL','RPG7V','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['20Rnd_762x51_FNFAL','PG7VL','OG7'],[6,2,1]]]];
-_u = _u + [[['AKS_74_kobra','MetisLauncher','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','AT13'],[6,1]]]];
-_u = _u + [[['FN_FAL','Strela','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['20Rnd_762x51_FNFAL','Strela'],[6,1]]]];
-_u = _u + [[['AKS_74_pso','TK_ALICE_Pack_Explosives_EP1','Makarov','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','MineE','8Rnd_9x18_Makarov'],[6,3,8]],-1]];
-_u = _u + [[['SVD_NSPU_EP1','MakarovSD','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['10Rnd_762x54_SVD','PipeBomb','8Rnd_9x18_MakarovSD'],[6,3,8]]]];
-_u = _u + [[['PK','Makarov','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['100Rnd_762x54_PK','SmokeShellRed','8Rnd_9x18_Makarov'],[5,2,8]]]];
-_u = _u + [[['RPK_74','Makarov','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['75Rnd_545x39_RPK','SmokeShellRed','8Rnd_9x18_Makarov'],[5,2,8]]]];
-_u = _u + [[['SVD','MakarovSD','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['10Rnd_762x54_SVD','HandGrenade_East','8Rnd_9x18_MakarovSD'],[10,2,8]]]];
-_u = _u + [[['ksvk','MakarovSD','NVGoggles','Binocular','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['5Rnd_127x108_KSVK','HandGrenade_East','8Rnd_9x18_MakarovSD'],[10,2,8]]]];
+_u 		= [[['AKS_74_kobra','Makarov','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','HandGrenade_East','SmokeShellRed','8Rnd_9x18_Makarov'],[8,2,2,8]]]];
+_u = _u + [[['AK_74_GL_kobra','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','HandGrenade_East','1Rnd_HE_GP25'],[10,2,8]]]];
+_u = _u + [[['AKS_74_kobra','RPG18','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','RPG18'],[6,1]]]];
+_u = _u + [[['FN_FAL','RPG7V','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['20Rnd_762x51_FNFAL','PG7VL','OG7'],[6,2,1]]]];
+_u = _u + [[['AKS_74_kobra','MetisLauncher','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','AT13'],[6,1]]]];
+_u = _u + [[['FN_FAL','Strela','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['20Rnd_762x51_FNFAL','Strela'],[6,1]]]];
+_u = _u + [[['AKS_74_pso','TK_ALICE_Pack_Explosives_EP1','Makarov','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_545x39_AK','MineE','8Rnd_9x18_Makarov'],[6,3,8]],-1]];
+_u = _u + [[['SVD_NSPU_EP1','MakarovSD','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['10Rnd_762x54_SVD','PipeBomb','8Rnd_9x18_MakarovSD'],[6,3,8]]]];
+_u = _u + [[['PK','Makarov','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['100Rnd_762x54_PK','SmokeShellRed','8Rnd_9x18_Makarov'],[5,2,8]]]];
+_u = _u + [[['RPK_74','Makarov','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['75Rnd_545x39_RPK','SmokeShellRed','8Rnd_9x18_Makarov'],[5,2,8]]]];
+_u = _u + [[['SVD','MakarovSD','NVGoggles','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['10Rnd_762x54_SVD','HandGrenade_East','8Rnd_9x18_MakarovSD'],[10,2,8]]]];
+_u = _u + [[['ksvk','MakarovSD','NVGoggles','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['5Rnd_127x108_KSVK','HandGrenade_East','8Rnd_9x18_MakarovSD'],[10,2,8]]]];
 
 [_u, _side] Call Compile preprocessFile "Common\Config\Config_SetTemplates.sqf";

@@ -57,37 +57,37 @@ if (isServer) then {
 
 	//--- AI Loadouts [weapons, magazines, eligible muzzles, {backpack}, {backpack content}].
 	missionNamespace setVariable [Format["WFBE_%1_AI_Loadout_0", _side], [
-		[['AKS_74_kobra','RPG18','Makarov','Binocular','ItemRadio','ItemMap'],
+		[['AKS_74_kobra','RPG18','Makarov','I44_Binocular_M3','ItemRadio','ItemMap'],
 		 ['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','RPG18','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov'],
 		 ['AKS_74_kobra','RPG18','Makarov']],
-		[['AKS_74_U','RPG18','Makarov','Binocular','ItemRadio','ItemMap'],
+		[['AKS_74_U','RPG18','Makarov','I44_Binocular_M3','ItemRadio','ItemMap'],
 		 ['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','RPG18','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov'],
 		 ['AKS_74_U','RPG18','Makarov']]
 	]];
 	missionNamespace setVariable [Format["WFBE_%1_AI_Loadout_1", _side], [
-		[['AKS_74_kobra','RPG7V','Makarov','Binocular','NVGoggles','ItemRadio','ItemMap'],
+		[['AKS_74_kobra','RPG7V','Makarov','I44_Binocular_M3','ItemRadio','ItemMap'],
 		 ['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','PG7V','PG7V','PG7V','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov'],
 		 ['AKS_74_kobra','RPG7V','Makarov']],
-		[['AKS_74_kobra','RPG7V','Makarov','Binocular','NVGoggles','ItemRadio','ItemMap'],
+		[['AKS_74_kobra','RPG7V','Makarov','I44_Binocular_M3','ItemRadio','ItemMap'],
 		 ['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','PG7V','PG7V','PG7V','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov'],
 		 ['AKS_74_kobra','RPG7V','Makarov']],
-		[['SVD','MakarovSD','Binocular','NVGoggles','ItemRadio','ItemMap'],
+		[['SVD','MakarovSD','I44_Binocular_M3','ItemRadio','ItemMap'],
 		 ['10Rnd_762x54_SVD','10Rnd_762x54_SVD','10Rnd_762x54_SVD','10Rnd_762x54_SVD','10Rnd_762x54_SVD','10Rnd_762x54_SVD','10Rnd_762x54_SVD','10Rnd_762x54_SVD','10Rnd_762x54_SVD','10Rnd_762x54_SVD','HandGrenade_East','HandGrenade_East','8Rnd_9x18_MakarovSD','8Rnd_9x18_MakarovSD','8Rnd_9x18_MakarovSD','8Rnd_9x18_MakarovSD'],
 		 ['SVD','MakarovSD']]
 	]];
 	missionNamespace setVariable [Format["WFBE_%1_AI_Loadout_2", _side], [
-		[['AKS_74_pso','RPG7V','Makarov','Binocular','NVGoggles','ItemRadio','ItemMap'],
+		[['AKS_74_pso','RPG7V','Makarov','I44_Binocular_M3','ItemRadio','ItemMap'],
 		 ['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','PG7VL','PG7VL','PG7VL','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov'],
 		 ['AKS_74_pso','RPG7V','Makarov']],
-		[['AKS_74_pso','RPG7V','Makarov','Binocular','NVGoggles','ItemRadio','ItemMap'],
+		[['AKS_74_pso','RPG7V','Makarov','I44_Binocular_M3','ItemRadio','ItemMap'],
 		 ['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','PG7VL','PG7VL','PG7VL','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov'],
 		 ['AKS_74_pso','RPG7V','Makarov']]
 	]];
 	missionNamespace setVariable [Format["WFBE_%1_AI_Loadout_3", _side], [
-		[['AK_74_GL_kobra','RPG7V','Binocular','NVGoggles','ItemRadio','ItemMap'],
+		[['AK_74_GL_kobra','RPG7V','I44_Binocular_M3','ItemRadio','ItemMap'],
 		 ['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','PG7VR','PG7VR','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25'],
 		 ['AK_74_GL_kobra','RPG7V']],
-		[['AK_74_GL_kobra','MetisLauncher','Makarov','Binocular','NVGoggles','ItemRadio','ItemMap'],
+		[['AK_74_GL_kobra','MetisLauncher','Makarov','I44_Binocular_M3','ItemRadio','ItemMap'],
 		 ['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','AT13','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25'],
 		 ['AK_74_GL_kobra','MetisLauncher','Makarov']]
 	]];
@@ -107,7 +107,7 @@ if (local player) then {
 
 //--- Default Loadout [weapons, magazines, eligible muzzles, {backpack}, {backpack content}].
 missionNamespace setVariable [Format["WFBE_%1_DefaultGear", _side], [
-	['AKS_74_kobra','Makarov','Binocular','NVGoggles','ItemCompass','ItemMap','ItemRadio','ItemWatch'],
+	['AKS_74_kobra','Makarov','I44_Binocular_M3','ItemCompass','ItemMap','ItemRadio','ItemWatch'],
 	['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','HandGrenade_East','HandGrenade_East','HandGrenade_East','SmokeShellRed','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov'],
 	['AKS_74_kobra','Makarov']
 ]];
@@ -137,42 +137,42 @@ if (WF_A2_CombinedOps) then {
 };
 //Engineer
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearEngineer", _side], [
-	['AK_74_GL','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular','NVGoggles'],
+	['AK_74_GL','ItemCompass','ItemMap','ItemWatch','ItemRadio','I44_Binocular_M3','NVGoggles'],
 	['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25"','1Rnd_HE_GP25"','PipeBomb'],
 	['AK_74_GL']
 ]];
 
 // Sniper
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearSpot", _side], [
-	['huntingrifle','Sa61_EP1','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular','NVGoggles'],
+	['huntingrifle','Sa61_EP1','ItemCompass','ItemMap','ItemWatch','ItemRadio','I44_Binocular_M3','NVGoggles'],
 	['5x_22_LR_17_HMR','5x_22_LR_17_HMR','5x_22_LR_17_HMR','5x_22_LR_17_HMR','20Rnd_B_765x17_Ball','20Rnd_B_765x17_Ball','20Rnd_B_765x17_Ball','20Rnd_B_765x17_Ball','SmokeShellRed'],
 	['huntingrifle']
 ]];
 
 // MASH MAN
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearOfficer", _side], [
-	['AKS_74_pso', 'RPG18', 'ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular','NVGoggles'],
+	['AKS_74_pso', 'RPG18', 'ItemCompass','ItemMap','ItemWatch','ItemRadio','I44_Binocular_M3','NVGoggles'],
 	['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','HandGrenade_East','HandGrenade_East','HandGrenade_East','HandGrenade_East'],
 	['AKS_74_pso']
 ]];
 
 // Soldier
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearSoldier", _side], [
-	['AKS_74_kobra', 'RPG18', 'ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular','NVGoggles'],
+	['AKS_74_kobra', 'RPG18', 'ItemCompass','ItemMap','ItemWatch','ItemRadio','I44_Binocular_M3','NVGoggles'],
 	['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','HandGrenade_East','HandGrenade_East','HandGrenade_East','HandGrenade_East'],
 	['AKS_74_kobra']
 ]];
 
 // Lock MAN
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearLock", _side], [
-	['RPK_74','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular','NVGoggles'],
+	['RPK_74','ItemCompass','ItemMap','ItemWatch','ItemRadio','I44_Binocular_M3','NVGoggles'],
 	['75Rnd_545x39_RPK','75Rnd_545x39_RPK','75Rnd_545x39_RPK','75Rnd_545x39_RPK','75Rnd_545x39_RPK','75Rnd_545x39_RPK','75Rnd_545x39_RPK','75Rnd_545x39_RPK','HandGrenade_East','HandGrenade_East','HandGrenade_East','HandGrenade_East'],
 	['RPK_74']
 ]];
 
 // Medic
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearMedic", _side], [
-	['AK_47_S','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular','NVGoggles'],
+	['AK_47_S','ItemCompass','ItemMap','ItemWatch','ItemRadio','I44_Binocular_M3','NVGoggles'],
 	['30Rnd_762x39_AK47','30Rnd_762x39_AK47','30Rnd_762x39_AK47','30Rnd_762x39_AK47','SmokeShell','SmokeShell','SmokeShell','SmokeShell'],
 	['AK_47_S']
 ]];

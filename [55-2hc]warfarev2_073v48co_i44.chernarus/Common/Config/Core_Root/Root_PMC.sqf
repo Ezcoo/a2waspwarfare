@@ -56,28 +56,28 @@ if (isServer) then {
 	
 	//--- AI Loadouts [weapons, magazines, eligible muzzles, {backpack}, {backpack content}].
 	missionNamespace setVariable [Format["WFBE_%1_AI_Loadout_0", _side], [
-		[['AKS_74_kobra','RPG18','Makarov','Binocular','ItemRadio','ItemMap'],
+		[['AKS_74_kobra','RPG18','Makarov','I44_Binocular_M3','ItemRadio','ItemMap'],
 		 ['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','RPG18','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov'],
 		 ['AKS_74_kobra','RPG18','Makarov']]
 	]];	
 	missionNamespace setVariable [Format["WFBE_%1_AI_Loadout_1", _side], [
-		[['m8_carbine_pmc','RPG7V','Makarov','Binocular','NVGoggles','ItemRadio','ItemMap'],
+		[['m8_carbine_pmc','RPG7V','Makarov','I44_Binocular_M3','ItemRadio','ItemMap'],
 		 ['30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','PG7V','PG7V','PG7V','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov'],
 		 ['m8_carbine_pmc','RPG7V','Makarov']],
-		[['m8_compact_pmc','M9SD','Binocular','NVGoggles','ItemRadio','ItemMap'],
+		[['m8_compact_pmc','M9SD','I44_Binocular_M3','ItemRadio','ItemMap'],
 		 ['30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','HandGrenade_West','HandGrenade_West','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov'],
 		 ['m8_compact_pmc','M9SD']]
 	]];
 	missionNamespace setVariable [Format["WFBE_%1_AI_Loadout_2", _side], [
-		[['m8_sharpshooter','RPG7V','Makarov','Binocular','NVGoggles','ItemRadio','ItemMap'],
+		[['m8_sharpshooter','RPG7V','Makarov','I44_Binocular_M3','ItemRadio','ItemMap'],
 		 ['30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','PG7VL','PG7VL','PG7VL','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov'],
 		 ['m8_sharpshooter','RPG7V','Makarov']]
 	]];
 	missionNamespace setVariable [Format["WFBE_%1_AI_Loadout_3", _side], [
-		[['m8_carbineGL','RPG7V','Binocular','NVGoggles','ItemRadio','ItemMap'],
+		[['m8_carbineGL','RPG7V','I44_Binocular_M3','ItemRadio','ItemMap'],
 		 ['30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','PG7VL','PG7VL','PG7VL','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203'],
 		 ['m8_carbineGL','RPG7V']],
-		[['m8_carbineGL','M47Launcher_EP1','Makarov','Binocular','NVGoggles','ItemRadio','ItemMap'],
+		[['m8_carbineGL','M47Launcher_EP1','Makarov','I44_Binocular_M3','ItemRadio','ItemMap'],
 		 ['30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','Dragon_EP1','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203'],
 		 ['m8_carbineGL','M47Launcher_EP1','Makarov']]
 	]];
@@ -95,7 +95,7 @@ if (local player) then {
 
 //--- Default Loadout [weapons, magazines, eligible muzzles, {backpack}, {backpack content}].
 missionNamespace setVariable [Format["WFBE_%1_DefaultGear", _side], [
-	['AKS_74_kobra','Makarov','Binocular','NVGoggles','ItemCompass','ItemMap','ItemRadio','ItemWatch'],
+	['AKS_74_kobra','Makarov','I44_Binocular_M3','ItemCompass','ItemMap','ItemRadio','ItemWatch'],
 	['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','HandGrenade_East','HandGrenade_East','HandGrenade_East','SmokeShellRed','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov'],
 	['AKS_74_kobra','Makarov']
 ]];
