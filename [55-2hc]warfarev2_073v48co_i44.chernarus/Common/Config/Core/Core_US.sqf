@@ -43,7 +43,6 @@ _i = _i + [['','',220,5,-1,2,0,1,'US Army',[]]];
 _c = _c + ['I44_Car_A_WillysMB_Medic_Army'];
 _i = _i + [['','',4000,22,-2,2,1,0,'US',[]]];
 
-
 _c = _c + ['I44_Truck_A_GMC_CCKW_Warfare_Salvage_Army'];
 _i = _i + [['','',750,21,-2,1,1,0,'US',[]]];
 
