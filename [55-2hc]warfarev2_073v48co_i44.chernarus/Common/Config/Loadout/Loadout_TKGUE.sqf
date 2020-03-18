@@ -91,7 +91,6 @@ _u = _u + ['UZI_SD_EP1'];
 _u = _u + ['Laserdesignator'];
 _u = _u + ['Binocular'];
 _u = _u + ['NVGoggles'];
-_u = _u + ['Binocular_Vector'];
 _u = _u + ['ItemCompass'];
 _u = _u + ['ItemGPS'];
 _u = _u + ['ItemMap'];

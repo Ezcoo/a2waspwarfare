@@ -98,7 +98,6 @@ _u = _u + ['Igla'];
 _u = _u + ['Strela'];
 _u = _u + ['Binocular'];
 _u = _u + ['NVGoggles'];
-_u = _u + ['Binocular_Vector'];
 _u = _u + ['Makarov'];
 _u = _u + ['revolver_EP1'];
 _u = _u + ['revolver_gold_EP1'];

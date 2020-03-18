@@ -93,7 +93,7 @@ _u = _u + [[['BAF_L85A2_RIS_Holo','M9SD','I44_Binocular_M3','ItemCompass','ItemG
 _u = _u + [[['BAF_L7A2_GPMG','Colt1911','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['100Rnd_762x51_M240','SmokeShellBlue','7Rnd_45ACP_1911'],[5,2,8]]]];
 _u = _u + [[['BAF_L110A1_Aim','Colt1911','NVGoggles','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['200Rnd_556x45_L110A1','SmokeShellBlue','7Rnd_45ACP_1911'],[5,2,8]]]];
 _u = _u + [[['BAF_LRR_scoped','M9SD','NVGoggles','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['5Rnd_86x70_L115A1','HandGrenade_West','15Rnd_9x19_M9SD'],[10,2,8]]]];
-_u = _u + [[['BAF_AS50_TWS','M9SD','NVGoggles','Binocular_Vector','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['5Rnd_127x99_AS50','HandGrenade_West','15Rnd_9x19_M9SD'],[10,2,8]]]];
-_u = _u + [[['BAF_AS50_scoped','M9SD','NVGoggles','Binocular_Vector','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['5Rnd_127x99_AS50','HandGrenade_West','15Rnd_9x19_M9SD'],[10,2,8]]]];
+_u = _u + [[['BAF_AS50_TWS','M9SD','NVGoggles','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['5Rnd_127x99_AS50','HandGrenade_West','15Rnd_9x19_M9SD'],[10,2,8]]]];
+_u = _u + [[['BAF_AS50_scoped','M9SD','NVGoggles','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['5Rnd_127x99_AS50','HandGrenade_West','15Rnd_9x19_M9SD'],[10,2,8]]]];
 
 [_u, _side] Call Compile preprocessFile "Common\Config\Config_SetTemplates.sqf";
