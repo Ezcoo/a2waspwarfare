@@ -19,6 +19,7 @@ _i = _i + [['','',240,5,-1,1,0,1,'British Armed Forces',[]]];
 
 
 /* Light Vehicles */
+
 _c = _c + ['I44_Car_B_WillysAB_VGO_Army'];
 _i = _i + [['','',2200,25,-2,0,2,0,'British Armed Forces',[]]];
 
@@ -28,6 +29,22 @@ _i = _i + [['','',2200,25,-2,0,2,0,'British Armed Forces',[]]];
 _c = _c + ['I44_Car_B_WillysAB_Medic_Army'];
 _i = _i + [['','',4000,22,-2,2,1,0,'British Armed Forces',[]]];
 
+/* Heavy Vehicles */
+
+_c = _c + ['I44_Tank_B_ShermanIV_Army'];
+_i = _i + [['','',4200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Tank_B_ShermanVC_Army'];
+_i = _i + [['','',4200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Tank_B_Cromwell_Army'];
+_i = _i + [['','',4200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Tank_B_Army_UC'];
+_i = _i + [['','',4200,25,-2,0,2,0,'US',[]]];
+
+_c = _c + ['I44_Veh_B_Army_MKIV_Churchill'];
+_i = _i + [['','',4200,25,-2,0,2,0,'US',[]]];
 
 /* Air Vehicles */
 
