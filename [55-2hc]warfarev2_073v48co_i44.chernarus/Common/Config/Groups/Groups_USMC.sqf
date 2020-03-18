@@ -155,17 +155,19 @@ _l = _l + [_u];
 _k = _k + ["Team_Sniper_1"];
 _u		= ["I44_Man_A_Army_M1918A2"];
 _u = _u + ["I44_Man_A_Army_M1918A2"];
+_u = _u + ["I44_Man_A_Army_Sniper_M1903A4"];
 _l = _l + [_u];
 
 _k = _k + ["Team_Sniper_2"];
 _u		= ["I44_Man_A_Army_M1918A2"];
 _u = _u + ["I44_Man_A_Army_Sniper_M1903A4"];
+_u = _u + ["I44_Man_A_Army_Sniper_M1903A4"];
 _l = _l + [_u];
 
 _k = _k + ["Team_Sniper_3"];
-_u		= ["US_Soldier_Spotter_EP1"];
-_u = _u + ["I44_Man_B_Army_Sniper_SMLENo4Mk1TH"];
-_u = _u + ["BAF_Soldier_SniperH_W"];
+_u		= ["I44_Man_A_Army_Sniper_M1903A4"];
+_u = _u + ["I44_Man_A_Army_Sniper_M1903A4"];
+_u = _u + ["I44_Man_A_Army_Sniper_M1903A4"];
 _l = _l + [_u];
 
 _k = _k + ["Motorized_0"];
