@@ -33,7 +33,6 @@ _u = _u		+ ['I44_Car_A_WillysMB_Army'];
 _u = _u		+ ['I44_Car_B_WillysAB_Army'];
 _u = _u		+ ['I44_Car_A_WillysMB_Closed_Army'];
 _u = _u		+ ['I44_Truck_A_GMC_CCKW_Army'];
-_u = _u		+ ['I44_Truck_A_GMC_CCKW_Open2_Army'];
 _u = _u		+ ['I44_Truck_A_GMC_CCKW_Open_Army'];
 _u = _u		+ ['I44_Car_B_WillysAB_VGO_Army'];
 
@@ -99,7 +98,7 @@ if ((missionNamespace getVariable "WFBE_C_UNITS_TOWN_PURCHASE") > 0) then {
 	_u = _u		+ ['I44_Man_A_Army_M1A1Bazooka'];
     _u = _u		+ ['I44_Man_A_Army_M1919A4'];
 _u = _u		+ ["UralCivil"];
-_u = _u		+ ["V3S_Refuel_TK_GUE_EP1"];
+_u = _u		+ ["I44_Truck_A_GMC_CCKW_Fuel_Army"];
 };
 
 missionNamespace setVariable [Format ["WFBE_%1DEPOTUNITS", _side], _u];
