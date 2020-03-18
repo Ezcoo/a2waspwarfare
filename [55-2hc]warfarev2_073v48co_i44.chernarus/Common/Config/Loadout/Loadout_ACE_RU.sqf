@@ -103,7 +103,6 @@ _u = _u + ['RPG18'];
 _u = _u + ['MetisLauncher'];
 _u = _u + ['Igla'];
 _u = _u + ['Strela'];
-_u = _u + ['Laserdesignator'];
 _u = _u + ['I44_Binocular_M3'];
 _u = _u + ['Makarov'];
 _u = _u + ['MakarovSD'];

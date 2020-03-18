@@ -104,7 +104,6 @@ _u = _u + ['MakarovSD'];
 _u = _u + ['Sa61_EP1'];
 _u = _u + ['UZI_EP1'];
 _u = _u + ['UZI_SD_EP1'];
-_u = _u + ['Laserdesignator'];
 _u = _u + ['ItemCompass'];
 _u = _u + ['ItemGPS'];
 _u = _u + ['ItemMap'];

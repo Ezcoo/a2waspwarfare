@@ -57,7 +57,6 @@ _u = _u + ['BAF_L86A2_ACOG'];
 _u = _u + ['BAF_L110A1_Aim'];
 _u = _u + ['BAF_L7A2_GPMG'];
 _u = _u + ['BAF_NLAW_Launcher'];
-_u = _u + ['Laserdesignator'];
 _u = _u + ['Colt1911'];
 _u = _u + ['M9'];
 _u = _u + ['M9SD'];
