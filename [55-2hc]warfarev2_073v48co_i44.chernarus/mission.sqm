@@ -3307,7 +3307,7 @@ class Mission
 					id=230;
 					side="WEST";
 					vehicle="I44_Man_B_Army_StenMk5";
-					player="PLAYER COMMANDER";
+					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
