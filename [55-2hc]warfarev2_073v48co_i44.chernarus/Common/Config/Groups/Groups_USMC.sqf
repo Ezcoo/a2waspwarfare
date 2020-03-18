@@ -113,10 +113,10 @@ _u = _u + ["I44_Man_A_Army_Medic"];
 _l = _l + [_u];
 
 _k = _k + ["Team_MG_3"];
-_u		= ["BAF_Soldier_MG_W"];
-_u = _u + ["BAF_Soldier_MG_W"];
-_u = _u + ["BAF_Soldier_MG_W"];
-_u = _u + ["BAF_Soldier_MG_W"];
+_u		= ["I44_Man_A_Army_M1919A4"];
+_u = _u + ["I44_Man_A_Army_M1919A4"];
+_u = _u + ["I44_Man_A_Army_M1919A4"];
+_u = _u + ["I44_Man_A_Army_M1919A4"];
 _l = _l + [_u];
 
 _k = _k + ["Team_AT_0"];
