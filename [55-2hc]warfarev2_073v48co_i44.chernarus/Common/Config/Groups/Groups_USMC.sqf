@@ -122,21 +122,20 @@ _l = _l + [_u];
 _k = _k + ["Team_AT_0"];
 _u		= ["I44_Man_A_Army_M1A1Bazooka"];
 _u = _u + ["I44_Man_A_Army_M1A1Bazooka"];
-_u = _u + ["I44_Man_A_Army_M1A1Bazooka"];
 _u = _u + ["I44_Man_A_Army_Medic"];
 _l = _l + [_u];
 
 _k = _k + ["Team_AT_1"];
 _u		= ["I44_Man_A_Army_M1A1Bazooka"];
 _u = _u + ["I44_Man_A_Army_M1A1Bazooka"];
-_u = _u + ["BAF_Soldier_AT_W"];
+_u = _u + ["I44_Man_A_Army_M1A1Bazooka"];
 _u = _u + ["I44_Man_A_Army_Medic"];
 _l = _l + [_u];
 
 _k = _k + ["Team_AT_2"];
-_u		= ["BAF_Soldier_AT_W"];
-_u = _u + ["BAF_Soldier_AT_W"];
-_u = _u + ["BAF_Soldier_AAT_W"];
+_u		= ["I44_Man_A_Army_M1A1Bazooka"];
+_u = _u + ["I44_Man_A_Army_M1A1Bazooka"];
+_u = _u + ["I44_Man_B_Army_PIAT"];
 _u = _u + ["I44_Man_A_Army_Medic"];
 _l = _l + [_u];
 
