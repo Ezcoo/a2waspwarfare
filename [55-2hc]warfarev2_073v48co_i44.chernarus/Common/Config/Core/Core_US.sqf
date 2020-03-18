@@ -5,80 +5,53 @@ _c = [];
 _i = [];
 
 /* Infantry */
-_c = _c + ['US_Soldier_Light_EP1'];
-_i = _i + [['','',130,4,-1,0,0,1,'US',[]]];
+_c = _c + ['I44_Man_A_Army_GunCrew_M1Carbine'];
+_i = _i + [['','',150,4,-1,0,0,1,'USMC',[]]];
 
-_c = _c + ['US_Soldier_EP1'];
-_i = _i + [['','',150,4,-1,0,0,1,'US',[]]];
+_c = _c + ['I44_Man_A_Army_M1918A2'];
+_i = _i + [['','',215,4,-1,0,0,1,'USMC',[]]];
 
-_c = _c + ['US_Soldier_B_EP1'];
-_i = _i + [['','',155,4,-1,0,0,1,'US',[]]];
+_c = _c + ['I44_Man_A_Army_M1A1Bazooka'];
+_i = _i + [['','',225,5,-1,0,0,1,'USMC',[]]];
 
-_c = _c + ['US_Soldier_LAT_EP1'];
-_i = _i + [['','',225,5,-1,0,0,1,'US',[]]];
+_c = _c + ['I44_Man_B_Army_PIAT'];
+_i = _i + [['','',700,5,-1,3,0,1,'USMC',[]]];
 
-_c = _c + ['US_Soldier_AT_EP1'];
-_i = _i + [['','',350,5,-1,2,0,1,'US',[]]];
+_c = _c + ['I44_Man_A_Army_M1A1Thompson'];
+_i = _i + [['','',210,5,-1,1,0,1,'USMC',[]]];
 
-_c = _c + ['US_Soldier_HAT_EP1'];
-_i = _i + [['','',1050,6,-1,3,0,1,'US',[]]];
+_c = _c + ['I44_Man_A_Army_M1919A4'];
+_i = _i + [['','',220,5,-1,1,0,1,'US Army',[]]];
 
-_c = _c + ['US_Soldier_AR_EP1'];
-_i = _i + [['','',210,5,-1,1,0,1,'US',[]]];
+_c = _c + ['I44_Man_A_Army_M1Garand_M7'];
+_i = _i + [['','',160,5,-1,0,0,1,'USMC',[]]];
 
-_c = _c + ['US_Soldier_MG_EP1'];
-_i = _i + [['','',220,5,-1,0,0,1,'US',[]]];
+_c = _c + ['I44_Man_B_Army_Sniper_SMLENo4Mk1T'];
+_i = _i + [['','',320,6,-1,2,0,1,'USMC',[]]];
 
-_c = _c + ['US_Soldier_GL_EP1'];
-_i = _i + [['','',160,5,-1,0,0,1,'US',[]]];
+_c = _c + ['I44_Man_B_Army_Sniper_SMLENo4Mk1TH'];
+_i = _i + [['','',400,6,-1,3,0,1,'USMC',[]]];
 
-_c = _c + ['US_Soldier_Sniper_EP1'];
-_i = _i + [['','',320,6,-1,2,0,1,'US',[]]];
+_c = _c + ['I44_Man_A_Army_Medic'];
+_i = _i + [['','',190,4,-1,0,0,1,'USMC',[]]];
 
-_c = _c + ['US_Soldier_SniperH_EP1'];
-_i = _i + [['','',350,6,-1,3,0,1,'US',[]]];
+_c = _c + ['I44_Man_B_Army_Engr_GrenadeNo75'];
+_i = _i + [['','',225,5,-1,0,0,1,'USMC',[]]];
 
-_c = _c + ['US_Soldier_Sniper_NV_EP1'];
-_i = _i + [['','',370,6,-1,3,0,1,'US',[]]];
+_c = _c + ['I44_Man_A_Army_Sniper_M1903A4'];
+_i = _i + [['','',300,7,-1,1,0,1,'USMC',[]]];
 
-_c = _c + ['US_Soldier_Marksman_EP1'];
-_i = _i + [['','',330,6,-1,2,0,1,'US',[]]];
+_c = _c + ['I44_Man_A_Army_Crew_M3Greasegun'];
+_i = _i + [['','',120,4,-1,0,0,1,'USMC',[]]];
 
-_c = _c + ['US_Soldier_Medic_EP1'];
-_i = _i + [['','',190,4,-1,0,0,1,'US',[]]];
+_c = _c + ['I44_Man_A_AAF_Pilot_M1911A1'];
+_i = _i + [['','',120,4,-1,0,0,1,'USMC',[]]];
 
-_c = _c + ['US_Soldier_Engineer_EP1'];
-_i = _i + [['','',225,5,-1,0,0,1,'US',[]]];
+_c = _c + ['I44_Man_B_Army_Engr_GrenadeNo75'];
+_i = _i + [['','',240,5,-1,1,0,1,'USMC',[]]];
 
-_c = _c + ['I44_Man_A_Army_MGCrew_AG'];
-_i = _i + [['','',185,6,-1,2,0,1,'US',[]]];
-
-_c = _c + ['US_Soldier_AAR_EP1'];
-_i = _i + [['','',185,6,-1,3,0,1,'US',[]]];
-
-_c = _c + ['US_Soldier_AHAT_EP1'];
-_i = _i + [['','',185,6,-1,3,0,1,'US',[]]];
-
-_c = _c + ['US_Soldier_AAT_EP1'];
-_i = _i + [['','',320,6,-1,3,0,1,'US',[]]];
-
-_c = _c + ['US_Soldier_Spotter_EP1'];
-_i = _i + [['','',320,6,-1,3,0,1,'US',[]]];
-
-_c = _c + ['US_Soldier_Crew_EP1'];
-_i = _i + [['','',120,4,-1,0,0,1,'US',[]]];
-
-_c = _c + ['US_Soldier_Pilot_EP1'];
-_i = _i + [['','',120,4,-1,0,0,1,'US',[]]];
-
-_c = _c + ['US_Soldier_TL_EP1'];
-_i = _i + [['','',240,5,-1,1,0,1,'US',[]]];
-
-_c = _c + ['US_Soldier_SL_EP1'];
-_i = _i + [['','',220,5,-1,2,0,1,'US',[]]];
-
-_c = _c + ['US_Soldier_Officer_EP1'];
-_i = _i + [['','',250,5,-1,1,0,1,'US',[]]];
+_c = _c + ['I44_Man_A_Army_NCO_M1A1Thompson'];
+_i = _i + [['','',220,5,-1,2,0,1,'USMC',[]]];
 
 /* Light Vehicles */
 
@@ -99,9 +72,6 @@ _i = _i + [['','',750,22,-2,1,1,0,'US',[]]];
 
 _c = _c + ['I44_Truck_A_GMC_CCKW_Fuel_Army'];
 _i = _i + [['','',500,22,-2,1,1,0,'US',[]]];
-
-_c = _c + ['I44_HT_A_M3_Army'];
-_i = _i + [['','',2200,25,-2,0,2,0,'US',[]]];
 
 _c = _c + ['I44_Car_A_WillysMB_Army'];
 _i = _i + [['','',2200,25,-2,0,2,0,'US',[]]];

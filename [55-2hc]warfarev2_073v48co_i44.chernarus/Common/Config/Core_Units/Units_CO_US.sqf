@@ -27,7 +27,6 @@ _u = _u		+ ['I44_Truck_A_GMC_CCKW_Repair_Army'];
 _u = _u		+ ['I44_Truck_A_GMC_CCKW_Ammo_Army'];
 _u = _u		+ ['I44_Truck_A_GMC_CCKW_Fuel_Army'];
 _u = _u		+ ['I44_Truck_A_GMC_CCKW_Warfare_Salvage_Army'];
-_u = _u		+ ['I44_HT_A_M3_Army'];
 _u = _u		+ ['I44_ACar_A_M8_Greyhound_Army'];
 _u = _u		+ ['I44_Car_A_WillysMB_Army'];
 _u = _u		+ ['I44_Car_B_WillysAB_Army'];
