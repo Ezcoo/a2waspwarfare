@@ -5,95 +5,17 @@ _c = [];
 _i = [];
 
 /* Infantry */
-_c = _c + ['BAF_Soldier_AA_MTP'];
-_i = _i + [['','',410,6,-1,2,0,1,'British',[]]];
+_c = _c + ['I44_Man_B_Army_PIAT'];
+_i = _i + [['','',700,5,-1,3,0,1,'British Armed Forces',[]]];
 
-_c = _c + ['BAF_Soldier_AAA_MTP'];
-_i = _i + [['','',190,6,-1,2,0,1,'British',[]]];
+_c = _c + ['I44_Man_B_Army_Sniper_SMLENo4Mk1T'];
+_i = _i + [['','',320,6,-1,2,0,1,'British Armed Forces',[]]];
 
-_c = _c + ['BAF_Soldier_AAT_MTP'];
-_i = _i + [['','',190,4,-1,2,0,1,'British',[]]];
+_c = _c + ['I44_Man_B_Army_Engr_GrenadeNo75'];
+_i = _i + [['','',225,5,-1,0,0,1,'British Armed Forces',[]]];
 
-_c = _c + ['BAF_Soldier_AHAT_MTP'];
-_i = _i + [['','',190,6,-1,3,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_AAR_MTP'];
-_i = _i + [['','',190,5,-1,2,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_AMG_MTP'];
-_i = _i + [['','',190,6,-1,1,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_AT_MTP'];
-_i = _i + [['','',360,6,-1,2,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_HAT_MTP'];
-_i = _i + [['','',1050,6,-1,3,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_AR_MTP'];
-_i = _i + [['','',210,5,-1,2,0,1,'British',[]]];
-
-_c = _c + ['BAF_crewman_MTP'];
-_i = _i + [['','',125,5,-1,0,0,01,'British',[]]];
-
-_c = _c + ['BAF_Soldier_EN_MTP'];
-_i = _i + [['','',230,5,-1,0,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_GL_MTP'];
-_i = _i + [['','',170,5,-1,0,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_FAC_MTP'];
-_i = _i + [['','',375,6,-1,3,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_MG_MTP'];
-_i = _i + [['','',210,5,-1,0,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_scout_MTP'];
-_i = _i + [['','',340,6,-1,2,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_Marksman_MTP'];
-_i = _i + [['','',370,6,-1,3,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_Medic_MTP'];
-_i = _i + [['','',200,6,-1,0,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_Officer_MTP'];
-_i = _i + [['','',265,6,-1,2,0,1,'British',[]]];
-
-_c = _c + ['BAF_Pilot_MTP'];
-_i = _i + [['','',125,6,-1,0,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_MTP'];
-_i = _i + [['','',155,6,-1,0,0,1,'British',[]]];
-
-_c = _c + ['BAF_ASoldier_MTP'];
-_i = _i + [['','',160,6,-1,0,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_L_MTP'];
-_i = _i + [['','',130,6,-1,0,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_N_MTP'];
-_i = _i + [['','',175,6,-1,1,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_SL_MTP'];
-_i = _i + [['','',235,6,-1,2,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_SniperN_MTP'];
-_i = _i + [['','',390,6,-1,3,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_SniperH_MTP'];
-_i = _i + [['','',420,6,-1,2,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_Sniper_MTP'];
-_i = _i + [['','',395,6,-1,2,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_spotter_MTP'];
-_i = _i + [['','',340,6,-1,2,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_spotterN_MTP'];
-_i = _i + [['','',350,6,-1,2,0,1,'British',[]]];
-
-_c = _c + ['BAF_Soldier_TL_MTP'];
-_i = _i + [['','',245,6,-1,1,0,1,'British',[]]];
+_c = _c + ['I44_Man_B_Army_Engr_GrenadeNo75'];
+_i = _i + [['','',240,5,-1,1,0,1,'British Armed Forces',[]]];
 
 
 /* Air Vehicles */
