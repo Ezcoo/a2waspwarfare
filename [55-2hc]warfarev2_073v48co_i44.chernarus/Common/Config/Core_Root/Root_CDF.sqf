@@ -58,10 +58,10 @@ if (isServer) then {
 	
 	//--- AI Loadouts [weapons, magazines, eligible muzzles, {backpack}, {backpack content}].
 	missionNamespace setVariable [Format["WFBE_%1_AI_Loadout_0", _side], [
-		[['AKS_74_kobra','RPG18','Makarov','Binocular','ItemRadio','ItemMap'],
+		[['AKS_74_kobra','RPG18','Makarov','I44_Binocular_M3','ItemRadio','ItemMap'],
 		 ['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','RPG18','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov'],
 		 ['AKS_74_kobra','RPG18','Makarov']],
-		[['AKS_74_U','RPG18','Makarov','Binocular','ItemRadio','ItemMap'],
+		[['AKS_74_U','RPG18','Makarov','I44_Binocular_M3','ItemRadio','ItemMap'],
 		 ['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','RPG18','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov','8Rnd_9x18_Makarov'],
 		 ['AKS_74_U','RPG18','Makarov']]
 	]];	

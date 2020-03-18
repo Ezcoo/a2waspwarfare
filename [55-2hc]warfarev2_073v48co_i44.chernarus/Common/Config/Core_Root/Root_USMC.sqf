@@ -139,35 +139,35 @@ if (WF_A2_CombinedOps) then {
 
 //Engineer
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearEngineer", _side], [
-	['M16A2GL','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular','NVGoggles'],
+	['M16A2GL','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular'],
 	['30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','PipeBomb'],
 	['M16A2GL']
 ]];
 
 // Sniper
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearSpot", _side], [
-	['M24','glock17_EP1','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular','NVGoggles'],
+	['M24','glock17_EP1','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular'],
 	['5Rnd_762x51_M24','5Rnd_762x51_M24','5Rnd_762x51_M24','5Rnd_762x51_M24','17Rnd_9x19_glock17','17Rnd_9x19_glock17','17Rnd_9x19_glock17','17Rnd_9x19_glock17','SmokeShellRed'],
 	['M24']
 ]];
 
 // MASH MAN
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearOfficer", _side], [
-	['m16a4_acg','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular','NVGoggles'],
+	['m16a4_acg','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular'],
 	['30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','HandGrenade_West','HandGrenade_West','HandGrenade_West','HandGrenade_West'],
 	['m16a4_acg']
 ]];
 
 // Soldier
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearSoldier", _side], [
-	['M4A1_Aim','M136','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular','NVGoggles'],
-	['30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','HandGrenade_West','HandGrenade_West','HandGrenade_West','HandGrenade_West'],
-	['M4A1_Aim']
+	['I44_M1Carbine','I44_M1A1Bazooka','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular'],
+	['I44_8rd_762x63_Tracer_M1Garand','I44_8rd_762x63_Tracer_M1Garand','I44_8rd_762x63_Tracer_M1Garand','I44_8rd_762x63_Tracer_M1Garand','HandGrenade_West','HandGrenade_West','HandGrenade_West','HandGrenade_West'],
+	['I44_M1Carbine']
 ]];
 
 // Lock MAN
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearLock", _side], [
-	['M249','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular','NVGoggles'],
+	['M249','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular'],
 	['100Rnd_556x45_BetaCMag','100Rnd_556x45_BetaCMag','100Rnd_556x45_BetaCMag','100Rnd_556x45_BetaCMag','HandGrenade_West','HandGrenade_West','HandGrenade_West','HandGrenade_West'],
 	['M249']
 ]];

@@ -17,7 +17,7 @@ WFBE_SK_V_Spotters = ['I44_Man_B_Army_Sniper_SMLENo4Mk1T'];//description="Sniper
 WFBE_SK_V_Medics = ['I44_Man_B_Army_Medic']; // description="Medic (Fast heal, Camps restore)";
 
 //--- Binoculars.
-missionNamespace setVariable ["WFBE_BINOCULARS", ["Laserdesignator", "Binocular", "Binocular_Vector"]];
+missionNamespace setVariable ["WFBE_BINOCULARS", ["I44_Binocular_M3"]];
 
 /* Skills Variables */
 WFBE_SK_V_LastUse_Repair = -1200;
