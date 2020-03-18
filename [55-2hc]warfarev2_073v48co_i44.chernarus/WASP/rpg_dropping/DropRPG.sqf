@@ -18,7 +18,7 @@ _addMag =	{
 					if (_curwep != _oldwep) then{
 						if ((_curwep != _oldwep) && (_curwep == "I44_M1A1Bazooka" || _curwep == "RPG18" || _curwep == "BAF_NLAW_Launcher" )) then{
 							_magaz = switch (_curwep) do{
-								case "M136"             : {"I44_M1A1Bazooka"};
+								case "I44_M1A1Bazooka"             : {"I44_M1A1Bazooka"};
 								case "RPG18"            : {"RPG18"};
 								case "BAF_NLAW_Launcher": {"NLAW"};
 								};

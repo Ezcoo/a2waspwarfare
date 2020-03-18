@@ -156,9 +156,9 @@ missionNamespace setVariable [Format["WFBE_%1_DefaultGearOfficer", _side], [
 
 // Soldier
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearSoldier", _side], [
-	['I44_M1Carbine','I44_M1A1Bazooka','ItemCompass','ItemMap','ItemWatch','ItemRadio','I44_Binocular_M3'],
+	['I44_M1Garand','I44_M1A1Bazooka','ItemCompass','ItemMap','ItemWatch','ItemRadio','I44_Binocular_M3'],
 	['I44_8rd_762x63_Tracer_M1Garand','I44_8rd_762x63_Tracer_M1Garand','I44_8rd_762x63_Tracer_M1Garand','I44_8rd_762x63_Tracer_M1Garand','HandGrenade_West','HandGrenade_West','HandGrenade_West','HandGrenade_West'],
-	['I44_M1Carbine']
+	['I44_M1Garand']
 ]];
 
 // Lock MAN
