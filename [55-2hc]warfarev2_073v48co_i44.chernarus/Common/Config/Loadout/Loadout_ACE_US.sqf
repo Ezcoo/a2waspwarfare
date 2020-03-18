@@ -250,16 +250,16 @@ _u = _u + ["ACE_Bandage"];
 //--- Loadout - Templates (note that backpacks content require the weapons to be first), use -1 to use the default BP content.
 _u 		= [[['SCAR_L_CQC','Colt1911','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_Stanag','HandGrenade_West','SmokeShellBlue','7Rnd_45ACP_1911'],[8,2,2,8]]]];
 _u = _u + [[['M16A2GL','US_Assault_Pack_Ammo_EP1','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_Stanag','HandGrenade_West','1Rnd_HE_M203'],[10,2,8]],-1]];
-_u = _u + [[['SCAR_L_CQC_Holo','M136','NVGoggles','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_Stanag','M136'],[6,1]]]];
-_u = _u + [[['SCAR_H_CQC_CCO','MAAWS','NVGoggles','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['20rnd_762x51_B_SCAR','MAAWS_HEAT'],[6,2]]]];
-_u = _u + [[['M4A3_CCO_EP1','Javelin','NVGoggles','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_Stanag','Javelin'],[6,1]]]];
-_u = _u + [[['SCAR_L_STD_Mk4CQT','Stinger','NVGoggles','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_Stanag','Stinger'],[6,1]]]];
+_u = _u + [[['SCAR_L_CQC_Holo','M136','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_Stanag','M136'],[6,1]]]];
+_u = _u + [[['SCAR_H_CQC_CCO','MAAWS','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['20rnd_762x51_B_SCAR','MAAWS_HEAT'],[6,2]]]];
+_u = _u + [[['M4A3_CCO_EP1','Javelin','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_Stanag','Javelin'],[6,1]]]];
+_u = _u + [[['SCAR_L_STD_Mk4CQT','Stinger','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_Stanag','Stinger'],[6,1]]]];
 _u = _u + [[['SCAR_L_CQC','M9','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_Stanag','Mine','15Rnd_9x19_M9'],[6,3,8]]]];
 _u = _u + [[['SCAR_H_CQC_CCO_SD','M9SD','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['20Rnd_762x51_SB_SCAR','PipeBomb','15Rnd_9x19_M9SD'],[6,3,8]]]];
 _u = _u + [[['m240_scoped_EP1','Colt1911','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['100Rnd_762x51_M240','SmokeShellBlue','7Rnd_45ACP_1911'],[5,2,8]]]];
-_u = _u + [[['M249_m145_EP1','Colt1911','NVGoggles','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['200Rnd_556x45_M249','SmokeShellBlue','7Rnd_45ACP_1911'],[5,2,8]]]];
-_u = _u + [[['M14_EP1','M9SD','NVGoggles','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['20Rnd_762x51_DMR','HandGrenade_West','15Rnd_9x19_M9SD'],[10,2,8]]]];
-_u = _u + [[['M110_TWS_EP1','M9SD','NVGoggles','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['20Rnd_762x51_B_SCAR','HandGrenade_West','15Rnd_9x19_M9SD'],[10,2,8]]]];
-_u = _u + [[['m107','M9SD','NVGoggles','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['10Rnd_127x99_m107','HandGrenade_West','15Rnd_9x19_M9SD'],[10,2,8]]]];
+_u = _u + [[['M249_m145_EP1','Colt1911','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['200Rnd_556x45_M249','SmokeShellBlue','7Rnd_45ACP_1911'],[5,2,8]]]];
+_u = _u + [[['M14_EP1','M9SD','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['20Rnd_762x51_DMR','HandGrenade_West','15Rnd_9x19_M9SD'],[10,2,8]]]];
+_u = _u + [[['M110_TWS_EP1','M9SD','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['20Rnd_762x51_B_SCAR','HandGrenade_West','15Rnd_9x19_M9SD'],[10,2,8]]]];
+_u = _u + [[['m107','M9SD','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['10Rnd_127x99_m107','HandGrenade_West','15Rnd_9x19_M9SD'],[10,2,8]]]];
 
 [_u, _side] Call Compile preprocessFile "Common\Config\Config_SetTemplates.sqf";

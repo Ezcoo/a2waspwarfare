@@ -91,7 +91,6 @@ _u = _u + ['Javelin'];
 _u = _u + ['Stinger'];
 _u = _u + ['Laserdesignator'];
 _u = _u + ['I44_Binocular_M3'];
-_u = _u + ['NVGoggles'];
 _u = _u + ['Colt1911'];
 _u = _u + ['M9'];
 _u = _u + ['M9SD'];

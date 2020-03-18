@@ -63,7 +63,6 @@ _u = _u + ['M9'];
 _u = _u + ['M9SD'];
 _u = _u + ['glock17_EP1'];
 _u = _u + ['I44_Binocular_M3'];
-_u = _u + ['NVGoggles'];
 _u = _u + ['BAF_AssaultPack_ARAmmo'];
 _u = _u + ['BAF_AssaultPack_ATAmmo'];
 _u = _u + ['BAF_AssaultPack_FAC'];
