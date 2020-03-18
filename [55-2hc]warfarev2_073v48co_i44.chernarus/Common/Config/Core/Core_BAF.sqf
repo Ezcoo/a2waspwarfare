@@ -18,6 +18,17 @@ _c = _c + ['I44_Man_B_Army_Engr_GrenadeNo75'];
 _i = _i + [['','',240,5,-1,1,0,1,'British Armed Forces',[]]];
 
 
+/* Light Vehicles */
+_c = _c + ['I44_Car_B_WillysAB_VGO_Army'];
+_i = _i + [['','',2200,25,-2,0,2,0,'British Armed Forces',[]]];
+
+_c = _c + ['I44_Car_B_WillysAB_Army'];
+_i = _i + [['','',2200,25,-2,0,2,0,'British Armed Forces',[]]];
+
+_c = _c + ['I44_Car_B_WillysAB_Medic_Army'];
+_i = _i + [['','',4000,22,-2,2,1,0,'British Armed Forces',[]]];
+
+
 /* Air Vehicles */
 
 _c = _c + ['I44_Plane_B_HHmkIIa_HVAR_RAF'];
