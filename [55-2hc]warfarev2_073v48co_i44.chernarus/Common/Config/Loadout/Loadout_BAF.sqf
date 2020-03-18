@@ -82,7 +82,7 @@ _u = _u + ['BAF_GMG_ACOG_minitripod_bag'];
 //--- Loadout - Templates (note that backpacks content require the weapons to be first), use -1 to use the default BP content.
 _u 		= [[['BAF_L85A2_RIS_ACOG','Colt1911','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_Stanag','HandGrenade_West','SmokeShellBlue','7Rnd_45ACP_1911'],[8,2,2,8]]]];
 _u = _u + [[['BAF_L85A2_UGL_Holo','BAF_AssaultPack_RifleAmmo','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_Stanag','HandGrenade_West','1Rnd_HE_M203'],[10,2,8]],-1]];
-_u = _u + [[['BAF_L85A2_RIS_Holo','M136','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_Stanag','M136'],[6,1]]]];
+_u = _u + [[['BAF_L85A2_RIS_Holo','I44_M1A1Bazooka','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_Stanag','I44_M1A1Bazooka'],[6,1]]]];
 _u = _u + [[['BAF_L85A2_RIS_SUSAT','MAAWS','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_Stanag','MAAWS_HEAT'],[6,2]]]];
 _u = _u + [[['BAF_L85A2_RIS_SUSAT','Javelin','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_Stanag','Javelin'],[6,1]]]];
 _u = _u + [[['BAF_L85A2_RIS_Holo','Stinger','I44_Binocular_M3','ItemCompass','ItemGPS','ItemMap','ItemRadio','ItemWatch'],[['30Rnd_556x45_Stanag','Stinger'],[6,1]]]];

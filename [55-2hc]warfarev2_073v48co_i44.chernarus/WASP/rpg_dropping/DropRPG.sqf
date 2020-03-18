@@ -16,18 +16,18 @@ _addMag =	{
 				_oldwep = (_sol) getVariable "OldWeapon";
 
 					if (_curwep != _oldwep) then{
-						if ((_curwep != _oldwep) && (_curwep == "M136" || _curwep == "RPG18" || _curwep == "BAF_NLAW_Launcher" )) then{
+						if ((_curwep != _oldwep) && (_curwep == "I44_M1A1Bazooka" || _curwep == "RPG18" || _curwep == "BAF_NLAW_Launcher" )) then{
 							_magaz = switch (_curwep) do{
-								case "M136"             : {"M136"};
+								case "M136"             : {"I44_M1A1Bazooka"};
 								case "RPG18"            : {"RPG18"};
 								case "BAF_NLAW_Launcher": {"NLAW"};
 								};
 							_sol addMagazine _magaz;
 							_oldwep = _curwep;
 						};
-						if ((_curwep != _oldwep) && (_oldwep == "M136" || _oldwep == "RPG18" || _oldwep == "BAF_NLAW_Launcher" )) then{
+						if ((_curwep != _oldwep) && (_oldwep == "I44_M1A1Bazooka" || _oldwep == "RPG18" || _oldwep == "BAF_NLAW_Launcher" )) then{
 							_magaz = switch (_oldwep) do{
-								case "M136"             : {"M136"};
+								case "I44_M1A1Bazooka"             : {"I44_M1A1Bazooka"};
 								case "RPG18"            : {"RPG18"};
 								case "BAF_NLAW_Launcher": {"NLAW"};
 							};
@@ -68,7 +68,7 @@ _this addeventhandler ["Fired", {
 	};
 
 
-	if (_weapon == "M136" || _weapon == "RPG18" || _weapon == "BAF_NLAW_Launcher") then{
+	if (_weapon == "I44_M1A1Bazooka" || _weapon == "RPG18" || _weapon == "BAF_NLAW_Launcher") then{
 		_sol = _this select 0;		// ???????????
 		_pos = getPosATL (_sol);	// ??????? ???????
 		_dir = direction (_sol);	// ??????????? ???????

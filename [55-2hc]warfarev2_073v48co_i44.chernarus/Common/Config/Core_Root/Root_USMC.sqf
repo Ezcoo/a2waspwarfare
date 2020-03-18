@@ -58,20 +58,20 @@ if (isServer) then {
 
 	//--- AI Loadouts [weapons, magazines, eligible muzzles, {backpack}, {backpack content}].
 	missionNamespace setVariable [Format["WFBE_%1_AI_Loadout_0", _side], [
-		[['m16a4_acg','M136','Colt1911','I44_Binocular_M3','ItemRadio','ItemMap'],
-		 ['30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','M136','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911'],
-		 ['m16a4_acg','M136','Colt1911']],
-		[['G36C','M136','Colt1911','I44_Binocular_M3','ItemRadio','ItemMap'],
-		 ['30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','M136','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911'],
-		 ['G36C','M136','Colt1911']]
+		[['m16a4_acg','I44_M1A1Bazooka','Colt1911','I44_Binocular_M3','ItemRadio','ItemMap'],
+		 ['30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','I44_M1A1Bazooka','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911'],
+		 ['m16a4_acg','I44_M1A1Bazooka','Colt1911']],
+		[['G36C','I44_M1A1Bazooka','Colt1911','I44_Binocular_M3','ItemRadio','ItemMap'],
+		 ['30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','I44_M1A1Bazooka','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911'],
+		 ['G36C','I44_M1A1Bazooka','Colt1911']]
 	]];
 	missionNamespace setVariable [Format["WFBE_%1_AI_Loadout_1", _side], [
-		[['M4A1_Aim_camo','M136','Colt1911','I44_Binocular_M3','ItemRadio','ItemMap'],
-		 ['30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','M136','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911'],
-		 ['M4A1_Aim_camo','M136','Colt1911']],
-		[['G36K','M136','Colt1911','I44_Binocular_M3','ItemRadio','ItemMap'],
-		 ['30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','M136','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911'],
-		 ['G36K','M136','Colt1911']],
+		[['M4A1_Aim_camo','I44_M1A1Bazooka','Colt1911','I44_Binocular_M3','ItemRadio','ItemMap'],
+		 ['30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','I44_M1A1Bazooka','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911'],
+		 ['M4A1_Aim_camo','I44_M1A1Bazooka','Colt1911']],
+		[['G36K','I44_M1A1Bazooka','Colt1911','I44_Binocular_M3','ItemRadio','ItemMap'],
+		 ['30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','30Rnd_556x45_G36','I44_M1A1Bazooka','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911','7Rnd_45ACP_1911'],
+		 ['G36K','I44_M1A1Bazooka','Colt1911']],
 		[['DMR','M9SD','I44_Binocular_M3','ItemRadio','ItemMap'],
 		 ['20Rnd_762x51_DMR','20Rnd_762x51_DMR','20Rnd_762x51_DMR','20Rnd_762x51_DMR','20Rnd_762x51_DMR','20Rnd_762x51_DMR','20Rnd_762x51_DMR','20Rnd_762x51_DMR','20Rnd_762x51_DMR','20Rnd_762x51_DMR','HandGrenade_West','HandGrenade_West','15Rnd_9x19_M9SD','15Rnd_9x19_M9SD','15Rnd_9x19_M9SD','15Rnd_9x19_M9SD'],
 		 ['DMR','M9SD']]
