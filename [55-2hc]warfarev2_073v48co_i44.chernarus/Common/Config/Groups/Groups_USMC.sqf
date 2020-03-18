@@ -46,11 +46,11 @@ _u = _u + ["I44_Man_A_Army_Medic"];
 _l = _l + [_u];
 
 _k = _k + ["Squad_Advanced"];
-_u		= ["I44_Man_B_Army_Sapper_M2"];
-_u = _u + ["FR_Assault_R"];
-_u = _u + ["FR_AR"];
-_u = _u + ["FR_R"];
-_u = _u + ["FR_Marksman"];
+_u		= ["I44_Man_A_Army_NCO_M1A1Thompson"];
+_u = _u + ["I44_Man_A_Army_Sniper_M1903A4"];
+_u = _u + ["I44_Man_B_Army_PIAT"];
+_u = _u + ["I44_Man_A_Army_M1A1Bazooka"];
+_u = _u + ["I44_Man_A_Army_M1Garand_M7"];
 _l = _l + [_u];
 
 _k = _k + ["Team_0"];
