@@ -6,7 +6,7 @@
 		- Killed side ID.
 */
 
-Private ["_get","_killed","_killed_isplayer","_killed_group","_killed_isman","_killed_side","_killed_type","_killer","_killer_group","_killer_isplayer","_killer_iswfteam","_killer_side","_killer_type","_killer_vehicle","_killer_uid"];
+Private ["_get","_killed","_killed_isplayer","_killed_group","_killed_isman","_killed_side","_killed_type","_killer","_killer_group","_killer_isplayer","_killer_iswfteam","_killer_side","_killer_type","_killer_vehicle","_killer_uid","_points","_killer_award"];
 
 _killed = _this select 0;
 _killer = _this select 1;
@@ -17,7 +17,7 @@ if (_killer == _killed || isNull _killer) then { //--- The killed may be the kil
 	_last_hit = _killed getVariable "wfbe_lasthitby";
 	if !(isNil '_last_hit') then {
 		if (alive _last_hit) then {
-			if (side _last_hit != _killed_side && time - (_killed getVariable "wfbe_lasthittime") < 25) then {_killer = _last_hit};
+			if ((side _last_hit != _killed_side) && (time - (_killed getVariable "wfbe_lasthittime") < 25)) then {_killer = _last_hit};
 		};
 	};
 };
@@ -64,47 +64,43 @@ if (!isNil '_get' && _killer_iswfteam) then { //--- Make sure that type killed t
 	if (_killer_side != _killed_side) then { //--- Normal kill.
 		if (isPlayer (leader _killer_group)) then { //--- The team is lead by a player.
 			_killer_award = objNull;
-			if !(_killer_isplayer) then { //--- An AI is the killer.
-				_killer_award = _killer;
-				_points = switch (true) do {
-					case (_killed_type isKindOf "Infantry"): {round((_get select QUERYUNITPRICE) *0.7* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);};
-					case (_killed_type isKindOf "Car"): {round((_get select QUERYUNITPRICE) *0.45* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);};
-					case (_killed_type isKindOf "Ship"): {round((_get select QUERYUNITPRICE) *0.4* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);};
-					case (_killed_type isKindOf "Motorcycle"): {round((_get select QUERYUNITPRICE) *0.7* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);};
-					case (_killed_type isKindOf "Tank"): {round((_get select QUERYUNITPRICE) *0.4* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);};
-					case (_killed_type isKindOf "Helicopter"): {round((_get select QUERYUNITPRICE) *0.4* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);};
-					case (_killed_type isKindOf "Plane"): {round((_get select QUERYUNITPRICE) *0.35* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);};
-					case (_killed_type isKindOf "StaticWeapon"): {round((_get select QUERYUNITPRICE) *0.5* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100);};
-					case (_killed_type isKindOf "Building"): {round((_get select QUERYUNITPRICE) *0.55* (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF") / 100 * (missionNamespace getVariable "WFBE_C_BUILDINGS_SCORE_COEF"));};
-					default {1};
-				};
 
-				if (isServer) then {
-					['SRVFNCREQUESTCHANGESCORE',[leader _killer_group, (score leader _killer_group) + _points]] Spawn WFBE_SE_FNC_HandlePVF;
+			if !(_killer_isplayer) then { // An AI is the killer.
+                _killer_award = _killer;
+                _points = [_killed_type, _get] call WFBE_CO_FNC_AwardScore;
 
+                if ((isPlayer _killed) && (isPlayer _killer)) then {
+                    _points = _points + ([_killed] call WFBE_CO_FNC_AwardScorePlayer);
+                };
 
+			};
 
-				} else {
-					["RequestChangeScore", [leader _killer_group, (score leader _killer_group) + _points]] Call WFBE_CO_FNC_SendToServer;
-				};
+            if ((isPlayer _killed) && (isPlayer _killer)) then {
+                _points = _points + ([_killed] call WFBE_CO_FNC_AwardScorePlayer);
+            };
+
+		    if (isServer) then {
+				['SRVFNCREQUESTCHANGESCORE',[leader _killer_group, (score leader _killer_group) + _points]] Spawn WFBE_SE_FNC_HandlePVF;
+			} else {
+				["RequestChangeScore", [leader _killer_group, (score leader _killer_group) + _points]] Call WFBE_CO_FNC_SendToServer;
 			};
 
 			if ((missionNamespace getVariable "WFBE_C_UNITS_BOUNTY") > 0) then {
 			//--- Award the bounty if needed.
-			if (_killed_isplayer && _killer_isplayer) then {
-				[_killer_uid, "AwardBountyPlayer", _killed] Call WFBE_CO_FNC_SendToClients;
+                if ((isPlayer _killed) && (isPlayer _killer)) then {
+                    [_killer_uid, "AwardBountyPlayer", _killed] Call WFBE_CO_FNC_SendToClients;
+                };
+
+                [_killer_uid, "AwardBounty", [_killed_type, false, _killer_award]] Call WFBE_CO_FNC_SendToClients;
+
+                if (vehicle _killed != _killed && alive _killed) then { //--- Kill assist (players in the same vehicle).
+                    {if (alive _x && isPlayer _x) then {[getPlayerUID(_x), "AwardBounty", [_objectType, true]] Call WFBE_CO_FNC_SendToClients}} forEach ((crew (vehicle _killed)) - [_killer, player]);
+                };
 			};
 
-			[_killer_uid, "AwardBounty", [_killed_type, false, _killer_award]] Call WFBE_CO_FNC_SendToClients;
-			if (vehicle _killed != _killed && alive _killed) then { //--- Kill assist (players in the same vehicle).
-				{if (alive _x && isPlayer _x) then {[getPlayerUID(_x), "AwardBounty", [_objectType, true]] Call WFBE_CO_FNC_SendToClients}} forEach ((crew (vehicle _killed)) - [_killer, player]);
-			};
-
-
-			};
 		} else { //--- The team is lead by an AI.
 			if ((missionNamespace getVariable "WFBE_C_AI_TEAMS_ENABLED") > 0 && isServer) then { //--- Award the kill to the AI team.
-				_bounty = (_get select QUERYUNITPRICE) * (missionNamespace getVariable "WFBE_C_UNITS_BOUNTY_COEF");
+				_bounty = (_get select QUERYUNITPRICE) * (missionNamespace getVariable "WFBE_C_UNITS_SCORE_COEF");
 				_bounty = _bounty - (_bounty % 1);
 				[_killer_group, _bounty] Call ChangeTeamFunds;
 			};
