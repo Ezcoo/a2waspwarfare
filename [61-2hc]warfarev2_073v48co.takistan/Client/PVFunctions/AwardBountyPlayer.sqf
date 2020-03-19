@@ -10,7 +10,7 @@ _coef = _coef^(-0.1);
 _bounty = if (score _killed < 0) then {
             180;
           } else {
-            (100 + 7 * (score _killed) * _coef) * 2;
+            (100 + 7 * (score _killed) * _coef) * 1.5;
           };
 
 _bounty = round _bounty;
