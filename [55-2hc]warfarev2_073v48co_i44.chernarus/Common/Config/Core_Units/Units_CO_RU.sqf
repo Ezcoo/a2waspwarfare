@@ -94,26 +94,13 @@ _u = _u		+ ['2S6M_Tunguska'];
 missionNamespace setVariable [Format ["WFBE_%1HEAVYUNITS", _side], _u];
 if (local player) then {['HEAVY', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
-_u 			= ['Mi17_Ins'];
-_u = _u		+ ['UH1H_TK_EP1'];
-if (_restriction_air == 0 ||_restriction_air == 1) then {
-	_u = _u		+ ['Mi17_medevac_RU'];
-	_u = _u		+ ['Mi17_rockets_RU'];
-	_u = _u		+ ['Mi24_V'];
-	_u = _u		+ ['Mi24_D_TK_EP1'];
-	_u = _u		+ ['Mi24_P'];
-	if ((missionNamespace getVariable "WFBE_C_UNITS_KAMOV_DISABLED") == 0) then {
-		_u = _u		+ ['Ka52'];
-		_u = _u		+ ['Ka52Black'];
-	};
-};
-if (_restriction_air == 0) then {
-	_u = _u		+ ['An2_TK_EP1'];
-	_u = _u		+ ['L39_TK_EP1'];
-	_u = _u		+ ['Su34'];
-	_u = _u		+ ['Su39'];
-	_u = _u		+ ['Su25_TK_EP1'];
-};
+_u 			= ['I44_Plane_G_Bf109E4_WL'];
+_u = _u		+ ['I44_Plane_G_Bf109F2_SC250_WL'];
+_u = _u		+ ['I44_Plane_G_Bf109G6_SC250_WL'];
+_u = _u		+ ['I44_Plane_G_Ju52_3mg5e_WL'];
+_u = _u		+ ['I44_Plane_G_Ju87_SC250_WL'];
+_u = _u		+ ['I44_Plane_G_Me262_WL'];
+_u = _u		+ ['TI44_Plane_G_Me262A_WL'];
 
 missionNamespace setVariable [Format ["WFBE_%1AIRCRAFTUNITS", _side], _u];
 if (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
