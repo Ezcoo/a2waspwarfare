@@ -358,16 +358,13 @@ if (time < 30) then {
 	_buildings = (sideJoined) Call WFBE_CO_FNC_GetSideStructures;
 
     // Spawn joining client at newest Barracks, Light Factory or Heavy Factory, whichever is the newest
-    if (count _buildings > 0) then {
-	    for "_i" from ((count _buildings) - 1) to 0 do {
-	        _structureType = (_buildings select _i) getVariable "wfbe_structure_type";
-	        if (_structureType == "Barracks" || _structureType == "Light" || _structureType == "Heavy") exitWith {
-	            _base = _buildings select _i;
-	        };
-	    };
-	};
+//    if (count _buildings > 0) then {
+//	    for "_i" from ((count _buildings) - 1) to 0 do {
+//	        _structureType = (_buildings select _i) getVariable "wfbe_structure_type";
+//	        if (_structureType == "Barracks" || _structureType == "Light" || _structureType == "Heavy") exitWith {
+//	            _base = _buildings select _i;
 
-	// if (count _buildings > 0) then {_base = _buildings select ((count _buildings) - 1)};
+    if (count _buildings > 0) then {_base = _buildings select ((count _buildings) - 1)};
 };
 
 ["INITIALIZATION", Format["Init_Client.sqf: Client spawn location has been determined at [%1].", _base]] Call WFBE_CO_FNC_LogContent;
