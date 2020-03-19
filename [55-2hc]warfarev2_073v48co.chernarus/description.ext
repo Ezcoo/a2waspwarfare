@@ -57,8 +57,6 @@
 //--- Titles contains the titles (overlay).
 #include "Rsc\Titles.hpp"
 
-#include "Rsc\Nametags.hpp"
-
 //--- Include Identities (OA/CO Only).
 #ifndef VANILLA
   #include "Rsc\Identities.hpp"

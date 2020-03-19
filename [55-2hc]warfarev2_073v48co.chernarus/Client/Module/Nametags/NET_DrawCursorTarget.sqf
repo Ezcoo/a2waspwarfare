@@ -22,7 +22,7 @@ while {true} do
 	sleep 0.015;
 
     _cursorTarget = WFBE_CL_FNC_NET_VisibleCursorTarget;
-    _display = _DC displayCtrl (101);
+    _display = _DC displayCtrl (3456);
 
     if (alive player && !isNull _Man && alive _Man && _Man != player && isPlayer _Man) then {
     	_who = (vehicle _Man);
