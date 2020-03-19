@@ -105,14 +105,13 @@ _u = _u		+ ['TI44_Plane_G_Me262A_WL'];
 missionNamespace setVariable [Format ["WFBE_%1AIRCRAFTUNITS", _side], _u];
 if (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
-_u = [];
-if (_restriction_air == 0) then {
-	_u = _u		+ ['An2_TK_EP1'];
-	_u = _u		+ ['L39_TK_EP1'];
-	_u = _u		+ ['Su34'];
-	_u = _u		+ ['Su39'];
-	_u = _u		+ ['Su25_TK_EP1'];
-};
+_u 			= ['I44_Plane_G_Bf109E4_WL'];
+_u = _u		+ ['I44_Plane_G_Bf109F2_SC250_WL'];
+_u = _u		+ ['I44_Plane_G_Bf109G6_SC250_WL'];
+_u = _u		+ ['I44_Plane_G_Ju52_3mg5e_WL'];
+_u = _u		+ ['I44_Plane_G_Ju87_SC250_WL'];
+_u = _u		+ ['I44_Plane_G_Me262_WL'];
+_u = _u		+ ['TI44_Plane_G_Me262A_WL'];
 
 missionNamespace setVariable [Format ["WFBE_%1AIRPORTUNITS", _side], _u];
 if (local player) then {['AIRPORT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
