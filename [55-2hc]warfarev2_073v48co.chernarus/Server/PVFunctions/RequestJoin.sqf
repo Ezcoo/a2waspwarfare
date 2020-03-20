@@ -73,9 +73,14 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 			[_player, "LocalizeMessage", ['Teamstack',_name,_uid,_side]] Call WFBE_CO_FNC_SendToClient;
 			["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamstacking,joined side [%3].", _name,_uid,_side]] Call WFBE_CO_FNC_LogContent;
 			_get set [4,0];
+			["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] tried to join team [%3], skill of player: %4 skill of the friendly team: %5, skill of enemy team: %6.", _name,_uid,_side,_skillJoiningPlayer,_totalSkillPlayerSide,_totalSkillPlayerOtherSide]] Call WFBE_CO_FNC_LogContent;
+		} else {
+		    _canJoin = true;
+		    ["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] joined team [%3], skill of player: %4 skill of the friendly team: %5, skill of enemy team: %6.", _name,_uid,_side,_skillJoiningPlayer,_totalSkillPlayerSide,_totalSkillPlayerOtherSide]] Call WFBE_CO_FNC_LogContent;
 		};
 
-	}else{
+	} else {
+
 		if (_sideOrigin != _side) then { //--- The joined side differs from the original one.
 
 			_canJoin = false;
@@ -83,7 +88,7 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 			[nil, "LocalizeMessage", ['Teamswap',_name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_SendToClients; //--- Inform the clients about the teamswap.
 
 			["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamswapping, original side [%3], joined side [%4].", _name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_LogContent;
-		}else {
+		} else {
 			_canJoin = true;
 		};
 	};
