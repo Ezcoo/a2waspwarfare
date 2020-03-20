@@ -21,6 +21,7 @@ _playersinotherside = ({side _x == _otherside && isPlayer _x} count (playableUni
 _totalSkillPlayerSide = 0;
 _totalSkillPlayerOtherSide = 0;
 _skillDifference = 0;
+_skillJoiningPlayer = 0;
 _get = missionNamespace getVariable Format["WFBE_JIP_USER%1",_uid];
 
 if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
