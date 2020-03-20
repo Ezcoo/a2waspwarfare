@@ -20,7 +20,7 @@ class Mission
 	randomSeed=10034581;
 	class Intel
 	{
-		briefingName="[55] Warfare V48 Chernarus";
+		briefingName="[55] Warfare V48.1 Chernarus";
 		briefingDescription="by Benny and Awesome&WASP";
 		resistanceWest=0;
 		startWeather=0;
