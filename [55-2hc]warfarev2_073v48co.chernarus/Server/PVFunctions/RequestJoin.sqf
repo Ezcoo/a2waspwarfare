@@ -1,4 +1,4 @@
-private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_skillJoiningPlayer","_otherside","_sidepros","_othersidepros","_playersinside","_playersinotherside"];
+private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_skillJoiningPlayer","_playersinside","_playersinotherside","_skillDifference","_totalSkillPlayerSide","_totalSkillPlayerOtherSide","_playerSkill"];
 
 _player = _this select 0;
 _side = _this select 1;
