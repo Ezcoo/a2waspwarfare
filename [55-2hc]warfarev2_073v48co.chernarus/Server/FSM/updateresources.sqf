@@ -85,7 +85,7 @@ while {!gameOver} do {
 	} forEach (playableUnits + switchableUnits);
 
 	{
-	    _x = _x - (_x * 0.033);
+	    _x = _x - (_x * 0.066);
 
 	    if (_x < 0) then {
             _x = 0;
@@ -93,7 +93,7 @@ while {!gameOver} do {
 	} forEach WFBE_CO_VAR_DISCONNECTED_SKILL_WEST;
 
 	{
-    	_x = _x - (_x * 0.033);
+    	_x = _x - (_x * 0.066);
 
     	if (_x < 0) then {
     	    _x = 0;
