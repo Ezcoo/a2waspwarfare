@@ -44,6 +44,8 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 		    };
 		} forEach (playableUnits + switchableUnits);
 
+		_skillJoiningPlayer = [getPlayerUID _player] call IniDB_CalcSkill;
+
 		if (_side == west) then {
 		    {
 		        _totalSkillPlayerSide = _totalSkillPlayerSide + _x;
