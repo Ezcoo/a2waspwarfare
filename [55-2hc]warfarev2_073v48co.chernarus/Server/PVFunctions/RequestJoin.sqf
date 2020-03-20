@@ -109,4 +109,4 @@ if (WF_A2_Vanilla) then {
 };
 
 // Set variable to store player side (Net_2)
-missionNamespace setVariable [format [WFBE_CO_VAR_SIDE_UID_%1, _uid], side _player];
+missionNamespace setVariable [format ["WFBE_CO_VAR_SIDE_UID_%1", _uid], side _player];
