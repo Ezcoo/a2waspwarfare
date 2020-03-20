@@ -18,6 +18,9 @@ if (_side == west) then {_otherside = east;};
 
 _playersinside = ({side _x == _side && isPlayer _x} count (playableUnits + switchableUnits));
 _playersinotherside = ({side _x == _otherside && isPlayer _x} count (playableUnits + switchableUnits));
+_totalSkillPlayerSide = 0;
+_totalSkillPlayerOtherSide = 0;
+_skillDifference = 0;
 _get = missionNamespace getVariable Format["WFBE_JIP_USER%1",_uid];
 
 if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
@@ -105,4 +108,4 @@ if (WF_A2_Vanilla) then {
 };
 
 // Set variable to store player side (Net_2)
-missionNamespace setVariable [format [WFBE_CO_VAR_SIDE_UID_%1, _uid], side _player];
+missionNamespace setVariable [format ["WFBE_CO_VAR_SIDE_UID_%1", _uid], side _player];
