@@ -4,7 +4,7 @@
 	returns: nothing
 */
 
-private ["_playerUID","_totalScore"];
+private ["_playerUID"];
 
 _playerUID = _this select 0;
 
