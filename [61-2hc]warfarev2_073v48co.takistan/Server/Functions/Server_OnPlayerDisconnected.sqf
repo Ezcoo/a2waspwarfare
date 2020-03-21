@@ -34,7 +34,7 @@ _currentPlayerScore = missionNamespace getVariable format ["WFBE_CURRENT_SCORE_U
 _playerTotalScore = [_uid] call IniDB_GetScore;
 
 _newPlayerTotalScore = _playerTotalScore + (_currentPlayerScore - _oldplayerScore);
-["INFORMATION", Format["OnPlayerDisconnected.sqf: Player [%1] [%2] disconnected from game, OLD_SCORE_UID...: [%4], CURRENT_SCORE_UID...: [%5], TOTAL score sent to database: [%6]", _name,_uid,_side,missionNamespace getVariable format ["WFBE_OLD_SCORE_UID_%1", _uid],missionNamespace getVariable format ["WFBE_CURRENT_SCORE_UID_%1", _uid],_newPlayerTotalScore]] Call WFBE_CO_FNC_LogContent;
+["INFORMATION", Format["OnPlayerDisconnected.sqf: Player [%1] [%2], side [%3] disconnected from game, OLD_SCORE_UID...: [%4], CURRENT_SCORE_UID...: [%5], TOTAL score sent to database: [%6]", _name,_uid,missionNamespace getVariable format ["WFBE_CO_VAR_SIDE_UID_%1", _uid],missionNamespace getVariable format ["WFBE_OLD_SCORE_UID_%1", _uid],missionNamespace getVariable format ["WFBE_CURRENT_SCORE_UID_%1", _uid],_newPlayerTotalScore]] Call WFBE_CO_FNC_LogContent;
 
 ["WASP_playerSkills", _uid, "score", _newPlayerTotalScore] call iniDB_write;
 
