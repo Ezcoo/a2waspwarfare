@@ -1,11 +1,20 @@
-private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_skillJoiningPlayer","_playersinside","_playersinotherside","_skillDifference","_totalSkillPlayerSide","_totalSkillPlayerOtherSide","_playerSkill"];
+private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_skillJoiningPlayer","_playerSkillFriendlySide","_playerSkillEnemySide","_playersinside","_playersinotherside","_skillDifference","_totalSkillPlayerSide","_totalSkillPlayerOtherSide","_playerSkill"];
 
 _player = _this select 0;
 _side = _this select 1;
 _name = name _player;
 
 _skip = 0;
-_otherside = west;
+
+_otherside =
+if (_side == west) then {
+    _otherside = east;
+} else {
+    if (_side == east) then {
+        _otherside = west;
+    }
+};
+
 _playersinside = 0;
 _playersinotherside = 0;
 _sidepros = 0;
@@ -22,6 +31,8 @@ _totalSkillPlayerSide = 0;
 _totalSkillPlayerOtherSide = 0;
 _skillDifference = 0;
 _skillJoiningPlayer = 0;
+_playerSkillFriendlySide = 0;
+_playerSkillEnemySide = 0;
 _get = missionNamespace getVariable Format["WFBE_JIP_USER%1",_uid];
 
 if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
@@ -35,13 +46,13 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 		{
 		    if (side _x == _side && isPlayer _x) then {
-		        _playerSkill = [getPlayerUID _x] call IniDB_CalcSkill;
-		        _totalSkillPlayerSide = _totalSkillPlayerSide + _playerSkill;
+		        _playerSkillFriendlySide = [getPlayerUID _x] call IniDB_CalcSkill;
+		        _totalSkillPlayerSide = _totalSkillPlayerSide + _playerSkillFriendlySide;
 		    };
 
 		    if (side _x == _otherside && isPlayer _x) then {
-		        _playerSkill = [getPlayerUID _x] call IniDB_CalcSkill;
-		        _totalSkillPlayerOtherSide = _totalSkillPlayerOtherSide + _playerSkill;
+		        _playerSkillEnemySide = [getPlayerUID _x] call IniDB_CalcSkill;
+		        _totalSkillPlayerOtherSide = _totalSkillPlayerOtherSide + _playerSkillEnemySide;
 		    };
 		} forEach (playableUnits + switchableUnits);
 
@@ -82,7 +93,7 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 		    ["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] joined team [%3], skill of player: %4 skill of the friendly team: %5, skill of enemy team: %6.", _name,_uid,_side,_skillJoiningPlayer,_totalSkillPlayerSide,_totalSkillPlayerOtherSide]] Call WFBE_CO_FNC_LogContent;
 		};
 
-	}else{
+	} else {
         if (_sideOrigin != _side) then { //--- The joined side differs from the original one.
 
             _canJoin = false;
