@@ -109,4 +109,5 @@ if (WF_A2_Vanilla) then {
 };
 
 // Set variable to store player side (Net_2)
-missionNamespace setVariable [format ["WFBE_CO_VAR_SIDE_UID_%1", _uid], side _player];
+missionNamespace setVariable [format ["WFBE_CO_VAR_SIDE_UID_%1", _uid], _side];
+["INFORMATION", Format["RequestJoin.sqf: Player %1 was assigned to side %2? [%3]",_name,missionNamespace getVariable format ["WFBE_CO_VAR_SIDE_UID_%1", _uid],_canJoin]] Call WFBE_CO_FNC_LogContent;
