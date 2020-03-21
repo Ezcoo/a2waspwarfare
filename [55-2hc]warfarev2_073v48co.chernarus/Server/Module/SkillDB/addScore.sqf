@@ -10,7 +10,7 @@ _player = _this select 0;
 _playerUID = getPlayerUID _player;
 
 _oldPlayerScore = missionNamespace getVariable format ["WFBE_OLD_SCORE_UID_%1", _playerUID];
-if (isNil _oldPlayerScore) then {
+if (isNil "_oldPlayerScore") then {
     missionNamespace setVariable [format ["WFBE_OLD_SCORE_UID_%1", _playerUID], 0];
     _oldPlayerScore = missionNamespace getVariable format ["WFBE_OLD_SCORE_UID_%1", _playerUID];
 };
