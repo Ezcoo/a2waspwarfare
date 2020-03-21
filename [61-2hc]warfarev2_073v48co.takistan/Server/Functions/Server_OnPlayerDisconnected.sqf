@@ -5,7 +5,7 @@
 		- User Name
 */
 
-Private ['_buildings','_commander','_funds','_get','_hq','_id','_name','_old_unit','_old_unit_group','_respawnLoc','_side','_team','_units','_uid'];
+Private ['_buildings','_commander','_funds','_get','_hq','_id','_name','_old_unit','_old_unit_group','_respawnLoc','_side','_team','_units','_uid','_oldPlayerScore','_currentPlayerScore','_playerTotalScore','_newPlayerTotalScore'];
 _uid = _this select 0;
 _name = _this select 1;
 _id = _this select 2;
@@ -33,15 +33,16 @@ _oldPlayerScore = missionNamespace getVariable format ["WFBE_OLD_SCORE_UID_%1", 
 _currentPlayerScore = missionNamespace getVariable format ["WFBE_CURRENT_SCORE_UID_%1", _uid];
 _playerTotalScore = [_uid] call IniDB_GetScore;
 
-_newPlayerScore = _playerTotalScore + (_currentPlayerScore - _oldplayerScore);
+_newPlayerTotalScore = _playerTotalScore + (_currentPlayerScore - _oldplayerScore);
+["INFORMATION", Format["OnPlayerDisconnected.sqf: Player [%1] [%2] disconnected from game, OLD_SCORE_UID...: [%4], CURRENT_SCORE_UID...: [%5], TOTAL score sent to database: [%6]", _name,_uid,_side,missionNamespace getVariable format ["WFBE_OLD_SCORE_UID_%1", _uid],missionNamespace getVariable format ["WFBE_CURRENT_SCORE_UID_%1", _uid],_newPlayerTotalScore]] Call WFBE_CO_FNC_LogContent;
 
-["WASP_playerSkills", _uid, "score", _newPlayerScore] call iniDB_write;
+["WASP_playerSkills", _uid, "score", _newPlayerTotalScore] call iniDB_write;
 
 // Prevent stacking by veteran disconnecting just before another player joins
-if (missionNamespace getVariable format [WFBE_CO_VAR_SIDE_UID_%1, _uid] == west) then {
+if (missionNamespace getVariable format ["WFBE_CO_VAR_SIDE_UID_%1", _uid] == west) then {
 WFBE_CO_VAR_DISCONNECTED_SKILL_WEST set [count WFBE_CO_VAR_DISCONNECTED_SKILL_WEST, [_uid] call IniDB_CalcSkill];
 };
-if (missionNamespace getVariable format [WFBE_CO_VAR_SIDE_UID_%1, _uid] == east) then {
+if (missionNamespace getVariable format ["WFBE_CO_VAR_SIDE_UID_%1", _uid] == east) then {
     WFBE_CO_VAR_DISCONNECTED_SKILL_EAST set [count WFBE_CO_VAR_DISCONNECTED_SKILL_EAST, [_uid] call IniDB_CalcSkill];
 };
 
