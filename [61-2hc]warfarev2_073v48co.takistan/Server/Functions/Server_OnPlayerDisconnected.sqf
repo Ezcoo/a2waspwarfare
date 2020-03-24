@@ -36,14 +36,20 @@ _playerTotalScore = [_uid] call IniDB_GetScore;
 _newPlayerTotalScore = _playerTotalScore + (_currentPlayerScore - _oldplayerScore);
 ["INFORMATION", Format["OnPlayerDisconnected.sqf: Player [%1] [%2], side [%3] disconnected from game, OLD_SCORE_UID...: [%4], CURRENT_SCORE_UID...: [%5], TOTAL score sent to database: [%6]", _name,_uid,missionNamespace getVariable format ["WFBE_CO_VAR_SIDE_UID_%1", _uid],missionNamespace getVariable format ["WFBE_OLD_SCORE_UID_%1", _uid],missionNamespace getVariable format ["WFBE_CURRENT_SCORE_UID_%1", _uid],_newPlayerTotalScore]] Call WFBE_CO_FNC_LogContent;
 
-["WASP_playerSkills", _uid, "score", _newPlayerTotalScore] call iniDB_write;
+[] spawn {
+    if(!(["WASP_playerSkills", _uid, "score", _newPlayerTotalScore] call iniDB_write) ) then {
+        ["WARNING", Format["Server_OnPlayerDisconnected.sqf: Failed to save score [%1] for disconnecting player [%2] in database.",_newPlayerTotalScore,_uid]] Call WFBE_CO_FNC_LogContent;
+    };
+};
 
 // Prevent stacking by veteran disconnecting just before another player joins
-if (missionNamespace getVariable format ["WFBE_CO_VAR_SIDE_UID_%1", _uid] == west) then {
-WFBE_CO_VAR_DISCONNECTED_SKILL_WEST set [count WFBE_CO_VAR_DISCONNECTED_SKILL_WEST, [_uid] call IniDB_CalcSkill];
-};
-if (missionNamespace getVariable format ["WFBE_CO_VAR_SIDE_UID_%1", _uid] == east) then {
-    WFBE_CO_VAR_DISCONNECTED_SKILL_EAST set [count WFBE_CO_VAR_DISCONNECTED_SKILL_EAST, [_uid] call IniDB_CalcSkill];
+[] spawn {
+    if (missionNamespace getVariable format ["WFBE_CO_VAR_SIDE_UID_%1", _uid] == west) then {
+    WFBE_CO_VAR_DISCONNECTED_SKILL_WEST set [count WFBE_CO_VAR_DISCONNECTED_SKILL_WEST, [_uid] call IniDB_CalcSkill];
+    };
+    if (missionNamespace getVariable format ["WFBE_CO_VAR_SIDE_UID_%1", _uid] == east) then {
+        WFBE_CO_VAR_DISCONNECTED_SKILL_EAST set [count WFBE_CO_VAR_DISCONNECTED_SKILL_EAST, [_uid] call IniDB_CalcSkill];
+    };
 };
 
 //--- Player had any objects created?

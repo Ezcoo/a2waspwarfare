@@ -1,4 +1,4 @@
-private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_skillJoiningPlayer","_playersinside","_playersinotherside","_skillDifference","_totalSkillPlayerSide","_totalSkillPlayerOtherSide","_playerSkill"];
+private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_skillJoiningPlayer","_playersinside","_playersinotherside","_skillDifference","_totalSkillPlayerSide","_totalSkillPlayerOtherSide","_playerSkill","_playerSkillFriendly","_playerSkillEnemy"];
 
 _player = _this select 0;
 _side = _this select 1;
@@ -22,52 +22,62 @@ _totalSkillPlayerSide = 0;
 _totalSkillPlayerOtherSide = 0;
 _skillDifference = 0;
 _skillJoiningPlayer = 0;
+_playerSkillFriendly = 0;
+_playerSkillEnemy = 0;
+_scoreCalcFinished = false;
+
 _get = missionNamespace getVariable Format["WFBE_JIP_USER%1",_uid];
 
 if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 	_skip = _get select 4;
 	_sideOrigin = _get select 2; //--- Get the original side.
-	
+
 	if (_skip == 0) then {
 
 		// _players_difference =  _playersinside - _playersinotherside;
 
-		{
-		    if (side _x == _side && isPlayer _x) then {
-		        _playerSkill = [getPlayerUID _x] call IniDB_CalcSkill;
-		        _totalSkillPlayerSide = _totalSkillPlayerSide + _playerSkill;
-		    };
+        [] spawn {
+            {
+                if (side _x == _side && isPlayer _x) then {
+                    _playerSkillFriendly = [getPlayerUID _x] call IniDB_CalcSkill;
+                    _totalSkillPlayerSide = _totalSkillPlayerSide + _playerSkill;
+                };
 
-		    if (side _x == _otherside && isPlayer _x) then {
-		        _playerSkill = [getPlayerUID _x] call IniDB_CalcSkill;
-		        _totalSkillPlayerOtherSide = _totalSkillPlayerOtherSide + _playerSkill;
-		    };
-		} forEach (playableUnits + switchableUnits);
+                if (side _x == _otherside && isPlayer _x) then {
+                    _playerSkillEnemy = [getPlayerUID _x] call IniDB_CalcSkill;
+                    _totalSkillPlayerOtherSide = _totalSkillPlayerOtherSide + _playerSkill;
+                };
+            } forEach (playableUnits + switchableUnits);
 
-		_skillJoiningPlayer = [getPlayerUID _player] call IniDB_CalcSkill;
+            _skillJoiningPlayer = [getPlayerUID _player] call IniDB_CalcSkill;
 
-		if (_side == west) then {
-		    {
-		        _totalSkillPlayerSide = _totalSkillPlayerSide + _x;
-		    } forEach WFBE_CO_VAR_DISCONNECTED_SKILL_WEST;
+            if (_side == west) then {
+                {
+                    _totalSkillPlayerSide = _totalSkillPlayerSide + _x;
+                } forEach WFBE_CO_VAR_DISCONNECTED_SKILL_WEST;
 
-		    {
-		        _totalSkillPlayerOtherSide = _totalSkillPlayerOtherSide + _x;
-		    } forEach WFBE_CO_VAR_DISCONNECTED_SKILL_EAST;
+                {
+                    _totalSkillPlayerOtherSide = _totalSkillPlayerOtherSide + _x;
+                } forEach WFBE_CO_VAR_DISCONNECTED_SKILL_EAST;
+            };
+
+            if (_side == east) then {
+                {
+                    _totalSkillPlayerSide = _totalSkillPlayerSide + _x;
+                } forEach WFBE_CO_VAR_DISCONNECTED_SKILL_EAST;
+
+                {
+                    _totalSkillPlayerOtherSide = _totalSkillPlayerOtherSide + _x;
+                } forEach WFBE_CO_VAR_DISCONNECTED_SKILL_WEST;
+            };
+
+            _skillDifference = _totalSkillPlayerSide / _totalSkillPlayerOtherSide;
+
+            _scoreCalcFinished = true;
 		};
 
-		if (_side == east) then {
-		    {
-		        _totalSkillPlayerSide = _totalSkillPlayerSide + _x;
-		    } forEach WFBE_CO_VAR_DISCONNECTED_SKILL_EAST;
-
-		    {
-		        _totalSkillPlayerOtherSide = _totalSkillPlayerOtherSide + _x;
-		    } forEach WFBE_CO_VAR_DISCONNECTED_SKILL_WEST;
-		};
-
-		_skillDifference = _totalSkillPlayerSide / _totalSkillPlayerOtherSide;
+		waitUntil {_scoreCalcFinished};
 
 		// If skill difference is too high (more than 10 % difference) and there are enough players online, prevent player from joining to team
 		if((_skillDifference > 1.1) && (_totalSkillPlayerSide - _totalSkillPlayerOtherSide > 5)) then {

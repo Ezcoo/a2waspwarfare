@@ -11,4 +11,8 @@ _playerTotalTicks = [_playerUID] call IniDB_getTicks;
 
 _playerTicksNew = _playerTotalTicks + 1;
 
-["WASP_playerSkills", _playerUID, "ticks", _playerTicksNew] call iniDB_write;
+[] spawn {
+    if (!(["WASP_playerSkills", _playerUID, "ticks", _playerTicksNew] call iniDB_write) ) then {
+        ["WARNING", Format["AddTick.sqf: Failed to save tick number [%1] for player [%2] in database.",_playerTicksNew,_playerUID]] Call WFBE_CO_FNC_LogContent;
+    };
+};
