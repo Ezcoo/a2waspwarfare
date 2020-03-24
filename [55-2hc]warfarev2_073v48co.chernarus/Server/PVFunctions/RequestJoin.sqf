@@ -1,4 +1,4 @@
-private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_skillJoiningPlayer","_playersinside","_playersinotherside","_skillDifference","_totalSkillPlayerSide","_totalSkillPlayerOtherSide","_playerSkillFriendly","_playerSkillEnemy"];
+private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_skillJoiningPlayer","_playersinside","_playersinotherside","_skillDifference","_totalSkillPlayerSide","_totalSkillPlayerOtherSide","_playerSkillFriendly","_playerSkillEnemy","_scoreCalcFinished"];
 
 _player = _this select 0;
 _side = _this select 1;
@@ -6,6 +6,13 @@ _name = name _player;
 
 _skip = 0;
 _otherside = west;
+
+_otherSideActual = east;
+
+if (_side == east) then {
+    _otherSideActual = west;
+};
+
 _playersinside = 0;
 _playersinotherside = 0;
 _sidepros = 0;
@@ -24,7 +31,6 @@ _skillDifference = 0;
 _skillJoiningPlayer = 0;
 _playerSkillFriendly = 0;
 _playerSkillEnemy = 0;
-_scoreCalcFinished = false;
 
 _get = missionNamespace getVariable Format["WFBE_JIP_USER%1",_uid];
 
@@ -37,14 +43,13 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 		// _players_difference =  _playersinside - _playersinotherside;
 
-        [] spawn {
             {
-                if (side _x == _side && isPlayer _x) then {
+                if ((side _x == _side) && (isPlayer _x)) then {
                     _playerSkillFriendly = [getPlayerUID _x] call IniDB_CalcSkill;
                     _totalSkillPlayerSide = _totalSkillPlayerSide + _playerSkill;
                 };
 
-                if (side _x == _otherside && isPlayer _x) then {
+                if ((side _x == _otherSideActual) && (isPlayer _x)) then {
                     _playerSkillEnemy = [getPlayerUID _x] call IniDB_CalcSkill;
                     _totalSkillPlayerOtherSide = _totalSkillPlayerOtherSide + _playerSkill;
                 };
@@ -73,11 +78,6 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
             };
 
             _skillDifference = _totalSkillPlayerSide / _totalSkillPlayerOtherSide;
-
-            _scoreCalcFinished = true;
-		};
-
-		waitUntil {_scoreCalcFinished};
 
 		// If skill difference is too high (more than 10 % difference) and there are enough players online, prevent player from joining to team
 		if((_skillDifference > 1.1) && (_totalSkillPlayerSide - _totalSkillPlayerOtherSide > 5)) then {
