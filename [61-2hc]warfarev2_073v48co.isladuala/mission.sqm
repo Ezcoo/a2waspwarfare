@@ -17,7 +17,7 @@ class Mission
 		"ca_communityconfigurationproject_e",
 		"CACharacters_BAF",
 		"cacharacters2",
-		"ibr_dingor"
+		"ibr_isladuala"
 	};
 	addOnsAuto[]=
 	{
@@ -25,13 +25,14 @@ class Mission
 		"CACharacters_BAF",
 		"cacharacters2",
 		"ca_modules_functions",
-		"ibr_dingor"
+		"ibr_isladuala",
+		"takistan"
 	};
 	randomSeed=6848509;
 	class Intel
 	{
 		briefingName="[61] Warfare V48 Isla Duala 1.0";
-		briefingDescription="by Benny and Awesome&WASP";
+		briefingDescription="Map by IceBreakr. Scripting by Benny and Awesome&WASP + Net_2, Miksuu";
 		resistanceWest=0;
 		startWeather=0;
 		forecastWeather=0;
@@ -52,7 +53,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2161.6116,8.3972797,8227.8408};
+					position[]={2186.0305,70.742493,8482.9912};
 					id=0;
 					side="WEST";
 					vehicle="US_Delta_Force_EP1";
@@ -74,7 +75,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2161.5759,8.4237776,8226.2715};
+					position[]={2185.9949,70.383293,8481.4219};
 					id=1;
 					side="WEST";
 					vehicle="GER_Soldier_Scout_EP1";
@@ -96,11 +97,11 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2163.9358,8.4367361,8228.0283};
+					position[]={2188.3547,70.857338,8483.1787};
 					id=2;
 					side="WEST";
 					vehicle="US_Delta_Force_TL_EP1";
-					player="PLAY CDG";
+					player="PLAYER COMMANDER";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
@@ -118,7 +119,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2163.8147,8.5354252,8226.2695};
+					position[]={2188.2336,70.612999,8481.4199};
 					id=3;
 					side="WEST";
 					vehicle="US_Delta_Force_TL_EP1";
@@ -140,7 +141,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2166.1277,8.464036,8228.0264};
+					position[]={2190.5466,70.827606,8483.1768};
 					id=4;
 					side="WEST";
 					vehicle="US_Soldier_Sniper_EP1";
@@ -162,7 +163,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2166.1829,8.560463,8226.3457};
+					position[]={2190.6018,70.627274,8481.4961};
 					id=5;
 					side="WEST";
 					vehicle="US_Soldier_Sniper_EP1";
@@ -184,7 +185,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2159.7869,8.3011627,8227.9111};
+					position[]={2184.2058,70.570831,8483.0615};
 					id=6;
 					side="WEST";
 					vehicle="US_Soldier_Engineer_EP1";
@@ -206,7 +207,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2159.9011,8.3359585,8226.3438};
+					position[]={2184.3201,70.227463,8481.4941};
 					id=7;
 					side="WEST";
 					vehicle="US_Soldier_Engineer_EP1";
@@ -228,7 +229,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2159.968,8.362299,8225.0957};
+					position[]={2184.387,69.951553,8480.2461};
 					id=8;
 					side="WEST";
 					vehicle="BAF_Soldier_EN_DDPM";
@@ -250,7 +251,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2159.9167,8.3851757,8223.666};
+					position[]={2184.3357,69.867844,8478.8164};
 					id=9;
 					side="WEST";
 					vehicle="BAF_Soldier_EN_DDPM";
@@ -272,7 +273,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2170.1233,8.51931,8228.0537};
+					position[]={2194.5422,70.684799,8483.2041};
 					id=10;
 					side="WEST";
 					vehicle="US_Soldier_Medic_EP1";
@@ -294,7 +295,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2170.1799,8.6873541,8225.1738};
+					position[]={2194.5989,70.342896,8480.3242};
 					id=11;
 					side="WEST";
 					vehicle="BAF_Soldier_Medic_DDPM";
@@ -316,7 +317,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2170.2537,8.6128511,8226.5742};
+					position[]={2194.6726,70.50547,8481.7246};
 					id=12;
 					side="WEST";
 					vehicle="GER_Soldier_Medic_EP1";
@@ -338,7 +339,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2170.3083,8.7646236,8223.9775};
+					position[]={2194.7273,70.329002,8479.1279};
 					id=13;
 					side="WEST";
 					vehicle="GER_Soldier_Medic_EP1";
@@ -624,7 +625,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2166.6179,8.609786,8235.6104};
+					position[]={2191.0369,71.656548,8490.7607};
 					id=26;
 					side="LOGIC";
 					vehicle="LocationLogicOwnerWest";
@@ -662,7 +663,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2159.927,8.4062023,8222.5332};
+					position[]={2184.3459,69.847168,8477.6836};
 					id=28;
 					side="WEST";
 					vehicle="US_Soldier_Engineer_EP1";
@@ -684,7 +685,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2160.0022,8.4357519,8221.1328};
+					position[]={2184.4211,69.828049,8476.2832};
 					id=29;
 					side="WEST";
 					vehicle="BAF_Soldier_EN_DDPM";
@@ -706,7 +707,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2161.7781,8.4600935,8224.834};
+					position[]={2186.197,70.081573,8479.9844};
 					id=30;
 					side="WEST";
 					vehicle="GER_Soldier_Scout_EP1";
@@ -728,7 +729,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2163.8313,8.5674028,8224.7266};
+					position[]={2188.2502,70.290565,8479.877};
 					id=31;
 					side="WEST";
 					vehicle="US_Delta_Force_TL_EP1";
@@ -816,7 +817,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2170.4558,8.8464012,8222.7256};
+					position[]={2194.8748,70.365295,8477.876};
 					id=35;
 					side="WEST";
 					vehicle="BAF_Soldier_Medic_DDPM";
@@ -882,7 +883,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2160.0603,8.4653416,8219.8096};
+					position[]={2184.4792,69.795639,8474.96};
 					id=38;
 					side="WEST";
 					vehicle="US_Soldier_Engineer_EP1";
@@ -904,7 +905,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2163.8406,8.5942936,8223.2627};
+					position[]={2188.2595,70.263428,8478.4131};
 					id=39;
 					side="WEST";
 					vehicle="US_Delta_Force_TL_EP1";
@@ -926,7 +927,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2166.1648,8.6585903,8224.6191};
+					position[]={2190.5837,70.459084,8479.7695};
 					id=40;
 					side="WEST";
 					vehicle="US_Soldier_Sniper_EP1";
@@ -1080,7 +1081,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={7531.1787,5.337409,8300.6162};
+					position[]={8583.9541,74.631302,1140.8612};
 					id=47;
 					side="CIV";
 					vehicle="TK_CIV_Takistani03_EP1";
@@ -1102,7 +1103,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2163.7917,8.6171331,8221.8584};
+					position[]={2188.2107,70.231468,8477.0088};
 					id=48;
 					side="WEST";
 					vehicle="US_Delta_Force_TL_EP1";
@@ -1124,7 +1125,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2170.425,8.9160471,8221.4648};
+					position[]={2194.844,70.408386,8476.6152};
 					id=49;
 					side="WEST";
 					vehicle="US_Soldier_Medic_EP1";
@@ -1146,7 +1147,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2170.5535,8.9933052,8220.2686};
+					position[]={2194.9724,70.44352,8475.4189};
 					id=50;
 					side="WEST";
 					vehicle="US_Soldier_Medic_EP1";
@@ -1168,7 +1169,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2170.7009,9.0330067,8219.0166};
+					position[]={2195.1199,70.442406,8474.167};
 					id=51;
 					side="WEST";
 					vehicle="US_Soldier_Medic_EP1";
@@ -1256,7 +1257,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2161.7463,8.4796133,8223.6621};
+					position[]={2186.1653,70.055832,8478.8125};
 					id=55;
 					side="WEST";
 					vehicle="US_Delta_Force_EP1";
@@ -1278,7 +1279,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2166.0603,8.7087364,8223.2334};
+					position[]={2190.4792,70.449387,8478.3838};
 					id=56;
 					side="WEST";
 					vehicle="US_Soldier_Sniper_EP1";
@@ -1300,7 +1301,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2166.0422,8.7389727,8221.5068};
+					position[]={2190.4612,70.415985,8476.6572};
 					id=57;
 					side="WEST";
 					vehicle="US_Soldier_Sniper_EP1";
@@ -1322,7 +1323,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2161.7468,8.5085392,8222.0605};
+					position[]={2186.1658,70.025154,8477.2109};
 					id=58;
 					side="WEST";
 					vehicle="US_Delta_Force_EP1";
@@ -3685,19 +3686,19 @@ class Mission
 		items=3;
 		class Item0
 		{
-			position[]={808.05426,5.9915962,9258.71};
+			position[]={9362.7168,11.114989,1118.485};
 			name="WestTempRespawnMarker";
 			type="Empty";
 		};
 		class Item1
 		{
-			position[]={987.65265,5.9915962,9403.3545};
+			position[]={9161.4648,60.67218,1220.3364};
 			name="EastTempRespawnMarker";
 			type="Empty";
 		};
 		class Item2
 		{
-			position[]={1041.074,5.9915962,9198.3613};
+			position[]={9031.9307,23.372993,1042.0682};
 			name="GuerTempRespawnMarker";
 			type="Empty";
 		};
@@ -3708,11 +3709,12 @@ class Intro
 	addOns[]=
 	{
 		"takistan",
-		"ibr_dingor"
+		"ibr_dingor",
+		"ibr_isladuala"
 	};
 	addOnsAuto[]=
 	{
-		"ibr_dingor"
+		"ibr_isladuala"
 	};
 	randomSeed=12595034;
 	class Intel
@@ -3730,11 +3732,12 @@ class OutroWin
 	addOns[]=
 	{
 		"takistan",
-		"ibr_dingor"
+		"ibr_dingor",
+		"ibr_isladuala"
 	};
 	addOnsAuto[]=
 	{
-		"ibr_dingor"
+		"ibr_isladuala"
 	};
 	randomSeed=7691969;
 	class Intel
@@ -3752,11 +3755,12 @@ class OutroLoose
 	addOns[]=
 	{
 		"takistan",
-		"ibr_dingor"
+		"ibr_dingor",
+		"ibr_isladuala"
 	};
 	addOnsAuto[]=
 	{
-		"ibr_dingor"
+		"ibr_isladuala"
 	};
 	randomSeed=14932386;
 	class Intel

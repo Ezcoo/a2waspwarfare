@@ -25,7 +25,8 @@ class Mission
 		"CACharacters_BAF",
 		"cacharacters2",
 		"ca_modules_functions",
-		"ibr_dingor"
+		"ibr_dingor",
+		"takistan"
 	};
 	randomSeed=6848509;
 	class Intel
