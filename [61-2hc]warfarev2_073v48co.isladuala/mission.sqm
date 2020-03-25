@@ -3535,7 +3535,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=4;
+		items=5;
 		class Item0
 		{
 			position[]={9134.0156,27.468185,1034.7185};
@@ -3564,6 +3564,14 @@ class Mission
 			a=350;
 			b=200;
 			angle=340;
+		};
+		class Item4
+		{
+			position[]={9082.542,27.038944,1042.7344};
+			name="DeadspawnText";
+			text="DEADSPAWNS, DO NOT ENTER!!!";
+			type="hd_dot";
+			colorName="ColorBlack";
 		};
 	};
 };
