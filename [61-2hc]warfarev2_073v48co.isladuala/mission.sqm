@@ -3557,8 +3557,7 @@ class Mission
 		class Item3
 		{
 			position[]={9096.4717,27.662136,1055.979};
-			name="DEADSPAWNS";
-			text="DEADSPAWNS";
+			name="DeadspawnMarker";
 			markerType="ELLIPSE";
 			type="Empty";
 			colorName="ColorRed";
