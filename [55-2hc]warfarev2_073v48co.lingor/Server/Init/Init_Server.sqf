@@ -31,8 +31,6 @@ HandleDefense = Compile preprocessFile "Server\Functions\Server_HandleDefense.sq
 HandleSpecial = Compile preprocessFile "Server\Functions\Server_HandleSpecial.sqf";
 MHQRepair = Compile preprocessFile "Server\Functions\Server_MHQRepair.sqf";
 SideMessage = Compile preprocessFile "Server\Functions\Server_SideMessage.sqf";
-persistent_fnc_callDatabase = Compile preprocessFile "Server\Module\PersistanceDB\callDatabase.sqf";
-persistent_fnc_convertFormat = compile preprocessfilelinenumbers "Server\Module\PersistanceDB\fn_convertFormat.sqf";
 SetTownPatrols = compile preprocessfilelinenumbers "Server\FSM\server_patrols.sqf";
 
 UpdateTeam = Compile preprocessFile "Server\Functions\Server_UpdateTeam.sqf";
@@ -263,16 +261,6 @@ if (_use_random) then {
 
 emptyQueu = [];
 
-_procedureName = "CREATE_GAME_MATCH";
-_parameters = format["[mission_name=%1,world_name=%2]",missionName,worldName];
-_response = [_procedureName,_parameters] call persistent_fnc_callDatabase;
-_dataRead = _response select 0;
-PERSISTANCE_CURRENT_MATCH_ID = -1;
-
-if (count _dataRead > 0) then {
-	PERSISTANCE_CURRENT_MATCH_ID = parseNumber (_dataRead select 0);
-};
-
 //--- Global sides initialization.
 {
 	Private["_side"];
@@ -443,23 +431,6 @@ _vehicle addAction ["<t color='"+"#00E4FF"+"'>STEALTH ON</t>","Client\Module\Eng
 					[_group, "towns"] Call SetTeamMoveMode;
 					[_group, [0,0,0]] Call SetTeamMovePos;
 
-
-					if(isPlayer (leader (group _x)))then{
-						_procedureName = "INSERT_PLAYER";
-						_nickname = name (leader (group _x));
-						_game_guid = getPlayerUID (leader (group _x));
-						_current_position_in_match = [getPosATL (leader (group _x)), "write"] call persistent_fnc_convertFormat;
-						_side = side (leader (group _x));
-						_money = _group getVariable "wfbe_funds";
-
-						_parameters = format["[nickname=%1,game_guid=%2,current_position_in_match=%3,side=%4,money=%5,GAME_MATCH_id=%6]",_nickname,_game_guid,_current_position_in_match,_side,_money,PERSISTANCE_CURRENT_MATCH_ID];
-						[_procedureName,_parameters] call persistent_fnc_callDatabase;
-
-						_procedureName = "INSERT_PLAYER_IN_GLOBAL_LIST";
-						_parameters = format["[nickname=%1,game_guid=%2]",_nickname,_game_guid];
-						[_procedureName,_parameters] call persistent_fnc_callDatabase;
-					};
-
 					["INITIALIZATION", Format["Init_Server.sqf: [%1] Team [%2] was initialized.", _side, _group]] Call WFBE_CO_FNC_LogContent;
 				};
 
@@ -472,10 +443,37 @@ _vehicle addAction ["<t color='"+"#00E4FF"+"'>STEALTH ON</t>","Client\Module\Eng
 } forEach [[_present_east, east, _startE],[_present_west, west, _startW]];
 
 //// Resistance base operational
-_barrack_amount = 0;
+_barrack_amount = 2;
 ResBuyUnit = Compile preprocessFile "Server\Functions\Server_ResBuyUnit.sqf";
 _start_position_array = [
 	[9428.09,7763.94,-226.461],
+	[9071.77,6895.33,-293.698],
+	[7272.66,6960.2,-260.523],
+	[6693.13,6730.99,-347.334],
+	[5996.84,6836.95,-346.596],
+	[5349.15,6245.36,-284.021],
+	[9018.48,5347.25,-243.241],
+	[10493.2,6587.83,-186.833],
+	[9144.28,10071.9,-321.68],
+	[6642.16,10816.3,-342.344],
+	[1861.55,6762.56,-246.491],
+	[3479.55,5965.8,-352.049],
+	[5307.22,4543.5,-222.071],
+	[3787.08,3323.88,-94.7921],
+	[8225.21,3931.94,-158.105],
+	[11139.7,3907.48,-263.611],
+	[12209,5081.66,-76.5405],
+	[11394.8,6255.85,-147.746],
+	[11003.4,7300.73,-207.041],
+	[11566,8611.2,-167.023],
+	[11020.9,10512.3,-125.595],
+	[12016.8,11581.6,-161.904],
+	[9930.58,12668.4,-211.502],
+	[6904.26,12091.8,-253.751],
+	[3780.09,11560.6,-352.98],
+	[1641.4,9561.73,-255.367],
+	[5422.55,9848.29,-312.617],
+	[2567.47,7611.75,-366.059],
 	[8197.02,7752.6,-446.115]
 ];
 
