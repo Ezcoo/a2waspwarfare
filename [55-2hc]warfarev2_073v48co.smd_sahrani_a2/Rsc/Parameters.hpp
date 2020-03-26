@@ -101,7 +101,7 @@ class Params {
 		title = "$STR_WF_PARAMETER_StartingDistance";
 		values[] = {-1,1000,1500,2000,2500,3000,3500,4000,4500,5000,5500,6000,6500,7000,7500,8000,8500,9000};
 		texts[] = {"$STR_WF_PARAMETER_StartingLocations_Random","1000m","1500m","2000m","2500m","3000m","3500m","4000m","4500m","5000m","5500m","6000m","6500m","7000m","7500m","8000m","8500m","9000m"};
-		default = 9000;
+		default = 7500;
 	};
 	class WFBE_C_BASE_STARTING_MODE {
 		title = "$STR_WF_PARAMETER_StartingLocations";
@@ -544,7 +544,7 @@ class Params {
 		title = "$STR_WF_PARAMETER_DroppedItemsCleanerInterval";
 		values[] = {60,75,90,105,120,150,180,240,300,360,420,480,540,600};
 		texts[] = {"1 Minute","1 Minute 15 Seconds","1 Minute 30 Seconds","1 Minute 45 Seconds","2 Minutes","2 Minutes 30 Seconds","3 Minutes","4 Minutes","5 Minutes","6 Minutes","7 Minutes","8 Minutes","9 Minutes","10 Minutes"};
-		default = 240;
+		default = 120;
 	};
 	class WFBE_C_MINEFIELDS_CLEANER_TIME_PERIOD {
 		title = "$STR_WF_PARAMETER_MinefieldCleanerInterval";
