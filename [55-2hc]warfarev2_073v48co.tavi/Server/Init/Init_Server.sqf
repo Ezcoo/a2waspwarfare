@@ -31,8 +31,6 @@ HandleDefense = Compile preprocessFile "Server\Functions\Server_HandleDefense.sq
 HandleSpecial = Compile preprocessFile "Server\Functions\Server_HandleSpecial.sqf";
 MHQRepair = Compile preprocessFile "Server\Functions\Server_MHQRepair.sqf";
 SideMessage = Compile preprocessFile "Server\Functions\Server_SideMessage.sqf";
-persistent_fnc_callDatabase = Compile preprocessFile "Server\Module\PersistanceDB\callDatabase.sqf";
-persistent_fnc_convertFormat = compile preprocessfilelinenumbers "Server\Module\PersistanceDB\fn_convertFormat.sqf";
 SetTownPatrols = compile preprocessfilelinenumbers "Server\FSM\server_patrols.sqf";
 
 UpdateTeam = Compile preprocessFile "Server\Functions\Server_UpdateTeam.sqf";
@@ -263,16 +261,6 @@ if (_use_random) then {
 
 emptyQueu = [];
 
-_procedureName = "CREATE_GAME_MATCH";
-_parameters = format["[mission_name=%1,world_name=%2]",missionName,worldName];
-_response = [_procedureName,_parameters] call persistent_fnc_callDatabase;
-_dataRead = _response select 0;
-PERSISTANCE_CURRENT_MATCH_ID = -1;
-
-if (count _dataRead > 0) then {
-	PERSISTANCE_CURRENT_MATCH_ID = parseNumber (_dataRead select 0);
-};
-
 //--- Global sides initialization.
 {
 	Private["_side"];
@@ -442,23 +430,6 @@ _vehicle addAction ["<t color='"+"#00E4FF"+"'>STEALTH ON</t>","Client\Module\Eng
 					[_group, -1] Call SetTeamType;
 					[_group, "towns"] Call SetTeamMoveMode;
 					[_group, [0,0,0]] Call SetTeamMovePos;
-
-
-					if(isPlayer (leader (group _x)))then{
-						_procedureName = "INSERT_PLAYER";
-						_nickname = name (leader (group _x));
-						_game_guid = getPlayerUID (leader (group _x));
-						_current_position_in_match = [getPosATL (leader (group _x)), "write"] call persistent_fnc_convertFormat;
-						_side = side (leader (group _x));
-						_money = _group getVariable "wfbe_funds";
-
-						_parameters = format["[nickname=%1,game_guid=%2,current_position_in_match=%3,side=%4,money=%5,GAME_MATCH_id=%6]",_nickname,_game_guid,_current_position_in_match,_side,_money,PERSISTANCE_CURRENT_MATCH_ID];
-						[_procedureName,_parameters] call persistent_fnc_callDatabase;
-
-						_procedureName = "INSERT_PLAYER_IN_GLOBAL_LIST";
-						_parameters = format["[nickname=%1,game_guid=%2]",_nickname,_game_guid];
-						[_procedureName,_parameters] call persistent_fnc_callDatabase;
-					};
 
 					["INITIALIZATION", Format["Init_Server.sqf: [%1] Team [%2] was initialized.", _side, _group]] Call WFBE_CO_FNC_LogContent;
 				};
