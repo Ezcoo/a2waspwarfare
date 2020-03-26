@@ -99,7 +99,7 @@ class Mission
 					position[]={2564.0872,14.303802,8718.1855};
 					id=2;
 					side="WEST";
-					vehicle="US_Delta_Force_TL_EP1";
+					vehicle="US_Delta_Force_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -121,13 +121,13 @@ class Mission
 					position[]={2563.9661,14.274699,8716.4268};
 					id=3;
 					side="WEST";
-					vehicle="US_Delta_Force_TL_EP1";
+					vehicle="US_Delta_Force_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Soldier (Double team size, Camps restore)";
 					synchronizations[]={26};
 				};
 			};
