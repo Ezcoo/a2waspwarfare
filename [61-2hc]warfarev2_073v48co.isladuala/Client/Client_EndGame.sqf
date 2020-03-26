@@ -13,6 +13,11 @@ if (_side == west) then {
 [_side] ExecVM "Client\GUI\GUI_EndOfGameStats.sqf";
 //_track = if (WF_A2_Vanilla) then {"Track21_Rise_Of_The_Fallen"} else {"EP1_Track15"}; //---old
 _track = if (WF_A2_Vanilla) then {["Track21_Rise_Of_The_Fallen",41]} else {["EP1_Track13",91]}; //---changed-MrNiceGuy
+
+if (_side == west) then {
+    _track = "AmericaFuckYeah";
+};
+
 playMusic _track;
 
 _track_hq = [];
