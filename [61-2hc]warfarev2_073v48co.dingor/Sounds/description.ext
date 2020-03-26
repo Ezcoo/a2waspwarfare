@@ -1,6 +1,7 @@
 class CfgSounds
 {
 sounds[] = {};
+
 class inbound {
 		name = "inbound";
 		sound[] = {"\sounds\inbound.ogg",10,1};
@@ -24,4 +25,5 @@ class airRaid {
         sound[] = {"\sounds\airRaid.ogg",10,1};
         titles[] = {};
     };
+
 };
