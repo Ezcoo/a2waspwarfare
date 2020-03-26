@@ -126,7 +126,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Soldier (Double team size, Camps restore)";
 					synchronizations[]={49};
 				};
 			};
