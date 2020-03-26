@@ -120,7 +120,7 @@ class Mission
 					position[]={7184.438,41.046597,12769.964};
 					id=3;
 					side="WEST";
-					vehicle="US_Delta_Force_TL_EP1";
+					vehicle="US_Delta_Force_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
