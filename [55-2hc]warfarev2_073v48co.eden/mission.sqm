@@ -24,9 +24,7 @@ class Mission
 		briefingDescription="Map ported by Sgt.Ace . Scripting by Benny and Awesome&WASP + Net_2, Miksuu";
 		resistanceWest=0;
 		startWeather=0;
-		startFog=0.050000001;
 		forecastWeather=0;
-		forecastFog=0.050000001;
 		year=2016;
 		month=12;
 		day=28;
@@ -2708,7 +2706,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=3;
+		items=5;
 		class Item0
 		{
 			position[]={1089.6471,60.140511,11654.546};
@@ -2726,6 +2724,23 @@ class Mission
 			position[]={862.99371,27.568932,11579.662};
 			name="GuerTempRespawnMarker";
 			type="Empty";
+		};
+		class Item3
+		{
+			position[]={973.93628,48.350403,11557.111};
+			name="DeadspawnMarker";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorRed";
+			a=200;
+			b=350;
+		};
+		class Item4
+		{
+			position[]={970.78668,47.705666,11538.517};
+			name="DeadspawnText";
+			text="DEADSPAWNS, DO NOT ENTER!!!";
+			type="mil_dot";
 		};
 	};
 };

@@ -24,9 +24,7 @@ class Mission
 		briefingDescription="Map by M1lkm8n & The Sahrani Mod Dev Team. Scripting by Benny and Awesome&WASP + Net_2, Miksuu";
 		resistanceWest=0;
 		startWeather=0;
-		startFog=0.050000001;
 		forecastWeather=0;
-		forecastFog=0.050000001;
 		year=2016;
 		month=12;
 		day=28;
@@ -4174,7 +4172,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=3;
+		items=5;
 		class Item0
 		{
 			position[]={18099.047,9.9900341,3091.9529};
@@ -4192,6 +4190,24 @@ class Mission
 			position[]={18102.822,9.570488,3270.3186};
 			name="GuerTempRespawnMarker";
 			type="Empty";
+		};
+		class Item3
+		{
+			position[]={18182.578,18.510441,3104.4275};
+			name="DeadspawnMarker";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorRed";
+			a=250;
+			b=100;
+			angle=60;
+		};
+		class Item4
+		{
+			position[]={18180.912,20.614101,3084.5557};
+			name="DeadspawnText";
+			text="DEADSPAWNS, DO NOT ENTER!!!";
+			type="mil_dot";
 		};
 	};
 };

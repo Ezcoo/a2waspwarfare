@@ -2818,7 +2818,7 @@ class Mission
 					id=185;
 					side="EAST";
 					vehicle="Ins_Soldier_Sapper";
-					player="PLAYER COMMANDER";
+					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
 					skill=0.60000002;
@@ -3872,7 +3872,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=3;
+		items=5;
 		class Item0
 		{
 			position[]={808.05426,5.9562402,9258.71};
@@ -3890,6 +3890,24 @@ class Mission
 			position[]={1041.074,5.9562402,9198.3613};
 			name="GuerTempRespawnMarker";
 			type="Empty";
+		};
+		class Item3
+		{
+			position[]={945.65814,5.9562402,9295.7891};
+			name="DeadspawnMarker";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorRed";
+			a=250;
+			b=150;
+			angle=45;
+		};
+		class Item4
+		{
+			position[]={946.90363,5.9562402,9279.584};
+			name="DeadspawnText";
+			text="DEADSPAWNS, DO NOT ENTER!!!";
+			type="mil_dot";
 		};
 	};
 };
