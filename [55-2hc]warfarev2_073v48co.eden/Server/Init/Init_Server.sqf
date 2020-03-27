@@ -443,7 +443,7 @@ _vehicle addAction ["<t color='"+"#00E4FF"+"'>STEALTH ON</t>","Client\Module\Eng
 } forEach [[_present_east, east, _startE],[_present_west, west, _startW]];
 
 //// Resistance base operational
-_barrack_amount = 2;
+_barrack_amount = 0;
 ResBuyUnit = Compile preprocessFile "Server\Functions\Server_ResBuyUnit.sqf";
 _start_position_array = [
 	[9428.09,7763.94,-226.461],
