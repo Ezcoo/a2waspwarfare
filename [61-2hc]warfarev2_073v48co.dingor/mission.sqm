@@ -30,8 +30,8 @@ class Mission
 	randomSeed=6848509;
 	class Intel
 	{
-		briefingName="[61] Warfare V48 Dingor";
-		briefingDescription="by Benny and Awesome&WASP";
+		briefingName="[61] Warfare V48 Dingor 1.0";
+		briefingDescription="Map by IceBreakr. Scripting by Benny and Awesome&WASP + Net_2, Miksuu";
 		resistanceWest=0;
 		startWeather=0;
 		forecastWeather=0;
