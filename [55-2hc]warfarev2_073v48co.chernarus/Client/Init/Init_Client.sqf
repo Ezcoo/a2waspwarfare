@@ -612,6 +612,8 @@ hint parseText "<t color='#ffff00'>CHANGELOG:</t> <br/>Map/Notes/Changelog";
 	[] Call Compile preprocessFile "Client\Module\Valhalla\Init_Valhalla.sqf";
 };
 
+playMusic "Track11_Large_Scale_Assault";
+
 /* Client Init Done - Remove the blackout */
 12452 cutText [(localize 'STR_WF_Loading')+"...","BLACK IN",5];
 
