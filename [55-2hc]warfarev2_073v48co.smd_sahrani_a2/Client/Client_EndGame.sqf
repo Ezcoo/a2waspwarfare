@@ -20,7 +20,7 @@ if (_side == west) then {
 };
 
 if (_side == east) then {
-    playMusic "CheekiBreeki";
+    playMusic _track;
 };
 
 _track_hq = [];
