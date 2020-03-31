@@ -3653,11 +3653,11 @@
         <Italian>This upgrade unlocks heavy vehicles.&lt;br/&gt;&lt;br/&gt;This allows the team to buy better vehicles at the Heavy Factory.</Italian>
       </Key>
 	  <Key ID="STR_WF_UPGRADE_ArtilleryUpgrade_Desc">
-        <English>This upgrade decreases the cooldown time of artillery missions called via the Tactical Center.&lt;br/&gt; - Cooldown:&lt;br/&gt;   Level 0 = 300 seconds&lt;br/&gt;   Level 1 = 250 seconds&lt;br/&gt;   Level 2 = 200 seconds&lt;br/&gt;   Level 3 = 150 seconds</English>
-        <French>This upgrade decreases the cooldown time of artillery missions called via the Tactical Center.&lt;br/&gt; - Cooldown:&lt;br/&gt;   Level 0 = 300 seconds&lt;br/&gt;   Level 1 = 250 seconds&lt;br/&gt;   Level 2 = 200 seconds&lt;br/&gt;   Level 3 = 150 seconds</French>
-        <German>Dieses Upgrade verringert die Nachladezeit der Artillerie im Tactical Center.&lt;br/&gt; - Nachladezeit:&lt;br/&gt;   Stufe 0 = 300 Sekunden&lt;br/&gt;   Stufe 1 = 250 Sekunden&lt;br/&gt;   Stufe 2 = 200 Sekunden&lt;br/&gt;   Stufe 3 = 150 Sekunden</German>
-        <Russian>Эта модернизация уменьшается время перезарядки артиллерии, вызываемой в миссии через Тактический центр.&lt;br/&gt; - Перезарядка:&lt;br/&gt;   Уровень 0 = 300 секунд&lt;br/&gt;   Уровень 1 = 250 секунд&lt;br/&gt;   Уровень 2 = 200 секунд&lt;br/&gt;   Уровень 3 = 150 секунд</Russian>
-        <Italian>This upgrade decreases the cooldown time of artillery missions called via the Tactical Center.&lt;br/&gt; - Cooldown:&lt;br/&gt;   Level 0 = 300 seconds&lt;br/&gt;   Level 1 = 250 seconds&lt;br/&gt;   Level 2 = 200 seconds&lt;br/&gt;   Level 3 = 150 seconds</Italian>
+        <English>This upgrade decreases the cooldown time of artillery missions called via the Tactical Center.&lt;br/&gt; - Cooldown:&lt;br/&gt;   Level 0 = 400 seconds&lt;br/&gt;   Level 1 = 350 seconds&lt;br/&gt;   Level 2 = 300 seconds&lt;br/&gt;   Level 3 = 250 seconds</English>
+        <French>This upgrade decreases the cooldown time of artillery missions called via the Tactical Center.&lt;br/&gt; - Cooldown:&lt;br/&gt;   Level 0 = 400 seconds&lt;br/&gt;   Level 1 = 350 seconds&lt;br/&gt;   Level 2 = 300 seconds&lt;br/&gt;   Level 3 = 250 seconds</French>
+        <German>Dieses Upgrade verringert die Nachladezeit der Artillerie im Tactical Center.&lt;br/&gt; - Nachladezeit:&lt;br/&gt;   Stufe 0 = 400 Sekunden&lt;br/&gt;   Stufe 1 = 350 Sekunden&lt;br/&gt;   Stufe 2 = 300 Sekunden&lt;br/&gt;   Stufe 3 = 250 Sekunden</German>
+        <Russian>Эта модернизация уменьшается время перезарядки артиллерии, вызываемой в миссии через Тактический центр.&lt;br/&gt; - Перезарядка:&lt;br/&gt;   Уровень 0 = 400 секунд&lt;br/&gt;   Уровень 1 = 350 секунд&lt;br/&gt;   Уровень 2 = 300 секунд&lt;br/&gt;   Уровень 3 = 250 секунд</Russian>
+        <Italian>This upgrade decreases the cooldown time of artillery missions called via the Tactical Center.&lt;br/&gt; - Cooldown:&lt;br/&gt;   Level 0 = 400 seconds&lt;br/&gt;   Level 1 = 350 seconds&lt;br/&gt;   Level 2 = 300 seconds&lt;br/&gt;   Level 3 = 250 seconds</Italian>
       </Key>
 	  <Key ID="STR_WF_UPGRADE_ArtilleryAmmo_Desc">
         <English>This upgrade unlocks new ammunition for artillery pieces.&lt;br/&gt;&lt;br/&gt;This allows the artillery-units to fire improved ammunition.</English>
