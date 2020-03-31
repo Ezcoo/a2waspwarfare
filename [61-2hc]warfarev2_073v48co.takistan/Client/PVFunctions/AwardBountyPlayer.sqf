@@ -7,7 +7,7 @@ _name = name _killed;
 _coef = 7*(score _killed);
 _coef = _coef^(-0.1);
 
-_bounty = if (score _killed < 0) then {
+_bounty = if (score _killed <= 0) then {
             180;
           } else {
             100+14*(score _killed)*_coef;
