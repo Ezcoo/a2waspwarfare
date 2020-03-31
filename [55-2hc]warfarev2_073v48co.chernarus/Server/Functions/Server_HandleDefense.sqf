@@ -5,6 +5,8 @@ _team = _this select 2;
 _closest = _this select 3;
 _ai_delegation_enabled = missionNamespace getVariable "WFBE_C_AI_DELEGATION";
 _commander = (_side) call GetCommanderTeam;
+_soldier = nil;
+
 while {alive _defense} do {
 	if (isNull(gunner _defense) || !alive gunner _defense) then {
 
