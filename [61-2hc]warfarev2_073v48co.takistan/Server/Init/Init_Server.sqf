@@ -14,6 +14,7 @@ IniDB_GetScore = compile preprocessFileLineNumbers "Server\Module\SkillDB\getSco
 IniDB_AddTick = compile preprocessFileLineNumbers "Server\Module\SkillDB\addTick.sqf";
 IniDB_GetTicks = compile preprocessFileLineNumbers "Server\Module\SkillDB\getTicks.sqf";
 IniDB_CalcSkill = compile preprocessFileLineNumbers "Server\Module\SkillDB\calcSkill.sqf";
+IniDB_UpdateDB = compile preprocessFileLineNumbers "Server\Module\SkillDB\updateDB.sqf";
 
 AIBuyUnit = Compile preprocessFile "Server\Functions\Server_BuyUnit.sqf";
 if (WF_A2_Vanilla) then {AISquadRespawn = Compile preprocessFile "Server\AI\AI_SquadRespawn.sqf"};
@@ -579,5 +580,7 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_ALICE") > 0) then {
 
 //--- Waiting until that the game is launched.
 waitUntil {time > 0};
+
+[] spawn IniDB_UpdateDB;
 
 {_x Spawn WFBE_SE_FNC_VoteForCommander} forEach WFBE_PRESENTSIDES;

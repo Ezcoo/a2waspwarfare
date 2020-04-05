@@ -21,7 +21,7 @@ _othersidepros = 0;
 _uid = getPlayerUID(_player);
 _canJoin = true;
 
-if (_side == west) then {_otherside = east;};
+// if (_side == west) then {_otherside = east;};
 
 _playersinside = ({side _x == _side && isPlayer _x} count (playableUnits + switchableUnits));
 _playersinotherside = ({side _x == _otherside && isPlayer _x} count (playableUnits + switchableUnits));
