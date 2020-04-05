@@ -67,6 +67,7 @@ while {!gameOver} do {
 
 	} forEach WFBE_PRESENTSIDES;
 
+    // Sleep
 	_awaits = (_ii) Call GetSleepFPS;
 	sleep _awaits;
 };

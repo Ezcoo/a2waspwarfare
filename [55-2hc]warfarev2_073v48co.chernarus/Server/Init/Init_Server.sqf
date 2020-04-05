@@ -1,4 +1,4 @@
-if (!isServer || time > 30) exitWith {diag_log Format["[WFBE (WARNING)][frameno:%1 | ticktime:%2] Init_Server: The server initialization cannot be called more than once.",diag_frameno,diag_tickTime]};
+if (!isServer || (time > 30)) exitWith {diag_log Format["[WFBE (WARNING)][frameno:%1 | ticktime:%2] Init_Server: The server initialization cannot be called more than once.",diag_frameno,diag_tickTime]};
 
 ["INITIALIZATION", Format ["Init_Server.sqf: Server initialization begins at [%1]", time]] Call WFBE_CO_FNC_LogContent;
 
@@ -7,6 +7,14 @@ createCenter resistance;
 resistance setFriend [west,0];
 resistance setFriend [east,0];
 
+// Init iniDB database and related functions
+call compile preprocessFileLineNumbers "\iniDB\init.sqf";
+IniDB_AddScore = compile preprocessFileLineNumbers "Server\Module\SkillDB\addScore.sqf";
+IniDB_GetScore = compile preprocessFileLineNumbers "Server\Module\SkillDB\getScore.sqf";
+IniDB_AddTick = compile preprocessFileLineNumbers "Server\Module\SkillDB\addTick.sqf";
+IniDB_GetTicks = compile preprocessFileLineNumbers "Server\Module\SkillDB\getTicks.sqf";
+IniDB_CalcSkill = compile preprocessFileLineNumbers "Server\Module\SkillDB\calcSkill.sqf";
+IniDB_UpdateDB = compile preprocessFileLineNumbers "Server\Module\SkillDB\updateDB.sqf";
 
 AIBuyUnit = Compile preprocessFile "Server\Functions\Server_BuyUnit.sqf";
 if (WF_A2_Vanilla) then {AISquadRespawn = Compile preprocessFile "Server\AI\AI_SquadRespawn.sqf"};
@@ -69,6 +77,9 @@ if (ARMA_VERSION >= 162 && ARMA_RELEASENUMBER >= 101334 || ARMA_VERSION > 162) t
 	WFBE_CO_FNC_DelegateAIHeadless = Compile preprocessFileLineNumbers "Server\Functions\Server_DelegateAIHeadless.sqf";
 	WFBE_CO_FNC_DelegateAIStaticDefenceHeadless = Compile preprocessFileLineNumbers "Server\Functions\Server_DelegateAIStaticDefenceHeadless.sqf";
 };
+
+WFBE_CO_VAR_DISCONNECTED_SKILL_WEST = [0];
+WFBE_CO_VAR_DISCONNECTED_SKILL_EAST = [0];
 
 Call Compile preprocessFileLineNumbers 'Server\Functions\Server_FNC_Delegation.sqf'; //--- FUNCTIONS: Delegation.
 
@@ -140,7 +151,7 @@ if ((missionNamespace getVariable "WFBE_C_BASE_START_TOWN") > 0) then {
 		_nearLogics = _x nearEntities[["LocationLogicStart"],2000];
 		if (count _nearLogics > 0) then {{if !(_x in _locationLogics) then {_locationLogics = _locationLogics + [_x]}} forEach _nearLogics};
 	} forEach towns;
-	if (count _locationLogics < 3) then {_locationLogics = startingLocations},
+	if (count _locationLogics < 3) then {_locationLogics = startingLocations};
 	["INITIALIZATION", Format ["Init_Server.sqf: Spawn locations were refined [%1].",count _locationLogics]] Call WFBE_CO_FNC_LogContent;
 } else {
 	_locationLogics = startingLocations;
@@ -298,7 +309,7 @@ emptyQueu = [];
 
 		if !(_upgrades) then {
 			_upgrades = [];
-			for '_i' from 0 to count(missionNamespace getVariable Format["WFBE_C_UPGRADES_%1_LEVELS", _side])-1 do {[_upgrades, 0] Call WFBE_CO_FNC_ArrayPush};
+			for '_i' from 0 to (count(missionNamespace getVariable Format["WFBE_C_UPGRADES_%1_LEVELS", _side])-1) do {[_upgrades, 0] Call WFBE_CO_FNC_ArrayPush};
 		} else {
 			_upgrades = missionNamespace getVariable Format["WFBE_C_UPGRADES_%1_LEVELS", _side];
 		};
@@ -339,7 +350,7 @@ emptyQueu = [];
 
 		//--- Structures limit (live).
 		_str = [];
-		for '_i' from 0 to count(missionNamespace getVariable Format["WFBE_%1STRUCTURES",_side])-2 do {_str set [_i, 0]};
+		for '_i' from 0 to (count(missionNamespace getVariable Format["WFBE_%1STRUCTURES",_side])-2) do {_str set [_i, 0]};
 		_logik setVariable ["wfbe_structures_live", _str, true];
 
 		//--- Radio: Initialize the announcers entities.
@@ -570,5 +581,7 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_ALICE") > 0) then {
 
 //--- Waiting until that the game is launched.
 waitUntil {time > 0};
+
+[] spawn IniDB_UpdateDB;
 
 {_x Spawn WFBE_SE_FNC_VoteForCommander} forEach WFBE_PRESENTSIDES;

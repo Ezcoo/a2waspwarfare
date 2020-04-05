@@ -7,6 +7,14 @@ createCenter resistance;
 resistance setFriend [west,0];
 resistance setFriend [east,0];
 
+// Init iniDB database and related functions
+call compile preprocessFileLineNumbers "\iniDB\init.sqf";
+IniDB_AddScore = compile preprocessFileLineNumbers "Server\Module\SkillDB\addScore.sqf";
+IniDB_GetScore = compile preprocessFileLineNumbers "Server\Module\SkillDB\getScore.sqf";
+IniDB_AddTick = compile preprocessFileLineNumbers "Server\Module\SkillDB\addTick.sqf";
+IniDB_GetTicks = compile preprocessFileLineNumbers "Server\Module\SkillDB\getTicks.sqf";
+IniDB_CalcSkill = compile preprocessFileLineNumbers "Server\Module\SkillDB\calcSkill.sqf";
+IniDB_UpdateDB = compile preprocessFileLineNumbers "Server\Module\SkillDB\updateDB.sqf";
 
 AIBuyUnit = Compile preprocessFile "Server\Functions\Server_BuyUnit.sqf";
 if (WF_A2_Vanilla) then {AISquadRespawn = Compile preprocessFile "Server\AI\AI_SquadRespawn.sqf"};
@@ -69,6 +77,9 @@ if (ARMA_VERSION >= 162 && ARMA_RELEASENUMBER >= 101334 || ARMA_VERSION > 162) t
 	WFBE_CO_FNC_DelegateAIHeadless = Compile preprocessFileLineNumbers "Server\Functions\Server_DelegateAIHeadless.sqf";
 	WFBE_CO_FNC_DelegateAIStaticDefenceHeadless = Compile preprocessFileLineNumbers "Server\Functions\Server_DelegateAIStaticDefenceHeadless.sqf";
 };
+
+WFBE_CO_VAR_DISCONNECTED_SKILL_WEST = [0];
+WFBE_CO_VAR_DISCONNECTED_SKILL_EAST = [0];
 
 Call Compile preprocessFileLineNumbers 'Server\Functions\Server_FNC_Delegation.sqf'; //--- FUNCTIONS: Delegation.
 
@@ -569,5 +580,7 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_ALICE") > 0) then {
 
 //--- Waiting until that the game is launched.
 waitUntil {time > 0};
+
+[] spawn IniDB_UpdateDB;
 
 {_x Spawn WFBE_SE_FNC_VoteForCommander} forEach WFBE_PRESENTSIDES;

@@ -16,7 +16,7 @@
 
 /* Description.ext Specific */
 #define WF_MAXPLAYERS 61
-#define WF_MISSIONNAME "[61] Warfare V48 Takistan"
+#define WF_MISSIONNAME "[61] Warfare V48.1 Takistan"
 #define WF_RESPAWNDELAY 2
 
 /* Load Screen (OA/CO) */

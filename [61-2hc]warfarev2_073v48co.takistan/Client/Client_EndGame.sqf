@@ -10,6 +10,24 @@ if (_side == west) then {
 	if (_side == east) then {_side = west};
 };
 
+// Do code block for storing player scores the last time
+{
+
+	if (isPlayer _x) then {
+	    if (isNil format ["WFBE_OLD_SCORE_UID_%1", getPlayerUID _x]) then {
+	        missionNamespace setVariable [format ["WFBE_OLD_SCORE_UID_%1", getPlayerUID _x], 0];
+	    };
+
+	    missionNamespace setVariable [format ["WFBE_SCORE_UID_%1", getPlayerUID _x], score _x];
+	    [_x] call IniDB_AddScore;
+	    [getPlayerUID _x] call IniDB_AddTick;
+	};
+
+    missionNamespace setVariable [format ["WFBE_OLD_SCORE_UID_%1", getPlayerUID _x], missionNamespace getVariable format ["WFBE_SCORE_UID_%1", getPlayerUID _x]];
+
+} forEach (playableUnits + switchableUnits);
+
+
 [_side] ExecVM "Client\GUI\GUI_EndOfGameStats.sqf";
 //_track = if (WF_A2_Vanilla) then {"Track21_Rise_Of_The_Fallen"} else {"EP1_Track15"}; //---old
 _track = if (WF_A2_Vanilla) then {["Track21_Rise_Of_The_Fallen",41]} else {["EP1_Track13",91]}; //---changed-MrNiceGuy
@@ -19,6 +37,14 @@ if (_side == west) then {
 };
 
 playMusic _track;
+
+if (_side == west) then {
+    playSound ["BluWin",true];
+};
+
+if (_side == east) then {
+    playMusic _track;
+};
 
 _track_hq = [];
 _track = [];

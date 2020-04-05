@@ -41,6 +41,11 @@ if (isNil '_sideJoined') exitWith {["WARNING", Format ["Server_PlayerConnected.s
 //--- We attempt to get the player informations in case that he joined before.
 _get = missionNamespace getVariable format["WFBE_JIP_USER%1",_uid];
 
+// Init player score variable for skill calculation database if it doesn't exist yet
+if (isNil format ["WFBE_OLD_SCORE_UID_%1", _uid]) then {
+    missionNamespace setVariable [format ["WFBE_OLD_SCORE_UID_%1", _uid], 0];
+};
+
 //--- We force the unit out of it's vehicle.
 if !(isNull(assignedVehicle (leader _team))) then {
 	unassignVehicle (leader _team);

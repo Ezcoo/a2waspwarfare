@@ -29,7 +29,7 @@ class Mission
 	randomSeed=6848509;
 	class Intel
 	{
-		briefingName="[61] Warfare V48 Takistan";
+		briefingName="[61] Warfare V48.1 Takistan";
 		briefingDescription="by Benny and Awesome&WASP";
 		resistanceWest=0;
 		startWeather=0;
