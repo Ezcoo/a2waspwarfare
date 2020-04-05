@@ -43,13 +43,11 @@ _newPlayerTotalScore = _playerTotalScore + (_currentPlayerScore - _oldplayerScor
 };
 
 // Prevent stacking by veteran disconnecting just before another player joins
-[] spawn {
-    if (missionNamespace getVariable format ["WFBE_CO_VAR_SIDE_UID_%1", _uid] == west) then {
+if (missionNamespace getVariable format ["WFBE_CO_VAR_SIDE_UID_%1", _uid] == west) then {
     WFBE_CO_VAR_DISCONNECTED_SKILL_WEST set [count WFBE_CO_VAR_DISCONNECTED_SKILL_WEST, [_uid] call IniDB_CalcSkill];
-    };
-    if (missionNamespace getVariable format ["WFBE_CO_VAR_SIDE_UID_%1", _uid] == east) then {
-        WFBE_CO_VAR_DISCONNECTED_SKILL_EAST set [count WFBE_CO_VAR_DISCONNECTED_SKILL_EAST, [_uid] call IniDB_CalcSkill];
-    };
+};
+if (missionNamespace getVariable format ["WFBE_CO_VAR_SIDE_UID_%1", _uid] == east) then {
+    WFBE_CO_VAR_DISCONNECTED_SKILL_EAST set [count WFBE_CO_VAR_DISCONNECTED_SKILL_EAST, [_uid] call IniDB_CalcSkill];
 };
 
 //--- Player had any objects created?
