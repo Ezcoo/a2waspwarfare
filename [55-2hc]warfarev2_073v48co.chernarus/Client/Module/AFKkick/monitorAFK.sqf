@@ -23,6 +23,7 @@ while {!gameOver} do {
 
     if (_timer > WFBE_CO_VAR_AFKkickThreshold) then {
         publicVariableServer "AFKthresholdExceededName";
+        failMission "CONTINUE";
     };
 
     _sleep = 60 call GetSleepFPS;
