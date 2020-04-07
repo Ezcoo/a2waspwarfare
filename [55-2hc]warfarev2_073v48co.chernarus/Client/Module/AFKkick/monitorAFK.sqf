@@ -16,14 +16,14 @@ while {!gameOver} do {
         _timer = _timer + 1;
     };
 
-    if (_timer > (WFBE_CO_VAR_AFKkickThreshold / 1.5)) then {
+    if (_timer >= (WFBE_CO_VAR_AFKkickThreshold / 1.5)) then {
         _timeLeftToKick = WFBE_CO_VAR_AFKkickThreshold - _timer;
         hint format ["If you don't move or open map in %1 minutes, you will be kicked for being AFK.",_timeLeftToKick];
     };
 
     if (_timer > WFBE_CO_VAR_AFKkickThreshold) then {
         publicVariableServer "AFKthresholdExceededName";
-        failMission "CONTINUE";
+        failMission "END1";
     };
 
     _sleep = 60 call GetSleepFPS;
