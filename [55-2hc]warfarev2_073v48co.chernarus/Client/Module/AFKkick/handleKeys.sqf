@@ -12,7 +12,7 @@ _moveButtons = actionKeys "MoveBack" + actionKeys "MoveDown" + actionKeys "MoveF
 
 if (_key in _moveButtons) then {
     WFBE_CO_VAR_NotAFK_update = true;
-    _handled = true;
+    _handled = false;
 };
 
 _handled;
