@@ -61,6 +61,7 @@ WFBE_SE_FNC_SetLocalityOwner = if !(WF_A2_Vanilla) then {Compile preprocessFileL
 WFBE_SE_FNC_SpawnTownDefense = Compile preprocessFileLineNumbers "Server\Functions\Server_SpawnTownDefense.sqf";
 WFBE_SE_FNC_VoteForCommander = Compile preprocessFileLineNumbers "Server\Functions\Server_VoteForCommander.sqf";
 WFBE_SE_FNC_AssignForCommander = Compile preprocessFileLineNumbers "Server\Functions\Server_AssignNewCommander.sqf";
+WFBE_CO_FNC_InitAFKkickHandler = Compile preprocessFileLineNumbers "Server\Module\afkKick\initAFKkickHandler.sqf";
 
 
 //--- Define Headless Client functions (server ones).
@@ -570,5 +571,7 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_ALICE") > 0) then {
 
 //--- Waiting until that the game is launched.
 waitUntil {time > 0};
+
+call WFBE_CO_FNC_InitAFKkickHandler;
 
 {_x Spawn WFBE_SE_FNC_VoteForCommander} forEach WFBE_PRESENTSIDES;

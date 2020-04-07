@@ -176,9 +176,21 @@ playerDead = false;
 paramBoundariesRunning = false;
 
 disableserialization;
-keyPressed = compile preprocessFile "Common\Functions\Common_DisableTablock.sqf";
 _display = findDisplay 46;
-_display displayAddEventHandler ["KeyDown","_this call keyPressed"];
+
+WFBE_CO_FNC_DisableTabLock = compile preprocessFileLineNumbers "Common\Functions\Common_DisableTablock.sqf";
+
+_display displayAddEventHandler ["KeyDown", "_this call WFBE_CO_FNC_DisableTabLock"];
+
+WFBE_CO_FNC_HandleAFKkeys = compile preprocessFileLineNumbers "Client\Module\AFKkick\handleKeys.sqf";
+
+AFKthresholdExceededName = name player;
+WFBE_CO_VAR_AFKkickThreshold = 30;
+WFBE_CO_VAR_NotAFK_update = false;
+
+_display displayAddEventHandler ["KeyDown", "_this call WFBE_CO_FNC_HandleAFKkeys"];
+
+[] execVM "Client\Module\AFKkick\monitorAFK.sqf";
 
 (vehicle player) addEventHandler ["Fired",{_this Spawn HandleAT}];
 execVM "WASP\global_marking_monitor.sqf";
