@@ -23,9 +23,6 @@ _i = _i + [['','',295,6,-1,3,0,1,'Russians Spetsnaz',[]]];
 _c = _c + ['RUS_Soldier_TL'];
 _i = _i + [['','',300,6,-1,3,0,1,'Russians Spetsnaz',[]]];
 
-_c = _c + ['RUS_Soldier_Medic'];
-_i = _i + [['','',300,6,-1,3,0,1,'Russians Spetsnaz',[]]];
-
 for '_z' from 0 to (count _c)-1 do {
 	if (isClass (configFile >> 'CfgVehicles' >> (_c select _z))) then {
 		_get = missionNamespace getVariable (_c select _z);
