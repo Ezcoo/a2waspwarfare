@@ -17,7 +17,7 @@ _c = _c + ['MQ9PredatorB'];
 _i = _i + [['','',30000,35,2,2,3,0,'USMC',[]]];
 
 /* Static Defenses */
-_c = _c + ['USMC_WarfareBMGNest_M240'];
+_c = _c + ['I44_GunMG_A_M2HB_TripodAA_Army'];
 _i = _i + [['','',300,0,1,0,'Defense',0,'USMC',[]]];
 
 _c = _c + ['M2HD_mini_TriPod'];
