@@ -116,7 +116,7 @@ missionNamespace setVariable [Format["WFBE_%1STRUCTURESCRIPTS", _side], _s];
 _n			= ["I44_GunMG_A_M2HB_TripodAA_Army"];
 _n = _n		+ ["I44_GunMG_A_M2HB_TripodM3_Army"];
 _n = _n		+ ["SearchLight_US_EP1"];
-_n = _n		+ ["M2StaticMG_US_EP1"];
+_n = _n		+ ["I44_GunMG_A_M1919A4_TripodM2_c_Army"];
 if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_BAF") > 0) then {
 	_n = _n		+ ["BAF_GPMG_Minitripod_W"];
 	_n = _n		+ ["BAF_GMG_Tripod_W"];
@@ -159,7 +159,7 @@ _n = _n		+ ["USLaunchers_EP1"];
 _n = _n		+ ["USSpecialWeapons_EP1"];
 
 /* Class used for AI, AI will attempt to build those */
-missionNamespace setVariable [Format["WFBE_%1DEFENSES_MG", _side], ['M2StaticMG_US_EP1']];
+missionNamespace setVariable [Format["WFBE_%1DEFENSES_MG", _side], ['I44_GunMG_A_M1919A4_TripodM2_c_Army']];
 missionNamespace setVariable [Format["WFBE_%1DEFENSES_GL", _side], ['MK19_TriPod_US_EP1']];
 missionNamespace setVariable [Format["WFBE_%1DEFENSES_AAPOD", _side], ['Stinger_Pod_US_EP1']];
 missionNamespace setVariable [Format["WFBE_%1DEFENSES_ATPOD", _side], ['TOW_TriPod_US_EP1']];

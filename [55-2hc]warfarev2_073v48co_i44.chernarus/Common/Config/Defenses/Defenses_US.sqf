@@ -32,9 +32,9 @@ _o = _o + [275];
 _t = _t + ["Defense"];
 _k = _k + [""];
 
-_c = _c + ['M2StaticMG_US_EP1'];
+_c = _c + ['I44_GunMG_A_M1919A4_TripodM2_c_Army'];
 _n = _n + [''];
-_o = _o + [200];
+_o = _o + [225];
 _t = _t + ["Defense"];
 _k = _k + ["MG"];
 
