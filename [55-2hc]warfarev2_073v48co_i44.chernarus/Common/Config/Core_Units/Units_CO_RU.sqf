@@ -81,15 +81,15 @@ _u = _u		+ ['GRAD_RU'];
 missionNamespace setVariable [Format ["WFBE_%1LIGHTUNITS", _side], _u];
 if (local player) then {['LIGHT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
-_u 			= ['M113_TK_EP1'];
-_u = _u		+ ['BMP2_INS'];
-_u = _u		+ ['BMP3'];
-_u = _u		+ ['ZSU_INS'];
-_u = _u		+ ['T34_TK_EP1'];
-_u = _u		+ ['T55_TK_EP1'];
-_u = _u		+ ['T72_RU'];
-_u = _u		+ ['T90'];
-_u = _u		+ ['2S6M_Tunguska'];
+_u         = ['I44_Tank_G_PzKpfwII_F_WH'];
+_u = _u    + ['I44_Tank_G_PzKpfwIV_D_WH'];
+_u = _u    + ['I44_Tank_G_PzKpfwIV_G_WH'];
+_u = _u    + ['I44_Tank_G_PzKpfwV_G_camo_WH'];
+_u = _u    + ['I44_Tank_G_PzKpfwVI_E_Late_AAMG_Camo_WH'];
+_u = _u    + ['I44_Tank_G_PzKpfwVI_B_WH'];
+_u = _u    + ['I44_Tank_G_JaPz38_T_WH'];
+_u = _u    + ['I44_Tank_G_StuGIII_G_Late_WH'];
+_u = _u    + ['I44_Tank_G_StuH42_G_WH'];
 
 missionNamespace setVariable [Format ["WFBE_%1HEAVYUNITS", _side], _u];
 if (local player) then {['HEAVY', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};

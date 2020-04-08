@@ -103,39 +103,55 @@ _c = _c + ['GRAD_RU'];
 _i = _i + [['','',6800,25,-2,4,1,0,'Russians',[]]];
 
 /* Heavy Vehicles */
-_c = _c + ['BMP3'];
-_i = _i + [['','',4600,35,-2,if (WF_A2_Vanilla) then {1} else {3},2,0,'Russians',[]]];
 
-_c = _c + ['T72_RU'];
-_i = _i + [['','',5200,40,-2,if (WF_A2_Vanilla) then {2} else {3},2,0,'Russians',[]]];
+_c = _c + ['I44_Tank_G_PzKpfwII_F_WH'];
+_i = _i + [['','',4800,35,-2,0,2,0,'Wehrmacht',[]]];
 
-_c = _c + ['T90'];
-_i = _i + [['','',6500,40,-2,if (WF_A2_Vanilla) then {3} else {4},2,0,'Russians',[]]];
+_c = _c + ['I44_Tank_G_PzKpfwIV_D_WH'];
+_i = _i + [['','',4800,35,-2,0,2,0,'Wehrmacht',[]]];
 
-_c = _c + ['2S6M_Tunguska'];
-_i = _i + [['','',7800,35,-2,4,2,0,'Russians',[]]];
+_c = _c + ['I44_Tank_G_PzKpfwIV_G_WH'];
+_i = _i + [['','',4800,35,-2,0,2,0,'Wehrmacht',[]]];
+
+_c = _c + ['I44_Tank_G_PzKpfwV_G_camo_WH'];
+_i = _i + [['','',4800,35,-2,0,2,0,'Wehrmacht',[]]];
+
+_c = _c + ['I44_Tank_G_PzKpfwVI_E_Late_AAMG_Camo_WH'];
+_i = _i + [['','',4800,35,-2,0,2,0,'Wehrmacht',[]]];
+
+_c = _c + ['I44_Tank_G_PzKpfwVI_B_WH'];
+_i = _i + [['','',4800,35,-2,0,2,0,'Wehrmacht',[]]];
+
+_c = _c + ['I44_Tank_G_JaPz38_T_WH'];
+_i = _i + [['','',4800,35,-2,0,2,0,'Wehrmacht',[]]];
+
+_c = _c + ['I44_Tank_G_StuGIII_G_Late_WH'];
+_i = _i + [['','',4800,35,-2,0,2,0,'Wehrmacht',[]]];
+
+_c = _c + ['I44_Tank_G_StuH42_G_WH'];
+_i = _i + [['','',4800,35,-2,0,2,0,'Wehrmacht',[]]];
 
 /* Air Vehicles */
 _c = _c + ['I44_Plane_G_Bf109E4_WL'];
-_i = _i + [['','',9120,35,-2,0,3,0,'German Luftwaffe',[]]];
+_i = _i + [['','',9120,35,-2,0,3,0,'Luftwaffe',[]]];
 
 _c = _c + ['I44_Plane_G_Bf109F2_SC250_WL'];
-_i = _i + [['','',9120,35,-2,0,3,0,'German Luftwaffe',[]]];
+_i = _i + [['','',9120,35,-2,0,3,0,'Luftwaffe',[]]];
 
 _c = _c + ['I44_Plane_G_Bf109G6_SC250_WL'];
-_i = _i + [['','',9120,35,-2,0,3,0,'German Luftwaffe',[]]];
+_i = _i + [['','',9120,35,-2,0,3,0,'Luftwaffe',[]]];
 
 _c = _c + ['I44_Plane_G_Ju52_3mg5e_WL'];
-_i = _i + [['','',9120,35,-2,0,3,0,'German Luftwaffe',[]]];
+_i = _i + [['','',9120,35,-2,0,3,0,'Luftwaffe',[]]];
 
 _c = _c + ['I44_Plane_G_Ju87_SC250_WL'];
-_i = _i + [['','',9120,35,-2,0,3,0,'German Luftwaffe',[]]];
+_i = _i + [['','',9120,35,-2,0,3,0,'Luftwaffe',[]]];
 
 _c = _c + ['I44_Plane_G_Me262_WL'];
-_i = _i + [['','',9120,35,-2,0,3,0,'German Luftwaffe',[]]];
+_i = _i + [['','',9120,35,-2,0,3,0,'Luftwaffe',[]]];
 
 _c = _c + ['I44_Plane_G_Me262A_WL'];
-_i = _i + [['','',9120,35,-2,0,3,0,'German Luftwaffe',[]]];
+_i = _i + [['','',9120,35,-2,0,3,0,'Luftwaffe',[]]];
 
 /* Special */
 _c = _c + ['Pchela1T'];
