@@ -116,12 +116,10 @@ _n			= ["I44_GunMG_A_M2HB_TripodAA_Army"];
 _n = _n		+ ["I44_GunMG_A_M2HB_TripodM3_Army"];
 _n = _n		+ ["SearchLight_US_EP1"];
 _n = _n		+ ["I44_GunMG_A_M1919A4_TripodM2_c_Army"];
-if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_BAF") > 0) then {
-	_n = _n		+ ["BAF_GPMG_Minitripod_W"];
-	_n = _n		+ ["BAF_GMG_Tripod_W"];
-	_n = _n		+ ["BAF_L2A1_Minitripod_W"];
-	_n = _n		+ ["BAF_L2A1_Tripod_W"];
-};
+_n = _n		+ ["BAF_GPMG_Minitripod_W"];
+_n = _n		+ ["BAF_GMG_Tripod_W"];
+_n = _n		+ ["BAF_L2A1_Minitripod_W"];
+_n = _n		+ ["BAF_L2A1_Tripod_W"];
 _n = _n		+ ["MK19_TriPod_US_EP1"];
 _n = _n		+ ["TOW_TriPod_US_EP1"];
 _n = _n		+ ["Stinger_Pod_US_EP1"];
