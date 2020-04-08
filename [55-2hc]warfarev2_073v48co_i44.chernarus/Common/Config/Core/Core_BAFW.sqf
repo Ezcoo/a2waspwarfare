@@ -116,8 +116,8 @@ _i = _i + [['','',5000,30,-2,3,2,0,'British (Woodland)',[]]];
 _c = _c + ['I44_GunMG_B_Vickers_Army'];
 _i = _i + [['','',230,0,1,0,'Defense',0,'British (Woodland)',[]]];
 
-_c = _c + ['BAF_GMG_Tripod_W'];
-_i = _i + [['','',250,0,1,0,'Defense',0,'British (Woodland)',[]]];
+_c = _c + ['I44_GunAT_A_M1_Army'];
+_i = _i + [['','',650,0,1,0,'Defense',0,'British (Woodland)',[]]];
 
 _c = _c + ['BAF_L2A1_Minitripod_W'];
 _i = _i + [['','',300,0,1,0,'Defense',0,'British (Woodland)',[]]];
