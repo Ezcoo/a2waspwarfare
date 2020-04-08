@@ -1,8 +1,8 @@
 Private ["_side"];
 _side = _this;
 
-missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_DISPLAY_NAME', _side], ['M119','M252','MLRS']]; //--- Display Name to use in the GUI.
-missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_WEAPONS', _side], ['M119','M252','MLRS']]; //--- Weapon classname.
+missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_DISPLAY_NAME', _side], ['M119','I44_GunMortar_A_M1_Army','MLRS']]; //--- Display Name to use in the GUI.
+missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_WEAPONS', _side], ['M119','I44_GunMortar_A_M1_Army','MLRS']]; //--- Weapon classname.
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_RANGES_MIN', _side], [1000,50,1200]]; //--- Unit cannot fire if the target is within it's min range.
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_RANGES_MAX', _side], [8000,7500,9000]]; //--- Unit max firing range.
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_TIME_RELOAD', _side], [7,4,2]]; //--- Approximate time needed for unit to fire again.
@@ -38,6 +38,6 @@ missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_EXTENDED_MAGS_UPGRADE', 
 //--- Artillery classnames, more than one of the same family may be used.
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_CLASSNAMES', _side], [
 	['M119'],
-	['M252'],
+	['I44_GunMortar_A_M1_Army'],
 	['MLRS']
 ]];

@@ -56,7 +56,7 @@ _o = _o + [700];
 _t = _t + ["Defense"];
 _k = _k + ["AA"];
 
-_c = _c + ['M252_US_EP1'];
+_c = _c + ['I44_GunMortar_A_M1_Army'];
 _n = _n + [''];
 _o = _o + [1100];
 _t = _t + ["Defense"];

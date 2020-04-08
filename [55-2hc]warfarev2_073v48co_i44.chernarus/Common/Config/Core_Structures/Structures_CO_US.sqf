@@ -123,7 +123,7 @@ _n = _n		+ ["BAF_L2A1_Tripod_W"];
 _n = _n		+ ["MK19_TriPod_US_EP1"];
 _n = _n		+ ["TOW_TriPod_US_EP1"];
 _n = _n		+ ["Stinger_Pod_US_EP1"];
-_n = _n		+ ["M252_US_EP1"];
+_n = _n		+ ["I44_GunMortar_A_M1_Army"];
 _n = _n		+ ["M119_US_EP1"];
 _n = _n		+ ["Land_HBarrier3"];
 _n = _n		+ ["Land_HBarrier5"];
@@ -165,6 +165,6 @@ missionNamespace setVariable [Format["WFBE_%1DEFENSES_AAPOD", _side], ['Stinger_
 missionNamespace setVariable [Format["WFBE_%1DEFENSES_ATPOD", _side], ['TOW_TriPod_US_EP1']];
 missionNamespace setVariable [Format["WFBE_%1DEFENSES_CANNON", _side], ['M119_US_EP1']];
 missionNamespace setVariable [Format["WFBE_%1DEFENSES_MASH", _side], ['MASH_EP1']];
-missionNamespace setVariable [Format["WFBE_%1DEFENSES_MORTAR", _side], ['M252_US_EP1']];
+missionNamespace setVariable [Format["WFBE_%1DEFENSES_MORTAR", _side], ['I44_GunMortar_A_M1_Army']];
 
 missionNamespace setVariable [Format["WFBE_%1DEFENSENAMES", _side], _n];

@@ -152,7 +152,7 @@ _i = _i + [['','',2000,0,1,0,'Defense',0,'US',[]]];
 _c = _c + ['Stinger_Pod_US_EP1'];
 _i = _i + [['','',3000,0,1,0,'Defense',0,'US',[]]];
 
-_c = _c + ['M252_US_EP1'];
+_c = _c + ['I44_GunMortar_A_M1_Army'];
 _i = _i + [['','',1150,0,1,0,'Defense',0,'US',[]]];
 
 _c = _c + ['M119_US_EP1'];
