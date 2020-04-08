@@ -43,7 +43,7 @@ _c = _c + ['FR_Cooper'];
 _i = _i + [['','',400,6,-1,3,0,1.0,'USMC Force Recon',[]]];
 
 _c = _c + ['FR_Miles'];
-_i = _i + [['','',300,6,-1,3,0,1.0,'USMC Force Recon',[]]];
+_i = _i + [['','',400,6,-1,3,0,1.0,'USMC Force Recon',[]]];
 
 _c = _c + ['FR_OHara'];
 _i = _i + [['','',400,6,-1,3,0,1.0,'USMC Force Recon',[]]];
