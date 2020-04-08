@@ -14,11 +14,11 @@ _t = []; //--- Category
 _k = []; //--- Kind (Used for town defenses)
 
 //--- Defenses (Statics)
-_c = _c + ['WarfareBMGNest_M240_US_EP1'];
+_c = _c + ['I44_GunMG_A_M2HB_TripodAA_Army'];
 _n = _n + [''];
 _o = _o + [300];
 _t = _t + ["Defense"];
-_k = _k + ["MGNest"];
+_k = _k + ["AA"];
 
 _c = _c + ['SearchLight_US_EP1'];
 _n = _n + [''];

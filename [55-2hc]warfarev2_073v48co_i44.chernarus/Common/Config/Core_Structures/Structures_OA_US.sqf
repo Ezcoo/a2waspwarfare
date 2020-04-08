@@ -113,7 +113,7 @@ missionNamespace setVariable [Format["WFBE_%1STRUCTUREDIRECTIONS", _side], _dir]
 missionNamespace setVariable [Format["WFBE_%1STRUCTURESCRIPTS", _side], _s];
 
 /* Defenses */
-_n			= ["WarfareBMGNest_M240_US_EP1"];
+_n			= ["I44_GunMG_A_M2HB_TripodAA_Army"];
 _n = _n		+ ["M2HD_mini_TriPod_US_EP1"];
 _n = _n		+ ["SearchLight_US_EP1"];
 _n = _n		+ ["M2StaticMG_US_EP1"];

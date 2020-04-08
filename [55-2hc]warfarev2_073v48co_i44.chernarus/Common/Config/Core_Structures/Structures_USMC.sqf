@@ -157,7 +157,7 @@ _n = _n		+ ["USSpecialWeaponsBox"];
 /* Class used for AI, AI will attempt to build those */
 missionNamespace setVariable [Format["WFBE_%1DEFENSES_MG", _side], ['M2StaticMG']];
 missionNamespace setVariable [Format["WFBE_%1DEFENSES_GL", _side], ['MK19_TriPod']];
-missionNamespace setVariable [Format["WFBE_%1DEFENSES_AAPOD", _side], ['Stinger_Pod']];
+missionNamespace setVariable [Format["WFBE_%1DEFENSES_AAPOD", _side], ['I44_GunMG_A_M2HB_TripodAA_Army']];
 missionNamespace setVariable [Format["WFBE_%1DEFENSES_ATPOD", _side], ['TOW_TriPod']];
 missionNamespace setVariable [Format["WFBE_%1DEFENSES_CANNON", _side], ['M119']];
 missionNamespace setVariable [Format["WFBE_%1DEFENSES_MASH", _side], ['MASH']];
