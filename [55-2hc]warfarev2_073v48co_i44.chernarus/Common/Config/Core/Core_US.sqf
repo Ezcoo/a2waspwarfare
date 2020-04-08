@@ -134,8 +134,8 @@ _i = _i + [['','',30000,35,-2,2,3,0,'US',[]]];
 _c = _c + ['I44_GunMG_A_M2HB_TripodAA_Army'];
 _i = _i + [['','',300,0,1,0,'Defense',0,'US',[]]];
 
-_c = _c + ['M2HD_mini_TriPod_US_EP1'];
-_i = _i + [['','',200,0,1,0,'Defense',0,'US',[]]];
+_c = _c + ['I44_GunMG_A_M2HB_TripodM3_Army'];
+_i = _i + [['','',275,0,1,0,'Defense',0,'US',[]]];
 
 _c = _c + ['M2StaticMG_US_EP1'];
 _i = _i + [['','',225,0,1,0,'Defense',0,'US',[]]];

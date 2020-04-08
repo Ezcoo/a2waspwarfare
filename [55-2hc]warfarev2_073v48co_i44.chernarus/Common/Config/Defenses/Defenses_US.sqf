@@ -26,9 +26,9 @@ _o = _o + [50];
 _t = _t + ["Defense"];
 _k = _k + [""];
 
-_c = _c + ['M2HD_mini_TriPod_US_EP1'];
+_c = _c + ['I44_GunMG_A_M2HB_TripodM3_Army'];
 _n = _n + [''];
-_o = _o + [150];
+_o = _o + [275];
 _t = _t + ["Defense"];
 _k = _k + [""];
 
