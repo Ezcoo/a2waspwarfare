@@ -78,26 +78,17 @@ _u = _u		+ ['I44_Plane_B_TyphoonMk1A_RP3_RAF'];
 missionNamespace setVariable [Format ["WFBE_%1AIRPORTUNITS", _side], _u];
 if (local player) then {['AIRPORT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
-_u 			= ["MMT_USMC"];
+_u 			= ["I44_Car_A_WillysMB_Army"];
 _u = _u		+ ["Old_moto_TK_Civ_EP1"];
-_u = _u		+ ["Lada1_TK_CIV_EP1"];
-_u = _u		+ ["SkodaBlue"];
-_u = _u		+ ["car_sedan"];
-_u = _u		+ ["car_hatchback"];
-_u = _u		+ ["Volha_1_TK_CIV_EP1"];
-_u = _u		+ ["datsun1_civil_1_open"];
-_u = _u		+ ["datsun1_civil_3_open"];
-_u = _u		+ ["hilux1_civil_1_open"];
-_u = _u		+ ["LandRover_TK_CIV_EP1"];
-_u = _u		+ ["Ikarus"];
+_u = _u		+ ["I44_Truck_A_GMC_CCKW_Army"];
+_u = _u		+ ["I44_Truck_A_GMC_CCKW_Fuel_Army"];
+_u = _u		+ ["I44_Car_B_WillysAB_Army"];
 if ((missionNamespace getVariable "WFBE_C_UNITS_TOWN_PURCHASE") > 0) then {
 	_u = _u		+ [missionNamespace getVariable "WFBE_WESTSOLDIER"];
 	_u = _u		+ ['I44_Man_A_Army_Medic'];
 	_u = _u		+ ['I44_Man_B_Army_Engr_GrenadeNo75'];
 	_u = _u		+ ['I44_Man_A_Army_M1A1Bazooka'];
     _u = _u		+ ['I44_Man_A_Army_M1919A4'];
-_u = _u		+ ["UralCivil"];
-_u = _u		+ ["I44_Truck_A_GMC_CCKW_Fuel_Army"];
 };
 
 missionNamespace setVariable [Format ["WFBE_%1DEPOTUNITS", _side], _u];
