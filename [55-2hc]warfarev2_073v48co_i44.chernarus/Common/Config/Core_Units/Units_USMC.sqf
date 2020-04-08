@@ -38,7 +38,7 @@ _u = _u		+ ['I44_Truck_A_GMC_CCKW_Warfare_Salvage_Army'];
 if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['WarfareSupplyTruck_USMC']};
 _u = _u		+ ['RHIB'];
 _u = _u		+ ['RHIB2Turret'];
-_u = _u		+ ['LAV25'];
+_u = _u		+ ['I44_ACar_A_M8_Greyhound_Army'];
 
 missionNamespace setVariable [Format ["WFBE_%1LIGHTUNITS", _side], _u];
 if (local player) then {['LIGHT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};

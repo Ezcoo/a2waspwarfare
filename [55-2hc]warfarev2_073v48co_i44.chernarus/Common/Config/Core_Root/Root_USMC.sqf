@@ -44,7 +44,7 @@ if (isServer) then {
 	]];
 
 	missionNamespace setVariable [Format["WFBE_%1_PATROL_MEDIUM", _side], [
-		['LAV25','LAV25'],
+		['I44_ACar_A_M8_Greyhound_Army','I44_ACar_A_M8_Greyhound_Army'],
 		['I44_Truck_A_GMC_CCKW_Army','I44_Man_B_Army_Engr_GrenadeNo75','I44_Man_B_Army_PIAT','I44_Man_A_Army_M1919A4','I44_Man_A_Army_M1A1Bazooka'],
 		['AAV','I44_Man_A_Army_Medic']
 	]];
@@ -53,7 +53,7 @@ if (isServer) then {
 		['M1A1','AAV'],
 		['M1A1','M1A1'],
 		['AAV','AAV','I44_Man_B_Army_Engr_GrenadeNo75','I44_Man_A_Army_M1919A4','I44_Man_A_Army_Medic','I44_Man_B_Army_PIAT','USMC_Soldier'],
-		['LAV25','I44_Man_B_Army_Engr_GrenadeNo75','I44_Man_A_Army_Medic','I44_Man_A_Army_M1Garand_M7','USMC_Soldier','I44_Man_A_Army_M1A1Thompson']
+		['I44_ACar_A_M8_Greyhound_Army','I44_Man_B_Army_Engr_GrenadeNo75','I44_Man_A_Army_Medic','I44_Man_A_Army_M1Garand_M7','USMC_Soldier','I44_Man_A_Army_M1A1Thompson']
 	]];
 
 	//--- AI Loadouts [weapons, magazines, eligible muzzles, {backpack}, {backpack content}].

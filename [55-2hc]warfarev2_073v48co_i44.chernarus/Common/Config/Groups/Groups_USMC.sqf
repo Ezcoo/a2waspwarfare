@@ -193,7 +193,7 @@ _u = _u + ["HMMWV_TOW"];
 _l = _l + [_u];
 
 _k = _k + ["Motorized_4"];
-_u =      ["LAV25"];
+_u =      ["I44_ACar_A_M8_Greyhound_Army"];
 _u = _u + ["M1135_ATGMV_EP1"];
 _u = _u + ["M1128_MGS_EP1"];
 _l = _l + [_u];
