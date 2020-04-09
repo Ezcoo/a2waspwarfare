@@ -5,7 +5,7 @@ _c = [];
 _i = [];
 
 /* Infantry */
-_c = _c + ['RUS_Soldier1'];
+_c = _c + ['I44_Man_G_SS_CO_MP40'];
 _i = _i + [['','',250,6,-1,2,0,1,'Russians Spetsnaz',[]]];
 
 _c = _c + ['RUS_Soldier2'];

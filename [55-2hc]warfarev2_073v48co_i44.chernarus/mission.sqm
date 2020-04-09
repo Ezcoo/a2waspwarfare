@@ -3614,7 +3614,7 @@ class Mission
 					position[]={33.291344,5.6112447,1595.3229};
 					id=244;
 					side="EAST";
-					vehicle="RUS_Soldier1";
+					vehicle="I44_Man_G_SS_CO_MP40";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3636,7 +3636,7 @@ class Mission
 					position[]={33.207291,5.6069407,1594.2554};
 					id=245;
 					side="EAST";
-					vehicle="RUS_Soldier1";
+					vehicle="I44_Man_G_SS_CO_MP40";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -4004,7 +4004,7 @@ class Mission
 					position[]={33.128433,5.6029592,1593.2748};
 					id=262;
 					side="EAST";
-					vehicle="RUS_Soldier1";
+					vehicle="I44_Man_G_SS_CO_MP40";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -4614,7 +4614,7 @@ class Mission
 					position[]={33.147827,5.5995212,1591.8595};
 					id=291;
 					side="EAST";
-					vehicle="RUS_Soldier1";
+					vehicle="I44_Man_G_SS_CO_MP40";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -4636,7 +4636,7 @@ class Mission
 					position[]={33.186619,5.5976105,1590.8907};
 					id=292;
 					side="EAST";
-					vehicle="RUS_Soldier1";
+					vehicle="I44_Man_G_SS_CO_MP40";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
