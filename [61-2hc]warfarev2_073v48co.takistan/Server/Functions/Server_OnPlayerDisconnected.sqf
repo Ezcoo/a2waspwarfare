@@ -38,7 +38,7 @@ _newPlayerTotalScore = _playerTotalScore + (_currentPlayerScore - _oldplayerScor
 
 [] spawn {
     if(!(["WASP_playerSkills", _uid, "score", _newPlayerTotalScore] call iniDB_write) ) then {
-        ["WARNING", Format["Server_OnPlayerDisconnected.sqf: Failed to save score [%1] for disconnecting player [%2] in database.",_newPlayerTotalScore,_uid]] Call WFBE_CO_FNC_LogContent;
+        ["WARNING", Format["Server_OnPlayerDisconnected.sqf: Failed to save score [%1] for disconnecting player %2, UID: %3 in database.",_newPlayerTotalScore,_name,_uid]] Call WFBE_CO_FNC_LogContent;
     };
 };
 

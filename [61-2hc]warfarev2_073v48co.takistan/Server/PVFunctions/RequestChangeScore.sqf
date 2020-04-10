@@ -7,6 +7,8 @@ _oldScore = score _playerChanged;
 _playerChanged addScore -_oldScore;
 _playerChanged addScore _newScore;
 
+missionNamespace setVariable [format ["WFBE_CURRENT_SCORE_UID_%1", getPlayerUID _playerChanged], _newScore];
+
 // WFBE_ChangeScore = [nil,'CLTFNCCHANGESCORE',[_playerChanged,_newScore]];
 // publicVariable 'WFBE_ChangeScore';
 // if (isHostedServer) then {[nil,'CLTFNCCHANGESCORE',[_playerChanged,_newScore]] Spawn HandlePVF};
