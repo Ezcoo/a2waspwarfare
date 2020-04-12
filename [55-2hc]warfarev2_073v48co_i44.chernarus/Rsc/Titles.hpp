@@ -2,22 +2,22 @@
 
 #ifdef VANILLA
 	#define usflag "\ca\data\flag_usa_co.paa"
-	#define ruflag "\ca\data\flag_rus_co.paa"
+	#define ruflag "flags\gfk.paa"
 #endif
 
 #ifdef ARROWHEAD
 	#define usflag "\ca\ca_e\data\flag_us_co.paa"
-	#define ruflag "\ca\ca_e\data\flag_tkg_co.paa"
+	#define ruflag "flags\gfk.paa"
 #endif
 
 #ifdef COMBINEDOPS
 	#define usflag "\ca\ca_e\data\flag_us_co.paa"
-	#define ruflag "\ca\data\flag_rus_co.paa"
+	#define ruflag "flags\gfk.paa"
 #endif
 
 #ifndef usflag
 	#define usflag "\ca\ca_e\data\flag_us_co.paa"
-	#define ruflag "\ca\ca_e\data\flag_tkg_co.paa"
+	#define ruflag "flags\gfk.paa"
 #endif
 
 class RscTitles {
