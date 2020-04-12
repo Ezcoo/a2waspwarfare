@@ -36,7 +36,10 @@ _playerTotalScore = [_uid] call IniDB_GetScore;
 _newPlayerTotalScore = _playerTotalScore + (_currentPlayerScore - _oldplayerScore);
 ["INFORMATION", Format["OnPlayerDisconnected.sqf: Player [%1] [%2], side [%3] disconnected from game, OLD_SCORE_UID...: [%4], CURRENT_SCORE_UID...: [%5], TOTAL score sent to database: [%6]", _name,_uid,missionNamespace getVariable format ["WFBE_CO_VAR_SIDE_UID_%1", _uid],missionNamespace getVariable format ["WFBE_OLD_SCORE_UID_%1", _uid],missionNamespace getVariable format ["WFBE_CURRENT_SCORE_UID_%1", _uid],_newPlayerTotalScore]] Call WFBE_CO_FNC_LogContent;
 
-[] spawn {
+[_uid, _newPlayerTotalScore, _name] spawn {
+    _uid = _this select 0;
+    _newPlayerTotalScore = _this select 1;
+    _name = _this select 2;
     if(!(["WASP_playerSkills", _uid, "score", _newPlayerTotalScore] call iniDB_write) ) then {
         ["WARNING", Format["Server_OnPlayerDisconnected.sqf: Failed to save score [%1] for disconnecting player %2, UID: %3 in database.",_newPlayerTotalScore,_name,_uid]] Call WFBE_CO_FNC_LogContent;
     };
