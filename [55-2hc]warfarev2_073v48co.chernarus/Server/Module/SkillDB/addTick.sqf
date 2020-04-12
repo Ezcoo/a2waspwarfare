@@ -8,6 +8,9 @@ private ["_playerUID","_playerTotalTicks","_newPlayerTicks","_player"];
 
 _playerUID = _this select 0;
 _playerTotalTicks = [_playerUID] call IniDB_getTicks;
+if (isNil _playerTotalTicks) then {
+    _playerTotalTicks = 1;
+};
 
 _playerTicksNew = _playerTotalTicks + 1;
 

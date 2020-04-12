@@ -16,7 +16,10 @@ if (isNil "_oldPlayerScore") then {
 };
 
 _currentPlayerScore = missionNamespace getVariable format ["WFBE_CURRENT_SCORE_UID_%1",_playerUID];
-_playerTotalScore = [_playerUID] call IniDB_GetScore;
+if (isNil _currentPlayerScore) then {
+    missionNamespace setVariable [format ["WFBE_CURRENT_SCORE_UID_%1",_playerUID], 0];
+    _currentPlayerScore = missionNamespace getVariable [format ["WFBE_CURRENT_SCORE_UID_%1", _playerUID], 0];
+};
 
 _scoreDifference = _currentPlayerScore - _oldPlayerScore;
 
