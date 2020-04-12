@@ -2619,18 +2619,18 @@
         <Italian>Transport Helicopters</Italian>
       </Key>
       <Key ID="STR_WF_PARAMETER_Side_East"><!--shared W-->
-        <English>East</English>
-        <French>Est</French>
-        <German>Ostblock</German>
-        <Russian>Восток</Russian>
-        <Italian>Est</Italian>
+        <English>Axis Powers</English>
+        <French>Axe des puissances</French>
+        <German>Achsenmächte</German>
+        <Russian>Осевые силы</Russian>
+        <Italian>Potenze dell'asse</Italian>
       </Key>
       <Key ID="STR_WF_PARAMETER_Side_West"><!--shared W-->
-        <English>West</English>
-        <French>Ouest</French>
-        <German>Westmächte</German>
-        <Russian>Запад</Russian>
-        <Italian>Ovest</Italian>
+        <English>Allied Powers</English>
+        <French>Puissances alliées</French>
+        <German>Alliierten Mächte</German>
+        <Russian>Союзные державы</Russian>
+        <Italian>Poteri alleati</Italian>
       </Key>
       <Key ID="STR_WF_PARAMETER_Short">
         <English>Short</English>
