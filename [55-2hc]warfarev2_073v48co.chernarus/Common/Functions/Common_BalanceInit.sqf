@@ -57,7 +57,7 @@ switch (typeOf _this) do
 				_this addMagazine "2Rnd_Maverick_A10";
 				_this addMagazine "2Rnd_Maverick_A10";
 				_this addMagazine "2Rnd_Maverick_A10";
-				_this addweapon "MaverickLauncher";
+				_this addWeapon "MaverickLauncher";
 	};
      case "AV8B": {
 
@@ -68,7 +68,7 @@ switch (typeOf _this) do
         case "F35B": {
 
 				_this addMagazine "2Rnd_Maverick_A10";
-				_this addweapon "MaverickLauncher";
+				_this addWeapon "MaverickLauncher";
 
 	};
 
@@ -139,7 +139,7 @@ case "BMP2_INS":{
 case "L159_ACR":{
     _this removeWeapon "MaverickLauncher_ACR";
     _this removeMagazine "4Rnd_Maverick_L159";
-    _this addweapon "MaverickLauncher";
+    _this addWeapon "MaverickLauncher";
     _this addWeapon "BombLauncherF35";
     _this addMagazine "2Rnd_Maverick_A10";
     _this addMagazine "2Rnd_GBU12";
