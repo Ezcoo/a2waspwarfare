@@ -99,7 +99,7 @@ switch (typeOf _this) do
 				_this removeMagazine "210Rnd_25mm_M242_HEI";
 				_this removeMagazine "210Rnd_25mm_M242_APDS";
 			    _this removeWeapon "M242BC";
-                _this addweapon "TOWLauncherSingle";
+                _this addWeapon "TOWLauncherSingle";
                 _this addMagazine "6Rnd_TOW_HMMWV";
 			    _this addWeapon "M242";
 	};		
