@@ -127,7 +127,7 @@ _c = _c + ['Ural_ZU23_TK_EP1'];
 _i = _i + [['','',1750,25,-2,2,1,0,'Takistani Army',[]]];
 
 _c = _c + ['GRAD_TK_EP1'];
-_i = _i + [['','',6800,25,-2,4,1,0,'Takistani Army',[]]];
+_i = _i + [['','',5300,25,-2,4,1,0,'Takistani Army',[]]];
 
 /* Heavy Vehicles */
 _c = _c + ['M113_TK_EP1'];
@@ -162,10 +162,10 @@ _c = _c + ['Mi24_D_TK_EP1'];
 _i = _i + [['','',25584,40,-2,3,3,0,'Takistani Army',[]]];
 
 _c = _c + ['L39_TK_EP1'];
-_i = _i + [['','',23904,50,-2,3,3,0,'Takistani Army',[]]];
+_i = _i + [['','',21904,50,-2,3,3,0,'Takistani Army',[]]];
 
 _c = _c + ['Su25_TK_EP1'];
-_i = _i + [['SU-25 (FAB-250)','',50640,55,-2,4,3,0,'Takistani Army',[]]];
+_i = _i + [['SU-25 (FAB-250)','',42640,55,-2,4,3,0,'Takistani Army',[]]];
 
 /* Static Defenses */
 _c = _c + ['WarfareBMGNest_PK_TK_EP1'];

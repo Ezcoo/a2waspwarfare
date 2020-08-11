@@ -110,7 +110,7 @@ _i = _i + [['','',725,21,-2,2,1,0,'British (Woodland)',[]]];
 
 /* Heavy Vehicles */
 _c = _c + ['BAF_FV510_W'];
-_i = _i + [['','',5000,30,-2,3,2,0,'British (Woodland)',[]]];
+_i = _i + [['','',6000,30,-2,3,2,0,'British (Woodland)',[]]];
 
 /* Static Defenses */
 _c = _c + ['BAF_GPMG_Minitripod_W'];
