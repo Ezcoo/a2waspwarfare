@@ -112,6 +112,7 @@ switch (typeOf _this) do
                 _this addMagazine "2Rnd_R73";
 
 
+
 	};
          case "Mi24_V": {
 		_this removeWeapon "AT6Launcher";

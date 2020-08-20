@@ -110,13 +110,11 @@ _easaLoadout = 	_easaLoadout + [
 ];
 
 _easaVehi = 	_easaVehi + ['L39_TK_EP1'];
-_easaDefault = 	_easaDefault + [[['57mmLauncher','R73Laucher_2'],['64Rnd_57mm','2Rnd_R73']]];
+_easaDefault = 	_easaDefault + [[['57mmLauncher','64Rnd_57mm']]];
 _easaLoadout = 	_easaLoadout + [
  [
-  [1000,'S-5 (64), R-73 (2)',[['57mmLauncher','R73Laucher_2'],['64Rnd_57mm','2Rnd_R73']]],
-  [1000,'S-5 (128)',[['57mmLauncher'],['64Rnd_57mm','64Rnd_57mm']]],
+  [1000,'S-5 (64)',[['57mmLauncher'],['64Rnd_57mm']]],
   [1000,'S-8 (40)',[['80mmLauncher'],['40Rnd_S8T']]],
-  [1000,'S-8 (80)',[['80mmLauncher'],['40Rnd_S8T','40Rnd_S8T']]],
   [2800,'R-73 (2)',[['R73Launcher_2'],['2Rnd_R73']]]
  ]
 ];
