@@ -108,10 +108,6 @@ switch (typeOf _this) do
 
                 _this addweapon "CMFlareLauncher";
                 _this addMagazine "60Rnd_CMFlareMagazine";
-                _this addweapon "R73Launcher_2";
-                _this addMagazine "2Rnd_R73";
-
-
 
 	};
          case "Mi24_V": {
