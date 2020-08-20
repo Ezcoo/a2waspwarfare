@@ -110,27 +110,16 @@ _easaLoadout = 	_easaLoadout + [
 ];
 
 _easaVehi = 	_easaVehi + ['L39_TK_EP1'];
-_easaDefault = 	_easaDefault + [[['57mmLauncher','R73Launcher_2'],['64Rnd_57mm','2Rnd_R73']]];
+_easaDefault = 	_easaDefault + [[['57mmLauncher','R73Laucher_2'],['64Rnd_57mm','2Rnd_R73']]];
 _easaLoadout = 	_easaLoadout + [
  [
-  [3100,'S-5 (64), R-73 (2)',[['57mmLauncher','R73Launcher_2'],['64Rnd_57mm','2Rnd_R73']]],
-  [2700,'S-5 (64), FAB-250 (6)',[['57mmLauncher','AirBombLauncher'],['64Rnd_57mm','4Rnd_FAB_250','2Rnd_FAB_250']]],
-  [5800,'S-5 (64), Ataka-V (4)',[['57mmLauncher','AT9Launcher'],['64Rnd_57mm','4Rnd_AT9_Mi24P']]],
-  [6500,'S-5 (128)',[['57mmLauncher'],['64Rnd_57mm','64Rnd_57mm']]],
-  [5300,'S-8 (40), R-73 (2)',[['80mmLauncher','R73Launcher_2'],['40Rnd_S8T','2Rnd_R73']]],
-  [4000,'S-8 (40), FAB-250 (6)',[['80mLauncher','AirBombLauncher'],['40Rnd_S8T','4Rnd_FAB_250','2Rnd_FAB_250']]],
-  [7100,'S-8 (40), Ataka-V (4)',[['80mmLauncher','AT9Launcher'],['40Rnd_S8T','4Rnd_AT9_Mi24P']]],
-  [10500,'S-8 (80)',[['80mmLauncher'],['40Rnd_S8T','40Rnd_S8T']]],
-  [5600,'FAB-250 (6), R-73 (2)',[['AirBombLauncher','R73Launcher_2'],['4Rnd_FAB_250','2Rnd_FAB_250','2Rnd_R73']]],
-  [6100,'FAB-250 (6), Ataka-V (4)',[['AirBombLauncher','AT9Launcher'],['4Rnd_FAB_250','2Rnd_FAB_250','4Rnd_AT9_Mi24P']]],
-  [6500,'FAB-250 (12)',[['AirBombLauncher'],['4Rnd_FAB_250','4Rnd_FAB_250','4Rnd_FAB_250']]],
-  [6900,'Ataka-V (4), R-73 (2)',[['AT9Launcher','R73Launcher_2'],['4Rnd_AT9_Mi24P','2Rnd_R73']]],
-  [8000,'Ataka-V (8)',[['AT9Launcher'],['4Rnd_AT9_Mi24P','4Rnd_AT9_Mi24P']]],
-  [6000,'R-73 (4)',[['R73Launcher'],['4Rnd_R73']]]
-
+  [1000,'S-5 (64), R-73 (2)',[['57mmLauncher','R73Laucher_2'],['64Rnd_57mm','2Rnd_R73']]],
+  [1000,'S-5 (128)',[['57mmLauncher'],['64Rnd_57mm','64Rnd_57mm']]],
+  [1000,'S-8 (40)',[['80mmLauncher'],['40Rnd_S8T']]],
+  [1000,'S-8 (80)',[['80mmLauncher'],['40Rnd_S8T','40Rnd_S8T']]],
+  [2800,'R-73 (2)',[['R73Launcher_2'],['2Rnd_R73']]]
  ]
 ];
-
 
 
 
