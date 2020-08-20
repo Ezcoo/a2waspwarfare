@@ -116,7 +116,7 @@ _easaLoadout = 	_easaLoadout + [
   [5300,'S-8 (40), R-73 (2)',[['80mmLauncher','R73Launcher_2'],['40Rnd_S8T','2Rnd_R73']]],
   [4000,'S-8 (40), FAB-250 (6)',[['80mLauncher','AirBombLauncher'],['40Rnd_S8T','4Rnd_FAB_250','2Rnd_FAB_250']]],
   [7100,'S-8 (40), Ataka-V (4)',[['80mmLauncher','AT9Launcher'],['40Rnd_S8T','4Rnd_AT9_Mi24P']]],
-  [10500,'S-8 (80)',[['80mmLauncher'],['40Rnd_S8T','40Rnd_S8T']]],
+  [9100,'S-8 (80)',[['80mmLauncher'],['40Rnd_S8T','40Rnd_S8T']]],
   [5600,'FAB-250 (6), R-73 (2)',[['AirBombLauncher','R73Launcher_2'],['4Rnd_FAB_250','2Rnd_FAB_250','2Rnd_R73']]],
   [6100,'FAB-250 (6), Ataka-V (4)',[['AirBombLauncher','AT9Launcher'],['4Rnd_FAB_250','2Rnd_FAB_250','4Rnd_AT9_Mi24P']]],
   [6500,'FAB-250 (12)',[['AirBombLauncher'],['4Rnd_FAB_250','4Rnd_FAB_250','4Rnd_FAB_250']]],
