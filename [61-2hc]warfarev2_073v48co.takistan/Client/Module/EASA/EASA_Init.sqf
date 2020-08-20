@@ -425,7 +425,7 @@ _easaLoadout = 	_easaLoadout + [
   [6500,'AGM-65 (2), AIM-9L (4)',[['MaverickLauncher','SidewinderLaucher_AH1Z'],['2Rnd_Maverick_A10','2Rnd_Sidewinder_AH1Z','2Rnd_Sidewinder_AH1Z']]],
   [5800,'AGM-65 (4), AIM-9L (2)',[['MaverickLauncher','SidewinderLaucher_AH1Z'],['2Rnd_Maverick_A10','2Rnd_Maverick_A10','2Rnd_Sidewinder_AH1Z']]],
   [5500,'AGM-65 (6)',[['MaverickLauncher'],['2Rnd_Maverick_A10','2Rnd_Maverick_A10','2Rnd_Maverick_A10']]],
-  [8000,'AGM-114 (8)',[['HellfireLauncher'],['8Rnd_Hellfire']]]
+  [9500,'AGM-114 (8)',[['HellfireLauncher'],['8Rnd_Hellfire']]]
 
  ]
 ];
