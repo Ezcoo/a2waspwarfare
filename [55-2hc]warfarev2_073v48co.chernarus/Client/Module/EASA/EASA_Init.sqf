@@ -188,8 +188,8 @@ _easaVehi = 	_easaVehi + ['AV8B'];
 _easaDefault = 	_easaDefault + [[['GAU12','BombLauncherA10'],['300Rnd_25mm_GAU12','4Rnd_GBU12']]];
 _easaLoadout = 	_easaLoadout + [
  [
-  [2600,'Gau-12 (300) | GBU-12 (4)',[['GAU12','BombLauncherA10'],['300Rnd_25mm_GAU12','4Rnd_GBU12']]],
-  [5200,'Gau-12 (300) | GBU-12 (4) | Hydra(+38)',[['GAU12','BombLauncherA10','FFARLauncher'],['300Rnd_25mm_GAU12','4Rnd_GBU12','38Rnd_FFAR']]]
+  [3200,'Gau-12 (300) | GBU-12 (4)',[['GAU12','BombLauncherA10'],['300Rnd_25mm_GAU12','4Rnd_GBU12']]],
+  [6400,'Gau-12 (300) | GBU-12 (4) | Hydra(+38)',[['GAU12','BombLauncherA10','FFARLauncher'],['300Rnd_25mm_GAU12','4Rnd_GBU12','38Rnd_FFAR']]]
 
 
  ]
