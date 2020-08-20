@@ -397,6 +397,35 @@ if (WF_A2_Vanilla) then {
 }
 ];
 
+_easaVehi = 	_easaVehi + ['L159_ACR'];
+_easaDefault = 	_easaDefault + [[['FFARLauncher','MaverickLauncher','SidewinderLaucher_AH1Z'],['38Rnd_FFAR','2Rnd_Maverick_A10','2Rnd_Sidewinder_AH1Z']]];
+_easaLoadout = 	_easaLoadout + [
+ [
+  [3100,'Hydra (38), AGM-65 (2), AIM-9L (2)',[['FFARLauncher','MaverickLauncher','SidewinderLaucher_AH1Z'],['38Rnd_FFAR','2Rnd_Maverick_A10','2Rnd_Sidewinder_AH1Z']]],
+  [5100,'Hydra (38), AGM-65 (4)',[['FFARLauncher','MaverickLauncher'],['38Rnd_FFAR','2Rnd_Maverick_A10','2Rnd_Maverick_A10']]],
+  [6500,'Hydra (38), AIM-9L (4)',[['FFARLauncher','SidewinderLaucher_AH1Z'],['38Rnd_FFAR','2Rnd_Sidewinder_AH1Z','2Rnd_Sidewinder_AH1Z']]],
+  [7500,'Hydra (38), GBU-12 (2)',[['FFARLauncher','BombLauncherF35'],['38Rnd_FFAR','2Rnd_GBU12']]],
+  [8000,'Hydra (38), MK-82 (6)',[['FFARLauncher','Mk82BombLauncher_6'],['38Rnd_FFAR','6Rnd_Mk82']]],
+  [4800,'Hydra (76), AGM-65 (2)',[['FFARLauncher','MaverickLauncher'],['38Rnd_FFAR','38Rnd_FFAR','2Rnd_Maverick_A10']]],
+  [5500,'Hydra (76), AIM-9L (2)',[['FFARLauncher','SidewinderLaucher_AH1Z'],['38Rnd_FFAR','38Rnd_FFAR','2Rnd_Sidewinder_AH1Z']]],
+  [5500,'Hydra (76), MK-82 (3)',[['FFARLauncher','Mk82BombLauncher'],['38Rnd_FFAR','38Rnd_FFAR','3Rnd_Mk82']]],
+  [6500,'Hydra (114)',[['FFARLauncher'],['38Rnd_FFAR','38Rnd_FFAR','38Rnd_FFAR']]],
+  [7100,'GBU-12 (2), AGM-65 (2)',[['BombLauncherF35','MaverickLauncher'],['2Rnd_GBU12','2Rnd_Maverick_A10']]],
+  [8500,'GBU-12 (2), AIM-9L (2)',[['BombLauncherF35','SidewinderLaucher_AH1Z'],['2Rnd_GBU12','2Rnd_Sidewinder_AH1Z']]],
+  [4700,'MK-82 (3), AGM-65 (2), AIM-9L (2)',[['Mk82BombLauncher', 'MaverickLauncher','SidewinderLaucher_AH1Z'],['3Rnd_Mk82','2Rnd_Maverick_A10','2Rnd_Sidewinder_AH1Z']]],
+  [4100,'MK-82 (3), AGM-65 (4)',[['Mk82BombLauncher', 'MaverickLauncher'],['3Rnd_Mk82','2Rnd_Maverick_A10','2Rnd_Maverick_A10']]],
+  [5500,'MK-82 (3), AIM-9L (4)',[['Mk82BombLauncher', 'SidewinderLaucher_AH1Z'],['3Rnd_Mk82','2Rnd_Sidewinder_AH1Z','2Rnd_Sidewinder_AH1Z']]],
+  [5100,'MK-82 (6), AGM-65 (2)',[['Mk82BombLauncher_6', 'MaverickLauncher'],['6Rnd_Mk82','2Rnd_Maverick_A10']]],
+  [5800,'MK-82 (6), AIM-9L (2)',[['Mk82BombLauncher_6', 'SidewinderLaucher_AH1Z'],['6Rnd_Mk82','2Rnd_Sidewinder_AH1Z']]],
+  [7500,'MK-82 (12)',[['Mk82BombLauncher_6'],['6Rnd_Mk82','6Rnd_Mk82']]],
+  [6500,'AGM-65 (2), AIM-9L (4)',[['MaverickLauncher','SidewinderLaucher_AH1Z'],['2Rnd_Maverick_A10','2Rnd_Sidewinder_AH1Z','2Rnd_Sidewinder_AH1Z']]],
+  [5800,'AGM-65 (4), AIM-9L (2)',[['MaverickLauncher','SidewinderLaucher_AH1Z'],['2Rnd_Maverick_A10','2Rnd_Maverick_A10','2Rnd_Sidewinder_AH1Z']]],
+  [5500,'AGM-65 (6)',[['MaverickLauncher'],['2Rnd_Maverick_A10','2Rnd_Maverick_A10','2Rnd_Maverick_A10']]],
+  [8000,'AGM-114 (8)',[['HellfireLauncher'],['8Rnd_Hellfire']]]
+
+ ]
+];
+
 //--- Now we check for AA-based loadouts.
 for '_i' from 0 to count(_easaVehi)-1 do {
 	_loadout = _easaLoadout select _i;
