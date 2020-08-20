@@ -185,16 +185,15 @@ _easaLoadout = 	_easaLoadout + [
 ];
 
 _easaVehi = 	_easaVehi + ['AV8B'];
-_easaDefault = 	_easaDefault + [[['GAU12','BombLauncherA10'],['300Rnd_25mm_GAU12','4Rnd_GBU12']]];
+_easaDefault = 	_easaDefault + [[['BombLauncher'],['6Rnd_GBU12_AV8B']]];
 _easaLoadout = 	_easaLoadout + [
  [
-  [3200,'Gau-12 (300) | GBU-12 (4)',[['GAU12','BombLauncherA10'],['300Rnd_25mm_GAU12','4Rnd_GBU12']]],
+  [3500,'GBU-12 (6)',[['BombLauncher'],['6Rnd_GBU12_AV8B']]],
+  [6500,'GBU-12 (4) | Hydra(+38)',[['BombLauncherA10','FFARLauncher'],['4Rnd_GBU12','38Rnd_FFAR']]],
+  [6400,'Gau-12 (300) | GBU-12 (6)',[['GAU12','BombLauncher'],['300Rnd_25mm_GAU12','6Rnd_GBU12_AV8B']]],
   [6400,'Gau-12 (300) | GBU-12 (4) | Hydra(+38)',[['GAU12','BombLauncherA10','FFARLauncher'],['300Rnd_25mm_GAU12','4Rnd_GBU12','38Rnd_FFAR']]]
-
-
  ]
 ];
-
 
 _easaVehi = 	_easaVehi + ['AV8B2'];
 _easaDefault = 	_easaDefault + [[['MaverickLauncher','SidewinderLaucher_AH1Z'],['2Rnd_Maverick_A10','2Rnd_Maverick_A10','2Rnd_Maverick_A10','2Rnd_Sidewinder_AH1Z']]];
