@@ -111,10 +111,13 @@ switch (typeOf _this) do
 	};
          
         case "L39_TK_EP1": {
-                 
+
                 _this addweapon "CMFlareLauncher";
                 _this addMagazine "60Rnd_CMFlareMagazine";
-                	
+                _this addweapon "R73Launcher_2";
+                _this addMagazine "2Rnd_R73";
+
+
 	};
          case "Mi24_V": {
 		_this removeWeapon "AT6Launcher";
