@@ -97,7 +97,7 @@ if (_unitType isKindOf "Man") then {
 	_vehicle = [_unitType, _position, _sideID, _dir, true, true, true, _special] Call WFBE_CO_FNC_CreateVehicle;
 	_vehicle addEventHandler ["Fired",{_this Spawn HandleRocketTraccer}];
 	if(typeOf _vehicle in ['F35B','AV8B','AV8B2','A10','A10_US_EP1','Su25_TK_EP1','Su34','Su39','An2_TK_EP1','L159_ACR']) then {_vehicle addeventhandler ['Fired',{_this spawn HandleBombs;_this spawn HandleAAMissiles}];};
-    if(typeOf _vehicle in ['AH1Z','BAF_Apache_AH1_D','AH64D_EP1','AH64D','Ka52Black','Ka52','Mi24_P','L39_TK_EP1','2S6M_Tunguska','M6_EP1']) then {_vehicle addeventhandler ['Fired',{_this spawn HandleAAMissiles;}];};
+    if(typeOf _vehicle in ['AH1Z','BAF_Apache_AH1_D','AH64D_EP1','AH64D','Mi24_P','L39_TK_EP1','2S6M_Tunguska','M6_EP1']) then {_vehicle addeventhandler ['Fired',{_this spawn HandleAAMissiles;}];};
 	if ({(typeOf _vehicle) isKindOf _x} count ["LAV25_Base","M2A2_Base","BMP2_Base","BTR90_Base"] != 0) then {_vehicle addeventhandler ["fired",{_this spawn HandleReload;}];
 	if(typeOf _vehicle in ['T90','BMP3']) then {_vehicle addeventhandler ['Fired',{_this spawn HandleATReload;}];};
 
