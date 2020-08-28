@@ -1,4 +1,4 @@
-Private ["_ammo","_irLock","_missile","_source","_unit","_indirectHit"];
+Private ["_ammo","_irLock","_missile","_source","_unit","_indirectHit","_aiRateOfFireDistance","_maxRange","_maxRangeProbab"];
 _unit = _this select 0;
 _ammo = _this select 1;
 _source = _this select 2;
@@ -27,3 +27,19 @@ _indirectHit = getNumber(configFile >> "CfgAmmo" >> _ammo >> "indirectHit");
         then {
             _indirectHit = 500
             };
+
+//Metis fixes
+_aiRateOfFireDistance = getNumber(configFile >> "CfgWeapons" >> _unit >> "aiRateOfFireDistance");
+if (_unit in ["MetisLauncher"]) then {
+    _aiRateOfFireDistance = 3000
+};
+
+_maxRange = getNumber(configFile >> "CfgWeapons" >> _unit >> "maxRange");
+if (_unit in ["MetisLauncher"]) then {
+    _maxRange = 5000
+};
+
+_maxRangeProbab = getNumber(configFile >> "CfgWeapons" >> _unit >> "maxRangeProbab");
+if (_unit in ["MetisLauncher"]) then {
+    _maxRangeProbab = 0
+};
