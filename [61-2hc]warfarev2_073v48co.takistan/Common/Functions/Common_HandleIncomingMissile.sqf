@@ -31,9 +31,9 @@ if (_trackOversteer == 0)
             }
     };
 else if (_trackOversteer == 1)
-         then {
-             if (_ammo in ["M_Maverick_AT"])
-                 then {
-                     _trackOversteer = 0
-                 }
-         };
+    then {
+        if (_ammo in ["M_Maverick_AT"])
+            then {
+                _trackOversteer = 1
+            }
+    };
