@@ -1,4 +1,4 @@
-Private ["_ammo","_irLock","_missile","_source","_unit","_trackOversteer"];
+Private ["_ammo","_irLock","_missile","_source","_unit","_indirectHit"];
 _unit = _this select 0;
 _ammo = _this select 1;
 _source = _this select 2;
@@ -22,18 +22,11 @@ if (_irLock == 1) then { //--- IR Lock is affected
 };
 
 //Maverick possible fix
-_trackOversteer = getNumber(configFile >> "CfgAmmo" >> _ammo >> "trackOversteer");
-if (_trackOversteer == 0)
+_indirectHit = getNumber(configFile >> "CfgAmmo" >> _ammo >> "indirectHit");
+if (_indirectHit == 20)
     then {
         if (_ammo in ["M_Maverick_AT"])
             then {
-                _trackOversteer = 1
-            }
-    };
-else if (_trackOversteer == 1)
-    then {
-        if (_ammo in ["M_Maverick_AT"])
-            then {
-                _trackOversteer = 0
+                _indirectHit = 1000
             }
     };
