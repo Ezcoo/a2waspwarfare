@@ -21,12 +21,9 @@ if (_irLock == 1) then { //--- IR Lock is affected
 	};
 };
 
-//Maverick possible fix
+//Maverick fix
 _indirectHit = getNumber(configFile >> "CfgAmmo" >> _ammo >> "indirectHit");
-if (_indirectHit == 20)
-    then {
-        if (_ammo in ["M_Maverick_AT"])
-            then {
-                _indirectHit = 1000
-            }
-    };
+    if (_ammo in ["M_Maverick_AT"])
+        then {
+            _indirectHit = 1000
+            };
