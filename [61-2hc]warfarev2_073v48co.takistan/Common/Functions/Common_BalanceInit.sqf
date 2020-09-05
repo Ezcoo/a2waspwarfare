@@ -157,6 +157,7 @@ case "BMP2_TK_EP1":{
 	};
 };
 
+
 case "L159_ACR":{
     _this removeWeapon "MaverickLauncher_ACR";
     _this removeMagazine "4Rnd_Maverick_L159";
@@ -165,5 +166,18 @@ case "L159_ACR":{
     _this addMagazine "2Rnd_Maverick_A10";
     _this addMagazine "38Rnd_FFAR";
 };
+
+
+case "Pandur2_ACR":{
+_this addMagazineTurret ["60Rnd_30mm_ATKMK44_AP_ACR",[0]];
+	_current_light_level = ((side player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_LIGHT;
+    if(_current_light_level < 4)then{
+
+    	_this removeWeaponTurret ["SpikeLauncher_ACR", [0]];
+	};
+};
+
+
+
 
 };

@@ -25,7 +25,7 @@ if (_irLock == 1) then { //--- IR Lock is affected
 _indirectHit = getNumber(configFile >> "CfgAmmo" >> _ammo >> "indirectHit");
     if (_ammo in ["M_Maverick_AT"])
         then {
-            _indirectHit = 500
+            _indirectHit = 850
             };
 
 //Metis fixes

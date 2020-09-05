@@ -110,6 +110,7 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_BAF") > 0) then {
 	_u = _u		+ ['BAF_Offroad_D'];
 	_u = _u		+ ['BAF_Jackal2_GMG_D'];
 	_u = _u		+ ['BAF_Jackal2_L2A1_D'];
+	_u = _u		+ ['Pandur2_ACR'];
 };
 
 missionNamespace setVariable [Format ["WFBE_%1LIGHTUNITS", _side], _u];
