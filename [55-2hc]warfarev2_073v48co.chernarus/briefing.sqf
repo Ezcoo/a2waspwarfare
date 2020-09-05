@@ -15,7 +15,7 @@ player createDiaryRecord["Diary", ["Changelog", "<br/>
 - Missile Range Limitation is the same for all vehicles.<br />
 - Tank prices adjusted to their abitilities and HF levels line ups are reiewed.<br />
 - Representative air prices according to their abilities and utility.<br />
-- An-2 got WW1 MG and is compatible with EASA.<br />
+- An-2 got WW1 MG and is compatible with EASA. <br />
 - EASA setups reviewed for more balance.<br />
 - Default params reviewed to match the mission's logic and context.<br />
 - Kill bounties for human players now depend on their score.<br />
