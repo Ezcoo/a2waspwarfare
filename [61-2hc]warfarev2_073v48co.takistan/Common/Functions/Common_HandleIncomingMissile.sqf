@@ -23,7 +23,7 @@ if (_irLock == 1) then { //--- IR Lock is affected
 
 //Maverick / CRV-7 PG (Wildcat) fix
 _indirectHit = getNumber(configFile >> "CfgAmmo" >> _ammo >> "indirectHit");
-    if (_ammo in ["CRV7_PG"])
+    if (_ammo in ["M_CRV7_AT"])
         then {
             _indirectHit = 800
             };
