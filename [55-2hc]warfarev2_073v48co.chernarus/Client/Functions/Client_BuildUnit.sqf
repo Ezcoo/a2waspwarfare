@@ -190,7 +190,7 @@ if(typeOf _vehicle in ['F35B','AV8B','AV8B2','A10','A10_US_EP1','Su25_TK_EP1','S
 	_vehicle addeventhandler ['Fired',{_this spawn HandleBombs;_this spawn HandleAAMissiles}];
 };
 
-if(typeOf _vehicle in ['L39_TK_EP1','2S6M_Tunguska','M6_EP1']) then {
+if(typeOf _vehicle in ['AH1Z','BAF_Apache_AH1_D','AH64D_EP1','AH64D','Ka52Black','Ka52','Mi24_P','L39_TK_EP1','2S6M_Tunguska','M6_EP1']) then {
 	_vehicle addeventhandler ['Fired',{_this spawn HandleAAMissiles;}];
 };
 
@@ -198,7 +198,7 @@ if(typeOf _vehicle in ['T90','BMP3']) then {
 	_vehicle addeventhandler ['Fired',{_this spawn HandleATReload;}];
 };
 
-if ({(typeOf _vehicle) isKindOf _x} count ["LAV25_Base","M2A2_Base","BMP2_Base","BTR90_Base","M2A2_EP1"] != 0) then {_vehicle addeventhandler ["fired",{_this spawn HandleReload;}];};
+if ({(typeOf _vehicle) isKindOf _x} count ["LAV25_Base","M2A2_Base","BMP2_Base","BTR90_Base" ] != 0) then {_vehicle addeventhandler ["fired",{_this spawn HandleReload;}];};
 
 if({(_vehicle isKindOf _x)} count ["Tank","Wheeled_APC"] !=0) then {_vehicle addeventhandler ['Engine',{_this execVM "Client\Module\Engines\Engine.sqf"}];
      _vehicle addAction ["<t color='"+"#00E4FF"+"'>STEALTH ON</t>","Client\Module\Engines\Stopengine.sqf", [], 7,false, true,"","alive _target &&(isEngineOn _target)"];};
