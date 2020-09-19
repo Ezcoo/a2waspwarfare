@@ -185,6 +185,21 @@ _this addMagazineTurret ["60Rnd_30mm_ATKMK44_AP_ACR",[0]];
 	};
 };
 
+case "AW159_Lynx_BAF":{
+    _this removeWeaponTurret ["CRV7_PG", [-1]];
+    _this removeWeaponTurret ["BAF_M621", [-1]];
+    _this addMagazineTurret ["2Rnd_Spike_ACR", [-1]];
+    _this addMagazineTurret ["1200Rnd_30x113mm_M789_HEDP", [-1]];
+    _this addMagazineTurret ["6Rnd_CRV7_HEPD", [-1]];
+    _this addWeaponTurret ["M230", [-1]];
+    _this addWeaponTurret ["CRV7_HEPD",[-1]];
+    _this addWeaponTurret ["SpikeLauncher_ACR", [-1]];
+
+
+
+
+};
+
 
 
 
