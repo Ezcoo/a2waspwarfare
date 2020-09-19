@@ -194,7 +194,7 @@ if(typeOf _vehicle in ['L39_TK_EP1','2S6M_Tunguska','M6_EP1']) then {
 	_vehicle addeventhandler ['Fired',{_this spawn HandleAAMissiles;}];
 };
 
-if(typeOf _vehicle in ['T90','BMP3','M2A2_EP1']) then {
+if(typeOf _vehicle in ['T90','BMP3','M2A3_EP1']) then {
 	_vehicle addeventhandler ['Fired',{_this spawn HandleATReload;}];
 };
 
