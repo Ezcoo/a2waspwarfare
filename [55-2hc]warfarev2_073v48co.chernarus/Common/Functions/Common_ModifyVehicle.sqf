@@ -213,6 +213,120 @@ switch (_type) do {
   		_vehicle addeventhandler ["HandleDamage",format ["_this Call %1", _rearmor]];
 	};
 
+	case "Ka52":{
+
+	 	_rearmor = {
+
+   			_ammo = _this select 4;
+   			_result = 0;
+
+   			switch (_ammo) do {
+				case "Sh_125_SABOT" :{_dam=_this select 2; _p=56; _result=(_dam/100)*(100-_p);};
+				case "Sh_120_SABOT" :{_dam=_this select 2; _p=56; _result=(_dam/100)*(100-_p);};
+			//	case "R_SMAW_HEAA" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "R_RPG18_AT" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "R_PG9_AT" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "R_PG7V_AT" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "R_PG7VL_AT" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "R_M136_AT" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "M_47_AT_EP1" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "R_MEEWS_HEAT" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "M_AT13_AT" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "M_TOW_AT" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "M_TOW2_AT" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "Sh_85_AP" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "Sh_100_HEAT" :{_dam=_this select 2; _p=55; _result=(_dam/100)*(100-_p);};
+			//		case "B_20mm_AA" :{_dam=_this select 2; _p=18; _result=(_dam/100)*(100-_p);};
+			//		case "B_23mm_AA" :{_dam=_this select 2; _p=18; _result=(_dam/100)*(100-_p);};
+			//		case "B_25mm_HE" :{_dam=_this select 2; _p=18; _result=(_dam/100)*(100-_p);};
+			//		case "B_25mm_HEI" :{_dam=_this select 2; _p=18; _result=(_dam/100)*(100-_p);};
+			//		case "B_30mm_AA" :{_dam=_this select 2; _p=18; _result=(_dam/100)*(100-_p);};
+			//		case "B_30mm_HE" :{_dam=_this select 2; _p=18; _result=(_dam/100)*(100-_p);};
+			//		case "Sh_40_HE" :{_dam=_this select 2; _p=18; _result=(_dam/100)*(100-_p);};
+     			default {_result = _this select 2;};
+    		};
+   			_result
+  		};
+
+  		_vehicle addeventhandler ["HandleDamage",format ["_this Call %1", _rearmor]];
+	};
+	
+	case "Ka52Black":{
+
+	 	_rearmor = {
+
+   			_ammo = _this select 4;
+   			_result = 0;
+
+   			switch (_ammo) do {
+				case "Sh_125_SABOT" :{_dam=_this select 2; _p=56; _result=(_dam/100)*(100-_p);};
+				case "Sh_120_SABOT" :{_dam=_this select 2; _p=56; _result=(_dam/100)*(100-_p);};
+			//	case "R_SMAW_HEAA" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "R_RPG18_AT" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "R_PG9_AT" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "R_PG7V_AT" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "R_PG7VL_AT" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "R_M136_AT" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "M_47_AT_EP1" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "R_MEEWS_HEAT" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "M_AT13_AT" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "M_TOW_AT" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "M_TOW2_AT" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "Sh_85_AP" :{_dam=_this select 2; _p=36; _result=(_dam/100)*(100-_p);};
+			//	case "Sh_100_HEAT" :{_dam=_this select 2; _p=55; _result=(_dam/100)*(100-_p);};
+			//		case "B_20mm_AA" :{_dam=_this select 2; _p=18; _result=(_dam/100)*(100-_p);};
+			//		case "B_23mm_AA" :{_dam=_this select 2; _p=18; _result=(_dam/100)*(100-_p);};
+			//		case "B_25mm_HE" :{_dam=_this select 2; _p=18; _result=(_dam/100)*(100-_p);};
+			//		case "B_25mm_HEI" :{_dam=_this select 2; _p=18; _result=(_dam/100)*(100-_p);};
+			//		case "B_30mm_AA" :{_dam=_this select 2; _p=18; _result=(_dam/100)*(100-_p);};
+			//		case "B_30mm_HE" :{_dam=_this select 2; _p=18; _result=(_dam/100)*(100-_p);};
+			//		case "Sh_40_HE" :{_dam=_this select 2; _p=18; _result=(_dam/100)*(100-_p);};
+     			default {_result = _this select 2;};
+    		};
+   			_result
+  		};
+
+  		_vehicle addeventhandler ["HandleDamage",format ["_this Call %1", _rearmor]];
+	};
+	
+	case "BAF_FV510_W":{
+
+	 	_rearmor = {
+
+   			_ammo = _this select 4;
+   			_result = 0;
+
+   			switch (_ammo) do {
+				case "Sh_125_SABOT" :{_dam=_this select 2; _p=20; _result=(_dam/100)*(100-_p);};
+				case "Sh_120_SABOT" :{_dam=_this select 2; _p=20; _result=(_dam/100)*(100-_p);};
+				case "R_SMAW_HEAA" :{_dam=_this select 2; _p=11; _result=(_dam/100)*(100-_p);};
+				case "R_RPG18_AT" :{_dam=_this select 2; _p=11; _result=(_dam/100)*(100-_p);};
+				case "R_PG9_AT" :{_dam=_this select 2; _p=11; _result=(_dam/100)*(100-_p);};
+				case "R_PG7V_AT" :{_dam=_this select 2; _p=11; _result=(_dam/100)*(100-_p);};
+				case "R_PG7VL_AT" :{_dam=_this select 2; _p=11; _result=(_dam/100)*(100-_p);};
+				case "R_M136_AT" :{_dam=_this select 2; _p=11; _result=(_dam/100)*(100-_p);};
+				case "M_47_AT_EP1" :{_dam=_this select 2; _p=11; _result=(_dam/100)*(100-_p);};
+				case "R_MEEWS_HEAT" :{_dam=_this select 2; _p=11; _result=(_dam/100)*(100-_p);};
+				case "M_AT13_AT" :{_dam=_this select 2; _p=11; _result=(_dam/100)*(100-_p);};
+				case "M_TOW_AT" :{_dam=_this select 2; _p=11; _result=(_dam/100)*(100-_p);};
+				case "M_TOW2_AT" :{_dam=_this select 2; _p=11; _result=(_dam/100)*(100-_p);};
+				case "Sh_85_AP" :{_dam=_this select 2; _p=11; _result=(_dam/100)*(100-_p);};
+				case "Sh_100_HEAT" :{_dam=_this select 2; _p=11; _result=(_dam/100)*(100-_p);};
+					case "B_20mm_AA" :{_dam=_this select 2; _p=7; _result=(_dam/100)*(100-_p);};
+					case "B_23mm_AA" :{_dam=_this select 2; _p=7; _result=(_dam/100)*(100-_p);};
+					case "B_25mm_HE" :{_dam=_this select 2; _p=7; _result=(_dam/100)*(100-_p);};
+					case "B_25mm_HEI" :{_dam=_this select 2; _p=7; _result=(_dam/100)*(100-_p);};
+					case "B_30mm_AA" :{_dam=_this select 2; _p=7; _result=(_dam/100)*(100-_p);};
+					case "B_30mm_HE" :{_dam=_this select 2; _p=7; _result=(_dam/100)*(100-_p);};
+					case "Sh_40_HE" :{_dam=_this select 2; _p=7; _result=(_dam/100)*(100-_p);};
+     			default {_result = _this select 2;};
+    		};
+   			_result
+  		};
+
+  		_vehicle addeventhandler ["HandleDamage",format ["_this Call %1", _rearmor]];
+	};
+
 	default{
 	
 			_rearmor = {
