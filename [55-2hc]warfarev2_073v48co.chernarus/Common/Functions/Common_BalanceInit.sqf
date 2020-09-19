@@ -114,6 +114,12 @@ switch (typeOf _this) do
 
 
 	};
+
+         case "Mi24_P": {
+	    _this addMagazineTurret ["750Rnd_30mm_GSh301",[-1]];
+	    _this addMagazineTurret ["750Rnd_30mm_GSh301",[-1]];
+	};
+
           case "MLRS": {
 
 
