@@ -218,13 +218,6 @@ switch (_type) do {
 		};
 	};
 
-	case "BVP1_TK_ACR": {
-	    if (WF_Camo) then {
-	        _vehicle setVehicleInit "this setObjectTexture [0,""Textures\trup_ext0_co.paa""]";
-	    };
-	};
-
-
 	};
 
 processinitcommands;
