@@ -6,7 +6,7 @@ _am = _this select 4;
 _rkt = nearestObject [_u,_am];
 
 if (isNull _rkt ||({isPlayer _x} count (crew _u) == 0)) exitwith {};
-_msl = ["M_AT10_AT","M_AT11_AT","M_TOW_AT","M_TOW2_AT"];
+_msl = ["M_AT10_AT","M_AT11_AT"];
 if (!(_am in _msl)) exitWith{};
 
 _cmag= currentMagazine (vehicle _u);
