@@ -21,6 +21,6 @@ for "_i" from 25 to 1 step -1 do {
 };
 
 (vehicle _unit) addMagazine [_currentMag, _ammoCount];
-(vehicle _unit) addWeapon "_weapon";
+(vehicle _unit) addWeapon _weapon;
 
 reload (vehicle _unit);
