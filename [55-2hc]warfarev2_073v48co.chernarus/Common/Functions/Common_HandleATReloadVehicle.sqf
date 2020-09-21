@@ -11,9 +11,9 @@ _missile = ["M_TOW_AT"];
 
 if (!(_ammo in _missile)) exitWith {};
 
-_currentMag = currentMagazine (vehicle _u);
+_currentMag = currentMagazine (vehicle _unit);
 _ammocount = _unit ammo _weapon;
-//hintsilent format ["%1",_ammocount];
+hint format ["%1",_ammocount];
 (vehicle _unit) removeMagazine (_currentMag);
 sleep 17;
 (vehicle _unit) addMagazine [_currentMag,_ammocount];
