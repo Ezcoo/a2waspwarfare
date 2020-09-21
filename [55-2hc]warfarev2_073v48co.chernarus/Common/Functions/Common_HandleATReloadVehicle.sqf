@@ -16,9 +16,11 @@ if (!(_ammo in _missile)) exitWith {};
 _currentMag = currentMagazine (vehicle _unit);
 _ammoCount = _unit ammo _weapon;
 
-(vehicle _unit) removeMagazine (_currentMag);
-(vehicle _unit) setWeaponReloadingTime [gunner (vehicle _unit), _muzzle, _reloadTime];
-(vehicle _unit) addMagazine [_currentMag, _ammoCount];
-(vehicle _unit) setWeaponReloadingTime [gunner (vehicle _unit), _muzzle, _reloadTime];
+for "_i" from 25 to 1 step -1 do {
+    hintSilent format ["%1 missiles left, %2 seconds left to reload", _ammoCount, _i];
+    sleep 1;
+};
 
-reload (vehicle _unit);
+(vehicle _unit) removeMagazineTurret [_currentMag, [0]];
+(vehicle _unit) addMagazineTurret [_currentMag, [0], _ammoCount];
+// (vehicle _unit) loadMagazine [[0], _weapon, _currentMag];
