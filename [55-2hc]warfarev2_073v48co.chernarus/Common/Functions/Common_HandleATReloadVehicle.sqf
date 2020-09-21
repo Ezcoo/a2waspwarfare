@@ -18,4 +18,4 @@ hintSilent format ["%1 missiles left",_ammocount];
 sleep 17;
 (vehicle _unit) addMagazine [_currentMag,_ammocount];
 
-reload (vehicle _unit);
+reload _unit;
