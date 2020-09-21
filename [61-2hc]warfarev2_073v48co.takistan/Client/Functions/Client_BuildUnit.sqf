@@ -199,11 +199,11 @@ if(typeOf _vehicle in ['AH1Z','BAF_Apache_AH1_D','AH64D_EP1','AH64D','Ka52Black'
 	_vehicle addeventhandler ['Fired',{_this spawn HandleAAMissiles;}];
 };
 
-if(typeOf _vehicle in ['T90','BMP3']) then {
+if(typeOf _vehicle in ['T90','BMP3','M2A2_EP1']) then {
 	_vehicle addeventhandler ['Fired',{_this spawn HandleATReload;}];
 };
 
-if ({(typeOf _vehicle) isKindOf _x} count ["LAV25_Base","M2A2_Base","BMP2_Base","BTR90_Base"] != 0) then {_vehicle addeventhandler ["fired",{_this spawn HandleReload;}];};
+if ({(typeOf _vehicle) isKindOf _x} count ["LAV25_Base","M2A2_Base","BMP2_Base","BTR90_Base","M2A2_EP1"] != 0) then {_vehicle addeventhandler ["fired",{_this spawn HandleReload;}];};
 
 if({(_vehicle isKindOf _x)} count ["Tank","Wheeled_APC"] !=0) then {_vehicle addeventhandler ['Engine',{_this execVM "Client\Module\Engines\Engine.sqf"}];
      _vehicle addAction ["<t color='"+"#00E4FF"+"'>STEALTH ON</t>","Client\Module\Engines\Stopengine.sqf", [], 7,false, true,"","alive _target &&(isEngineOn _target)"];};
