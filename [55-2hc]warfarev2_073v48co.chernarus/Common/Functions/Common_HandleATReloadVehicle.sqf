@@ -24,4 +24,4 @@ for "_i" from 25 to 1 step -1 do {
 };
 
 (vehicle _unit) addMagazineTurret [_currentMag, [0], _ammoCount];
-// (vehicle _unit) loadMagazine [[0], _weapon, _currentMag];
+(vehicle _unit) loadMagazine [[0], _weapon, _currentMag];
