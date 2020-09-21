@@ -13,7 +13,9 @@ if (!(_ammo in _missile)) exitWith {};
 
 _currentMag = currentMagazine (vehicle _unit);
 _ammocount = _unit ammo _weapon;
-hint format ["%1",_ammocount];
+hintSilent format ["%1 missiles left",_ammocount];
 (vehicle _unit) removeMagazine (_currentMag);
 sleep 17;
 (vehicle _unit) addMagazine [_currentMag,_ammocount];
+
+reload (vehicle _unit);
