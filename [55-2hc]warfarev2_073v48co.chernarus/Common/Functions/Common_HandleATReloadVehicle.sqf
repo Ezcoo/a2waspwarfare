@@ -12,10 +12,14 @@ _missile = ["M_TOW_AT"];
 if (!(_ammo in _missile)) exitWith {};
 
 _currentMag = currentMagazine (vehicle _unit);
-_ammocount = _unit ammo _weapon;
-hintSilent format ["%1 missiles left",_ammocount];
-(vehicle _unit) removeMagazine (_currentMag);
-sleep 17;
-(vehicle _unit) addMagazine [_currentMag,_ammocount];
+_ammoCount = _unit ammo _weapon;
+(vehicle _unit) removeWeapon (_weapon);
 
-reload _unit;
+for _i from 25 to 1 step -1 do {
+    hintSilent format ["%1 missiles left, %2 seconds left to reload", _ammoCount, _i];
+};
+
+(vehicle _unit) addMagazine [_currentMag, _ammoCount];
+(vehicle _unit) addWeapon "_weapon";
+
+reload (vehicle _unit);
