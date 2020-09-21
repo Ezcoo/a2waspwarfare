@@ -15,8 +15,9 @@ _currentMag = currentMagazine (vehicle _unit);
 _ammoCount = _unit ammo _weapon;
 (vehicle _unit) removeWeapon (_weapon);
 
-for _i from 25 to 1 step -1 do {
+for "_i" from 25 to 1 step -1 do {
     hintSilent format ["%1 missiles left, %2 seconds left to reload", _ammoCount, _i];
+    sleep 1;
 };
 
 (vehicle _unit) addMagazine [_currentMag, _ammoCount];
