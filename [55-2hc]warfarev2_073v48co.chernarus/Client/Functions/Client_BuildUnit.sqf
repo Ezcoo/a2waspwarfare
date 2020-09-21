@@ -203,11 +203,6 @@ if(typeOf _vehicle in ['T90','BMP3']) then {
 	_vehicle addeventhandler ['Fired',{_this spawn HandleATReload;}];
 };
 
-//reload mechanism for bradley's tow.
-if(typeOf _vehicle in ['M2A2_EP1']) then {
-    _vehicle addEventHandler ['Fired',{_this spawn HandleATReloadVehicle;}];
-};
-
 if ({(typeOf _vehicle) isKindOf _x} count ["LAV25_Base","M2A2_Base","BMP2_Base","BTR90_Base"] != 0) then {_vehicle addeventhandler ["fired",{_this spawn HandleReload;}];};
 
 if({(_vehicle isKindOf _x)} count ["Tank","Wheeled_APC"] !=0) then {_vehicle addeventhandler ['Engine',{_this execVM "Client\Module\Engines\Engine.sqf"}];
