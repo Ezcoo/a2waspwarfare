@@ -18,10 +18,10 @@ _ammoCount = _unit ammo _weapon;
 
 (vehicle _unit) removeMagazineTurret [_currentMag, [0]];
 
-for "_i" from 25 to 1 step -1 do {
+for "_i" from 17 to 1 step -1 do {
     hintSilent format ["%1 missiles left, %2 seconds left to reload", _ammoCount, _i];
     sleep 1;
 };
 
-(vehicle _unit) addMagazineTurret [_currentMag, [0], _ammoCount];
+(vehicle _unit) addMagazine [_currentMag, _ammoCount];
 (vehicle _unit) loadMagazine [[0], _weapon, _currentMag];
