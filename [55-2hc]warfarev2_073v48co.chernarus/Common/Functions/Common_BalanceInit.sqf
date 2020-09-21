@@ -75,19 +75,19 @@ switch (typeOf _this) do
 	};
 
 		case "M2A2_EP1": {
-		        _this removeWeapon "TOWLauncher";
-                _this addweapon "TOWLauncherSingle";
-                _this addMagazine "6Rnd_TOW_HMMWV";
-				_this removeMagazine "210Rnd_25mm_M242_HEI";
-				_this removeMagazine "210Rnd_25mm_M242_APDS";
-			    _this removeWeapon "M242BC";
-			    _this addWeapon "M242";
+
 				_this removeMagazine "2Rnd_TOW2";
 				_this removeMagazine "2Rnd_TOW2";
 				_this removeMagazine "2Rnd_TOW2";
 				_this removeMagazine "2Rnd_TOW2";
 			    _this removeMagazine "2Rnd_TOW2";
-
+                _this removeWeapon "TOWLauncher";
+                _this addMagazine "6Rnd_TOW_HMMWV";
+                _this addweapon "TOWLauncherSingle";
+				_this removeMagazine "210Rnd_25mm_M242_HEI";
+				_this removeMagazine "210Rnd_25mm_M242_APDS";
+			    _this removeWeapon "M242BC";
+			    _this addWeapon "M242";
 
 	};
 
