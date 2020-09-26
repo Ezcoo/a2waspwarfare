@@ -184,6 +184,15 @@ case "AW159_Lynx_BAF":{
 
 };
 
+case "BVP1_TK_ACR":{
+    _this RemoveWeaponTurret ["2A28", [0]];
+    _this addMagazineTurret ["10Rnd_85mmAP", [0]];
+    _this addWeaponTurret ["ZiS_S_53", [0]];
+    _this addMagazineTurret ["33Rnd_85mmHE", [0]];
 
+
+
+
+};
 
 };
