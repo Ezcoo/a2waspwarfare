@@ -212,5 +212,10 @@ case "BVP1_TK_ACR":{
 
 };
 
+case "M1128_MGS_EP1":{
+
+    _this addMagazineTurret ["6RND_105mm_APDS", [0]];
+
+};
 
 };
