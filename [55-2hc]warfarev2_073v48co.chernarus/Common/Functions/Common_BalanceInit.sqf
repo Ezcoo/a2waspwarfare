@@ -189,6 +189,7 @@ case "BVP1_TK_ACR":{
     _this addMagazineTurret ["10Rnd_85mmAP", [0]];
     _this addWeaponTurret ["ZiS_S_53", [0]];
     _this addMagazineTurret ["33Rnd_85mmHE", [0]];
+    _this addMagazineTurret ["4rnd_AT3", [0]];
 
 
 
