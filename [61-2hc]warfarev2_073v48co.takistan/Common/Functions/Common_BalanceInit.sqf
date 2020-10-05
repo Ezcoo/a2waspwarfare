@@ -128,6 +128,7 @@ switch (typeOf _this) do
 		_this removeWeapon "AT6Launcher";
 		
                 _this addMagazine "4Rnd_AT9_Mi24P";
+                _this addMagazine "4Rnd_AT9_Mi24P";
 		_this addweapon "AT9Launcher";
   
 		  
