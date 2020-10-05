@@ -138,6 +138,15 @@ switch (typeOf _this) do
 	    _this addMagazineTurret ["750Rnd_30mm_GSh301",[-1]];
 	    _this addMagazineTurret ["750Rnd_30mm_GSh301",[-1]];
 	};
+	case "Mi24_D_TK_EP1": {
+        	    _this removeWeaponTurret ["YakB", [0]];
+        	    _this addMagazineTurret ["500Rnd_145x115_KPVT", [0]];
+        	    _this addWeaponTurret ["KPVT", [0]];
+        	    _this removeMagazineTurret ["128Rnd_57mm", [-1]];
+        	    _this addMagazineTurret ["64Rnd_57mm", [-1]];
+        	    _this addMagazineTurret ["6Rnd_Grenade_Camel", [-1]];
+        	    _this addWeaponTurret ["CamelGrenades", [-1]];
+        	};
 	
           case "MLRS": {
 		
