@@ -52,6 +52,8 @@ _u = _u		+ ['MTVR'];
 _u = _u		+ ['MtvrRepair'];
 _u = _u		+ ['WarfareReammoTruck_USMC'];
 _u = _u		+ ['MtvrRefuel'];
+_u = _u		+ ['Dingo_DST_ACR'];
+_u = _u		+ ['Dingo_GL_DST_ACR'];
 _u = _u		+ ['WarfareSalvageTruck_USMC'];
 if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['WarfareSupplyTruck_USMC']};
 _u = _u		+ ['RHIB'];
