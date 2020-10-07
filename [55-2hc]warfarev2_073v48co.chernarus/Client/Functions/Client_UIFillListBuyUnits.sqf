@@ -3,6 +3,7 @@ _listNames = _this select 0;
 _filler = _this select 1;
 _listBox = _this select 2;
 _value = _this select 3;
+_infantryAdvancement = missionNamespace getVariable "WFBE_C_PLAYERS_INFANTRY_UPGRADE_ADVANCEMENT";
 _priceModifier = missionNamespace getVariable 'WFBE_C_PLAYERS_PRICE_MODIFIER';
 
 _u = 0;
@@ -27,18 +28,17 @@ lnbClear _listBox;
 	};
 	
 	_addit = false;
+	_UpBar = ((sideJoined) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_BARRACKS; 
 		if(_filler == 'Depot') then
 		{
-		    _UpBar = ((sideJoined) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_BARRACKS; 
 			if ((_x in ['Ins_Soldier_MG', 'USMC_Soldier_MG']) && _UpBar>=1)then{_addit  = true;};
 			if ((_x in ['RU_Soldier_AT', 'USMC_Soldier_LAT']) && _UpBar>=1)then{_addit = true;};
 			if ((_x in ['TK_Soldier_Engineer_EP1', 'BAF_Soldier_EN_W']) && _UpBar>=1)then{_addit = true;};
 			if ((_x in ['RU_Soldier_AA','USMC_Soldier_AA']) && _UpBar>=3)then{_addit = true;};
 		};
-	
 
 	if (((_c select QUERYUNITUPGRADE) <= (_currentUpgrades select _value) && _addin) || (_addit&&_addin)) then {
-		lnbAddRow [_listBox,['$'+str ((_c select QUERYUNITPRICE) * _priceModifier),(_c select QUERYUNITLABEL)]];
+		lnbAddRow [_listBox,['$'+str (_c select QUERYUNITPRICE),(_c select QUERYUNITLABEL)]];
 		lnbSetData [_listBox,[_i,0],_filler];
 		lnbSetValue [_listBox,[_i,0],_u];
 		_i = _i + 1;
