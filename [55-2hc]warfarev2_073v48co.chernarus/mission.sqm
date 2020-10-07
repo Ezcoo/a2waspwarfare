@@ -3522,7 +3522,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
-					description="Medic (Fast heal, Camps restore)";
+					description="Medic (Fast heal, Camps restore, Cheaper units)";
 					synchronizations[]={255};
 				};
 			};
@@ -3544,7 +3544,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
-					description="Medic (Fast heal, Camps restore)";
+					description="Medic (Fast heal, Camps restore, Cheaper units)";
 					synchronizations[]={255};
 				};
 			};
@@ -3566,7 +3566,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
-					description="Medic (Fast heal, Camps restore)";
+					description="Medic (Fast heal, Camps restore, Cheaper units)";
 					synchronizations[]={255};
 				};
 			};
@@ -3588,7 +3588,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
-					description="Medic (Fast heal, Camps restore)";
+					description="Medic (Fast heal, Camps restore, Cheaper units)";
 					synchronizations[]={255};
 				};
 			};
@@ -3786,7 +3786,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
-					description="Medic (Fast heal, Camps restore)";
+					description="Medic (Fast heal, Camps restore, Cheaper units)";
 					synchronizations[]={256};
 				};
 			};
@@ -3808,7 +3808,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
-					description="Medic (Fast heal, Camps restore)";
+					description="Medic (Fast heal, Camps restore, Cheaper units)";
 					synchronizations[]={256};
 				};
 			};
@@ -3830,7 +3830,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
-					description="Medic (Fast heal, Camps restore)";
+					description="Medic (Fast heal, Camps restore, Cheaper units)";
 					synchronizations[]={256};
 				};
 			};
@@ -3956,7 +3956,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
-					description="Medic (Fast heal, Camps restore)";
+					description="Medic (Fast heal, Camps restore, Cheaper units)";
 					synchronizations[]={255};
 				};
 			};
@@ -4044,7 +4044,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
-					description="Medic (Fast heal, Camps restore)";
+					description="Medic (Fast heal, Camps restore, Cheaper units)";
 					synchronizations[]={256};
 				};
 			};
@@ -4066,7 +4066,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
-					description="Medic (Fast heal, Camps restore)";
+					description="Medic (Fast heal, Camps restore, Cheaper units)";
 					synchronizations[]={256};
 				};
 			};
@@ -4478,7 +4478,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
-					description="Medic (Fast heal, Camps restore)";
+					description="Medic (Fast heal, Camps restore, Cheaper units)";
 					synchronizations[]={255};
 				};
 			};
@@ -4500,7 +4500,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this; this setVariable [""task"",""medic""];";
-					description="Medic (Fast heal, Camps restore)";
+					description="Medic (Fast heal, Camps restore, Cheaper units)";
 					synchronizations[]={256};
 				};
 			};

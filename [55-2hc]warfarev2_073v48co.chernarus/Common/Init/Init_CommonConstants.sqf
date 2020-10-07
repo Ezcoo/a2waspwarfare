@@ -174,6 +174,8 @@ with missionNamespace do {
 
 //--- Players.
 	if (isNil "WFBE_C_PLAYERS_AI_MAX") then {WFBE_C_PLAYERS_AI_MAX = 16}; //--- Max AI allowed on each player groups.
+	WFBE_C_PLAYERS_PRICE_MODIFIER = 1;
+	WFBE_C_PLAYERS_PRICE_MODIFIER_REDUCED = 0.75;  // price modifier for discounted slot
 	WFBE_C_PLAYERS_BOUNTY_CAPTURE = 2000;
 	WFBE_C_PLAYERS_BOUNTY_CAPTURE_ASSIST = 2000;
 	WFBE_C_PLAYERS_BOUNTY_CAPTURE_MISSION = 2000;
