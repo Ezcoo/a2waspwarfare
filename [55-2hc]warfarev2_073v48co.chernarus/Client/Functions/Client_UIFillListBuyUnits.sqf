@@ -3,6 +3,7 @@ _listNames = _this select 0;
 _filler = _this select 1;
 _listBox = _this select 2;
 _value = _this select 3;
+_priceModifier = missionNamespace getVariable 'WFBE_C_PLAYERS_PRICE_MODIFIER';
 
 _u = 0;
 _i = 0;
@@ -37,7 +38,7 @@ lnbClear _listBox;
 	
 
 	if (((_c select QUERYUNITUPGRADE) <= (_currentUpgrades select _value) && _addin) || (_addit&&_addin)) then {
-		lnbAddRow [_listBox,['$'+str (_c select QUERYUNITPRICE),(_c select QUERYUNITLABEL)]];
+		lnbAddRow [_listBox,['$'+str ((_c select QUERYUNITPRICE) * _priceModifier),(_c select QUERYUNITLABEL)]];
 		lnbSetData [_listBox,[_i,0],_filler];
 		lnbSetValue [_listBox,[_i,0],_u];
 		_i = _i + 1;
