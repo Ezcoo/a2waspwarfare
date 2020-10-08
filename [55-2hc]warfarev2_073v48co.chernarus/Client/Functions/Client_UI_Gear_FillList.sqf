@@ -11,6 +11,10 @@ _gear = _this select 1;
 _gearAdvacement = missionNamespace getVariable "WFBE_C_PLAYERS_GEAR_UPGRADE_ADVANCEMENT";
 _upgrade_level = (((sideJoined) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_GEAR) + _gearAdvacement;
 
+if (_upgrade_level > 5) then {
+    _upgrade_level = 5;   
+};
+
 _j = 0;
 for '_i' from 0 to count(_gear)-1 do {
 	_values = (_gear select _i) select 0;
