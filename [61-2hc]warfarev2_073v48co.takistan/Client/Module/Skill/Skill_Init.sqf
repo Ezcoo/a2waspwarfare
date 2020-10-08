@@ -10,11 +10,11 @@ WFBE_SK_V_Root = 'Client\Module\Skill\Skill_';
 WFBE_SK_FNC_Apply = Compile preprocessFile "Client\Module\Skill\Skill_Apply.sqf";
 
 /* Define which classname belong to which skill group */
-WFBE_SK_V_Engineers = ['USMC_SoldierS_Engineer','MVD_Soldier_TL','US_Soldier_Engineer_EP1','TK_Soldier_Engineer_EP1','CDF_Soldier_Engineer','Ins_Soldier_Sapper','USMC_Soldier_TL','BAF_Soldier_SL_DDPM']; // description="Engineer (Fast repair, Purchase Salvage truck in depots)";
-WFBE_SK_V_Soldiers = ['FR_Miles','RUS_Soldier1','US_Delta_Force_EP1','TK_Special_Forces_EP1','CDF_Soldier','Ins_Soldier_1']; // description="Soldier (Double team size, Camp restore)";
-WFBE_SK_V_SpecsOps = ['FR_TL','RUS_Soldier_TL','US_Soldier_TL_EP1','US_Delta_Force_TL_EP1','TK_Special_Forces_TL_EP1','CDF_Soldier_TL','Ins_Soldier_2']; // description="SpecOPS (Lockpick, +1 to Barracks level, +1 to Gear level)";
-WFBE_SK_V_Spotters = ['USMC_SoldierS_Sniper','RU_Soldier_Sniper','US_Soldier_Sniper_EP1','TK_Soldier_Sniper_EP1','CDF_Soldier_Sniper','Ins_Soldier_Sniper'];//description="Sniper (Spot marks on map, Camps restore)";
-WFBE_SK_V_Medics = ['FR_Corpsman','USMC_Soldier_Medic','RUS_Soldier_Medic','US_Delta_Force_Medic_EP1','US_Soldier_Medic_EP1','TK_Soldier_Medic_EP1']; // description="Medic (Fast heal, Camps restore, Cheaper units)";
+WFBE_SK_V_Engineers = ['USMC_SoldierS_Engineer','BAF_Soldier_EN_DDPM','MVD_Soldier_TL','US_Soldier_Engineer_EP1','TK_Soldier_Engineer_EP1','CDF_Soldier_Engineer','Ins_Soldier_Sapper','USMC_Soldier_TL','BAF_Soldier_SL_DDPM'];
+WFBE_SK_V_Soldiers = ['FR_R','RUS_Soldier1','US_Delta_Force_EP1','TK_Special_Forces_EP1','CDF_Soldier','Ins_Soldier_1'];
+WFBE_SK_V_SpecsOps = ['FR_TL','RUS_Soldier_TL','RUS_Commander','GER_Soldier_Scout_EP1','US_Soldier_TL_EP1','US_Delta_Force_TL_EP1','TK_Special_Forces_TL_EP1','CDF_Soldier_TL','Ins_Soldier_2'];
+WFBE_SK_V_Spotters = ['USMC_SoldierS_Sniper','RU_Soldier_Sniper','US_Soldier_Sniper_EP1','TK_Soldier_Sniper_EP1','CDF_Soldier_Sniper','Ins_Soldier_Sniper'];
+WFBE_SK_V_Medics = ['FR_Corpsman','USMC_Soldier_Medic','GER_Soldier_Medic_EP1','BAF_Soldier_Medic_DDPM','RU_Soldier_Medic','US_Delta_Force_Medic_EP1','US_Soldier_Medic_EP1','TK_Soldier_Medic_EP1'];
 
 //--- Binoculars.
 missionNamespace setVariable ["WFBE_BINOCULARS", ["Laserdesignator", "Binocular", "Binocular_Vector"]];

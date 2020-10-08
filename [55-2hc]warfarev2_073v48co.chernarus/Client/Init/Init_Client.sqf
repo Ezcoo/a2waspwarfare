@@ -455,7 +455,7 @@ waitUntil {!isNil {WFBE_Client_Logic getVariable "wfbe_votetime"}};
 if ((WFBE_Client_Logic getVariable "wfbe_votetime") > 0) then {createDialog "WFBE_VoteMenu"};
 
 /* Debug System - Client */
-if (WF_Debug) then {
+if (true) then {
 	onMapSingleClick "vehicle player setpos _pos;(vehicle player) setVelocity [0,0,-0.1];diag_log getpos player;"; //--- Teleport
 
 	//player addEventHandler ["HandleDamage", {false}];
