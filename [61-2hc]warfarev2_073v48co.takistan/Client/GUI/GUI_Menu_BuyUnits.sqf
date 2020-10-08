@@ -107,7 +107,7 @@ while {alive player && dialog} do {
 			if !(_skip) then {
 				_size = Count ((Units (group player)) Call GetLiveUnits);
 				//--- Get the infantry limit based off the infantry upgrade.
-				_realSize = (((sideJoined) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_BARRACKS + _infantryAdvancement);
+				_realSize = (((sideJoined) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_BARRACKS) + _infantryAdvancement;
 				switch (_realSize) do {
 					case 0: {_realSize = round(_mbu / 4)};
 					case 1: {_realSize = round(_mbu / 4)*2};
