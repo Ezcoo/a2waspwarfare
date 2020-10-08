@@ -32,10 +32,10 @@ lnbClear _listBox;
 		if(_filler == 'Depot') then
 		{
 			if ((_x in ['WarfareSalvageTruck_USMC', 'WarfareSalvageTruck_RU']) && WFBE_SK_V_Type == 'Engineer')then{_addit = true; };
-			if ((_x in ['Ins_Soldier_MG', 'USMC_Soldier_MG']) && _UpBar>=1)then{_addit  = true;};
-			if ((_x in ['RU_Soldier_AT', 'USMC_Soldier_LAT']) && _UpBar>=1)then{_addit = true;};
-			if ((_x in ['TK_Soldier_Engineer_EP1', 'BAF_Soldier_EN_W']) && _UpBar>=1)then{_addit = true;};
-			if ((_x in ['RU_Soldier_AA','USMC_Soldier_AA']) && _UpBar>=3)then{_addit = true;};
+			if ((_x in ['TK_Soldier_MG_EP1', 'US_Soldier_MG_EP1']) && _UpBar>=1)then{_addit  = true;};
+			if ((_x in ['TK_Soldier_LAT_EP1', 'US_Soldier_LAT_EP1']) && _UpBar>=1)then{_addit = true;};
+			if ((_x in ['TK_Soldier_Engineer_EP1', 'US_Soldier_Engineer_EP1']) && _UpBar>=1)then{_addit = true;};
+			if ((_x in ['TK_Soldier_AA_EP1','US_Soldier_AA_EP1']) && _UpBar>=3)then{_addit = true;};
 		};
 
 	if (((_c select QUERYUNITUPGRADE) <= (_currentUpgrades select _value) && _addin) || (_addit&&_addin) || ((_addin && _filler == 'Barracks' && ((_c select QUERYUNITUPGRADE) <= (_currentUpgrades select _value) + _infantryAdvancement)))) then {
