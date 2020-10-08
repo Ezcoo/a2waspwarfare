@@ -36,6 +36,7 @@ _updateList = true;
 _updateMap = true;
 _val = 0;
 _mbu = missionNamespace getVariable 'WFBE_C_PLAYERS_AI_MAX';
+_priceModifier = missionNamespace getVariable 'WFBE_C_PLAYERS_PRICE_MODIFIER';
 
 ctrlSetText[12025,localize 'STR_WF_UNITS_FactionChoiceLabel' + ":"]; // changed-MrNiceGuy
 
@@ -81,7 +82,7 @@ while {alive player && dialog} do {
 		_currentValue = lnbValue[_listBox,[_currentRow,0]];
 		_unit = _listUnits select _currentValue;
 		_currentUnit = missionNamespace getVariable _unit;
-		_currentCost = _currentUnit select QUERYUNITPRICE;
+		_currentCost = (_currentUnit select QUERYUNITPRICE) * _priceModifier;
 		_cpt = 1;
 		_isInfantry = if (_unit isKindOf 'Man') then {true} else {false};
 		if !(_isInfantry) then {
@@ -246,7 +247,7 @@ while {alive player && dialog} do {
 			ctrlSetText [12009,_currentUnit select QUERYUNITPICTURE];
 			ctrlSetText [12033,_currentUnit select QUERYUNITFACTION];
 			ctrlSetText [12035,str (_currentUnit select QUERYUNITTIME)];
-			_currentCost = _currentUnit select QUERYUNITPRICE;
+			_currentCost = (_currentUnit select QUERYUNITPRICE) * _priceModifier;
 			
 			_isInfantry = if (_unit isKindOf 'Man') then {true} else {false};
 			
