@@ -178,6 +178,7 @@ with missionNamespace do {
 	WFBE_C_PLAYERS_PRICE_MODIFIER_REDUCED = 0.75;  // price modifier for discounted slot
 	WFBE_C_PLAYERS_INFANTRY_UPGRADE_ADVANCEMENT = 0; // SpecOps can buy better units even without upgraded barracks
 	WFBE_C_PLAYERS_GEAR_UPGRADE_ADVANCEMENT = 0; // SpecOps can buy better gear even without upgraded gear
+	WFBE_C_PLAYERS_GEAR_ARTY_RELOADING_ADVANCEMENT = 0; // Engineer
 	WFBE_C_PLAYERS_BOUNTY_CAPTURE = 2000;
 	WFBE_C_PLAYERS_BOUNTY_CAPTURE_ASSIST = 2000;
 	WFBE_C_PLAYERS_BOUNTY_CAPTURE_MISSION = 2000;

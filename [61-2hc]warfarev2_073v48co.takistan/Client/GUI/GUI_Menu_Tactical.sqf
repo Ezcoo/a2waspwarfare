@@ -460,7 +460,8 @@ while {alive player && dialog} do {
 	
 	//--- Update the Artillery Status.
 	if ((missionNamespace getVariable "WFBE_C_ARTILLERY") > 0) then {
-		_fireTime = (missionNamespace getVariable "WFBE_C_ARTILLERY_INTERVALS") select (_currentUpgrades select WFBE_UP_ARTYTIMEOUT);
+		_artyReloadingAdvancement = missionNamespace getVariable "WFBE_C_PLAYERS_GEAR_ARTY_RELOADING_ADVANCEMENT";
+		_fireTime = (missionNamespace getVariable "WFBE_C_ARTILLERY_INTERVALS") select ((_currentUpgrades select WFBE_UP_ARTYTIMEOUT) + _artyReloadingAdvancement);
 		_status = round(_fireTime - (time - fireMissionTime));
 		_txt = if (time - fireMissionTime > _fireTime) then {Format['<t align="left" color="#73FF47">%1</t>',localize 'STR_WF_TACTICAL_Available']} else {Format ['<t align="left" color="#4782FF">%1 %2</t>',_status,localize 'STR_WF_Seconds']};
 		(_display displayCtrl 17016) ctrlSetStructuredText (parseText _txt);

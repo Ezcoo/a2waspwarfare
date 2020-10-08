@@ -192,7 +192,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
+					description="Engineer (Fast repair, Purchase Salvage truck at town depots, +1 to Arty reloading)";
 					synchronizations[]={49};
 				};
 			};
@@ -214,7 +214,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
+					description="Engineer (Fast repair, Purchase Salvage truck at town depots, +1 to Arty reloading)";
 					synchronizations[]={49};
 				};
 			};
@@ -236,7 +236,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
+					description="Engineer (Fast repair, Purchase Salvage truck at town depots, +1 to Arty reloading)";
 					synchronizations[]={49};
 				};
 			};
@@ -258,7 +258,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
+					description="Engineer (Fast repair, Purchase Salvage truck at town depots, +1 to Arty reloading)";
 					synchronizations[]={49};
 				};
 			};
@@ -500,7 +500,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
+					description="Engineer (Fast repair, Purchase Salvage truck at town depots, +1 to Arty reloading)";
 					synchronizations[]={50};
 				};
 			};
@@ -522,7 +522,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
+					description="Engineer (Fast repair, Purchase Salvage truck at town depots, +1 to Arty reloading)";
 					synchronizations[]={50};
 				};
 			};
@@ -3193,7 +3193,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
+					description="Engineer (Fast repair, Purchase Salvage truck at town depots, +1 to Arty reloading)";
 					synchronizations[]={49};
 				};
 			};
@@ -3215,7 +3215,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
+					description="Engineer (Fast repair, Purchase Salvage truck at town depots, +1 to Arty reloading)";
 					synchronizations[]={49};
 				};
 			};
@@ -3281,7 +3281,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
+					description="Engineer (Fast repair, Purchase Salvage truck at town depots, +1 to Arty reloading)";
 					synchronizations[]={50};
 				};
 			};
@@ -3303,7 +3303,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
+					description="Engineer (Fast repair, Purchase Salvage truck at town depots, +1 to Arty reloading)";
 					synchronizations[]={50};
 				};
 			};
@@ -3413,7 +3413,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
+					description="Engineer (Fast repair, Purchase Salvage truck at town depots, +1 to Arty reloading)";
 					synchronizations[]={49};
 				};
 			};
@@ -3479,7 +3479,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
+					description="Engineer (Fast repair, Purchase Salvage truck at town depots, +1 to Arty reloading)";
 					synchronizations[]={50};
 				};
 			};
@@ -3567,7 +3567,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
+					description="Engineer (Fast repair, Purchase Salvage truck at town depots, +1 to Arty reloading)";
 					synchronizations[]={50};
 				};
 			};
@@ -3589,7 +3589,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
+					description="Engineer (Fast repair, Purchase Salvage truck at town depots, +1 to Arty reloading)";
 					synchronizations[]={50};
 				};
 			};
