@@ -28,9 +28,10 @@ lnbClear _listBox;
 	};
 	
 	_addit = false;
-	_UpBar = ((sideJoined) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_BARRACKS; 
+	_UpBar = (((sideJoined) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_BARRACKS) + _infantryAdvancement;
 		if(_filler == 'Depot') then
 		{
+			if ((_x in ['WarfareSalvageTruck_USMC', 'WarfareSalvageTruck_RU']) && WFBE_SK_V_Type == 'Engineer')then{_addit = true; };
 			if ((_x in ['Ins_Soldier_MG', 'USMC_Soldier_MG']) && _UpBar>=1)then{_addit  = true;};
 			if ((_x in ['RU_Soldier_AT', 'USMC_Soldier_LAT']) && _UpBar>=1)then{_addit = true;};
 			if ((_x in ['TK_Soldier_Engineer_EP1', 'BAF_Soldier_EN_W']) && _UpBar>=1)then{_addit = true;};

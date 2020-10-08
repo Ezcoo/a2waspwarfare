@@ -133,7 +133,9 @@ if (_flag_cannotadd) exitWith {hint parseText("<t color='#42b6ff' size='1.2' und
 
 //--- Check the final upgrade level.
 _upgrades = (WFBE_Client_SideJoined) Call WFBE_CO_FNC_GetSideUpgrades;
-if (_u_upgrade <= (_upgrades select WFBE_UP_BARRACKS) || _u_upgrade <= (_upgrades select WFBE_UP_GEAR)) then {
+_gearAdvacement = missionNamespace getVariable "WFBE_C_PLAYERS_GEAR_UPGRADE_ADVANCEMENT";
+_infantryAdvancement = missionNamespace getVariable "WFBE_C_PLAYERS_INFANTRY_UPGRADE_ADVANCEMENT";
+if (_u_upgrade <= ((_upgrades select WFBE_UP_BARRACKS) + _infantryAdvancement) || _u_upgrade <= ((_upgrades select WFBE_UP_GEAR) + _gearAdvacement)) then {
 	_set set [0,_u_picture];
 	_set set [1,_u_label];
 	_set set [2,_u_price];

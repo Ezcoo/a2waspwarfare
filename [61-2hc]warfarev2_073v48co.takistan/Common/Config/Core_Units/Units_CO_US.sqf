@@ -200,6 +200,7 @@ if ((missionNamespace getVariable "WFBE_C_UNITS_TOWN_PURCHASE") > 0) then {
 	_u = _u		+ ['US_Soldier_AA_EP1'];
     _u = _u		+ ["UralCivil"];
     _u = _u		+ ["V3S_Refuel_TK_GUE_EP1"];
+	_u = _u		+ ["WarfareSalvageTruck_USMC"];
 };
 
 missionNamespace setVariable [Format ["WFBE_%1DEPOTUNITS", _side], _u];

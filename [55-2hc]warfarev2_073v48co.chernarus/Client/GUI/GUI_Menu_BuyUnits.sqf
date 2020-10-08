@@ -37,6 +37,7 @@ _updateMap = true;
 _val = 0;
 _mbu = missionNamespace getVariable 'WFBE_C_PLAYERS_AI_MAX';
 _priceModifier = missionNamespace getVariable 'WFBE_C_PLAYERS_PRICE_MODIFIER';
+_infantryAdvancement = missionNamespace getVariable "WFBE_C_PLAYERS_INFANTRY_UPGRADE_ADVANCEMENT";
 
 ctrlSetText[12025,localize 'STR_WF_UNITS_FactionChoiceLabel' + ":"]; // changed-MrNiceGuy
 
@@ -106,7 +107,7 @@ while {alive player && dialog} do {
 			if !(_skip) then {
 				_size = Count ((Units (group player)) Call GetLiveUnits);
 				//--- Get the infantry limit based off the infantry upgrade.
-				_realSize = ((sideJoined) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_BARRACKS;
+				_realSize = (((sideJoined) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_BARRACKS + _infantryAdvancement);
 				switch (_realSize) do {
 					case 0: {_realSize = round(_mbu / 4)};
 					case 1: {_realSize = round(_mbu / 4)*2};

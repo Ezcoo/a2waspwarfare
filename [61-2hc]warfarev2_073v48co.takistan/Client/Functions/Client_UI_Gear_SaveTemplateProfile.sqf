@@ -10,8 +10,10 @@ _templates = missionNamespace getVariable Format ["WFBE_%1_Template", WFBE_Clien
 _side_equipment = missionNamespace getVariable Format ["WFBE_%1_All", WFBE_Client_SideJoinedText];
 _upgrades = (WFBE_Client_SideJoined) Call WFBE_CO_FNC_GetSideUpgrades;
 
-_upgrade_barracks = _upgrades select WFBE_UP_BARRACKS;
-_upgrade_gear = _upgrades select WFBE_UP_GEAR;
+_gearAdvacement = missionNamespace getVariable "WFBE_C_PLAYERS_GEAR_UPGRADE_ADVANCEMENT";
+_infantryAdvancement = missionNamespace getVariable "WFBE_C_PLAYERS_INFANTRY_UPGRADE_ADVANCEMENT";
+_upgrade_barracks = (_upgrades select WFBE_UP_BARRACKS) + _infantryAdvancement;
+_upgrade_gear = (_upgrades select WFBE_UP_GEAR) + _gearAdvacement;
 
 {
 	Private ["_can_save", "_get", "_item", "_prefix", "_template_backpack", "_template_magazines", "_template_upgrade", "_template_weapons"];

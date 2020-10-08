@@ -8,8 +8,8 @@
 Private ["_gear","_get","_j","_lb","_prefix","_upgrade_level","_values"];
 _lb = _this select 0;
 _gear = _this select 1;
-
-_upgrade_level = ((sideJoined) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_GEAR;
+_gearAdvacement = missionNamespace getVariable "WFBE_C_PLAYERS_GEAR_UPGRADE_ADVANCEMENT";
+_upgrade_level = (((sideJoined) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_GEAR) + _gearAdvacement;
 
 _j = 0;
 for '_i' from 0 to count(_gear)-1 do {

@@ -3324,7 +3324,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick, +1 to Barracks level)";
+					description="SpecOPS (Lockpick, +1 to Barracks level, +1 to Gear level)";
 					synchronizations[]={255};
 				};
 			};
@@ -3346,7 +3346,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick, +1 to Barracks level)";
+					description="SpecOPS (Lockpick, +1 to Barracks level, +1 to Gear level)";
 					synchronizations[]={255};
 				};
 			};
@@ -3412,7 +3412,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
 					synchronizations[]={255};
 				};
 			};
@@ -3434,7 +3434,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
 					synchronizations[]={255};
 				};
 			};
@@ -3456,7 +3456,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
 					synchronizations[]={255};
 				};
 			};
@@ -3478,7 +3478,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick, +1 to Barracks level)";
+					description="SpecOPS (Lockpick, +1 to Barracks level, +1 to Gear level)";
 					synchronizations[]={255};
 				};
 			};
@@ -3500,7 +3500,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
 					synchronizations[]={255};
 				};
 			};
@@ -3654,7 +3654,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick, +1 to Barracks level)";
+					description="SpecOPS (Lockpick, +1 to Barracks level, +1 to Gear level)";
 					synchronizations[]={256};
 				};
 			};
@@ -3676,7 +3676,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick, +1 to Barracks level)";
+					description="SpecOPS (Lockpick, +1 to Barracks level, +1 to Gear level)";
 					synchronizations[]={256};
 				};
 			};
@@ -3720,7 +3720,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
 					synchronizations[]={256};
 				};
 			};
@@ -3742,7 +3742,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
 					synchronizations[]={256};
 				};
 			};
@@ -3764,7 +3764,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick, +1 to Barracks level)";
+					description="SpecOPS (Lockpick, +1 to Barracks level, +1 to Gear level)";
 					synchronizations[]={256};
 				};
 			};
@@ -3890,7 +3890,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick, +1 to Barracks level)";
+					description="SpecOPS (Lockpick, +1 to Barracks level, +1 to Gear level)";
 					synchronizations[]={255};
 				};
 			};
@@ -3978,7 +3978,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
 					synchronizations[]={255};
 				};
 			};
@@ -4110,7 +4110,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
 					synchronizations[]={256};
 				};
 			};
@@ -4153,7 +4153,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
 					synchronizations[]={256};
 				};
 			};
@@ -4175,7 +4175,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
 					synchronizations[]={255};
 				};
 			};
@@ -4197,7 +4197,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick, +1 to Barracks level)";
+					description="SpecOPS (Lockpick, +1 to Barracks level, +1 to Gear level)";
 					synchronizations[]={256};
 				};
 			};
@@ -4219,7 +4219,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
 					synchronizations[]={256};
 				};
 			};
@@ -4241,7 +4241,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
 					synchronizations[]={255};
 				};
 			};
@@ -4263,7 +4263,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick, +1 to Barracks level)";
+					description="SpecOPS (Lockpick, +1 to Barracks level, +1 to Gear level)";
 					synchronizations[]={255};
 				};
 			};
@@ -4285,7 +4285,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
 					synchronizations[]={256};
 				};
 			};
@@ -4307,7 +4307,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Fast repair, Purchase Salvage truck in depots)";
 					synchronizations[]={256};
 				};
 			};
@@ -4329,7 +4329,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick, +1 to Barracks level)";
+					description="SpecOPS (Lockpick, +1 to Barracks level, +1 to Gear level)";
 					synchronizations[]={256};
 				};
 			};
