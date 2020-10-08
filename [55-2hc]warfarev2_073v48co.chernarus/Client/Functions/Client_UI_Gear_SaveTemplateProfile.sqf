@@ -10,6 +10,7 @@ _templates = missionNamespace getVariable Format ["WFBE_%1_Template", WFBE_Clien
 _side_equipment = missionNamespace getVariable Format ["WFBE_%1_All", WFBE_Client_SideJoinedText];
 _upgrades = (WFBE_Client_SideJoined) Call WFBE_CO_FNC_GetSideUpgrades;
 
+_sniperRifles = missionNamespace getVariable "WFBE_C_PLAYERS_SNIPER_RIFLES_UNLOCK_US";
 _gearAdvacement = missionNamespace getVariable "WFBE_C_PLAYERS_GEAR_UPGRADE_ADVANCEMENT";
 _infantryAdvancement = missionNamespace getVariable "WFBE_C_PLAYERS_INFANTRY_UPGRADE_ADVANCEMENT";
 _upgrade_barracks = (_upgrades select WFBE_UP_BARRACKS) + _infantryAdvancement;

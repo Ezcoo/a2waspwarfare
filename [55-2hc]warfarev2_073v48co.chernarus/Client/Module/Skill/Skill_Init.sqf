@@ -49,4 +49,5 @@ if (WFBE_SK_V_Type == 'Medic') then {missionNamespace setVariable ['WFBE_C_PLAYE
 if (WFBE_SK_V_Type == 'SpecOps') then {
 	missionNamespace setVariable ['WFBE_C_PLAYERS_INFANTRY_UPGRADE_ADVANCEMENT', 1];
 	missionNamespace setVariable ['WFBE_C_PLAYERS_GEAR_UPGRADE_ADVANCEMENT', 1];
+if (WFBE_SK_V_Type == 'Spotter') then {missionNamespace setVariable ['WFBE_C_PLAYERS_SNIPER_RIFLES_UNLOCK_US', 1];
 };
