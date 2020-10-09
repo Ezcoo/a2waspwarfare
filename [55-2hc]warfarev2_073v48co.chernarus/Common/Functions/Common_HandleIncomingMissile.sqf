@@ -1,4 +1,4 @@
-Private ["_ammo","_irLock","_missile","_source","_unit","_indirectHit"];
+Private ["_ammo","_irLock","_missile","_source","_unit","_indirectHit","_towDamage"];
 _unit = _this select 0;
 _ammo = _this select 1;
 _source = _this select 2;
@@ -26,4 +26,11 @@ _indirectHit = getNumber(configFile >> "CfgAmmo" >> _ammo >> "indirectHit");
     if (_ammo in ["M_Maverick_AT"])
         then {
             _indirectHit = 849
+            };
+
+//Tow Damage Buff
+_towDamage = getNumber(configFile >> "CfgAmmo" >> _ammo >> "hit");
+    if (_ammo in ["M_TOW_AT"])
+        then {
+            _towDamage = 5000;
             };
