@@ -76,6 +76,7 @@ _unit addAction [
 		];
 	};
 	case 'Spotter': {
+	WFBE_C_PLAYERS_SNIPER_RIFLES_UNLOCK_US = 1;
 		/* Spotting Ability */
 		_unit addAction [
 			("<t color='#f8d664'>" + localize 'STR_WF_ACTION_Spot'+ "</t>"),

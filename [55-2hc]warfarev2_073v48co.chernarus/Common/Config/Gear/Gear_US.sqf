@@ -405,7 +405,7 @@ _u = _u + ["M24_des_EP1"];
 _p = _p + [''];
 _n = _n + [''];
 _o = _o + [200];
-_z = _z + [2];
+_z = _z + [if (WFBE_C_PLAYERS_SNIPER_RIFLES_UNLOCK_US) then {0} else {2}];
 _m = _m + [-1];
 
 _u = _u + ["M60A4_EP1"];
@@ -468,14 +468,14 @@ _u = _u + ["m107"];
 _p = _p + [''];
 _n = _n + [''];
 _o = _o + [400];
-_z = _z + [4];
+_z = _z + [[if (WFBE_C_PLAYERS_SNIPER_RIFLES_UNLOCK_US) then {0} else {4}];
 _m = _m + [-1];
 
 _u = _u + ["m107_TWS_EP1"];
 _p = _p + [''];
 _n = _n + [''];
 _o = _o + [600];
-_z = _z + [5];
+_z = _z + [[if (WFBE_C_PLAYERS_SNIPER_RIFLES_UNLOCK_US) then {0} else {5}];
 _m = _m + [-1];
 
 _u = _u + ["Mk_48_DES_EP1"];
@@ -524,14 +524,14 @@ _u = _u + ["M110_NVG_EP1"];
 _p = _p + [''];
 _n = _n + [''];
 _o = _o + [350];
-_z = _z + [4];
+_z = _z + [[if (WFBE_C_PLAYERS_SNIPER_RIFLES_UNLOCK_US) then {0} else {4}];
 _m = _m + [-1];
 
 _u = _u + ["M110_TWS_EP1"];
 _p = _p + [''];
 _n = _n + [''];
 _o = _o + [450];
-_z = _z + [5];
+_z = _z + [[if (WFBE_C_PLAYERS_SNIPER_RIFLES_UNLOCK_US) then {0} else {5}];
 _m = _m + [-1];
 
 _u = _u + ["SCAR_L_CQC"];
