@@ -62,6 +62,7 @@ WFBE_SE_FNC_SpawnTownDefense = Compile preprocessFileLineNumbers "Server\Functio
 WFBE_SE_FNC_VoteForCommander = Compile preprocessFileLineNumbers "Server\Functions\Server_VoteForCommander.sqf";
 WFBE_SE_FNC_AssignForCommander = Compile preprocessFileLineNumbers "Server\Functions\Server_AssignNewCommander.sqf";
 WFBE_CO_FNC_InitAFKkickHandler = Compile preprocessFileLineNumbers "Server\Module\afkKick\initAFKkickHandler.sqf";
+WFBE_CO_FNC_MonitorMissileGlitch = Compile preprocessFileLineNumbers "Server\Functions\Server_MonitorMissileGlitch.sqf";
 
 
 //--- Define Headless Client functions (server ones).
