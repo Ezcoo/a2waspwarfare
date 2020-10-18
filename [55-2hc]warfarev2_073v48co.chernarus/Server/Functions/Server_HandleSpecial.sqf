@@ -108,7 +108,7 @@ switch (_args select 0) do {
 		_droppos1 = [_dropPosX + 4, _dropPosY + 4, _dropPosZ];
 		_droppos2 = [_dropPosX + 8, _dropPosY + 8, _dropPosZ];
 		// waitUntil {!alive _target || isNull _target};
-		_bomb = "BO_GBU12_LGB" createVehicle [(getpos _target select 0),(getpos _target select 1), 0];
+		_bomb = "BO_GBU12_LGB" createVehicle [_dropPosX,_dropPosY, 0];
 		_bomb = createVehicle ["BO_GBU12_LGB",_droppos1,[], 0, "None"];
 		_bomb = createVehicle ["BO_GBU12_LGB",_droppos2,[], 0, "None"];
 		[_dropPos1] Spawn NukeDammage;
