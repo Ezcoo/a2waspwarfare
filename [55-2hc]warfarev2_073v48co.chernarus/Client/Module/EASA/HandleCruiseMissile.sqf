@@ -17,6 +17,7 @@ if (typeOf _unit == 'F35B') then {
 
         if (isMultiplayer) then {"WARNING!!! CRUISE MISSILE LAUNCH DETECTED!!!" Call CommandChatMessage};
         [nil, "NukeIncomingImmediate", [_projectile]] Call WFBE_CO_FNC_SendToClients;
+        [_projectile] spawn NukeIncomingImmediate;
 
         while {alive _projectile} do {
             sleep 0.01;
