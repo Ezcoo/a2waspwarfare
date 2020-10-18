@@ -4,7 +4,7 @@
 	returns: nothing
 */
 
-private [_unit, _weapon, _muzzle, _mode, _ammo, _magazine, _projectile];
+private ["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile"];
 
 _unit = _this select 0;
 _projectile = _this select 6;
