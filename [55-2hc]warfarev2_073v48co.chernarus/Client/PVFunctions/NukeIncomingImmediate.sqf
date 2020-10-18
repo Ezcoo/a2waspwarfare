@@ -4,7 +4,7 @@
 	returns: nothing
 */
 
-private [_cruiseMissile];
+private ["_cruiseMissile"];
 
 _cruiseMissile = _this select 0;
 
