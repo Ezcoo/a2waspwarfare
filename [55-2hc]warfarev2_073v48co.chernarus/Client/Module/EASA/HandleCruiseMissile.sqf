@@ -16,6 +16,7 @@ if (typeOf _unit == 'F35B') then {
     if (_unit getVariable "WFBE_JASSM") then {
 
         if (isMultiplayer) then {"WARNING!!! CRUISE MISSILE LAUNCH DETECTED!!!" Call CommandChatMessage};
+        [nil, "LocalizeMessage", ['CruiseMissileLaunch']] Call WFBE_CO_FNC_SendToClients;
         [nil, "NukeIncomingImmediate", [_projectile]] Call WFBE_CO_FNC_SendToClients;
         [_projectile] spawn NukeIncomingImmediate;
 
@@ -41,6 +42,7 @@ if (typeOf _unit == 'Su34') then {
     if (_unit getVariable "WFBE_KH102") then {
 
         if (isMultiplayer) then {"WARNING!!! CRUISE MISSILE LAUNCH DETECTED!!!" Call CommandChatMessage};
+        [nil, "LocalizeMessage", ['CruiseMissileLaunch']] Call WFBE_CO_FNC_SendToClients;
         [nil, "NukeIncomingImmediate", [_projectile]] Call WFBE_CO_FNC_SendToClients;
 
         while {alive _projectile} do {
