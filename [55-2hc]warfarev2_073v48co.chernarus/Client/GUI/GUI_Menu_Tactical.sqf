@@ -210,7 +210,8 @@ while {alive player && dialog} do {
 				};
 			};
 			case "ICBM": {
-				if ((missionNamespace getVariable "WFBE_C_MODULE_WFBE_ICBM") > 0) then {
+			    // (missionNamespace getVariable "WFBE_C_MODULE_WFBE_ICBM") > 0
+				if (false) then {
 					_commander = false;
 					if (!isNull(commanderTeam)) then {
 						if (commanderTeam == group player) then {_commander = true};
