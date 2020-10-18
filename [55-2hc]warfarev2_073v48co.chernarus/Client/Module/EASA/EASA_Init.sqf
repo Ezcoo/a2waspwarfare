@@ -102,6 +102,7 @@ _easaLoadout = 	_easaLoadout + [
   [6100,'FAB-250 (12) | R-73 (4) | S-8 (+40)',[['AirBombLauncher','R73Launcher_2','80mmLauncher'],['4Rnd_FAB_250','4Rnd_FAB_250','4Rnd_FAB_250','2Rnd_R73','2Rnd_R73','40Rnd_S8T']]],
   [6500,'FAB-250 (18) | R-73 (2) | S-8 (+40)',[['AirBombLauncher','R73Launcher_2','80mmLauncher'],['4Rnd_FAB_250','4Rnd_FAB_250','4Rnd_FAB_250','4Rnd_FAB_250','2Rnd_FAB_250','2Rnd_R73','40Rnd_S8T']]],
   [6900,'FAB-250 (24) | S-8 (+40)',[['AirBombLauncher','80mmLauncher'],['4Rnd_FAB_250','4Rnd_FAB_250','4Rnd_FAB_250','4Rnd_FAB_250','4Rnd_FAB_250','4Rnd_FAB_250','40Rnd_S8T']]]
+  [100000,'Kh-102 (1)',[['Ch29Launcher_Su34','80mmLauncher'],['4Rnd_Ch29']]],
  ]
 ];
 
@@ -175,7 +176,8 @@ _easaLoadout = 	_easaLoadout + [
   [1750,'AGM-65 (2) | AIM-9L (4)',[['MaverickLauncher','SidewinderLaucher'],['2Rnd_Maverick_A10','4Rnd_Sidewinder_AV8B']]],
   [1750,'AGM-65 (4) | AIM-9L (2)',[['MaverickLauncher','SidewinderLaucher_F35'],['2Rnd_Maverick_A10','2Rnd_Maverick_A10','2Rnd_Sidewinder_F35']]],
   [2250,'AGM-65 (6)',[['MaverickLauncher'],['2Rnd_Maverick_A10','2Rnd_Maverick_A10','2Rnd_Maverick_A10']]],
-  [1200,'AIM-9L (6)',[['SidewinderLaucher_F35'],['2Rnd_Sidewinder_F35','2Rnd_Sidewinder_F35','2Rnd_Sidewinder_F35']]]
+  [1200,'AIM-9L (6)',[['SidewinderLaucher_F35'],['2Rnd_Sidewinder_F35','2Rnd_Sidewinder_F35','2Rnd_Sidewinder_F35']]],
+  [100000,'JASSM (1)',[['MaverickLauncher'],['2Rnd_Maverick_A10']]]
   
  ]
 ];
