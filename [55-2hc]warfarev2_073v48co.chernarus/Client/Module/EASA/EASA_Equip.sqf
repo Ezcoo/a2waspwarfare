@@ -35,6 +35,7 @@ if (_type != -1) then {
 	        [nil, "LocalizeMessage", ['TacticalLaunch']] Call WFBE_CO_FNC_SendToClients;
             [nil, "NukeIncoming", []] Call WFBE_CO_FNC_SendToClients;
             if (isMultiplayer) then {(localize "STR_WF_CHAT_ICBM_Launch") Call CommandChatMessage};
+            playSound ["airRaid",true];
 	    };
 	};
 
@@ -46,6 +47,7 @@ if (_type != -1) then {
 	        [nil, "LocalizeMessage", ['TacticalLaunch']] Call WFBE_CO_FNC_SendToClients;
             [nil, "NukeIncoming", []] Call WFBE_CO_FNC_SendToClients;
             if (isMultiplayer) then {(localize "STR_WF_CHAT_ICBM_Launch") Call CommandChatMessage};
+            playSound ["airRaid",true];
 	    };
 
     };
