@@ -27,33 +27,40 @@ if (_type != -1) then {
 	{_vehicle addMagazine _x} forEach (_loadout select 1);
 	{_vehicle addWeapon _x} forEach (_loadout select 0);
 
-	if (typeOf _vehicle == 'F35B') then {
-	    if (_index == (count _ArrayEASAVehType - 1)) then {
-	        _vehicle setVariable ['WFBE_JASSM', true];
-	        // _vehicle setVehicleAmmo 0.5;
-	        _vehicle addeventhandler ["fired",{_this spawn WFBE_CO_FNC_HandleCruiseMissile;}];
-	        [nil, "LocalizeMessage", ['TacticalLaunch']] Call WFBE_CO_FNC_SendToClients;
-            [nil, "NukeIncoming", []] Call WFBE_CO_FNC_SendToClients;
-            if (isMultiplayer) then {(localize "STR_WF_CHAT_ICBM_Launch") Call CommandChatMessage};
-            playSound ["airRaid",true];
-	    };
-	};
+        if (typeOf _vehicle == 'F35B') then {
+            if (_index == (count _ArrayEASAVehType - 1)) then {
+                _vehicle setVariable ['WFBE_JASSM', true];
+                // _vehicle setVehicleAmmo 0.5;
+                _vehicle addeventhandler ["fired",{_this spawn WFBE_CO_FNC_HandleCruiseMissile;}];
+                [nil, "LocalizeMessage", ['TacticalLaunch']] Call WFBE_CO_FNC_SendToClients;
+                [nil, "NukeIncoming", []] Call WFBE_CO_FNC_SendToClients;
+                if (isMultiplayer) then {(localize "STR_WF_CHAT_ICBM_Launch") Call CommandChatMessage};
+                playSound ["airRaid",true];
+            } else {
+                _vehicle setVariable ['WFBE_JASSM', false];
+            };
+        };
 
-	if (typeOf _vehicle == 'Su34') then {
-	    if (_index == (count _ArrayEASAVehType - 1)) then {
-	        _vehicle setVariable ['WFBE_KH102', true];
-	        // _vehicle setVehicleAmmo 0.5;
-	        _vehicle addeventhandler ["fired",{_this spawn WFBE_CO_FNC_HandleCruiseMissile;}];
-	        [nil, "LocalizeMessage", ['TacticalLaunch']] Call WFBE_CO_FNC_SendToClients;
-            [nil, "NukeIncoming", []] Call WFBE_CO_FNC_SendToClients;
-            if (isMultiplayer) then {(localize "STR_WF_CHAT_ICBM_Launch") Call CommandChatMessage};
-            playSound ["airRaid",true];
-	    };
+        if (typeOf _vehicle == 'Su34') then {
+            if (_index == (count _ArrayEASAVehType - 1)) then {
+                _vehicle setVariable ['WFBE_KH102', true];
+                // _vehicle setVehicleAmmo 0.5;
+                _vehicle addeventhandler ["fired",{_this spawn WFBE_CO_FNC_HandleCruiseMissile;}];
+                [nil, "LocalizeMessage", ['TacticalLaunch']] Call WFBE_CO_FNC_SendToClients;
+                [nil, "NukeIncoming", []] Call WFBE_CO_FNC_SendToClients;
+                if (isMultiplayer) then {(localize "STR_WF_CHAT_ICBM_Launch") Call CommandChatMessage};
+                playSound ["airRaid",true];
+            } else {
+                _vehicle setVariable ['WFBE_KH102', false];
+            };
 
-    };
+        };
 
-	hint "NOTE: Only the FIRST missile is a cruise missile!";
-	
+        [] spawn {
+            sleep 10;
+            hint "NOTE: Only the FIRST missile is a cruise missile!";
+        };
+
 	//--- We update the EASA setup on the vehicle for everyone if needed.
 	if (_get != _index) then {_vehicle setVariable ["WFBE_EASA_Setup", _index, true]};
  
