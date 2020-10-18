@@ -246,11 +246,11 @@
         <Italian>You were deducted from $%1 due to your gear</Italian>
       </Key>
       <Key ID="STR_WF_CHAT_ICBM_Launch">
-        <English>WARNING! Cruise missile launch is planned!</English>
-        <French>WARNING! Cruise missile launch is planned!</French>
-        <German>WARNING! Cruise missile launch is planned!</German>
-        <Russian>WARNING! Cruise missile launch is planned!</Russian>
-        <Italian>WARNING! Cruise missile launch is planned!</Italian>
+        <English>WARNING! Cruise missile is about to be launched!</English>
+        <French>WARNING! Cruise missile is about to be launched!</French>
+        <German>WARNING! Cruise missile is about to be launched!</German>
+        <Russian>WARNING! Cruise missile is about to be launched!</Russian>
+        <Italian>WARNING! Cruise missile is about to be launched!</Italian>
       </Key>
       <Key ID="STR_WF_CHAT_IRS_Deployed" >
         <English>Deploying IR Smoke! %1 ammunitions remaining.</English>
