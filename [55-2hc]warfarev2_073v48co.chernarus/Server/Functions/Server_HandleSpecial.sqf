@@ -111,7 +111,7 @@ switch (_args select 0) do {
 		_bomb = "BO_GBU12_LGB" createVehicle [(getpos _target select 0),(getpos _target select 1), 0];
 		_bomb = createVehicle ["BO_GBU12_LGB",_droppos1,[], 0, "None"];
 		_bomb = createVehicle ["BO_GBU12_LGB",_droppos2,[], 0, "None"];
-		[_base] Spawn NukeDammage;
+		[_dropPos1] Spawn NukeDammage;
 	};
 	case "process-killed-hq": {
 		(_args select 1) Spawn WFBE_SE_FNC_OnHQKilled;
