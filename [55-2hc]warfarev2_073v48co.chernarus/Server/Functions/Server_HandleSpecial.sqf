@@ -101,7 +101,7 @@ switch (_args select 0) do {
 		// _target = _args select 3;
 		_playerTeam = _args select 4;
 		["INFORMATION", Format ["Server_HandleSpecial.sqf: [%1] Team [%2] [%3] launched a cruise missile with nuclear warhead.", str _side, _playerTeam, name (leader _playerTeam)]] Call WFBE_CO_FNC_LogContent;
-		if (isNull _target || !alive _target) exitWith {};
+		// if (isNull _target || !alive _target) exitWith {};
 		_dropPosX = getPos _base select 0;
 		_dropPosY = getPos _base select 1;
 		_dropPosZ = getPos _base select 2;
