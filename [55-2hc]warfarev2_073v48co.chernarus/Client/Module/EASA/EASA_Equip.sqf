@@ -31,25 +31,24 @@ if (_type != -1) then {
 	    if (_index == (count _ArrayEASAVehType - 1)) then {
 	        _vehicle setVariable ['WFBE_JASSM', true];
 	        // _vehicle setVehicleAmmo 0.5;
-	        _vehicle addeventhandler ["fired",{_this spawn WFBE_CO_FNC_HandleCruiseMissile;}]};
+	        _vehicle addeventhandler ["fired",{_this spawn WFBE_CO_FNC_HandleCruiseMissile;}];
 	        [nil, "LocalizeMessage", ['TacticalLaunch']] Call WFBE_CO_FNC_SendToClients;
             [nil, "NukeIncoming", []] Call WFBE_CO_FNC_SendToClients;
             if (isMultiplayer) then {(localize "STR_WF_CHAT_ICBM_Launch") Call CommandChatMessage};
-	    }
+	    };
 	};
 
 	if (typeOf _vehicle == 'Su34') then {
 	    if (_index == (count _ArrayEASAVehType - 1)) then {
 	        _vehicle setVariable ['WFBE_KH102', true];
 	        // _vehicle setVehicleAmmo 0.5;
-	        _vehicle addeventhandler ["fired",{_this spawn WFBE_CO_FNC_HandleCruiseMissile;}]};
+	        _vehicle addeventhandler ["fired",{_this spawn WFBE_CO_FNC_HandleCruiseMissile;}];
 	        [nil, "LocalizeMessage", ['TacticalLaunch']] Call WFBE_CO_FNC_SendToClients;
             [nil, "NukeIncoming", []] Call WFBE_CO_FNC_SendToClients;
             if (isMultiplayer) then {(localize "STR_WF_CHAT_ICBM_Launch") Call CommandChatMessage};
-	    }
-	};
+	    };
 
-
+    };
 
 	hint "NOTE: Only the FIRST missile is a cruise missile!";
 	
