@@ -20,9 +20,9 @@ if (typeOf _unit == 'F35B') then {
         [_projectile] spawn NukeIncomingImmediate;
 
         while {alive _projectile} do {
-            sleep 0.01;
-
             _projectilePos = getPos _projectile;
+
+            sleep 0.1;
         };
 
         _unit setVariable ["WFBE_JASSM", false];
