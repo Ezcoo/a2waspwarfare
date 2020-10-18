@@ -22,7 +22,7 @@ if (typeOf _unit == 'F35B') then {
         while {alive _projectile} do {
             _projectilePos = getPos _projectile;
 
-            sleep 0.1;
+            sleep 0.2;
         };
 
         _unit setVariable ["WFBE_JASSM", false];
@@ -44,9 +44,9 @@ if (typeOf _unit == 'Su34') then {
         [nil, "NukeIncomingImmediate", [_projectile]] Call WFBE_CO_FNC_SendToClients;
 
         while {alive _projectile} do {
-            sleep 0.01;
-
             _projectilePos = getPos _projectile;
+
+            sleep 0.2;
         };
 
         _unit setVariable ["WFBE_KH102", false];
