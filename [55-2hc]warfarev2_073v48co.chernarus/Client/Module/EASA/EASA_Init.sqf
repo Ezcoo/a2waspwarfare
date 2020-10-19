@@ -177,7 +177,7 @@ _easaLoadout = 	_easaLoadout + [
   [1750,'AGM-65 (4) | AIM-9L (2)',[['MaverickLauncher','SidewinderLaucher_F35'],['2Rnd_Maverick_A10','2Rnd_Maverick_A10','2Rnd_Sidewinder_F35']]],
   [2250,'AGM-65 (6)',[['MaverickLauncher'],['2Rnd_Maverick_A10','2Rnd_Maverick_A10','2Rnd_Maverick_A10']]],
   [1200,'AIM-9L (6)',[['SidewinderLaucher_F35'],['2Rnd_Sidewinder_F35','2Rnd_Sidewinder_F35','2Rnd_Sidewinder_F35']]],
-  [120000,'JASSM Cruise Missile (1)',[['Ch29Launcher_Su34','80mmLauncher'],['4Rnd_Ch29']]]
+  [110000,'JASSM Cruise Missile (1)',[['Ch29Launcher_Su34','80mmLauncher'],['4Rnd_Ch29']]]
   
  ]
 ];
