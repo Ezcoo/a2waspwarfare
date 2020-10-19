@@ -1,18 +1,20 @@
 //--- Nuke launching.
 Private ['_cruise','_dropPosition','_dropPosX','_dropPosY','_dropPosZ','_misFlare','_nukeMarker','_path','_pathS','_planespawnpos','_target','_type'];
+/*
 _target = _this select 0;
 _nukeMarker = _this select 1;
+*/
 
 [nil, "LocalizeMessage", ['TacticalLaunch']] Call WFBE_CO_FNC_SendToClients;
 [nil, "NukeIncoming", []] Call WFBE_CO_FNC_SendToClients;
 if (isMultiplayer) then {(localize "STR_WF_CHAT_ICBM_Launch") Call CommandChatMessage};
 playSound ["airRaid",true];
 
-
+/*
 sleep 300;
 
-_path = "\ca\air2\cruisemissile\"; //";
-_pathS = _path + "data\scripts\"; //";
+_path = "\ca\air2\cruisemissile\";
+_pathS = _path + "data\scripts\";
 
 _dropPosition = getpos _target;
 _type = if (WF_A2_Vanilla || WF_A2_CombinedOps) then {'Chukar'} else {'Chukar_EP1'};
@@ -22,8 +24,6 @@ _cruise setPos [(getPos _cruise select 0),(getPos _cruise select 1),570];
 _cruise setVelocity [0,2,0];
 _cruise flyInHeight 570;
 _cruise setSpeedMode "FULL";
-
-["RequestSpecial", ["ICBM",sideJoined,_target,_cruise,clientTeam]] Call WFBE_CO_FNC_SendToServer;
 
 sleep 1.5;
 
@@ -55,3 +55,4 @@ deleteVehicle _cruise;
 
 sleep 50;
 deleteMarkerLocal _nukeMarker;
+*/
