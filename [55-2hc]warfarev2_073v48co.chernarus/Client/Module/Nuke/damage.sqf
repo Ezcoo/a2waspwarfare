@@ -24,5 +24,5 @@ _destroy = _array;
 		sleep 3;
 	};
 	//--- Radiations.
-	[_target] Spawn NukeRadiation;
+	// [_target] Spawn NukeRadiation;
 };
