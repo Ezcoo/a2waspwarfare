@@ -98,6 +98,8 @@ _u = _u		+ ['M1128_MGS_EP1'];
 _u = _u		+ ['M1133_MEV_EP1'];
 _u = _u		+ ['LandRover_Special_CZ_EP1'];
 _u = _u		+ ['HMMWV_M1035_DES_EP1'];
+_u = _u		+ ['Dingo_WDL_ACR'];
+_u = _u		+ ['Dingo_GL_Wdl_ACR'];
 _u = _u		+ ['Pandur2_ACR'];
 
 if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['MtvrSupply_DES_EP1']};
