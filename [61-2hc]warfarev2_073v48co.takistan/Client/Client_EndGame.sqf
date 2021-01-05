@@ -18,6 +18,10 @@ if (_side == west) then {
     _track = "AmericaFuckYeah";
 };
 
+if (_side == east) then {
+    _track = "Aziz";
+};
+
 playMusic _track;
 
 _track_hq = [];
