@@ -336,6 +336,12 @@ class Params {
 		texts[] = {"$STR_WF_Disabled","$STR_WF_Enabled"};
 		default = 1;
 	};
+	class WFBE_C_MODULE_WFBE_CruiseMissile {
+		title = "$STR_WF_PARAMETER_CruiseMissile";
+		values[] = {0,1};
+		texts[] = {"$STR_WF_Disabled","$STR_WF_Enabled"};
+		default = 1;
+	};
 	class WFBE_C_MODULE_WFBE_IRS {
 		title = "$STR_WF_PARAMETER_IRS";
 		values[] = {0,1};

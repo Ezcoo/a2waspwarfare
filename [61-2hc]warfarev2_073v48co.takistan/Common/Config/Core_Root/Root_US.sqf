@@ -27,7 +27,7 @@ missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL3", _side],['US_Delta
 
 missionNamespace setVariable [Format["WFBE_%1PARACARGO", _side], 'C130J'];//--- Paratroopers, Vehicle.
 missionNamespace setVariable [Format["WFBE_%1REPAIRTRUCK", _side], 'MtvrRepair_DES_EP1'];//--- Repair Truck model.
-missionNamespace setVariable [Format["WFBE_%1STARTINGVEHICLES", _side], ['HMMWV_Ambulance_DES_EP1','MTVR_DES_EP1']];//--- Starting Vehicles.
+missionNamespace setVariable [Format["WFBE_%1STARTINGVEHICLES", _side], ['HMMWV_Ambulance_DES_EP1','LAV25']];//--- Starting Vehicles.
 missionNamespace setVariable [Format["WFBE_%1PARAAMMO", _side], ['USBasicAmmunitionBox_EP1','USBasicWeapons_EP1','USLaunchers_EP1']];//--- Supply Paradropping, Dropped Ammunition.
 missionNamespace setVariable [Format["WFBE_%1PARAVEHICARGO", _side], 'MtvrRepair_DES_EP1'];//--- Supply Paradropping, Dropped Vehicle.
 missionNamespace setVariable [Format["WFBE_%1PARAVEHI", _side], 'CH_47F_EP1'];//--- Supply Paradropping, Vehicle

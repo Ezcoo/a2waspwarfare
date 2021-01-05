@@ -52,7 +52,7 @@ _currentFee = -1;
 
 //--- Support List.
 _lastSel = -1;
-_addToList = [localize 'STR_WF_TACTICAL_FastTravel',localize 'STR_WF_ICBM',localize 'STR_WF_TACTICAL_ParadropAmmo',localize 'STR_WF_TACTICAL_ParadropVehicle',localize 'STR_WF_TACTICAL_Paratroop',localize 'STR_WF_TACTICAL_UnitCam',localize 'STR_WF_TACTICAL_UAV',localize 'STR_WF_TACTICAL_UAVDestroy',localize 'STR_WF_TACTICAL_UAVRemoteControl'];
+_addToList = [localize 'STR_WF_TACTICAL_FastTravel',localize 'STR_WF_ICBM',localize 'STR_WF_CruiseMissile',localize 'STR_WF_TACTICAL_ParadropAmmo',localize 'STR_WF_TACTICAL_ParadropVehicle',localize 'STR_WF_TACTICAL_Paratroop',localize 'STR_WF_TACTICAL_UnitCam',localize 'STR_WF_TACTICAL_UAV',localize 'STR_WF_TACTICAL_UAVDestroy',localize 'STR_WF_TACTICAL_UAVRemoteControl'];
 _addToListID = ["Fast_Travel","ICBM","Paradrop_Ammo","Paradrop_Vehicle","Paratroopers","Units_Camera","UAV","UAV_Destroy","UAV_Remote_Control"];
 _addToListFee = [0,150000,9500,3500,8500,0,12500,0,0];
 _addToListInterval = [0,1000,800,600,900,0,0,0,0];
@@ -210,7 +210,8 @@ while {alive player && dialog} do {
 				};
 			};
 			case "ICBM": {
-				if ((missionNamespace getVariable "WFBE_C_MODULE_WFBE_ICBM") > 0) then {
+			    // (missionNamespace getVariable "WFBE_C_MODULE_WFBE_ICBM") > 0
+				if (false) then {
 					_commander = false;
 					if (!isNull(commanderTeam)) then {
 						if (commanderTeam == group player) then {_commander = true};
