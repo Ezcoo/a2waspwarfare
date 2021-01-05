@@ -178,9 +178,7 @@ _easaLoadout = 	_easaLoadout + [
   [1750,'AGM-65 (2) | AIM-9L (4)',[['MaverickLauncher','SidewinderLaucher'],['2Rnd_Maverick_A10','4Rnd_Sidewinder_AV8B']]],
   [1750,'AGM-65 (4) | AIM-9L (2)',[['MaverickLauncher','SidewinderLaucher_F35'],['2Rnd_Maverick_A10','2Rnd_Maverick_A10','2Rnd_Sidewinder_F35']]],
   [2250,'AGM-65 (6)',[['MaverickLauncher'],['2Rnd_Maverick_A10','2Rnd_Maverick_A10','2Rnd_Maverick_A10']]],
-  [1200,'AIM-9L (6)',[['SidewinderLaucher_F35'],['2Rnd_Sidewinder_F35','2Rnd_Sidewinder_F35','2Rnd_Sidewinder_F35']]],
-  if (((_side Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_CruiseMissile) == 1) then {[110000,'JASSM Cruise Missile (1)',[['Ch29Launcher_Su34'],['4Rnd_Ch29']]]}
-  
+  [1200,'AIM-9L (6)',[['SidewinderLaucher_F35'],['2Rnd_Sidewinder_F35','2Rnd_Sidewinder_F35','2Rnd_Sidewinder_F35']]]
  ]
 ];
 
@@ -429,6 +427,48 @@ _easaLoadout = 	_easaLoadout + [
 
  ]
 ];
+
+
+if ((((sideJoined) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_CruiseMissile) > 0) then {
+	_easaVehi = 	_easaVehi + ['A10'];
+	_easaDefault = 	_easaDefault + [[['BombLauncherA10','MaverickLauncher','SidewinderLaucher_AH1Z'],['2Rnd_Maverick_A10','4Rnd_GBU12','2Rnd_Sidewinder_AH1Z']]];
+	_easaLoadout = 	_easaLoadout + [
+  [
+        [100000,'JASSM Cruise Missile (1)',[['Ch29Launcher_Su34'],['4Rnd_Ch29']]]
+  ]
+    ];
+};
+
+
+if ((((sideJoined) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_CruiseMissile) > 0) then {
+	_easaVehi = 	_easaVehi + ['A10_US_EP1'];
+	_easaDefault = 	_easaDefault + [[['BombLauncherA10','MaverickLauncher','SidewinderLaucher_AH1Z'],['2Rnd_Maverick_A10','4Rnd_GBU12','2Rnd_Sidewinder_AH1Z']]];
+	_easaLoadout = 	_easaLoadout + [
+  [
+        [100000,'JASSM Cruise Missile (1)',[['Ch29Launcher_Su34'],['4Rnd_Ch29']]]
+  ]
+    ];
+};
+
+if ((((sideJoined) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_CruiseMissile) > 0) then {
+	_easaVehi = 	_easaVehi + ['SU25_TK_EP1'];
+	_easaDefault = 	_easaDefault + [[['AirBombLauncher','R73Launcher_2'],['4Rnd_FAB_250','2Rnd_R73']]];
+	_easaLoadout = 	_easaLoadout + [
+  [
+        [100000,'KH-102 Cruise Missile (1)',[['Ch29Launcher_Su34'],['4Rnd_Ch29']]]
+  ]
+    ];
+};
+
+if ((((sideJoined) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_CruiseMissile) > 0) then {
+	_easaVehi = 	_easaVehi + ['Su39'];
+	_easaDefault = 	_easaDefault + [[['Ch29Launcher','R73Launcher_2'],['4Rnd_Ch29','2Rnd_R73']]];
+	_easaLoadout = 	_easaLoadout + [
+  [
+        [100000,'KH-102 Cruise Missile (1)',[['Ch29Launcher_Su34'],['4Rnd_Ch29']]]
+  ]
+    ];
+};
 
 //--- Now we check for AA-based loadouts.
 for '_i' from 0 to count(_easaVehi)-1 do {
