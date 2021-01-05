@@ -1,4 +1,6 @@
-Private ["_ammo","_easaDefault","_easaLoadout","_easaVehi","_is_AAMissile","_loadout","_loadout_line","_vehicle"];
+Private ["_ammo","_easaDefault","_easaLoadout","_easaVehi","_is_AAMissile","_loadout","_loadout_line","_vehicle", "_side"];
+
+_side = this select 0;
 
 EASA_Equip = Compile preprocessFileLineNumbers 'Client\Module\EASA\EASA_Equip.sqf';
 EASA_RemoveLoadout = Compile preprocessFileLineNumbers 'Client\Module\EASA\EASA_RemoveLoadout.sqf';
@@ -177,7 +179,7 @@ _easaLoadout = 	_easaLoadout + [
   [1750,'AGM-65 (4) | AIM-9L (2)',[['MaverickLauncher','SidewinderLaucher_F35'],['2Rnd_Maverick_A10','2Rnd_Maverick_A10','2Rnd_Sidewinder_F35']]],
   [2250,'AGM-65 (6)',[['MaverickLauncher'],['2Rnd_Maverick_A10','2Rnd_Maverick_A10','2Rnd_Maverick_A10']]],
   [1200,'AIM-9L (6)',[['SidewinderLaucher_F35'],['2Rnd_Sidewinder_F35','2Rnd_Sidewinder_F35','2Rnd_Sidewinder_F35']]],
-  [110000,'JASSM Cruise Missile (1)',[['Ch29Launcher_Su34'],['4Rnd_Ch29']]]
+  if (((_side Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_CruiseMissile) == 1) then {[110000,'JASSM Cruise Missile (1)',[['Ch29Launcher_Su34'],['4Rnd_Ch29']]]}
   
  ]
 ];
