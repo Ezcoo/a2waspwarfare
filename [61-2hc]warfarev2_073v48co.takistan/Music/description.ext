@@ -18,4 +18,12 @@ class CfgMusic
   		sound[]={"\music\americafuckyeah.ogg", db + 10, 1.0};
   	};
 
+  	class Aziz
+      	{
+      		// display name
+      		name="Takistan OPFOR outro music";
+      		// filename, volume, pitch
+      		sound[]={"\music\Aziz.ogg", db + 10, 1.0};
+      	};
+
 };
