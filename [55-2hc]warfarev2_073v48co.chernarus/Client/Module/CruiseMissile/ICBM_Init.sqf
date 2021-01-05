@@ -1,6 +1,6 @@
 if (local player) then {
 	CruiseMissile = Compile preprocessFile "Client\Module\CruiseMissile\nuke.sqf";
-	CruiseMissileIncoming = Compile preprocessFile "Client\Module\CruiseMissile\nukeincoming.sqf";
+	CruiseMissileIncoming = Compile preprocessFile "Client\Module\CruiseMissile\cruiseMissileIncoming.sqf";
 };
 
 if (isServer) then {

@@ -35,7 +35,7 @@ _l = _l + ["SetMHQLock"];
 _l = _l + ["Available"];
 _l = _l + ["RequestBaseArea"];
 _l = _l + ["NukeIncoming"];
-_l = _l + ["NukeIncomingImmediate"];
+_l = _l + ["CruiseMissileIncomingImmediate"];
 
 _clientCommandPV = _l;
 

@@ -63,7 +63,6 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LEVELS", _side], [
 	1, //--- Custom Flares
 	3, //--- Artillery Time
 	1, //--- ICBM
-	1, //--- Cruise Missile
 	1, //--- Fast Travel
 	5, //--- Gear
 	1, //--- Build Ammo
@@ -71,7 +70,8 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LEVELS", _side], [
 	1, //--- Supply Paradrop
 	3, //--- Artillery Ammo
 	1, //--- IR Smoke
-	1 //--- Aircraft AA Missiles
+	1, //--- Aircraft AA Missiles
+    1 //--- Cruise Missile
 ]];
 
 missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LINKS", _side], [

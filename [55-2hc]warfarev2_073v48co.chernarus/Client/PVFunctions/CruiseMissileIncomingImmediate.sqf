@@ -8,7 +8,4 @@ private ["_cruiseMissile"];
 
 _cruiseMissile = _this select 0;
 
-while {alive _cruiseMissile} do {
-    playSound ["CruiseMissileImmediate",true];
-    sleep 0.75;
-};
+playSound ["CruiseMissileImmediate",true];

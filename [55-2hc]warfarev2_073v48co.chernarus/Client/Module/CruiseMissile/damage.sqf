@@ -11,7 +11,7 @@ _destroy = _array;
 	Private ["_array","_dammageable","_dammages","_range","_target"];
 	_target = _this select 0;
 	_dammageable = ["Man","Car","Motorcycle","Tank","Ship","Air","StaticWeapon"];
-	_range = 800;
+	_range = 300;
 	_dammages = 1;
 	for [{_z = 0},{_z < 4},{_z = _z + 1}] do {
 		_array = _target nearEntities [_dammageable, _range];
