@@ -42,7 +42,7 @@ _driver moveInDriver _uav;
 
 _built = 1;
 //--- OPFOR Uav has no gunner slot.
-if (sideJoined == west || sideJoined == east) then {
+if (sideJoined == west) then {
 	_gunner = [missionNamespace getVariable Format ["WFBE_%1SOLDIER",sideJoinedText],_group,getPos _uav,WFBE_Client_SideID] Call WFBE_CO_FNC_CreateUnit;
 	_gunner MoveInGunner _uav;
 	_built = _built + 1;
