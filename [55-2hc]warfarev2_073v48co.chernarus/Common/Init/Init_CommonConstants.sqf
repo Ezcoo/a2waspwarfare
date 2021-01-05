@@ -46,14 +46,15 @@ WFBE_UP_AIRLIFT = 8;
 WFBE_UP_FLARESCM = 9;
 WFBE_UP_ARTYTIMEOUT = 10;
 WFBE_UP_ICBM = 11;
-WFBE_UP_FASTTRAVEL = 12;
-WFBE_UP_GEAR = 13;
-WFBE_UP_AMMOCOIN = 14;
-WFBE_UP_EASA = 15;
-WFBE_UP_SUPPLYPARADROP = 16;
-WFBE_UP_ARTYAMMO = 17;
-WFBE_UP_IRSMOKE = 18;
-WFBE_UP_AIRAAM = 19;
+WFBE_UP_CruiseMissile = 12;
+WFBE_UP_FASTTRAVEL = 13;
+WFBE_UP_GEAR = 14;
+WFBE_UP_AMMOCOIN = 15;
+WFBE_UP_EASA = 16;
+WFBE_UP_SUPPLYPARADROP = 17;
+WFBE_UP_ARTYAMMO = 18;
+WFBE_UP_IRSMOKE = 19;
+WFBE_UP_AIRAAM = 20;
 
 /*
 	### Working with the missionNamespace ###
@@ -170,6 +171,7 @@ with missionNamespace do {
 	if (isNil "WFBE_C_MODULE_WFBE_EASA") then {WFBE_C_MODULE_WFBE_EASA = 1}; //--- Enable the Exchangeable Armament System for Aircraft.
 	if (isNil "WFBE_C_MODULE_WFBE_FLARES") then {WFBE_C_MODULE_WFBE_FLARES = 1}; //--- Enable the countermeasure system (0: Disabled, 1: Enabled with upgrade, 2: Enabled).
 	if (isNil "WFBE_C_MODULE_WFBE_ICBM") then {WFBE_C_MODULE_WFBE_ICBM = 1}; //--- Enable the Intercontinental Ballistic Missile call for the commander.
+	if (isNil "WFBE_C_MODULE_WFBE_CruiseMissile") then {WFBE_C_MODULE_WFBE_CruiseMissile = 1}; //--- Enable the cruise missile for the jets.
 	if (isNil "WFBE_C_MODULE_WFBE_IRSMOKE") then {WFBE_C_MODULE_WFBE_IRSMOKE = 1}; //--- Enable the use of IR Smoke.
 
 //--- Players.

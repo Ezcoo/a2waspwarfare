@@ -15,6 +15,7 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_ENABLED", _side], [
 	if ((missionNamespace getVariable "WFBE_C_MODULE_WFBE_FLARES") == 1) then {true} else {false}, //--- Custom Flares
 	if ((missionNamespace getVariable "WFBE_C_ARTILLERY") > 0) then {true} else {false}, //--- Artillery Time
 	if ((missionNamespace getVariable "WFBE_C_MODULE_WFBE_ICBM") > 0) then {true} else {false}, //--- ICBM
+	if ((missionNamespace getVariable "WFBE_C_MODULE_WFBE_CruiseMissile") > 0) then {true} else {false}, //--- Cruise Missile
 	if ((missionNamespace getVariable "WFBE_C_GAMEPLAY_FAST_TRAVEL") > 0) then {true} else {false}, //--- Fast Travel
 	true, //--- Gear
 	true, //--- Build Ammo
@@ -37,7 +38,8 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_COSTS", _side], [
 	[[1000,0]], //--- Airlift
 	[[4500,0]], //--- Custom Flares
 	[[2000,0],[2500,0],[3500,0]], //--- Artillery Time
-	[[50000,250000]], //--- ICBM
+	[[50000,80000]], //--- ICBM
+	[[50000,80000]], //--- Cruise Missile
 	[[1500,0]], //--- Fast Travel
 	[[250,0],[650,0],[1200,0],[2100,0],[2400,0]], //--- Gear
 	[[750,0]], //--- Build Ammo
@@ -61,6 +63,7 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LEVELS", _side], [
 	1, //--- Custom Flares
 	3, //--- Artillery Time
 	1, //--- ICBM
+	1, //--- Cruise Missile
 	1, //--- Fast Travel
 	5, //--- Gear
 	1, //--- Build Ammo
@@ -92,7 +95,8 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LINKS", _side], [
 		[[WFBE_UP_BARRACKS,2],[WFBE_UP_LIGHT,2]],
 		[[WFBE_UP_BARRACKS,3],[WFBE_UP_LIGHT,3]]
 	], //--- Artillery Time
-	[[WFBE_UP_AIR,3]], //--- ICBM
+	[[WFBE_UP_AIR,5]], //--- ICBM
+    [[WFBE_UP_AIR,4]], //--- Cruise Missile
 	[
 		[[WFBE_UP_LIGHT,1],[WFBE_UP_SUPPLYRATE,1]]
 	], //--- Fast Travel
@@ -122,6 +126,7 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_TIMES", _side], [
 	[100], //--- Custom Flares
 	[40,80,120], //--- Artillery Time
 	[300], //--- ICBM
+	[300], //--- Cruise Missile
 	[60], //--- Fast Travel
 	[25,50,75,100,125], //--- Gear
 	[40], //--- Build Ammo
