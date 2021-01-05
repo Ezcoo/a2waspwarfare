@@ -10,5 +10,5 @@ _cruiseMissile = _this select 0;
 
 while {alive _cruiseMissile} do {
     playSound ["CruiseMissileImmediate",true];
-    sleep 0.83;
+    sleep 0.75;
 };

@@ -1,4 +1,4 @@
-Private ["_ammo","_irLock","_missile","_source","_unit","_indirectHit","_towDamage","_cruiseMissileAoEDamage","_cruiseMissileAoERange"];
+Private ["_ammo","_irLock","_missile","_source","_unit","_indirectHit"];
 _unit = _this select 0;
 _ammo = _this select 1;
 _source = _this select 2;
@@ -23,19 +23,7 @@ if (_irLock == 1) then { //--- IR Lock is affected
 
 //Maverick fix
 _indirectHit = getNumber(configFile >> "CfgAmmo" >> _ammo >> "indirectHit");
-    switch (_ammo) do {
-        case {_ammo in ["M_Maverick_AT"]}: {_indirectHit = 849};
-        case {_ammo in ["M_TOW_AT"]}: {_indirectHit = 5000};
-    };
-
-//Tow Damage Buff
-_hit = getNumber(configFile >> "CfgAmmo" >> _ammo >> "hit");
-    if (_ammo in ["M_TOW_AT"]) then {
-            _hit = 5000;
-    };
-
-//range
-_indirectHitRange = getNumber(configFile >> "CfgAmmo" >> _ammo >> "indirectHitRange");
-    if (_ammo in ["M_TOW_AT"]) then {
-        _indirectHitRange = 5000;
-    };
+    if (_ammo in ["M_Maverick_AT"])
+        then {
+            _indirectHit = 849
+            };
