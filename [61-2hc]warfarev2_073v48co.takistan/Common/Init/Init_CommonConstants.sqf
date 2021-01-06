@@ -189,8 +189,8 @@ with missionNamespace do {
 	WFBE_C_PLAYERS_MARKER_TOWN_RANGE = 0.05; //--- A town marker is updated (SV) on map if a unit is within the range (town range * coef).
 	WFBE_C_PLAYERS_OFFMAP_TIMEOUT = 50; //--- Player may remain x second outside of the map before being killed.
 	WFBE_C_PLAYERS_PENALTY_TEAMKILL = 1000; //--- Teamkill penalty.
-	WFBE_C_PLAYERS_SCORE_CAPTURE = 8;
-	WFBE_C_PLAYERS_SCORE_CAPTURE_ASSIST = 17;
+	WFBE_C_PLAYERS_SCORE_CAPTURE = 20;
+	WFBE_C_PLAYERS_SCORE_CAPTURE_ASSIST = 3;
 	WFBE_C_PLAYERS_SCORE_CAPTURE_CAMP = 5;
 	WFBE_C_PLAYERS_SCORE_DELIVERY = 3;
 	WFBE_C_PLAYERS_SKILL_SOLDIER_UNITS_MAX = 6; //--- Skill (Soldiers), have more units than the others.
