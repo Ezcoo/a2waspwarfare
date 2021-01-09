@@ -6,7 +6,7 @@
 
 private ["_winnerTeam"];
 
-_winnerTeam = _this;
+_winnerTeam = _this select 0;
 
 ["INFORMATION", Format ["Client_EndGame.sqf: Team %1_WIN_CHERNARUS!", _winnerTeam]] Call WFBE_CO_FNC_LogContent;
 
