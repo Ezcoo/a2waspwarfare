@@ -30,7 +30,7 @@ if (isNil (profileNamespace getVariable "_logTeamWin")) then {
     saveProfileNamespace;
 };
 
-_westWins = profileNamespace getVariable WEST_WIN_CHERNARUS;
-_eastWins = profileNamespace getVariable EAST_WIN_CHERNARUS;
+_westWins = profileNamespace getVariable "WEST_WIN_CHERNARUS";
+_eastWins = profileNamespace getVariable "EAST_WIN_CHERNARUS";
 
 ["INFORMATION", Format ["Client_EndGame.sqf: Team BLUFOR has %1 wins and team OPFOR has %2 wins on Chernarus since start of logging.", _westWins, _eastWins]] Call WFBE_CO_FNC_LogContent;
