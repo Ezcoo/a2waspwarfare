@@ -12,11 +12,11 @@ _winnerTeam = _this;
 
 _logTeamWin = format ["%1_WIN_TAKISTAN", _winnerTeam];
 
-if (isNil (profileNamespace getVariable _winnerTeam)) then {
-    profileNamespace setVariable ["_winnerTeam", 1];
+if (isNil (profileNamespace getVariable "_logTeamWin")) then {
+    profileNamespace setVariable ["_logTeamWin", 1];
     saveProfileNamespace;
 } else {
-    profileNamespace setVariable ["_winnerTeam", (profileNamespace getVariable _winnerTeam) + 1];
+    profileNamespace setVariable ["_logTeamWin", (profileNamespace getVariable "_logTeamWin") + 1];
     saveProfileNamespace;
 };
 

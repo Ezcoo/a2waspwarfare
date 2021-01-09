@@ -32,7 +32,6 @@ while {!gameOver} do {
 				};
 
 				[_side] call WFBE_CO_FNC_LogGameEnd;
-				
 			};
 		} forEach WFBE_PRESENTSIDES - [WFBE_DEFENDER];
 	};
