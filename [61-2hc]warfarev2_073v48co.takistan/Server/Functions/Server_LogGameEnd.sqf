@@ -12,6 +12,16 @@ _winnerTeam = _this;
 
 _logTeamWin = format ["%1_WIN_TAKISTAN", _winnerTeam];
 
+if (_winnerTeam == west) then {
+    if (isNil (profileNamespace getVariable "EAST_WIN_TAKISTAN")) then {
+        EAST_WIN_TAKISTAN = 0;
+    };
+} else {
+    if (isNil (profileNamespace getVariable "WEST_WIN_TAKISTAN")) then {
+        WEST_WIN_TAKISTAN = 0;
+    };
+};
+
 if (isNil (profileNamespace getVariable "_logTeamWin")) then {
     profileNamespace setVariable ["_logTeamWin", 1];
     saveProfileNamespace;
