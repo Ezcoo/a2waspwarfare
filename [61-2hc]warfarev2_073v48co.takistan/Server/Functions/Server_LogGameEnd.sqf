@@ -14,11 +14,11 @@ _logTeamWin = format ["%1_WIN_TAKISTAN", _winnerTeam];
 
 if (_winnerTeam == west) then {
     if (isNil (profileNamespace getVariable "EAST_WIN_TAKISTAN")) then {
-        EAST_WIN_TAKISTAN = 0;
+        profileNamespace setVariable ["EAST_WIN_TAKISTAN",0];
     };
 } else {
     if (isNil (profileNamespace getVariable "WEST_WIN_TAKISTAN")) then {
-        WEST_WIN_TAKISTAN = 0;
+        profileNamespace setVariable ["WEST_WIN_TAKISTAN",0];
     };
 };
 
