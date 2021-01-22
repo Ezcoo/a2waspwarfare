@@ -12,9 +12,11 @@ _loserTeam = "";
 ["INFORMATION", Format ["LogGameEnd.sqf: Team [%1] has won the match!", _winnerTeam]] Call WFBE_CO_FNC_LogContent;
 
 if (_winnerTeam == west) then {
-    _loserTeam = east;
+    _winnerTeam = "WEST";
+    _loserTeam = "EAST";
 } else {
-    _loserTeam = west;
+    _winnerTeam = "EAST";
+    _loserTeam = "WEST";
 };
 
 if (isNil (profileNamespace getVariable format ["%1_WIN_CHERNARUS",_winnerTeam])) then {
@@ -26,10 +28,10 @@ if (isNil (profileNamespace getVariable format ["%1_WIN_CHERNARUS",_winnerTeam])
 
     saveProfileNamespace;
 } else {
-    profileNamespace setVariable [profileNamespace getVariable format ["%1_WIN_CHERNARUS",_winnerTeam], profileNamespace getVariable format ["%1_WIN_CHERNARUS",_winnerTeam] + 1];
+    profileNamespace setVariable [(profileNamespace getVariable format ["%1_WIN_CHERNARUS",_winnerTeam]), (profileNamespace getVariable format ["%1_WIN_CHERNARUS",_winnerTeam] + 1)];
 
     if (isNil (profileNamespace getVariable format ["%1_WIN_CHERNARUS", _loserTeam])) then {
-            profileNamespace setVariable [format ["%1_WIN_CHERNARUS",_loserTeam], 0];
+        profileNamespace setVariable [format ["%1_WIN_CHERNARUS",_loserTeam], 0];
     };
 
     saveProfileNamespace;
