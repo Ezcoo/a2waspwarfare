@@ -24,6 +24,15 @@ while {!gameOver} do {
 				WF_Logic setVariable ["WF_Winner", _x];
 				gameOver = true;
 				WFBE_GameOver = true;
+
+				_side = west;
+
+				if (_x == west) then {
+				    _side = east;
+				};
+
+				[_side] call WFBE_CO_FNC_LogGameEnd;
+				
 			};
 		} forEach WFBE_PRESENTSIDES - [WFBE_DEFENDER];
 	};
