@@ -29,7 +29,7 @@ if (isNil "_winnerWins") then {
 
     saveProfileNamespace;
 } else {
-    profileNamespace setVariable [(profileNamespace getVariable format ["%1_WIN_CHERNARUS",_winnerTeam]), (profileNamespace getVariable format ["%1_WIN_CHERNARUS",_winnerTeam] + 1)];
+    profileNamespace setVariable [(profileNamespace getVariable format ["%1_WIN_CHERNARUS",_winnerTeam]), (_winnerWins + 1)];
 
     if (isNil "_loserWins") then {
         profileNamespace setVariable [format ["%1_WIN_CHERNARUS",_loserTeam], 0];
