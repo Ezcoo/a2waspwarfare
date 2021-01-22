@@ -17,10 +17,13 @@ if (_winnerTeam == west) then {
     _loserTeam = west;
 };
 
-if (isNil (profileNamespace getVariable format ["%1_WIN_CHERNARUS",_winnerTeam])) then {
+_winnerWins = profileNamespace getVariable format ["%1_WIN_CHERNARUS",_winnerTeam];
+_loserWins = profileNamespace getVariable format ["%1_WIN_CHERNARUS", _loserTeam];
+
+if (isNil _winnerWins) then {
     profileNamespace setVariable [format ["%1_WIN_CHERNARUS",_winnerTeam], 1];
 
-    if (isNil (profileNamespace getVariable format ["%1_WIN_CHERNARUS", _loserTeam])) then {
+    if (isNil _loserWins) then {
         profileNamespace setVariable [format ["%1_WIN_CHERNARUS",_loserTeam], 0];
     };
 
@@ -28,7 +31,7 @@ if (isNil (profileNamespace getVariable format ["%1_WIN_CHERNARUS",_winnerTeam])
 } else {
     profileNamespace setVariable [(profileNamespace getVariable format ["%1_WIN_CHERNARUS",_winnerTeam]), (profileNamespace getVariable format ["%1_WIN_CHERNARUS",_winnerTeam] + 1)];
 
-    if (isNil (profileNamespace getVariable format ["%1_WIN_CHERNARUS", _loserTeam])) then {
+    if (isNil _loserWins) then {
         profileNamespace setVariable [format ["%1_WIN_CHERNARUS",_loserTeam], 0];
     };
 
