@@ -4,23 +4,38 @@
 	returns: nothing
 */
 
-private ["_winnerTeam"];
+private ["_winnerTeam","_loserTeam"];
 
-_winnerTeam = _this;
+_winnerTeam = _this select 0;
+_loserTeam = "";
 
-["INFORMATION", Format ["Client_EndGame.sqf: Team %1_WIN_TAKISTAN!", _winnerTeam]] Call WFBE_CO_FNC_LogContent;
+["INFORMATION", Format ["LogGameEnd.sqf: Team [%1] has won the match!", _winnerTeam]] Call WFBE_CO_FNC_LogContent;
 
-_logTeamWin = format ["%1_WIN_TAKISTAN", _winnerTeam];
+if (_winnerTeam == west) then {
+    _loserTeam = east;
+} else {
+    _loserTeam = west;
+};
 
-if (isNil (profileNamespace getVariable _winnerTeam)) then {
-    profileNamespace setVariable ["_winnerTeam", 1];
+_winnerWins = profileNamespace getVariable format ["%1_WIN_CHERNARUS",_winnerTeam];
+_loserWins = profileNamespace getVariable format ["%1_WIN_CHERNARUS", _loserTeam];
+
+if (isNil "_winnerWins") then {
+    profileNamespace setVariable [format ["%1_WIN_CHERNARUS",_winnerTeam], 1];
+
+    if (isNil "_loserWins") then {
+        profileNamespace setVariable [format ["%1_WIN_CHERNARUS",_loserTeam], 0];
+    };
+
     saveProfileNamespace;
 } else {
-    profileNamespace setVariable ["_winnerTeam", (profileNamespace getVariable _winnerTeam) + 1];
+    profileNamespace setVariable [format ["%1_WIN_CHERNARUS",_winnerTeam], (_winnerWins + 1)];
+
+    if (isNil "_loserWins") then {
+        profileNamespace setVariable [format ["%1_WIN_CHERNARUS",_loserTeam], 0];
+    };
+
     saveProfileNamespace;
 };
 
-_westWins = profileNamespace getVariable WEST_WIN_TAKISTAN;
-_eastWins = profileNamespace getVariable EAST_WIN_TAKISTAN;
-
-["INFORMATION", Format ["Client_EndGame.sqf: Team BLUFOR has %1 wins and team OPFOR has %2 wins on Takistan since start of logging.", _westWins, _eastWins]] Call WFBE_CO_FNC_LogContent;
+["INFORMATION", Format ["LogGameEnd.sqf: Team BLUFOR has %1 wins and team OPFOR has %2 wins on Chernarus since start of logging.", profileNamespace getVariable "WEST_WIN_CHERNARUS", profileNamespace getVariable "EAST_WIN_CHERNARUS"]] Call WFBE_CO_FNC_LogContent;
