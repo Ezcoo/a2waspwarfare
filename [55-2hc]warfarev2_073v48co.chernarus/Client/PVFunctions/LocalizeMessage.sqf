@@ -15,7 +15,6 @@ switch (_localize) do {
 	case "StructureSell": {_txt = Format [Localize "STR_WF_CHAT_Structure_Sell",([_this select 1,'displayName'] Call GetConfigInfo),_this select 2]};
 	case "SecondaryAward": {_txt = Format [Localize "STR_WF_CHAT_Secondary_Award",_this select 1, _this select 2];(_this select 2) Call ChangePlayerFunds};
 	case "StructureTK": {_txt = Format [Localize "STR_WF_CHAT_SatchelTK",_this select 1, _this select 2, [_this select 3, 'displayName'] Call GetConfigInfo, _this select 4]};
-	case "CruiseMissileLaunch": {_txt = "WARNING!!! CRUISE MISSILE LAUNCH DETECTED!!!"};
 
 
     case "HeadHunterReceiveBounty":

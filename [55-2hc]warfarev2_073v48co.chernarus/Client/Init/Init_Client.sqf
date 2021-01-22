@@ -66,6 +66,7 @@ UIFillListBuyUnits = Compile preprocessFile "Client\Functions\Client_UIFillListB
 UIFillListTeamOrders = Compile preprocessFile "Client\Functions\Client_UIFillListTeamOrders.sqf";
 UIFindLBValue = Compile preprocessFile "Client\Functions\Client_UIFindLBValue.sqf";
 
+
 //--- Namespace related (GUI).
 BIS_FNC_GUIset = {UInamespace setVariable [_this select 0, _this select 1]};
 BIS_FNC_GUIget = {UInamespace getVariable (_this select 0)};
@@ -104,7 +105,6 @@ WFBE_CL_FNC_UI_Gear_UpdatePrice = Compile preprocessFileLineNumbers "Client\Func
 WFBE_CL_FNC_UI_Gear_UpdateTarget = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Gear_UpdateTarget.sqf";
 WFBE_CL_FNC_UI_Gear_UpdateView = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Gear_UpdateView.sqf";
 WFBE_CL_FNC_UI_Respawn_Selector = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Respawn_Selector.sqf";
-WFBE_CO_FNC_HandleCruiseMissile = Compile preprocessFileLineNumbers "Client\Module\EASA\HandleCruiseMissile.sqf";
 
 //Affichage Rubber maps:
 	Local_GUIWorking = false;
