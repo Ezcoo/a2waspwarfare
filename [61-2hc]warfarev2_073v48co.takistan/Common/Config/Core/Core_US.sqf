@@ -163,10 +163,10 @@ _i = _i + [['','',4500,25,-2,3,2,0,'US',[]]];
 /* Heavy Vehicles */
 
 _c = _c + ['M2A2_EP1'];
-_i = _i + [['','',if ((missionNamespace getVariable "WFBE_C_UNITS_BALANCING") > 0) then {2800} else {3800},30,-2,1,2,0,'US',[]]];
+_i = _i + [['','',if ((missionNamespace getVariable "WFBE_C_UNITS_BALANCING") > 0) then {2800} else {3800},22,-2,1,2,0,'US',[]]];
 
 _c = _c + ['M2A3_EP1'];
-_i = _i + [['','',3800,32,-2,2,2,0,'US',[]]];
+_i = _i + [['','',3800,28,-2,2,2,0,'US',[]]];
 
 _c = _c + ['M1A1_US_DES_EP1'];
 _i = _i + [['','',5600,40,-2,3,2,0,'US',[]]];
