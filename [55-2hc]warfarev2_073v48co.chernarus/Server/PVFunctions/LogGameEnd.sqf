@@ -31,6 +31,8 @@ if (isNil (profileNamespace getVariable format ["%1_WIN_CHERNARUS",_winnerTeam])
     if (isNil (profileNamespace getVariable format ["%1_WIN_CHERNARUS", _loserTeam])) then {
             profileNamespace setVariable [format ["%1_WIN_CHERNARUS",_loserTeam], 0];
     };
+
+    saveProfileNamespace;
 };
 
 _westWins = profileNamespace getVariable WEST_WIN_CHERNARUS;
