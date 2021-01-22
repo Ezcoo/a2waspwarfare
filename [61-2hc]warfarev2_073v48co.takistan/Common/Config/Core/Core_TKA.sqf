@@ -137,7 +137,7 @@ _c = _c + ['BVP1_TK_ACR'];
 _i = _i + [['','',2900,19,-2,1,2,0,'Takistani Army',[]]];
 
 _c = _c + ['BMP2_TK_EP1'];
-_i = _i + [['','',3400,28,-2,2,2,0,'Takistani Army',[]]];
+_i = _i + [['','',3400,25,-2,2,2,0,'Takistani Army',[]]];
 
 _c = _c + ['ZSU_TK_EP1'];
 _i = _i + [['','',3500,25,-2,3,2,0,'Takistani Army',[]]];
