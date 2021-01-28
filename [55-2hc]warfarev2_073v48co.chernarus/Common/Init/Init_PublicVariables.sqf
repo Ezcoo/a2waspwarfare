@@ -18,6 +18,7 @@ _l = _l + ["RequestSpecial"];
 _l = _l + ["RequestTeamUpdate"];
 _l = _l + ["RequestUpgrade"];
 _l = _l + ["RequestAutoWallConstructinChange"];
+_l = _l + ["SendPlayerScore"];
 
 _serverCommandPV = _l;
 
@@ -35,6 +36,7 @@ _l = _l + ["SetMHQLock"];
 _l = _l + ["Available"];
 _l = _l + ["RequestBaseArea"];
 _l = _l + ["NukeIncoming"];
+_l = _l + ["RequestPlayerScore"];
 
 _clientCommandPV = _l;
 
