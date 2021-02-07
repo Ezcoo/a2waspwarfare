@@ -191,6 +191,7 @@ WFBE_CO_VAR_NotAFK_update = false;
 _display displayAddEventHandler ["KeyDown", "_this call WFBE_CO_FNC_HandleAFKkeys"];
 
 [] execVM "Client\Module\AFKkick\monitorAFK.sqf";
+[] execVM "Client\Module\AntiStackV2\monitorSkill.sqf";
 
 (vehicle player) addEventHandler ["Fired",{_this Spawn HandleAT}];
 execVM "WASP\global_marking_monitor.sqf";

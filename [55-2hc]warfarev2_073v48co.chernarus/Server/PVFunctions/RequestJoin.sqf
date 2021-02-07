@@ -27,6 +27,8 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 	if (_skip == 0) then {
 
+
+
 		_canJoin = true;
 
 	}else{
