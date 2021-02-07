@@ -4,9 +4,11 @@
 	returns: nothing
 */
 
-WFBE_CL_VAR_RequestPlayerSkill = true;
+"WFBE_CL_VAR_PLAYERID" addPublicVariableEventHandler {
 
-publicVariable "WFBE_CL_VAR_RequestPlayerSkill";
+WFBE_SRV_VAR_RequestPlayerSkill = WFBE_CL_VAR_PLAYERID;
 
-sleep 3;
+publicVariable "WFBE_SRV_VAR_RequestPlayerSkill";
+
+};
 

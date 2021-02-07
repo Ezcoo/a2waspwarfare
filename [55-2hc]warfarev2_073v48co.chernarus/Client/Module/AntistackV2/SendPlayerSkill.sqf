@@ -4,8 +4,9 @@
 	returns: nothing
 */
 
-"WFBE_CL_VAR_RequestPlayerSkill" addPublicVariableEventHandler {
+"WFBE_SRV_VAR_RequestPlayerSkill" addPublicVariableEventHandler {
 
+    _requestID = WFBE_SRV_VAR_RequestPlayerSkill;
     _playerSkill = profileNamespace getVariable "WFBE_CL_VAR_SKILLPLAYER";
     _playerSkillFinal = 0;
 
@@ -21,6 +22,6 @@
         _playerSkillFinal = _playerSkillFinal / count _playerSkill;
     };
 
-    publicVariableServer format ["WFBE_CL_VAR_SKILL_%1", side player];
-    
+    publicVariableServer format ["WFBE_CL_VAR_SKILL_%1_%2", side player, _requestID];
+
 };
