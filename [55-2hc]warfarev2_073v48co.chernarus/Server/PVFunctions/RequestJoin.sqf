@@ -27,9 +27,9 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 	if (_skip == 0) then {
 
-	    WFBE_CL_VAR_PLAYERID = owner player;
+	    WFBE_CL_VAR_PLAYERID = [getPlayerUID player, _sideOrigin];
 
-        publicVariableServer "WFBE_CL_VAR_PLAYERID";
+        publicVariableServer "WFBE_CL_VAR_REQUESTID";
 
 		_canJoin = true;
 

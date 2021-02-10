@@ -13,15 +13,15 @@
     if (isNil "_playerSkill" || count _playerSkill < 5) then {
         _playerSkillFinal = 100;
     } else {
-        _i = 0;
         {
-            _playerSkillFinal = _playerSkillFinal + _playerSkill select _i;
-            _i = _i + 1;
+            _playerSkillFinal = _playerSkillFinal + _x;
         } forEach _playerSkill;
 
         _playerSkillFinal = _playerSkillFinal / count _playerSkill;
     };
 
-    publicVariableServer format ["WFBE_CL_VAR_SKILL_%1_%2", side player, _requestID];
+    missionNamespace setVariable [format ["WFBE_CL_VAR_SKILL_%1", side player], [_requestID, _playerSkillFinal]];
+
+    publicVariableServer format ["WFBE_CL_VAR_SKILL_%1", side player];
 
 };
