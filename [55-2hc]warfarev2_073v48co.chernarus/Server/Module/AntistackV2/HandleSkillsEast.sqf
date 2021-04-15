@@ -6,10 +6,19 @@
 
 "WFBE_CL_VAR_SKILL_EAST" addPublicVariableEventHandler {
 
-    private ["_skillWestRequestID"];
+    private ["_skillEastRequest","_skillEastRequestID","_skillEastRequestIDplayerSkill","_skillEast"];
 
-    _skillWestRequestID = WFBE_CL_VAR_SKILL_EAST;
+    _skillEastRequest = WFBE_CL_VAR_SKILL_EAST;
+    _skillEastRequestID = WFBE_CL_VAR_SKILL_EAST select 0;
+    _skillEastRequestIDplayerSkill = WFBE_CL_VAR_SKILL_EAST select 1;
 
-    missionNamespace setVariable [format ["WFBE_CL_VAR_SKILL_WEST_REQUESTID_%1", _skillWestRequestID select 0], _skillWestRequestID select 1];
+    _skillEast = missionNamespace getVariable format ["WFBE_CL_VAR_SKILL_EAST_REQUESTID_%1", _skillEastRequestID];
 
+    if (isNil "_skillEast") then {
+        missionNamespace setVariable [format ["WFBE_CL_VAR_SKILL_EAST_REQUESTID_%1", _skillEastRequestID], _skillEastRequestIDplayerSkill];
+    } else {
+        _skillEast set [count _skillEast, _skillEastRequestIDplayerSkill];
+
+        missionNamespace setVariable format [["WFBE_CL_VAR_SKILL_EAST_REQUESTID_%1", _skillEastRequestID], _skillEast];
+    }
 };

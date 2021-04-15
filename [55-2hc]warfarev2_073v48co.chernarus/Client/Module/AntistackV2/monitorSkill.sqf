@@ -40,13 +40,9 @@ _handle = [] spawn {
                 if (count _lastSkillValuesPlayer > 30) then {
                     _oldLastSkillValuesPlayer = _lastSkillValuesPlayer;
 
-                    {
-                        _j = 0;
-                        if (count _lastSkillValuesPlayer <= 30) then {
-                            _lastSkillValuesPlayer set [_j, _oldLastSkillValuesPlayer select _j];
-                        };
-                        _j = _j + 1;
-                    } forEach _oldLastSkillValuesPlayer;
+                    for "_j" from 0 to (count _oldLastSkillValuesPlayer - 1) step 1 do {
+                        _lastSkillValuesPlayer set [_j, (_oldLastSkillValuesPlayer count (_j + 1))];
+                    };
                 };
 
                 profileNamespace setVariable ["WFBE_CL_VAR_SKILLPLAYER", _lastSkillValuesPlayer];
