@@ -1,4 +1,4 @@
-private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_playersinside","_playersinotherside","_skillPlayer"];
+private ["_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_playersinside","_playersinotherside","_skillPlayer"];
 
 _player = _this select 0;
 _side = _this select 1;
@@ -12,7 +12,9 @@ _sidepros = 0;
 _othersidepros = 0;
 
 _uid = getPlayerUID(_player);
-_canJoin = true;
+
+missionNamespace setVariable [format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID player], false];
+missionNamespace setVariable [format ["WFBE_JOIN_RESULT_ARRIVED_%1", getPlayerUID player], false];
 
 if (_side == west) then {_otherside = east;};
 
@@ -37,18 +39,18 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
         publicVariableServer "WFBE_CL_VAR_REQUESTID";
 
-		_canJoin = true;
+		waitUntil {(missionNamespace getVariable format ["WFBE_JOIN_RESULT_ARRIVED_%1", getPlayerUID player]) == true};
 
 	}else{
 		if (_sideOrigin != _side) then { //--- The joined side differs from the original one.
 
-			_canJoin = false;
+			missionNamespace setVariable [format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID player], false];
 
 			[nil, "LocalizeMessage", ['Teamswap',_name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_SendToClients; //--- Inform the clients about the teamswap.
 
 			["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamswapping, original side [%3], joined side [%4].", _name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_LogContent;
 		}else {
-			_canJoin = true;
+			missionNamespace setVariable [format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID player], true];
 		};
 	};
 
@@ -57,10 +59,10 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 };
 
 
-["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] can join? [%3].", _name, _uid, _canJoin]] Call WFBE_CO_FNC_LogContent;
+["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] can join? [%3].", _name, _uid, missionNamespace getVariable format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID player]]] Call WFBE_CO_FNC_LogContent;
 
 if (WF_A2_Vanilla) then {
-	[_uid, "HandleSpecial", ["join-answer", _canJoin]] Call WFBE_CO_FNC_SendToClients;
+	[_uid, "HandleSpecial", ["join-answer", missionNamespace getVariable format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID player]] Call WFBE_CO_FNC_SendToClients;
 } else {
-	[_player, "HandleSpecial", ["join-answer", _canJoin]] Call WFBE_CO_FNC_SendToClient;
+	[_player, "HandleSpecial", ["join-answer", missionNamespace getVariable format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID player]] Call WFBE_CO_FNC_SendToClient;
 };

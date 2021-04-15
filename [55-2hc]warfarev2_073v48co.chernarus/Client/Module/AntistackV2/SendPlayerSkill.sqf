@@ -11,7 +11,7 @@
     _playerSkillFinal = 0;
 
     if (isNil "_playerSkill" || count _playerSkill < 5) then {
-        _playerSkillFinal = 100;
+        _playerSkillFinal = 30;
     } else {
         {
             _playerSkillFinal = _playerSkillFinal + _x;

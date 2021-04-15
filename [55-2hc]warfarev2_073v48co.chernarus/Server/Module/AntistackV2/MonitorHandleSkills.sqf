@@ -24,4 +24,6 @@ for "_i" from 0 to (count _skillsTeam - 1) step 1 do {
 
 _totalSkillTeam = _totalSkillTeam + _playerSkill;
 
-_totalSkillTeam;
+missionNamespace setVariable [format ["WFBE_SRV_VAR_TOTALSKILL_%1", _side], _totalSkillTeam];
+
+publicVariableServer format ["WFBE_SRV_VAR_TOTALSKILL_%1", _side];
