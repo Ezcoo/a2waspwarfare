@@ -1,4 +1,4 @@
-private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_playersinside","_playersinotherside"];
+private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_playersinside","_playersinotherside","_skillPlayer"];
 
 _player = _this select 0;
 _side = _this select 1;
@@ -27,7 +27,13 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 	if (_skip == 0) then {
 
-	    WFBE_CL_VAR_REQUESTID = [getPlayerUID player, _sideOrigin];
+		_skillPlayer = profileNamespace getVariable "WFBE_CL_VAR_SKILLPLAYER";
+
+		if (isNil _skillPlayer) then {
+			_skillPlayer = 100;
+		};
+
+	    WFBE_CL_VAR_REQUESTID = [getPlayerUID player, _sideOrigin, _skillPlayer];
 
         publicVariableServer "WFBE_CL_VAR_REQUESTID";
 

@@ -40,7 +40,7 @@ _handle = [] spawn {
                 if (count _lastSkillValuesPlayer > 30) then {
                     _oldLastSkillValuesPlayer = _lastSkillValuesPlayer;
 
-                    for "_j" from 0 to (count _oldLastSkillValuesPlayer - 1) step 1 do {
+                    for "_j" from 0 to (count _oldLastSkillValuesPlayer - 2) step 1 do {
                         _lastSkillValuesPlayer set [_j, (_oldLastSkillValuesPlayer count (_j + 1))];
                     };
                 };
