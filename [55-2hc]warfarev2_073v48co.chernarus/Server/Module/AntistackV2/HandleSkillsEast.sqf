@@ -21,4 +21,6 @@
 
         missionNamespace setVariable format [["WFBE_CL_VAR_SKILL_EAST_REQUESTID_%1", _skillEastRequestID], _skillEast];
     }
+
+    ["INFORMATION", format ["HandleSkillsEast.sqf: %1 value is: %2", format ["WFBE_CL_VAR_SKILL_EAST_REQUESTID_%1", _skillEastRequestID], missionNamespace getVariable format ["WFBE_CL_VAR_SKILL_EAST_REQUESTID_%1", _skillEastRequestID]]] Call WFBE_CO_FNC_LogContent;
 };

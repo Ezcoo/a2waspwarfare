@@ -26,6 +26,8 @@ _handle = [] spawn {
 
         _i = _i + 1;
 
+        ["INFORMATION", format ["monitorSkill.sqf: _newScorePlayer: %1, _lastSkillValuesPlayer: %2", _newScorePlayer, _lastSkillValuesPlayer]] Call WFBE_CO_FNC_LogContent;
+
         if ((_i mod 10) == 0) then {
 
             _lastSkillValuesPlayerProfile = profileNamespace getVariable "WFBE_CL_VAR_SKILLPLAYER";
@@ -47,7 +49,11 @@ _handle = [] spawn {
 
                 profileNamespace setVariable ["WFBE_CL_VAR_SKILLPLAYER", _lastSkillValuesPlayer];
 
+                ["INFORMATION", format ["monitorSkill.sqf: Attempting to save skill information to profileNamespace..."]] Call WFBE_CO_FNC_LogContent;
+
                 saveProfileNamespace;
+
+                ["INFORMATION", format ["monitorSkill.sqf: Saved skill info to profileNamespace!"]] Call WFBE_CO_FNC_LogContent;
             };
 
         };

@@ -13,9 +13,11 @@
     _requestID = WFBE_SRV_VAR_RequestPlayerSkill;
     _side = WFBE_CL_VAR_REQUESTID select 1;
     _playerSkill = WFBE_CL_VAR_REQUESTID select 2;
+    _opposingSide = east;
+    
+    ["INFORMATION", format ["RequestSkill.sqf: Contents of WFBE_CL_VAR_REQUESTID: %1, initializing score calculation monitoring...", WFBE_CL_VAR_REQUESTID]] Call WFBE_CO_FNC_LogContent;
 
-
-    _handleSidePlayer = [_requestID, _side, _playerSkill] execVM "Server\AntistackV2\MonitorHandleSkills.sqf";
+    _handleSidePlayer = [_requestID, _side, _playerSkill] spawn WFBE_CO_FNC_MonitorHandleSkills;
 
     publicVariable "WFBE_SRV_VAR_RequestPlayerSkill";
 
@@ -25,15 +27,22 @@
         _opposingSide == west;
     };
 
-    _handleOpposingSidePlayer = [_requestID, _side, 0] execVM "Server\AntistackV2\MonitorHandleSkills.sqf";
+    _handleOpposingSidePlayer = [_requestID, _side, 0] spawn WFBE_CO_FNC_MonitorHandleSkills;
+
+    ["INFORMATION", format ["RequestSkill.sqf: Waiting for the team score calculation threads to finish... _requestID: %1", _requestID]] Call WFBE_CO_FNC_LogContent;
 
     waitUntil {scriptDone _handleSidePlayer && scriptDone _handleOpposingSidePlayer};
+
+    ["INFORMATION", format ["RequestSkill.sqf: Team score calculation threads finished! _requestID: %1", _requestID]] Call WFBE_CO_FNC_LogContent;
 
     if ((missionNamespace getVariable format ["WFBE_SRV_VAR_TOTALSKILL_%1", _opposingSide]) >= (missionNamespace getVariable format ["WFBE_SRV_VAR_TOTALSKILL_%1", _side])) then {
         missionNamespace setVariable [format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID player], true];
         missionNamespace setVariable [format ["WFBE_JOIN_RESULT_ARRIVED_%1", getPlayerUID player], true];
+        ["INFORMATION", format ["RequestSkill.sqf: _requestID: %1. CANJOIN: %2, RESULT_ARRIVED: %3", _requestID, missionNamespace getVariable format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID player], missionNamespace getVariable format ["WFBE_JOIN_RESULT_ARRIVED_%1", getPlayerUID player]]] Call WFBE_CO_FNC_LogContent;
     } else {
         missionNamespace setVariable [format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID player], false];
         missionNamespace setVariable [format ["WFBE_JOIN_RESULT_ARRIVED_%1", getPlayerUID player], true];
-    }
+        ["INFORMATION", format ["RequestSkill.sqf: _requestID: %1. CANJOIN: %2, RESULT_ARRIVED: %3", _requestID, missionNamespace getVariable format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID player], missionNamespace getVariable format ["WFBE_JOIN_RESULT_ARRIVED_%1", getPlayerUID player]]] Call WFBE_CO_FNC_LogContent;
+    };
 
+}

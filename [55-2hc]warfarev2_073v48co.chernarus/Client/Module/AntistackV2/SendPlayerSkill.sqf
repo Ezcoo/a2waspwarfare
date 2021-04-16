@@ -10,6 +10,8 @@
     _playerSkill = profileNamespace getVariable "WFBE_CL_VAR_SKILLPLAYER";
     _playerSkillFinal = 0;
 
+    ["INFORMATION", format ["SendPlayerSkill.sqf: Triggered! _requestID: %1, _playerSkill: %2", _requestID, _playerSkill]] Call WFBE_CO_FNC_LogContent;
+
     if (isNil "_playerSkill" || count _playerSkill < 5) then {
         _playerSkillFinal = 30;
     } else {
