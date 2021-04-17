@@ -43,11 +43,7 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 		["INFORMATION", format ["RequestJoin.sqf: Waiting until both teams' scores have been calculated..."]] Call WFBE_CO_FNC_LogContent;
 
-		_resultArrived = missionNamespace getVariable format ["WFBE_JOIN_RESULT_ARRIVED_%1", getPlayerUID player];	
-
-		waitUntil {
-			_resultArrived;	
-		};
+		waitUntil {!isNil format ["WFBE_JOIN_RESULT_ARRIVED_%1", getPlayerUID player]};
 
 		["INFORMATION", format ["RequestJoin.sqf: Both teams' scores arrived!"]] Call WFBE_CO_FNC_LogContent;
 
