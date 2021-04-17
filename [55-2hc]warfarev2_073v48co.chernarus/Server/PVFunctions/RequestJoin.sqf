@@ -31,7 +31,7 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 		_skillPlayer = profileNamespace getVariable "WFBE_CL_VAR_SKILLPLAYER";
 		
-		if (isNil _skillPlayer) then {
+		if (isNil "_skillPlayer") then {
 			_skillPlayer = 100;
 		};
 		
