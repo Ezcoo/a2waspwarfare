@@ -8,9 +8,9 @@
 
     private ["_requestID", "_side","_handleSidePlayer","_handleOpposingSidePlayer","_opposingSide"];
 
-    WFBE_SRV_VAR_RequestPlayerSkill = WFBE_CL_VAR_REQUESTID select 0;
+    WFBE_SRV_VAR_RequestPlayerID = WFBE_CL_VAR_REQUESTID select 0;
 
-    _requestID = WFBE_SRV_VAR_RequestPlayerSkill;
+    _requestID = WFBE_SRV_VAR_RequestPlayerID;
     _side = WFBE_CL_VAR_REQUESTID select 1;
     _playerSkill = WFBE_CL_VAR_REQUESTID select 2;
     _opposingSide = east;
@@ -38,10 +38,18 @@
     if ((missionNamespace getVariable format ["WFBE_SRV_VAR_TOTALSKILL_%1", _opposingSide]) >= (missionNamespace getVariable format ["WFBE_SRV_VAR_TOTALSKILL_%1", _side])) then {
         missionNamespace setVariable [format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID player], true];
         missionNamespace setVariable [format ["WFBE_JOIN_RESULT_ARRIVED_%1", getPlayerUID player], true];
+
+        publicVariable format ["WFBE_JOIN_RESULT_ARRIVED_%1", _requestID];
+        publicVariable format ["WFBE_SRV_VAR_CANJOIN_%1", _requestID];
+
         ["INFORMATION", format ["RequestSkill.sqf: _requestID: %1. CANJOIN: %2, RESULT_ARRIVED: %3", _requestID, missionNamespace getVariable format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID player], missionNamespace getVariable format ["WFBE_JOIN_RESULT_ARRIVED_%1", getPlayerUID player]]] Call WFBE_CO_FNC_LogContent;
     } else {
         missionNamespace setVariable [format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID player], false];
         missionNamespace setVariable [format ["WFBE_JOIN_RESULT_ARRIVED_%1", getPlayerUID player], true];
+
+        publicVariable format ["WFBE_JOIN_RESULT_ARRIVED_%1", _requestID];
+        publicVariable format ["WFBE_SRV_VAR_CANJOIN_%1", _requestID];
+
         ["INFORMATION", format ["RequestSkill.sqf: _requestID: %1. CANJOIN: %2, RESULT_ARRIVED: %3", _requestID, missionNamespace getVariable format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID player], missionNamespace getVariable format ["WFBE_JOIN_RESULT_ARRIVED_%1", getPlayerUID player]]] Call WFBE_CO_FNC_LogContent;
     };
 
