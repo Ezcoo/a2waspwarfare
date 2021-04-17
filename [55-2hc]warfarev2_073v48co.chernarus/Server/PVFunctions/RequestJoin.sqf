@@ -30,12 +30,12 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 	if (_skip == 0) then {
 
 		_skillPlayer = profileNamespace getVariable "WFBE_CL_VAR_SKILLPLAYER";
-
-		["INFORMATION", format ["RequestJoin.sqf: WFBE_CL_VAR_SKILLPLAYER value is: %1", (_skillPlayer)]] Call WFBE_CO_FNC_LogContent;
-
+		
 		if (isNil _skillPlayer) then {
 			_skillPlayer = 100;
 		};
+		
+		["INFORMATION", format ["RequestJoin.sqf: WFBE_CL_VAR_SKILLPLAYER value is: %1", (_skillPlayer)]] Call WFBE_CO_FNC_LogContent;
 
 	    WFBE_CL_VAR_REQUESTID = [getPlayerUID player, _sideOrigin, _skillPlayer];
 
@@ -43,7 +43,11 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 		["INFORMATION", format ["RequestJoin.sqf: Waiting until both teams' scores have been calculated..."]] Call WFBE_CO_FNC_LogContent;
 
-		waitUntil {(missionNamespace getVariable format ["WFBE_JOIN_RESULT_ARRIVED_%1", getPlayerUID player]) == true};
+		_resultArrived = missionNamespace getVariable format ["WFBE_JOIN_RESULT_ARRIVED_%1", getPlayerUID player];	
+
+		waitUntil {
+			_resultArrived;	
+		};
 
 		["INFORMATION", format ["RequestJoin.sqf: Both teams' scores arrived!"]] Call WFBE_CO_FNC_LogContent;
 
