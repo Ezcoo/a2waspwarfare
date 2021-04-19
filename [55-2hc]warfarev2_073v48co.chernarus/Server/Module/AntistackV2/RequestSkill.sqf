@@ -6,6 +6,8 @@
 
 "WFBE_CL_VAR_REQUESTID" addPublicVariableEventHandler {
 
+    [] spawn {
+
     private ["_requestID", "_side","_handleSidePlayer","_handleOpposingSidePlayer","_opposingSide"];
 
     WFBE_SRV_VAR_RequestPlayerID = (_this select 1) select 0;
@@ -29,7 +31,7 @@
     publicVariable "WFBE_SRV_VAR_RequestPlayerSkill";
 
     ["INFORMATION", format ["RequestSkill.sqf: Waiting for the team score calculation threads to finish... _requestID: %1", _requestID]] Call WFBE_CO_FNC_LogContent;
-
+ 
     waitUntil {(scriptDone _handleSidePlayer) && (scriptDone _handleOpposingSidePlayer)};
 
     ["INFORMATION", format ["RequestSkill.sqf: Team score calculation threads finished! _requestID: %1", _requestID]] Call WFBE_CO_FNC_LogContent;
@@ -52,4 +54,6 @@
         ["INFORMATION", format ["RequestSkill.sqf: _requestID: %1. CANJOIN: %2, RESULT_ARRIVED: %3", _requestID, missionNamespace getVariable format ["WFBE_SRV_VAR_CANJOIN_%1", _requestID], missionNamespace getVariable format ["WFBE_JOIN_RESULT_ARRIVED_%1", _requestID]]] Call WFBE_CO_FNC_LogContent;
     };
 
-}
+    };
+
+};
