@@ -51,6 +51,8 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 			if (!isNil _canJoin) then {
 				breakOut "canPlayerJoin";
 			};
+
+			sleep 0.3;
 		};
 
 		["INFORMATION", format ["RequestJoin.sqf: Both teams' scores arrived!"]] Call WFBE_CO_FNC_LogContent;
