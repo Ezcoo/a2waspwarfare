@@ -49,11 +49,9 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 			_canJoin = missionNamespace getVariable format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID player];
 
 			if (!isNil _canJoin) then {
-				if (_canJoin) then {
-					breakOut "canPlayerJoin";
-				}
-			}
-		}
+				breakOut "canPlayerJoin";
+			};
+		};
 
 		["INFORMATION", format ["RequestJoin.sqf: Both teams' scores arrived!"]] Call WFBE_CO_FNC_LogContent;
 
