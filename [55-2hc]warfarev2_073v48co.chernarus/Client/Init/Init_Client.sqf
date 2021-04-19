@@ -106,7 +106,7 @@ WFBE_CL_FNC_UI_Gear_UpdateTarget = Compile preprocessFileLineNumbers "Client\Fun
 WFBE_CL_FNC_UI_Gear_UpdateView = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Gear_UpdateView.sqf";
 WFBE_CL_FNC_UI_Respawn_Selector = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Respawn_Selector.sqf";
 WFBE_CL_FNC_MonitorSkill = Compile preprocessFileLineNumbers "Client\Module\AntistackV2\monitorSkill.sqf";
-WFBE_CL_FNC_SendPlayerSkill = Compile preprocessFileLineNumbers "Client\Module\AntistackV2\SendPlayerSkill.sqf";
+WFBE_CL_FNC_SendPlayerSkill = call Compile preprocessFileLineNumbers "Client\Module\AntistackV2\SendPlayerSkill.sqf";
 
 //Affichage Rubber maps:
 	Local_GUIWorking = false;

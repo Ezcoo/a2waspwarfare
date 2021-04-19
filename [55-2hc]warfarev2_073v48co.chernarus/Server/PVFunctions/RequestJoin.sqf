@@ -13,9 +13,6 @@ _othersidepros = 0;
 
 _uid = getPlayerUID(_player);
 
-missionNamespace setVariable [format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID player], false];
-missionNamespace setVariable [format ["WFBE_JOIN_RESULT_ARRIVED_%1", getPlayerUID player], false];
-
 if (_side == west) then {_otherside = east;};
 
 _playersinside = ({side _x == _side && isPlayer _x} count (playableUnits + switchableUnits));
@@ -29,7 +26,7 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 	if (_skip == 0) then {
 
-	    WFBE_CL_VAR_REQUESTID = [getPlayerUID _player, _side];
+	    WFBE_CL_VAR_REQUESTID = [_uid, _side];
 
         publicVariableServer "WFBE_CL_VAR_REQUESTID";
 
@@ -38,7 +35,7 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 		scopeName "canPlayerJoin";
 
 		while {true} do {
-			_canJoin = missionNamespace getVariable format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID _player];
+			_canJoin = missionNamespace getVariable format ["WFBE_SRV_VAR_CANJOIN_%1", _uid];
 
 			if (!(isNil "_canJoin")) then {
 				if (_canJoin) then {
@@ -58,13 +55,13 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 	}else{
 		if (_sideOrigin != _side) then { //--- The joined side differs from the original one.
 
-			missionNamespace setVariable [format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID _player], false];
+			missionNamespace setVariable [format ["WFBE_SRV_VAR_CANJOIN_%1", _uid], false];
 
 			[nil, "LocalizeMessage", ['Teamswap',_name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_SendToClients; //--- Inform the clients about the teamswap.
 
 			["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamswapping, original side [%3], joined side [%4].", _name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_LogContent;
 		}else {
-			missionNamespace setVariable [format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID _player], true];
+			missionNamespace setVariable [format ["WFBE_SRV_VAR_CANJOIN_%1", _uid], true];
 		};
 	};
 
@@ -73,10 +70,10 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 };
 
 
-["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] can join? [%3].", _name, _uid, missionNamespace getVariable format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID _player]]] Call WFBE_CO_FNC_LogContent;
+["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] can join? [%3].", _name, _uid, missionNamespace getVariable format ["WFBE_SRV_VAR_CANJOIN_%1", _uid]]] Call WFBE_CO_FNC_LogContent;
 
 if (WF_A2_Vanilla) then {
-	[_uid, "HandleSpecial", ["join-answer", missionNamespace getVariable format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID _player]]] Call WFBE_CO_FNC_SendToClients;
+	[_uid, "HandleSpecial", ["join-answer", missionNamespace getVariable format ["WFBE_SRV_VAR_CANJOIN_%1", _uid]]] Call WFBE_CO_FNC_SendToClients;
 } else {
-	[_player, "HandleSpecial", ["join-answer", missionNamespace getVariable format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID _player]]] Call WFBE_CO_FNC_SendToClients;
+	[_player, "HandleSpecial", ["join-answer", missionNamespace getVariable format ["WFBE_SRV_VAR_CANJOIN_%1", _uid]]] Call WFBE_CO_FNC_SendToClients;
 };
