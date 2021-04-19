@@ -19,8 +19,11 @@ if (true) then {
 
 	while {true} do {
 		_skillsTeam = missionNamespace getVariable format ["WFBE_CL_VAR_SKILL_%1_REQUESTID_%2", _side, _requestID];
-		if((count _skillsTeam) >= ({(isPlayer _x) && (side _x == _side)} count allUnits)) then {
-			breakOut "teamSkillCalc";
+
+		if (!(isNil "_skillsTeam")) then {
+			if((count _skillsTeam) >= ({(isPlayer _x) && (side _x == _side)} count allUnits)) then {
+				breakOut "teamSkillCalc";
+			};
 		};
 
 		sleep 0.3;

@@ -8,10 +8,10 @@
 
     private ["_requestID", "_side","_handleSidePlayer","_handleOpposingSidePlayer","_opposingSide"];
 
-    WFBE_SRV_VAR_RequestPlayerID = _this select 0;
+    WFBE_SRV_VAR_RequestPlayerID = _this select 1 select 0;
 
     _requestID = WFBE_SRV_VAR_RequestPlayerID;
-    _side = _this select 1;
+    _side = _this select 1 select 1;
     _opposingSide = east;
     
     ["INFORMATION", format ["RequestSkill.sqf: Contents of WFBE_CL_VAR_REQUESTID: %1, initializing score calculation monitoring...", WFBE_CL_VAR_REQUESTID]] Call WFBE_CO_FNC_LogContent;
@@ -19,9 +19,9 @@
     _handleSidePlayer = [_requestID, _side] spawn WFBE_CO_FNC_MonitorHandleSkills;
 
     if (_side == west) then {
-        _opposingSide == east;
+        _opposingSide = east;
     } else {
-        _opposingSide == west;
+        _opposingSide = west;
     };
 
     _handleOpposingSidePlayer = [_requestID, _side] spawn WFBE_CO_FNC_MonitorHandleSkills;
