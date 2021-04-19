@@ -15,7 +15,7 @@
     _skillWest = missionNamespace getVariable format ["WFBE_CL_VAR_SKILL_WEST_REQUESTID_%1", _skillWestRequestID];
 
     if (isNil "_skillWest") then {
-        missionNamespace setVariable [format ["WFBE_CL_VAR_SKILL_WEST_REQUESTID_%1", _skillWestRequestID], _skillWestRequestIDplayerSkill];
+        missionNamespace setVariable [format ["WFBE_CL_VAR_SKILL_WEST_REQUESTID_%1", _skillWestRequestID], [_skillWestRequestIDplayerSkill]];
     } else {
         _skillWest set [count _skillWest, _skillWestRequestIDplayerSkill];
 

@@ -9,12 +9,23 @@ private ["_requestID","_side","_skillsTeam","_totalSkillTeam","_i"];
 _requestID = _this select 0;
 _side = _this select 1;
 
-_skillsTeam = format ["WFBE_CL_VAR_SKILL_%1_REQUESTID_%2", _side, _requestID];
+_skillsTeam = missionNamespace getVariable format ["WFBE_CL_VAR_SKILL_%1_REQUESTID_%2", _side, _requestID];
 
 ["INFORMATION", format ["MonitorHandleSkills.sqf: Waiting for players to respond to the server request to send player skill value... _requestID: %1", _requestID]] Call WFBE_CO_FNC_LogContent;
 
 // Wait until skill of all players on given side have been calculated
-waitUntil {(count _skillsTeam) >= ({isPlayer _x && side _x == (format ["%1", _side])} count allUnits)};
+if (true) then {
+	scopeName "teamSkillCalc";
+
+	while {true} do {
+		_skillsTeam = missionNamespace getVariable format ["WFBE_CL_VAR_SKILL_%1_REQUESTID_%2", _side, _requestID];
+		if((count _skillsTeam) >= ({(isPlayer _x) && (side _x == _side)} count allUnits)) then {
+			breakOut "teamSkillCalc";
+		};
+
+		sleep 0.3;
+	};
+};
 
 ["INFORMATION", format ["MonitorHandleSkills.sqf: All players have sent their skill values! Starting to calculate team [%1] score... _requestID: %2", _side, _requestID]] Call WFBE_CO_FNC_LogContent;
 

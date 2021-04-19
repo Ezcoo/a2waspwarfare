@@ -64,7 +64,7 @@ WFBE_SE_FNC_AssignForCommander = Compile preprocessFileLineNumbers "Server\Funct
 WFBE_CO_FNC_InitAFKkickHandler = Compile preprocessFileLineNumbers "Server\Module\afkKick\initAFKkickHandler.sqf";
 WFBE_CO_FNC_LogGameEnd = Compile preprocessFileLineNumbers "Server\Functions\Server_LogGameEnd.sqf";
 WFBE_CO_FNC_RequestSkill = call Compile preprocessFileLineNumbers "Server\Module\AntistackV2\RequestSkill.sqf";
-WFBE_CO_FNC_MonitorHandleSkills = call Compile preprocessFileLineNumbers "Server\Module\AntistackV2\MonitorHandleSkills.sqf";
+WFBE_CO_FNC_MonitorHandleSkills = Compile preprocessFileLineNumbers "Server\Module\AntistackV2\MonitorHandleSkills.sqf";
 WFBE_CO_FNC_HandleSkillsWest = call Compile preprocessFileLineNumbers "Server\Module\AntistackV2\HandleSkillsWest.sqf";
 WFBE_CO_FNC_HandleSkillsEast = call Compile preprocessFileLineNumbers "Server\Module\AntistackV2\HandleSkillsEast.sqf";
 
