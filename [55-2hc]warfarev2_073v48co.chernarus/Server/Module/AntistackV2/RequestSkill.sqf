@@ -39,16 +39,16 @@
         missionNamespace setVariable [format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID player], true];
         missionNamespace setVariable [format ["WFBE_JOIN_RESULT_ARRIVED_%1", getPlayerUID player], true];
 
-        publicVariable format ["WFBE_JOIN_RESULT_ARRIVED_%1", _requestID];
-        publicVariable format ["WFBE_SRV_VAR_CANJOIN_%1", _requestID];
+        publicVariableServer format ["WFBE_JOIN_RESULT_ARRIVED_%1", _requestID];
+        publicVariableServer format ["WFBE_SRV_VAR_CANJOIN_%1", _requestID];
 
         ["INFORMATION", format ["RequestSkill.sqf: _requestID: %1. CANJOIN: %2, RESULT_ARRIVED: %3", _requestID, missionNamespace getVariable format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID player], missionNamespace getVariable format ["WFBE_JOIN_RESULT_ARRIVED_%1", getPlayerUID player]]] Call WFBE_CO_FNC_LogContent;
     } else {
         missionNamespace setVariable [format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID player], false];
         missionNamespace setVariable [format ["WFBE_JOIN_RESULT_ARRIVED_%1", getPlayerUID player], true];
 
-        publicVariable format ["WFBE_JOIN_RESULT_ARRIVED_%1", _requestID];
-        publicVariable format ["WFBE_SRV_VAR_CANJOIN_%1", _requestID];
+        publicVariableServer format ["WFBE_JOIN_RESULT_ARRIVED_%1", _requestID];
+        publicVariableServer format ["WFBE_SRV_VAR_CANJOIN_%1", _requestID];
 
         ["INFORMATION", format ["RequestSkill.sqf: _requestID: %1. CANJOIN: %2, RESULT_ARRIVED: %3", _requestID, missionNamespace getVariable format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID player], missionNamespace getVariable format ["WFBE_JOIN_RESULT_ARRIVED_%1", getPlayerUID player]]] Call WFBE_CO_FNC_LogContent;
     };

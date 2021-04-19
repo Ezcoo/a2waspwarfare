@@ -1,4 +1,4 @@
-private ["_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_playersinside","_playersinotherside","_skillPlayer"];
+private ["_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_playersinside","_playersinotherside","_skillPlayer","_canJoin"];
 
 _player = _this select 0;
 _side = _this select 1;
@@ -43,7 +43,17 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 		["INFORMATION", format ["RequestJoin.sqf: Waiting until both teams' scores have been calculated..."]] Call WFBE_CO_FNC_LogContent;
 
-		waitUntil {!isNil format ["WFBE_JOIN_RESULT_ARRIVED_%1", getPlayerUID player]};
+		scopeName "canPlayerJoin";
+
+		while {true} do {
+			_canJoin = missionNamespace getVariable format ["WFBE_SRV_VAR_CANJOIN_%1", getPlayerUID player];
+
+			if (!isNil _canJoin) then {
+				if (_canJoin) then {
+					breakOut "canPlayerJoin";
+				}
+			}
+		}
 
 		["INFORMATION", format ["RequestJoin.sqf: Both teams' scores arrived!"]] Call WFBE_CO_FNC_LogContent;
 
