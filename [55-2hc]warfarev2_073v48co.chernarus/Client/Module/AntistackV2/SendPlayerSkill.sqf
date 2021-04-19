@@ -6,7 +6,7 @@
 
 "WFBE_SRV_VAR_RequestPlayerSkill" addPublicVariableEventHandler {
 
-    _requestID = WFBE_SRV_VAR_RequestPlayerSkill;
+    _requestID = _this;
     _playerSkill = profileNamespace getVariable "WFBE_CL_VAR_SKILLPLAYER";
     _playerSkillFinal = 0;
 

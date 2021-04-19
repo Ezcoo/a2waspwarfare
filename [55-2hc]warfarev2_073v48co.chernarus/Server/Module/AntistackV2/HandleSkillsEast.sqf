@@ -8,9 +8,9 @@
 
     private ["_skillEastRequest","_skillEastRequestID","_skillEastRequestIDplayerSkill","_skillEast"];
 
-    _skillEastRequest = WFBE_CL_VAR_SKILL_EAST;
-    _skillEastRequestID = WFBE_CL_VAR_SKILL_EAST select 0;
-    _skillEastRequestIDplayerSkill = WFBE_CL_VAR_SKILL_EAST select 1;
+    _skillEastRequest = _this;
+    _skillEastRequestID = _this select 0;
+    _skillEastRequestIDplayerSkill = _this select 1;
 
     _skillEast = missionNamespace getVariable format ["WFBE_CL_VAR_SKILL_EAST_REQUESTID_%1", _skillEastRequestID];
 

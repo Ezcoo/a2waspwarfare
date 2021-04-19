@@ -8,18 +8,15 @@
 
     private ["_requestID", "_side","_handleSidePlayer","_handleOpposingSidePlayer","_opposingSide"];
 
-    WFBE_SRV_VAR_RequestPlayerID = WFBE_CL_VAR_REQUESTID select 0;
+    WFBE_SRV_VAR_RequestPlayerID = _this select 0;
 
     _requestID = WFBE_SRV_VAR_RequestPlayerID;
-    _side = WFBE_CL_VAR_REQUESTID select 1;
-    _playerSkill = WFBE_CL_VAR_REQUESTID select 2;
+    _side = _this select 1;
     _opposingSide = east;
     
     ["INFORMATION", format ["RequestSkill.sqf: Contents of WFBE_CL_VAR_REQUESTID: %1, initializing score calculation monitoring...", WFBE_CL_VAR_REQUESTID]] Call WFBE_CO_FNC_LogContent;
 
-    _handleSidePlayer = [_requestID, _side, _playerSkill] spawn WFBE_CO_FNC_MonitorHandleSkills;
-
-    publicVariable "WFBE_SRV_VAR_RequestPlayerSkill";
+    _handleSidePlayer = [_requestID, _side] spawn WFBE_CO_FNC_MonitorHandleSkills;
 
     if (_side == west) then {
         _opposingSide == east;
@@ -27,7 +24,9 @@
         _opposingSide == west;
     };
 
-    _handleOpposingSidePlayer = [_requestID, _side, 0] spawn WFBE_CO_FNC_MonitorHandleSkills;
+    _handleOpposingSidePlayer = [_requestID, _side] spawn WFBE_CO_FNC_MonitorHandleSkills;
+
+    publicVariable "WFBE_SRV_VAR_RequestPlayerSkill";
 
     ["INFORMATION", format ["RequestSkill.sqf: Waiting for the team score calculation threads to finish... _requestID: %1", _requestID]] Call WFBE_CO_FNC_LogContent;
 

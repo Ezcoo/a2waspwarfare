@@ -8,7 +8,6 @@ private ["_requestID","_side","_skillsTeam","_totalSkillTeam","_i"];
 
 _requestID = _this select 0;
 _side = _this select 1;
-_playerSkill = _this select 2;
 
 _skillsTeam = format ["WFBE_CL_VAR_SKILL_%1_REQUESTID_%2", _side, _requestID];
 
@@ -25,8 +24,6 @@ _i = 0;
 for "_i" from 0 to (count _skillsTeam - 1) step 1 do {
 	_totalSkillTeam = _totalSkillTeam + _skillsTeam select _i;
 };
-
-_totalSkillTeam = _totalSkillTeam + _playerSkill;
 
 missionNamespace setVariable [format ["WFBE_SRV_VAR_TOTALSKILL_%1", _side], _totalSkillTeam];
 
