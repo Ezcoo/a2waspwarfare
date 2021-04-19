@@ -30,7 +30,7 @@
 
     ["INFORMATION", format ["RequestSkill.sqf: Waiting for the team score calculation threads to finish... _requestID: %1", _requestID]] Call WFBE_CO_FNC_LogContent;
 
-    waitUntil {scriptDone _handleSidePlayer && scriptDone _handleOpposingSidePlayer};
+    waitUntil {(scriptDone _handleSidePlayer) && (scriptDone _handleOpposingSidePlayer)};
 
     ["INFORMATION", format ["RequestSkill.sqf: Team score calculation threads finished! _requestID: %1", _requestID]] Call WFBE_CO_FNC_LogContent;
 
