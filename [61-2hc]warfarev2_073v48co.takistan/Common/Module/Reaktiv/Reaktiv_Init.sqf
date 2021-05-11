@@ -15,5 +15,5 @@ WFBE_CO_MOD_Reaktiv_OnDamageReceived = Compile preprocessFileLineNumbers "Common
 
 // [vehicle, [Overall, Hull->telo, Engine->motor, Left track->pas_l, Right track->pas_p, turret->vez]]; values in the array define the damage absorption from the vehicle part.
 
-_u =      [["M1A1", [3, 3, 1, 4, 4, 2]];
-_u = _u + [["M1A1_US_DES_EP1", [3, 3, 1, 4, 4, 2]];
+_u =      [["M1A1", [3, 3, 1, 4, 4, 2]]];
+_u = _u + [["M1A1_US_DES_EP1", [3, 3, 1, 4, 4, 2]]];
