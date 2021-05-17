@@ -142,6 +142,7 @@ if (_isMan) then { //--- Man.
 	if (_unit_kind in (missionNamespace getVariable Format['WFBE_%1REPAIRTRUCKS',str _side])) then {_type = "RepairVehicle"};//--- Repair.
 	if (_unit_kind in (missionNamespace getVariable Format['WFBE_%1AMBULANCES',str _side])) then {_color = "ColorYellow"};//--- Medical.
 	if (_unit_kind in (missionNamespace getVariable Format['WFBE_%1SALVAGETRUCK',str _side])) then {_type = "SalvageVehicle"};//--- Salvage.
+	if (_unit isKindOf "Bicycle") then {_color = "ColorGrey"};
         _params = [_type,_color,_size,_txt,_markerName,_unit,1,true,"DestroyedVehicle",_color,false,_side,[2,2]];	
         if (_unit == ((_side) Call WFBE_CO_FNC_GetSideHQ)) then {_color = "ColorOrange";_params = ['Headquarters',_color,[1,1],'','HQUndeployed',_unit,0.2,false,'','',false,_side]};//--- HQ.	
 };
