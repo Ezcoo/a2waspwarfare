@@ -58,8 +58,8 @@ _arrPlayersOPFOR = [];
 			_arrPlayersBLUFOR = _arrPlayersBLUFOR + _x;
 		} else {
 			_arrPlayersOPFOR = _arrPlayersOPFOR + _x;
-		}
-	}
+		};
+	};
 } forEach allUnits;
 
 if (_canJoin) then {
