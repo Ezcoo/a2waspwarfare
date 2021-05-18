@@ -62,7 +62,7 @@ _arrPlayersOPFOR = [];
 	};
 } forEach allUnits;
 
-if (_canJoin) then {
+if (_canJoin && (isNil "_sideOrigin")) then {
 	["INFORMATION", Format["RequestJoin.sqf: Stacking check: Player [%1] joining team [%2] - BLUFOR players: [[%3]] - OPFOR players: [[%4]],", _name, _side, _arrPlayersBLUFOR, _arrPlayersOPFOR]] Call WFBE_CO_FNC_LogContent;
 };
 
