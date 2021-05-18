@@ -144,6 +144,9 @@ if (_isMan) then { //--- Man.
 	if (_unit_kind in (missionNamespace getVariable Format['WFBE_%1SALVAGETRUCK',str _side])) then {_type = "SalvageVehicle"};//--- Salvage.
 	if (_unit isKindOf "Bicycle") then {_color = "ColorGrey"};
 	if ((_unit isKindOf "Helicopter") || (_unit isKindOf "Plane")) then {_color = "ColorPink"};
+	if (group _unit == group player) then {
+		_color = "ColorOrange";
+	};
 	
         _params = [_type,_color,_size,_txt,_markerName,_unit,1,true,"DestroyedVehicle",_color,false,_side,[2,2]];	
         if (_unit == ((_side) Call WFBE_CO_FNC_GetSideHQ)) then {_color = "ColorOrange";_params = ['Headquarters',_color,[1,1],'','HQUndeployed',_unit,0.2,false,'','',false,_side]};//--- HQ.	
