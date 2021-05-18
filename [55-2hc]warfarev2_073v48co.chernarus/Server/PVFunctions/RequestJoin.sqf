@@ -49,6 +49,23 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 ["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] can join? [%3].", _name, _uid, _canJoin]] Call WFBE_CO_FNC_LogContent;
 
+_arrPlayersBLUFOR = [];
+_arrPlayersOPFOR = [];
+
+{
+	if (isPlayer _x) then {
+		if (side _x == west) then {
+			_arrPlayersBLUFOR = _arrPlayersBLUFOR + _x;
+		} else {
+			_arrPlayersOPFOR = _arrPlayersOPFOR + _x;
+		}
+	}
+} forEach allUnits;
+
+if (_canJoin) then {
+	["INFORMATION", Format["RequestJoin.sqf: Stacking check: Player [%1] joining team [%2] - BLUFOR players: [[%3]] - OPFOR players: [[%4]],", _name, _side, _arrPlayersBLUFOR, _arrPlayersOPFOR]] Call WFBE_CO_FNC_LogContent;
+};
+
 if (WF_A2_Vanilla) then {
 	[_uid, "HandleSpecial", ["join-answer", _canJoin]] Call WFBE_CO_FNC_SendToClients;
 } else {
