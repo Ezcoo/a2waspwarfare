@@ -7,7 +7,7 @@
 //#define WF_DEBUG 1
 
 /* Gameplay: Change the overall camo */
-//#define WF_CAMO 1
+#define WF_CAMO 1
 
 /* Gamemode to run */
 #define COMBINEDOPS 1
