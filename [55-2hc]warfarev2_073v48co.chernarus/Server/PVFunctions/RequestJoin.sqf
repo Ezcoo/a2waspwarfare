@@ -1,4 +1,4 @@
-private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_playersinside","_playersinotherside"];
+private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_playersinside","_playersinotherside","_arrPlayersBLUFOR","_arrPlayersOPFOR"];
 
 _player = _this select 0;
 _side = _this select 1;
@@ -55,14 +55,14 @@ _arrPlayersOPFOR = [];
 {
 	if (isPlayer _x) then {
 		if (side _x == west) then {
-			_arrPlayersBLUFOR = _arrPlayersBLUFOR + _x;
+			_arrPlayersBLUFOR set [count _arrPlayersBLUFOR, name _x];
 		} else {
-			_arrPlayersOPFOR = _arrPlayersOPFOR + _x;
+			_arrPlayersOPFOR set [count _arrPlayersOPFOR, name _x];
 		};
 	};
 } forEach allUnits;
 
-if (_canJoin && (isNil "_sideOrigin")) then {
+if (_canJoin && (isNil '_sideOrigin')) then {
 	["INFORMATION", Format["RequestJoin.sqf: Stacking check: Player [%1] joining team [%2] - BLUFOR players: [[%3]] - OPFOR players: [[%4]],", _name, _side, _arrPlayersBLUFOR, _arrPlayersOPFOR]] Call WFBE_CO_FNC_LogContent;
 };
 
