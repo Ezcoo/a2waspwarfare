@@ -7,6 +7,7 @@ createCenter resistance;
 resistance setFriend [west,0];
 resistance setFriend [east,0];
 
+WFBE_Server_LogMatchWin = false;
 
 AIBuyUnit = Compile preprocessFile "Server\Functions\Server_BuyUnit.sqf";
 if (WF_A2_Vanilla) then {AISquadRespawn = Compile preprocessFile "Server\AI\AI_SquadRespawn.sqf"};
@@ -567,11 +568,16 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_ALICE") > 0) then {
 	["INITIALIZATION", "Init_Server.sqf: BIS ALICE is defined."] Call WFBE_CO_FNC_LogContent;
 };
 
-["INITIALIZATION", Format ["Init_Server.sqf: Server initialization ended at [%1]", time]] Call WFBE_CO_FNC_LogContent;
-
 //--- Waiting until that the game is launched.
 waitUntil {time > 0};
 
 call WFBE_CO_FNC_InitAFKkickHandler;
 
+_logMatchWinPlayerCountThreshold = 10;
+
+[_logMatchWinPlayerCountThreshold] execVM "Server\MonitorPlayerCount.sqf";
+
 {_x Spawn WFBE_SE_FNC_VoteForCommander} forEach WFBE_PRESENTSIDES;
+
+
+["INITIALIZATION", Format ["Init_Server.sqf: Server initialization ended at [%1]", time]] Call WFBE_CO_FNC_LogContent;
