@@ -1,4 +1,4 @@
-private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_playersinside","_playersinotherside","_arrPlayersBLUFOR","_arrPlayersOPFOR","_isJIP"];
+private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_playersinside","_playersinotherside","_arrPlayersBLUFOR","_arrPlayersOPFOR","_isNotJIP"];
 
 _player = _this select 0;
 _side = _this select 1;
@@ -13,13 +13,13 @@ _othersidepros = 0;
 
 _uid = getPlayerUID(_player);
 _canJoin = true;
+_isNotJIP = true;
 
 if (_side == west) then {_otherside = east;};
 
 _playersinside = ({side _x == _side && isPlayer _x} count (playableUnits + switchableUnits));
 _playersinotherside = ({side _x == _otherside && isPlayer _x} count (playableUnits + switchableUnits));
 _get = missionNamespace getVariable Format["WFBE_JIP_USER%1",_uid];
-_isNotJIP = true;
 
 if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
