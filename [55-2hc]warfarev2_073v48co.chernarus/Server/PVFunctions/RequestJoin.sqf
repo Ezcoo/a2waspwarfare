@@ -1,4 +1,4 @@
-private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_playersinside","_playersinotherside","_arrPlayersBLUFOR","_arrPlayersOPFOR"];
+private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_playersinside","_playersinotherside","_arrPlayersBLUFOR","_arrPlayersOPFOR","_isJIP"];
 
 _player = _this select 0;
 _side = _this select 1;
@@ -19,17 +19,19 @@ if (_side == west) then {_otherside = east;};
 _playersinside = ({side _x == _side && isPlayer _x} count (playableUnits + switchableUnits));
 _playersinotherside = ({side _x == _otherside && isPlayer _x} count (playableUnits + switchableUnits));
 _get = missionNamespace getVariable Format["WFBE_JIP_USER%1",_uid];
+_isNotJIP = true;
 
 if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
-	_skip = _get select 4;
+    _isNotJIP = false;
+    _skip = _get select 4;
 	_sideOrigin = _get select 2; //--- Get the original side.
 
 	if (_skip == 0) then {
 
 		_canJoin = true;
 
-	}else{
+	} else {
 		if (_sideOrigin != _side) then { //--- The joined side differs from the original one.
 
 			_canJoin = false;
@@ -62,7 +64,7 @@ _arrPlayersOPFOR = [];
 	};
 } forEach allUnits;
 
-if (_canJoin && (isNil '_get')) then {
+if (_canJoin && _isNotJIP) then {
 	["INFORMATION", Format["RequestJoin.sqf: Stacking check: Player [%1] joining team [%2] - BLUFOR players: [[%3]] - OPFOR players: [[%4]].", _name, _side, _arrPlayersBLUFOR, _arrPlayersOPFOR]] Call WFBE_CO_FNC_LogContent;
 };
 
