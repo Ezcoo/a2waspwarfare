@@ -23,7 +23,7 @@ _get = missionNamespace getVariable Format["WFBE_JIP_USER%1",_uid];
 
 if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
-    _isNotJIP = false;
+    _isNotJIP = true;
     _skip = _get select 4;
 	_sideOrigin = _get select 2; //--- Get the original side.
 
@@ -45,6 +45,7 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 	};
 
 } else {
+	_isNotJIP = false;
 	["WARNING", Format["RequestJoin.sqf: Unable to find JIP information for player [%1] [%2].", _name, _uid]] Call WFBE_CO_FNC_LogContent;
 };
 
