@@ -54,6 +54,9 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 _arrPlayersBLUFOR = [];
 _arrPlayersOPFOR = [];
 
+["INFORMATION", Format["RequestJoin.sqf: Stacking check PHASE 1: Player [%1] joining team [%2] - BLUFOR players: [[%3]] - OPFOR players: [[%4]].", _name, _side, _arrPlayersBLUFOR, _arrPlayersOPFOR]] Call WFBE_CO_FNC_LogContent;
+
+
 {
 	if (isPlayer _x) then {
 		if (side _x == west) then {
@@ -64,8 +67,11 @@ _arrPlayersOPFOR = [];
 	};
 } forEach allUnits;
 
+["INFORMATION", Format["RequestJoin.sqf: Stacking check PHASE 2: Player [%1] joining team [%2] - BLUFOR players: [[%3]] - OPFOR players: [[%4]].", _name, _side, _arrPlayersBLUFOR, _arrPlayersOPFOR]] Call WFBE_CO_FNC_LogContent;
+
+
 if (_canJoin && _isNotJIP) then {
-	["INFORMATION", Format["RequestJoin.sqf: Stacking check: Player [%1] joining team [%2] - BLUFOR players: [[%3]] - OPFOR players: [[%4]].", _name, _side, _arrPlayersBLUFOR, _arrPlayersOPFOR]] Call WFBE_CO_FNC_LogContent;
+	["INFORMATION", Format["RequestJoin.sqf: Stacking check PHASE 3 (final): Player [%1] joining team [%2] - BLUFOR players: [[%3]] - OPFOR players: [[%4]].", _name, _side, _arrPlayersBLUFOR, _arrPlayersOPFOR]] Call WFBE_CO_FNC_LogContent;
 };
 
 if (WF_A2_Vanilla) then {
