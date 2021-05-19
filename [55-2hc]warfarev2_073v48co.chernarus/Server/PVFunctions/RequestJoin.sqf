@@ -67,7 +67,7 @@ _arrPlayersOPFOR = [];
 			_arrPlayersOPFOR set [count _arrPlayersOPFOR, name _x];
 		};
 	};
-} forEach playableUnits;
+} forEach allUnits;
 
 ["INFORMATION", Format["RequestJoin.sqf: Stacking check PHASE 2: Player [%1] joining team [%2] - BLUFOR players: [[%3]] - OPFOR players: [[%4]]. _firstTimeJoin: [%5], _canJoin: [%6].", _name, _side, _arrPlayersBLUFOR, _arrPlayersOPFOR, _firstTimeJoin, _canJoin]] Call WFBE_CO_FNC_LogContent;
 
