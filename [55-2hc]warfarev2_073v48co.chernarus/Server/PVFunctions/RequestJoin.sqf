@@ -1,4 +1,4 @@
-private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_playersinside","_playersinotherside","_arrPlayersBLUFOR","_arrPlayersOPFOR","_isNotJIP"];
+private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_playersinside","_playersinotherside","_arrPlayersBLUFOR","_arrPlayersOPFOR","_firstTimeJoin"];
 
 _player = _this select 0;
 _side = _this select 1;
@@ -13,7 +13,7 @@ _othersidepros = 0;
 
 _uid = getPlayerUID(_player);
 _canJoin = true;
-_isNotJIP = true;
+_firstTimeJoin = false;
 
 if (_side == west) then {_otherside = east;};
 
@@ -23,17 +23,18 @@ _get = missionNamespace getVariable Format["WFBE_JIP_USER%1",_uid];
 
 if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
-    _isNotJIP = true;
     _skip = _get select 4;
 	_sideOrigin = _get select 2; //--- Get the original side.
 
 	if (_skip == 0) then {
 
 		_canJoin = true;
+		_firstTimeJoin = true;
 
 	} else {
 		if (_sideOrigin != _side) then { //--- The joined side differs from the original one.
 
+			_firstTimeJoin = false;
 			_canJoin = false;
 
 			[nil, "LocalizeMessage", ['Teamswap',_name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_SendToClients; //--- Inform the clients about the teamswap.
@@ -45,7 +46,7 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 	};
 
 } else {
-	_isNotJIP = false;
+	_firstTimeJoin = true;
 	["WARNING", Format["RequestJoin.sqf: Unable to find JIP information for player [%1] [%2].", _name, _uid]] Call WFBE_CO_FNC_LogContent;
 };
 
@@ -55,7 +56,7 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 _arrPlayersBLUFOR = [];
 _arrPlayersOPFOR = [];
 
-["INFORMATION", Format["RequestJoin.sqf: Stacking check PHASE 1: Player [%1] joining team [%2] - BLUFOR players: [[%3]] - OPFOR players: [[%4]]. _isNotJIP: [%5], _canJoin: [%6].", _name, _side, _arrPlayersBLUFOR, _arrPlayersOPFOR, _isNotJIP, _canJoin]] Call WFBE_CO_FNC_LogContent;
+["INFORMATION", Format["RequestJoin.sqf: Stacking check PHASE 1: Player [%1] joining team [%2] - BLUFOR players: [[%3]] - OPFOR players: [[%4]]. _firstTimeJoin: [%5], _canJoin: [%6].", _name, _side, _arrPlayersBLUFOR, _arrPlayersOPFOR, _firstTimeJoin, _canJoin]] Call WFBE_CO_FNC_LogContent;
 
 
 {
@@ -68,11 +69,11 @@ _arrPlayersOPFOR = [];
 	};
 } forEach playableUnits;
 
-["INFORMATION", Format["RequestJoin.sqf: Stacking check PHASE 2: Player [%1] joining team [%2] - BLUFOR players: [[%3]] - OPFOR players: [[%4]]. _isNotJIP: [%5], _canJoin: [%6].", _name, _side, _arrPlayersBLUFOR, _arrPlayersOPFOR, _isNotJIP, _canJoin]] Call WFBE_CO_FNC_LogContent;
+["INFORMATION", Format["RequestJoin.sqf: Stacking check PHASE 2: Player [%1] joining team [%2] - BLUFOR players: [[%3]] - OPFOR players: [[%4]]. _firstTimeJoin: [%5], _canJoin: [%6].", _name, _side, _arrPlayersBLUFOR, _arrPlayersOPFOR, _firstTimeJoin, _canJoin]] Call WFBE_CO_FNC_LogContent;
 
 
-if (_canJoin && _isNotJIP) then {
-	["INFORMATION", Format["RequestJoin.sqf: Stacking check PHASE 3 (final): Player [%1] joining team [%2] - BLUFOR players: [[%3]] - OPFOR players: [[%4]]. _isNotJIP: [%5], _canJoin: [%6].", _name, _side, _arrPlayersBLUFOR, _arrPlayersOPFOR, _isNotJIP, _canJoin]] Call WFBE_CO_FNC_LogContent;
+if (_canJoin && _firstTimeJoin) then {
+	["INFORMATION", Format["RequestJoin.sqf: Stacking check PHASE 3 (final): Player [%1] joining team [%2] - BLUFOR players: [[%3]] - OPFOR players: [[%4]]. _firstTimeJoin: [%5], _canJoin: [%6].", _name, _side, _arrPlayersBLUFOR, _arrPlayersOPFOR, _firstTimeJoin, _canJoin]] Call WFBE_CO_FNC_LogContent;
 };
 
 if (WF_A2_Vanilla) then {
