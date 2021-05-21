@@ -137,7 +137,7 @@ if (_isMan) then { //--- Man.
 	};
 	_params = [_type,_color,_size,_txt,_markerName,_unit,1,true,"DestroyedVehicle",_color,false,_side,[1,1]];
 } else { //--- Vehicle.
-	if (_unit isKindOf "Bicycle") then {_color = "ColorGrey"};
+    if (_unit isKindOf "Bicycle") then {_color = "ColorWhite"};
 	if ((_unit isKindOf "Helicopter") || (_unit isKindOf "Plane")) then {_color = "ColorPink"};
 	if (local _unit && isMultiplayer) then {_color = "ColorOrange"};
 	if (_unit_kind in (missionNamespace getVariable Format['WFBE_%1SUPPLYTRUCKS',str _side])) then {_type = "SupplyVehicle";_size = [1,1]};//--- Supply.
