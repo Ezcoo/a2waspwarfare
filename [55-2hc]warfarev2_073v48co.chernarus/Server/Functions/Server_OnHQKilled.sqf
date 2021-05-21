@@ -5,7 +5,7 @@
 		- Shooter
 */
 
-Private ["_building","_dammages","_dammages_current","_get","_killer","_logik","_origin","_structure","_structure_kind"];
+Private ["_building","_dammages","_dammages_current","_get","_killer","_points","_side","_killer_group","_logik","_origin","_structure","_structure_kind","_hqCopy","_HQwreck"];
 
 _structure = _this select 0;
 _killer = _this select 1;
@@ -17,6 +17,7 @@ _logik = (_side) Call WFBE_CO_FNC_GetSideLogic;
 _killer_group = group _killer;
 // HQ kill price ($30,000) / 100 * building kill coef
 _points = 30000 / 100 * WFBE_C_BUILDINGS_SCORE_COEF;
+_hqCopy = nil;
 
 //--- If HQ was mobibilized, spawn a dead hq.
 if ((_side) Call WFBE_CO_FNC_GetSideHQDeployStatus) then {
@@ -26,6 +27,7 @@ if ((_side) Call WFBE_CO_FNC_GetSideHQDeployStatus) then {
 	_hq setVariable ["wfbe_trashable", false];
 	_hq setVariable ["wfbe_side", _side];
 	_hq setDamage 1;
+	_hqCopy = hq;
 
 	//--- HQ is now considered mobilized.
 	_logik setVariable ["wfbe_hq_deployed", false, true];
@@ -34,6 +36,12 @@ if ((_side) Call WFBE_CO_FNC_GetSideHQDeployStatus) then {
 	//--- Remove the structure after the burial.
 	(_structure) Spawn {sleep 10; deleteVehicle _this};
 };
+
+_HQwreck = createMarker ["WFBE_HQ_Wreck", getPos _hqCopy];
+_HQwreck setMarkerShape "ICON";
+_HQwreck setMarkerType "Dot";
+_HQwreck setMarkerColor "ColorOrange";
+
 
 if (isServer) then {
 	['SRVFNCREQUESTCHANGESCORE',[leader _killer_group, (score leader _killer_group) + _points]] Spawn WFBE_SE_FNC_HandlePVF;
