@@ -30,7 +30,7 @@ lnbClear _listBox;
 		{
 		       _UpBar = ((sideJoined) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_BARRACKS;
 			if ((_x in ['TK_Soldier_MG_EP1', 'US_Soldier_MG_EP1']) && _UpBar>=1)then{_addit  = true;};
-			if ((_x in ['TK_Soldier_LAT_EP1', 'TK_Soldier_AT_EP1', 'US_Soldier_LAT_EP1']) && _UpBar>=1)then{_addit = true;};
+			if ((_x in ['TK_Soldier_LAT_EP1', 'US_Soldier_LAT_EP1']) && _UpBar>=1)then{_addit = true;};
 			if ((_x in ['TK_Soldier_Engineer_EP1', 'US_Soldier_Engineer_EP1']) && _UpBar>=1)then{_addit = true;};
 			if ((_x in ['TK_Soldier_AA_EP1','US_Soldier_AA_EP1']) && _UpBar>=3)then{_addit = true;};
 		};
