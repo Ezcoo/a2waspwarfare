@@ -140,7 +140,7 @@ _easaVehi = 	_easaVehi + ['Mi24_V'];
 _easaDefault = 	_easaDefault + [[['AT9Launcher'],['4Rnd_AT9_Mi24P'],['4Rnd_AT9_Mi24P']]];
 _easaLoadout = 	_easaLoadout + [
  [
-  [5400,'Igla-V (2)',[['AT9Launcher','Igla_twice'],['2Rnd_Igla','4Rnd_AT9_Mi24P']]]
+  [5400,'Ataka-V (8), Igla-V (2)',[['AT9Launcher','Igla_twice'],['2Rnd_Igla','4Rnd_AT9_Mi24P']]]
  ]
 ];
 
