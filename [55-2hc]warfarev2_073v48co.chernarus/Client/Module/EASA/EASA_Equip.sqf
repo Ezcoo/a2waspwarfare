@@ -1,7 +1,9 @@
-Private ["_get", "_index", "_loadout", "_loadout_old", "_type", "_vehicle"];
+Private ["_get", "_index", "_loadout", "_loadout_old", "_type", "_vehicle", "_selectedMagazineAmmoCount"];
 
 _vehicle = _this select 0;
 _index = _this select 1;
+_selectedMagazineAmmoCount = if(count _this == 3) then {_this select 2} else{4};
+
 
 if (typeName _vehicle != 'OBJECT') exitWith {["ERROR", Format ["EASA_Equip.sqf: Invalid Parameter (_vehicle), expected object instead of [%1]", _vehicle]] Call WFBE_CO_FNC_LogContent};
 
@@ -22,7 +24,22 @@ if (_type != -1) then {
 	
 	//--- Now we load the new EASA setup.
 	_loadout = (((missionNamespace getVariable 'WFBE_EASA_Loadouts') select _type) select _index) select 2;
-	{_vehicle addMagazine _x} forEach (_loadout select 1);
+	{
+		_vehicle addMagazine _x;
+		_selectedMagazineAmmoCount = _x;
+
+		["INFORMATION", Format["EasaInit.sqf: _selectedMagazineAmmoCount_early", _selectedMagazineAmmoCount]] Call WFBE_CO_FNC_LogContent;
+
+		_selectedMagazineAmmoCount = getNumber(configFile >> "CfgMagazines" >> "4Rnd_Ch29" >> "count");
+		if (_selectedMagazineAmmoCount in ["4Rnd_Ch29"])
+			then {
+				_selectedMagazineAmmoCount = 2;
+				["INFORMATION", Format["EasaInit.sqf: _selectedMagazineAmmoCount", _selectedMagazineAmmoCount]] Call WFBE_CO_FNC_LogContent;
+				};
+		
+
+		
+	} forEach (_loadout select 1);
 	{_vehicle addWeapon _x} forEach (_loadout select 0);
 	
 	//--- We update the EASA setup on the vehicle for everyone if needed.
