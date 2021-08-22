@@ -26,6 +26,7 @@ if (WF_A2_Arrowhead) then {
   [1800,'Ch-29 (4) | R-73 (2)',[['Ch29Launcher_Su34','R73Launcher_2','S8Launcher'],['4Rnd_Ch29','2Rnd_R73']]],
   [1800,'Ch-29 (4) | FAB-250 (6)',[['Ch29Launcher_Su34','AirBombLauncher','S8Launcher'],['4Rnd_Ch29','4Rnd_FAB_250','2Rnd_FAB_250']]],
   [3400,'Ch-29 (4) | S-8 (+40)',[['Ch29Launcher_Su34','S8Launcher'],['4Rnd_Ch29','40Rnd_S8T']]],
+  [2600,'GBU-12 (4)',[['BombLauncherA10'],['4Rnd_GBU12']]],
   [3400,'FAB-250 (12) | S-8 (+40)',[['AirBombLauncher','S8Launcher'],['4Rnd_FAB_250','4Rnd_FAB_250','4Rnd_FAB_250','40Rnd_S8T']]],
   [3400,'FAB-250 (6) | R-73 (2) | S-8 (+40)',[['AirBombLauncher','R73Launcher_2','S8Launcher'],['4Rnd_FAB_250','2Rnd_FAB_250','2Rnd_R73','40Rnd_S8T']]],  
   [6200,'R-73 (2) | S-8 (+80)',[['R73Launcher_2','S8Launcher'],['2Rnd_R73','80Rnd_S8T']]],
@@ -44,6 +45,7 @@ _easaLoadout = 	_easaLoadout + [
   [1800,'FAB-250 (12) | R-73 (2)',[['AirBombLauncher','R73Launcher_2','S8Launcher'],['4Rnd_FAB_250','4Rnd_FAB_250','4Rnd_FAB_250','2Rnd_R73']]],
   [1800,'Ch-29 (4) | R-73 (2)',[['Ch29Launcher_Su34','R73Launcher_2','S8Launcher'],['4Rnd_Ch29','2Rnd_R73']]],
   [1800,'Ch-29 (4) | FAB-250 (6)',[['Ch29Launcher_Su34','AirBombLauncher','S8Launcher'],['4Rnd_Ch29','4Rnd_FAB_250','2Rnd_FAB_250']]],
+  [2600,'GBU-12 (4)',[['BombLauncherA10'],['4Rnd_GBU12']]],
   [3400,'Ch-29 (4) | S-8 (+40)',[['Ch29Launcher_Su34','S8Launcher'],['4Rnd_Ch29','40Rnd_S8T']]],
   [3400,'FAB-250 (12) | S-8 (+40)',[['AirBombLauncher','S8Launcher'],['4Rnd_FAB_250','4Rnd_FAB_250','4Rnd_FAB_250','40Rnd_S8T']]],
   [3400,'FAB-250 (6) | R-73 (2) | S-8 (+40)',[['AirBombLauncher','R73Launcher_2','S8Launcher'],['4Rnd_FAB_250','2Rnd_FAB_250','2Rnd_R73','40Rnd_S8T']]],  
@@ -63,6 +65,7 @@ _easaLoadout = 	_easaLoadout + [
   [1800,'Ch-29 (4) | R-73 (2)',[['Ch29Launcher_Su34','R73Launcher_2','S8Launcher'],['4Rnd_Ch29','2Rnd_R73']]],
   [1800,'Ch-29 (4) | FAB-250 (6)',[['Ch29Launcher_Su34','AirBombLauncher','S8Launcher'],['4Rnd_Ch29','4Rnd_FAB_250','2Rnd_FAB_250']]],
   [3400,'Ch-29 (4) | S-8 (+40)',[['Ch29Launcher_Su34','S8Launcher'],['4Rnd_Ch29','40Rnd_S8T']]],
+  [2600,'GBU-12 (4)',[['BombLauncherA10'],['4Rnd_GBU12']]],
   [3400,'FAB-250 (12) | S-8 (+40)',[['AirBombLauncher','S8Launcher'],['4Rnd_FAB_250','4Rnd_FAB_250','4Rnd_FAB_250','40Rnd_S8T']]],
   [3400,'FAB-250 (6) | R-73 (2) | S-8 (+40)',[['AirBombLauncher','R73Launcher_2','S8Launcher'],['4Rnd_FAB_250','2Rnd_FAB_250','2Rnd_R73','40Rnd_S8T']]],  
   [6200,'R-73 (2) | S-8 (+80)',[['R73Launcher_2','S8Launcher'],['2Rnd_R73','80Rnd_S8T']]],
@@ -76,6 +79,7 @@ _easaDefault = 	_easaDefault + [[['Ch29Launcher_Su34','R73Launcher'],['6Rnd_Ch29
 _easaLoadout = 	_easaLoadout + [
  [  
   [2200,'R-73 (10)',[['R73Launcher_2','80mmLauncher'],['2Rnd_R73','2Rnd_R73','2Rnd_R73','2Rnd_R73','2Rnd_R73']]],
+  [2600,'GBU-12 (4)',[['BombLauncherA10'],['4Rnd_GBU12']]],
   [2900,'Ch-29 (4) | R-73 (6)',[['Ch29Launcher_Su34','R73Launcher_2','80mmLauncher'],['4Rnd_Ch29','2Rnd_R73','2Rnd_R73','2Rnd_R73']]],  
   [2900,'Ch-29 (4) | R-73 (4) | FAB-250 (6)',[['Ch29Launcher_Su34','AirBombLauncher','R73Launcher_2','80mmLauncher'],['4Rnd_Ch29','4Rnd_FAB_250','2Rnd_FAB_250','2Rnd_R73','2Rnd_R73']]],
   [2900,'Ch-29 (4) | R-73 (2) | FAB-250 (12)',[['Ch29Launcher_Su34','AirBombLauncher','R73Launcher_2','80mmLauncher'],['4Rnd_Ch29','4Rnd_FAB_250','4Rnd_FAB_250','4Rnd_FAB_250','2Rnd_R73']]],  
