@@ -7,7 +7,7 @@ _missile = nearestObject [_source,_ammo];
 if (isNull _missile) exitWith {};
 
 _irLock = getNumber(configFile >> "CfgAmmo" >> _ammo >> "irLock"); //--- Get the ammo type.
-if (_irLock == 0) then {if (_ammo in ["Bo_FAB_250","Bo_Mk82"]) then {_irLock = 1}}; //--- Dumb bomb workaround (rocket simulation).
+if (_irLock == 0) then {if (_ammo in ["Bo_FAB_250","Bo_Mk82","40Rnd_S8T","80Rnd_S8T","38Rnd_FFAR","14Rnd_FFAR"]) then {_irLock = 1}}; //--- Dumb bomb workaround (rocket simulation).
 
 if (_irLock == 1) then { //--- IR Lock is affected
 	_source = getPos _source;
