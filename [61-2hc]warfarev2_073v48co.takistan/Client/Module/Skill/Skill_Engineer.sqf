@@ -14,16 +14,22 @@ if (_dammages <= 0) exitWith {};
 WFBE_SK_V_LastUse_Repair = time;
 
 _skip = false;
+_glitchAttempt = false;
 for [{_z = 0},{_z < 3},{_z = _z + 1}] do {
 	sleep 0.5;
 	player playMove "AinvPknlMstpSlayWrflDnon_medic";
-	sleep 0.5;
-	waitUntil {animationState player == "ainvpknlmstpslaywrfldnon_amovpknlmstpsraswrfldnon" || !alive player || vehicle player != player || !alive _vehicle || _vehicle distance player > 5};
+	if (vehicle player != player) then {_glitchAttempt = true};
+	sleep 1;
+	if (vehicle player != player) then {_glitchAttempt = true};
+	waitUntil {animationState player == "ainvpknlmstpslaywrfldnon_amovpknlmstpsraswrfldnon" || !alive player || !alive _vehicle || _vehicle distance player > 5};
+	if (vehicle player != player) exitWith {_skip = true; _glitchAttempt = true;};
 	if (!alive player || vehicle player != player || !alive _vehicle || _vehicle distance player > 5) exitWith {_skip = true};
 };
 
-if (!_skip) then {
-	_dammages = _dammages - 0.25;
-	if (_dammages < 0) then {_dammages = 0};
-	_vehicle setDammage _dammages;
+if (!_glitchAttempt) then {
+	if (!_skip) then {
+		_dammages = _dammages - 0.25;
+		if (_dammages < 0) then {_dammages = 0};
+		_vehicle setDammage _dammages;
+	};
 };

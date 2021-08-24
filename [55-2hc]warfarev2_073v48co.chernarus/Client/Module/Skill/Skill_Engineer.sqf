@@ -2,7 +2,7 @@
 	Script: Engineer Skill System by Benny.
 	Description: Add special skills to the defined engineer.
 */
-Private ['dammages','_skip','_vehicle','_vehicles','_z'];
+Private ['_dammages','_skip','_vehicle','_vehicles','_z'];
 
 _vehicles = player nearEntities [["Car","Motorcycle","Tank","Ship","Air","StaticWeapon"],5];
 if (count _vehicles < 1) exitWith {};
