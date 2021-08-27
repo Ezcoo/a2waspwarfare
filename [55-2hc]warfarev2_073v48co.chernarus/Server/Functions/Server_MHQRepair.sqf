@@ -37,6 +37,8 @@ _logik setVariable ['wfbe_hq', _MHQ, true];
 // if ((missionNamespace getVariable "WFBE_C_GAMEPLAY_HANDLE_FRIENDLYFIRE") > 0) then {_MHQ addEventHandler ['handleDamage',{[_this select 0,_this select 2,_this select 3] Call BuildingHandleDamages}]};
 if (isMultiplayer) then {[_side, "HandleSpecial", ["set-hq-killed-eh", _mhq]] Call WFBE_CO_FNC_SendToClients}; //--- Since the Killed EH fires localy, we send the information to the existing clients, JIP clients need to have the event in init_client.sqf (if !deployed).
 
+missionNamespace setVariable format [["WFBE_C_HQWRECK_EXISTS_SIDE_%1", _side], false];
+publicVariable format ["WFBE_C_HQWRECK_EXISTS_SIDE_%1", _side];
 
 _logik setVariable ['wfbe_hq_deployed', false, true];
 _logik setVariable ['wfbe_hq_repairing',false, true];

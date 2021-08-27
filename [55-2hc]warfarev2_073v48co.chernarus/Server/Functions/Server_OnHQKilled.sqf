@@ -5,7 +5,7 @@
 		- Shooter
 */
 
-Private ["_building","_dammages","_dammages_current","_get","_killer","_logik","_origin","_structure","_structure_kind"];
+Private ["_building","_dammages","_dammages_current","_get","_killer","_logik","_origin","_structure","_structure_kind","_hq"];
 
 _structure = _this select 0;
 _killer = _this select 1;
@@ -20,12 +20,12 @@ _points = 30000 / 100 * WFBE_C_BUILDINGS_SCORE_COEF;
 
 //--- If HQ was mobibilized, spawn a dead hq.
 if ((_side) Call WFBE_CO_FNC_GetSideHQDeployStatus) then {
-	Private ["_hq"];
 	_hq = [missionNamespace getVariable Format["WFBE_%1MHQNAME", _side], getPos _structure, (_side) Call WFBE_CO_FNC_GetSideID, getDir _structure, false, false, false] Call WFBE_CO_FNC_CreateVehicle;
 	_hq setPos (getPos _structure);
 	_hq setVariable ["wfbe_trashable", false];
 	_hq setVariable ["wfbe_side", _side];
 	_hq setDamage 1;
+	["mil_dot", "ColorOrange", "HQ Wreck", format ["WF_hqwreck_side_%1", _side], _side, _hq] call WFBE_CO_FNC_HQwreckMarker;
 
 	//--- HQ is now considered mobilized.
 	_logik setVariable ["wfbe_hq_deployed", false, true];
@@ -33,6 +33,8 @@ if ((_side) Call WFBE_CO_FNC_GetSideHQDeployStatus) then {
 
 	//--- Remove the structure after the burial.
 	(_structure) Spawn {sleep 10; deleteVehicle _this};
+} else {
+	["mil_dot", "ColorOrange", "HQ Wreck", format ["WF_hqwreck_side_%1", _side], _side, _structure] call WFBE_CO_FNC_HQwreckMarker;
 };
 
 if (isServer) then {
