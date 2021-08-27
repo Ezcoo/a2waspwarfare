@@ -25,7 +25,7 @@ if ((_side) Call WFBE_CO_FNC_GetSideHQDeployStatus) then {
 	_hq setVariable ["wfbe_trashable", false];
 	_hq setVariable ["wfbe_side", _side];
 	_hq setDamage 1;
-	["mil_dot", "ColorOrange", "HQ Wreck", format ["WF_hqwreck_side_%1", _side], _side, _hq] call WFBE_CO_FNC_HQwreckMarker;
+	// ["mil_dot", "ColorOrange", "HQ Wreck", format ["WF_hqwreck_side_%1", _side], _side, _hq] call WFBE_CO_FNC_HQwreckMarker;
 
 	//--- HQ is now considered mobilized.
 	_logik setVariable ["wfbe_hq_deployed", false, true];
@@ -34,7 +34,7 @@ if ((_side) Call WFBE_CO_FNC_GetSideHQDeployStatus) then {
 	//--- Remove the structure after the burial.
 	(_structure) Spawn {sleep 10; deleteVehicle _this};
 } else {
-	["mil_dot", "ColorOrange", "HQ Wreck", format ["WF_hqwreck_side_%1", _side], _side, _structure] call WFBE_CO_FNC_HQwreckMarker;
+	// ["mil_dot", "ColorOrange", "HQ Wreck", format ["WF_hqwreck_side_%1", _side], _side, _structure] call WFBE_CO_FNC_HQwreckMarker;
 };
 
 if (isServer) then {
