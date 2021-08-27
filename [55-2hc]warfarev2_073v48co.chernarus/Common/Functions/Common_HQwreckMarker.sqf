@@ -7,13 +7,14 @@ _markerType = "mil_dot";
 _markerColor = "ColorOrange";
 _markerText = "HQ Wreck";
 _markerName = format ["WF_hqwreck_side_%1", _side];
-_hq = (sideJoined) Call WFBE_CO_FNC_GetSideHQ;
 _markerSize = [1,1];
 
-missionNamespace setVariable format [["WFBE_C_HQWRECK_EXISTS_SIDE_%1", _side], false];
+// missionNamespace setVariable format [["WFBE_C_HQWRECK_EXISTS_SIDE_%1", _side], false];
 
 while {!WFBE_GameOver} do {
 	if (_side != side player) exitWith {};
+
+	_hq = (sideJoined) Call WFBE_CO_FNC_GetSideHQ;
 
 	if (!(alive _hq)) then {
 
@@ -22,11 +23,11 @@ while {!WFBE_GameOver} do {
 		_markerName setMarkerTypeLocal _markerType;
 		_markerName setMarkerColorLocal _markerColor;
 		_markerName setMarkerSizeLocal _markerSize;
-
-		missionNamespace setVariable format [["WFBE_C_HQWRECK_EXISTS_SIDE_%1", _side], true];
+		//missionNamespace setVariable format [["WFBE_C_HQWRECK_EXISTS_SIDE_%1", _side], true];
 	};
 
-	waitUntil {!(missionNamespace getVariable format ["WFBE_C_HQWRECK_EXISTS_SIDE_%1", _side])};
+	waitUntil {alive _hq};
+	// waitUntil {!(missionNamespace getVariable format ["WFBE_C_HQWRECK_EXISTS_SIDE_%1", _side])};
 
 	deleteMarkerLocal _markerName;
 
