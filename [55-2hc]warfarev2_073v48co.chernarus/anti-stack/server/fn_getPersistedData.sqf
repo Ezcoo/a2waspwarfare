@@ -10,7 +10,7 @@
 		1:
 			@paramName           _defaultFallback
 			@paramDescription    The default fallback to return if no data could be retrieved.
-			@paramType           any
+			@paramType           <any>
 
 	@returns
 		@returnDescription       Returns the retrieved persisted or the set 'default fallback'.
@@ -22,6 +22,6 @@ if (!isServer) exitWith {};
 private ["_name", "_fallback"];
 
 _name = _this select 0;
-_data = _this select 1;
+_fallback = _this select 1;
 
-profileNamespace setVariable [_name, _data];
+profileNamespace getVariable [_name, _fallback];
