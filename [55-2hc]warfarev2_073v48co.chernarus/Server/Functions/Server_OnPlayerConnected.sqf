@@ -126,7 +126,7 @@ if (_sideOrigin == _sideJoined) then {
 	};
 };
 
-["INFORMATION", Format ["Server_PlayerConnected.sqf: Player [%1] (UID: [%2]) has joined the game. Joined better side? [%3]. BLUFOR points: %4 , OPFOR points: %5 .", _name, _uid, _joinedBetterSide, _bluforPoints, _opforPoints]] Call WFBE_CO_FNC_LogContent;
+["INFORMATION", Format ["Server_PlayerConnected.sqf: Did player [%1] join better side? [%2]. UID: [%3]. BLUFOR points: %4 , OPFOR points: %5 .", _name, _joinedBetterSide, _uid, _bluforPoints, _opforPoints]] Call WFBE_CO_FNC_LogContent;
 
 //--- Set the current player funds.
 _team setVariable ["wfbe_funds", _funds, true];
