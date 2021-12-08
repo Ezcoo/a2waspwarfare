@@ -5,7 +5,7 @@
 		- User Name
 */
 
-Private ['_funds','_get','_id','_max','_name','_sideJoined','_sideOrigin','_team','_uid','_units'];
+Private ['_funds','_get','_id','_max','_name','_sideJoined','_sideOrigin','_team','_uid','_units','_allPlayers','_opforPoints','_bluforPoints','_joinedBetterSide'];
 _uid = _this select 0;
 _name = _this select 1;
 _id = _this select 2;
@@ -96,6 +96,37 @@ missionNamespace setVariable [format["WFBE_JIP_USER%1",_uid], _get];
 if (_sideOrigin != _sideJoined) then {
 	_funds = missionNamespace getVariable Format ["WFBE_C_ECONOMY_FUNDS_START_%1", _sideJoined];
 };
+
+_allPlayers = call BIS_fnc_listPlayers - !hasInterface;
+_opforPoints = 0;
+_bluforPoints = 0;
+_joinedBetterSide = "NO";
+
+{
+	switch (side _x) do {
+		case west: { _bluforPoints = _bluforPoints + score _x; };
+		case east: { _opforPoints = _opforPoints + score _x; };
+	};
+
+} forEach _allPlayers;
+
+if (_sideOrigin == _sideJoined) then {
+	if (_sideJoined == west) then {
+		if (_bluforPoints > _opforPoints) then {
+			_joinedBetterSide = "YES";
+		} else {
+			_joinedBetterSide = "NO";
+		};
+	} else {
+		if (_opforPoints > _bluforPoints) then {
+			_joinedBetterSide = "YES";
+		} else {
+			_joinedBetterSide = "NO";
+		};
+	};
+};
+
+["INFORMATION", Format ["Server_PlayerConnected.sqf: Player [%1] (UID: [%2]) has joined the game. Joined better side? [%3]. BLUFOR points: %4 , OPFOR points: %5 .", _name, _uid, _joinedBetterSide, _bluforPoints, _opforPoints]] Call WFBE_CO_FNC_LogContent;
 
 //--- Set the current player funds.
 _team setVariable ["wfbe_funds", _funds, true];
