@@ -97,7 +97,7 @@ if (_sideOrigin != _sideJoined) then {
 	_funds = missionNamespace getVariable Format ["WFBE_C_ECONOMY_FUNDS_START_%1", _sideJoined];
 };
 
-_allPlayers = (call BIS_fnc_listPlayers) - !hasInterface;
+_allPlayers = (call BIS_fnc_listPlayers) - !(hasInterface);
 _opforPoints = 0;
 _bluforPoints = 0;
 _joinedBetterSide = "NO";
