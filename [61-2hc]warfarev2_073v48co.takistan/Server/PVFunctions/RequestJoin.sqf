@@ -46,6 +46,16 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 	["WARNING", Format["RequestJoin.sqf: Unable to find JIP information for player [%1] [%2].", _name, _uid]] Call WFBE_CO_FNC_LogContent;
 };
 
+if (typeOf _player == 'RU_Policeman' || typeOf _player == 'Policeman') then {
+	if (_uid in ["76561198053533958","76561198032301689","76561197984700358"]) then {
+		_canJoin = true;
+		["WARNING", Format["RequestJoin.sqf: Player [%1] with UID [%2] joined the game in admin slot.", _name, _uid]] Call WFBE_CO_FNC_LogContent;
+	} else {
+		_canJoin = false;
+		["WARNING", Format["RequestJoin.sqf: Player [%1] with UID [%2] tried to join the game in admin slot.", _name, _uid]] Call WFBE_CO_FNC_LogContent;
+	};
+};
+
 
 ["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] can join? [%3].", _name, _uid, _canJoin]] Call WFBE_CO_FNC_LogContent;
 

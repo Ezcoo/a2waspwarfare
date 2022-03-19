@@ -15,6 +15,7 @@ WFBE_SK_V_Soldiers = ['FR_Miles','RUS_Soldier1','US_Delta_Force_EP1','TK_Special
 WFBE_SK_V_SpecsOps = ['FR_TL','RUS_Soldier_TL','US_Soldier_TL_EP1','US_Delta_Force_TL_EP1','TK_Special_Forces_TL_EP1','CDF_Soldier_TL','Ins_Soldier_2']; // description="SpecOPS (Lockpick)";
 WFBE_SK_V_Spotters = ['USMC_SoldierS_Sniper','RU_Soldier_Sniper','US_Soldier_Sniper_EP1','TK_Soldier_Sniper_EP1','CDF_Soldier_Sniper','Ins_Soldier_Sniper'];//description="Sniper (Spot marks on map, Camps restore)";
 WFBE_SK_V_Medics = ['FR_Corpsman','USMC_Soldier_Medic','RUS_Soldier_Medic','US_Delta_Force_Medic_EP1','US_Soldier_Medic_EP1','TK_Soldier_Medic_EP1']; // description="Medic (Fast heal, Camps restore)";
+WFBE_SK_V_Admin = ['RU_Policeman','Policeman'] //description="ADMIN ONLY"
 
 //--- Binoculars.
 missionNamespace setVariable ["WFBE_BINOCULARS", ["Laserdesignator", "Binocular", "Binocular_Vector"]];
@@ -41,6 +42,7 @@ if (playerType in WFBE_SK_V_Soldiers) then {WFBE_SK_V_Type = "Soldier"};
 if (playerType in WFBE_SK_V_SpecsOps) then {WFBE_SK_V_Type = "SpecOps"};
 if (playerType in WFBE_SK_V_Spotters) then {WFBE_SK_V_Type = "Spotter"};
 if (playerType in WFBE_SK_V_Medics) then {WFBE_SK_V_Type = "Medic"};
+if (playerType in WFBE_SK_V_Admin) then {WFBE_SK_V_Type = "Admin"};
 
 /* Special one time init */
 /* The soldier can hire more units than the others leader */

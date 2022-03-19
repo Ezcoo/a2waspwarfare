@@ -129,4 +129,10 @@ case 'Soldier': {
 		];
 		_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf', [], 97, false, true, '', 'alive _target'];
 	};
+
+case 'Admin': {
+
+	onMapSingleClick player setPos _pos;
+
+	};
 };
