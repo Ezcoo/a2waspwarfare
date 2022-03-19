@@ -9,12 +9,14 @@ class Mission
 		"ca_highcommand",
 		"warfare2vehicles",
 		"ca_animals2_chicken",
-		"ca_communityconfigurationproject_e"
+		"ca_communityconfigurationproject_e",
+		"CorePatch_CCP_70799"
 	};
 	addOnsAuto[]=
 	{
 		"ca_modules_functions",
 		"cacharacters2",
+		"CorePatch_CCP_70799",
 		"chernarus"
 	};
 	randomSeed=10034581;
@@ -33,7 +35,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=119;
+		items=121;
 		class Item0
 		{
 			side="LOGIC";
@@ -318,7 +320,7 @@ class Mission
 					vehicle="LocationLogicStart";
 					leader=1;
 					skill=0.60000002;
-					init="this setVariable [""wfbe_default"", west]; this setVariable [""wfbe_spawn"", ""north""];";
+					init="this setVariable [""wfbe_default"", east]; this setVariable [""wfbe_spawn"", ""north""];";
 				};
 			};
 		};
@@ -4349,7 +4351,7 @@ class Mission
 					vehicle="LocationLogicStart";
 					leader=1;
 					skill=0.60000002;
-					init="this setVariable [""wfbe_default"", east]; this setVariable [""wfbe_spawn"", ""south""];";
+					init="this setVariable [""wfbe_default"", west]; this setVariable [""wfbe_spawn"", ""south""];";
 				};
 			};
 		};
@@ -4653,6 +4655,45 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					init="this setVariable [""wfbe_default"", resistance]; this setVariable [""wfbe_spawn"", ""central""];";
+				};
+			};
+		};
+		class Item119
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={10203.781,55.416313,4003.8291};
+					id=294;
+					side="LOGIC";
+					vehicle="LocationLogicStart";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item120
+		{
+			side="CIV";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={812.01154,595.06189,15300.739};
+					azimut=90;
+					special="NONE";
+					id=295;
+					side="CIV";
+					vehicle="Policeman";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="this allowDamage false;";
+					description="ADMIN ONLY";
 				};
 			};
 		};
