@@ -460,7 +460,7 @@ if (WF_Debug) then {
 
 	//player addEventHandler ["HandleDamage", {false}];
 	// player setCaptive true;
-	player addEventHandler ["HandleDamage", {false;if (player != (_this select 3)) then {(_this select 3) setDammage 1}}]; //--- God-Slayer mode.
+	// player addEventHandler ["HandleDamage", {false;if (player != (_this select 3)) then {(_this select 3) setDammage 1}}]; //--- God-Slayer mode.
 };
 execVM "limitThirdPersonView.sqf";
 
