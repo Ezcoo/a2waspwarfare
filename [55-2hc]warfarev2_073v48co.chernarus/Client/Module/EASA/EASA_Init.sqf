@@ -161,7 +161,7 @@ if ((missionNamespace getVariable "WFBE_C_UNITS_BALANCING") > 0) then {
 	_easaDefault = 	_easaDefault + [[['VikhrLauncher','R73Launcher_2'],['12Rnd_Vikhr_KA50','2Rnd_R73']]];
 	_easaLoadout = 	_easaLoadout + [
 	 [
-	  [9800,'AT (12) | R-73 (4)',[['VikhrLauncher','R73Launcher_2'],['12Rnd_Vikhr_KA50','2Rnd_R73','2Rnd_R73']]]	  
+	  [9800,'AT (12) | R-73 (2)',[['VikhrLauncher','R73Launcher_2'],['12Rnd_Vikhr_KA50','2Rnd_R73']]]	  
 	 ]
 	];
 };
