@@ -6,11 +6,20 @@ switch (typeOf _this) do
 		_this addWeapon "9M311Laucher";
 	};
      
-        case "Ka52Black":
+    case "Ka52Black":
                    {           
-                 _this addMagazine "2Rnd_R73";
-                 _this addweapon "R73Launcher_2";
-};
+        _this addMagazine "2Rnd_R73";
+        _this addweapon "R73Launcher_2";
+	};
+
+	case "Ka52":
+	{
+		_this removeWeapon "VikhrLauncher";
+		_this addMagazine "4Rnd_AT9_Mi24P";
+		_this addMagazine "4Rnd_AT9_Mi24P";
+		_this addweapon "AT9Launcher";
+	};
+
 
 	case "An2_TK_EP1": {
 		_this addMagazine "500Rnd_TwinVickers";
