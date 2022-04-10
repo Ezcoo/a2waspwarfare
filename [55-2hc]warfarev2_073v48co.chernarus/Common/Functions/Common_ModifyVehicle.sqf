@@ -354,9 +354,9 @@ switch (_type) do {
 			  _result = 0;
 
 			  switch (_ammo) do {
-			    case "Sh_125_SABOT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
-			    case "Sh_120_SABOT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
-		   		case "R_SMAW_HEAA" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
+				case "Sh_125_SABOT" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+				case "Sh_120_SABOT" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+				case "R_SMAW_HEAA" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
 				case "R_RPG18_AT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
 				case "R_PG9_AT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
 				case "R_PG7V_AT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
@@ -364,22 +364,23 @@ switch (_type) do {
 				case "R_M136_AT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
 				case "M_47_AT_EP1" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
 				case "R_MEEWS_HEAT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
-				case "M_AT13_AT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
-				case "M_TOW_AT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
-				case "M_TOW2_AT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
+				case "M_AT13_AT" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+				case "M_TOW_AT" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+				case "M_TOW2_AT" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
 				case "Sh_85_AP" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
 				case "Sh_100_HEAT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
-		   		case "B_20mm_AA" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
-		   		case "B_23mm_AA" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
-		   		case "B_25mm_HE" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
-		   		case "B_25mm_HEI" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
-		   		case "B_30mm_AA" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
-		   		case "B_30mm_HE" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
-		   		case "Sh_40_HE" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
-				case "M_Igla_AA" :{_dam=_this select 2; _p=200; _result=(_dam/100)*(100-_p);};
-				case "M_Stinger_AA" :{_dam=_this select 2; _p=200; _result=(_dam/100)*(100-_p);};
-				case "M_Sidewinder_AA" :{_dam=_this select 2; _p=200; _result=(_dam/100)*(100-_p);};
-				case "M_9M311_AA" :{_dam=_this select 2; _p=200; _result=(_dam/100)*(100-_p);};
+				case "B_20mm_AA" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
+				case "B_23mm_AA" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
+				case "B_25mm_HE" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
+				case "B_25mm_HEI" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
+				case "B_30mm_AA" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
+				case "B_30mm_HE" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
+				case "Sh_40_HE" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
+				case "M_Igla_AA" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+				case "M_Stinger_AA" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+				case "M_Sidewinder_AA" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+				case "M_9M311_AA" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+				case "M_R73_AA" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
 				default {_result = _this select 2;};
 		   };
 			  _result
@@ -396,9 +397,9 @@ switch (_type) do {
 		  _result = 0;
 
 		  switch (_ammo) do {
-			case "Sh_125_SABOT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
-			case "Sh_120_SABOT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
-			   case "R_SMAW_HEAA" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
+			case "Sh_125_SABOT" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+			case "Sh_120_SABOT" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+			case "R_SMAW_HEAA" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
 			case "R_RPG18_AT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
 			case "R_PG9_AT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
 			case "R_PG7V_AT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
@@ -406,9 +407,9 @@ switch (_type) do {
 			case "R_M136_AT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
 			case "M_47_AT_EP1" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
 			case "R_MEEWS_HEAT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
-			case "M_AT13_AT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
-			case "M_TOW_AT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
-			case "M_TOW2_AT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
+			case "M_AT13_AT" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+			case "M_TOW_AT" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+			case "M_TOW2_AT" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
 			case "Sh_85_AP" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
 			case "Sh_100_HEAT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
 			case "B_20mm_AA" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
@@ -418,10 +419,11 @@ switch (_type) do {
 			case "B_30mm_AA" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
 			case "B_30mm_HE" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
 			case "Sh_40_HE" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
-			case "M_Igla_AA" :{_dam=_this select 2; _p=200; _result=(_dam/100)*(100-_p);};
-			case "M_Stinger_AA" :{_dam=_this select 2; _p=200; _result=(_dam/100)*(100-_p);};
-			case "M_Sidewinder_AA" :{_dam=_this select 2; _p=200; _result=(_dam/100)*(100-_p);};
-			case "M_9M311_AA" :{_dam=_this select 2; _p=200; _result=(_dam/100)*(100-_p);};
+			case "M_Igla_AA" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+			case "M_Stinger_AA" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+			case "M_Sidewinder_AA" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+			case "M_9M311_AA" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+			case "M_R73_AA" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
 			default {_result = _this select 2;};
 	   };
 		  _result
@@ -439,9 +441,9 @@ case "Mi24_D":{
 		  _result = 0;
 
 		  switch (_ammo) do {
-			case "Sh_125_SABOT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
-			case "Sh_120_SABOT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
-			case "R_SMAW_HEAA" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
+			case "Sh_125_SABOT" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+			case "Sh_120_SABOT" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+			case "R_SMAW_HEAA" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
 			case "R_RPG18_AT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
 			case "R_PG9_AT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
 			case "R_PG7V_AT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
@@ -449,9 +451,9 @@ case "Mi24_D":{
 			case "R_M136_AT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
 			case "M_47_AT_EP1" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
 			case "R_MEEWS_HEAT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
-			case "M_AT13_AT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
-			case "M_TOW_AT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
-			case "M_TOW2_AT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
+			case "M_AT13_AT" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+			case "M_TOW_AT" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+			case "M_TOW2_AT" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
 			case "Sh_85_AP" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
 			case "Sh_100_HEAT" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
 			case "B_20mm_AA" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
@@ -461,11 +463,11 @@ case "Mi24_D":{
 			case "B_30mm_AA" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
 			case "B_30mm_HE" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
 			case "Sh_40_HE" :{_dam=_this select 2; _p=140; _result=(_dam/100)*(100-_p);};
-			case "M_Igla_AA" :{_dam=_this select 2; _p=200; _result=(_dam/100)*(100-_p);};
-			case "M_Stinger_AA" :{_dam=_this select 2; _p=200; _result=(_dam/100)*(100-_p);};
-			case "M_Sidewinder_AA" :{_dam=_this select 2; _p=200; _result=(_dam/100)*(100-_p);};
-			case "M_9M311_AA" :{_dam=_this select 2; _p=200; _result=(_dam/100)*(100-_p);};
-			case "M_R73_AA" :{_dam=_this select 2; _p=170; _result=(_dam/100)*(100-_p);};
+			case "M_Igla_AA" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+			case "M_Stinger_AA" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+			case "M_Sidewinder_AA" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+			case "M_9M311_AA" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
+			case "M_R73_AA" :{_dam=_this select 2; _p=400; _result=(_dam/100)*(100-_p);};
 			default {_result = _this select 2;};
 	   };
 		  _result

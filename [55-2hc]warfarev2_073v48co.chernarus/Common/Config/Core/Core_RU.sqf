@@ -123,10 +123,10 @@ _c = _c + ['Mi17_rockets_RU'];
 _i = _i + [['','',16904,45,-2,3,3,0,'Russians',[]]];
 
 _c = _c + ['Mi24_V'];
-_i = _i + [['','',34800,50,-2,4,3,0,'Russians',[]]];
+_i = _i + [['','',44800,50,-2,5,3,0,'Russians',[]]];
 
 _c = _c + ['Mi24_P'];
-_i = _i + [['','',29600,52,-2,3,3,0,'Russians',[]]];
+_i = _i + [['','',39600,52,-2,4,3,0,'Russians',[]]];
 
 _c = _c + ['Su34'];
 _i = _i + [['','',50240,55,-2,5,3,0,'Russians',[]]];
@@ -135,10 +135,10 @@ _c = _c + ['Su39'];
 _i = _i + [['SU-39 (KH29)','',42640,55,-2,4,3,0,'Russians',[]]];
 
 _c = _c + ['Ka52'];
-_i = _i + [['','',if ((missionNamespace getVariable "WFBE_C_UNITS_BALANCING") > 0) then {48800} else {75000},55,-2,4,3,0,'Russians',[]]];
+_i = _i + [['','',if ((missionNamespace getVariable "WFBE_C_UNITS_BALANCING") > 0) then {41800} else {75000},55,-2,3,3,0,'Russians',[]]];
 
 _c = _c + ['Ka52Black'];
-_i = _i + [['','',if ((missionNamespace getVariable "WFBE_C_UNITS_BALANCING") > 0) then {51800} else {75000},55,-2,5,3,0,'Russians',[]]];
+_i = _i + [['','',if ((missionNamespace getVariable "WFBE_C_UNITS_BALANCING") > 0) then {46800} else {75000},55,-2,4,3,0,'Russians',[]]];
 
 /* Special */
 _c = _c + ['Pchela1T'];
