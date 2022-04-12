@@ -63,7 +63,7 @@ WFBE_SE_FNC_VoteForCommander = Compile preprocessFileLineNumbers "Server\Functio
 WFBE_SE_FNC_AssignForCommander = Compile preprocessFileLineNumbers "Server\Functions\Server_AssignNewCommander.sqf";
 WFBE_CO_FNC_InitAFKkickHandler = Compile preprocessFileLineNumbers "Server\Module\afkKick\initAFKkickHandler.sqf";
 WFBE_CO_FNC_LogGameEnd = Compile preprocessFileLineNumbers "Server\Functions\Server_LogGameEnd.sqf";
-WFBE_CO_FNC_monitorServerFPS = Compile preprocessFileLineNumbers "Server\Module\serverFPS\monitorServerFPS.sqf";
+// WFBE_CO_FNC_monitorServerFPS = Compile preprocessFileLineNumbers "Server\Module\serverFPS\monitorServerFPS.sqf";
 
 //--- Define Headless Client functions (server ones).
 if (ARMA_VERSION >= 162 && ARMA_RELEASENUMBER >= 101334 || ARMA_VERSION > 162) then {
@@ -142,7 +142,7 @@ if ((missionNamespace getVariable "WFBE_C_BASE_START_TOWN") > 0) then {
 		_nearLogics = _x nearEntities[["LocationLogicStart"],2000];
 		if (count _nearLogics > 0) then {{if !(_x in _locationLogics) then {_locationLogics = _locationLogics + [_x]}} forEach _nearLogics};
 	} forEach towns;
-	if (count _locationLogics < 3) then {_locationLogics = startingLocations},
+	if (count _locationLogics < 3) then {_locationLogics = startingLocations};
 	["INITIALIZATION", Format ["Init_Server.sqf: Spawn locations were refined [%1].",count _locationLogics]] Call WFBE_CO_FNC_LogContent;
 } else {
 	_locationLogics = startingLocations;
@@ -573,6 +573,6 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_ALICE") > 0) then {
 waitUntil {time > 0};
 
 call WFBE_CO_FNC_InitAFKkickHandler;
-call WFBE_CO_FNC_monitorServerFPS;
+[] execVM "Server\Module\serverFPS\monitorServerFPS.sqf";
 
 {_x Spawn WFBE_SE_FNC_VoteForCommander} forEach WFBE_PRESENTSIDES;
