@@ -573,7 +573,7 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_ALICE") > 0) then {
 waitUntil {time > 0};
 
 call WFBE_CO_FNC_InitAFKkickHandler;
-WFBE_CO_FNC_monitorServerFPS = Compile preprocessFileLineNumbers "Server\Module\serverFPS\monitorServerFPS.sqf";
+call WFBE_CO_FNC_monitorServerFPS;
 
 _logMatchWinPlayerCountThreshold = 10;
 
