@@ -139,12 +139,12 @@ while {true} do {
 			if (_clientFPS < 20) then {_textControl_FPS_4 ctrlSetTextColor [1, 0, 0, 1];_textControl_FPS_4 ctrlSetText Format ["%1",_clientFPS]};
 
 			//Server FPS
-			_serverFPS = str (missionNamespace getVariable "WFBE_VAR_SERVER_FPS");			
+			_serverFPS = missionNamespace getVariable "WFBE_VAR_SERVER_FPS";			
 			_textControl_FPS_6 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1366;
 			_textControl_FPS_6 ctrlShow true;
 			_textControl_FPS_6 ctrlSetTextColor [0, 1, 0, 1];_textControl_FPS_6 ctrlSetText Format ["%1",_serverFPS];
-			if (_serverFPS < 35) then {_textControl_FPS_6 ctrlSetTextColor [1, 0.8431, 0, 1];_textControl_FPS_6 ctrlSetText Format ["%1",_serverFPS]};
-			if (_serverFPS < 20) then {_textControl_FPS_6 ctrlSetTextColor [1, 0, 0, 1];_textControl_FPS_6 ctrlSetText Format ["%1",_serverFPS]};
+			if (_serverFPS < 35) then {_textControl_FPS_6 ctrlSetTextColor [1, 0.8431, 0, 1];_textControl_FPS_6 ctrlSetText Format ["%1", str (_serverFPS)]};
+			if (_serverFPS < 20) then {_textControl_FPS_6 ctrlSetTextColor [1, 0, 0, 1];_textControl_FPS_6 ctrlSetText Format ["%1", str (_serverFPS)]};
 						
 		};
 	} else {
