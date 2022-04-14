@@ -19,8 +19,8 @@ for '_i' from 0 to count(_objects)-1 do {
 	for '_j' from count(_objects)-1 to 0 step -1 do {
 		_current = _objects select _j;
 
-		diag_log _current;
-		diag_log _object;
+		diag_log format ["_current value: %1, type: %2",_current, typeName _object];
+		diag_log format ["_object value: %1, type: %2",_object, typeName _object];
 
 		_distance = _current distance _object;
 		if (_distance < _nearestDistance) then {_nearest = _current;_nearestDistance = _distance;_index = _j};
