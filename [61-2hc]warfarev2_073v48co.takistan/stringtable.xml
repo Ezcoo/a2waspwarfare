@@ -373,11 +373,11 @@
       </Key>
 
       <Key ID="STR_WF_CHAT_Upgrade_Started_Message">
-        <English>%1 Upgrade is started, upgrading level is %2.</English>
-        <French>%1 Upgrade is started, upgrading level is %2.</French>
-        <German>%1 Upgrade is started, upgrading level is %2.</German>
+        <English>%1 Upgrade has been started, upgrade level is %2.</English>
+        <French>%1 Upgrade has been started, upgrade level is %2.</French>
+        <German>%1 Upgrade has been started, upgrade level is %2.</German>
         <Russian>%1 модернизация до уровня %2 начата.</Russian>
-        <Italian>%1 Upgrade is started, upgrading level is %2.</Italian>
+        <Italian>%1 Upgrade has been started, upgrade level is %2.</Italian>
       </Key>
 
       <Key ID="STR_WF_CHAT_Upgrade_Complete_Message">
