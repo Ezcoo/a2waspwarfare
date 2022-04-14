@@ -105,7 +105,7 @@ WFBE_CL_FNC_UI_Gear_UpdatePrice = Compile preprocessFileLineNumbers "Client\Func
 WFBE_CL_FNC_UI_Gear_UpdateTarget = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Gear_UpdateTarget.sqf";
 WFBE_CL_FNC_UI_Gear_UpdateView = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Gear_UpdateView.sqf";
 WFBE_CL_FNC_UI_Respawn_Selector = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Respawn_Selector.sqf";
-WFBE_CL_FNC_SupplyMissionCompleted = Call Compile preprocessFileLineNumbers "Client\Module\supplyMission\supplyMissionCompleted.sqf";
+WFBE_CL_FNC_SupplyMissionCompleted = Compile preprocessFileLineNumbers "Client\Module\supplyMission\supplyMissionCompleted.sqf";
 
 //Affichage Rubber maps:
 	Local_GUIWorking = false;
