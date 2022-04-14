@@ -83,7 +83,7 @@ _unit addAction [
 			false,
 			true,
 			"",
-			"if ((getPos player distance (call GetClosestFriendlyLocation) < 20) && (typeOf vehicle player in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF'])) then {true} else {false}"
+			"if ((getPos player distance (call GetClosestFriendlyLocation) < 20) && (typeOf vehicle player in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF'])) then {true} else {false};"
 		];
 	};
 	case 'Spotter': {

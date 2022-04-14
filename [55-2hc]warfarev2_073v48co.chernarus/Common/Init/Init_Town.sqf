@@ -161,5 +161,3 @@ if (local player) then {
 ["INITIALIZATION",Format ["Init_Town.sqf : Initialized town [%1].", _townName]] Call WFBE_CO_FNC_LogContent;
 
 towns = towns + [_town];
-
-diag_log _town;
