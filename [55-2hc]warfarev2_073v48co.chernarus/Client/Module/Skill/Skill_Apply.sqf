@@ -77,13 +77,13 @@ _unit addAction [
 		// Supply truck mission
 		_unit addAction [
 			("<t color='#00e83e'>" + "LOAD " + " str (((call GetClosestFriendlyLocation) getVariable 'supplyValue') * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER)" + " SUPPLY TO TRUCK" + "</t>"),
-			('supplyMission.sqf'),
+			(WFBE_SK_V_Root + 'supplyMission.sqf'),
 			[str (call GetClosestFriendlyLocation), (((call GetClosestFriendlyLocation) getVariable "supplyValue") * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER)],
 			5,
 			false,
 			true,
 			"",
-			"if ((getPos player distance (call GetClosestFriendlyLocation) < 20) && (typeOf vehicle player in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF'])) then {true} else {false};"
+			"if ((getPos player distance (call GetClosestFriendlyLocation) < 20) && ((typeOf (vehicle player)) in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF'])) then {true} else {false};"
 		];
 	};
 	case 'Spotter': {
