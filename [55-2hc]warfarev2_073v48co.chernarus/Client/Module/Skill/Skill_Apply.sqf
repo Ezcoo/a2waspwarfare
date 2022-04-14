@@ -74,8 +74,10 @@ _unit addAction [
 			"", 
 			"(time - WFBE_SK_V_LastUse_LR > WFBE_SK_V_Reload_LR)&&((cursorTarget isKindOf 'Landvehicle' )|| (cursorTarget isKindOf 'Air'))&&(player distance cursorTarget<5)"
 		];
+		// Supply truck mission
 		_unit addAction [
-			("<t color='#00e83e'>" + "LOAD " + " str (((call GetClosestFriendlyLocation) getVariable 'supplyValue') * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER)" + " SUPPLY TO TRUCK" + "</t>"),
+			// ("<t color='#00e83e'>" + "LOAD " + " str (((call GetClosestFriendlyLocation) getVariable 'supplyValue') * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER)" + " SUPPLY TO TRUCK" + "</t>"),
+			("text"),
 			("Client\Module\supplyMission\supplyMission.sqf"),
 			[str (call GetClosestFriendlyLocation), (((call GetClosestFriendlyLocation) getVariable "supplyValue") * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER)],
 			false,
