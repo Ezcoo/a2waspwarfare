@@ -1,6 +1,6 @@
 Private["_friendlyTowns","_object","_nearest","_side"];
 
-_friendlyTowns = (_side) Call GetSideTowns;
+_friendlyTowns = (sideJoined) Call GetSideTowns;
 _nearest = objNull;
 
 if (count _friendlyTowns > 0) then {
