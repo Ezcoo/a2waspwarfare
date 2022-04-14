@@ -49,7 +49,8 @@ _u = _u		+ ['KamazRepair'];
 _u = _u		+ ['WarfareReammoTruck_RU'];
 _u = _u		+ ['KamazRefuel'];
 _u = _u		+ ['WarfareSalvageTruck_RU'];
-if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['WarfareSupplyTruck_RU']};
+// if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {
+_u = _u		+ ['WarfareSupplyTruck_RU'];
 _u = _u		+ ['GAZ_Vodnik_MedEvac'];
 _u = _u		+ ['BRDM2_INS'];
 _u = _u		+ ['BRDM2_ATGM_INS'];
