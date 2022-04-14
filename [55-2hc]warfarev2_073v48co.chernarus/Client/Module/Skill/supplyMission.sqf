@@ -1,5 +1,8 @@
 private ['_friendlyCommandCenterInProximity','_sourceTown','_supplyAmount','_playerInSupplyTruck'];
 
+diag_log "Supply Mission Script";
+diag_log str(_this);
+
 WFBE_Client_SupplyMissionActive = true;
 
 _friendlyCommandCenterInProximity = false;
@@ -11,7 +14,7 @@ while {!WFBE_Client_IsRespawning} do {
     {
         if (_x isKindOf "Base_WarfareBUAVterminal") then {
             _friendlyCommandCenterInProximity = true;
-        }
+        };
     } forEach (nearestObjects [(getPos player), [], 50]);
 
     _playerInSupplyTruck = (typeOf (vehicle player)) in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF'];
