@@ -5,7 +5,7 @@
 		- List.
 */
 
-Private["_current","_nearest","_nearestDistance","_object","_objects","_sorted","_distance"];
+Private["_current","_nearest","_nearestDistance","_object","_objects","_sorted","_distance","_index"];
 
 _object = _this select 0;
 _objects = +(_this select 1);
