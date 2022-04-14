@@ -1,8 +1,6 @@
 private ['_friendlyCommandCenterInProximity','_sourceTown','_supplyAmount','_playerInSupplyTruck'];
 
-
 WFBE_Client_SupplyMissionActive = true;
-
 
 _friendlyCommandCenterInProximity = false;
 _sourceTown = _this select 3 select 0;
