@@ -14,7 +14,7 @@ while {!WFBE_Client_IsRespawning} do {
         if (_x isKindOf "Base_WarfareBUAVterminal") then {
             _friendlyCommandCenterInProximity = true;
         }
-    } forEach (nearestObjects [getPos player, ["All"], 50]);
+    } forEach (nearestObjects [getPos player, [], 50]);
 
     _playerInSupplyTruck = typeOf vehicle player in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF'];
 
