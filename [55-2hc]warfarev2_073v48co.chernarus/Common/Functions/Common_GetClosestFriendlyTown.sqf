@@ -1,9 +1,5 @@
 Private["_friendlyTowns","_object","_nearest","_side"];
 
-_object = _this select 0;
-_side = _this select 1;
-_cvar = if (count _this > 2) then {_this select 2} else {""};
-
 _friendlyTowns = (_side) Call GetSideTowns;
 _nearest = objNull;
 
