@@ -83,11 +83,10 @@ _unit addAction [
 			false,
 			true,
 			"",
-			"((typeOf (vehicle player)) in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF'])"
+			"((((getPos player) distance (call GetClosestFriendlyLocation)) < 20) && (typeOf (vehicle player) in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF']))"
 		];
-
-		// ((((getPos player) distance (call GetClosestFriendlyLocation)) < 20) && 
 	};
+	
 	case 'Spotter': {
 		/* Spotting Ability */
 		_unit addAction [
