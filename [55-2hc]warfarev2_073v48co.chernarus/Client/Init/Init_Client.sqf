@@ -641,9 +641,11 @@ playMusic "Track11_Large_Scale_Assault";
 
 ["INITIALIZATION", Format ["Init_Client.sqf: Client initialization ended at [%1]", time]] Call WFBE_CO_FNC_LogContent;
 
+/*
 [] spawn {
 	while {true} do {
 	hintSilent format ["%1", typeOf (vehicle player)];
 	sleep 1;
 	};
 };
+*/
