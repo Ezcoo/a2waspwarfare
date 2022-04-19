@@ -83,7 +83,7 @@ _unit addAction [
 			false,
 			true,
 			"",
-			"((((getPos player) distance (call GetClosestFriendlyLocation)) < 20) && (typeOf (vehicle player) in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF']))"
+			"((((getPos player) distance (call GetClosestFriendlyLocation)) < 20) && (typeOf (vehicle player) == 'WarfareSupplyTruck_RU' || typeOf (vehicle player) == 'WarfareSupplyTruck_USMC' || typeOf (vehicle player) == 'WarfareSupplyTruck_INS' || typeOf (vehicle player) == 'WarfareSupplyTruck_Gue' || typeOf (vehicle player) == 'WarfareSupplyTruck_CDF'))"
 		];
 	};
 	
