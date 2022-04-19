@@ -2,7 +2,7 @@ Private["_friendlyTowns","_object","_nearest","_side"];
 
 _friendlyTowns = (side player) Call GetSideTowns;
 
-diag_log ((side player) Call GetSideTowns);
+// diag_log ((side player) Call GetSideTowns);
 
 _nearest = objNull;
 
