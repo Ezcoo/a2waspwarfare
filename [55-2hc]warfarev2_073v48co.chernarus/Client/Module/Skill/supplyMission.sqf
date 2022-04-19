@@ -17,7 +17,7 @@ while {!WFBE_Client_IsRespawning} do {
         };
     } forEach (nearestObjects [(getPos player), [], 50]);
 
-    _playerInSupplyTruck = (typeOf (vehicle player)) in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF'];
+    _playerInSupplyTruck = typeOf (vehicle player) in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF'];
 
     if ((_friendlyCommandCenterInProximity) && (_playerInSupplyTruck)) then {
         WFBE_Client_PV_SupplyMissionCompleted = [name player, _supplyAmount, _sourceTown, sideJoined];
