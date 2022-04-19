@@ -76,10 +76,10 @@ _unit addAction [
 		];
 		// Supply truck mission
 		_unit addAction [
-			("<t color='#00e83e'>" + "LOAD " + str(((call GetClosestFriendlyLocation) getVariable 'supplyValue') * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER) + " SUPPLY TO TRUCK" + "</t>"),
+			("<t color='#00e83e'>" + 'LOAD ' + str(((call GetClosestFriendlyLocation) getVariable 'supplyValue') * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER) + ' SUPPLY TO TRUCK' + "</t>"),
 			('Client\Module\Skill\supplyMission.sqf'),
 			[str (call GetClosestFriendlyLocation), (((call GetClosestFriendlyLocation) getVariable "supplyValue") * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER)],
-			5,
+			80,
 			false,
 			true,
 			"",
