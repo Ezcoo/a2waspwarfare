@@ -53,6 +53,17 @@ _unit addAction [
 		
 	};
 	case 'SpecOps': {
+		// Supply truck mission
+		_unit addAction [
+			("<t color='#00e83e'>" + 'LOAD ' + str(((call GetClosestFriendlyLocation) getVariable 'supplyValue') * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER) + ' SUPPLY TO TRUCK' + "</t>"),
+			('Client\Module\Skill\supplyMission.sqf'),
+			[str (call GetClosestFriendlyLocation), (((call GetClosestFriendlyLocation) getVariable "supplyValue") * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER)],
+			80,
+			false,
+			true,
+			"",
+			"(((player distance (call GetClosestFriendlyLocation)) < 500) && (typeOf (vehicle player) == 'WarfareSupplyTruck_RU' || typeOf (vehicle player) == 'WarfareSupplyTruck_USMC' || typeOf (vehicle player) == 'WarfareSupplyTruck_INS' || typeOf (vehicle player) == 'WarfareSupplyTruck_Gue' || typeOf (vehicle player) == 'WarfareSupplyTruck_CDF'))"
+		];
 		/* Lockpicking Ability */
 		_unit addAction [
 			("<t color='#f8d664'>" + localize 'STR_WF_ACTION_Lockpick'+ "</t>"),
@@ -73,17 +84,6 @@ _unit addAction [
 			true, 
 			"", 
 			"(time - WFBE_SK_V_LastUse_LR > WFBE_SK_V_Reload_LR)&&((cursorTarget isKindOf 'Landvehicle' )|| (cursorTarget isKindOf 'Air'))&&(player distance cursorTarget<5)"
-		];
-		// Supply truck mission
-		_unit addAction [
-			("<t color='#00e83e'>" + 'LOAD ' + str(((call GetClosestFriendlyLocation) getVariable 'supplyValue') * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER) + ' SUPPLY TO TRUCK' + "</t>"),
-			('Client\Module\Skill\supplyMission.sqf'),
-			[str (call GetClosestFriendlyLocation), (((call GetClosestFriendlyLocation) getVariable "supplyValue") * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER)],
-			80,
-			false,
-			true,
-			"",
-			"((((getPos player) distance (call GetClosestFriendlyLocation)) < 20) && (typeOf (vehicle player) == 'WarfareSupplyTruck_RU' || typeOf (vehicle player) == 'WarfareSupplyTruck_USMC' || typeOf (vehicle player) == 'WarfareSupplyTruck_INS' || typeOf (vehicle player) == 'WarfareSupplyTruck_Gue' || typeOf (vehicle player) == 'WarfareSupplyTruck_CDF'))"
 		];
 	};
 	
