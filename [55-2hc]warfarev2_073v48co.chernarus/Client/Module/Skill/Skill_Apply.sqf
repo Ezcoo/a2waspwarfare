@@ -55,17 +55,6 @@ _unit addAction [
 	case 'SpecOps': {
 		// Supply truck mission
 		_unit addAction [
-			"Load Supply to Truck (Debug 1)",
-			'Client\Module\Skill\supplyMission.sqf',
-			[str (call GetClosestFriendlyLocation), (((call GetClosestFriendlyLocation) getVariable "supplyValue") * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER)],
-			80,
-			false,
-			true,
-			"",
-			"(typeOf (vehicle _this)) in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF']"
-		];
-
-		_unit addAction [
 			"<t color='#00e83e'>" + 'LOAD ' + str(((call GetClosestFriendlyLocation) getVariable 'supplyValue') * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER) + ' SUPPLY TO TRUCK' + "</t>",
 			'Client\Module\Skill\supplyMission.sqf',
 			[str (call GetClosestFriendlyLocation), (((call GetClosestFriendlyLocation) getVariable "supplyValue") * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER)],
@@ -75,19 +64,6 @@ _unit addAction [
 			"",
 			"(player distance (call GetClosestFriendlyLocation) < 70) && (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF'])"
 		];
-
-		/*
-		_unit addAction [
-			("<t color='#00e83e'>" + 'LOAD ' + str(((call GetClosestFriendlyLocation) getVariable 'supplyValue') * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER) + ' SUPPLY TO TRUCK' + "</t>"),
-			('Client\Module\Skill\supplyMission.sqf'),
-			[str (call GetClosestFriendlyLocation), (((call GetClosestFriendlyLocation) getVariable "supplyValue") * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER)],
-			80,
-			false,
-			true,
-			"",
-			"(((player distance (call GetClosestFriendlyLocation)) < 500) && (typeOf (vehicle player) == 'WarfareSupplyTruck_RU' || typeOf (vehicle player) == 'WarfareSupplyTruck_USMC' || typeOf (vehicle player) == 'WarfareSupplyTruck_INS' || typeOf (vehicle player) == 'WarfareSupplyTruck_Gue' || typeOf (vehicle player) == 'WarfareSupplyTruck_CDF'))"
-		];*/
-
 
 		/* Lockpicking Ability */
 		_unit addAction [
