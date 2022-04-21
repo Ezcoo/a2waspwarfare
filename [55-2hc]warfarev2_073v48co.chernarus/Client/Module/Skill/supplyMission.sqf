@@ -19,10 +19,12 @@ while {!WFBE_Client_IsRespawning} do {
 
     _playerInSupplyTruck = typeOf (vehicle player) in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF'];
 
-    if ((_friendlyCommandCenterInProximity) && (_playerInSupplyTruck)) then {
+    if ((_friendlyCommandCenterInProximity) && (_playerInSupplyTruck) && (WFBE_Client_SupplyMissionActive)) then {
       diag_log "WF Mission - Success";
         WFBE_Client_PV_SupplyMissionCompleted = [name player, _supplyAmount, _sourceTown, sideJoined];
         publicVariableServer "WFBE_Client_PV_SupplyMissionCompleted";
+        WFBE_Client_SupplyMissionActive = false;
+
     };
 
     sleep 2;
