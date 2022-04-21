@@ -11,6 +11,4 @@ if ((count _friendlyTowns) > 0) then {
 	_nearest = _nearests select 0;
 };
 
-hintSilent str (_nearest);
-
 _nearest
