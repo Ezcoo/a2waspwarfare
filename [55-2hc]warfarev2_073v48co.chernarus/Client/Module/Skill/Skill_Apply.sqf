@@ -62,7 +62,7 @@ _unit addAction [
 			false,
 			true,
 			"",
-			"(((typeOf (vehicle player)) in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF'])"
+			"(typeOf (vehicle player)) in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF']"
 		];
 
 		_unit addAction [
@@ -73,7 +73,7 @@ _unit addAction [
 			false,
 			true,
 			"",
-			"(((player distance (call GetClosestFriendlyLocation)) < 500)"
+			"(player distance (call GetClosestFriendlyLocation)) < 500"
 		];
 
 		/*
