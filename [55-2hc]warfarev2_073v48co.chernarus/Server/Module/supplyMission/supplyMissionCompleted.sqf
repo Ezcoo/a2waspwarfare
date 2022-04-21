@@ -1,4 +1,4 @@
-private ["_namePlayer","_supplyAmount","_sourceTown","_sidePlayer","_logMessage"];
+private ["_namePlayer","_supplyAmount","_sourceTown","_sourceTownStr","_sidePlayer","_logMessage"];
 
 "WFBE_Client_PV_SupplyMissionCompleted" addPublicVariableEventHandler {
 
