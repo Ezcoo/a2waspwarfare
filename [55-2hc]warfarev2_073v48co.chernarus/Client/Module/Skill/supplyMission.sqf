@@ -3,6 +3,11 @@ private ['_friendlyCommandCenterInProximity','_sourceTown','_supplyAmount','_pla
 diag_log "Supply Mission Script";
 diag_log str(_this);
 
+if (WFBE_Client_SupplyMissionActive) exitWith {
+    diag_log "ERROR: Supply mission already active!";
+    "Supply mission is already active!" call GroupChatMessage;
+};
+
 WFBE_Client_SupplyMissionActive = true;
 
 _friendlyCommandCenterInProximity = false;
