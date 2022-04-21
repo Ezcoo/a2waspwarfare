@@ -66,14 +66,14 @@ _unit addAction [
 		];
 
 		_unit addAction [
-			"Load Supply to Truck (Debug 2)",
+			"<t color='#00e83e'>" + 'LOAD ' + str(((call GetClosestFriendlyLocation) getVariable 'supplyValue') * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER) + ' SUPPLY TO TRUCK' + "</t>",
 			'Client\Module\Skill\supplyMission.sqf',
 			[str (call GetClosestFriendlyLocation), (((call GetClosestFriendlyLocation) getVariable "supplyValue") * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER)],
 			80,
 			false,
 			true,
 			"",
-			"(player distance (call GetClosestFriendlyLocation) < 500) && (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF'])"
+			"(player distance (call GetClosestFriendlyLocation) < 70) && (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF'])"
 		];
 
 		/*
