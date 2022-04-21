@@ -8,12 +8,19 @@ private ["_namePlayer","_supplyAmount","_sourceTown","_sourceTownStr","_sidePlay
     _sourceTownStr = str(_sourceTown);
     _sidePlayer = ((_this select 1) select 3);
 
-    WFBE_Server_PV_SupplyMissionCompletedMessage = [format ["%1 has brought our team S %2 from %3.", _namePlayer, _supplyAmount, _sourceTownStr], _sidePlayer];
+    _lastActivationTime = _sourceTown getVariable ["LastSupplyRun", 0];
+
+    if (((_lastActivationTime + 1800) > time) && (_lastActivationTime != 0)) exitWith {
+        diag_log format ["ERROR: Supply mission happened in the last 30 minutes in %1!", _sourceTown];
+        (format ["Supply mission can't happen for the next %1 minute(s) in this town!", round (((_lastActivationTime + 1800) - time) / 60)]) call GroupChatMessage;
+    };
 
     _sourceTown setVariable ["LastSupplyRun", time, true];
 
-    [_sidePlayer, _supplyAmount] Call ChangeSideSupply;
+    WFBE_Server_PV_SupplyMissionCompletedMessage = [format ["%1 has brought our team S %2 from %3.", _namePlayer, _supplyAmount, _sourceTownStr], _sidePlayer];
 
+    [_sidePlayer, _supplyAmount] Call ChangeSideSupply;
+    
     _logMessage= format ["%1 has brought S %2 from %3 to base (SIDE: %4).", _namePlayer, _supplyAmount, _sourceTown, _sidePlayer];
 
     ["INFORMATION", _logMessage] call WFBE_CO_FNC_LogContent;

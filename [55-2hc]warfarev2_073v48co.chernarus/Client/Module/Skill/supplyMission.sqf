@@ -5,20 +5,16 @@ if (WFBE_Client_SupplyMissionActive) exitWith {
     "Supply mission is already active!" call GroupChatMessage;
 };
 
-WFBE_Client_SupplyMissionActive = true;
-
-_friendlyCommandCenterInProximity = false;
 _sourceTown = call GetClosestFriendlyLocation;
-
 _lastActivationTime = _sourceTown getVariable ["LastSupplyRun", 0];
-
-systemChat str((_lastActivationTime + 1800) > time);
-systemChat str((_lastActivationTime != 0));
 
 if (((_lastActivationTime + 1800) > time) && (_lastActivationTime != 0)) exitWith {
     diag_log format ["ERROR: Supply mission happened in the last 30 minutes in %1!", _sourceTown];
-    (format ["Supply mission can't happen for the next %1 minute(s) in this town!", round ((time - (_lastActivationTime + 1800)) / 60)]) call GroupChatMessage;
+    (format ["Supply mission can't happen for the next %1 minute(s) in this town!", round (((_lastActivationTime + 1800) - time) / 60)]) call GroupChatMessage;
 };
+
+WFBE_Client_SupplyMissionActive = true;
+_friendlyCommandCenterInProximity = false;
 
 _supplyAmount = ((call GetClosestFriendlyLocation) getVariable "supplyValue") * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER;
 
