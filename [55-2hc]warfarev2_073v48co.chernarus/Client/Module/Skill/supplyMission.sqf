@@ -14,7 +14,7 @@ _lastActivationTime = _sourceTown getVariable ["LastSupplyRun", 0];
 
 if (((((call GetClosestFriendlyLocation) getVariable ['LastSupplyRun', 0]) + 1800) < time) || (((call GetClosestFriendlyLocation) getVariable ['LastSupplyRun', 0]) == 0)) exitWith {
     diag_log format ["ERROR: Supply mission happened in the last 30 minutes in %1!", _sourceTown];
-    (format ["Supply mission can't happen for the next %1 minute(s)!", ((time - (_lastActivationTime + 1800)) / 60)]) call GroupChatMessage;
+    (format ["Supply mission can't happen for the next %1 minute(s) in this town!", ((time - (_lastActivationTime + 1800)) / 60)]) call GroupChatMessage;
 };
 
 _supplyAmount = ((call GetClosestFriendlyLocation) getVariable "supplyValue") * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER;
