@@ -1,4 +1,4 @@
-private ["_namePlayer","_supplyAmount","_sourceTown","_sidePlayer","_logMessage"];
+private ["_namePlayer","_supplyAmount","_sourceTown","_sourceTownStr","_sidePlayer","_logMessage"];
 
 "WFBE_Client_PV_SupplyMissionCompleted" addPublicVariableEventHandler {
 
@@ -12,7 +12,7 @@ private ["_namePlayer","_supplyAmount","_sourceTown","_sidePlayer","_logMessage"
 
     _sourceTown setVariable ["LastSupplyRun", time, true];
 
-    [_sideSupply, _supplyAmount] Call ChangeSideSupply;
+    [_sidePlayer, _supplyAmount] Call ChangeSideSupply;
 
     _logMessage= format ["%1 has brought S %2 from %3 to base (SIDE: %4).", _namePlayer, _supplyAmount, _sourceTown, _sidePlayer];
 
