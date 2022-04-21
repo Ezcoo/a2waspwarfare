@@ -29,7 +29,6 @@ while {!WFBE_Client_IsRespawning} do {
         WFBE_Client_PV_SupplyMissionCompleted = [name player, _supplyAmount, _sourceTown, sideJoined];
         publicVariableServer "WFBE_Client_PV_SupplyMissionCompleted";
         WFBE_Client_SupplyMissionActive = false;
-
     };
 
     sleep 2;
