@@ -12,7 +12,7 @@ private ["_namePlayer","_supplyAmount","_sourceTown","_sidePlayer"];
 
     _sourceTown setVariable ["LastSupplyRun", time, true];
 
-    [_sideSupply, _supplyAmount] Call ChangeSideSupply;
+    [_sidePlayer, _supplyAmount] Call ChangeSideSupply;
 
     publicVariable "WFBE_Server_PV_SupplyMissionCompletedMessage";
 };
