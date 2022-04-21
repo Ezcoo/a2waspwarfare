@@ -62,7 +62,7 @@ _unit addAction [
 			false,
 			true,
 			"",
-			"((((call GetClosestFriendlyLocation) getVariable ['LastSupplyRun', 0]) + 1800) < time) && (player distance (call GetClosestFriendlyLocation) < 70) && (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF'])"
+			"(player distance (call GetClosestFriendlyLocation) < 70) && (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF'])"
 		];
 
 		/* Lockpicking Ability */

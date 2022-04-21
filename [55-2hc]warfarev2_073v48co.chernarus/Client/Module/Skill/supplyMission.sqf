@@ -12,7 +12,7 @@ _sourceTown = call GetClosestFriendlyLocation;
 
 _lastActivationTime = _sourceTown getVariable ["LastSupplyRun", 0];
 
-if ((_lastActivationTime + 1800) >= time) exitWith {
+if (((((call GetClosestFriendlyLocation) getVariable ['LastSupplyRun', 0]) + 1800) < time) || (((call GetClosestFriendlyLocation) getVariable ['LastSupplyRun', 0]) == 0)) exitWith {
     diag_log "ERROR: Supply mission happened in the last 30 minutes!";
     (format ["Supply mission can't happen for the next %1 minute(s)!", ((time - (_lastActivationTime + 1800)) / 60)]) call GroupChatMessage;
 };
