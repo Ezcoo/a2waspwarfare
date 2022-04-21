@@ -62,11 +62,7 @@ _unit addAction [
 			false,
 			true,
 			"",
-<<<<<<< HEAD
-			"(typeOf (vehicle player) in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF'])"
-=======
 			"(typeOf (vehicle _this)) in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF']"
->>>>>>> supplyMission
 		];
 
 		_unit addAction [
@@ -77,7 +73,7 @@ _unit addAction [
 			false,
 			true,
 			"",
-			"(player distance (call GetClosestFriendlyLocation) < 500) && (typeOf (vehicle player) in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF'])"
+			"(player distance (call GetClosestFriendlyLocation) < 500) && (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF'])"
 		];
 
 		/*
