@@ -1,41 +1,20 @@
-"WFBE_Client_PV_SupplyMissionStarted" addPublicVariableEventHandler {
-    (_this select 1) spawn {
-        private ['_associatedPlayer', '_associatedSupplyTruck', '_associatedSourceTown', '_sidePlayer', '_friendlyCommandCenterInProximity'];
-        _associatedPlayer = _this select 0;
-        _associatedSupplyTruck = _this select 1;
-        _associatedSourceTown = _this select 2;
-        _sidePlayer = _this select 3;
 
-        _sourceTown setVariable ['LastSupplyMissionRun', time, true];
+"WFBE_Server_PV_SupplyMissionCompleted" addPublicVariableEventHandler {
 
-        _friendlyCommandCenterInProximity = false;
-
-        while {!WFBE_Client_IsRespawning} do {
-            if (isNull _associatedSupplyTruck) exitWith {};
-
-            _friendlyCommandCenterInProximity = ((count (nearestObjects [(getPos _associatedSupplyTruck), ["Base_WarfareBUAVterminal"], 100])) < 0);
-
-            if (_friendlyCommandCenterInProximity) exitWith {
-                WFBE_Client_PV_SupplyMissionCompleted = [name player, _associatedSupplyTruck, sideJoined];
-                publicVariableServer "WFBE_Client_PV_SupplyMissionCompleted";
-            };
-
-            sleep 2;
-        };
-    };
-};
-
-"WFBE_Client_PV_SupplyMissionCompleted" addPublicVariableEventHandler {
     private ['_namePlayer', '_associatedSupplyTruck', '_supplyAmount', '_sourceTown', '_sourceTownStr', '_sidePlayer', '_logMessage'];
 
-    _namePlayer = ((_this select 1) select 0);
+    _namePlayer = name ((_this select 1) select 0);
     _associatedSupplyTruck = ((_this select 1) select 1);
     _supplyAmount = _associatedSupplyTruck getVariable ["SupplyAmount", 0];
     _sourceTown = _associatedSupplyTruck getVariable ["SupplyFromTown", objNull];
     _sourceTownStr = str(_sourceTown);
     _sidePlayer = ((_this select 1) select 2);
 
+    diag_log "Successfully called WFBE_SE_FNC_SupplyMissionCompleted.";
+
     if ((isNull _sourceTown) || (_supplyAmount <= 0)) exitWith {};
+
+    diag_log "_sourceTown is not null and _supplyAmount is higher than 0.";
 
     WFBE_Server_PV_SupplyMissionCompletedMessage = [format ["%1 has brought our team S %2 from %3.", _namePlayer, _supplyAmount, _sourceTownStr], _sidePlayer];
 
@@ -48,4 +27,6 @@
     ["INFORMATION", _logMessage] call WFBE_CO_FNC_LogContent;
 
     publicVariable "WFBE_Server_PV_SupplyMissionCompletedMessage";
+
+    diag_log "Called/sent publicVariable: WFBE_Server_PV_SupplyMissionCompletedMessage."
 };

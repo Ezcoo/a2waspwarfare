@@ -56,7 +56,7 @@ _unit addAction [
 		// Supply truck mission
 		_unit addAction [
 			"<t color='#00e83e'>" + 'LOAD SUPPLIES TO TRUCK' + "</t>",
-			'Client\Module\Skill\supplyMission.sqf',
+			'Client\Module\supplyMission\supplyMissionStart.sqf',
 			[],
 			80,
 			false,
