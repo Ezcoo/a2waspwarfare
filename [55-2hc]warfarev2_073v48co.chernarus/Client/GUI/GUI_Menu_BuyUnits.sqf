@@ -101,7 +101,8 @@ while {alive player && dialog} do {
 		if ((_currentRow) != -1) then {
 			_funds = Call GetPlayerFunds;
 			_skip = false;
-			if (_funds < _currentCost) then {_skip = true;hint parseText(Format[localize 'STR_WF_INFO_Funds_Missing',_currentCost - _funds,_currentUnit select QUERYUNITLABEL])};
+			_currentUnitQueryCheckBRDMIglaAA = if ((_currentUnit select QUERYUNITLABEL == "BRDM-2 (ATGM)") && (_currentUnit select QUERYUNITFACTION == "Insurgents")) then {"BRDM-2 (Igla AA)";} else {_currentUnit select QUERYUNITLABEL};
+			if (_funds < _currentCost) then {_skip = true;hint parseText(Format[localize 'STR_WF_INFO_Funds_Missing',_currentCost - _funds,_currentUnitQueryCheckBRDMIglaAA])};
 			//--- Make sure that we own all camps before being able to purchase infantry.
 			if (_type == "Depot" && _isInfantry) then {
 				_totalCamps = _closest Call GetTotalCamps;
@@ -142,8 +143,10 @@ while {alive player && dialog} do {
 					missionNamespace setVariable [Format["WFBE_C_QUEUE_%1",_type],(missionNamespace getVariable Format["WFBE_C_QUEUE_%1",_type])+1];
 					
 					_queu = _closest getVariable 'queu';
-					_txt = parseText(Format [localize 'STR_WF_INFO_BuyEffective',_currentUnit select QUERYUNITLABEL]);
-					if (!isNil '_queu') then {if (count _queu > 0) then {_txt = parseText(Format [localize 'STR_WF_INFO_Queu',_currentUnit select QUERYUNITLABEL])}};
+					_currentUnitQueryCheckBRDMIglaAA = if ((_currentUnit select QUERYUNITLABEL == "BRDM-2 (ATGM)") && (_currentUnit select QUERYUNITFACTION == "Insurgents")) then {"BRDM-2 (Igla AA)";} else {_currentUnit select QUERYUNITLABEL};
+					_txt = parseText(Format [localize 'STR_WF_INFO_BuyEffective',_currentUnitQueryCheckBRDMIglaAA]);
+					_currentUnitQueryCheckBRDMIglaAA = if ((_currentUnit select QUERYUNITLABEL == "BRDM-2 (ATGM)") && (_currentUnit select QUERYUNITFACTION == "Insurgents")) then {"BRDM-2 (Igla AA)";} else {_currentUnit select QUERYUNITLABEL};
+					if (!isNil '_queu') then {if (count _queu > 0) then {_txt = parseText(Format [localize 'STR_WF_INFO_Queu',_currentUnitQueryCheckBRDMIglaAA])}};
 					hint _txt;
 					_params = if (_isInfantry) then {[_closest,_unit,[],_type,_cpt]} else {[_closest,_unit,[profilenamespace getvariable "wfbe_c_driver_enabled_by_default" ,_gunner,_commander,_extracrew,_isLocked],_type,_cpt]};
 					_params Spawn BuildUnit;
