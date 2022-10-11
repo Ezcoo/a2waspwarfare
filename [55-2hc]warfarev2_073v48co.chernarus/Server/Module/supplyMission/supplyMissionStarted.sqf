@@ -24,6 +24,7 @@
                     diag_log format ["_associatedSupplyTruck: %1, leader group: %2, getPlayerUID leader group _associatedSupplyTruck: %3, _iteratedPlayerUID: %4, _playerObject: %5", _associatedSupplyTruck, leader group _associatedSupplyTruck, getPlayerUID leader group _associatedSupplyTruck, _iteratedPlayerUID, _playerObject];
                     if ((getPlayerUID (leader group _associatedSupplyTruck)) == _iteratedPlayerUID) then {
                         _playerObject = _x select 0;
+                        diag_log format ["_x select 0: %1", _x select 0];
                         _match = true;
                     };
                 } forEach (WFBE_SE_PLAYERLIST);
