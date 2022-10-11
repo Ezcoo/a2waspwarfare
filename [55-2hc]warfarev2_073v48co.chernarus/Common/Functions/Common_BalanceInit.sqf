@@ -218,5 +218,13 @@ case "M1128_MGS_EP1":{
     _this addMagazineTurret ["6RND_105mm_APDS", [0]];
 
 };
+case "BRDM2_ATGM_INS":{
 
+    _this RemoveWeaponTurret ["AT5Launcher", [0]];
+    _this addWeaponTurret ["Igla_twice", [0]];
+    _this addMagazineTurret ["2Rnd_Igla", [0]];
+    _this addMagazineTurret ["2Rnd_Igla", [0]];
+    _this addMagazineTurret ["2Rnd_Igla", [0]];
+    _this addMagazineTurret ["2Rnd_Igla", [0]];
+};
 };

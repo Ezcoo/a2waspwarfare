@@ -1,4 +1,4 @@
-Private["_assist","_bounty","_get","_name","_type"];
+Private["_assist","_bounty","_get","_name","_type","_faction"];
 
 _type = _this select 0;
 _assist = _this select 1;
@@ -7,6 +7,11 @@ _ai = if (count _this > 2) then {_this select 2} else {objNull};
 _get = missionNamespace getVariable _type;
 
 _name = _get select QUERYUNITLABEL;
+_faction = _get select QUERYUNITFACTION;
+
+if ((_name == "BRDM-2 (ATGM)") && (_faction == "Insurgents")) then {
+	_name = "BRDM-2 (Igla AA)";
+};
 
 
 _bounty = switch  (true) do {

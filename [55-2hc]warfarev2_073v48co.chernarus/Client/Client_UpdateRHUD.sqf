@@ -139,6 +139,8 @@ while {true} do {
 			if (_clientFPS < 20) then {_textControl_FPS_4 ctrlSetTextColor [1, 0, 0, 1];_textControl_FPS_4 ctrlSetText Format ["%1",_clientFPS]};
 
 			//Server FPS
+			waitUntil { !isNil {missionNamespace getVariable "WFBE_VAR_SERVER_FPS"};};
+			
 			_serverFPS = missionNamespace getVariable "WFBE_VAR_SERVER_FPS";			
 			_textControl_FPS_6 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1366;
 			_textControl_FPS_6 ctrlShow true;
