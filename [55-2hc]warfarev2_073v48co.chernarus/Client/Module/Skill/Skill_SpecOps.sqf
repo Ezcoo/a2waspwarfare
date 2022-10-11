@@ -41,12 +41,12 @@ if (!_skip) then {
 	_marker setMarkerColorLocal "ColorYellow";
 	_marker setMarkerTextLocal (format ["MASH by %1", name player]);
 	_marker setMarkerDirLocal 0;
+	_marker setMarkerPosLocal getPos _tentObject;
 	_marker setMarkerSize [1,1];
-	_count = _count + 1;
 
 	waitUntil {not alive _tentObject};
 
-	_marker deleteMarker;
+	deleteMarker _marker;
 
 	};
 };
