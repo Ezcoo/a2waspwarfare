@@ -7,8 +7,9 @@ _count = 1;
 {
 	_marker = Format["%1AdvancedSquad%2Marker",_sideText,_count];
 	createMarkerLocal [_marker,[0,0,0]];
-	_marker setMarkerTypeLocal "Dot";
+	_marker setMarkerTypeLocal "Arrow";
 	_marker setMarkerColorLocal "ColorBlue";
+	_marker setMarkerDirLocal 0;
 	_marker setMarkerSizeLocal [1,1];
 	_count = _count +1;
 } forEach clientTeams;
@@ -21,7 +22,7 @@ while {!gameOver} do {
 		deleteMarkerLocal _label;
 
 		if !(isNil '_x') then {
-			_markerType = "Dot";
+			_markerType = "Arrow";
 			_marker = Format["%1AdvancedSquad%2Marker",_sideText,_count];
 
 			if (alive (leader _x)) then {
@@ -30,6 +31,7 @@ while {!gameOver} do {
 					_label = Format["%1 [%2]",name (leader _x),_count];
 					_marker setMarkerTextLocal _label;
 					_marker setMarkerPosLocal GetPos (leader _x);
+					_marker setMarkerDirLocal GetDir (leader _x);
 					_marker setMarkerAlphaLocal 1;
 				} else {
 					_label = Format["AI [%1]",_count];
@@ -47,6 +49,7 @@ while {!gameOver} do {
 			_marker setMarkerTypeLocal _markerType;
 
 			if (player == leader _x) then {
+				_marker setMarkerDirLocal GetDir player;
 				_marker setMarkerColorLocal "ColorOrange";
 			};
 		};
