@@ -18,11 +18,8 @@
         _sourceTown = objNull;
     };
 
-    diag_log "Successfully called WFBE_SE_FNC_SupplyMissionCompleted.";
-
     if ((isNull _sourceTown) || (_supplyAmount <= 0)) exitWith {};
 
-    diag_log "_sourceTown is not null and _supplyAmount is higher than 0.";
 
     WFBE_Server_PV_SupplyMissionCompletedMessage = [format ["%1 has brought our team S %2 from %3.", _namePlayer, _supplyAmount, _sourceTownStr], _sidePlayer];
 
@@ -35,6 +32,4 @@
     ["INFORMATION", _logMessage] call WFBE_CO_FNC_LogContent;
 
     publicVariable "WFBE_Server_PV_SupplyMissionCompletedMessage";
-
-    diag_log "Called/sent publicVariable: WFBE_Server_PV_SupplyMissionCompletedMessage."
 };
