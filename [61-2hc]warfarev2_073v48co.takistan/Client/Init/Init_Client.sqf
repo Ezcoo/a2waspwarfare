@@ -625,7 +625,7 @@ sleep 3;
 /* Client death handler. */
 WFBE_PLAYERKEH = player addEventHandler ['Killed', {[_this select 0,_this select 1] Spawn WFBE_CL_FNC_OnKilled; [_this select 0,_this select 1, sideID] Spawn WFBE_CO_FNC_OnUnitKilled}];
 
-hint parseText "<t color='#28ff14'>If you're a new player:</t> <br/><br/>Read the instructions that will soon show in chat. <br/><br/>Our Discord server: <br/><br/><t color='#28ff14'>discord.me/warfare</t>  <br/><br/>(open the link with a web browser like Chrome) <br/><br/>Ask in chat if you want to know how something works. <br/><br/>Welcome and good luck, soldier! :)";
+hint parseText "<t color='#28ff14'>If you're a new player:</t> <br/><br/>Read the instructions that will soon show in chat. <br/><br/>Our Discord server: <br/><br/><t color='#28ff14'>discord.me/warfare</t>  <br/><br/>(open the link with a web browser like Chrome) <br/><br/>Ask in chat if you want to know how something works. <br/><br/>You and your units are marked with <t color='#FFAC1C'>orange</t> color on map. <br/><br/>Welcome and good luck, soldier! :)";
 
 //--- Valhalla init.
 [] Spawn {
