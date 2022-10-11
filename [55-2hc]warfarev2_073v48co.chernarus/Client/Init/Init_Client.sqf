@@ -629,7 +629,9 @@ sleep 3;
 
 /* Client death handler. */
 WFBE_PLAYERKEH = player addEventHandler ['Killed', {[_this select 0,_this select 1] Spawn WFBE_CL_FNC_OnKilled; [_this select 0,_this select 1, sideID] Spawn WFBE_CO_FNC_OnUnitKilled}];
-hint parseText "<t color='#ffff00'>CHANGELOG:</t> <br/>Map/Notes/Changelog";
+
+hint parseText "<t color='#ffff00'>If you're a new player:</t> <br/>Read the instructions that will soon show in chat. <br/>Our Discord server: <t color='#ffff00'>discord.me/warfare</t>  (open the link with a web browser) <br/>Ask in chat if you want to know how something works. Welcome and good luck, soldier! :)";
+
 //--- Valhalla init.
 [] Spawn {
 	[] Call Compile preprocessFile "Client\Module\Valhalla\Init_Valhalla.sqf";
