@@ -3,7 +3,7 @@
 	Description: Add special skills to the defined officer.
 	Edited by: Net_2 (--> SpecOps/Support class)
 */
-Private ['_array','_exist','_skip','_tent','_toWorld','_type','_z'];
+Private ['_array','_exist','_skip','_tent','_toWorld','_type','_z','_tentObject'];
 
 _type = missionNamespace getVariable Format ["WFBE_%1FARP",sideJoinedText];
 _exist = WFBE_Client_Logic getVariable "wfbe_mash";
@@ -32,4 +32,21 @@ if (!_skip) then {
 	WFBE_Client_Logic setVariable ["wfbe_mash", objNull, true];
 };
 
-[_tent, side player] ExecVM 'Common\Init\Init_Unit.sqf';
+[_tent] spawn {
+	_tentObject = _this select 0;
+
+	_marker = Format["%Mash%2Marker",side player, round random 50000];
+	createMarkerLocal [_marker,[0,0,0]];
+	_marker setMarkerTypeLocal "n_med";
+	_marker setMarkerColorLocal "ColorYellow";
+	_marker setMarkerTextLocal (format ["MASH by %1", name player]);
+	_marker setMarkerDirLocal 0;
+	_marker setMarkerSize [1,1];
+	_count = _count + 1;
+
+	waitUntil {not alive _tentObject};
+
+	_marker deleteMarker;
+
+	};
+};
