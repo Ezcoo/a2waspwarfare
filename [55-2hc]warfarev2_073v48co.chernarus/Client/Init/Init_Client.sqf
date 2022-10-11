@@ -640,7 +640,6 @@ hint parseText "<t color='#28ff14'>If you're a new player:</t> <br/><br/>Read th
 if (!WF_Debug) then {playMusic "Track11_Large_Scale_Assault";};
 
 WFBE_C_PLAYER_OBJECT = [player, getPlayerUID player];
-diag_log format ["WFBE_C_PLAYER_OBJECT: %1", WFBE_C_PLAYER_OBJECT];
 publicVariableServer "WFBE_C_PLAYER_OBJECT";
 
 /* Client Init Done - Remove the blackout */
