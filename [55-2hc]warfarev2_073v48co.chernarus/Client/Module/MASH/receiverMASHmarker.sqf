@@ -13,7 +13,7 @@
 	createMarkerLocal [_marker,[0,0,0]];
 	_marker setMarkerTypeLocal "n_med";
 	_marker setMarkerColorLocal "ColorYellow";
-	_marker setMarkerTextLocal (format ["MASH - %1", name player]);
+	_marker setMarkerTextLocal (format ["MASH - %1", name _deployer]);
 	_marker setMarkerDirLocal 0;
 	_marker setMarkerPosLocal _markerPos;
 	_marker setMarkerSizeLocal [1,1];
