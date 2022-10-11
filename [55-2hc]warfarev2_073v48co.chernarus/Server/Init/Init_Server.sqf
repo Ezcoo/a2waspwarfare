@@ -68,6 +68,8 @@ WFBE_CO_FNC_LogGameEnd = Compile preprocessFileLineNumbers "Server\Functions\Ser
 WFBE_SE_FNC_SupplyMissionCompleted = Call Compile preprocessFileLineNumbers "Server\Module\supplyMission\supplyMissionCompleted.sqf";
 WFBE_SE_FNC_IsSupplyMissionActiveInTown = Call Compile preprocessFileLineNumbers "Server\Module\supplyMission\isSupplyMissionActiveInTown.sqf";
 WFBE_SE_FNC_SupplyMissionStarted = Call Compile preprocessFileLineNumbers "Server\Module\supplyMission\supplyMissionStarted.sqf";
+WFBE_SE_FNC_PlayerObjectsList = Call Compile preprocessFileLineNumbers "Server\Module\supplyMission\playerObjectsList.sqf";
+
 //--- Define Headless Client functions (server ones).
 if (ARMA_VERSION >= 162 && ARMA_RELEASENUMBER >= 101334 || ARMA_VERSION > 162) then {
 	WFBE_CO_FNC_DelegateAITownHeadless = Compile preprocessFileLineNumbers "Server\Functions\Server_DelegateAITownHeadless.sqf";
@@ -580,6 +582,8 @@ call WFBE_CO_FNC_InitAFKkickHandler;
 _logMatchWinPlayerCountThreshold = 10;
 
 [_logMatchWinPlayerCountThreshold] execVM "Server\MonitorPlayerCount.sqf";
+
+WFBE_SE_PLAYERLIST = [[objNull, "0"]];
 
 {_x Spawn WFBE_SE_FNC_VoteForCommander} forEach WFBE_PRESENTSIDES;
 

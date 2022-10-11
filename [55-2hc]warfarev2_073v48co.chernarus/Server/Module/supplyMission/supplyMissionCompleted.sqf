@@ -5,10 +5,18 @@
 
     _namePlayer = name ((_this select 1) select 0);
     _associatedSupplyTruck = ((_this select 1) select 1);
-    _supplyAmount = _associatedSupplyTruck getVariable ["SupplyAmount", 0];
-    _sourceTown = _associatedSupplyTruck getVariable ["SupplyFromTown", objNull];
+    _supplyAmount = _associatedSupplyTruck getVariable "SupplyAmount";
+    _sourceTown = _associatedSupplyTruck getVariable "SupplyFromTown";
     _sourceTownStr = str(_sourceTown);
     _sidePlayer = ((_this select 1) select 2);
+
+    if (isNil "_supplyAmount") then {
+        _supplyAmount = 0;
+    };
+
+    if (isNil "_sourceTown") then {
+        _sourceTown = objNull;
+    };
 
     diag_log "Successfully called WFBE_SE_FNC_SupplyMissionCompleted.";
 

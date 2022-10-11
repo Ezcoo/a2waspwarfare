@@ -1,4 +1,4 @@
-Private ['_HQRadio','_base','_buildings','_condition','_get','_idbl','_isDeployed','_oc','_weat','_rearmor'];
+Private ['_HQRadio','_base','_buildings','_condition','_get','_idbl','_isDeployed','_oc','_weat','_rearmor','_playerObject'];
 
 ["INITIALIZATION", Format ["Init_Client.sqf: Client initialization begins at [%1]", time]] Call WFBE_CO_FNC_LogContent;
 
@@ -635,7 +635,11 @@ hint parseText "<t color='#ffff00'>CHANGELOG:</t> <br/>Map/Notes/Changelog";
 	[] Call Compile preprocessFile "Client\Module\Valhalla\Init_Valhalla.sqf";
 };
 
-playMusic "Track11_Large_Scale_Assault";
+if (!WF_Debug) then {playMusic "Track11_Large_Scale_Assault";};
+
+WFBE_C_PLAYER_OBJECT = [player, getPlayerUID player];
+diag_log format ["WFBE_C_PLAYER_OBJECT: %1", WFBE_C_PLAYER_OBJECT];
+publicVariableServer "WFBE_C_PLAYER_OBJECT";
 
 /* Client Init Done - Remove the blackout */
 12452 cutText [(localize 'STR_WF_Loading')+"...","BLACK IN",5];
