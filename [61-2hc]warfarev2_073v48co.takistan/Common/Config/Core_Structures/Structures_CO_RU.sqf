@@ -14,7 +14,7 @@ _SP = if (WF_Camo) then {"RU_WarfareBVehicleServicePoint"} else {"TK_WarfareBVeh
 _AAR = if (WF_Camo) then {"RU_WarfareBAntiAirRadar"} else {"TK_WarfareBAntiAirRadar_EP1"};
 
 /* Mash used after being deployed */
-missionNamespace setVariable [Format["WFBE_%1FARP", _side], 'CampEast_EP1'];
+missionNamespace setVariable [Format["WFBE_%1FARP", _side], 'MASH'];
 
 /* Construction Crates */
 missionNamespace setVariable [Format["WFBE_%1CONSTRUCTIONSITE", _side], 'TK_WarfareBContructionSite_EP1'];
