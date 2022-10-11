@@ -35,18 +35,8 @@ if (!_skip) then {
 [_tent] spawn {
 	_tentObject = _this select 0;
 
-	_marker = Format["%Mash%2Marker",side player, round random 50000];
-	createMarkerLocal [_marker,[0,0,0]];
-	_marker setMarkerTypeLocal "n_med";
-	_marker setMarkerColorLocal "ColorYellow";
-	_marker setMarkerTextLocal (format ["MASH by %1", name player]);
-	_marker setMarkerDirLocal 0;
-	_marker setMarkerPosLocal getPos _tentObject;
-	_marker setMarkerSize [1,1];
+	WFBE_CL_MASH_MARKER_CREATED = [_tentObject, side player, player];
 
-	waitUntil {not alive _tentObject};
+	publicVariableServer "WFBE_CL_MASH_MARKER_CREATED";
 
-	deleteMarker _marker;
-
-	};
 };
