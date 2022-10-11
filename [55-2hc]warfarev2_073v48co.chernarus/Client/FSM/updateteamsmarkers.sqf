@@ -57,5 +57,5 @@ while {!gameOver} do {
 
 		_count = _count + 1;
 	} forEach clientTeams;
-	sleep 0.01;
+	sleep 0.05;
 };
