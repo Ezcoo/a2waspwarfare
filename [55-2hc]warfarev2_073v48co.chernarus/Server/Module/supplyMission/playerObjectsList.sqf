@@ -10,6 +10,10 @@
 
 		diag_log format ["WFBE_SE_PLAYERLIST: %1", WFBE_SE_PLAYERLIST];
 
+		if (isNil "WFBE_SE_PLAYERLIST") {
+			WFBE_SE_PLAYERLIST = [[objNull, "0"]];
+		};
+
 		{
 			_i = 0;
 			_iteratedPlayerUID = _x select 1;
