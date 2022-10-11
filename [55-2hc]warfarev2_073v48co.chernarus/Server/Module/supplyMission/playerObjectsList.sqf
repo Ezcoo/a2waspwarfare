@@ -8,11 +8,11 @@
 		_matchFound = false;
 		_arrayPosMatch = 0;
 
-		diag_log format ["WFBE_SE_PLAYERLIST: %1", WFBE_SE_PLAYERLIST];
-
 		if (isNil "WFBE_SE_PLAYERLIST") then {
 			WFBE_SE_PLAYERLIST = [[objNull, "0"]];
 		};
+
+		diag_log format ["WFBE_SE_PLAYERLIST: %1", WFBE_SE_PLAYERLIST];
 
 		{
 			_i = 0;
