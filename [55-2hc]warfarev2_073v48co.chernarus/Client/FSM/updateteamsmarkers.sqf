@@ -31,7 +31,7 @@ while {!gameOver} do {
 					_label = Format[" %1",name (leader _x)];
 					_marker setMarkerTextLocal _label;
 					_marker setMarkerPosLocal GetPos (leader _x);
-					_marker setMarkerDirLocal GetDir (leader _x);
+					_marker setMarkerDirLocal GetDir (vehicle (leader _x));
 					_marker setMarkerAlphaLocal 1;
 				} else {
 					_label = "AI";
