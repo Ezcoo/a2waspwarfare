@@ -211,7 +211,7 @@ with missionNamespace do {
 	if (isNil "WFBE_C_RESPAWN_CAMPS_RULE_MODE") then {WFBE_C_RESPAWN_CAMPS_RULE_MODE = 2}; //--- Respawn Camps Rule (0: Disabled, 1: West | East, 2: West | East | Resistance).
 	if (isNil "WFBE_C_RESPAWN_DELAY") then {WFBE_C_RESPAWN_DELAY = 10}; //--- Respawn Delay (Players/AI).
 	if (isNil "WFBE_C_RESPAWN_LEADER") then {WFBE_C_RESPAWN_LEADER = 2}; //--- Allow leader respawn (0: Disabled, 1: Enabled, 2: Enabled but default gear).
-	if (isNil "WFBE_C_RESPAWN_MASH") then {WFBE_C_RESPAWN_MASH = 2}; //--- Allow mash respawn (0: Disabled, 1: Enabled, 2: Enabled but default gear).
+	if (isNil "WFBE_C_RESPAWN_MASH") then {WFBE_C_RESPAWN_MASH = 1}; //--- Allow mash respawn (0: Disabled, 1: Enabled, 2: Enabled but default gear).
 	if (isNil "WFBE_C_RESPAWN_MOBILE") then {WFBE_C_RESPAWN_MOBILE = 2}; //--- Allow mobile respawn (0: Disabled, 1: Enabled, 2: Enabled but default gear).
 	if (isNil "WFBE_C_RESPAWN_PENALTY") then {WFBE_C_RESPAWN_PENALTY = 4}; //--- Respawn Penalty (0: None, 1: Remove All, 2: Pay full gear price, 3: Pay 1/2 gear price, 4: pay 1/4 gear price, 5: Charge on Mobile).
 	WFBE_C_RESPAWN_CAMPS_SAFE_RADIUS = 50;
