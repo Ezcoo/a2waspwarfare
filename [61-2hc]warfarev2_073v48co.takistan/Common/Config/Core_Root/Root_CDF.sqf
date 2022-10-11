@@ -11,6 +11,7 @@ missionNamespace setVariable [Format["WFBE_%1SOLDIER", _side], 'CDF_Soldier'];
 missionNamespace setVariable [Format["WFBE_%1FLAG", _side], '\ca\ca_e\data\flag_cdf_co.paa'];
 
 missionNamespace setVariable [Format["WFBE_%1AMBULANCES", _side], ['BMP2_Ambul_CDF']];
+missionNamespace setVariable [Format ["WFBE_%1MASHES", _side] ['MASH']];
 missionNamespace setVariable [Format["WFBE_%1REPAIRTRUCKS", _side], ['UralRepair_CDF']];
 missionNamespace setVariable [Format["WFBE_%1SALVAGETRUCK", _side], ['WarfareSalvageTruck_CDF']];
 missionNamespace setVariable [Format["WFBE_%1SUPPLYTRUCKS", _side], ['WarfareSupplyTruck_CDF']];
