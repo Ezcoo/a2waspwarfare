@@ -23,6 +23,7 @@ while {!gameOver} do {
 			_townSupplyMissionCoolDownEnabled = _town getVariable "supplyMissionCoolDownEnabled";
 			
 			if (!_townSupplyMissionCoolDownEnabled) then {
+				waitUntil { !(isNil WFBE_SK_V_Type) };
 				if (WFBE_SK_V_Type == 'SpecOps') then {
 					_marker setMarkerTextLocal Format["  SV: %1/%2  [+SUPPLY]",_town getVariable "supplyValue",_town getVariable "maxSupplyValue"];
 				} else {
