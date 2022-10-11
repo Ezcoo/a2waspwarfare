@@ -19,7 +19,7 @@ if (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 
     _supplyAmount = (_sourceTown getVariable "supplyValue") * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER;
     _associatedSupplyTruck setVariable ["SupplyAmount", _supplyAmount, true];
 
-    format ["You loaded S %1 to your truck from %2.", _supplyAmount, str (_sourceTown)] call GroupChatMessage;
+    format ["You loaded S %1 to your truck from %2. Note that supplies from one town only fit in your truck at a time!", _supplyAmount, str (_sourceTown)] call GroupChatMessage;
 
     WFBE_Client_PV_SupplyMissionStarted = [player, _associatedSupplyTruck, _sourceTown, sideJoined];
     publicVariableServer "WFBE_Client_PV_SupplyMissionStarted";
