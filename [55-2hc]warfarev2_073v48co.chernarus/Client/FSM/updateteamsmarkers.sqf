@@ -49,7 +49,7 @@ while {!gameOver} do {
 			_marker setMarkerTypeLocal _markerType;
 
 			if (player == leader _x) then {
-				_marker setMarkerDirLocal GetDir player;
+				_marker setMarkerDirLocal GetDir (vehicle player);
 				_marker setMarkerColorLocal "ColorOrange";
 			};
 		};
