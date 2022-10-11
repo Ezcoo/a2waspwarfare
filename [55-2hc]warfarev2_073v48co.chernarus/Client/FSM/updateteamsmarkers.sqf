@@ -10,7 +10,7 @@ _count = 1;
 	_marker setMarkerTypeLocal "Arrow";
 	_marker setMarkerColorLocal "ColorBlue";
 	_marker setMarkerDirLocal 0;
-	_marker setMarkerSizeLocal [1,1];
+	_marker setMarkerSizeLocal [0.7,0.7];
 	_count = _count +1;
 } forEach clientTeams;
 
@@ -28,13 +28,13 @@ while {!gameOver} do {
 			if (alive (leader _x)) then {
 				_label = "";
 				if (isPlayer (leader _x)) then {
-					_label = Format["%1 [%2]",name (leader _x),_count];
+					_label = Format[" %1",name (leader _x)];
 					_marker setMarkerTextLocal _label;
 					_marker setMarkerPosLocal GetPos (leader _x);
 					_marker setMarkerDirLocal GetDir (leader _x);
 					_marker setMarkerAlphaLocal 1;
 				} else {
-					_label = Format["AI [%1]",_count];
+					_label = "AI";
 					_marker setMarkerTextLocal _label;
 					_marker setMarkerPosLocal GetPos (leader _x);
 					_marker setMarkerAlphaLocal 0;
@@ -42,7 +42,7 @@ while {!gameOver} do {
 			} else {
 				label = "";
 				if (isPlayer (leader _x)) then {
-					_label = Format["%1 [%2]",name (leader _x),_count]
+					_label = Format["%1",name (leader _x)]
 				};
 				deleteMarkerLocal _label;
 			};
