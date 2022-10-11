@@ -68,7 +68,7 @@ switch (WFBE_SK_V_Type) do {
 			/* MASH Ability */
 			_unit addAction [
 				("<t color='#f8d664'>" + localize 'STR_WF_ACTION_DeployMASH'+ "</t>"),
-				(WFBE_SK_V_Root + 'Officer' + '.sqf'),
+				(WFBE_SK_V_Root + 'SpecOps' + '.sqf'),
 				[],
 				80,
 				false,
