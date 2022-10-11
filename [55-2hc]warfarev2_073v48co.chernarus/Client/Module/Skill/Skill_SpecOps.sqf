@@ -20,6 +20,8 @@ for [{_z = 0},{_z < 7},{_z = _z + 1}] do {
 	if ((!alive player) || (vehicle player != player)) exitWith {_skip = true};
 };
 
+_tent = objNull;
+
 if (!_skip) then {
 	_array = [((player worldToModel (getPos player)) select 0),((player worldToModel (getPos player)) select 1) + 10];
 	_toWorld = player modelToWorld _array;
@@ -29,3 +31,5 @@ if (!_skip) then {
 } else {
 	WFBE_Client_Logic setVariable ["wfbe_mash", objNull, true];
 };
+
+[_tent, side player] ExecVM 'Common\Init\Init_Unit.sqf';
