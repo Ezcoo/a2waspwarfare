@@ -12,7 +12,10 @@
         _match = false;
 
         while { alive _associatedSupplyTruck } do {
-			{
+            
+            sleep 2;
+			
+            {
        			if (_x isKindOf "Base_WarfareBUAVterminal") then {
             	    _friendlyCommandCenterInProximity = true;
         		};
@@ -37,7 +40,6 @@
 				publicVariableServer "WFBE_Server_PV_SupplyMissionCompleted";
             };
 
-            sleep 2;
         };
     };
 };
