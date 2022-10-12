@@ -371,7 +371,7 @@ class Params {
 		title = "$STR_WF_PARAMETER_Respawn_MASH";
 		values[] = {0,1,2};
 		texts[] = {"$STR_WF_Disabled","$STR_WF_Enabled","$STR_WF_Enabled_DefaultGear"};
-		default = 0;
+		default = 1;
 	};
 	class WFBE_C_RESPAWN_MOBILE {
 		title = "$STR_WF_PARAMETER_MobileRespawn";

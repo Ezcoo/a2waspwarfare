@@ -14,7 +14,7 @@ _SP = "TK_GUE_WarfareBVehicleServicePoint_EP1";
 _AAR = "TK_GUE_WarfareBAntiAirRadar_EP1";
 
 /* Mash used after being deployed */
-missionNamespace setVariable [Format["WFBE_%1FARP", _side], 'CampEast_EP1'];
+missionNamespace setVariable [Format["WFBE_%1FARP", _side], 'MASH'];
 
 /* Construction Crates */
 missionNamespace setVariable [Format["WFBE_%1CONSTRUCTIONSITE", _side], 'TK_GUE_WarfareBContructionSite_EP1'];

@@ -32,6 +32,8 @@ _town setVariable ["name",_townName];
 _town setVariable ["range",_townRange];
 _town setVariable ["startingSupplyValue",_townStartSV];
 _town setVariable ["maxSupplyValue",_townMaxSV];
+_town setVariable ["lastSupplyMissionRun", 0];
+_town setVariable ["supplyMissionCoolDownEnabled", false];
 
 //--- If the town type is an array rather than a single value, pick a random template (see Server_GetTownGroupsDefender.sqf).
 if (typeName _town_type == "ARRAY") then {_town_type = _town_type select floor(random count _town_type)};

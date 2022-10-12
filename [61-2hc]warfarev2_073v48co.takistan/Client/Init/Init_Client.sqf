@@ -105,6 +105,10 @@ WFBE_CL_FNC_UI_Gear_UpdatePrice = Compile preprocessFileLineNumbers "Client\Func
 WFBE_CL_FNC_UI_Gear_UpdateTarget = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Gear_UpdateTarget.sqf";
 WFBE_CL_FNC_UI_Gear_UpdateView = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Gear_UpdateView.sqf";
 WFBE_CL_FNC_UI_Respawn_Selector = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Respawn_Selector.sqf";
+WFBE_CL_FNC_SupplyMissionCompletedMessage = Call Compile preprocessFileLineNumbers "Client\Module\supplyMission\supplyMissionCompletedMessage.sqf";
+WFBE_CL_FNC_SupplyMissionStart = Call Compile preprocessFileLineNumbers "Client\Module\supplyMission\supplyMissionStart.sqf";
+WFBE_CL_FNC_TownSupplyStatus = Call Compile preprocessFileLineNumbers "Client\Module\supplyMission\townSupplyStatus.sqf";
+WFBE_CL_FNC_ReceiverMASHmarker = Call Compile preprocessFileLineNumbers "Client\Module\MASH\receiverMASHmarker.sqf";
 
 //Affichage Rubber maps:
 	Local_GUIWorking = false;
@@ -204,6 +208,7 @@ WFBE_Client_IsRespawning = false;
 WFBE_Client_LastGroupJoinRequest = -5000;
 WFBE_Client_PendingRequests = [];
 WFBE_Client_PendingRequests_Accepted = [];
+WFBE_Client_SupplyMissionActive = false;
 
 commanderTeam = objNull;
 buildingMarker = 0;
@@ -624,13 +629,18 @@ sleep 3;
 
 /* Client death handler. */
 WFBE_PLAYERKEH = player addEventHandler ['Killed', {[_this select 0,_this select 1] Spawn WFBE_CL_FNC_OnKilled; [_this select 0,_this select 1, sideID] Spawn WFBE_CO_FNC_OnUnitKilled}];
-hint parseText "<t color='#ffff00'>CHANGELOG:</t> <br/>Map/Notes/Changelog";
+
+hint parseText "<t color='#28ff14'>If you're a new player:</t> <br/><br/>Read the instructions that will show in chat soon. <br/><br/>Our Discord server: <br/><br/><t color='#28ff14'>discord.me/warfare</t>  <br/><br/>(Open the link with a web browser like Chrome) <br/><br/>Ask in chat or on our Discord server if you want to know how something works. <br/><br/>You and your units are marked with <t color='#FFAC1C'>orange</t> color on map. <br/><br/>Welcome and good luck, soldier! :)";
+
 //--- Valhalla init.
 [] Spawn {
 	[] Call Compile preprocessFile "Client\Module\Valhalla\Init_Valhalla.sqf";
 };
 
-playMusic "TakiStart";
+if (!WF_Debug) then {playMusic "TakiStart";};
+
+WFBE_C_PLAYER_OBJECT = [player, getPlayerUID player];
+publicVariableServer "WFBE_C_PLAYER_OBJECT";
 
 /* Client Init Done - Remove the blackout */
 12452 cutText [(localize 'STR_WF_Loading')+"...","BLACK IN",5];

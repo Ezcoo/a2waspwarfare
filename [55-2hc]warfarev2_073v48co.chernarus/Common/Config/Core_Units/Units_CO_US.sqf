@@ -102,13 +102,14 @@ _u = _u		+ ['Dingo_WDL_ACR'];
 _u = _u		+ ['Dingo_GL_Wdl_ACR'];
 _u = _u		+ ['Pandur2_ACR'];
 
-if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['MtvrSupply_DES_EP1']};
+// // if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['MtvrSupply_DES_EP1']};
 _u = _u		+ ['MTVR'];
 _u = _u		+ ['MtvrRepair'];
 _u = _u		+ ['WarfareReammoTruck_USMC'];
 _u = _u		+ ['MtvrRefuel'];
 _u = _u		+ ['WarfareSalvageTruck_USMC'];
-if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['WarfareSupplyTruck_USMC']};
+// // if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {
+_u = _u		+ ['WarfareSupplyTruck_USMC'];
 _u = _u		+ ['RHIB'];
 _u = _u		+ ['RHIB2Turret'];
 _u = _u		+ ['LAV25'];

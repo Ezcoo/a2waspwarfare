@@ -54,11 +54,13 @@ _u = _u		+ ['UralRepair_TK_EP1'];
 _u = _u		+ ['UralReammo_TK_EP1'];
 _u = _u		+ ['UralRefuel_TK_EP1'];
 _u = _u		+ ['UralSalvage_TK_EP1'];
-if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['UralSupply_TK_EP1']};
+// if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {
+_u = _u		+ ['UralSupply_TK_EP1'];
 _u = _u		+ ['M113Ambul_TK_EP1'];
 _u = _u		+ ['GAZ_Vodnik_MedEvac'];
 _u = _u		+ ['BRDM2_TK_EP1'];
-_u = _u		+ ['BRDM2_ATGM_TK_EP1'];
+_u = _u		+ ['BRDM2_ATGM_INS'];
+_u = _u     + ['BRDM2_ATGM_TK_EP1'];
 _u = _u		+ ['GAZ_Vodnik'];
 _u = _u		+ ['GAZ_Vodnik_HMG'];
 _u = _u		+ ['BTR60_TK_EP1'];
