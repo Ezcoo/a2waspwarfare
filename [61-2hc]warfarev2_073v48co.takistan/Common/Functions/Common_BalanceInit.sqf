@@ -220,6 +220,16 @@ case "AW159_Lynx_BAF":{
 
 };
 
+case "BRDM2_ATGM_INS":{
+
+    _this RemoveWeaponTurret ["AT5Launcher", [0]];
+    _this addWeaponTurret ["Igla_twice", [0]];
+    _this addMagazineTurret ["2Rnd_Igla", [0]];
+    _this addMagazineTurret ["2Rnd_Igla", [0]];
+    _this addMagazineTurret ["2Rnd_Igla", [0]];
+    _this addMagazineTurret ["2Rnd_Igla", [0]];
+};
+
 case "BVP1_TK_ACR":{
     _this RemoveWeaponTurret ["2A28", [0]];
     _this addMagazineTurret ["10Rnd_85mmAP", [0]];

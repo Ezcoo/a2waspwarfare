@@ -632,7 +632,7 @@ hint parseText "<t color='#28ff14'>If you're a new player:</t> <br/><br/>Read th
 	[] Call Compile preprocessFile "Client\Module\Valhalla\Init_Valhalla.sqf";
 };
 
-playMusic "TakiStart";
+if (!WF_Debug) then {playMusic "TakiStart";};
 
 /* Client Init Done - Remove the blackout */
 12452 cutText [(localize 'STR_WF_Loading')+"...","BLACK IN",5];

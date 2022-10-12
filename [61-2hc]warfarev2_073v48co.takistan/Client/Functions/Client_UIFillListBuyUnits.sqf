@@ -1,4 +1,4 @@
-Private ['_addin','_c','_currentUpgrades','_filler','_filter','_i','_listBox','_listNames','_u','_value'];
+Private ['_addin','_c','_currentUpgrades','_filler','_filter','_i','_listBox','_listNames','_u','_value','_checkIfBRDMIglaAA'];
 _listNames = _this select 0;
 _filler = _this select 1;
 _listBox = _this select 2;
@@ -37,7 +37,8 @@ lnbClear _listBox;
 
 
 	if (((_c select QUERYUNITUPGRADE) <= (_currentUpgrades select _value) && _addin) || (_addit&&_addin)) then {
-		lnbAddRow [_listBox,['$'+str (_c select QUERYUNITPRICE),(_c select QUERYUNITLABEL)]];
+		_checkIfBRDMIglaAA = if ((_c select QUERYUNITLABEL == "BRDM-2 (ATGM)") && (_c select QUERYUNITFACTION == "Insurgents")) then {"BRDM (Igla AA)"} else {_c select QUERYUNITLABEL};
+		lnbAddRow [_listBox,['$'+str (_c select QUERYUNITPRICE),(_checkIfBRDMIglaAA)]];
 		lnbSetData [_listBox,[_i,0],_filler];
 		lnbSetValue [_listBox,[_i,0],_u];
 		_i = _i + 1;

@@ -20,6 +20,11 @@ _description = "";
 _currentUnit = missionNamespace getVariable _unit;
 _waitTime = _currentUnit select QUERYUNITTIME;
 _description = _currentUnit select QUERYUNITLABEL;
+_faction = _currentUnit select QUERYUNITFACTION;
+
+if ((_description == "BRDM-2 (ATGM)") && (_faction == "Insurgents")) then {
+	_description = "BRDM-2 (Igla AA)";
+};
 
 _type = typeOf _building;
 _index = (missionNamespace getVariable Format ["WFBE_%1STRUCTURENAMES",sideJoinedText]) find _type;
