@@ -1,6 +1,6 @@
 "WFBE_Client_PV_SupplyMissionStarted" addPublicVariableEventHandler {
     (_this select 1) spawn {
-        private ['_associatedSupplyTruck', '_associatedSourceTown', '_sidePlayer', '_friendlyCommandCenterInProximity','_playerObject','_match','_currentSupplyTruckDriverLeader','_playerIsDrivingSupplyTruck','_playerisInProximityOfSupplyTruck'];
+        private ['_associatedSupplyTruck', '_associatedSourceTown', '_sidePlayer','_iteratedObject','_friendlyCommandCenterInProximity','_playerObject','_match','_currentSupplyTruckDriverLeader','_playerIsDrivingSupplyTruck','_playerisInProximityOfSupplyTruck'];
         _playerObject = objNull;
         _associatedSupplyTruck = _this select 1;
         _associatedSourceTown = _this select 2;
@@ -29,7 +29,7 @@
                     diag_log format ["_associatedSupplyTruck: %1, leader group: %2, getPlayerUID leader group _associatedSupplyTruck: %3, _iteratedPlayerUID: %4, _playerObject: %5", _associatedSupplyTruck, leader group _associatedSupplyTruck, getPlayerUID leader group _associatedSupplyTruck, _iteratedPlayerUID, _playerObject];
                     
                     {
-                        _iteratedObject = _x select 0;
+                        _iteratedObject = _x;
 
                         if ((isPlayer leader group _iteratedObject) && (getPlayerUID (leader group _iteratedObject) == _iteratedPlayerUID)) then {
                             _playerisInProximityOfSupplyTruck = true;
