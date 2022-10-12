@@ -28,7 +28,7 @@
 			_i = _i + 1;
 		} forEach WFBE_SE_PLAYERLIST;
 
-		if (_matchFound) then {
+		if (_matchFound && !(isNull _playerObject)) then {
 			WFBE_SE_PLAYERLIST set [_arrayPosMatch, [_playerObject, _currentPlayerUID]];
 		} else {
 			WFBE_SE_PLAYERLIST set [count WFBE_SE_PLAYERLIST, [_playerObject, _currentPlayerUID]];
