@@ -1,6 +1,6 @@
 "WFBE_Client_PV_SupplyMissionStarted" addPublicVariableEventHandler {
     (_this select 1) spawn {
-        private ['_associatedSupplyTruck', '_associatedSourceTown', '_sidePlayer', '_friendlyCommandCenterInProximity','_playerObject','_match'];
+        private ['_associatedSupplyTruck', '_associatedSourceTown', '_sidePlayer', '_friendlyCommandCenterInProximity','_playerObject','_match','_currentSupplyTruckDriverLeader'];
         _playerObject = objNull;
         _associatedSupplyTruck = _this select 1;
         _associatedSourceTown = _this select 2;
@@ -14,7 +14,7 @@
         while { alive _associatedSupplyTruck } do {
 			{
        			if (_x isKindOf "Base_WarfareBUAVterminal") then {
-            	_friendlyCommandCenterInProximity = true;
+            	    _friendlyCommandCenterInProximity = true;
         		};
     		} forEach (nearestObjects [(getPos _associatedSupplyTruck), [], 100]);
 
