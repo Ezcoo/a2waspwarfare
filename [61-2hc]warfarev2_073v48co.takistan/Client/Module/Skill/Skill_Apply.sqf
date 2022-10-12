@@ -46,7 +46,7 @@ switch (WFBE_SK_V_Type) do {
 			false,
 			true,
 			"",
-			"(player distance (call GetClosestFriendlyLocation) < 70) && (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF'])"
+			"(player distance (call GetClosestFriendlyLocation) < 70) && (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF', 'UralSupply_TK_EP1', 'MtvrSupply_DES_EP1'])"
 		];
 
 		/* Lockpicking Ability */
