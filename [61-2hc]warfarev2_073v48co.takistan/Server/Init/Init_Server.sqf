@@ -580,4 +580,6 @@ waitUntil {time > 0};
 call WFBE_CO_FNC_InitAFKkickHandler;
 [] execVM "Server\Module\serverFPS\monitorServerFPS.sqf";
 
+WFBE_SE_PLAYERLIST = [[objNull, "0"]];
+
 {_x Spawn WFBE_SE_FNC_VoteForCommander} forEach WFBE_PRESENTSIDES;

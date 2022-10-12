@@ -208,6 +208,7 @@ WFBE_Client_IsRespawning = false;
 WFBE_Client_LastGroupJoinRequest = -5000;
 WFBE_Client_PendingRequests = [];
 WFBE_Client_PendingRequests_Accepted = [];
+WFBE_Client_SupplyMissionActive = false;
 
 commanderTeam = objNull;
 buildingMarker = 0;
