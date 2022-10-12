@@ -158,7 +158,8 @@ _u = _u		+ ['M1129_MC_EP1'];
 _u = _u		+ ['M1135_ATGMV_EP1'];
 _u = _u		+ ['M1128_MGS_EP1'];
 _u = _u		+ ['M1133_MEV_EP1'];
-if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['MtvrSupply_DES_EP1']};
+// if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {
+_u = _u		+ ['MtvrSupply_DES_EP1'];
 if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_BAF") > 0) then {
 	_u = _u		+ ['BAF_ATV_W'];
 	_u = _u		+ ['BAF_Offroad_W'];
