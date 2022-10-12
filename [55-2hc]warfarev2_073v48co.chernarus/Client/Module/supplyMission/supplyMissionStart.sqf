@@ -9,7 +9,7 @@ _supplyMissionAlreadyActiveInTown = _sourceTown getVariable "supplyMissionCoolDo
 
 if (_supplyMissionAlreadyActiveInTown) exitWith {
     diag_log format ["ERROR: Supply mission happened already during the last 30 minutes in %1!", _sourceTown];
-    format ["This town doesn't have enough supplies to be collected yet! You can start a supply mission in towns that have + added after their SV on map."] call GroupChatMessage;
+    format ["This town doesn't have enough supplies to be collected yet! You can start a supply mission in towns that have [+SUPPLY] added after their SV on map."] call GroupChatMessage;
 };
 
 if (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF']) then {
