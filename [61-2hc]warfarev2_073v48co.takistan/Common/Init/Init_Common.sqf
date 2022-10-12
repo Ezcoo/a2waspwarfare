@@ -23,6 +23,7 @@ FireArtillery = Compile preprocessFileLineNumbers "Common\Functions\Common_FireA
 GetAIDigit = Compile preprocessFileLineNumbers "Common\Functions\Common_GetAIDigit.sqf";
 GetClosestLocation = Compile preprocessFileLineNumbers "Common\Functions\Common_GetClosestLocation.sqf";
 GetClosestLocationBySide = Compile preprocessFileLineNumbers "Common\Functions\Common_GetClosestLocationBySide.sqf";
+GetClosestFriendlyLocation = Compile preprocessFileLineNumbers "Common\Functions\Common_GetClosestFriendlyTown.sqf";
 GetCommanderTeam = Compile preprocessFileLineNumbers "Common\Functions\Common_GetCommanderTeam.sqf";
 GetConfigInfo = Compile preprocessFileLineNumbers "Common\Functions\Common_GetConfigInfo.sqf";
 GetFactories = Compile preprocessFileLineNumbers "Common\Functions\Common_GetFactories.sqf";
