@@ -28,39 +28,21 @@ if (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 
     */
 };
 
-[_associatedSupplyTruck, _sourceTown] spawn {
+_associatedSupplyTruckIsCursorTarget = false;
 
-    _associatedSupplyTruckSpawn = _this select 0;
-    _sourceTownSpawn = _this select 1;
-    WFBE_C_VAR_FRIENDLYCOMMANDCENTERINPROXIMITY = false;
-
-    while { alive _associatedSupplyTruckSpawn } do {
-            
-            sleep 2;
-
-            [_associatedSupplyTruckSpawn] execVM "Client\Module\supplyMission\monitorCCProximity.sqf";
-
-            _associatedSupplyTruckIsCursorTarget = false;
-
-            if (cursorTarget == _associatedSupplyTruckSpawn) then {
-                _associatedSupplyTruckIsCursorTarget = true;
-            };
-
-            _playerActionIDSpawn = -1;
-
-            if (WFBE_C_VAR_FRIENDLYCOMMANDCENTERINPROXIMITY && _associatedSupplyTruckIsCursorTarget) exitWith {
-                _playerActionIDSpawn = player addAction [
-                    "<t color='#00e83e'>" + 'UNLOAD SUPPLIES FROM TRUCK' + "</t>",
-			        'Client\Module\supplyMission\supplyMissionComplete.sqf',
-                    [_associatedSupplyTruckSpawn],
-                    70,
-                    false,
-                    true,
-                    "",
-                    "(WFBE_C_VAR_FRIENDLYCOMMANDCENTERINPROXIMITY && _associatedSupplyTruckIsCursorTarget)"
-                ];
-            };
-
-    };
-
+if (cursorTarget == _associatedSupplyTruck) then {
+    _associatedSupplyTruckIsCursorTarget = true;
 };
+
+[_associatedSupplyTruck] execVM "Client\Module\supplyMission\monitorCCProximity.sqf";
+
+player addAction [
+    "<t color='#00e83e'>" + 'UNLOAD SUPPLIES FROM TRUCK' + "</t>",
+    'Client\Module\supplyMission\supplyMissionComplete.sqf',
+    _associatedSupplyTruck,
+    70,
+    false,
+    true,
+    "",
+    "(WFBE_C_VAR_FRIENDLYCOMMANDCENTERINPROXIMITY && _associatedSupplyTruckIsCursorTarget)"
+];
