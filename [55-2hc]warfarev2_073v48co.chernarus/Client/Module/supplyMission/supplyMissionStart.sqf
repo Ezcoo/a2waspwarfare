@@ -1,6 +1,7 @@
 private ['_sourceTown', '_TownSupplyLastMission', '_associatedSupplyTruck', '_supplyAmount','_supplyMissionAlreadyActiveInTown'];
 
 _sourceTown = call GetClosestFriendlyLocation;
+_associatedSupplyTruck = objNull;
 
 missionNamespace setVariable ["WFBE_Client_PV_IsSupplyMissionActiveInTown", [player, _sourceTown]];
 publicVariableServer "WFBE_Client_PV_IsSupplyMissionActiveInTown";
@@ -58,12 +59,12 @@ if (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 
                     false,
                     true,
                     "",
-                    "true"
+                    "(_friendlyCommandCenterInProximity && _associatedSupplyTruckIsCursorTarget)"
                 ];
-            } else {
-                if (_playerActionIDSpawn != -1) then {
-                    player removeAction _playerActionIDSpawn;
-                };
             };
+
+        };
+
     };
+    
 };
