@@ -50,7 +50,7 @@ if (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 
 
             _playerActionIDSpawn = -1;
 
-            if (_friendlyCommandCenterInProximity && _associatedSupplyTruckIsCursorTarget) then {
+            if (_friendlyCommandCenterInProximity && _associatedSupplyTruckIsCursorTarget) exitWith {
                 _playerActionIDSpawn = player addAction [
                     "<t color='#00e83e'>" + 'UNLOAD SUPPLIES FROM TRUCK' + "</t>",
 			        'Client\Module\supplyMission\supplyMissionComplete.sqf',
@@ -66,5 +66,5 @@ if (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 
         };
 
     };
-    
+
 };
