@@ -1,6 +1,6 @@
 private ['_associatedSupplyTruck'];
 
-_associatedSupplyTruck = _this;
+_associatedSupplyTruck = _this select 0;
 
 while { alive _associatedSupplyTruck } do {
 
