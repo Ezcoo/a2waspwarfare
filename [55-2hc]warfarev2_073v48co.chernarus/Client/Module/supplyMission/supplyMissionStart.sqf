@@ -43,10 +43,10 @@ player addAction [
     false,
     true,
     "",
-    "(WFBE_C_VAR_FRIENDLYCOMMANDCENTERINPROXIMITY && (cursorTarget == _associatedSupplyTruck))"
+    "(WFBE_CL_FNC_CheckCCProximity && (cursorTarget == _associatedSupplyTruck))"
 ];
 
 diag_log format ["SupplyMissionStart: cursorTarget == _associatedSupplyTruck: %1", (cursorTarget == _associatedSupplyTruck)];
-diag_log format ["SupplyMissionStart: WFBE_C_VAR_FRIENDLYCOMMANDCENTERINPROXIMITY: %1", WFBE_C_VAR_FRIENDLYCOMMANDCENTERINPROXIMITY];
+diag_log format ["SupplyMissionStart: WFBE_CL_FNC_CheckCCProximity: %1", WFBE_CL_FNC_CheckCCProximity];
 
 diag_log "SupplyMissionStart: PHASE THREE";
