@@ -12,6 +12,8 @@
         _playerisInProximityOfSupplyTruck = false;
         
         _match = false;
+        
+        /*
 
         while { alive _associatedSupplyTruck } do {
             
@@ -63,5 +65,8 @@
             };
 
         };
+
+        */
+
     };
 };
