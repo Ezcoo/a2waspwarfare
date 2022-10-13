@@ -22,12 +22,11 @@ if (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 
 
     format ["You loaded S %1 to your truck from %2. Note that supplies from one town only fit in your truck at a time!", _supplyAmount, str (_sourceTown)] call GroupChatMessage;
 
-    /*
     WFBE_Client_PV_SupplyMissionStarted = [player, WFBE_CL_VAR_ASSOCIATED_SUPPLY_TRUCK, _sourceTown, sideJoined];
     publicVariableServer "WFBE_Client_PV_SupplyMissionStarted";
-    */
+    
 };
-
+/*
 diag_log "SupplyMissionStart: PHASE ONE";
 
 diag_log "SupplyMissionStart: PHASE TWO";
@@ -47,5 +46,4 @@ diag_log format ["SupplyMissionStart: cursorTarget == WFBE_CL_VAR_ASSOCIATED_SUP
 diag_log format ["SupplyMissionStart: WFBE_CL_FNC_CheckCCProximity: %1", WFBE_CL_FNC_CheckCCProximity];
 
 diag_log "SupplyMissionStart: PHASE THREE";
-
-(count (nearestObjects [(getPos WFBE_CL_VAR_ASSOCIATED_SUPPLY_TRUCK), ['Base_WarfareBUAVterminal'], 100]) > 0)
+*/
