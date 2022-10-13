@@ -13,6 +13,8 @@
         
         _match = false;
 
+        diag_log format ["Player %1 started supply mission in town %2.", (name leader group _playerObject), _associatedSourceTown];
+
         while { alive _associatedSupplyTruck } do {
             
             sleep 2;
