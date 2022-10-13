@@ -1,7 +1,7 @@
 private ['_sourceTown', '_TownSupplyLastMission', '_associatedSupplyTruck', '_supplyAmount','_supplyMissionAlreadyActiveInTown'];
 
 _sourceTown = call GetClosestFriendlyLocation;
-_associatedSupplyTruck = objNull;
+WFBE_CL_VAR_ASSOCIATED_SUPPLY_TRUCK = objNull;
 
 missionNamespace setVariable ["WFBE_Client_PV_IsSupplyMissionActiveInTown", [player, _sourceTown]];
 publicVariableServer "WFBE_Client_PV_IsSupplyMissionActiveInTown";
@@ -14,16 +14,16 @@ if (_supplyMissionAlreadyActiveInTown) exitWith {
 };
 
 if (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF', 'UralSupply_TK_EP1', 'MtvrSupply_DES_EP1']) then {
-    _associatedSupplyTruck = cursorTarget;
-    _associatedSupplyTruck setVariable ["SupplyFromTown", _sourceTown, true];
+    WFBE_CL_VAR_ASSOCIATED_SUPPLY_TRUCK = cursorTarget;
+    WFBE_CL_VAR_ASSOCIATED_SUPPLY_TRUCK setVariable ["SupplyFromTown", _sourceTown, true];
 
     _supplyAmount = (_sourceTown getVariable "supplyValue") * WFBE_C_ECONOMY_SUPPLY_MISSION_MULTIPLIER;
-    _associatedSupplyTruck setVariable ["SupplyAmount", _supplyAmount, true];
+    WFBE_CL_VAR_ASSOCIATED_SUPPLY_TRUCK setVariable ["SupplyAmount", _supplyAmount, true];
 
     format ["You loaded S %1 to your truck from %2. Note that supplies from one town only fit in your truck at a time!", _supplyAmount, str (_sourceTown)] call GroupChatMessage;
 
     /*
-    WFBE_Client_PV_SupplyMissionStarted = [player, _associatedSupplyTruck, _sourceTown, sideJoined];
+    WFBE_Client_PV_SupplyMissionStarted = [player, WFBE_CL_VAR_ASSOCIATED_SUPPLY_TRUCK, _sourceTown, sideJoined];
     publicVariableServer "WFBE_Client_PV_SupplyMissionStarted";
     */
 };
@@ -35,15 +35,17 @@ diag_log "SupplyMissionStart: PHASE TWO";
 player addAction [
     "<t color='#00e83e'>" + 'UNLOAD SUPPLIES FROM TRUCK' + "</t>",
     'Client\Module\supplyMission\supplyMissionComplete.sqf',
-    [_associatedSupplyTruck],
-    80,
+    [WFBE_CL_VAR_ASSOCIATED_SUPPLY_TRUCK],
+    70,
     false,
     true,
     "",
-    "(count (nearestObjects [(getPos _associatedSupplyTruck), ['Base_WarfareBUAVterminal'], 100]) > 0) && (cursorTarget == _associatedSupplyTruck)"
+    "(count (nearestObjects [(getPos WFBE_CL_VAR_ASSOCIATED_SUPPLY_TRUCK), ['Base_WarfareBUAVterminal'], 100]) > 0) && (cursorTarget == WFBE_CL_VAR_ASSOCIATED_SUPPLY_TRUCK)"
 ];
 
-diag_log format ["SupplyMissionStart: cursorTarget == _associatedSupplyTruck: %1", (cursorTarget == _associatedSupplyTruck)];
+diag_log format ["SupplyMissionStart: cursorTarget == WFBE_CL_VAR_ASSOCIATED_SUPPLY_TRUCK: %1", (cursorTarget == WFBE_CL_VAR_ASSOCIATED_SUPPLY_TRUCK)];
 diag_log format ["SupplyMissionStart: WFBE_CL_FNC_CheckCCProximity: %1", WFBE_CL_FNC_CheckCCProximity];
 
 diag_log "SupplyMissionStart: PHASE THREE";
+
+(count (nearestObjects [(getPos WFBE_CL_VAR_ASSOCIATED_SUPPLY_TRUCK), ['Base_WarfareBUAVterminal'], 100]) > 0)
