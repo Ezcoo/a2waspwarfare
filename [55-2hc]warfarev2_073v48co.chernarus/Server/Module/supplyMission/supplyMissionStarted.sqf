@@ -41,9 +41,12 @@
 
                     _playerIsDrivingSupplyTruck = ((getPlayerUID (leader group _associatedSupplyTruck)) == _iteratedPlayerUID);
 
-                    if (_playerIsDrivingSupplyTruck) then {
-                        _playerObject = _x select 0;
-                        diag_log format ["_playerObject (_playerIsDrivingSupplyTruck): %1", _playerObject];
+                    if (_playerIsDrivingSupplyTruck && (isNull _playerObject)) then {
+                        _iteratedObjectDriver = _x select 0;
+                        if (!(isNull _iteratedObjectDriver)) then {
+                            _playerObject = _iteratedObjectDriver;
+                        };
+                        diag_log format ["_playerObject (iteratedObjectDriver): %1", _playerObject];
                     };
                 } forEach (WFBE_SE_PLAYERLIST);
 
