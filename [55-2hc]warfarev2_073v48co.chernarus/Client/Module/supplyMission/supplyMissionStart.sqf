@@ -33,7 +33,7 @@ if (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 
 player addAction [
     "<t color='#00e83e'>" + 'UNLOAD SUPPLIES FROM TRUCK' + "</t>",
     'Client\Module\supplyMission\supplyMissionComplete.sqf',
-    _associatedSupplyTruck,
+    [_associatedSupplyTruck],
     70,
     false,
     true,
