@@ -108,6 +108,7 @@ WFBE_CL_FNC_UI_Respawn_Selector = Compile preprocessFileLineNumbers "Client\Func
 WFBE_CL_FNC_SupplyMissionCompletedMessage = Call Compile preprocessFileLineNumbers "Client\Module\supplyMission\supplyMissionCompletedMessage.sqf";
 WFBE_CL_FNC_SupplyMissionStart = Call Compile preprocessFileLineNumbers "Client\Module\supplyMission\supplyMissionStart.sqf";
 WFBE_CL_FNC_TownSupplyStatus = Call Compile preprocessFileLineNumbers "Client\Module\supplyMission\townSupplyStatus.sqf";
+WFBE_CL_FNC_CheckCCProximity = Compile preprocessFileLineNumbers "Client\Module\supplyMission\checkCCProximity.sqf";
 WFBE_CL_FNC_ReceiverMASHmarker = Call Compile preprocessFileLineNumbers "Client\Module\MASH\receiverMASHmarker.sqf";
 
 //Affichage Rubber maps:
@@ -209,6 +210,7 @@ WFBE_Client_LastGroupJoinRequest = -5000;
 WFBE_Client_PendingRequests = [];
 WFBE_Client_PendingRequests_Accepted = [];
 WFBE_Client_SupplyMissionActive = false;
+WFBE_C_VAR_FRIENDLYCOMMANDCENTERINPROXIMITY = false;
 
 commanderTeam = objNull;
 buildingMarker = 0;
