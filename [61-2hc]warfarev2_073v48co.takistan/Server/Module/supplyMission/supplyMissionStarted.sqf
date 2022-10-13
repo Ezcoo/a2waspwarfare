@@ -1,15 +1,15 @@
 "WFBE_Client_PV_SupplyMissionStarted" addPublicVariableEventHandler {
     (_this select 1) spawn {
         private ['_associatedSupplyTruck', '_associatedSourceTown', '_sidePlayer','_iteratedObject','_friendlyCommandCenterInProximity','_playerObject','_match','_currentSupplyTruckDriverLeader','_playerIsDrivingSupplyTruck','_playerisInProximityOfSupplyTruck'];
-        _playerObject = objNull;
+        _playerObject = _this select 0;
         _associatedSupplyTruck = _this select 1;
         _associatedSourceTown = _this select 2;
 
         _associatedSourceTown setVariable ['LastSupplyMissionRun', time];
 
         _friendlyCommandCenterInProximity = false;
-        _playerIsDrivingSupplyTruck = false;
         _playerisInProximityOfSupplyTruck = false;
+        _playerIsDrivingSupplyTruck = false;
         
         _match = false;
 
@@ -30,21 +30,26 @@
                     
                     {
                         _iteratedObject = _x;
+                        _leaderGroupIteratedObject = leader group _iteratedObject;
 
-                        if ((isPlayer leader group _iteratedObject) && (getPlayerUID (leader group _iteratedObject) == _iteratedPlayerUID)) then {
+                        if ((isPlayer _leaderGroupIteratedObject) && (getPlayerUID (_leaderGroupIteratedObject) == _iteratedPlayerUID)) then {
                             _playerisInProximityOfSupplyTruck = true;
-                            _playerObject = _iteratedObject;
-                            diag_log format ["_iteratedObject (_playerIsInProximityOfSupplyTruck): %1", _iteratedObject];
+                            _playerObject = _leaderGroupIteratedObject;
+                            diag_log format ["_playerIsInProximityOfSupplyTruck, _iteratedObject: %1, _leaderGroupIteratedObject: %2", _iteratedObject, _leaderGroupIteratedObject];
                         };
-                    } forEach (nearestObjects [(getPos _associatedSupplyTruck), [], 30]);
+                    } forEach (nearestObjects [(getPos _associatedSupplyTruck), [], 8]);
 
 
                     _playerIsDrivingSupplyTruck = ((getPlayerUID (leader group _associatedSupplyTruck)) == _iteratedPlayerUID);
 
-                    if (_playerIsDrivingSupplyTruck) then {
-                        _playerObject = _x select 0;
-                        diag_log format ["_playerObject (_playerIsDrivingSupplyTruck): %1", _playerObject];
+                    if (_playerIsDrivingSupplyTruck && (isNull _playerObject)) then {
+                        _iteratedObjectDriver = _x select 0;
+                        if (!(isNull _iteratedObjectDriver)) then {
+                            _playerObject = _iteratedObjectDriver;
+                        };
+                        diag_log format ["_playerObject (_iteratedObjectDriver): %1", _playerObject];
                     };
+                    
                 } forEach (WFBE_SE_PLAYERLIST);
 
                 diag_log format ["_playerObject/_currentSupplyTruckDriverLeader: %1", _playerObject];
@@ -58,5 +63,6 @@
             };
 
         };
+
     };
 };
