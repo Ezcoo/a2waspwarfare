@@ -39,12 +39,14 @@ player addAction [
     "<t color='#00e83e'>" + 'UNLOAD SUPPLIES FROM TRUCK' + "</t>",
     'Client\Module\supplyMission\supplyMissionComplete.sqf',
     [_associatedSupplyTruck],
-    70,
+    80,
     false,
     true,
     "",
     "(WFBE_C_VAR_FRIENDLYCOMMANDCENTERINPROXIMITY && (cursorTarget == _associatedSupplyTruck))"
 ];
 
+diag_log format ["SupplyMissionStart: cursorTarget == _associatedSupplyTruck: %1", (cursorTarget == _associatedSupplyTruck)];
+diag_log format ["SupplyMissionStart: WFBE_C_VAR_FRIENDLYCOMMANDCENTERINPROXIMITY: ", WFBE_C_VAR_FRIENDLYCOMMANDCENTERINPROXIMITY];
 
 diag_log "SupplyMissionStart: PHASE THREE";
