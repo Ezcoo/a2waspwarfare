@@ -28,7 +28,12 @@ if (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 
     */
 };
 
+diag_log "SupplyMissionStart: PHASE ONE";
+
 [_associatedSupplyTruck] execVM "Client\Module\supplyMission\monitorCCProximity.sqf";
+
+
+diag_log "SupplyMissionStart: PHASE TWO";
 
 player addAction [
     "<t color='#00e83e'>" + 'UNLOAD SUPPLIES FROM TRUCK' + "</t>",
@@ -40,3 +45,6 @@ player addAction [
     "",
     "(WFBE_C_VAR_FRIENDLYCOMMANDCENTERINPROXIMITY && (cursorTarget == _associatedSupplyTruck))"
 ];
+
+
+diag_log "SupplyMissionStart: PHASE THREE";
