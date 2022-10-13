@@ -30,9 +30,6 @@ if (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 
 
 diag_log "SupplyMissionStart: PHASE ONE";
 
-[_associatedSupplyTruck] execVM "Client\Module\supplyMission\monitorCCProximity.sqf";
-
-
 diag_log "SupplyMissionStart: PHASE TWO";
 
 player addAction [
@@ -43,7 +40,7 @@ player addAction [
     false,
     true,
     "",
-    "(WFBE_CL_FNC_CheckCCProximity && (cursorTarget == _associatedSupplyTruck))"
+    "(count (nearestObjects [(getPos _associatedSupplyTruck), ['Base_WarfareBUAVterminal'], 100]) > 0) && (cursorTarget == _associatedSupplyTruck)"
 ];
 
 diag_log format ["SupplyMissionStart: cursorTarget == _associatedSupplyTruck: %1", (cursorTarget == _associatedSupplyTruck)];
