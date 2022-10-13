@@ -28,12 +28,6 @@ if (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 
     */
 };
 
-_associatedSupplyTruckIsCursorTarget = false;
-
-if (cursorTarget == _associatedSupplyTruck) then {
-    _associatedSupplyTruckIsCursorTarget = true;
-};
-
 [_associatedSupplyTruck] execVM "Client\Module\supplyMission\monitorCCProximity.sqf";
 
 player addAction [
@@ -44,5 +38,5 @@ player addAction [
     false,
     true,
     "",
-    "(WFBE_C_VAR_FRIENDLYCOMMANDCENTERINPROXIMITY && _associatedSupplyTruckIsCursorTarget)"
+    "(WFBE_C_VAR_FRIENDLYCOMMANDCENTERINPROXIMITY && (cursorTarget == _associatedSupplyTruck))"
 ];
