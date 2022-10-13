@@ -24,3 +24,46 @@ if (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 
     WFBE_Client_PV_SupplyMissionStarted = [player, _associatedSupplyTruck, _sourceTown, sideJoined];
     publicVariableServer "WFBE_Client_PV_SupplyMissionStarted";
 };
+
+[_associatedSupplyTruck, _sourceTown] spawn {
+
+    _associatedSupplyTruckSpawn = _this select 0;
+    _sourceTownSpawn = _this select 1;
+    _friendlyCommandCenterInProximity = false;
+
+    while { alive _associatedSupplyTruckSpawn } do {
+            
+            sleep 2;
+			
+            {
+       			if (_x isKindOf "Base_WarfareBUAVterminal") then {
+            	    _friendlyCommandCenterInProximity = true;
+        		};
+    		} forEach (nearestObjects [(getPos _associatedSupplyTruckSpawn), [], 100]);
+
+            _associatedSupplyTruckIsCursorTarget = false;
+
+            if (cursorTarget == _associatedSupplyTruckSpawn) then {
+                _associatedSupplyTruckIsCursorTarget = true;
+            };
+
+            _playerActionIDSpawn = -1;
+
+            if (_friendlyCommandCenterInProximity && _associatedSupplyTruckIsCursorTarget) then {
+                _playerActionIDSpawn = player addAction [
+                    "<t color='#00e83e'>" + 'UNLOAD SUPPLIES FROM TRUCK' + "</t>",
+			        'Client\Module\supplyMission\supplyMissionComplete.sqf',
+                    [_associatedSupplyTruckSpawn],
+                    70,
+                    false,
+                    true,
+                    "",
+                    "true"
+                ];
+            } else {
+                if (_playerActionIDSpawn != -1) then {
+                    player removeAction _playerActionIDSpawn;
+                };
+            };
+    };
+};

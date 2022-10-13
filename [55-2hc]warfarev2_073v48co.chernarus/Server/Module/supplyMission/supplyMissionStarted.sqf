@@ -30,11 +30,12 @@
                     
                     {
                         _iteratedObject = _x;
+                        _leaderGroupIteratedObject = leader group _iteratedObject;
 
-                        if ((isPlayer leader group _iteratedObject) && (getPlayerUID (leader group _iteratedObject) == _iteratedPlayerUID)) then {
+                        if ((isPlayer _leaderGroupIteratedObject) && (getPlayerUID (_leaderGroupIteratedObject) == _iteratedPlayerUID)) then {
                             _playerisInProximityOfSupplyTruck = true;
                             _playerObject = _iteratedObject;
-                            diag_log format ["_iteratedObject (_playerIsInProximityOfSupplyTruck): %1", _iteratedObject];
+                            diag_log format ["_iteratedObject (_playerIsInProximityOfSupplyTruck): %1, _leaderGroupIteratedObject: %2", _iteratedObject, _leaderGroupIteratedObject];
                         };
                     } forEach (nearestObjects [(getPos _associatedSupplyTruck), [], 30]);
 
@@ -48,6 +49,7 @@
                         };
                         diag_log format ["_playerObject (iteratedObjectDriver): %1", _playerObject];
                     };
+                    
                 } forEach (WFBE_SE_PLAYERLIST);
 
                 diag_log format ["_playerObject/_currentSupplyTruckDriverLeader: %1", _playerObject];
