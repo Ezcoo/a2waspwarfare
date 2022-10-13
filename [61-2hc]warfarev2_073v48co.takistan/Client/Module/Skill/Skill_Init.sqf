@@ -29,7 +29,7 @@ WFBE_SK_V_LastUse_Spot = -1200;
 /* Skills Timeout */
 WFBE_SK_V_Reload_Repair = 25;
 WFBE_SK_V_Reload_LR = 300;
-WFBE_SK_V_Reload_MASH = 600;
+WFBE_SK_V_Reload_MASH = 1800;
 WFBE_SK_V_Reload_Lockpick = 5;
 WFBE_SK_V_Reload_Spot = 8;
 
