@@ -3,12 +3,16 @@ private ["_playerStats","_playerScore","_playerPrevStats","_playerPrevScoreTotal
 _sleep = 0.02;
 _mainSleep = 60;
 
+["INFORMATION", "CountPlayerScores.sqf got execVMd!"] Call WFBE_CO_FNC_LogContent;
+
 while {!WFBE_GameOver} do {
 
+	["INFORMATION", "CountPlayerScores.sqf: starting main loop..."] Call WFBE_CO_FNC_LogContent;
 	uiSleep _mainSleep;
 
 	{
 		if (isPlayer _x && hasInterface) then {
+			["INFORMATION", "isPlayer: true && hasInterface: true"] Call WFBE_CO_FNC_LogContent;
 			_playerScore = score _x;
 			_playerPrevStats = ["Retrieve", getPlayerUID _x] call WFBE_SE_FNC_CallDatabase;
 			_playerPrevScoreTotal = _playerPrevStats select 0;
@@ -29,7 +33,7 @@ while {!WFBE_GameOver} do {
 
 			["INFORMATION", Format["CountPlayerScores.sqf: Calling database: STORE: player UID: %1, _playerScoreDiff: %2", getPlayerUID _x, _playerScoreDiff]] Call WFBE_CO_FNC_LogContent;
 			_result = ["Store", format ["%1,%2", getPlayerUID _x, _playerScoreDiff]] call WFBE_SE_FNC_CallDatabase;
-			["INFORMATION", "Called database!"] Call WFBE_CO_FNC_LogContent;
+			["INFORMATION", "CountPlayerScores.sqf: Called database!"] Call WFBE_CO_FNC_LogContent;
 		};
 
 		uiSleep _sleep;
