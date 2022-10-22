@@ -36,8 +36,6 @@ while {!WFBE_GameOver} do {
 			["INFORMATION", "CountPlayerScores.sqf: Called database!"] Call WFBE_CO_FNC_LogContent;
 		};
 
-		uiSleep _sleep;
-
 	} forEach allUnits;
 
 };
