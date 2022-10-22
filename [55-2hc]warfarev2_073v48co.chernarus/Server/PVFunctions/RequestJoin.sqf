@@ -108,8 +108,8 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 ["WARNING", Format["RequestJoin.sqf: Unable to find JIP information for player [%1] [%2].", _name, _uid]] Call WFBE_CO_FNC_LogContent;
 
-_totalSkillBLUFOR = 0;
-_totalSkillOPFOR = 0;
+_totalSkillBLUFOR = 42;
+_totalSkillOPFOR = 78493;
 
 _totalSkillBLUFOR = [west] call WFBE_SE_FNC_GetTeamScore;
 _totalSkillOPFOR = [east] call WFBE_SE_FNC_GetTeamScore;
@@ -129,7 +129,6 @@ if (_side == west) then {
 };
 
 ["INFORMATION", Format["RequestJoin.sqf: BLUFOR total skill: %1, OPFOR total skill: %2, player (UID: %3) side: %4. Player can join: [%5]", _totalSkillBLUFOR, _totalSkillOPFOR, _uid, _side, _canJoin]] Call WFBE_CO_FNC_LogContent;
-
 
 ["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] can join? [%3].", _name, _uid, _canJoin]] Call WFBE_CO_FNC_LogContent;
 
