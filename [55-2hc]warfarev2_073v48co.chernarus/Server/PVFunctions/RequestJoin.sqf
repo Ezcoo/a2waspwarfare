@@ -1,4 +1,4 @@
-private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_playersinside","_playersinotherside"];
+private ["_canJoin","_get","_name","_player","_side","_sideOrigin","_uid","_skip","_otherside","_sidepros","_othersidepros","_playersinside","_playersinotherside","_totalSkillBLUFOR","_totalSkillOPFOR"];
 
 _player = _this select 0;
 _side = _this select 1;
@@ -29,6 +29,26 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 		_canJoin = true;
 
+		_totalSkillBLUFOR = 0;
+		_totalSkillOPFOR = 0;
+
+		_totalSkillBLUFOR = [west] call WFBE_SE_FNC_GetTeamScore;
+		_totalSkillOPFOR = [east] call WFBE_SE_FNC_GetTeamScore;
+
+		if (_side == west) then {
+			if (_totalSkillBLUFOR > _totalSkillOPFOR) then {
+				_canJoin = false;
+				["INFORMATION", Format["RequestJoin.sqf: BLUFOR total skill: %1, OPFOR total skill: %2, player (UID: %3) side: %4. Player can join: [%5]", _totalSkillBLUFOR, _totalSkillOPFOR, _uid, _side, _canJoin]] Call WFBE_CO_FNC_LogContent;
+			};
+		} else {
+			if (_side == east) then {
+				if (_totalSkillOPFOR > _totalSkillBLUFOR) then {
+					_canJoin = false;
+					["INFORMATION", Format["RequestJoin.sqf: BLUFOR total skill: %1, OPFOR total skill: %2, player (UID: %3) side: %4. Player can join: [%5]", _totalSkillBLUFOR, _totalSkillOPFOR, _uid, _side, _canJoin]] Call WFBE_CO_FNC_LogContent;
+				};
+			};
+		};
+
 	}else{
 		if (_sideOrigin != _side) then { //--- The joined side differs from the original one.
 
@@ -44,8 +64,27 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 } else {
 	["WARNING", Format["RequestJoin.sqf: Unable to find JIP information for player [%1] [%2].", _name, _uid]] Call WFBE_CO_FNC_LogContent;
-};
 
+	_totalSkillBLUFOR = 0;
+	_totalSkillOPFOR = 0;
+
+	_totalSkillBLUFOR = [west] call WFBE_SE_FNC_GetTeamScore;
+	_totalSkillOPFOR = [east] call WFBE_SE_FNC_GetTeamScore;
+
+	if (_side == west) then {
+		if (_totalSkillBLUFOR > _totalSkillOPFOR) then {
+			_canJoin = false;
+			["INFORMATION", Format["RequestJoin.sqf: BLUFOR total skill: %1, OPFOR total skill: %2, player (UID: %3) side: %4. Player can join: [%5]", _totalSkillBLUFOR, _totalSkillOPFOR, _uid, _side, _canJoin]] Call WFBE_CO_FNC_LogContent;
+		};
+	} else {
+		if (_side == east) then {
+			if (_totalSkillOPFOR > _totalSkillBLUFOR) then {
+				_canJoin = false;
+				["INFORMATION", Format["RequestJoin.sqf: BLUFOR total skill: %1, OPFOR total skill: %2, player (UID: %3) side: %4. Player can join: [%5]", _totalSkillBLUFOR, _totalSkillOPFOR, _uid, _side, _canJoin]] Call WFBE_CO_FNC_LogContent;
+			};
+		};
+	};
+};
 
 ["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] can join? [%3].", _name, _uid, _canJoin]] Call WFBE_CO_FNC_LogContent;
 
