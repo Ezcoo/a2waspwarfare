@@ -49,7 +49,7 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 			};
 		};
 
-	}else{
+	} else {
 		if (_sideOrigin != _side) then { //--- The joined side differs from the original one.
 
 			_canJoin = false;
@@ -57,8 +57,28 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 			[nil, "LocalizeMessage", ['Teamswap',_name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_SendToClients; //--- Inform the clients about the teamswap.
 
 			["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamswapping, original side [%3], joined side [%4].", _name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_LogContent;
-		}else {
+		} else {
 			_canJoin = true;
+
+			_totalSkillBLUFOR = 0;
+			_totalSkillOPFOR = 0;
+
+			_totalSkillBLUFOR = [west] call WFBE_SE_FNC_GetTeamScore;
+			_totalSkillOPFOR = [east] call WFBE_SE_FNC_GetTeamScore;
+
+			if (_side == west) then {
+				if (_totalSkillBLUFOR > _totalSkillOPFOR) then {
+					_canJoin = false;
+					["INFORMATION", Format["RequestJoin.sqf: BLUFOR total skill: %1, OPFOR total skill: %2, player (UID: %3) side: %4. Player can join: [%5]", _totalSkillBLUFOR, _totalSkillOPFOR, _uid, _side, _canJoin]] Call WFBE_CO_FNC_LogContent;
+				};
+			} else {
+				if (_side == east) then {
+					if (_totalSkillOPFOR > _totalSkillBLUFOR) then {
+						_canJoin = false;
+						["INFORMATION", Format["RequestJoin.sqf: BLUFOR total skill: %1, OPFOR total skill: %2, player (UID: %3) side: %4. Player can join: [%5]", _totalSkillBLUFOR, _totalSkillOPFOR, _uid, _side, _canJoin]] Call WFBE_CO_FNC_LogContent;
+					};
+				};
+			};
 		};
 	};
 
