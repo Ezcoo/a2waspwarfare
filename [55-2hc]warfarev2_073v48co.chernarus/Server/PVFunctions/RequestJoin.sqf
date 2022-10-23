@@ -73,10 +73,6 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 		} else {
 			_canJoin = true;
 		};
-	} else {
-			
-		_canJoin = true;
-
 	};
 
 } else {
