@@ -50,8 +50,8 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 	_totalSkillBLUFOR = 0;
 	_totalSkillOPFOR = 0;
 
-	_totalSkillBLUFOR = [west] call WFBE_SE_FNC_GetTeamScore;
-	_totalSkillOPFOR = [east] call WFBE_SE_FNC_GetTeamScore;
+	_totalSkillBLUFOR = [west, _uid] call WFBE_SE_FNC_GetTeamScore;
+	_totalSkillOPFOR = [east, _uid] call WFBE_SE_FNC_GetTeamScore;
 
 	if (_side == west) then {
 		if (_totalSkillBLUFOR > _totalSkillOPFOR) then {
@@ -71,30 +71,6 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 };
 
 ["WARNING", Format["RequestJoin.sqf: Unable to find JIP information for player [%1] [%2].", _name, _uid]] Call WFBE_CO_FNC_LogContent;
-
-_totalSkillBLUFOR = 42;
-_totalSkillOPFOR = 78493;
-
-_totalSkillBLUFOR = [west] call WFBE_SE_FNC_GetTeamScore;
-_totalSkillOPFOR = [east] call WFBE_SE_FNC_GetTeamScore;
-
-if (_side == west) then {
-	if (_totalSkillBLUFOR > _totalSkillOPFOR) then {
-		_canJoin = false;
-		["INFORMATION", Format["RequestJoin.sqf: BLUFOR total skill: %1, OPFOR total skill: %2, player (UID: %3) side: %4. Player can join: [%5]", _totalSkillBLUFOR, _totalSkillOPFOR, _uid, _side, _canJoin]] Call WFBE_CO_FNC_LogContent;
-		[nil, "LocalizeMessage", ['Teamstack',_name,_uid,_side]] Call WFBE_CO_FNC_SendToClients;
-	};
-} else {
-	if (_side == east) then {
-		if (_totalSkillOPFOR > _totalSkillBLUFOR) then {
-			_canJoin = false;
-			["INFORMATION", Format["RequestJoin.sqf: BLUFOR total skill: %1, OPFOR total skill: %2, player (UID: %3) side: %4. Player can join: [%5]", _totalSkillBLUFOR, _totalSkillOPFOR, _uid, _side, _canJoin]] Call WFBE_CO_FNC_LogContent;
-			[nil, "LocalizeMessage", ['Teamstack',_name,_uid,_side]] Call WFBE_CO_FNC_SendToClients;
-		};
-	};
-};
-
-["INFORMATION", Format["RequestJoin.sqf: BLUFOR total skill: %1, OPFOR total skill: %2, player (UID: %3) side: %4. Player can join: [%5]", _totalSkillBLUFOR, _totalSkillOPFOR, _uid, _side, _canJoin]] Call WFBE_CO_FNC_LogContent;
 
 ["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] can join? [%3].", _name, _uid, _canJoin]] Call WFBE_CO_FNC_LogContent;
 
