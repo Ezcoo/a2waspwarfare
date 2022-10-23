@@ -70,8 +70,6 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 	};
 };
 
-["WARNING", Format["RequestJoin.sqf: Unable to find JIP information for player [%1] [%2].", _name, _uid]] Call WFBE_CO_FNC_LogContent;
-
 ["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] can join? [%3].", _name, _uid, _canJoin]] Call WFBE_CO_FNC_LogContent;
 
 if (WF_A2_Vanilla) then {
