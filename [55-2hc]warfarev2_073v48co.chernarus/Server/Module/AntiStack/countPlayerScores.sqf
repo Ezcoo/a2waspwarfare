@@ -27,7 +27,7 @@ while {true} do {
 				_oldScore = 0;
 			};
 
-			missionNamespace setVariable format [["WFBE_CO_OLD_SCORE_PLAYER_%1", getPlayerUID _x], _playerScore];
+			missionNamespace setVariable [format["WFBE_CO_OLD_SCORE_PLAYER_%1", getPlayerUID _x], _playerScore];
 
 			_playerScoreDiff = _playerScore - _oldScore;
 			_playerNewScore = _playerPrevScoreTotal + _playerScoreDiff;
