@@ -20,9 +20,10 @@ if (_procedureName == "Store") then {
 };
 	
 ["INFORMATION", format ["CallDatabase.sqf: Called database with procedure: %1, parameters: %2, and got response: %3", _procedureName, _parameters, _response]] Call WFBE_CO_FNC_LogContent;
-_response = compile _response;
 
-if (typeName _response == "SCALAR") then {
+_response = call compile _response;
+
+if (typeName (_response select 0) == "SCALAR") then {
 	if (_response < 0) then {
 		if (_response == -1) then {
 			["ERROR", format ["CallDatabase.sqf: ERROR! Something went wrong with database, check it's error logs. Response code: %1", _response]] Call WFBE_CO_FNC_LogContent;
