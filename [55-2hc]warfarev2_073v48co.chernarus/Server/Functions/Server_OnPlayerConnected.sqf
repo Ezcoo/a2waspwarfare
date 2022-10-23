@@ -72,14 +72,22 @@ if ((missionNamespace getVariable "WFBE_C_AI_DELEGATION") == 1) then {
 
 //--- The player has joined for the first time.
 if (isNil '_get') exitWith {
-	/*
-		UID | Cash | Side | Current Side | flag of first connect on a session
-		The JIP system store the main informations about a client, the UID is used to track the player all along the session.
-	*/
-	missionNamespace setVariable [format["WFBE_JIP_USER%1",_uid], [_uid, 0, _sideJoined, _sideJoined, 0]];
+    /*
+        UID | Cash | Side | Current Side | flag of first connect on a session
+        The JIP system store the main informations about a client, the UID is used to track the player all along the session.
+    */
+        
+        _TimeRef = serverTime;
+        waitUntil {sleep 0.5; (!(missionNamespace getVariable [format ["WFBE_JIP_USER%1_CAN_ATTEMPT_JOIN", _uid], false])) || ((_TimeRef + 5) < serverTime)};
 
-	_team setVariable ["wfbe_funds", missionNamespace getVariable format ["WFBE_C_ECONOMY_FUNDS_START_%1", _sideJoined], true];
-	["INFORMATION", Format ["Server_PlayerConnected.sqf: Team [%1] Leader [%2] JIP Information have been stored for the first time.", _team, _uid]] Call WFBE_CO_FNC_LogContent;
+        if (missionNamespace getVariable [format ["WFBE_JIP_USER%1_CAN_ATTEMPT_JOIN", _uid], false]) then {
+          missionNamespace setVariable [format["WFBE_JIP_USER%1",_uid], [_uid, 0, _sideJoined, _sideJoined, 0]];
+
+      _team setVariable ["wfbe_funds", missionNamespace getVariable format ["WFBE_C_ECONOMY_FUNDS_START_%1", _sideJoined], true];
+      ["INFORMATION", Format ["Server_PlayerConnected.sqf: Team [%1] Leader [%2] JIP Information have been stored for the first time.", _team, _uid]] Call WFBE_CO_FNC_LogContent;
+        } else {
+          ["INFORMATION", Format ["Server_PlayerConnected.sqf: Team [%1] Leader [%2] JIP Information have not been stored because their join request was unsuccessful.", _team, _uid]] Call WFBE_CO_FNC_LogContent;
+        };
 };
 
 //--- The player has already joined the session previously, we just need to update the informations.
