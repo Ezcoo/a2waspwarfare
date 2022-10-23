@@ -8,11 +8,11 @@ _response = {};
 	["INFORMATION", format ["CallDatabase.sqf: Calling database with procedure: %1, parameters: %2.", _procedureName, _parameters]] Call WFBE_CO_FNC_LogContent;
 
 	if (_procedureName == "Retrieve") then {
-		_response = "A2WaspDatabaseRetrieve" callExtension format ["%1",_parameters];
+		_response = "A2WaspDatabase" callExtension format ["%1,%2","101",_parameters];
 	};
 
 	if (_procedureName == "Store") then {
-		_response = "A2WaspDatabaseStore" callExtension format ["%1",_parameters];
+		_response = "A2WaspDatabase" callExtension format ["%1,%2","202",_parameters];
 	};
 	
 	["INFORMATION", format ["CallDatabase.sqf: Called database with procedure: %1, parameters: %2, and got response: %3", _procedureName, _parameters, _response]] Call WFBE_CO_FNC_LogContent;
