@@ -29,26 +29,6 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 		_canJoin = true;
 
-		_totalSkillBLUFOR = 0;
-		_totalSkillOPFOR = 0;
-
-		_totalSkillBLUFOR = [west] call WFBE_SE_FNC_GetTeamScore;
-		_totalSkillOPFOR = [east] call WFBE_SE_FNC_GetTeamScore;
-
-		if (_side == west) then {
-			if (_totalSkillBLUFOR > _totalSkillOPFOR) then {
-				_canJoin = false;
-				["INFORMATION", Format["RequestJoin.sqf: BLUFOR total skill: %1, OPFOR total skill: %2, player (UID: %3) side: %4. Player can join: [%5]", _totalSkillBLUFOR, _totalSkillOPFOR, _uid, _side, _canJoin]] Call WFBE_CO_FNC_LogContent;
-			};
-		} else {
-			if (_side == east) then {
-				if (_totalSkillOPFOR > _totalSkillBLUFOR) then {
-					_canJoin = false;
-					["INFORMATION", Format["RequestJoin.sqf: BLUFOR total skill: %1, OPFOR total skill: %2, player (UID: %3) side: %4. Player can join: [%5]", _totalSkillBLUFOR, _totalSkillOPFOR, _uid, _side, _canJoin]] Call WFBE_CO_FNC_LogContent;
-				};
-			};
-		};
-
 	} else {
 		if (_sideOrigin != _side) then { //--- The joined side differs from the original one.
 
@@ -58,27 +38,9 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 			["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamswapping, original side [%3], joined side [%4].", _name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_LogContent;
 		} else {
+			
 			_canJoin = true;
 
-			_totalSkillBLUFOR = 0;
-			_totalSkillOPFOR = 0;
-
-			_totalSkillBLUFOR = [west] call WFBE_SE_FNC_GetTeamScore;
-			_totalSkillOPFOR = [east] call WFBE_SE_FNC_GetTeamScore;
-
-			if (_side == west) then {
-				if (_totalSkillBLUFOR > _totalSkillOPFOR) then {
-					_canJoin = false;
-					["INFORMATION", Format["RequestJoin.sqf: BLUFOR total skill: %1, OPFOR total skill: %2, player (UID: %3) side: %4. Player can join: [%5]", _totalSkillBLUFOR, _totalSkillOPFOR, _uid, _side, _canJoin]] Call WFBE_CO_FNC_LogContent;
-				};
-			} else {
-				if (_side == east) then {
-					if (_totalSkillOPFOR > _totalSkillBLUFOR) then {
-						_canJoin = false;
-						["INFORMATION", Format["RequestJoin.sqf: BLUFOR total skill: %1, OPFOR total skill: %2, player (UID: %3) side: %4. Player can join: [%5]", _totalSkillBLUFOR, _totalSkillOPFOR, _uid, _side, _canJoin]] Call WFBE_CO_FNC_LogContent;
-					};
-				};
-			};
 		};
 	};
 
@@ -95,12 +57,14 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 		if (_totalSkillBLUFOR > _totalSkillOPFOR) then {
 			_canJoin = false;
 			["INFORMATION", Format["RequestJoin.sqf: BLUFOR total skill: %1, OPFOR total skill: %2, player (UID: %3) side: %4. Player can join: [%5]", _totalSkillBLUFOR, _totalSkillOPFOR, _uid, _side, _canJoin]] Call WFBE_CO_FNC_LogContent;
+			[nil, "LocalizeMessage", ['Teamstack',_name,_uid,_side]] Call WFBE_CO_FNC_SendToClients;
 		};
 	} else {
 		if (_side == east) then {
 			if (_totalSkillOPFOR > _totalSkillBLUFOR) then {
 				_canJoin = false;
 				["INFORMATION", Format["RequestJoin.sqf: BLUFOR total skill: %1, OPFOR total skill: %2, player (UID: %3) side: %4. Player can join: [%5]", _totalSkillBLUFOR, _totalSkillOPFOR, _uid, _side, _canJoin]] Call WFBE_CO_FNC_LogContent;
+				[nil, "LocalizeMessage", ['Teamstack',_name,_uid,_side]] Call WFBE_CO_FNC_SendToClients;
 			};
 		};
 	};
@@ -118,12 +82,14 @@ if (_side == west) then {
 	if (_totalSkillBLUFOR > _totalSkillOPFOR) then {
 		_canJoin = false;
 		["INFORMATION", Format["RequestJoin.sqf: BLUFOR total skill: %1, OPFOR total skill: %2, player (UID: %3) side: %4. Player can join: [%5]", _totalSkillBLUFOR, _totalSkillOPFOR, _uid, _side, _canJoin]] Call WFBE_CO_FNC_LogContent;
+		[nil, "LocalizeMessage", ['Teamstack',_name,_uid,_side]] Call WFBE_CO_FNC_SendToClients;
 	};
 } else {
 	if (_side == east) then {
 		if (_totalSkillOPFOR > _totalSkillBLUFOR) then {
 			_canJoin = false;
 			["INFORMATION", Format["RequestJoin.sqf: BLUFOR total skill: %1, OPFOR total skill: %2, player (UID: %3) side: %4. Player can join: [%5]", _totalSkillBLUFOR, _totalSkillOPFOR, _uid, _side, _canJoin]] Call WFBE_CO_FNC_LogContent;
+			[nil, "LocalizeMessage", ['Teamstack',_name,_uid,_side]] Call WFBE_CO_FNC_SendToClients;
 		};
 	};
 };
