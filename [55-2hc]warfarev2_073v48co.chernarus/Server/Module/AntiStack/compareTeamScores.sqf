@@ -1,6 +1,6 @@
 private["_side","_name","_uid","_totalSkillBLUFOR","_totalSkillOPFOR","_canJoin"];
 
-_side = this select 0;
+_side = _this select 0;
 _name = _this select 1;
 _uid = _this select 2;
 
