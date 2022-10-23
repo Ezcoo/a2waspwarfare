@@ -5,7 +5,7 @@
 		- User Name
 */
 
-Private ['_funds','_get','_id','_max','_name','_sideJoined','_sideOrigin','_team','_uid','_units'];
+Private ['_funds','_get','_id','_max','_name','_sideJoined','_sideOrigin','_team','_uid','_units','_playerCanJoin'];
 _uid = _this select 0;
 _name = _this select 1;
 _id = _this select 2;
@@ -76,10 +76,15 @@ if (isNil '_get') exitWith {
 		UID | Cash | Side | Current Side | flag of first connect on a session
 		The JIP system store the main informations about a client, the UID is used to track the player all along the session.
 	*/
-	missionNamespace setVariable [format["WFBE_JIP_USER%1",_uid], [_uid, 0, _sideJoined, _sideJoined, 0]];
 
-	_team setVariable ["wfbe_funds", missionNamespace getVariable format ["WFBE_C_ECONOMY_FUNDS_START_%1", _sideJoined], true];
-	["INFORMATION", Format ["Server_PlayerConnected.sqf: Team [%1] Leader [%2] JIP Information have been stored for the first time.", _team, _uid]] Call WFBE_CO_FNC_LogContent;
+	_playerCanJoin = missionNamespace getVariable "WFBE_P_CANJOIN";
+
+	if (!(isNil "_playerCanJoin") && (_playerCanJoin == true)) then {
+		missionNamespace setVariable [format["WFBE_JIP_USER%1",_uid], [_uid, 0, _sideJoined, _sideJoined, 0]];
+
+		_team setVariable ["wfbe_funds", missionNamespace getVariable format ["WFBE_C_ECONOMY_FUNDS_START_%1", _sideJoined], true];
+		["INFORMATION", Format ["Server_PlayerConnected.sqf: Team [%1] Leader [%2] JIP Information have been stored for the first time.", _team, _uid]] Call WFBE_CO_FNC_LogContent;
+	};
 };
 
 //--- The player has already joined the session previously, we just need to update the informations.
