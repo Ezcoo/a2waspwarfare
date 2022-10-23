@@ -15,6 +15,7 @@ while {true} do {
 		if (isPlayer _x) then {
 			_playerScore = score _x;
 			_playerPrevStats = ["Retrieve", getPlayerUID _x] call WFBE_SE_FNC_CallDatabase;
+			diag_log format ["CountPlayerScores.sqf: _playerPrevStats: %1", _playerPrevStats];
 			_playerPrevScoreTotal = _playerPrevStats select 0;
 			_playerPrevTimePlayedTotal = _playerPrevStats select 1;
 
