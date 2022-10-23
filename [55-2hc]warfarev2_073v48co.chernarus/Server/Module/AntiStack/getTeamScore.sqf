@@ -9,8 +9,6 @@ _teamSkill = 0;
 {
 	_sideMatches = (_side == side _x);
 
-	["INFORMATION", Format ["GetTeamScore.sqf: _sideMatches: %1, isPlayer _x: %2, (hasInterface: %3). _side: %4, side _x: %5", _sideMatches, isPlayer _x, hasInterface, _side, side _x]] Call WFBE_CO_FNC_LogContent;
-
 	// We must exclude the player itself from score counting.
 	if (isPlayer _x && _sideMatches && (getPlayerUID _x != _uid)) then {
 		_playerScore = score _x;
