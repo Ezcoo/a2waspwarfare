@@ -28,10 +28,10 @@ _responseCode = _response select 0;
 if (typeName _responseCode == "SCALAR") then {
 	if (_responseCode < 0) then {
 		if (_responseCode == -1) then {
-			["ERROR", format ["CallDatabase.sqf: ERROR! Something went wrong with database, check it's error logs. Response code: %1", _response]] Call WFBE_CO_FNC_LogContent;
+			["ERROR", format ["CallDatabase.sqf: ERROR! Something went wrong with database, check it's error logs. Response code: %1", _responseCode]] Call WFBE_CO_FNC_LogContent;
 		};
 		if (_responseCode == -2) then {
-			["ERROR", format ["CallDatabase.sqf: ERROR! Unusual activity detected with parameters: %1. Player is either a teamkiller or is possibly trying to cheat with the database. Response code: %1", _parameters, _response]] Call WFBE_CO_FNC_LogContent;
+			["ERROR", format ["CallDatabase.sqf: ERROR! Unusual activity detected with parameters: %1. Player is either a teamkiller or is possibly trying to cheat with the database. Response code: %2", _parameters, _responseCode]] Call WFBE_CO_FNC_LogContent;
 		};
 	};
 };
