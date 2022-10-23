@@ -57,20 +57,22 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 	} else {
 		_canAttemptJoiningTeam = missionNamespace getVariable Format["WFBE_JIP_USER%1_CAN_ATTEMPT_JOIN", _uid];
 
-		if (_sideOrigin != _side && !(_canAttemptJoiningTeam)) then { //--- The joined side differs from the original one.
+		if (_sideOrigin != _side) then {
+			if (!(isNil "_canAttemptJoiningTeam")) then { //--- The joined side differs from the original one.
 
 				_canJoin = false;
 
 				[nil, "LocalizeMessage", ['Teamswap',_name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_SendToClients; //--- Inform the clients about the teamswap.
 				["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamswapping, original side [%3], joined side [%4].", _name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_LogContent;
-			} else {
-				_canJoin = true;
 			};
 		} else {
-			
 			_canJoin = true;
-
 		};
+	} else {
+			
+		_canJoin = true;
+
+	};
 
 } else {
 	["WARNING", Format["RequestJoin.sqf: Unable to find JIP information for player [%1] [%2].", _name, _uid]] Call WFBE_CO_FNC_LogContent;
