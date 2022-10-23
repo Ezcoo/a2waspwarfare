@@ -42,10 +42,10 @@ if (WF_A2_Vanilla) then {
 
 	[_player, "HandleSpecial", ["join-answer", _canJoin]] Call WFBE_CO_FNC_SendToClient;
 
-	if (_canJoin) then {
+};
 
-		missionNamespace setVariable [Format["WFBE_JIP_USER%_TEAM_JOINED", _uid], _side];
+if (_canJoin) then {
 
-	};
+	missionNamespace setVariable [Format["WFBE_JIP_USER%1_TEAM_JOINED", _uid], _side];
 
 };
