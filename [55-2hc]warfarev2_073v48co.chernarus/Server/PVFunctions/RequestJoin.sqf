@@ -57,8 +57,7 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 	} else {
 		_canAttemptJoiningTeam = missionNamespace getVariable Format["WFBE_JIP_USER%1_CAN_ATTEMPT_JOIN", _uid];
 
-		if (!(isNil "_canAttemptJoiningTeam")) then {
-			if (_sideOrigin != _side && !(_canAttemptJoiningTeam)) then { //--- The joined side differs from the original one.
+		if (_sideOrigin != _side && !(_canAttemptJoiningTeam)) then { //--- The joined side differs from the original one.
 
 				_canJoin = false;
 
@@ -72,7 +71,6 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 			_canJoin = true;
 
 		};
-	};
 
 } else {
 	["WARNING", Format["RequestJoin.sqf: Unable to find JIP information for player [%1] [%2].", _name, _uid]] Call WFBE_CO_FNC_LogContent;
