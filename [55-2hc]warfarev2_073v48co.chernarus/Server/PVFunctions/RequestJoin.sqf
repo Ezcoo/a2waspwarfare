@@ -64,6 +64,8 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 				[nil, "LocalizeMessage", ['Teamswap',_name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_SendToClients; //--- Inform the clients about the teamswap.
 				["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamswapping, original side [%3], joined side [%4].", _name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_LogContent;
+			} else {
+				_canJoin = true;
 			};
 		} else {
 			
