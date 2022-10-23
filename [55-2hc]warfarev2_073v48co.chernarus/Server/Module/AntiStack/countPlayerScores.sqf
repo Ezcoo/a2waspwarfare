@@ -11,7 +11,7 @@ while {!WFBE_GameOver} do {
 	uiSleep _mainSleep;
 
 	{
-		["INFORMATION", format["isPlayer _x: %1", isPlayer _x]] Call WFBE_CO_FNC_LogContent;
+		["INFORMATION", format["CountPlayerScores.sqf: isPlayer _x: %1", isPlayer _x]] Call WFBE_CO_FNC_LogContent;
 		if (isPlayer _x) then {
 			_playerScore = score _x;
 			_playerPrevStats = ["Retrieve", getPlayerUID _x] call WFBE_SE_FNC_CallDatabase;
