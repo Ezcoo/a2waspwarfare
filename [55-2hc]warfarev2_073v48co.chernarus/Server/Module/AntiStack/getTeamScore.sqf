@@ -3,8 +3,12 @@ private ["_side","_sideMatches","_teamSkill","_playerStats","_playerScoreTotal",
 _side = _this select 0;
 _teamSkill = 0;
 
+["INFORMATION", Format ["GetTeamScore.sqf: _side: %1.", _side]] Call WFBE_CO_FNC_LogContent;
+
 {
 	_sideMatches = (_side == side _x);
+
+	["INFORMATION", Format ["GetTeamScore.sqf: _sideMatches: %1, isPlayer _x: %2, hasInterface: %3. _side: %4, side _x: %5", _sideMatches, isPlayer _x, hasInterface, _side, side _x]] Call WFBE_CO_FNC_LogContent;
 
 	if (isPlayer _x && hasInterface && _sideMatches) then {
 		_playerScore = score _x;
