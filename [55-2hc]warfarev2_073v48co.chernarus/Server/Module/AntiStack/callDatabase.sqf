@@ -1,5 +1,5 @@
 // Call to database
-private ["_procedureName","_procedureCode","_parameters","_response"];
+private ["_procedureName","_procedureCode","_parameters","_response","_responseCode"];
 
 _procedureName = _this select 0;
 _parameters = _this select 1;
@@ -23,12 +23,14 @@ if (_procedureName == "Store") then {
 
 _response = call compile _response;
 
-if (typeName (_response select 0) == "SCALAR") then {
-	if (_response < 0) then {
-		if (_response == -1) then {
+_responseCode = _response select 0;
+
+if (typeName _responseCode == "SCALAR") then {
+	if (_responseCode < 0) then {
+		if (_responseCode == -1) then {
 			["ERROR", format ["CallDatabase.sqf: ERROR! Something went wrong with database, check it's error logs. Response code: %1", _response]] Call WFBE_CO_FNC_LogContent;
 		};
-		if (_response == -2) then {
+		if (_responseCode == -2) then {
 			["ERROR", format ["CallDatabase.sqf: ERROR! Unusual activity detected with parameters: %1. Player is either a teamkiller or is possibly trying to cheat with the database. Response code: %1", _parameters, _response]] Call WFBE_CO_FNC_LogContent;
 		};
 	};
