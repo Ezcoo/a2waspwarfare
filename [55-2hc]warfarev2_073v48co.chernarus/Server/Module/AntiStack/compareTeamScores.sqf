@@ -4,6 +4,8 @@ _side = this select 0;
 _name = _this select 1;
 _uid = _this select 2;
 
+_canJoin = true;
+
 _totalSkillBLUFOR = 0;
 _totalSkillOPFOR = 0;
 
