@@ -1,11 +1,11 @@
 private ["_playerStats","_playerScore","_playerPrevStats","_playerPrevScoreTotal","_playerPrevTimePlayedTotal","_result","_oldScore","_playerScoreDiff","_playerNewScore","_playerNewScoreTotal","_sleep"];
 
 _sleep = 0.02;
-_mainSleep = 10;
+_mainSleep = 30;
 
 ["INFORMATION", "CountPlayerScores.sqf got execVMd!"] Call WFBE_CO_FNC_LogContent;
 
-while {!WFBE_GameOver} do {
+while {true} do {
 
 	["INFORMATION", "CountPlayerScores.sqf: starting main loop..."] Call WFBE_CO_FNC_LogContent;
 	uiSleep _mainSleep;
