@@ -74,6 +74,9 @@ WFBE_SE_FNC_CallDatabase = Compile preprocessFileLineNumbers "Server\Module\Anti
 WFBE_SE_FNC_GetTeamScore = Compile preprocessFileLineNumbers "Server\Module\AntiStack\getTeamScore.sqf";
 // WFBE_SE_FNC_CountPlayerScores = Compile preprocessFileLineNumbers "Server\Module\AntiStack\countPlayerScores.sqf";
 WFBE_SE_FNC_CompareTeamScores = Compile preprocessFileLineNumbers "Server\Module\AntiStack\compareTeamScores.sqf";
+WFBE_SE_FNC_CallDatabaseExtra = Compile preprocessFileLineNumbers "Server\Module\AntiStack\callDatabaseExtra.sqf";
+WFBE_SE_FNC_GetTeamScoreMonitor = Compile preprocessFileLineNumbers "Server\Module\AntiStack\getTeamScoreMonitor.sqf";
+
 
 //--- Define Headless Client functions (server ones).
 if (ARMA_VERSION >= 162 && ARMA_RELEASENUMBER >= 101334 || ARMA_VERSION > 162) then {
@@ -582,9 +585,12 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_ALICE") > 0) then {
 waitUntil {time > 0};
 
 call WFBE_CO_FNC_InitAFKkickHandler;
+
 [] execVM "Server\Module\serverFPS\monitorServerFPS.sqf";
 
 [] execVM "Server\Module\AntiStack\countPlayerScores.sqf";
+
+[] execVM "Server\Module\AntiStack\monitorTeamToJoin.sqf";
 
 _logMatchWinPlayerCountThreshold = 10;
 

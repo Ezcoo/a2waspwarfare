@@ -4,16 +4,22 @@ private ["_procedureName","_procedureCode","_parameters","_uid","_score","_respo
 _procedureName = _this select 0;
 _parameters = _this select 1;
 _isArray = typeName _parameters == "ARRAY";
+_containsSideInfo = _isArray && (count _parameters > 2);
 
 _uid =  if (_isArray) then {_parameters select 0} else {_parameters};
-_score = if (typeName _parameters == "ARRAY") then {_parameters select 1} else {0};
-
-_parametersTemp = "";
+_score = if (_isArray) then {_parameters select 1} else {0};
+_side = if (_isArray && _containsSideInfo) then {_parameters select 2} else {""};
 
 // We need to change the data type from 'ARRAY' to 'STRING' before sending the data to database
 if (_isArray) then {
 	
 	_parameters = _uid + "," + str (_parameters select 1);
+
+};
+
+if (_side != "") then {
+	
+	_parameters = _parameters + "," str _side;
 
 };
 
@@ -32,6 +38,7 @@ if (_procedureName == "STORE") then {
 	["INFORMATION", format ["CallDatabase.sqf: Calling database with procedure: [%1], score difference: [%2], UID being checked against database is: [%3]. Parameters: %4", _procedureName, _score, _uid, _parameters]] Call WFBE_CO_FNC_LogContent;
 	_response = "A2WaspDatabase" callExtension format ["%1,%2",_procedureCode,_parameters];
 };
+
 
 ["INFORMATION", format ["CallDatabase.sqf: Called database with procedure: [%1], RESPONSE IS: [%2]", _procedureName, _response]] Call WFBE_CO_FNC_LogContent;
 

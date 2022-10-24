@@ -38,8 +38,8 @@ _mainSleep = 30;
 
 				uiSleep _miniSleep;
 
-				_result = ["STORE", [getPlayerUID _x, _playerScoreDiff]] call WFBE_SE_FNC_CallDatabase;
-				
+				_result = ["STORE", [getPlayerUID _x, _playerScoreDiff, side _x]] call WFBE_SE_FNC_CallDatabase;
+
 			};
 
 		} forEach allUnits;
@@ -73,4 +73,30 @@ _sleep = 1;
 
 	};
 
+};
+
+_flushSleep = 5;
+
+[_flushSleep] spawn {
+
+	_flushSleep = _this select 0;
+	_playersOnServer = [];
+
+	while { true } do {
+
+		_playersOnServer = [];
+
+		uiSleep _flushSleep;
+
+		{
+			if (isPlayer _x) then {
+
+				_playersOnServer set [count _playersOnServer, [getPlayerUID _x, side _x]];
+
+			};
+
+		} forEach allUnits;
+
+		["SEND_PLAYERLIST", _playersOnServer] call WFBE_SE_FNC_CallDatabaseExtra;
+	};
 };
