@@ -26,6 +26,8 @@ if (_procedureName == "STORE") then {
 	_response = "A2WaspDatabase" callExtension format ["%1,%2",_procedureCode,_parameters];
 };
 
+["INFORMATION", format ["CallDatabase.sqf: Called database with procedure: [%1], RESPONSE IS: [%2]", _procedureName, _response]] Call WFBE_CO_FNC_LogContent;
+
 _response = call compile _response;
 
 _responseCode = _response select 0;
@@ -45,7 +47,7 @@ if (typeName _responseCode == "SCALAR") then {
 		};
 	} else {
 		if (_responseCode == 1) then {
-			["INFORMATION", format ["CallDatabase.sqf: Called database successfully with procedure: [%1], UID: [%2] with score difference of [%3], and got response: [%4]. Player skill: [%5]).", _procedureName, _score, _uid, _response, _playerSkill]] Call WFBE_CO_FNC_LogContent;
+			["INFORMATION", format ["CallDatabase.sqf: Called database successfully with procedure: [%1], UID: [%2] with score difference of [%3], and got response: [%4]. Player skill: [%5]).", _procedureName, _uid, _score, _response, _playerSkill]] Call WFBE_CO_FNC_LogContent;
 		}
 	};
 };
