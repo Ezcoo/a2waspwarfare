@@ -16,13 +16,13 @@ _procedureCode = "";
 
 if (_procedureName == "RETRIEVE") then {
 	_procedureCode = 101;
-	["INFORMATION", format ["CallDatabase.sqf: Calling database with procedure: [%1], UID being checked against database is: [%2].", _procedureName, _uid]] Call WFBE_CO_FNC_LogContent;
+	["INFORMATION", format ["CallDatabase.sqf: Calling database with procedure: [%1], UID being checked against database is: [%2]. Parameters: %3", _procedureName, _uid, _parameters]] Call WFBE_CO_FNC_LogContent;
 	_response = "A2WaspDatabase" callExtension format ["%1,%2",_procedureCode,_parameters];
 };
 
 if (_procedureName == "STORE") then {
 	_procedureCode = 202;
-	["INFORMATION", format ["CallDatabase.sqf: Calling database with procedure: [%1], score difference: [%2], UID being checked against database is: [%3].", _procedureName, _score, _uid]] Call WFBE_CO_FNC_LogContent;
+	["INFORMATION", format ["CallDatabase.sqf: Calling database with procedure: [%1], score difference: [%2], UID being checked against database is: [%3]. Parameters: %4", _procedureName, _score, _uid, _parameters]] Call WFBE_CO_FNC_LogContent;
 	_response = "A2WaspDatabase" callExtension format ["%1,%2",_procedureCode,_parameters];
 };
 
