@@ -4,7 +4,7 @@ _side = _this select 0;
 _uid = _this select 1;
 _teamSkill = 0;
 
-["INFORMATION", Format ["GetTeamScore.sqf: The UID of client who requested the info: [%1]. Side of the client: [%2].", _uid, _side]] Call WFBE_CO_FNC_LogContent;
+["INFORMATION", Format ["GetTeamScore.sqf: The UID of client who requested the info: [%1]. Checking stats of side: [%2].", _uid, _side]] Call WFBE_CO_FNC_LogContent;
 
 {
 	_sideMatches = (_side == side _x);
