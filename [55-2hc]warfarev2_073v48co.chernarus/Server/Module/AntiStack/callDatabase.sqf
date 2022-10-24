@@ -4,7 +4,7 @@ private ["_procedureName","_procedureCode","_parameters","_uid","_score","_respo
 _procedureName = _this select 0;
 _parameters = _this select 1;
 _isArray = typeName _parameters == "ARRAY";
-_containsSideInfo = _isArray && (count _parameters > 2);
+_containsSideInfo = _isArray && (if (_isArray) then { (count _parameters > 2) } else { false });
 
 _uid =  if (_isArray) then {_parameters select 0} else {_parameters};
 _score = if (_isArray) then {_parameters select 1} else {0};
