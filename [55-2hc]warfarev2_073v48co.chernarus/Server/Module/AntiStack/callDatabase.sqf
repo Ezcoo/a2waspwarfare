@@ -19,7 +19,7 @@ if (_isArray) then {
 
 if (_side != "") then {
 	
-	_parameters = _parameters + "," str _side;
+	_parameters = _parameters + "," + str _side;
 
 };
 
