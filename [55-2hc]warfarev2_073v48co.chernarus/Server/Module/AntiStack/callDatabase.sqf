@@ -13,7 +13,7 @@ _parametersTemp = "";
 // We need to change the data type from 'ARRAY' to 'STRING' before sending the data to database
 if (_isArray) then {
 	{
-		_parametersTemp = _parametersTemp + _x;
+		_parametersTemp = _parametersTemp + str _x;
 	} forEach _parameters;
 };
 
