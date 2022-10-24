@@ -1,18 +1,22 @@
-private ["_playerStats","_playerScore","_playerPrevStats","_playerPrevScoreTotal","_playerPrevTimePlayedTotal","_result","_oldScore","_playerScoreDiff","_playerNewScore","_playerNewScoreTotal","_sleep"];
+private ["_playerStats","_playerScore","_playerPrevStats","_playerPrevScoreTotal","_playerPrevTimePlayedTotal","_result","_oldScore","_playerScoreDiff","_playerNewScore","_playerNewScoreTotal","_sleep","_miniSleep"];
 
-_sleep = 0.02;
+_miniSleep = 0.01;
 _mainSleep = 30;
 
 ["INFORMATION", "CountPlayerScores.sqf got execVMd!"] Call WFBE_CO_FNC_LogContent;
 
-while {true} do {
+[_miniSleep, _mainSleep] spawn {
 
-	["INFORMATION", "CountPlayerScores.sqf: starting main loop..."] Call WFBE_CO_FNC_LogContent;
+	_miniSleep = _this select 0;
+	_mainSleep = _this select 1;
+
+	["INFORMATION", "CountPlayerScores.sqf: Starting main loop..."] Call WFBE_CO_FNC_LogContent;
 	uiSleep _mainSleep;
 
 	{
-		// ["INFORMATION", format["CountPlayerScores.sqf: isPlayer _x: %1", isPlayer _x]] Call WFBE_CO_FNC_LogContent;
+
 		if (isPlayer _x) then {
+
 			_playerScore = score _x;
 			_playerPrevStats = ["RETRIEVE", getPlayerUID _x] call WFBE_SE_FNC_CallDatabase;
 			_playerPrevScoreTotal = _playerPrevStats select 0;
@@ -29,8 +33,31 @@ while {true} do {
 			_playerScoreDiff = _playerScore - _oldScore;
 			_playerNewScore = _playerPrevScoreTotal + _playerScoreDiff;
 
-			_result = ["STORE", format ["%1,%2", getPlayerUID _x, _playerScoreDiff]] call WFBE_SE_FNC_CallDatabase;
+			uiSleep _miniSleep;
+
+			_result = ["STORE", [getPlayerUID _x, _playerScoreDiff]] call WFBE_SE_FNC_CallDatabase;
 		};
+
+	} forEach allUnits;
+
+};
+
+
+_sleep = 1;
+
+[_sleep, _miniSleep] spawn {
+
+	_sleep = _this select 0;
+	_miniSleep = _this select 1;
+
+	{
+
+		if (isPlayer _x) then {
+			missionNamespace setVariable [format ["WFBE_CO_CURRENT_SCORE_PLAYER_%1", getPlayerUID _x], score _x];
+			uiSleep _miniSleep;
+		};
+
+	uiSleep _sleep;
 
 	} forEach allUnits;
 
