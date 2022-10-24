@@ -14,7 +14,7 @@ _parametersTemp = "";
 if (_isArray) then {
 	
 	_parameters = _uid + "," + str (_parameters select 1);
-	
+
 };
 
 _response = {};
@@ -47,15 +47,18 @@ _responseStats = [_responseTotalScore, _responseTicks];
 if (typeName _responseCode == "SCALAR") then {
 	if (_responseCode < 0) then {
 		if (_responseCode == -111) then {
-			["ERROR", format ["CallDatabase.sqf: ERROR! Something went wrong with database, check it's error logs. UID: [%1], score attempted to be saved: [%2]. Response code: [%3]",_uid, _score, _responseCode]] Call WFBE_CO_FNC_LogContent;
+			["ERROR", format ["CallDatabase.sqf: CRITICAL ERROR! Something went wrong with database, check it's error logs. UID: [%1], score attempted to be saved: [%2]. Response code: [%3]",_uid, _score, _responseCode]] Call WFBE_CO_FNC_LogContent;
 		};
 		if (_responseCode == -222) then {
 			["WARNING", format ["CallDatabase.sqf: WARNING! Unusual activity detected by UID: [%1], score difference triggering this alert is [%2]. Player is either a teamkiller or is possibly trying to cheat with the database. Check the logs carefully especially if the score difference is high. Response code: [%3]", _uid, _score, _responseCode]] Call WFBE_CO_FNC_LogContent;
 		};
 	} else {
 		if (_responseCode == 1) then {
+			["INFORMATION", format ["CallDatabase.sqf: Called database successfully with procedure: [%1], UID: [%2], and got response: [%3]. Player skill: [%4]).", _procedureName, _uid, _response, _playerSkill]] Call WFBE_CO_FNC_LogContent;
+		};
+		if (_responseCode == 2) then {
 			["INFORMATION", format ["CallDatabase.sqf: Called database successfully with procedure: [%1], UID: [%2] with score difference of [%3], and got response: [%4]. Player skill: [%5]).", _procedureName, _uid, _score, _response, _playerSkill]] Call WFBE_CO_FNC_LogContent;
-		}
+		};
 	};
 };
 
