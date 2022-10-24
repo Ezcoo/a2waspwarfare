@@ -356,7 +356,7 @@ if (isMultiplayer && (missionNamespace getVariable "WFBE_C_GAMEPLAY_TEAMSWAP_DIS
 	if !(_get) exitWith {
 		["WARNING", Format["Init_Client.sqf: [%1] Client [%2] has teamswapped/STACKED and is now being sent back to the lobby.",sideJoined,name player]] Call WFBE_CO_FNC_LogContent;
 
-		sleep 3;
+		sleep 6;
 		failMission "END1";
 	};
 };
