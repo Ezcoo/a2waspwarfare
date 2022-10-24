@@ -13,9 +13,9 @@ _parametersTemp = "";
 // We need to change the data type from 'ARRAY' to 'STRING' before sending the data to database
 if (_isArray) then {
 	{
-		_parametersTemp = _parametersTemp + str _x;
+		_parametersTemp = _uid + "," + str _parameters select 1;
 	} forEach _parameters;
-	
+
 	_parameters = _parametersTemp;
 };
 
