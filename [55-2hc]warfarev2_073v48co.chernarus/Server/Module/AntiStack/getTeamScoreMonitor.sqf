@@ -7,7 +7,7 @@ _teamSkill = 0;
 ["INFORMATION", Format ["GetTeamScore.sqf: Checking stats of side: [%1].", _side]] Call WFBE_CO_FNC_LogContent;
 
 {
-	_sideMatches = (_side == side _x);
+	_sideMatches = if (_side == side _x) then { true } else { false };
 	
 	if (isPlayer _x && _sideMatches) then {
 		_playerScore = score _x;
