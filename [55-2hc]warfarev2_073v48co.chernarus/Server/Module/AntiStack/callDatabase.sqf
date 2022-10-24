@@ -5,7 +5,10 @@ _procedureName = _this select 0;
 _parameters = _this select 1;
 
 _uid = _parameters select 0;
-_score = if (count _parameters > 1) then {_parameters select 1} else {0};
+_score = if (typeName _parameters == "ARRAY") then {_parameters select 1} else {0};
+
+// We need to change the data type from 'ARRAY' to 'STRING' before sending the data to database
+_parameters = format ["%1", _parameters];
 
 _response = {};
 
