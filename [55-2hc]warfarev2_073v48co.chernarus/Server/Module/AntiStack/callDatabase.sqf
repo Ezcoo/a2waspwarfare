@@ -1,22 +1,20 @@
 // Call to database
-private ["_procedureName","_procedureCode","_parameters","_uid","_score","_response","_responseCode","_responseTotalScore","_responseTicks","_playerSkill","_responseStats","_isArray","_parametersTemp","_isArray"];
+private ["_procedureName","_procedureCode","_parameters","_uid","_score","_response","_responseCode","_responseTotalScore","_responseTicks","_playerSkill","_responseStats","_isArray","_parametersTemp"];
 
 _procedureName = _this select 0;
 _parameters = _this select 1;
-_isArray = false;
+_isArray = typeName _parameters == "ARRAY";
 
-_uid =  if (typeName _parameters == "ARRAY") then {_parameters select 0; _isArray = true;} else {_parameters};
+_uid =  if (_isArray) then {_parameters select 0} else {_parameters};
 _score = if (typeName _parameters == "ARRAY") then {_parameters select 1} else {0};
 
 _parametersTemp = "";
 
 // We need to change the data type from 'ARRAY' to 'STRING' before sending the data to database
 if (_isArray) then {
-	{
-		_parametersTemp = _uid + "," + str _parameters select 1;
-	} forEach _parameters;
-
-	_parameters = _parametersTemp;
+	
+	_parameters = _uid + "," + str (_parameters select 1);
+	
 };
 
 _response = {};
