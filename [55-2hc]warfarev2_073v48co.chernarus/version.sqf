@@ -6,6 +6,8 @@
 /* DEBUG */
 #define WF_DEBUG 1
 
+// .gitignore TEST
+
 /* Gameplay: Change the overall camo */
 #define WF_CAMO 1
 
