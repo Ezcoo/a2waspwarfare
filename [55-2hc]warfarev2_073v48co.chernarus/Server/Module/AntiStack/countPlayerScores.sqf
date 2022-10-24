@@ -11,34 +11,40 @@ _mainSleep = 30;
 	_mainSleep = _this select 1;
 
 	["INFORMATION", "CountPlayerScores.sqf: Starting main loop..."] Call WFBE_CO_FNC_LogContent;
-	uiSleep _mainSleep;
 
-	{
+	while { true } do {
 
-		if (isPlayer _x) then {
+		uiSleep _mainSleep;
 
-			_playerScore = score _x;
-			_playerPrevStats = ["RETRIEVE", getPlayerUID _x] call WFBE_SE_FNC_CallDatabase;
-			_playerPrevScoreTotal = _playerPrevStats select 0;
-			_playerPrevTimePlayedTotal = _playerPrevStats select 1;
+		{
 
-			_oldScore = missionNamespace getVariable format ["WFBE_CO_OLD_SCORE_PLAYER_%1", getPlayerUID _x];
+			if (isPlayer _x) then {
 
-			if (isNil "_oldScore") then {
-				_oldScore = 0;
+				_playerScore = score _x;
+				_playerPrevStats = ["RETRIEVE", getPlayerUID _x] call WFBE_SE_FNC_CallDatabase;
+				_playerPrevScoreTotal = _playerPrevStats select 0;
+				_playerPrevTimePlayedTotal = _playerPrevStats select 1;
+
+				_oldScore = missionNamespace getVariable format ["WFBE_CO_OLD_SCORE_PLAYER_%1", getPlayerUID _x];
+
+				if (isNil "_oldScore") then {
+					_oldScore = 0;
+				};
+
+				missionNamespace setVariable [format["WFBE_CO_OLD_SCORE_PLAYER_%1", getPlayerUID _x], _playerScore];
+
+				_playerScoreDiff = _playerScore - _oldScore;
+				_playerNewScore = _playerPrevScoreTotal + _playerScoreDiff;
+
+				uiSleep _miniSleep;
+
+				_result = ["STORE", [getPlayerUID _x, _playerScoreDiff]] call WFBE_SE_FNC_CallDatabase;
+				
 			};
 
-			missionNamespace setVariable [format["WFBE_CO_OLD_SCORE_PLAYER_%1", getPlayerUID _x], _playerScore];
+		} forEach allUnits;
 
-			_playerScoreDiff = _playerScore - _oldScore;
-			_playerNewScore = _playerPrevScoreTotal + _playerScoreDiff;
-
-			uiSleep _miniSleep;
-
-			_result = ["STORE", [getPlayerUID _x, _playerScoreDiff]] call WFBE_SE_FNC_CallDatabase;
-		};
-
-	} forEach allUnits;
+	};
 
 };
 
@@ -50,7 +56,7 @@ _sleep = 1;
 	_sleep = _this select 0;
 	_miniSleep = _this select 1;
 
-	while {true} do {
+	while { true } do {
 
 		uiSleep _sleep;
 
