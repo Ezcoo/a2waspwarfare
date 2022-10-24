@@ -1,5 +1,5 @@
 // Call to database
-private ["_procedureName","_procedureCode","_parameters","_uid","_score","_response","_responseCode","_responseTotalScore","_responseTicks","_playerSkill","_responseStats","_isArray","_parametersTemp"];
+private ["_procedureName","_procedureCode","_parameters","_uid","_score","_response","_responseCode","_responseTotalScore","_responseTicks","_playerSkill","_responseStats","_isArray","_parametersTemp","_isArray"];
 
 _procedureName = _this select 0;
 _parameters = _this select 1;
@@ -15,9 +15,9 @@ if (_isArray) then {
 	{
 		_parametersTemp = _parametersTemp + str _x;
 	} forEach _parameters;
+	
+	_parameters = _parametersTemp;
 };
-
-_parameters = _parametersTemp;
 
 _response = {};
 
