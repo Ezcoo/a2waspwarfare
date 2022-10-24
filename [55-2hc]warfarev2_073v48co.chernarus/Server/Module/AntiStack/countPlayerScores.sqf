@@ -21,7 +21,7 @@ _mainSleep = 30;
 			if (isPlayer _x) then {
 
 				_playerScore = score _x;
-				_playerPrevStats = ["RETRIEVE", getPlayerUID _x] call WFBE_SE_FNC_CallDatabase;
+				_playerPrevStats = ["RETRIEVE", getPlayerUID _x] call WFBE_SE_FNC_CallDatabaseRetrieve;
 				_playerPrevScoreTotal = _playerPrevStats select 0;
 				_playerPrevTimePlayedTotal = _playerPrevStats select 1;
 
@@ -38,7 +38,8 @@ _mainSleep = 30;
 
 				uiSleep _miniSleep;
 
-				_result = ["STORE", [getPlayerUID _x, _playerScoreDiff, side _x]] call WFBE_SE_FNC_CallDatabase;
+				_result = ["STORE", [getPlayerUID _x, _playerScoreDiff]] call WFBE_SE_FNC_CallDatabaseStore;
+				_result = ["STORE_SIDE", [getPlayerUID _x, side _x]] call WFBE_SE_FNC_CallDatabaseStoreSide;
 
 			};
 
@@ -97,6 +98,8 @@ _flushSleep = 5;
 
 		} forEach allUnits;
 
-		["SEND_PLAYERLIST", _playersOnServer] call WFBE_SE_FNC_CallDatabaseExtra;
+		["SEND_PLAYERLIST", _playersOnServer] call WFBE_SE_FNC_CallDatabaseSendPlayerList;
+
 	};
+
 };
