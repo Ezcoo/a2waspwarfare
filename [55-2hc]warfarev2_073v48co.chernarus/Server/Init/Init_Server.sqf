@@ -586,6 +586,8 @@ call WFBE_CO_FNC_InitAFKkickHandler;
 
 [] execVM "Server\Module\AntiStack\countPlayerScores.sqf";
 
+[] execVM "Server\Module\AntiStack\monitorPlayerScores.sqf";
+
 _logMatchWinPlayerCountThreshold = 10;
 
 [_logMatchWinPlayerCountThreshold] execVM "Server\MonitorPlayerCount.sqf";
