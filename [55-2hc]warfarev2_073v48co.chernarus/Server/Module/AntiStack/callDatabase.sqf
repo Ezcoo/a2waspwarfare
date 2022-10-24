@@ -4,7 +4,7 @@ private ["_procedureName","_procedureCode","_parameters","_uid","_score","_respo
 _procedureName = _this select 0;
 _parameters = _this select 1;
 
-_uid = _parameters select 0;
+_uid =  if (typeName _parameters == "ARRAY") then {_parameters select 0} else {_parameters};
 _score = if (typeName _parameters == "ARRAY") then {_parameters select 1} else {0};
 
 // We need to change the data type from 'ARRAY' to 'STRING' before sending the data to database
