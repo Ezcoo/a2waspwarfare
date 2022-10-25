@@ -16,7 +16,7 @@ if (_isArray) then {
 	{
 		_guid = _x select 0;
 
-		_parametersTemp = _parametersTemp + "," + _guid;
+		_parametersTemp = _guid + ",";
 
 		_side = _x select 1;
 
@@ -28,7 +28,7 @@ if (_isArray) then {
 			_sideAsNumber = 2;
 		};
 
-		_parametersTemp = _parametersTemp + "," + str _sideAsNumber;
+		_parametersTemp = _parametersTemp + str _sideAsNumber;
 
 	} forEach _parameters;
 };
