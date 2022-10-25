@@ -9,7 +9,7 @@ _parametersTemp = "";
 
 _guid = "";
 _side = west;
-_sideAsNumber = 3;
+_sideAsNumber = 0;
 
 if (_isArray) then {
 
@@ -57,5 +57,5 @@ _response = call compile _response;
 _responseCode = _response select 0;
 
 if (_responseCode < 0) then {
-	["ERROR", format ["CallDatabaseSendPlayerList.sqf: CRITICAL ERROR! Something went wrong with database, check it's error logs. Procedure name: [%1], response code: [%2]", _procedureName, _responseCode]] Call WFBE_CO_FNC_LogContent;
+	["ERROR", format ["CallDatabaseSendPlayerList.sqf: CRITICAL ERROR! Something went wrong with database, check it's error logs. Procedure name: [%1], response code: [%2].", _procedureName, _responseCode]] Call WFBE_CO_FNC_LogContent;
 };

@@ -39,11 +39,11 @@ _responseCode = _response select 0;
 if (typeName _responseCode == "SCALAR") then {
 	if (_responseCode < 0) then {
 		if (_responseCode == -111) then {
-			["ERROR", format ["CallDatabaseStoreSide.sqf: CRITICAL ERROR! Something went wrong with database, check it's error logs. UID: [%1], side attempted to be saved: [%2]. Response code: [%3]",_uid, _side, _responseCode]] Call WFBE_CO_FNC_LogContent;
+			["ERROR", format ["CallDatabaseStoreSide.sqf: CRITICAL ERROR! Something went wrong with database, check it's error logs. UID: [%1], side attempted to be saved: [%2]. Response code: [%3].",_uid, _side, _responseCode]] Call WFBE_CO_FNC_LogContent;
 		};
 	} else {
 		if (_responseCode == 1) then {
-			["INFORMATION", format ["CallDatabaseStoreSide.sqf: Called database successfully with procedure: [%1], UID: [%2], and got response: [%3]. Player skill: [%4]).", _procedureName, _uid, _response, _playerSkill]] Call WFBE_CO_FNC_LogContent;
+			["INFORMATION", format ["CallDatabaseStoreSide.sqf: Called database successfully with procedure: [%1], UID: [%2], and got response: %3.", _procedureName, _uid, _response]] Call WFBE_CO_FNC_LogContent;
 		};
 	};
 };

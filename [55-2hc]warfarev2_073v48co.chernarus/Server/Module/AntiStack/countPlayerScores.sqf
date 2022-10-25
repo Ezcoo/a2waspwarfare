@@ -75,7 +75,7 @@ _sleep = 1;
 
 };
 
-_flushSleep = 5;
+_flushSleep = 7;
 
 [_flushSleep] spawn {
 
@@ -90,9 +90,11 @@ _flushSleep = 5;
 
 		{
 			if (isPlayer _x) then {
+				_confirmedSide = missionNamespace getVariable Format["WFBE_JIP_USER%1_TEAM_JOINED", getPlayerUID _x];
 
-				_playersOnServer set [count _playersOnServer, [getPlayerUID _x, side _x]];
-
+				if (!(isNil "_confirmedSide")) {
+					_playersOnServer set [count _playersOnServer, [getPlayerUID _x, _confirmedSide]];
+				};
 			};
 
 		} forEach allUnits;
