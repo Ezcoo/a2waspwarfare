@@ -379,8 +379,6 @@ if (isMultiplayer && (missionNamespace getVariable "WFBE_C_GAMEPLAY_TEAMSWAP_DIS
 			publicVariableServer "WFBE_CLIENT_HAS_CONNECTED_AT_LAUNCH";
 		};
 	};
-	WFBE_CLIENT_HAS_CONNECTED_AT_LAUNCH = player;
-	publicVariableServer "WFBE_CLIENT_HAS_CONNECTED_AT_LAUNCH";
 };
 
 /* Get the client starting location */
