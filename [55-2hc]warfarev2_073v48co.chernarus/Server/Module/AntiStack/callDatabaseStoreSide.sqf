@@ -53,5 +53,3 @@ if (count _response > 0) then {
 	_response = _response select 0;
 };
 */
-
-_responseStats
