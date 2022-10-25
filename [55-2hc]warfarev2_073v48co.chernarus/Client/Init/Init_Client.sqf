@@ -359,6 +359,9 @@ if (isMultiplayer && (missionNamespace getVariable "WFBE_C_GAMEPLAY_TEAMSWAP_DIS
 		sleep 6;
 		failMission "END1";
 	};
+} else {
+	WFBE_CLIENT_HAS_CONNECTED_AT_LAUNCH = getPlayerUID player;
+	publicVariableServer "WFBE_CLIENT_HAS_CONNECTED_AT_LAUNCH";
 };
 
 /* Get the client starting location */

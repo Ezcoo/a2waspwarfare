@@ -1,4 +1,4 @@
-private ["_playerStats","_playerScore","_playerPrevStats","_playerPrevScoreTotal","_playerPrevTimePlayedTotal","_result","_oldScore","_playerScoreDiff","_playerNewScore","_playerNewScoreTotal","_sleep","_miniSleep"];
+private ["_playerStats","_playerScore","_playerPrevStats","_playerPrevScoreTotal","_playerPrevTimePlayedTotal","_result","_oldScore","_playerScoreDiff","_playerNewScore","_playerNewScoreTotal","_sleep","_miniSleep","_hasConnectedAtLaunch"];
 
 _miniSleep = 0.01;
 _mainSleep = 30;
@@ -94,6 +94,12 @@ _flushSleep = 7;
 
 				if (!(isNil "_confirmedSide")) then {
 					_playersOnServer set [count _playersOnServer, [getPlayerUID _x, _confirmedSide]];
+				} else {
+					_hasConnectedAtLaunch = missionNamespace getVariable format ["WFBE_PLAYER_%1_CONNECTED_AT_LAUNCH", _uid];
+
+					if (!(isNil "_hasConnectedAtLaunch")) then {
+						_playersOnServer set [count _playersOnServer, [getPlayerUID _x, side _x]];
+					};
 				};
 			};
 
