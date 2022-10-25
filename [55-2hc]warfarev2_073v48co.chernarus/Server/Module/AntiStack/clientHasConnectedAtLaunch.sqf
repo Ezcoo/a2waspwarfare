@@ -2,7 +2,7 @@
 	private ["_uid","_player"];
 
 	_player = _this select 1;
-	_uid = getPlayedUID _player;
+	_uid = getPlayerUID _player;
 
 	diag_log format ["(Supposed) UID: %1", _uid];
 
