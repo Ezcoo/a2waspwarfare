@@ -7,6 +7,14 @@ _parameters = _this select 1;
 _uid =  _parameters select 0;
 _side = _parameters select 1;
 
+if (_side == west) {
+	_side = 1;
+};
+
+if (_side == east) {
+	_side = 2;
+};
+
 // We need to change the data type from 'ARRAY' to 'STRING' before sending the data to database
 _parameters = _uid + "," + str _side;
 
