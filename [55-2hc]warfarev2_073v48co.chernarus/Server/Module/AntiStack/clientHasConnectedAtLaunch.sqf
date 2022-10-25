@@ -1,7 +1,7 @@
 "WFBE_CLIENT_HAS_CONNECTED_AT_LAUNCH" addPublicVariableEventHandler {
 	private ["_uid","_player"];
 
-	_player = _this;
+	_player = _this select 1;
 	_uid = getPlayedUID _player;
 
 	diag_log format ["(Supposed) UID: %1", _uid];
