@@ -6,17 +6,18 @@ _parameters = _this select 1;
 
 _uid =  _parameters select 0;
 _side = _parameters select 1;
+_sideAsNumber = 1;
 
 if (_side == west) then {
-	_side = 1;
+	_sideAsNumber = 1;
 };
 
 if (_side == east) then {
-	_side = 2;
+	_sideAsNumber = 2;
 };
 
 // We need to change the data type from 'ARRAY' to 'STRING' before sending the data to database
-_parameters = _uid + "," + str _side;
+_parameters = _uid + "," + str _sideAsNumber;
 
 _response = {};
 
