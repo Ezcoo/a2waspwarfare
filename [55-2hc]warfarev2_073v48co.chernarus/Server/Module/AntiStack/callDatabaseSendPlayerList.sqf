@@ -3,7 +3,6 @@ private ["_procedureName","_procedureCode","_parameters","_uid","_score","_respo
 
 _procedureName = _this select 0;
 _parameters = _this select 1;
-_isArray = (typeName _parameters == "ARRAY");
 
 _parametersTemp = "";
 
@@ -11,32 +10,29 @@ _guid = "";
 _side = west;
 _sideAsNumber = 0;
 
-if (_isArray) then {
+{
+	_guid = _x select 0;
 
-	{
-		_guid = _x select 0;
+	// Don't add dot in the beginning of the string formatted array
+	if (_parametersTemp == "") then {
+		_parametersTemp = _guid + ",";
+	} else {
+		_parametersTemp = "," + _guid + ","
+	};
 
-		// Don't add dot in the beginning of the string formatted array
-		if (_parametersTemp == "") then {
-			_parametersTemp = _guid + ",";
-		} else {
-			_parametersTemp = "," + _guid + ","
-		};
+	_side = _x select 1;
 
-		_side = _x select 1;
+	if (_side == west) then {
+		_sideAsNumber = 1;
+	};
 
-		if (_side == west) then {
-			_sideAsNumber = 1;
-		};
+	if (_side == east) then {
+		_sideAsNumber = 2;
+	};
 
-		if (_side == east) then {
-			_sideAsNumber = 2;
-		};
+	_parametersTemp = _parametersTemp + str _sideAsNumber;
 
-		_parametersTemp = _parametersTemp + str _sideAsNumber;
-
-	} forEach _parameters;
-};
+} forEach _parameters;
 
 _parameters = _parametersTemp;
 
