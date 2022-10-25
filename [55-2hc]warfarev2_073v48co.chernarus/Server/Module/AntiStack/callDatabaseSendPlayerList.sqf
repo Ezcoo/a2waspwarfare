@@ -41,6 +41,8 @@ diag_log format ["_procedureName: %1, _parameters: %2", _procedureName, _paramet
 
 _parameters = _parametersTemp;
 
+_parametersTemp = "";
+
 _response = {};
 
 _procedureCode = "";
