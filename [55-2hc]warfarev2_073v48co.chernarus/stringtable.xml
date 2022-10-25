@@ -204,7 +204,7 @@
         <Italian>$%1 Received for the neutralization assistance of a %2.</Italian>
       </Key>
       <Key ID="STR_WF_CHAT_AI_Commander">
-        <English>AI Commander Selected!</English>
+        <English>No Commander Selected!</English>
         <French>Commandeur IA Sélectioné!</French>
         <German>KI wurde zum Commander gewählt!</German>
         <Russian>Командует ИИ!</Russian>
@@ -4105,7 +4105,7 @@
 
 <!--UNSORT - ALL DONE-->
       <Key ID="STR_WF_AI"><!--shared W-->
-        <English>AI Commander</English>
+        <English>No Commander</English>
         <French>AI Commander</French>
         <German>KI Commander</German>
         <Russian>Командир ИИ</Russian>
