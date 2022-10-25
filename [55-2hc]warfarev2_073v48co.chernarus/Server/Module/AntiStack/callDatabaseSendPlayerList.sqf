@@ -16,7 +16,12 @@ if (_isArray) then {
 	{
 		_guid = _x select 0;
 
-		_parametersTemp = _guid + ",";
+		// Don't add dot in the beginning of the string formatted array
+		if (_parametersTemp == "") then {
+			_parametersTemp = _guid + ",";
+		} else {
+			_parametersTemp = "," + _guid + ","
+		};
 
 		_side = _x select 1;
 
