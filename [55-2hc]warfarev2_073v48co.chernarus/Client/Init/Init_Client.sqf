@@ -375,6 +375,7 @@ if (isMultiplayer && (missionNamespace getVariable "WFBE_C_GAMEPLAY_TEAMSWAP_DIS
 		if (_timelaps > 3) then {
 			_timelaps = 0;
 			["WARNING", Format["Init_Client.sqf: [%1] Client [%2] join is pending... no 'has connected at launch' ACK was received from the server, a new request will be submitted.",sideJoined,name player]] Call WFBE_CO_FNC_LogContent;
+			WFBE_CLIENT_HAS_CONNECTED_AT_LAUNCH = player;
 			publicVariableServer "WFBE_CLIENT_HAS_CONNECTED_AT_LAUNCH";
 		};
 	};
