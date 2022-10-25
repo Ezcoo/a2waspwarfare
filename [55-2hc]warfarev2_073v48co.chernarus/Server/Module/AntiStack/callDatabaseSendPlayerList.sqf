@@ -7,23 +7,28 @@ _isArray = typeName _parameters == "ARRAY";
 
 _parametersTemp = "";
 
+_guid = "";
+_side = west;
+_sideAsNumber = 3;
+
 if (_isArray) then {
 
 	{
 		_guid = _x select 0;
-		_side = _x select 1;
-		
+
 		_parametersTemp = _parametersTemp + "," + _guid;
 
+		_side = _x select 1:
+
 		if (_side == west) then {
-			_side = 1;
+			_sideAsNumber = 1;
 		};
 
 		if (_side == east) then {
-			_side = 2;
+			_sideAsNumber = 2;
 		};
 
-		_parametersTemp = _parametersTemp + "," + _side;
+		_parametersTemp = _parametersTemp + "," + _sideAsNumber;
 
 	} forEach _parameters;
 };

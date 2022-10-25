@@ -26,11 +26,6 @@ if (_procedureName == "STORE_SIDE") then {
 _response = call compile _response;
 
 _responseCode = _response select 0;
-_responseTotalScore = _response select 1;
-_responseTicks = _response select 2;
-_playerSkill = _responseTotalScore / _responseTicks;
-
-_responseStats = [_responseTotalScore, _responseTicks];
 
 if (typeName _responseCode == "SCALAR") then {
 	if (_responseCode < 0) then {
