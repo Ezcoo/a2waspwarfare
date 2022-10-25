@@ -95,7 +95,7 @@ _flushSleep = 7;
 				if (!(isNil "_confirmedSide")) then {
 					_playersOnServer set [count _playersOnServer, [getPlayerUID _x, _confirmedSide]];
 				} else {
-					_hasConnectedAtLaunch = missionNamespace getVariable format ["WFBE_PLAYER_%1_CONNECTED_AT_LAUNCH", _uid];
+					_hasConnectedAtLaunch = missionNamespace getVariable format ["WFBE_PLAYER_%1_CONNECTED_AT_LAUNCH", getPlayerUID _x];
 
 					if (!(isNil "_hasConnectedAtLaunch")) then {
 						_playersOnServer set [count _playersOnServer, [getPlayerUID _x, side _x]];
