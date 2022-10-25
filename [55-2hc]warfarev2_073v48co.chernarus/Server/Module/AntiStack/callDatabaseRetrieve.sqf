@@ -19,7 +19,7 @@ if (_procedureName == "RETRIEVE") then {
 };
 
 
-["INFORMATION", format ["CallDatabaseRetrieve.sqf: Called database with procedure: [%1], RESPONSE IS: [%2]", _procedureName, _response]] Call WFBE_CO_FNC_LogContent;
+["INFORMATION", format ["CallDatabaseRetrieve.sqf: Called database with procedure: [%1], RESPONSE IS: %2", _procedureName, _response]] Call WFBE_CO_FNC_LogContent;
 
 _response = call compile _response;
 
@@ -33,11 +33,11 @@ _responseStats = [_responseTotalScore, _responseTicks];
 if (typeName _responseCode == "SCALAR") then {
 	if (_responseCode < 0) then {
 		if (_responseCode == -111) then {
-			["ERROR", format ["CallDatabaseRetrieve.sqf: CRITICAL ERROR! Something went wrong with database, check it's error logs. UID: [%1]. Response code: [%3]",_uid, _responseCode]] Call WFBE_CO_FNC_LogContent;
+			["ERROR", format ["CallDatabaseRetrieve.sqf: CRITICAL ERROR! Something went wrong with database, check it's error logs. UID: [%1]. Response code: %3",_uid, _responseCode]] Call WFBE_CO_FNC_LogContent;
 		};
 	} else {
 		if (_responseCode == 1) then {
-			["INFORMATION", format ["CallDatabaseRetrieve.sqf: Called database successfully with procedure: [%1], UID: [%2], and got response: [%3]. Player skill: [%4]).", _procedureName, _uid, _response, _playerSkill]] Call WFBE_CO_FNC_LogContent;
+			["INFORMATION", format ["CallDatabaseRetrieve.sqf: Called database successfully with procedure: [%1], UID: [%2], and got response code: %3. Player skill: [%4].", _procedureName, _uid, _response, _playerSkill]] Call WFBE_CO_FNC_LogContent;
 		};
 	};
 };
