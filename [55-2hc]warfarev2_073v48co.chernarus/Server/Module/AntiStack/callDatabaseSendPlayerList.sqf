@@ -28,7 +28,7 @@ if (_isArray) then {
 			_sideAsNumber = 2;
 		};
 
-		_parametersTemp = _parametersTemp + "," + _sideAsNumber;
+		_parametersTemp = _parametersTemp + "," + str _sideAsNumber;
 
 	} forEach _parameters;
 };
