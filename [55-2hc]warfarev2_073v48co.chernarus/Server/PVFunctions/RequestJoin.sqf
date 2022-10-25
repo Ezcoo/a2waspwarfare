@@ -47,6 +47,6 @@ if (WF_A2_Vanilla) then {
 if (_canJoin) then {
 
 	missionNamespace setVariable [Format["WFBE_JIP_USER%1_TEAM_JOINED", _uid], _side];
-	_result = ["STORE_SIDE", [getPlayerUID _x, side _x]] call WFBE_SE_FNC_CallDatabaseStoreSide;
+	_result = ["STORE_SIDE", [_uid, _side]] call WFBE_SE_FNC_CallDatabaseStoreSide;
 
 };
