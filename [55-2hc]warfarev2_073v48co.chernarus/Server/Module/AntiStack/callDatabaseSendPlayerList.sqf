@@ -22,7 +22,7 @@ diag_log format ["_procedureName: %1, _parameters: %2", _procedureName, _paramet
 	if (_parametersTemp == "") then {
 		_parametersTemp = _guid + ",";
 	} else {
-		_parametersTemp = "," + _guid + ","
+		_parametersTemp = _parametersTemp + "," + _guid + ","
 	};
 
 	_side = _x select 1;
