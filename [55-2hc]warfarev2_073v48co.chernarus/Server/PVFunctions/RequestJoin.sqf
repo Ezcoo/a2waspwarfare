@@ -10,7 +10,7 @@ _canJoin = true;
 _teamJoinedConfirmed = missionNamespace getVariable Format["WFBE_JIP_USER%1_TEAM_JOINED", _uid];
 _hasConnectedAtLaunchToSide = missionNamespace getVariable format ["WFBE_PLAYER_%1_CONNECTED_AT_LAUNCH", _uid];
 
-if ( !(isNil "_teamJoinedConfirmed") || !(isNil "_hasConnectedAtLaunchToSide") ) then { //--- Retrieve JIP Information if there's any.
+if ( !(isNil "_teamJoinedConfirmed")) then { //--- Retrieve JIP Information if there's any.
 
 	if (_teamJoinedConfirmed != _side) then {
 
@@ -26,12 +26,19 @@ if ( !(isNil "_teamJoinedConfirmed") || !(isNil "_hasConnectedAtLaunchToSide") )
 
 } else {
 
-	if (_hasConnectedAtLaunchToSide != _side) then {
+	if (!(isNil "_hasConnectedAtLaunchToSide")) then {
 
-		_canJoin = false;
-		[nil, "LocalizeMessage", ['Teamswap',_name,_uid,_teamJoinedConfirmed,_side]] Call WFBE_CO_FNC_SendToClients; //--- Inform the clients about the teamswap.
-		["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamswapping, original side [%3], joined side [%4].", _name,_uid,_hasConnectedAtLaunchToSide,_side]] Call WFBE_CO_FNC_LogContent;
-	
+		if (_hasConnectedAtLaunchToSide != _side) then {
+
+			_canJoin = false;
+			[nil, "LocalizeMessage", ['Teamswap',_name,_uid,_teamJoinedConfirmed,_side]] Call WFBE_CO_FNC_SendToClients; //--- Inform the clients about the teamswap.
+			["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamswapping, original side [%3], joined side [%4].", _name,_uid,_hasConnectedAtLaunchToSide,_side]] Call WFBE_CO_FNC_LogContent;
+		} else {
+
+			_canJoin = true;
+			
+		};
+
 	} else {
 
 		["WARNING", Format["RequestJoin.sqf: Unable to find JIP information for player [%1] [%2].", _name, _uid]] Call WFBE_CO_FNC_LogContent;
