@@ -92,7 +92,7 @@ _flushSleep = 7;
 			if (isPlayer _x) then {
 				_confirmedSide = missionNamespace getVariable Format["WFBE_JIP_USER%1_TEAM_JOINED", getPlayerUID _x];
 
-				if (!(isNil "_confirmedSide")) {
+				if (!(isNil "_confirmedSide")) then {
 					_playersOnServer set [count _playersOnServer, [getPlayerUID _x, _confirmedSide]];
 				};
 			};
