@@ -39,7 +39,6 @@ _mainSleep = 30;
 				uiSleep _miniSleep;
 
 				_result = ["STORE", [getPlayerUID _x, _playerScoreDiff]] call WFBE_SE_FNC_CallDatabaseStore;
-				_result = ["STORE_SIDE", [getPlayerUID _x, side _x]] call WFBE_SE_FNC_CallDatabaseStoreSide;
 
 			};
 
