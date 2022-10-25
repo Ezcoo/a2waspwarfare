@@ -7,11 +7,11 @@ _parameters = _this select 1;
 _uid =  _parameters select 0;
 _side = _parameters select 1;
 
-if (_side == west) {
+if (_side == west) then {
 	_side = 1;
 };
 
-if (_side == east) {
+if (_side == east) then {
 	_side = 2;
 };
 
