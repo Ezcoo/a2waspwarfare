@@ -15,7 +15,7 @@ _response = {};
 _procedureCode = "";
 
 if (_procedureName == "STORE_SIDE") then {
-	_procedureCode = 202;
+	_procedureCode = 404;
 	["INFORMATION", format ["CallDatabaseStoreSide.sqf: Calling database with procedure: [%1], side: [%2], UID being checked against database is: [%3]. Parameters: %4", _procedureName, _side, _uid, _parameters]] Call WFBE_CO_FNC_LogContent;
 	_response = "A2WaspDatabase" callExtension format ["%1,%2",_procedureCode,_parameters];
 };
