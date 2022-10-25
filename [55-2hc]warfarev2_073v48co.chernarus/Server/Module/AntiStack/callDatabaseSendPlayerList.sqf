@@ -3,7 +3,7 @@ private ["_procedureName","_procedureCode","_parameters","_uid","_score","_respo
 
 _procedureName = _this select 0;
 _parameters = _this select 1;
-_isArray = typeName _parameters == "ARRAY";
+_isArray = (typeName _parameters == "ARRAY");
 
 _parametersTemp = "";
 
