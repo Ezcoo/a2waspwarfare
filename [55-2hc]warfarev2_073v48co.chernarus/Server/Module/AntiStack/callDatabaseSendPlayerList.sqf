@@ -18,7 +18,7 @@ if (_isArray) then {
 
 		_parametersTemp = _parametersTemp + "," + _guid;
 
-		_side = _x select 1:
+		_side = _x select 1;
 
 		if (_side == west) then {
 			_sideAsNumber = 1;
