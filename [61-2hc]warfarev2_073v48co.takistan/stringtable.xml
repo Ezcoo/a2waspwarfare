@@ -37,11 +37,11 @@
         <Italian>Player %1 (ID: %2) was not allowed to join %3 to guarantee team balance.</Italian>
       </Key>
 	<Key ID="STR_Voting">
-        <English>Voting</English>
-        <French>Voting</French>
-        <German>Voting</German>
+        <English>Start Comm Vote</English>
+        <French>Start Comm Vote</French>
+        <German>Start Comm Vote</German>
         <Russian>Цель</Russian>
-        <Italian>Voting</Italian>
+        <Italian>Start Comm Vote</Italian>
       </Key>
 	<Key ID="STR_Voting_2">
         <English>&lt;br/&gt;After starting the warfare mission, you are confronted with the Vote Commander screen. Click on any name in the player list to cast your vote. If you join a game that has already started, you will not see the Vote Commander screen. A new vote for a new Commander can be started anytime using the Vote option in the Options interface. The commander assigns a mission and a role to a team leader, whether it be AI or human player. The role can include the type of equipment and vehicles the AI teams will use. Players have control of what they will use in their team. Mission is the task for the team to perform. You may disable the Commander Vote Pop-up in the Team Menu.</English>
