@@ -1,4 +1,4 @@
-Private ['_HQRadio','_base','_buildings','_condition','_get','_idbl','_isDeployed','_oc','_weat','_rearmor'];
+Private ['_HQRadio','_base','_buildings','_condition','_get','_idbl','_isDeployed','_oc','_weat','_rearmor','_playerObject','_hasConnectedAtLaunchACK'];
 
 ["INITIALIZATION", Format ["Init_Client.sqf: Client initialization begins at [%1]", time]] Call WFBE_CO_FNC_LogContent;
 
@@ -110,6 +110,8 @@ WFBE_CL_FNC_SupplyMissionStart = Call Compile preprocessFileLineNumbers "Client\
 WFBE_CL_FNC_TownSupplyStatus = Call Compile preprocessFileLineNumbers "Client\Module\supplyMission\townSupplyStatus.sqf";
 WFBE_CL_FNC_CheckCCProximity = Compile preprocessFileLineNumbers "Client\Module\supplyMission\checkCCProximity.sqf";
 WFBE_CL_FNC_ReceiverMASHmarker = Call Compile preprocessFileLineNumbers "Client\Module\MASH\receiverMASHmarker.sqf";
+WFBE_CL_PVEH_HasConnectedAtLaunch = Call Compile preprocessFileLineNumbers "Client\Module\AntiStack\hasConnectedAtLaunchACK.sqf";
+
 
 //Affichage Rubber maps:
 	Local_GUIWorking = false;
@@ -348,7 +350,7 @@ if (isMultiplayer && (missionNamespace getVariable "WFBE_C_GAMEPLAY_TEAMSWAP_DIS
 		_timelaps = _timelaps + 0.1;
 		if (_timelaps > 5) then {
 			_timelaps = 0;
-			["WARNING", Format["Init_Client.sqf: [%1] Client [%2] join is pending... no ACK was received from the server, a new request will be submited.",sideJoined,name player]] Call WFBE_CO_FNC_LogContent;
+			["WARNING", Format["Init_Client.sqf: [%1] Client [%2] join is pending... no ACK was received from the server, a new request will be submitted.",sideJoined,name player]] Call WFBE_CO_FNC_LogContent;
 			["RequestJoin", [player, sideJoined]] Call WFBE_CO_FNC_SendToServer;
 		};
 	};
@@ -356,8 +358,26 @@ if (isMultiplayer && (missionNamespace getVariable "WFBE_C_GAMEPLAY_TEAMSWAP_DIS
 	if !(_get) exitWith {
 		["WARNING", Format["Init_Client.sqf: [%1] Client [%2] has teamswapped/STACKED and is now being sent back to the lobby.",sideJoined,name player]] Call WFBE_CO_FNC_LogContent;
 
-		sleep 3;
+		sleep 6;
 		failMission "END1";
+	};
+} else {
+	Private ["_hasConnectedAtLaunchACK","_timelaps"];
+	_timelaps = 0;
+	WFBE_CLIENT_HAS_CONNECTED_AT_LAUNCH = player;
+	publicVariableServer "WFBE_CLIENT_HAS_CONNECTED_AT_LAUNCH";
+	while {true} do {
+		sleep 0.1;
+		_hasConnectedAtLaunchACK = missionNamespace getVariable 'WFBE_P_HAS_CONNECTED_AT_LAUNCH_ACK';
+		if !(isNil '_hasConnectedAtLaunchACK') exitWith {["INITIALIZATION", Format["Init_Client.sqf: [%1] Client [%2], Can join? [%3]",sideJoined,name player,_hasConnectedAtLaunchACK]] Call WFBE_CO_FNC_LogContent};
+
+		_timelaps = _timelaps + 0.1;
+		if (_timelaps > 3) then {
+			_timelaps = 0;
+			["WARNING", Format["Init_Client.sqf: [%1] Client [%2] join is pending... no 'has connected at launch' ACK was received from the server, a new request will be submitted.",sideJoined,name player]] Call WFBE_CO_FNC_LogContent;
+			WFBE_CLIENT_HAS_CONNECTED_AT_LAUNCH = player;
+			publicVariableServer "WFBE_CLIENT_HAS_CONNECTED_AT_LAUNCH";
+		};
 	};
 };
 

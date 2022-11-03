@@ -204,7 +204,7 @@
         <Italian>$%1 Received for the neutralization assistance of a %2.</Italian>
       </Key>
       <Key ID="STR_WF_CHAT_AI_Commander">
-        <English>AI Commander Selected!</English>
+        <English>No Commander Selected!</English>
         <French>Commandeur IA Sélectioné!</French>
         <German>KI wurde zum Commander gewählt!</German>
         <Russian>Командует ИИ!</Russian>
@@ -337,7 +337,7 @@
         <Italian>Player %1 (ID: %2) freaks out and rioted in Base (%3 has been destroyed)!</Italian>
       </Key>
       <Key ID="STR_WF_CHAT_Teamswap"><!--shared U-->
-        <English>Player %1 (ID: %2) has teamswapped! (From %3 to %4)</English>
+        <English>Player %1 (ID: %2) has attempted to teamswap. (From %3 to %4)</English>
         <French>Le joueur %1 (ID: %2) a changé d'équipe! (De %3 à %4)</French>
         <German>Der Spieler %1 (ID: %2) hat das Team gewechselt! (von %3 nach %4)</German>
         <Russian>Игрок %1 (ID: %2) сменил сторону! (с %3 на %4)</Russian>
@@ -4105,11 +4105,11 @@
 
 <!--UNSORT - ALL DONE-->
       <Key ID="STR_WF_AI"><!--shared W-->
-        <English>AI Commander</English>
-        <French>AI Commander</French>
+        <English>No Commander</English>
+        <French>No Commander</French>
         <German>KI Commander</German>
         <Russian>Командир ИИ</Russian>
-        <Italian>AI Commander</Italian>
+        <Italian>No Commander</Italian>
       </Key>
       <Key ID="STR_WF_Commander"><!--shared U-->
         <English>Commander: %1</English>
