@@ -1,7 +1,8 @@
 private ["_playerStats","_playerScore","_playerPrevStats","_playerPrevScoreTotal","_playerPrevTimePlayedTotal","_result","_oldScore","_playerScoreDiff","_playerNewScore","_playerNewScoreTotal","_sleep","_miniSleep","_hasConnectedAtLaunch"];
 
+// In seconds
 _miniSleep = 0.01;
-_mainSleep = 30;
+_mainSleep = 120;
 
 ["INFORMATION", "CountPlayerScores.sqf got execVMd!"] Call WFBE_CO_FNC_LogContent;
 
@@ -48,7 +49,7 @@ _mainSleep = 30;
 
 };
 
-
+// In seconds
 _sleep = 1;
 
 [_sleep, _miniSleep] spawn {
@@ -75,6 +76,7 @@ _sleep = 1;
 
 };
 
+// In seconds
 _flushSleep = 7;
 
 [_flushSleep] spawn {
