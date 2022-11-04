@@ -1130,11 +1130,11 @@
         <Italian>Menu Aggiornamenti</Italian>
       </Key>
       <Key ID="STR_WF_MAIN_VotingMenu">
-        <English>Voting</English>
-        <French>Voting</French>
-        <German>Voting</German>
+        <English>Start Comm Vote</English>
+        <French>Start Comm Vote</French>
+        <German>Start Comm Vote</German>
         <Russian>Голосование</Russian>
-        <Italian>Voting</Italian>
+        <Italian>Start Comm Vote</Italian>
       </Key>
 
 <!--SUBMISSION Strings - ALL DONE-->
