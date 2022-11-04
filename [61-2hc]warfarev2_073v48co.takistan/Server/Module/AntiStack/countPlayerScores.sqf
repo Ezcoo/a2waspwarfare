@@ -99,8 +99,8 @@ _flushSleep = 7;
 				} else {
 					_hasConnectedAtLaunch = missionNamespace getVariable format ["WFBE_PLAYER_%1_CONNECTED_AT_LAUNCH", getPlayerUID _x];
 
-					diag_log format ["UID: %1 _hasConnectedAtLaunch: %2", getPlayerUID _x, _hasConnectedAtLaunch];
 					if (!(isNil "_hasConnectedAtLaunch")) then {
+						diag_log format ["UID: %1 _hasConnectedAtLaunch: %2", getPlayerUID _x, _hasConnectedAtLaunch];
 						_playersOnServer set [count _playersOnServer, [getPlayerUID _x, side _x]];
 					};
 				};
