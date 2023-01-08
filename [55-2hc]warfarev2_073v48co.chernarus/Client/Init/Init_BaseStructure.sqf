@@ -31,7 +31,7 @@ if (local player) then {
               _markercc setMarkerSizeLocal [_radius,_radius];
 	};
 	_type = "mil_box";
-	_color = "colorIndependent";
+	_color = "colorGreen";
 	if (_hq) then {_type = "Headquarters"};
 	_marker setMarkerTypeLocal _type;
 	_text = "";
