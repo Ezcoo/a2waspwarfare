@@ -16,6 +16,10 @@ while {!gameOver} do {
 		
 		if (_visible) then {
 
+			missionNamespace setVariable ["WFBE_Client_PV_IsSupplyMissionActiveInTown", [player, _town]];
+		
+			publicVariableServer "WFBE_Client_PV_IsSupplyMissionActiveInTown";
+
 			_townSupplyMissionCoolDownEnabled = _town getVariable "supplyMissionCoolDownEnabled";
 			
 			if (!_townSupplyMissionCoolDownEnabled) then {
