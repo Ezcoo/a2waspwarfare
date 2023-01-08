@@ -26,6 +26,11 @@ if (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 
     publicVariableServer "WFBE_Client_PV_SupplyMissionStarted";
     
 };
+
+sleep 2;
+
+publicVariableServer "WFBE_Client_PV_IsSupplyMissionActiveInTown";
+
 /*
 diag_log "SupplyMissionStart: PHASE ONE";
 
