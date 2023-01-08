@@ -8,6 +8,8 @@ publicVariableServer "WFBE_Client_PV_IsSupplyMissionActiveInTown";
 
 _supplyMissionAlreadyActiveInTown = _sourceTown getVariable "supplyMissionCoolDownEnabled";
 
+diag_log format ["_supplyMissionAlreadyActiveInTown: %1, in town: %2", _supplyMissionAlreadyActiveInTown, _sourceTown];
+
 if (_supplyMissionAlreadyActiveInTown) exitWith {
     diag_log format ["ERROR: Supply mission happened already during the last 30 minutes in %1!", _sourceTown];
     format ["This town doesn't have enough supplies to be collected yet! You can start a supply mission in towns that have [+SUPPLY] added after their SV on map."] call GroupChatMessage;
