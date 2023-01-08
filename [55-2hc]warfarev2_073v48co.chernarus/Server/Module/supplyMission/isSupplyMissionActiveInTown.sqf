@@ -13,6 +13,8 @@
 		_supplyMissionCooldownEnabled = true;
 	};
 
+	diag_log format ["_supplyMissionCooldownEnabled: %1 for town: %2", _supplyMissionCooldownEnabled, _sourceTown];
+
 	missionNamespace setVariable ["WFBE_Server_PV_IsSupplyMissionActiveInTown", [_sourceTown, _supplyMissionCooldownEnabled]];
 
 	(owner _player) publicVariableClient "WFBE_Server_PV_IsSupplyMissionActiveInTown";
