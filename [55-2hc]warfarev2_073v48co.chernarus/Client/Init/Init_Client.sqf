@@ -643,10 +643,21 @@ hint parseText "<t color='#28ff14'>If you're a new player:</t> <br/><br/>Read th
 if (!WF_Debug) then {playMusic "Track11_Large_Scale_Assault";};
 
 
-waitUntil {!(isNull player)}; 
+waitUntil {!(isNull player)};
 
 WFBE_C_PLAYER_OBJECT = [player, getPlayerUID player];
 publicVariableServer "WFBE_C_PLAYER_OBJECT";
+
+{
+
+	_town = _x;
+
+	missionNamespace setVariable ["WFBE_Client_PV_IsSupplyMissionActiveInTown", [player, _town]];
+			
+	publicVariableServer "WFBE_Client_PV_IsSupplyMissionActiveInTown";
+
+} forEach towns;
+
 
 /* Client Init Done - Remove the blackout */
 12452 cutText [(localize 'STR_WF_Loading')+"...","BLACK IN",5];
