@@ -680,7 +680,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={9209.5947,72.793755,12572.147};
+					position[]={7292.3618,83.712593,10549.792};
 					azimut=180;
 					id=29;
 					side="LOGIC";
@@ -715,7 +715,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={7320.3481,282.19952,414.07101};
+					position[]={5551.0752,68.838974,12268.397};
 					azimut=-36.5415;
 					id=31;
 					side="LOGIC";
@@ -734,7 +734,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={3546.4495,367.94342,1353.9576};
+					position[]={4179.7285,434.72662,2062.6057};
 					id=32;
 					side="LOGIC";
 					vehicle="LocationLogicStart";
@@ -751,7 +751,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={8445.7734,457.70419,3797.0291};
+					position[]={7874.2163,358.18521,3261.4509};
 					id=33;
 					side="LOGIC";
 					vehicle="LocationLogicStart";
@@ -1199,7 +1199,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={4624.3545,105.73338,9892.8398};
+					position[]={4670.6445,150.94221,9203.4414};
 					azimut=90;
 					id=64;
 					side="LOGIC";
@@ -1217,7 +1217,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11254.916,178.13696,10494.149};
+					position[]={8465.3018,201.84363,8603.3574};
 					id=65;
 					side="LOGIC";
 					vehicle="LocationLogicStart";
@@ -3701,7 +3701,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={3658.5798,169.07985,5618.4971};
+					position[]={3714.6399,171.13455,5635.7466};
 					id=230;
 					side="LOGIC";
 					vehicle="LocationLogicStart";
@@ -3718,7 +3718,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={152.89729,317.10614,5540.5625};
+					position[]={648.13586,417.86884,4569.1333};
 					id=231;
 					side="LOGIC";
 					vehicle="LocationLogicStart";
@@ -3735,7 +3735,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={7017.811,44.027935,12423.298};
+					position[]={7286.9551,287.46713,760.84308};
 					id=232;
 					side="LOGIC";
 					vehicle="LocationLogicStart";
@@ -3753,7 +3753,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={3232.1348,101.21846,11066.327};
+					position[]={321.66772,504.5741,7344.4707};
 					id=233;
 					side="LOGIC";
 					vehicle="LocationLogicStart";
