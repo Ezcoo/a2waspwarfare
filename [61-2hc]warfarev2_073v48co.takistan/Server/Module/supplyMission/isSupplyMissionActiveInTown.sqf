@@ -15,6 +15,6 @@
 
 	missionNamespace setVariable ["WFBE_Server_PV_IsSupplyMissionActiveInTown", [_sourceTown, _supplyMissionCooldownEnabled]];
 
-	(owner _player) publicVariableClient "WFBE_Server_PV_IsSupplyMissionActiveInTown";
+	publicVariable "WFBE_Server_PV_IsSupplyMissionActiveInTown";
 
 };
