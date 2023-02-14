@@ -1,2 +1,6 @@
 *.idea
 *.pbo
+*/version.sqf
+/version.sqf
+*version.sqf
+version.sqf
