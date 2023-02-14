@@ -77,7 +77,7 @@ class Mission
 					position[]={2997.0154,20.087948,8524.7363};
 					id=1;
 					side="WEST";
-					vehicle="GER_Soldier_Scout_EP1";
+					vehicle="US_Delta_Force_TL_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -709,7 +709,7 @@ class Mission
 					position[]={2997.2175,20.299723,8523.2988};
 					id=30;
 					side="WEST";
-					vehicle="GER_Soldier_Scout_EP1";
+					vehicle="US_Delta_Force_TL_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
