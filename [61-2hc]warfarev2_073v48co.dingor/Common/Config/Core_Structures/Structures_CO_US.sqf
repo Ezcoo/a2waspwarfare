@@ -158,7 +158,8 @@ _n = _n		+ ["USBasicAmmunitionBox_EP1"];
 _n = _n		+ ["USBasicWeapons_EP1"];
 _n = _n		+ ["USLaunchers_EP1"];
 _n = _n		+ ["USSpecialWeapons_EP1"];
-_n = _n		+ ["CDF_WarfareBVehicleServicePoint"];
+_n = _n		+ ["US_WarfareBVehicleServicePoint_Base_EP1"];
+
 
 /* Class used for AI, AI will attempt to build those */
 missionNamespace setVariable [Format["WFBE_%1DEFENSES_MG", _side], ['M2StaticMG_US_EP1']];

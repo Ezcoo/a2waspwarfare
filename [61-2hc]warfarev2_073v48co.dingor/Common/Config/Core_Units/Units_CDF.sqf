@@ -43,7 +43,6 @@ missionNamespace setVariable [Format ["WFBE_%1LIGHTUNITS", _side], _u];
 if (local player) then {['LIGHT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
 _u			= ['BMP2_Ambul_CDF'];
-_u = _u		+ ['BVP1_TK_ACR'];
 _u = _u		+ ['ZSU_CDF'];
 _u = _u		+ ['BMP2_CDF'];
 _u = _u		+ ['T72_CDF'];

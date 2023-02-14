@@ -7,7 +7,7 @@ missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_RANGES_MIN', _side], [10
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_RANGES_MAX', _side], [8000,7500,9000]]; //--- Unit max firing range.
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_TIME_RELOAD', _side], [7,4,2]]; //--- Approximate time needed for unit to fire again.
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_BURST', _side], [10,4,10]]; //--- Burst sent per fire mission.
-missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_VELOCITIES', _side], [250,235,275]]; //--- Projectile fall velocity.
+missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_VELOCITIES', _side], [500,475,550]]; //--- Projectile fall velocity.
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_DISPERSIONS', _side], [50,60,40]]; //--- Accuracy of the shell upon landing.
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_AMMO_LASER', _side], ['Sh_122_LASER']]; //--- LASER rounds
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_AMMO_SADARM', _side], ['Sh_122_SADARM']]; //--- SADARM rounds

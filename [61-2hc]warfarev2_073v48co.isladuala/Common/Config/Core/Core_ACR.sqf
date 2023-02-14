@@ -63,10 +63,10 @@ _i = _i + [['','',275,18,-2,1,1,0,'Czech',[]]];
 _c = _c + ['LandRover_Special_CZ_EP1'];
 _i = _i + [['','',700,20,-2,2,1,0,'Czech',[]]];
 
-_c = _c + ['Dingo_WDL_ACR'];
+_c = _c + ['Dingo_DST_ACR'];
 _i = _i + [['','',870,20,-2,2,1,0,'Czech',[]]];
 
-_c = _c + ['Dingo_GL_Wdl_ACR'];
+_c = _c + ['Dingo_GL_DST_ACR'];
 _i = _i + [['','',1050,21,-2,2,1,0,'Czech',[]]];
 
 _c = _c + ['Pandur2_ACR'];

@@ -152,12 +152,6 @@ _u = _u		+ ['MtvrRepair_DES_EP1'];
 _u = _u		+ ['MtvrReammo_DES_EP1'];
 _u = _u		+ ['MtvrRefuel_DES_EP1'];
 _u = _u		+ ['MtvrSalvage_DES_EP1'];
-_u = _u		+ ['M1126_ICV_M2_EP1'];
-_u = _u		+ ['M1126_ICV_mk19_EP1'];
-_u = _u		+ ['M1129_MC_EP1'];
-_u = _u		+ ['M1135_ATGMV_EP1'];
-_u = _u		+ ['M1128_MGS_EP1'];
-_u = _u		+ ['M1133_MEV_EP1'];
 // if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {
 _u = _u		+ ['MtvrSupply_DES_EP1'];
 if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_BAF") > 0) then {
@@ -174,7 +168,13 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_BAF") > 0) then {
 missionNamespace setVariable [Format ["WFBE_%1LIGHTUNITS", _side], _u];
 if (local player) then {['LIGHT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
-_u =		  ['M2A2_EP1'];
+_u 			= ['M1126_ICV_M2_EP1'];
+_u = _u		+ ['M1126_ICV_mk19_EP1'];
+_u = _u		+ ['M1129_MC_EP1'];
+_u = _u		+ ['M1135_ATGMV_EP1'];
+_u = _u		+ ['M1128_MGS_EP1'];
+_u = _u		+ ['M1133_MEV_EP1'];
+_u = _u		+ ['M2A2_EP1'];
 _u = _u		+ ['M2A3_EP1'];
 _u = _u		+ ['M1A1_US_DES_EP1'];
 _u = _u		+ ['MLRS_DES_EP1'];
@@ -228,6 +228,8 @@ _u = _u		+ ["Volha_1_TK_CIV_EP1"];
 _u = _u		+ ["LandRover_TK_CIV_EP1"];
 _u = _u		+ ["V3S_Open_TK_CIV_EP1"];
 _u = _u		+ ["Ikarus_TK_CIV_EP1"];
+_u = _u		+ ["MTVR_DES_EP1"];
+_u = _u		+ ["MtvrRefuel_DES_EP1"];
 if ((missionNamespace getVariable "WFBE_C_UNITS_TOWN_PURCHASE") > 0) then {
 	_u = _u		+ [missionNamespace getVariable "WFBE_WESTSOLDIER"];
 };

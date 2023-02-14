@@ -6,8 +6,8 @@ missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_WEAPONS', _side], ['M119
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_RANGES_MIN', _side], [1000,50,1200,550]]; //--- Unit cannot fire if the target is within it's min range.
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_RANGES_MAX', _side], [8000,7500,9000,6500]]; //--- Unit max firing range.
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_TIME_RELOAD', _side], [7,4,2,4]]; //--- Approximate time needed for unit to fire again.
-missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_BURST', _side], [10,4,6,6]]; //--- Burst sent per fire mission.
-missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_VELOCITIES', _side], [500,475,550,475]]; //--- Projectile fall velocity.
+missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_BURST', _side], [10,4,12,8]]; //--- Burst sent per fire mission.
+missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_VELOCITIES', _side], [250,235,275,235]]; //--- Projectile fall velocity.
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_DISPERSIONS', _side], [50,60,40,55]]; //--- Accuracy of the shell upon landing.
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_AMMO_LASER', _side], ['Sh_105_LASER']]; //--- LASER rounds
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_AMMO_SADARM', _side], ['Sh_105_SADARM']]; //--- SADARM rounds
@@ -40,8 +40,8 @@ missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_EXTENDED_MAGS_UPGRADE', 
 
 //--- Artillery classnames, more than one of the same family may be used.
 missionNamespace setVariable [Format['WFBE_%1_ARTILLERY_CLASSNAMES', _side], [
-	['M119_US_EP1'],
-	['M252_US_EP1'],
-	['MLRS_DES_EP1'],
+	['M119_US_EP1','M119'],
+	['M252_US_EP1','M252'],
+	['MLRS','MLRS_DES_EP1'],
 	['M1129_MC_EP1']
 ]];

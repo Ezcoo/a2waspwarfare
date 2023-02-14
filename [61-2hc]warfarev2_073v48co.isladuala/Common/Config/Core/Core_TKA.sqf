@@ -39,7 +39,7 @@ _c = _c + ['TK_Soldier_AMG_EP1'];
 _i = _i + [['','',205,5,-1,0,0,1,'Takistani Army',[]]];
 
 _c = _c + ['TK_Soldier_MG_EP1'];
-_i = _i + [['','',220,5,-1,0,0,1,'Takistani Army',[]]];
+_i = _i + [['','',220,5,-1,1,0,1,'Takistani Army',[]]];
 
 _c = _c + ['TK_Soldier_GL_EP1'];
 _i = _i + [['','',160,5,-1,0,0,1,'Takistani Army',[]]];
@@ -118,7 +118,7 @@ _c = _c + ['BRDM2_TK_EP1'];
 _i = _i + [['','',1200,22,-2,2,1,0,'Takistani Army',[]]];
 
 _c = _c + ['BRDM2_ATGM_TK_EP1'];
-_i = _i + [['','',2250,22,-2,3,1,0,'Takistani Army',[]]];
+_i = _i + [['','',1650,22,-2,3,1,0,'Takistani Army',[]]];
 
 _c = _c + ['BTR60_TK_EP1'];
 _i = _i + [['','',1425,25,-2,3,1,0,'Takistani Army',[]]];
@@ -132,6 +132,9 @@ _i = _i + [['','',5300,25,-2,4,1,0,'Takistani Army',[]]];
 /* Heavy Vehicles */
 _c = _c + ['M113_TK_EP1'];
 _i = _i + [['','',900,17,-2,0,2,0,'Takistani Army',[]]];
+
+_c = _c + ['BVP1_TK_ACR'];
+_i = _i + [['','',2900,22,-2,1,2,0,'Takistani Army',[]]];
 
 _c = _c + ['BMP2_TK_EP1'];
 _i = _i + [['','',3400,28,-2,2,2,0,'Takistani Army',[]]];
@@ -237,6 +240,10 @@ _i = _i + [['','',6250,0,0,0,'Ammo',0,'Takistani Army',[]]];
 
 _c = _c + ['TKSpecialWeapons_EP1'];
 _i = _i + [['','',7200,0,0,0,'Ammo',0,'Takistani Army',[]]];
+
+/* Special */
+_c = _c + ['Pchela1T'];
+_i = _i + [['','',9000,35,-2,1,3,0,'Takistani Army',[]]];
 
 /* Service point */
 
