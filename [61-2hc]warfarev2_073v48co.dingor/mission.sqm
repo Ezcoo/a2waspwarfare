@@ -385,7 +385,7 @@ class Mission
 					position[]={5679.5889,2.4861522,859.30408};
 					id=15;
 					side="EAST";
-					vehicle="RUS_Commander";
+					vehicle="TK_Special_Forces_TL_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
