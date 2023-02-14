@@ -1246,7 +1246,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Support (Deploy MASH, Supply run)";
 					synchronizations[]={106};
 				};
 			};
@@ -1268,7 +1268,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Support (Deploy MASH, Supply run)";
 					synchronizations[]={106};
 				};
 			};
@@ -1400,7 +1400,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Support (Deploy MASH, Supply run)";
 					synchronizations[]={106};
 				};
 			};
@@ -1576,7 +1576,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Support (Deploy MASH, Supply run)";
 					synchronizations[]={107};
 				};
 			};
@@ -1598,7 +1598,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Support (Deploy MASH, Supply run)";
 					synchronizations[]={107};
 				};
 			};
@@ -1686,7 +1686,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Support (Deploy MASH, Supply run)";
 					synchronizations[]={107};
 				};
 			};
@@ -1812,7 +1812,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Support (Deploy MASH, Supply run)";
 					synchronizations[]={106};
 				};
 			};
@@ -2119,7 +2119,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Support (Deploy MASH, Supply run)";
 					synchronizations[]={107};
 				};
 			};
@@ -2185,7 +2185,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Support (Deploy MASH, Supply run)";
 					synchronizations[]={106};
 				};
 			};
@@ -2251,7 +2251,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Support (Deploy MASH, Supply run)";
 					synchronizations[]={107};
 				};
 			};
