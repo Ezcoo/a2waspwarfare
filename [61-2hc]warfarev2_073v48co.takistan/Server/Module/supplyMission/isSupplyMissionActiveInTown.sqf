@@ -9,7 +9,7 @@
 
 	_supplyMissionCooldownEnabled = false;
 
-	if (((_lastActivationTime + 1800) > time) && (_lastActivationTime != 0)) then {
+	if (((_lastActivationTime + WFBE_CO_VAR_SupplyMissionRegenInterval) > time) && (_lastActivationTime != 0)) then {
 		_supplyMissionCooldownEnabled = true;
 	};
 
