@@ -7,7 +7,7 @@ WFBE_CO_fnc_findVariableInNestedArray = {
 	_iRetVal = -1;
 
 	// Loop trough arrArray
-	for "_i" from 0 to _iArraySize do {
+	for "_i" from 0 to (_iArraySize - 1) do {
 		// If array in nested array return val = position in nested array
 		if (_varValue in (_arrArray select _i)) then {
 			_iRetVal = _i;
