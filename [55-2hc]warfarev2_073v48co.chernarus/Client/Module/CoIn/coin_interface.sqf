@@ -210,7 +210,8 @@ BIS_CONTROL_CAM_Handler = {
 				_isAutoWallConstructingEnabled = false;
 				_text = "disabled";
 			}else{
-				_isAutoWallConstructingEnabled = true;
+				_isAutoWallConstructingEnabled = false;
+WFBE_CO_VAR_SupplyMissionRegenInterval = 1800;
 				_text = "enabled";
 			};
 			(format ["Auto Wall Construction is: %1", _text]) Call GroupChatMessage;
