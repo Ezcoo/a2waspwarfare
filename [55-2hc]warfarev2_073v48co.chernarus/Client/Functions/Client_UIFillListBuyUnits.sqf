@@ -43,7 +43,7 @@ lnbClear _listBox;
 		lnbSetValue [_listBox,[_i,0],_u];
 		if (_c in (missionNamespace getVariable Format ["WFBE_%1AMBULANCES", sideJoinedText])) then {lnbSetColor [_listBox,[_i,1],[1.0, 1.0, 0.0, 1.0]]};
 		if (_c in (missionNamespace getVariable Format ['WFBE_%1REPAIRTRUCKS',sideJoinedText])) then {lnbSetColor [_listBox,[_i,1],[1.0, 0.5, 0.25, 1.0]]};
-		if (_c in (missionNamespace setVariable Format["WFBE_%1SUPPLYTRUCKS", sideJoinedText])) then {lnbSetColor [_listBox,[_i,1],[0.25, 0.75, 0.25, 1.0]]};
+		if (_c in (missionNamespace getVariable Format["WFBE_%1SUPPLYTRUCKS", sideJoinedText])) then {lnbSetColor [_listBox,[_i,1],[0.25, 0.75, 0.25, 1.0]]};
 		_i = _i + 1;
 	};
 	_u = _u + 1;
