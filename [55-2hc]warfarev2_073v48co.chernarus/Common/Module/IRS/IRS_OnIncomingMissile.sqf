@@ -41,7 +41,7 @@ if (alive _vehicle) then {
 							_projectile = _this select 0;
 
 							while {!(isNull _projectile)} do {
-								"INCOMING MISSILE!" call TitleTextMessage;
+								["INCOMING MISSILE!"] call TitleTextMessage;
 								sleep 0.3;
 							};
 						}
