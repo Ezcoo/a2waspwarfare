@@ -273,6 +273,13 @@
         <Russian>Вы Командующий!</Russian>
         <Italian>Sei il Comandante!</Italian>
       </Key>
+      <Key ID="STR_WF_CHAT_PlayerCommanderTitleText"><!--shared U-->
+        <English>You are the new Commander! Good luck!</English>
+        <French>Vous êtes le Commandeur! Bonne Chance!</French>
+        <German>Du bist der neue Commander! Viel Erfolg!</German>
+        <Russian>Вы Командующий!</Russian>
+        <Italian>Sei il Comandante!</Italian>
+      </Key>
       <Key ID="STR_WF_CHAT_SatchelTK">
         <English>Player %1 (%2) has tried to place a satchel near a friendly %4 %3!</English>
         <French>Le joueur %1 (%2) a essayé de placer une charge satchel à côté d'un batiment %4 allié! (%3)</French>
