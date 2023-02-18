@@ -441,9 +441,17 @@ while {alive player && dialog} do {
 						hintSilent "Repair trucks are special vehicles that can be used to build static structures and weapons. Get in driver seat of your repair truck and open action menu (mouse scroll). You should see the repair truck build menu option, select it and start building!";
 					};
 					if (_unit in (missionNamespace getVariable Format ["WFBE_%1SUPPLYTRUCKS", sideJoinedText])) then {
-						hintSilent "Supply trucks can be used to boost your the supply income of your team. You can collect extra supply by driving to friendly town center (next to main depot of town), getting out of your supply truck, aiming at it and using action menu (mouse scroll) -> LOAD SUPPLIES... Then just drive next to friendly Command Center (marked with C) on map. Note that you need to have selected Support slot/class in server lobby. There also needs to be [+SUPPLY] mark after town name for you to be able to collect the extra supply.";
+						hintSilent "Supply trucks can be used to boost the supply income of your team. You can collect extra supply by driving to friendly town center (next to main depot of town), getting out of your supply truck, aiming at it and using action menu (mouse scroll) -> LOAD SUPPLIES... Then just drive next to friendly Command Center (marked with C) on map. Note that you need to have selected Support slot/class in server lobby. There also needs to be [+SUPPLY] mark after town name for you to be able to collect the extra supply.";
 					};
 					
+					_artyClassnames = missionNamespace getVariable Format ['WFBE_%1_ARTILLERY_CLASSNAMES', sideJoinedText];
+					_varPosInNestedArray = [_artyClassnames, _unit] call WFBE_CL_FNC_FindVariableInNestedArray;
+					_isNotArtillery = [_varPosInNestedArray, -1] call BIS_fnc_areEqual;
+					
+					if (!(_isNotArtillery)) then {
+						hintSilent parseText "Artillery units can be used by placing AI in gunner seat. There's AI in gunner seat in every vehicle that you buy as default option. <br/> <br/>You can call an artillery strike via >> WF menu -> Tactical Center. <br/> <br/>You need to select the correct artillery type, target radius, set the arty strike center point (within allowed range) and finally, call the strike. <br/><br/>Note that there are static arty units as well. You can build them with repair truck or as commander."
+					};
+
 				} else {
 					(_display displayCtrl 12022) ctrlSetStructuredText (parseText '');
 				};
