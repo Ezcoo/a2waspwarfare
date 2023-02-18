@@ -37,6 +37,18 @@ if (alive _vehicle) then {
 							};
 						};
 
+						[_projectile] spawn {
+							_projectile = _this select 0;
+
+							while {!(isNull _projectile)} do {
+								["INCOMING MISSILE!"] call TitleTextMessage;
+								sleep 0.4;
+							};
+
+							sleep 3;
+							[""] call TitleTextMessage;
+						};
+
 					};
 				};
 			};

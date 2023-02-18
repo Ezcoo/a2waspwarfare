@@ -45,8 +45,9 @@ if (alive _vehicle) then {
 								sleep 0.4;
 							};
 
+							sleep 3;
 							[""] call TitleTextMessage;
-						}
+						};
 
 					};
 				};
