@@ -46,14 +46,8 @@ lnbClear _listBox;
 		if (_x in (missionNamespace getVariable Format ["WFBE_%1SUPPLYTRUCKS", sideJoinedText])) then {lnbSetColor [_listBox,[_i,1],[1.0, 0.5, 0.25, 1.0]]};
 		// diag_log (str _x + " " + [[missionNamespace getVariable Format ['WFBE_%1_ARTILLERY_CLASSNAMES', sideJoinedText]], str _x] call WFBE_CO_FNC_findVariableInNestedArray);
 		_artyClassnames = missionNamespace getVariable Format ['WFBE_%1_ARTILLERY_CLASSNAMES', sideJoinedText];
-		diag_log[_artyClassnames];
-		diag_log ["WFBE_CL_FNC_FindVariableInNestedArray ", WFBE_CL_FNC_FindVariableInNestedArray ];
-		diag_log [_artyClassnames, _x];
-		diag_log [[_artyClassnames, _x] call WFBE_CL_FNC_FindVariableInNestedArray];
 		_varPosInNestedArray = [_artyClassnames, _x] call WFBE_CL_FNC_FindVariableInNestedArray;
-		diag_log ["_varPosInNestedArray ", _varPosInNestedArray];
 		_isNotArtillery = [_varPosInNestedArray, -1] call BIS_fnc_areEqual;
-		diag_log ["_isNotArtillery ", _isNotArtillery];
 		if (!(_isNotArtillery)) then {lnbSetColor [_listBox,[_i,1],[1.0, 0.25, 0.25, 1.0]]};
 		
 		/*
