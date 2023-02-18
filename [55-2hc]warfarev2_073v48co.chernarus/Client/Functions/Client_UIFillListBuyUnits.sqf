@@ -45,10 +45,12 @@ lnbClear _listBox;
 		if (_x in (missionNamespace getVariable Format ['WFBE_%1REPAIRTRUCKS', sideJoinedText])) then {lnbSetColor [_listBox,[_i,1],[0.25, 0.75, 0.25, 1.0]]};
 		if (_x in (missionNamespace getVariable Format ["WFBE_%1SUPPLYTRUCKS", sideJoinedText])) then {lnbSetColor [_listBox,[_i,1],[1.0, 0.5, 0.25, 1.0]]};
 		if ([([[missionNamespace getVariable Format ['WFBE_%1_ARTILLERY_CLASSNAMES', sideJoinedText]], _x] call BIS_fnc_arrayFindDeep), -1] call BIS_fnc_areEqual) then {lnbSetColor [_listBox,[_i,1],[1.0, 0.25, 0.25, 1.0]]};
+		/*
 		diag_log(_x);
 		diag_log("BIS_fnc_findNestedElement result: " + str (([[missionNamespace getVariable Format ['WFBE_%1_ARTILLERY_CLASSNAMES', sideJoinedText]], _x] call BIS_fnc_findNestedElement) != -1));
 		diag_log("BIS_fnc_findNestedElement (str _x):" + str (([[missionNamespace getVariable Format ['WFBE_%1_ARTILLERY_CLASSNAMES', sideJoinedText]], str _x] call BIS_fnc_findNestedElement) != -1));
 		diag_log(missionNamespace getVariable Format ['WFBE_%1_ARTILLERY_CLASSNAMES', sideJoinedText]);
+		*/
 		_i = _i + 1;
 	};
 	_u = _u + 1;
