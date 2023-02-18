@@ -42,8 +42,10 @@ if (alive _vehicle) then {
 
 							while {!(isNull _projectile)} do {
 								["INCOMING MISSILE!"] call TitleTextMessage;
-								sleep 0.3;
+								sleep 0.4;
 							};
+
+							[""] call TitleTextMessage;
 						}
 
 					};
