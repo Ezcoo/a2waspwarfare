@@ -344,7 +344,7 @@
         <Italian>Il Giocatore %1 (ID: %2) ha cambiato squadra! (da %3 a %4)</Italian>
       </Key>
       <Key ID="STR_WF_CHAT_Teamkill">
-        <English>$%1 removed for a teamkill! go to the ophthalmologist...</English>
+        <English>$%1 removed for a teamkill! Please check your fire next time and ask for help if you're new! :)</English>
         <French>$%1 Enlever pour un tir fratricide.</French>
         <German>$%1 Strafe für einen Teamkill! Ab zum Augenarzt...</German>
         <Russian>-$%1 за огонь по своим.</Russian>
