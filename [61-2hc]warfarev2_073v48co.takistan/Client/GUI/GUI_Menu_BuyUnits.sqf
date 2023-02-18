@@ -435,13 +435,13 @@ while {alive player && dialog} do {
 					(_display displayCtrl 12022) ctrlSetStructuredText (parseText _txt);
 					
 					if (_unit in (missionNamespace getVariable Format ["WFBE_%1AMBULANCES", sideJoinedText])) then {
-						hintSilent parseText "Ambulances can be used as mobile respawn points. You can see the current maximum allowed respawn range from >> WF Menu -> Factory Upgrade -> Ambulance Range upgrade."
+						hintSilent parseText "Ambulances are important vehicles because they can be used as mobile respawn points. <br/> <br/>You can see the current maximum allowed respawn range from any friendly ambulance from >> WF Menu -> Factory Upgrade -> Ambulance Range upgrade."
 					};
 					if (_unit in (missionNamespace getVariable Format ["WFBE_%1REPAIRTRUCKS", sideJoinedText])) then {
 						hintSilent parseText "Repair trucks are special vehicles that can be used to build static structures and weapons. They are especially useful for advanced tactics. <br/> <br/>Get in driver seat of your repair truck and open action menu (mouse scroll). You should see the repair truck build menu option, select it and start building!";
 					};
 					if (_unit in (missionNamespace getVariable Format ["WFBE_%1SUPPLYTRUCKS", sideJoinedText])) then {
-						hintSilent parseText "Supply trucks can be used to boost the supply income of your team. You can collect extra supply by driving to friendly town center (next to main depot of town), getting out of your supply truck, aiming at it and using action menu (mouse scroll) -> LOAD SUPPLIES... Then just drive next to friendly Command Center (marked with C) on map. Note that you need to have selected Support slot/class in server lobby. There also needs to be [+SUPPLY] mark after town name for you to be able to collect the extra supply.";
+						hintSilent parseText "Supply trucks can be used to boost the supply income of your team. <br/> <br/>You can collect extra supply by driving to friendly town center (next to main depot of town), getting out of your supply truck, aiming at it and using action menu (mouse scroll) -> LOAD SUPPLIES... Then just drive next to friendly Command Center (marked with C) on map. <br/> <br/> Note that you need to have selected Support slot/class in server lobby. There also needs to be [+SUPPLY] mark after town name for you to be able to collect the extra supply.";
 					};
 					
 					_artyClassnames = missionNamespace getVariable Format ['WFBE_%1_ARTILLERY_CLASSNAMES', sideJoinedText];
@@ -449,7 +449,7 @@ while {alive player && dialog} do {
 					_isNotArtillery = [_varPosInNestedArray, -1] call BIS_fnc_areEqual;
 					
 					if (!(_isNotArtillery)) then {
-						hintSilent parseText "Artillery units can be used by placing AI in gunner seat. There's AI in gunner seat in every vehicle that you buy as default option. <br/> <br/>You can call an artillery strike via >> WF menu -> Tactical Center. <br/> <br/>You need to select the correct artillery type, target radius, set the arty strike center point (within allowed range) and finally, call the strike. <br/><br/>Note that there are static arty units as well. You can build them with repair truck or as commander."
+						hintSilent parseText "Artillery units can be used by placing AI in artillery unit's gunner seat. <br/> <br/>For your convenience, there will be an AI in gunner seat in vehicles that you buy, unless you change the default selections. <br/> <br/>You can call an artillery strike via >> WF menu -> Tactical Center. <br/> <br/>You need to select the correct artillery type, set target radius, set the arty strike center point (within allowed range) and finally, call the arty strike. <br/><br/>Note that there are static arty units as well. You can build them with repair truck or as the commander of your side."
 					};
 
 				} else {

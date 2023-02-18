@@ -451,7 +451,7 @@ while {alive player && dialog} do {
 					_isNotArtillery = [_varPosInNestedArray, -1] call BIS_fnc_areEqual;
 					
 					if (!(_isNotArtillery)) then {
-						hintSilent parseText "Artillery units can be used by placing AI in gunner seat. There's AI in gunner seat in every vehicle that you buy as default option. <br/> <br/>You can call an artillery strike via >> WF menu -> Tactical Center. <br/> <br/>You need to select the correct artillery type, target radius, set the arty strike center point (within allowed range) and finally, call the strike. <br/><br/>Note that there are static arty units as well. You can build them with repair truck or as commander."
+						hintSilent parseText "Artillery units can be used by placing AI in artillery unit's gunner seat. <br/> <br/>For your convenience, there will be an AI in gunner seat in vehicles that you buy, unless you change the default selections. <br/> <br/>You can call an artillery strike via >> WF menu -> Tactical Center. <br/> <br/>You need to select the correct artillery type, set target radius, set the arty strike center point (within allowed range) and finally, call the arty strike. <br/><br/>Note that there are static arty units as well. You can build them with repair truck or as the commander of your side."
 					};
 
 				} else {
