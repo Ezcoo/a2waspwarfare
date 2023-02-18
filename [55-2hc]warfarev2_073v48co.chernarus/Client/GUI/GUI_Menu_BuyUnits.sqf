@@ -447,13 +447,13 @@ while {alive player && dialog} do {
 					};
 					
 					_artyClassnames = missionNamespace getVariable Format ['WFBE_%1_ARTILLERY_CLASSNAMES', sideJoinedText];
-					_varPosInNestedArray = [_artyClassnames, _x] call WFBE_CL_FNC_FindVariableInNestedArray;
+					_varPosInNestedArray = [_artyClassnames, _unit] call WFBE_CL_FNC_FindVariableInNestedArray;
 					_isNotArtillery = [_varPosInNestedArray, -1] call BIS_fnc_areEqual;
 					
 					if (!(_isNotArtillery)) then {
 						hintSilent parseText "Artillery units can be used by placing AI in gunner seat. There's AI in gunner seat in every vehicle that you buy as default option. <br/> <br/>You can call an artillery strike via >> WF menu -> Tactical Menu. <br/> <br/>You need to select correct artillery type, spread and call the strike (within allowed range). <br/><br/>Note that there are static arty units as well. You can build them with repair truck or as commander."
 					};
-					
+
 				} else {
 					(_display displayCtrl 12022) ctrlSetStructuredText (parseText '');
 				};
