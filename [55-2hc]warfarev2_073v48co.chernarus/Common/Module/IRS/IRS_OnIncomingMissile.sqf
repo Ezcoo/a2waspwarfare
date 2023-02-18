@@ -27,7 +27,7 @@ if (alive _vehicle) then {
 					_vehicle setVariable ["wfbe_irs_flares", (_vehicle getVariable "wfbe_irs_flares") - 1, true];
 					if (local player) then {
 						_vehicle vehicleChat Format[localize "STR_WF_CHAT_IRS_Deployed",_vehicle getVariable "wfbe_irs_flares"];
-						
+
 						[_projectile] spawn {
 							_projectile = _this select 0;
 							
@@ -36,7 +36,16 @@ if (alive _vehicle) then {
 								sleep 0.55;
 							};
 						};
-						
+
+						[_projectile] spawn {
+							_projectile = _this select 0;
+
+							while {!(isNull _projectile)} do {
+								"INCOMING MISSILE!" call TitleTextMessage;
+								sleep 0.3;
+							};
+						}
+
 					};
 				};
 			};
