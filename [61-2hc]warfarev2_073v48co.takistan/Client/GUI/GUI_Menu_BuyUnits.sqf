@@ -433,6 +433,8 @@ while {alive player && dialog} do {
 				if (isClass (configFile >> 'CfgVehicles' >> _unit >> 'Library')) then {
 					_txt = getText (configFile >> 'CfgVehicles' >> _unit >> 'Library' >> 'libTextDesc');
 					(_display displayCtrl 12022) ctrlSetStructuredText (parseText _txt);
+
+					hintSilent "";
 					
 					if (_unit in (missionNamespace getVariable Format ["WFBE_%1AMBULANCES", sideJoinedText])) then {
 						hintSilent parseText "Ambulances are important vehicles because they can be used as mobile respawn points. <br/> <br/>You can see the current maximum allowed respawn range from any friendly ambulance from >> WF Menu -> Factory Upgrade -> Ambulance Range upgrade."
