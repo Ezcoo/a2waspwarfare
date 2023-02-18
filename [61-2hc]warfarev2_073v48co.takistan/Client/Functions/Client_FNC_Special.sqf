@@ -10,7 +10,7 @@ WFBE_CL_FNC_Commander_Assigned = {
 
 	if (!isNull _commanderTeam) then {
 		_text = Format[localize "STR_WF_CHAT_VoteForNewCommander",name (leader _commanderTeam)];
-		if (group player == _commanderTeam) then {_text = localize "STR_WF_CHAT_PlayerCommander"};
+		if (group player == _commanderTeam) then {_text = localize "STR_WF_CHAT_PlayerCommanderTitleText"};
 	}else{
 		_logic = (side player) Call WFBE_CO_FNC_GetSideLogic;
 		_logic setVariable ["wfbe_commander", _commanderTeam, true];
@@ -27,7 +27,7 @@ WFBE_CL_FNC_Commander_VoteEnd = {
 
 	if (!isNull _commanderTeam) then {
 		_text = Format[localize "STR_WF_CHAT_VoteForNewCommander",name (leader _commanderTeam)];
-		if (group player == _commanderTeam) then {_text = localize "STR_WF_CHAT_PlayerCommander"};
+		if (group player == _commanderTeam) then {_text = localize "STR_WF_CHAT_PlayerCommanderTitleText"};
 	};
 
 	[_text] Call TitleTextMessage;
