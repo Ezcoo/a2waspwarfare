@@ -435,13 +435,13 @@ while {alive player && dialog} do {
 					(_display displayCtrl 12022) ctrlSetStructuredText (parseText _txt);
 					
 					if (_unit in (missionNamespace getVariable Format ["WFBE_%1AMBULANCES", sideJoinedText])) then {
-						hintSilent "Ambulances can be used as mobile respawn points. You can see the current maximum allowed respawn range from >> WF Menu -> Factory Upgrade -> Ambulance Range upgrade."
+						hintSilent parseText "Ambulances can be used as mobile respawn points. You can see the current maximum allowed respawn range from >> WF Menu -> Factory Upgrade -> Ambulance Range upgrade."
 					};
 					if (_unit in (missionNamespace getVariable Format ["WFBE_%1REPAIRTRUCKS", sideJoinedText])) then {
-						hintSilent "Repair trucks are special vehicles that can be used to build static structures and weapons. They are especially useful for advanced tactics. <br/> <br/>Get in driver seat of your repair truck and open action menu (mouse scroll). You should see the repair truck build menu option, select it and start building!";
+						hintSilent parseText "Repair trucks are special vehicles that can be used to build static structures and weapons. They are especially useful for advanced tactics. <br/> <br/>Get in driver seat of your repair truck and open action menu (mouse scroll). You should see the repair truck build menu option, select it and start building!";
 					};
 					if (_unit in (missionNamespace getVariable Format ["WFBE_%1SUPPLYTRUCKS", sideJoinedText])) then {
-						hintSilent "Supply trucks can be used to boost the supply income of your team. You can collect extra supply by driving to friendly town center (next to main depot of town), getting out of your supply truck, aiming at it and using action menu (mouse scroll) -> LOAD SUPPLIES... Then just drive next to friendly Command Center (marked with C) on map. Note that you need to have selected Support slot/class in server lobby. There also needs to be [+SUPPLY] mark after town name for you to be able to collect the extra supply.";
+						hintSilent parseText "Supply trucks can be used to boost the supply income of your team. You can collect extra supply by driving to friendly town center (next to main depot of town), getting out of your supply truck, aiming at it and using action menu (mouse scroll) -> LOAD SUPPLIES... Then just drive next to friendly Command Center (marked with C) on map. Note that you need to have selected Support slot/class in server lobby. There also needs to be [+SUPPLY] mark after town name for you to be able to collect the extra supply.";
 					};
 					
 					_artyClassnames = missionNamespace getVariable Format ['WFBE_%1_ARTILLERY_CLASSNAMES', sideJoinedText];
