@@ -46,6 +46,7 @@ while {!gameOver} do {
 				HQAction = leader(group player) addAction [localize "STR_WF_BuildMenu","Client\Action\Action_Build.sqf", [_MHQ], 100, false, true, "", "hqInRange && canBuildWHQ && (_target == player)"];
 				[Localize "STR_WF_CHAT_PlayerCommanderTitleText"] Call TitleTextMessage;
 				hint parseText format ["<t color='fff700'>%1</t>", localize "STR_WF_CHAT_PlayerCommander"];
+				playSound ["commanderNotification", true];
 				playSound ["newCommander",true];
 				["INFORMATION", Format ["Player %1 has become a new commander in %2 team).", name player, side player]] Call WFBE_CO_FNC_LogContent;
 			} else {
