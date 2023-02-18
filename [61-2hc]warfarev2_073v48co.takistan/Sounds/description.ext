@@ -26,4 +26,10 @@ class airRaid {
         titles[] = {};
     };
 
+class commanderNotification {
+        name = "commanderNotification";
+        sound[] = {"\sounds\commanderNotification.ogg",10,1};
+        titles[] = {};
+    };
+
 };
