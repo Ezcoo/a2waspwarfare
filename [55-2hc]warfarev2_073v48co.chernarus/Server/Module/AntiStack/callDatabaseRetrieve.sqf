@@ -62,6 +62,8 @@ if (_responseCode < 0) then {
 	
 	diag_log "Managed to fetch total score and number of ticks.";
 	_responseStats = [_responseTotalScore, _responseTicks];
+
+	diag_log format ["_responseTotalScore: %1, _responseTicks: %2, actual output: %3",_responseTotalScore,_responseTicks,_responseStats];
 	_responseStats;
 };
 
