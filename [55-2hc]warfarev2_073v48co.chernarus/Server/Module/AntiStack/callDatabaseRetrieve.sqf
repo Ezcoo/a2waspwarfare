@@ -56,9 +56,11 @@ if (_responseCode < 0) then {
 	_responseStats = [1, 1];
 	_responseStats;
 } else {
+	diag_log "Got score.";
 	_responseTotalScore = _response select 1;
 	_responseTicks = _response select 2;
 	
+	diag_log "Managed to fetch total score and number of ticks.";
 	_responseStats = [_responseTotalScore, _responseTicks];
 	_responseStats;
 };
