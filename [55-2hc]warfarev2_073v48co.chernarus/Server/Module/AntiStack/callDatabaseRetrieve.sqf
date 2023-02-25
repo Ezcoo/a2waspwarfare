@@ -27,7 +27,7 @@ _requestID = call compile _requestID;
 // Strip request ID from the response body
 _requestID = _requestID select 1;
 
-_response = "A2WaspDatabase" callExtension format ["%1,%2","505",_requestID];
+_response = "A2WaspDatabase" callExtension format ["%1,%2",505,_requestID];
 _response = call compile _response;
 _responseCode = _response select 0;
 _attemptsMax = 120;
@@ -35,7 +35,7 @@ _attempts = 0;
 
 while { (_responseCode < 0) && (_attempts < _attemptsMax) } do 
 {
-	_response = "A2WaspDatabase" callExtension format ["%1,%2","505",_requestID];
+	_response = "A2WaspDatabase" callExtension format ["%1,%2",505,_requestID];
 	
 	_response = call compile _response;
 	
