@@ -9,12 +9,12 @@
 
 	_supplyMissionCooldownEnabled = false;
 
-	if (((_lastActivationTime + 1800) > time) && (_lastActivationTime != 0)) then {
+	if (((_lastActivationTime + WFBE_CO_VAR_SupplyMissionRegenInterval) > time) && (_lastActivationTime != 0)) then {
 		_supplyMissionCooldownEnabled = true;
 	};
 
 	missionNamespace setVariable ["WFBE_Server_PV_IsSupplyMissionActiveInTown", [_sourceTown, _supplyMissionCooldownEnabled]];
 
-	(owner _player) publicVariableClient "WFBE_Server_PV_IsSupplyMissionActiveInTown";
+	publicVariable "WFBE_Server_PV_IsSupplyMissionActiveInTown";
 
 };

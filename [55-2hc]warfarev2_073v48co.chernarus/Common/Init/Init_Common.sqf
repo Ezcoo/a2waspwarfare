@@ -146,6 +146,7 @@ WFBE_CO_FNC_WaypointPatrolTown = Compile preprocessFileLineNumbers "Common\Funct
 WFBE_CO_FNC_WaypointSimple = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointSimple.sqf";
 WFBE_CO_FNC_WaypointsAdd = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointsAdd.sqf";
 WFBE_CO_FNC_WaypointsRemove = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointsRemove.sqf";
+WFBE_CO_FNC_findVariableInNestedArray = Compile preprocessFileLineNumbers "Common\Functions\Common_FindVariableInNestedArray.sqf";
 
 ["INITIALIZATION", "Init_Common.sqf: Functions are initialized."] Call WFBE_CO_FNC_LogContent;
 
@@ -186,7 +187,8 @@ WFBE_Logic_Airfield = "LocationLogicAirport";
 WFBE_Logic_Camp = "LocationLogicCamp";
 WFBE_Logic_Depot = "LocationLogicDepot";
 
-isAutoWallConstructingEnabled = true;
+isAutoWallConstructingEnabled = false;
+WFBE_CO_VAR_SupplyMissionRegenInterval = 1800;
 
 /* Wait for BIS Module Init */
 waitUntil {!(isNil 'BIS_fnc_init')};

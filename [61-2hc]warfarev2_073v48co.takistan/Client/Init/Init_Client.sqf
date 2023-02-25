@@ -110,6 +110,7 @@ WFBE_CL_FNC_SupplyMissionStart = Call Compile preprocessFileLineNumbers "Client\
 WFBE_CL_FNC_TownSupplyStatus = Call Compile preprocessFileLineNumbers "Client\Module\supplyMission\townSupplyStatus.sqf";
 WFBE_CL_FNC_CheckCCProximity = Compile preprocessFileLineNumbers "Client\Module\supplyMission\checkCCProximity.sqf";
 WFBE_CL_FNC_ReceiverMASHmarker = Call Compile preprocessFileLineNumbers "Client\Module\MASH\receiverMASHmarker.sqf";
+WFBE_CL_FNC_FindVariableInNestedArray = Compile preprocessFileLineNumbers "Client\Functions\Client_FindVariableInNestedArray.sqf";
 WFBE_CL_PVEH_HasConnectedAtLaunch = Call Compile preprocessFileLineNumbers "Client\Module\AntiStack\hasConnectedAtLaunchACK.sqf";
 
 
@@ -652,6 +653,7 @@ sleep 3;
 /* Client death handler. */
 WFBE_PLAYERKEH = player addEventHandler ['Killed', {[_this select 0,_this select 1] Spawn WFBE_CL_FNC_OnKilled; [_this select 0,_this select 1, sideID] Spawn WFBE_CO_FNC_OnUnitKilled}];
 
+hint parseText "<t color='#28ff14'>If you're a new player:</t> <br/><br/>Read the instructions that will show in chat soon. <br/><br/>Our Discord server: <br/><br/><t color='#28ff14'>discord.me/warfare</t>  <br/><br/>(Open the link with a web browser like Chrome) <br/><br/>Ask in chat or on our Discord server if you want to know how something works. <br/><br/>You and your units are marked with <t color='#FFAC1C'>orange</t> color on map. <br/><br/>Friendly towns are marked with <t color='#1ff026'>green</t> color. <t color='#000bde'>Blue</t> and <t color='#de0300'>red</t> towns are controlled by enemy. <br/><br/>Note that you see friendly players and units on map. <br/><br/><t color='#42b6ff'>WF menu</t> is important. You can open it by using action menu (mouse scroll). <br/><br/>Welcome and good luck, soldier! :)";
 hint parseText "<t color='#28ff14'>If you're a new player:</t> <br/><br/>Read the instructions that will show in chat soon. <br/><br/>Our Discord server: <br/><br/><t color='#28ff14'>discord.me/warfare</t>  <br/><br/>(Open the link with a web browser like Chrome) <br/><br/>Ask in chat or on our Discord server if you want to know how something works. <br/><br/>You and your units are marked with <t color='#FFAC1C'>orange</t> color on map. <br/><br/>Friendly units are marked with <t color='#1ff026'>green</t> color. <t color='#0011ff'>Blue</t> and <t color='#ff0000'>red</t> towns are controlled by enemy. <br/><br/>Use your map (press M) to locate yourself. Many things here happen via <t color='#6b77e8'>WF Menu</t> that you can access with your mouse scroll. <br/><br/>Welcome and good luck, soldier! :)";
 
 //--- Valhalla init.

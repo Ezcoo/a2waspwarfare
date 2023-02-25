@@ -9,12 +9,14 @@ class Mission
 		"ca_highcommand",
 		"warfare2vehicles",
 		"ca_animals2_chicken",
-		"ca_communityconfigurationproject_e"
+		"ca_communityconfigurationproject_e",
+		"CorePatch_CCP_70799"
 	};
 	addOnsAuto[]=
 	{
 		"ca_modules_functions",
 		"cacharacters2",
+		"CorePatch_CCP_70799",
 		"chernarus"
 	};
 	randomSeed=10034581;
@@ -42,7 +44,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12759.626,36.173397,5629.8994};
+					position[]={11229.373,253.78244,4705.3555};
 					id=0;
 					side="LOGIC";
 					vehicle="LocationLogicStart";
@@ -241,7 +243,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={1329.3534,145.0426,5295.0283};
+					position[]={5072.7295,25.954288,2897.1919};
 					azimut=90;
 					id=10;
 					side="LOGIC";
@@ -276,7 +278,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={8905.209,331.3728,5935.124};
+					position[]={9198.749,111.29079,4995.9619};
 					id=12;
 					side="LOGIC";
 					vehicle="LocationLogicStart";
@@ -293,7 +295,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11481.38,317.29825,11325.817};
+					position[]={13004.452,6,10413.365};
 					azimut=270;
 					id=13;
 					side="LOGIC";
@@ -311,7 +313,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={9577.46,135.04993,13220.866};
+					position[]={3167.5537,170.05875,3520.5774};
 					azimut=180;
 					id=14;
 					side="LOGIC";
@@ -4342,7 +4344,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={1039.1605,5.9110723,2241.6956};
+					position[]={12333.479,159,12615.402};
 					azimut=90;
 					id=278;
 					side="LOGIC";
@@ -4361,7 +4363,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={9300.583,251.40849,11157.296};
+					position[]={13401.526,9.5888805,4124.2896};
 					azimut=90;
 					id=279;
 					side="LOGIC";
@@ -4379,7 +4381,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={7186.3169,384.90009,9668.1602};
+					position[]={7136.4961,338.96051,11411.425};
 					azimut=90;
 					id=280;
 					side="LOGIC";
@@ -4397,7 +4399,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2059.1777,256.53839,10964.708};
+					position[]={1659.6544,302.97736,9091.3232};
 					azimut=90;
 					id=281;
 					side="LOGIC";
@@ -4415,7 +4417,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={6701.6621,217.88573,4613.9004};
+					position[]={10390.624,46.446251,3472.9731};
 					azimut=90;
 					id=282;
 					side="LOGIC";
@@ -4433,7 +4435,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={3315.4441,223.79518,4135.4502};
+					position[]={12222.04,91.845673,8073.8628};
 					azimut=90;
 					id=283;
 					side="LOGIC";
@@ -4451,7 +4453,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={8544.6719,338.52679,8139.8115};
+					position[]={10538.631,118.62068,7071.0952};
 					azimut=90;
 					id=284;
 					side="LOGIC";
@@ -4645,7 +4647,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={5044.1787,338.63751,7606.124};
+					position[]={5964.8672,181.54884,5676.814};
 					azimut=180;
 					id=293;
 					side="LOGIC";
