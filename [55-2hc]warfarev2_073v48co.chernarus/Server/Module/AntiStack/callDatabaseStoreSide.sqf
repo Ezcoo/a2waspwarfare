@@ -10,7 +10,7 @@ _sideAsNumber = 1;
 
 // Special case: set team to 'NONE' in database when player disconnects
 diag_log format ["_side: %1", str _side];
-if (_side == "NONE") then {
+if (_side in "NONE") then {
 	_sideAsNumber = 0;
 } else {
 	if (_side == west) then {
