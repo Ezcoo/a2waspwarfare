@@ -116,9 +116,9 @@ _initialSleep = 10;
 
 		// ["TEST", format ["CountPlayerScores.sqf: DEBUG: Contents of _playersOnServer ('SEND_PLAYERLIST'): %1", _playersOnServer]] Call WFBE_CO_FNC_LogContent;
 
-		uiSleep _flushSleep;
-
 		["SEND_PLAYERLIST", _playersOnServer] call WFBE_SE_FNC_CallDatabaseSendPlayerList;
+
+		uiSleep _flushSleep;
 
 	};
 
