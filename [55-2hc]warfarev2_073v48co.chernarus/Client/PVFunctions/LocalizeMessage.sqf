@@ -11,7 +11,7 @@ switch (_localize) do {
 	case "Teamswap": {_txt = Format [Localize "STR_WF_CHAT_Teamswap",_this select 3, _this select 4]};
 	case "Teamstack": 
     {
-        _attempts = 0;
+        /*_attempts = 0;
         while {(_totalSkillBLUFOR == "") || (_totalSkillOPFOR == "") || (isNil "_totalSkillBLUFOR") || (isNil "_totalSkillOPFOR") || _attempts < 40} do {
             _totalSkillBLUFOR = missionNamespace getVariable "WFBE_BLUFOR_SCORE_JOIN";
             _totalSkillOPFOR = missionNamespace getVariable "WFBE_OPFOR_SCORE_JOIN";
@@ -21,14 +21,18 @@ switch (_localize) do {
 
             _attempts = _attempts + 1;
             sleep 0.5;
-        };
+        };*/
+
+        waitUntil { !(isNil {missionNamespace getVariable "WFBE_BLUFOR_SCORE_JOIN"}) && !(isNil {missionNamespace getVariable "WFBE_OPFOR_SCORE_JOIN"}) };
         
         _txt = Format [Localize "STR_WF_CHAT_Teamstack",_totalSkillBLUFOR,_totalSkillOPFOR];
 
+        /*
         if (_attempts >= 40) then {
             diag_log "Couldn't retrieve team skill values to show them for player upon joining ingame!";
             _txt = "ERROR! Couldn't retrieve team skill values for some reason. Try joining again and contact server admin if this happens again.";
         };
+        */
     };
 	case "CommanderDisconnected": {_txt = Localize "strwfcommanderdisconnected"};
 	case "TacticalLaunch": {_txt = Localize "STR_WF_CHAT_ICBM_Launch"};
