@@ -1,4 +1,4 @@
-private ["_playerStats","_playerScore","_playerPrevStats","_playerPrevScoreTotal","_playerPrevTimePlayedTotal","_result","_oldScore","_playerScoreDiff","_playerNewScore","_playerNewScoreTotal","_sleep","_miniSleep","_hasConnectedAtLaunch"];
+private ["_playerStats","_playerScore","_playerPrevStats","_playerPrevScoreTotal","_playerPrevTimePlayedTotal","_result","_oldScore","_playerScoreDiff","_playerNewScore","_playerNewScoreTotal","_sleep","_miniSleep","_hasConnectedAtLaunch","_flushSleep","_initialSleep"];
 
 // In seconds
 _miniSleep = 0.01;
@@ -78,20 +78,25 @@ _sleep = 1;
 
 // In seconds
 _flushSleep = 120;
+_initialSleep = 10;
 
-[_flushSleep] spawn {
+[_flushSleep, _initialSleep, _miniSleep] spawn {
 
 	_flushSleep = _this select 0;
+	_initialSleep = _this select 1;
+	_miniSleep = _this select 2;
 	_playersOnServer = [];
+
+	uiSleep _initialSleep;
 
 	while { true } do {
 
 		_playersOnServer = [];
 
-		uiSleep _flushSleep;
-
 		{
 			if (isPlayer _x) then {
+				uiSleep _miniSleep;
+				
 				_confirmedSide = missionNamespace getVariable Format["WFBE_JIP_USER%1_TEAM_JOINED", getPlayerUID _x];
 
 				if (!(isNil "_confirmedSide")) then {
@@ -106,9 +111,12 @@ _flushSleep = 120;
 				};
 			};
 
+
 		} forEach allUnits;
 
 		// ["TEST", format ["CountPlayerScores.sqf: DEBUG: Contents of _playersOnServer ('SEND_PLAYERLIST'): %1", _playersOnServer]] Call WFBE_CO_FNC_LogContent;
+
+		uiSleep _flushSleep;
 
 		["SEND_PLAYERLIST", _playersOnServer] call WFBE_SE_FNC_CallDatabaseSendPlayerList;
 
