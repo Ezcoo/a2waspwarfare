@@ -80,6 +80,7 @@ WFBE_SE_FNC_CompareTeamScores = Compile preprocessFileLineNumbers "Server\Module
 WFBE_SE_FNC_CallDatabaseSendPlayerList = Compile preprocessFileLineNumbers "Server\Module\AntiStack\callDatabaseSendPlayerList.sqf";
 WFBE_SE_FNC_GetTeamScoreMonitor = Compile preprocessFileLineNumbers "Server\Module\AntiStack\getTeamScoreMonitor.sqf";
 WFBE_SE_PVEH_ClientHasConnectedAtLaunch = Call Compile preprocessFileLineNumbers "Server\Module\AntiStack\clientHasConnectedAtLaunch.sqf";
+WFBE_SE_FNC_SupplyMissionActive = Compile preprocessFileLineNumbers "Server\Module\supplyMission\supplyMissionActive.sqf";
 
 
 //--- Define Headless Client functions (server ones).
