@@ -24,8 +24,11 @@ switch (_localize) do {
         };*/
 
         waitUntil { !(isNil {missionNamespace getVariable "WFBE_BLUFOR_SCORE_JOIN"}) && !(isNil {missionNamespace getVariable "WFBE_OPFOR_SCORE_JOIN"}) };
-        
-        _txt = Format [Localize "STR_WF_CHAT_Teamstack",_totalSkillBLUFOR,_totalSkillOPFOR];
+
+        _totalSkillBLUFOR = missionNamespace getVariable "WFBE_BLUFOR_SCORE_JOIN";
+        _totalSkillOPFOR = missionNamespace getVariable "WFBE_OPFOR_SCORE_JOIN";
+
+        _txt = Format [Localize "STR_WF_CHAT_Teamstack",str _totalSkillBLUFOR, str _totalSkillOPFOR];
 
         /*
         if (_attempts >= 40) then {
