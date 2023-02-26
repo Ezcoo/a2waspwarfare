@@ -11,9 +11,12 @@ switch (_localize) do {
 	case "Teamswap": {_txt = Format [Localize "STR_WF_CHAT_Teamswap",_this select 3, _this select 4]};
 	case "Teamstack": 
     {
-        while {(_totalSkillBLUFOR == "") && (_totalSkillOPFOR == "") || (isNil _totalSkillBLUFOR) && (isNil _totalSkillOPFOR)} do {
+        while {(_totalSkillBLUFOR == "") || (_totalSkillOPFOR == "") || (isNil _totalSkillBLUFOR) || (isNil _totalSkillOPFOR)} do {
             _totalSkillBLUFOR = missionNamespace getVariable "WFBE_BLUFOR_SCORE_JOIN";
             _totalSkillOPFOR = missionNamespace getVariable "WFBE_OPFOR_SCORE_JOIN";
+
+            diag_log _totalSkillBLUFOR;
+	        diag_log _totalSkillOPFOR;
 
             sleep 0.5;
         };

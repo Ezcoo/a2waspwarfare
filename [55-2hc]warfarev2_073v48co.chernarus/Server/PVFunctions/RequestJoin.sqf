@@ -63,6 +63,9 @@ if (WF_A2_Vanilla) then {
 	_skillBLUFOR = [west, _uid] Call WFBE_SE_FNC_GetTeamScore;
 	_skillOPFOR = [east, _uid] Call WFBE_SE_FNC_GetTeamScore;
 
+	diag_log _skillBLUFOR;
+	diag_log _skillOPFOR;
+
 	[_player, "HandleSpecial", ["join-answer", _canJoin, _skillBLUFOR, _skillOPFOR]] Call WFBE_CO_FNC_SendToClient;
 
 };
