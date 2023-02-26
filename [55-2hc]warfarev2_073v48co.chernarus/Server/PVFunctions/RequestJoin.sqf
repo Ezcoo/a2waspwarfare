@@ -53,11 +53,17 @@ if ( !(isNil "_teamJoinedConfirmed")) then { //--- Retrieve JIP Information if t
 
 if (WF_A2_Vanilla) then {
 
-	[_uid, "HandleSpecial", ["join-answer", _canJoin]] Call WFBE_CO_FNC_SendToClients;
+	_skillBLUFOR = [west, _uid] Call WFBE_SE_FNC_GetTeamScore;
+	_skillOPFOR = [east, _uid] Call WFBE_SE_FNC_GetTeamScore;
+
+	[_uid, "HandleSpecial", ["join-answer", _canJoin, _skillBLUFOR, _skillOPFOR]] Call WFBE_CO_FNC_SendToClients;
 
 } else {
 
-	[_player, "HandleSpecial", ["join-answer", _canJoin]] Call WFBE_CO_FNC_SendToClient;
+	_skillBLUFOR = [west, _uid] Call WFBE_SE_FNC_GetTeamScore;
+	_skillOPFOR = [east, _uid] Call WFBE_SE_FNC_GetTeamScore;
+
+	[_player, "HandleSpecial", ["join-answer", _canJoin, _skillBLUFOR, _skillOPFOR]] Call WFBE_CO_FNC_SendToClient;
 
 };
 

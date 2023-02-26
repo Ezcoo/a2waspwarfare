@@ -1,12 +1,25 @@
-Private["_localize","_txt"];
+Private["_localize","_txt","_totalSkillBLUFOR","_totalSkillOPFOR"];
 
 _localize = _this select 0;
 _commandChat = true;
 _txt = "";
+_totalSkillBLUFOR = "";
+_totalSkillOPFOR = "";
+
 switch (_localize) do {
 	case "BuildingTeamkill": {_txt = Format [Localize "STR_WF_CHAT_Teamkill_Building",_this select 1, _this select 2, [_this select 3, 'displayName'] Call GetConfigInfo]};
 	case "Teamswap": {_txt = Format [Localize "STR_WF_CHAT_Teamswap",_this select 3, _this select 4]};
-	case "Teamstack": {_txt = Format [Localize "STR_WF_CHAT_Teamstack",_this select 1, _this select 2, _this select 3];};
+	case "Teamstack": 
+    {
+        while {(_totalSkillBLUFOR == "") && (_totalSkillOPFOR = "") || (isNil _totalSkillBLUFOR) && (isNil _totalSkillOPFOR)} do {
+            _totalSkillBLUFOR = missionNamespace getVariable "WFBE_BLUFOR_SCORE_JOIN";
+            _totalSkillOPFOR = missionNamespace getVariable "WFBE_OPFOR_SCORE_JOIN";
+
+            sleep 0.5;
+        };
+        
+        _txt = Format [Localize "STR_WF_CHAT_Teamstack",_totalSkillBLUFOR,_totalSkillOPFOR];
+    };
 	case "CommanderDisconnected": {_txt = Localize "strwfcommanderdisconnected"};
 	case "TacticalLaunch": {_txt = Localize "STR_WF_CHAT_ICBM_Launch"};
 	case "Teamkill": {_txt = Format [Localize "STR_WF_CHAT_Teamkill",(missionNamespace getVariable "WFBE_C_PLAYERS_PENALTY_TEAMKILL")]; -(missionNamespace getVariable "WFBE_C_PLAYERS_PENALTY_TEAMKILL") Call ChangePlayerFunds};
