@@ -37,7 +37,7 @@
         <Italian>Player %1 (ID: %2) was not allowed to join %3 to guarantee team balance.</Italian>
       </Key>
     <Key ID="STR_WF_CHAT_TeamstackOrTeamSwap"><!--shared U-->
-        <English>You are not allowed to join this team to guarantee balanced teams (or because you're locked to other side already in this match). Join the other team, thanks! :)</English>
+        <English>You are not allowed to join this team to guarantee balanced teams, or because you've been locked to other side in this match already. Join the other team, thanks! :)</English>
         <French>Le joueur %1 (ID: %2) n'a pas été autorisé à joindre %3 pour garantir l'équilibre des équipes.</French>
 		    <German>Dem Spieler %1 (ID: %2) wurde nicht erlaubt %3 beizutreten, um die Fairness der Teams zu bewahren.)</German>
         <Russian>Игрок %1 с (ID: %2) не может присоеденится к %3 стороне из-за сохранения баланса сил.</Russian>
