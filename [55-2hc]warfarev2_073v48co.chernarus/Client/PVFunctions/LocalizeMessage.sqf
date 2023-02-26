@@ -6,7 +6,7 @@ _txt = "";
 switch (_localize) do {
 	case "BuildingTeamkill": {_txt = Format [Localize "STR_WF_CHAT_Teamkill_Building",_this select 1, _this select 2, [_this select 3, 'displayName'] Call GetConfigInfo]};
 	case "Teamswap": {_txt = Format [Localize "STR_WF_CHAT_Teamswap",_this select 1, _this select 2, _this select 3, _this select 4]};
-	case "Teamstack": {_txt = Format [Localize "STR_WF_CHAT_Teamstack",_this select 1, _this select 2, _this select 3]; _commandChat = false};
+	case "Teamstack": {_txt = Format [Localize "STR_WF_CHAT_Teamstack",_this select 1, _this select 2, _this select 3];};
 	case "CommanderDisconnected": {_txt = Localize "strwfcommanderdisconnected"};
 	case "TacticalLaunch": {_txt = Localize "STR_WF_CHAT_ICBM_Launch"};
 	case "Teamkill": {_txt = Format [Localize "STR_WF_CHAT_Teamkill",(missionNamespace getVariable "WFBE_C_PLAYERS_PENALTY_TEAMKILL")]; -(missionNamespace getVariable "WFBE_C_PLAYERS_PENALTY_TEAMKILL") Call ChangePlayerFunds};

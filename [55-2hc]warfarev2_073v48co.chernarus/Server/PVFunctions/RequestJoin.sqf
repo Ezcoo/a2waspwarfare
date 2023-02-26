@@ -43,7 +43,7 @@ if ( !(isNil "_teamJoinedConfirmed")) then { //--- Retrieve JIP Information if t
 
 		["WARNING", Format["RequestJoin.sqf: Unable to find JIP information for player [%1] [%2].", _name, _uid]] Call WFBE_CO_FNC_LogContent;
 
-		_canJoin = [_side, _name, _uid] call WFBE_SE_FNC_CompareTeamScores;
+		_canJoin = [_side, _name, _uid, _player] call WFBE_SE_FNC_CompareTeamScores;
 
 	};
 };
