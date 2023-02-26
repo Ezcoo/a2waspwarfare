@@ -24,13 +24,13 @@ if (_procedureName == "RETRIEVE") then {
 
 _requestID = call compile _requestID;
 
-diag_log _requestID;
+// diag_log _requestID;
 
 // Strip request ID from the response body
 diag_log "Stripping request ID from the response body...";
 _requestID = _requestID select 1;
 
-diag_log _requestID;
+["INFORMATION", format ["CallDatabaseRetrieve.sqf: Request ID is: %1, starting to poll the database for result with the ID.",_requestID]] Call WFBE_CO_FNC_LogContent;
 
 _procedureCodeTryRetrieve = 505;
 _response = "A2WaspDatabase" callExtension format ["%1,%2",_procedureCodeTryRetrieve,_requestID];
@@ -56,14 +56,14 @@ if (_responseCode < 0) then {
 	_responseStats = [1, 1];
 	_responseStats;
 } else {
-	diag_log "Got score.";
+	["INFORMATION", format ["CallDatabaseRetrieve.sqf: Received requested data from database with request ID: %1.",_requestID]] Call WFBE_CO_FNC_LogContent;
 	_responseTotalScore = _response select 1;
 	_responseTicks = _response select 2;
 	
-	diag_log "Managed to fetch total score and number of ticks.";
+	// diag_log "Managed to fetch total score and number of ticks.";
 	_responseStats = [_responseTotalScore, _responseTicks];
 
-	diag_log format ["_responseTotalScore: %1, _responseTicks: %2, actual output: %3",_responseTotalScore,_responseTicks,_responseStats];
+	["INFORMATION", format ["CallDatabaseRetrieve.sqf: Response from database with request ID: %1 is: player UID: %2. Total score: %3, ticks: %4.",_requestID,_uid,_responseTotalScore,_responseTicks]] Call WFBE_CO_FNC_LogContent;
 	_responseStats;
 };
 
