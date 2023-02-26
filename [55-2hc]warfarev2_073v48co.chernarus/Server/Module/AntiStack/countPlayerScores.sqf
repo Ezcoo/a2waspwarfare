@@ -6,120 +6,14 @@ _mainSleep = 120;
 
 ["INFORMATION", "CountPlayerScores.sqf got execVMd!"] Call WFBE_CO_FNC_LogContent;
 
-[_miniSleep, _mainSleep] execVM {
-
-	_miniSleep = _this select 0;
-	_mainSleep = _this select 1;
-
-	["INFORMATION", "CountPlayerScores.sqf: Starting main loop..."] Call WFBE_CO_FNC_LogContent;
-
-	while { true } do {
-
-		uiSleep _mainSleep;
-
-		{
-
-			if (isPlayer _x) then {
-
-				_playerScore = score _x;
-				_playerPrevStats = ["RETRIEVE", getPlayerUID _x] call WFBE_SE_FNC_CallDatabaseRetrieve;
-				_playerPrevScoreTotal = _playerPrevStats select 0;
-				_playerPrevTimePlayedTotal = _playerPrevStats select 1;
-
-				_oldScore = missionNamespace getVariable format ["WFBE_CO_OLD_SCORE_PLAYER_%1", getPlayerUID _x];
-
-				if (isNil "_oldScore") then {
-					_oldScore = 0;
-				};
-
-				missionNamespace setVariable [format["WFBE_CO_OLD_SCORE_PLAYER_%1", getPlayerUID _x], _playerScore];
-
-				_playerScoreDiff = _playerScore - _oldScore;
-				_playerNewScore = _playerPrevScoreTotal + _playerScoreDiff;
-
-				uiSleep _miniSleep;
-
-				_result = ["STORE", [getPlayerUID _x, _playerScoreDiff]] call WFBE_SE_FNC_CallDatabaseStore;
-
-			};
-
-		} forEach allUnits;
-
-	};
-
-};
-
+[_miniSleep, _mainSleep] execVM "Server\Module\AntiStack\mainLoop.sqf";
 // In seconds
 _sleep = 1;
 
-[_sleep, _miniSleep] execVM {
-
-	_sleep = _this select 0;
-	_miniSleep = _this select 1;
-
-	while { true } do {
-
-		uiSleep _sleep;
-
-		{
-
-			if (isPlayer _x) then {
-				missionNamespace setVariable [format ["WFBE_CO_CURRENT_SCORE_PLAYER_%1", getPlayerUID _x], score _x];
-				uiSleep _miniSleep;
-			};
-
-		uiSleep _sleep;
-
-		} forEach allUnits;
-
-	};
-
-};
+[_sleep, _miniSleep] execVM "Server\Module\AntiStack\updateScoreInternal.sqf";
 
 // In seconds
 _flushSleep = 120;
 _initialSleep = 10;
 
-[_flushSleep, _initialSleep, _miniSleep] execVM {
-
-	_flushSleep = _this select 0;
-	_initialSleep = _this select 1;
-	_miniSleep = _this select 2;
-	_playersOnServer = [];
-
-	uiSleep _initialSleep;
-
-	while { true } do {
-
-		_playersOnServer = [];
-
-		{
-			if (isPlayer _x) then {
-				uiSleep _miniSleep;
-				
-				_confirmedSide = missionNamespace getVariable Format["WFBE_JIP_USER%1_TEAM_JOINED", getPlayerUID _x];
-
-				if (!(isNil "_confirmedSide")) then {
-					_playersOnServer set [count _playersOnServer, [getPlayerUID _x, _confirmedSide]];
-				} else {
-					_hasConnectedAtLaunch = missionNamespace getVariable format ["WFBE_PLAYER_%1_CONNECTED_AT_LAUNCH", getPlayerUID _x];
-
-					if (!(isNil "_hasConnectedAtLaunch")) then {
-						// diag_log format ["UID: %1 _hasConnectedAtLaunch: %2", getPlayerUID _x, _hasConnectedAtLaunch];
-						_playersOnServer set [count _playersOnServer, [getPlayerUID _x, side _x]];
-					};
-				};
-			};
-
-
-		} forEach allUnits;
-
-		// ["TEST", format ["CountPlayerScores.sqf: DEBUG: Contents of _playersOnServer ('SEND_PLAYERLIST'): %1", _playersOnServer]] Call WFBE_CO_FNC_LogContent;
-
-		["SEND_PLAYERLIST", _playersOnServer] call WFBE_SE_FNC_CallDatabaseSendPlayerList;
-
-		uiSleep _flushSleep;
-
-	};
-
-};
+[_flushSleep, _initialSleep, _miniSleep] execVM "Server\Module\AntiStack\flushLoop.sqf";
