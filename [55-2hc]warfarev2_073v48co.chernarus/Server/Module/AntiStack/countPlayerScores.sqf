@@ -6,7 +6,7 @@ _mainSleep = 120;
 
 ["INFORMATION", "CountPlayerScores.sqf got execVMd!"] Call WFBE_CO_FNC_LogContent;
 
-[_miniSleep, _mainSleep] spawn {
+[_miniSleep, _mainSleep] execVM {
 
 	_miniSleep = _this select 0;
 	_mainSleep = _this select 1;
@@ -52,7 +52,7 @@ _mainSleep = 120;
 // In seconds
 _sleep = 1;
 
-[_sleep, _miniSleep] spawn {
+[_sleep, _miniSleep] execVM {
 
 	_sleep = _this select 0;
 	_miniSleep = _this select 1;
@@ -80,7 +80,7 @@ _sleep = 1;
 _flushSleep = 120;
 _initialSleep = 10;
 
-[_flushSleep, _initialSleep, _miniSleep] spawn {
+[_flushSleep, _initialSleep, _miniSleep] execVM {
 
 	_flushSleep = _this select 0;
 	_initialSleep = _this select 1;
