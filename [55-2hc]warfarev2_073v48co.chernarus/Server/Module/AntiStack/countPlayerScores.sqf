@@ -77,7 +77,7 @@ _sleep = 1;
 };
 
 // In seconds
-_flushSleep = 7;
+_flushSleep = 120;
 
 [_flushSleep] spawn {
 
