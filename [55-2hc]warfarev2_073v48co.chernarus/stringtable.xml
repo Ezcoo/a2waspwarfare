@@ -30,14 +30,14 @@
 	      <Italian>&lt;br/&gt;Warfare is a blend of a team-based multiplayer mission and realtime strategy, where BLUFOR and OPFOR fight for the island control. Key objectives are to capture towns, defend your base and destroy the base of enemy. Both sides are lead by a commander, who influences his side's strategy. There are two kinds of resources: Supply points are used by the commander for building factories. Money is used to purchase weapons, units and vehicles.</Italian>
       </Key>
 	<Key ID="STR_WF_CHAT_Teamstack"><!--shared U-->
-        <English>You are not allowed to join this team to guarantee balanced teams. Please join the other team. :)</English>
+        <English>You are not allowed to join this team to guarantee balanced teams. Please join the other team.</English>
         <French>Le joueur %1 (ID: %2) n'a pas été autorisé à joindre %3 pour garantir l'équilibre des équipes.</French>
 		    <German>Dem Spieler %1 (ID: %2) wurde nicht erlaubt %3 beizutreten, um die Fairness der Teams zu bewahren.)</German>
         <Russian>Игрок %1 с (ID: %2) не может присоеденится к %3 стороне из-за сохранения баланса сил.</Russian>
         <Italian>Player %1 (ID: %2) was not allowed to join %3 to guarantee team balance.</Italian>
       </Key>
     <Key ID="STR_WF_CHAT_TeamstackOrTeamSwap"><!--shared U-->
-        <English>You are not allowed to join this team to guarantee balanced teams, or because you've been locked to other side in this match already. Please join the other team. :)</English>
+        <English>You are not allowed to join this team to guarantee balanced teams, or because you've been locked to other side in this match already. Please join the other team.</English>
         <French>Le joueur %1 (ID: %2) n'a pas été autorisé à joindre %3 pour garantir l'équilibre des équipes.</French>
 		    <German>Dem Spieler %1 (ID: %2) wurde nicht erlaubt %3 beizutreten, um die Fairness der Teams zu bewahren.)</German>
         <Russian>Игрок %1 с (ID: %2) не может присоеденится к %3 стороне из-за сохранения баланса сил.</Russian>
