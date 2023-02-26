@@ -30,7 +30,7 @@
 	      <Italian>&lt;br/&gt;Warfare is a blend of a team-based multiplayer mission and realtime strategy, where BLUFOR and OPFOR fight for the island control. Key objectives are to capture towns, defend your base and destroy the base of enemy. Both sides are lead by a commander, who influences his side's strategy. There are two kinds of resources: Supply points are used by the commander for building factories. Money is used to purchase weapons, units and vehicles.</Italian>
       </Key>
 	<Key ID="STR_WF_CHAT_Teamstack"><!--shared U-->
-        <English>You are not allowed to join this team to guarantee balanced teams. Please join the team with lower skill value.  BLUFOR skill: %1  OPFOR skill: %2</English>
+        <English>You are not allowed to join this team to guarantee balanced teams. Please join the team with lower skill value.   -- BLUFOR skill: %1 -- OPFOR skill: %2 --</English>
         <French>You are not allowed to join this team to guarantee balanced teams. Please join the team with lower skill value.  BLUFOR skill: %1  OPFOR skill: %2</French>
 		    <German>You are not allowed to join this team to guarantee balanced teams. Please join the team with lower skill value.  BLUFOR skill: %1  OPFOR skill: %2</German>
         <Russian>You are not allowed to join this team to guarantee balanced teams. Please join the team with lower skill value.  BLUFOR skill: %1  OPFOR skill: %2</Russian>
