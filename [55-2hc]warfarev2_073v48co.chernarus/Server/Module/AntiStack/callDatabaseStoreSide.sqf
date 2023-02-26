@@ -11,12 +11,13 @@ _sideAsNumber = 1;
 // Special case: set team to 'NONE' in database when player disconnects
 if (_side == "NONE") then {
 	_sideAsNumber = 0;
-};
-if (_side == west) then {
-	_sideAsNumber = 1;
-};
-if (_side == east) then {
-	_sideAsNumber = 2;
+} else {
+	if (_side == west) then {
+		_sideAsNumber = 1;
+	};
+	if (_side == east) then {
+		_sideAsNumber = 2;
+	};
 };
 
 // We need to change the data type from 'ARRAY' to 'STRING' before sending the data to database
