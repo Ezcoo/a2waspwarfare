@@ -10,12 +10,12 @@ _guid = "";
 _side = west;
 _sideAsNumber = 0;
 
-diag_log format ["_procedureName: %1, _parameters: %2", _procedureName, _parameters];
+// diag_log format ["_procedureName: %1, _parameters: %2", _procedureName, _parameters];
 
 {
 	_guid = _x select 0;
 
-	diag_log format ["_guid: %1, _parametersTemp == '': %2", _guid, (_parametersTemp == "")];
+	// diag_log format ["_guid: %1, _parametersTemp == '': %2", _guid, (_parametersTemp == "")];
 
 
 	// Don't add dot in the beginning of the string formatted array
