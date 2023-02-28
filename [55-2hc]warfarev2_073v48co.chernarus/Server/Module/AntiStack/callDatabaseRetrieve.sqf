@@ -1,5 +1,5 @@
 // Call to database
-private ["_procedureName","_procedureCode","_attemptsMax","_attempts","_responseReceived","_parameters","_uid","_score","_requestID","_response","_responseCode","_responseTotalScore","_responseTicks","_playerSkill","_responseStats","_isArray","_parametersTemp"];
+private ["_procedureName","_procedureCode","_attemptsMax","_sleep","_attempts","_responseReceived","_parameters","_uid","_score","_requestID","_response","_responseCode","_responseTotalScore","_responseTicks","_playerSkill","_responseStats","_isArray","_parametersTemp"];
 
 _procedureName = _this select 0;
 _parameters = _this select 1;
