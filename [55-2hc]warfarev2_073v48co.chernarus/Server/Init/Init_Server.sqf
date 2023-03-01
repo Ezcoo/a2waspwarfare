@@ -81,6 +81,8 @@ WFBE_SE_FNC_CallDatabaseSendPlayerList = Compile preprocessFileLineNumbers "Serv
 WFBE_SE_FNC_GetTeamScoreMonitor = Compile preprocessFileLineNumbers "Server\Module\AntiStack\getTeamScoreMonitor.sqf";
 WFBE_SE_PVEH_ClientHasConnectedAtLaunch = Call Compile preprocessFileLineNumbers "Server\Module\AntiStack\clientHasConnectedAtLaunch.sqf";
 WFBE_SE_FNC_SupplyMissionActive = Compile preprocessFileLineNumbers "Server\Module\supplyMission\supplyMissionActive.sqf";
+WFBE_SE_FNC_ChangeSideSupply = Call Compile preprocessFileLineNumbers "Server\Functions\Server_ChangeSideSupply.sqf";
+WFBE_SE_PV_RequestSupplyValue = Call Compile preprocessFileLineNumbers "Server\Functions\Server_PV_RequestSupplyValue.sqf";
 
 
 //--- Define Headless Client functions (server ones).
@@ -352,7 +354,7 @@ emptyQueu = [];
 			[_side] Spawn UpdateSupplyTruck;
 		};
 		if ((missionNamespace getVariable "WFBE_C_RESPAWN_MASH") > 0) then {_logik setVariable ["wfbe_mash", objNull]};
-		if ((missionNamespace getVariable "WFBE_C_ECONOMY_CURRENCY_SYSTEM") == 0) then {_logik setVariable ["wfbe_supply", missionNamespace getVariable Format ["WFBE_C_ECONOMY_SUPPLY_START_%1", _side], true]};
+		if ((missionNamespace getVariable "WFBE_C_ECONOMY_CURRENCY_SYSTEM") == 0) then {missionNamespace setVariable format [["wfbe_supply_%1", _side], missionNamespace getVariable Format ["WFBE_C_ECONOMY_SUPPLY_START_%1", _side]]};
 		if ((missionNamespace getVariable "WFBE_C_ECONOMY_INCOME_SYSTEM") in [3,4]) then {
 			_logik setVariable ["wfbe_commander_percent", if ((missionNamespace getVariable "WFBE_C_ECONOMY_INCOME_PERCENT_MAX") < 70) then {missionNamespace getVariable "WFBE_C_ECONOMY_INCOME_PERCENT_MAX"} else {70}, true];
 		};
