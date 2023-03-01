@@ -827,9 +827,6 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 			_cashText = format ["<t color='#56db33' shadow='2' size='%1' align='left' valign='middle'>",_cashSize];
 			_cashLines = 0;
 			for "_i" from 0 to (count _funds - 1) do {
-				diag_log "_cashValues:";
-				diag_log _cashValues;
-				diag_log _cashValues select _i;
 				_cashValue = _cashValues select _i;
 				_cashDescription = if (count _fundsDescription > _i) then {_fundsDescription select _i} else {"?"};
 				_cashText = _cashText + format ["%1 %2<br />",_cashDescription,round _cashValue];
