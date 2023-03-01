@@ -1,12 +1,50 @@
 /*
-	Return a side's HQ.
+	Return side's supply.
 	 Parameters:
 		- Side.
 */
 
+private ["_supplyTeam"];
+
 switch (_this) do {
-	case west: {WFBE_L_BLU getVariable "wfbe_supply"};
-	case east: {WFBE_L_OPF getVariable "wfbe_supply"};
-	case resistance: {WFBE_L_GUE getVariable "wfbe_supply"};
+	case west: {
+		_supplyTeam = missionNamespace getVariable format ["wfbe_supply_%1", _this];
+
+		if (isNil "_supplyTeam") then {
+			REQUEST_SUPPLY_VALUE = player;
+			publicVariable "REQUEST_SUPPLY_VALUE";
+
+			waitUntil {!isNil {missionNamespace getVariable format ["wfbe_supply_%1", _this];}};
+			_supplyTeam = missionNamespace getVariable format ["wfbe_supply_%1", _this];
+		};
+
+		_supplyTeam
+	};
+	case east: {
+		_supplyTeam = missionNamespace getVariable format ["wfbe_supply_%1", _this];
+
+		if (isNil "_supplyTeam") then {
+			REQUEST_SUPPLY_VALUE = player;
+			publicVariable "REQUEST_SUPPLY_VALUE";
+
+			waitUntil {!isNil {missionNamespace getVariable format ["wfbe_supply_%1", _this];}};
+			_supplyTeam = missionNamespace getVariable format ["wfbe_supply_%1", _this];
+		};
+
+		_supplyTeam
+	};
+	case resistance: {
+		_supplyTeam = missionNamespace getVariable format ["wfbe_supply_%1", _this];
+
+		if (isNil "_supplyTeam") then {
+			REQUEST_SUPPLY_VALUE = player;
+			publicVariable "REQUEST_SUPPLY_VALUE";
+
+			waitUntil {!isNil {missionNamespace getVariable format ["wfbe_supply_%1", _this];}};
+			_supplyTeam = missionNamespace getVariable format ["wfbe_supply_%1", _this];
+		};
+
+		_supplyTeam
+	};
 	default {objNull};
 }
