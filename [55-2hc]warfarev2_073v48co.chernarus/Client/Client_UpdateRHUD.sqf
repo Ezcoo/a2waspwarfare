@@ -149,7 +149,7 @@ while {true} do {
 			if (_serverFPS < 35) then {_textControl_FPS_6 ctrlSetTextColor [1, 0.8431, 0, 1];_textControl_FPS_6 ctrlSetText Format ["%1", str (_serverFPS)]};
 			if (_serverFPS < 20) then {_textControl_FPS_6 ctrlSetTextColor [1, 0, 0, 1];_textControl_FPS_6 ctrlSetText Format ["%1", str (_serverFPS)]};
 
-			if (!_secondExecRUBHUD) then {_secondExecRUBHUD = true;};
+			if (!_secondExecRUBHUD) then {_secondExecRUBHUD = true;} else {_secondExecRUBHUD = false};
 						
 		};
 	} else {
