@@ -8,7 +8,7 @@ _playersOnServer = [];
 
 uiSleep _initialSleep;
 
-while { true } do {
+while { !WFBE_GameOver } do {
 	
 	_playersOnServer = [];
 	{

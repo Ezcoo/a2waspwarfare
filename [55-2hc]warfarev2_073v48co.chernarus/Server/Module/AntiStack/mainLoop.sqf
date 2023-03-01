@@ -6,7 +6,7 @@ _mainSleep = _this select 1;
 
 ["INFORMATION", "CountPlayerScores.sqf: Starting main loop..."] Call WFBE_CO_FNC_LogContent;
 
-while { true } do {
+while { !WFBE_GameOver } do {
 	uiSleep _mainSleep;
 	{
 		if (isPlayer _x) then {
