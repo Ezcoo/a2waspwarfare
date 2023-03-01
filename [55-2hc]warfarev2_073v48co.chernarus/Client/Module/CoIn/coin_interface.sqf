@@ -497,7 +497,7 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 
 					_structuresCosts = missionNamespace getVariable Format["WFBE_%1STRUCTURECOSTS",sideJoinedText];
 					if ((missionNamespace getVariable "WFBE_C_ECONOMY_CURRENCY_SYSTEM") == 0) then {
-						[sideJoined,-(_structuresCosts select _index),(format ["HQ (%1) undeployed by %2.", sideJoinedText, leader ((sideJoined) Call WFBE_CO_FNC_GetCommanderTeam)])] Call ChangeSideSupply;
+						[sideJoined,-(_structuresCosts select _index),(format ["HQ (%1) undeployed by %2.", sideJoinedText, name leader ((sideJoined) Call WFBE_CO_FNC_GetCommanderTeam)])] Call ChangeSideSupply;
 					} else {
 						-(_structuresCosts select _index) Call ChangePlayerFunds;
 					};
