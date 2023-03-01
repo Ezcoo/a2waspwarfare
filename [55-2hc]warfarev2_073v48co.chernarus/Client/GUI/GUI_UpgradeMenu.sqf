@@ -155,7 +155,7 @@ while {alive player && dialog} do {
 						};
 						if !(_link_needed) then {
 							-(_upgrade_price) Call WFBE_CL_FNC_ChangeClientFunds;
-							[WFBE_Client_SideJoined, -(_upgrade_supply)] Call ChangeSideSupply;
+							[WFBE_Client_SideJoined, -(_upgrade_supply),"Tech upgrade started."] Call ChangeSideSupply;
 							//--- todo check conditions., deduce cash etc
 							["RequestUpgrade", [WFBE_Client_SideJoined, _id, _upgrade_current, true]] call WFBE_CO_FNC_SendToServer;
 							WFBE_Client_Logic setVariable ["wfbe_upgrading", true, true];
