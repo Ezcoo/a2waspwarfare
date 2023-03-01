@@ -16,7 +16,7 @@
 
 	["INFORMATION", format ["Server_ChangeSideSupply.sqf: Changing supply value of team %1 with value: %2. New supply value for team: %3. Reason: %4 - Current commander of team: %5.", _side, _amount, _change, _reason, name leader ((_side) call WFBE_CO_FNC_GetCommanderTeam)]] call WFBE_CO_FNC_LogContent;
 
-	missionNamespace setVariable [format ["wfbe_supply_%1", _side],_change];
+	missionNamespace setVariable [format ["wfbe_supply_%1", str _side],_change];
 
 	publicVariable format ["wfbe_supply_%1", _side];
 
@@ -40,7 +40,7 @@
 
 	["INFORMATION", format ["Server_ChangeSideSupply.sqf: Changing supply value of team %1 with value: %2. New supply value for team: %3. Reason: %4 - Current commander of team: %5.", _side, _amount, _change, _reason, name leader ((_side) call WFBE_CO_FNC_GetCommanderTeam)]] call WFBE_CO_FNC_LogContent;
 
-	missionNamespace setVariable [format ["wfbe_supply_%1", _side],_change];
+	missionNamespace setVariable [format ["wfbe_supply_%1", str _side],_change];
 
 	publicVariable format ["wfbe_supply_%1", _side];
 
