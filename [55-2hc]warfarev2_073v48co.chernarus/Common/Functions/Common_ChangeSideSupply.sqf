@@ -15,7 +15,7 @@ _change = _currentSupply + _amount;
 if (_change < 0) then {_change = _currentSupply - _amount};
 if (_change >= _maxSupplyLimit) then {_change = _maxSupplyLimit};
 
-missionNamespace setVariable [format ["wfbe_supply_%1", _side], [_amount, _reason]];
+missionNamespace setVariable [format ["wfbe_supply_%1", _side], [_side, _amount, _reason]];
 
 publicVariable format ["wfbe_supply_%1", _side];
 
