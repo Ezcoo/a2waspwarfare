@@ -6,7 +6,9 @@ _icons = [
 ""
 ];
 
-if (isNil 'BIS_CONTROL_CAM') then { RUBHUD = True } else {RUBHUD = false};
+// if (isNil 'BIS_CONTROL_CAM') then { RUBHUD = True } else {RUBHUD = false};
+
+RUBHUD = true;
 
 waituntil{!isnil"totalTowns"};
 
@@ -17,7 +19,7 @@ _total = count towns;
 // _secondExecRUBHUD = false;
 
 while {true} do {
-	sleep 2;
+	sleep 1;
 	if (RUBHUD) then {
 		if (isNull (["currentCutDisplay"] call BIS_FNC_GUIget)) then {CutRsc["OptionsAvailable","PLAIN",0];_delay = 0};	
 		if (!isNull (["currentCutDisplay"] call BIS_FNC_GUIget)) then {
