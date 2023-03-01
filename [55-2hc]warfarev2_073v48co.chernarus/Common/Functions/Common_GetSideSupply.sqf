@@ -12,7 +12,7 @@ switch (_this) do {
 
 		if (isNil "_supplyTeam") then {
 			REQUEST_SUPPLY_VALUE = player;
-			publicVariable "REQUEST_SUPPLY_VALUE";
+			publicVariableServer "REQUEST_SUPPLY_VALUE";
 
 			waitUntil {!isNil {missionNamespace getVariable format ["wfbe_supply_%1", _this];}};
 			_supplyTeam = missionNamespace getVariable format ["wfbe_supply_%1", _this];
@@ -25,7 +25,7 @@ switch (_this) do {
 
 		if (isNil "_supplyTeam") then {
 			REQUEST_SUPPLY_VALUE = player;
-			publicVariable "REQUEST_SUPPLY_VALUE";
+			publicVariableServer "REQUEST_SUPPLY_VALUE";
 
 			waitUntil {!isNil {missionNamespace getVariable format ["wfbe_supply_%1", _this];}};
 			_supplyTeam = missionNamespace getVariable format ["wfbe_supply_%1", _this];
@@ -38,7 +38,7 @@ switch (_this) do {
 
 		if (isNil "_supplyTeam") then {
 			REQUEST_SUPPLY_VALUE = player;
-			publicVariable "REQUEST_SUPPLY_VALUE";
+			publicVariableServer "REQUEST_SUPPLY_VALUE";
 
 			waitUntil {!isNil {missionNamespace getVariable format ["wfbe_supply_%1", _this];}};
 			_supplyTeam = missionNamespace getVariable format ["wfbe_supply_%1", _this];
