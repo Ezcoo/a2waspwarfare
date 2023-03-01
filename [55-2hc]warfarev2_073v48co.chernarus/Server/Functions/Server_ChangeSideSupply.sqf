@@ -3,7 +3,7 @@
 
 	_side = _this select 1 select 0;
 	_amount = _this select 1 select 1;
-	_reason = if (count _this > 2) then {_this select 2} else {"No reason provided for supply value update! This might indicate a malicious supply update request. Check stuff if you see this message."};
+	_reason = if (_this select 2 != "") then {_this select 2} else {"No reason provided for supply value update! This might indicate a malicious supply update request. Check stuff if you see this message."};
 	_maxSupplyLimit = missionNameSpace getvariable "WFBE_C_MAX_ECONOMY_SUPPLY_LIMIT";
 
 	_currentSupply = (_side) Call GetSideSupply;

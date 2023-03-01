@@ -2,6 +2,7 @@ Private ['_amount','_change','_currentSupply','_side'];
 
 _side = _this select 0;
 _amount = _this select 1;
+_reason = "";
 
 if (count _this > 2) then {
 	_reason = _this select 2;
