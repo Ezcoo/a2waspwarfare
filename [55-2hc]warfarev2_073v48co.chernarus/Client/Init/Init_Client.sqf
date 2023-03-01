@@ -1,4 +1,4 @@
-Private ['_HQRadio','_base','_buildings','_condition','_get','_idbl','_isDeployed','_oc','_weat','_rearmor','_playerObject'];
+Private ['_HQRadio','_base','_buildings','_condition','_get','_idbl','_isDeployed','_oc','_weat','_rearmor','_playerObject','_hasConnectedAtLaunchACK'];
 
 ["INITIALIZATION", Format ["Init_Client.sqf: Client initialization begins at [%1]", time]] Call WFBE_CO_FNC_LogContent;
 
@@ -110,8 +110,10 @@ WFBE_CL_FNC_SupplyMissionStart = Call Compile preprocessFileLineNumbers "Client\
 WFBE_CL_FNC_TownSupplyStatus = Call Compile preprocessFileLineNumbers "Client\Module\supplyMission\townSupplyStatus.sqf";
 WFBE_CL_FNC_CheckCCProximity = Compile preprocessFileLineNumbers "Client\Module\supplyMission\checkCCProximity.sqf";
 WFBE_CL_FNC_ReceiverMASHmarker = Call Compile preprocessFileLineNumbers "Client\Module\MASH\receiverMASHmarker.sqf";
+WFBE_CL_PVEH_HasConnectedAtLaunch = Call Compile preprocessFileLineNumbers "Client\Module\AntiStack\hasConnectedAtLaunchACK.sqf";
 WFBE_CL_FNC_FindVariableInNestedArray = Compile preprocessFileLineNumbers "Client\Functions\Client_FindVariableInNestedArray.sqf";
 WFBE_CL_PV_ReceiveSupplyValue = Call Compile preprocessFileLineNumbers "Client\Functions\Client_ReceiveSupplyValue.sqf";
+
 
 //Affichage Rubber maps:
 	Local_GUIWorking = false;
@@ -351,7 +353,7 @@ if (isMultiplayer && (missionNamespace getVariable "WFBE_C_GAMEPLAY_TEAMSWAP_DIS
 		_timelaps = _timelaps + 0.1;
 		if (_timelaps > 5) then {
 			_timelaps = 0;
-			["WARNING", Format["Init_Client.sqf: [%1] Client [%2] join is pending... no ACK was received from the server, a new request will be submited.",sideJoined,name player]] Call WFBE_CO_FNC_LogContent;
+			["WARNING", Format["Init_Client.sqf: [%1] Client [%2] join is pending... no ACK was received from the server, a new request will be submitted.",sideJoined,name player]] Call WFBE_CO_FNC_LogContent;
 			["RequestJoin", [player, sideJoined]] Call WFBE_CO_FNC_SendToServer;
 		};
 	};
@@ -359,8 +361,27 @@ if (isMultiplayer && (missionNamespace getVariable "WFBE_C_GAMEPLAY_TEAMSWAP_DIS
 	if !(_get) exitWith {
 		["WARNING", Format["Init_Client.sqf: [%1] Client [%2] has teamswapped/STACKED and is now being sent back to the lobby.",sideJoined,name player]] Call WFBE_CO_FNC_LogContent;
 
-		sleep 3;
+		12452 cutText [(localize 'STR_WF_CHAT_TeamstackOrTeamSwap'),"BLACK FADED",50000];
+		sleep 12;
 		failMission "END1";
+	};
+} else {
+	Private ["_hasConnectedAtLaunchACK","_timelaps"];
+	_timelaps = 0;
+	WFBE_CLIENT_HAS_CONNECTED_AT_LAUNCH = player;
+	publicVariableServer "WFBE_CLIENT_HAS_CONNECTED_AT_LAUNCH";
+	while {true} do {
+		sleep 0.1;
+		_hasConnectedAtLaunchACK = missionNamespace getVariable 'WFBE_P_HAS_CONNECTED_AT_LAUNCH_ACK';
+		if !(isNil '_hasConnectedAtLaunchACK') exitWith {["INITIALIZATION", Format["Init_Client.sqf: [%1] Client [%2], Can join? [%3]",sideJoined,name player,_hasConnectedAtLaunchACK]] Call WFBE_CO_FNC_LogContent};
+
+		_timelaps = _timelaps + 0.1;
+		if (_timelaps > 3) then {
+			_timelaps = 0;
+			["WARNING", Format["Init_Client.sqf: [%1] Client [%2] join is pending... no 'has connected at launch' ACK was received from the server, a new request will be submitted.",sideJoined,name player]] Call WFBE_CO_FNC_LogContent;
+			WFBE_CLIENT_HAS_CONNECTED_AT_LAUNCH = player;
+			publicVariableServer "WFBE_CLIENT_HAS_CONNECTED_AT_LAUNCH";
+		};
 	};
 };
 
@@ -636,6 +657,7 @@ sleep 3;
 /* Client death handler. */
 WFBE_PLAYERKEH = player addEventHandler ['Killed', {[_this select 0,_this select 1] Spawn WFBE_CL_FNC_OnKilled; [_this select 0,_this select 1, sideID] Spawn WFBE_CO_FNC_OnUnitKilled}];
 
+hint parseText "<t color='#28ff14'>If you're a new player:</t> <br/><br/>Read the instructions that will show in chat soon. <br/><br/>Our Discord server: <br/><br/><t color='#28ff14'>discord.me/warfare</t>  <br/><br/>(Open the link with a web browser like Chrome) <br/><br/>Ask in chat or on our Discord server if you want to know how something works. <br/><br/>You and your units are marked with <t color='#FFAC1C'>orange</t> color on map. <br/><br/>Friendly units are marked with <t color='#1ff026'>green</t> color. <t color='#0011ff'>Blue</t> and <t color='#ff0000'>red</t> towns are controlled by enemy. <br/><br/>Use your map (press M) to locate yourself. Many things here happen via <t color='#6b77e8'>WF Menu</t> that you can access with your mouse scroll. <br/><br/>Welcome and good luck, soldier! :)";
 hint parseText "<t color='#28ff14'>If you're a new player:</t> <br/><br/>Read the instructions that will show in chat soon. <br/><br/>Our Discord server: <br/><br/><t color='#28ff14'>discord.me/warfare</t>  <br/><br/>(Open the link with a web browser like Chrome) <br/><br/>Ask in chat or on our Discord server if you want to know how something works. <br/><br/>You and your units are marked with <t color='#FFAC1C'>orange</t> color on map. <br/><br/>Friendly towns are marked with <t color='#1ff026'>green</t> color. <t color='#000bde'>Blue</t> and <t color='#de0300'>red</t> towns are controlled by enemy. <br/><br/>Note that you see friendly players and units on map. <br/><br/><t color='#42b6ff'>WF menu</t> is important. You can open it by using action menu (mouse scroll). <br/><br/>Welcome and good luck, soldier! :)";
 
 //--- Valhalla init.

@@ -147,3 +147,28 @@ if !(isNull (_commander)) then {
 		{[_x,false] Call SetTeamAutonomous;[_x, ""] Call SetTeamRespawn} forEach (_logik getVariable "wfbe_teams");
 	};
 };
+
+//--- Save the player stats to database.
+_playerScore = missionNamespace getVariable format ["WFBE_CO_CURRENT_SCORE_PLAYER_%1", _uid];
+
+if (isNil "_playerScore") then {
+	_playerScore = 0;
+	["ERROR", Format ["Server_PlayerDisconnected.sqf: Player [%1] [%2] has no score to be saved upon disconnection. This can be caused by immediate disconnection from the match after joining, or it can be something fishy.", _name, _uid]] Call WFBE_CO_FNC_LogContent;
+};
+
+_playerPrevStats = ["RETRIEVE", _uid] call WFBE_SE_FNC_CallDatabaseRetrieve;
+_playerPrevScoreTotal = _playerPrevStats select 0;
+_playerPrevTimePlayedTotal = _playerPrevStats select 1;
+
+_oldScore = missionNamespace getVariable format ["WFBE_CO_OLD_SCORE_PLAYER_%1", _uid];
+
+if (isNil "_oldScore") then {
+	_oldScore = 0;
+};
+
+missionNamespace setVariable [format["WFBE_CO_OLD_SCORE_PLAYER_%1", _uid], _playerScore];
+
+_playerScoreDiff = _playerScore - _oldScore;
+_playerNewScore = _playerPrevScoreTotal + _playerScoreDiff;
+
+_result = ["STORE", [_uid, _playerScoreDiff]] call WFBE_SE_FNC_CallDatabaseStore;

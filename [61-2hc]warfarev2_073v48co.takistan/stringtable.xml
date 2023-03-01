@@ -27,12 +27,19 @@
         <French>&lt;br/&gt;Warfare is a blend of a team-based multiplayer mission and realtime strategy, where BLUFOR and OPFOR fight for the island control. Key objectives are to capture towns, defend your base and destroy the base of enemy. Both sides are lead by a commander, who influences his side's strategy. There are two kinds of resources: Supply points are used by the commander for building factories. Money is used to purchase weapons, units and vehicles.</French>
         <German>&lt;br/&gt;Warfare is a blend of a team-based multiplayer mission and realtime strategy, where BLUFOR and OPFOR fight for the island control. Key objectives are to capture towns, defend your base and destroy the base of enemy. Both sides are lead by a commander, who influences his side's strategy. There are two kinds of resources: Supply points are used by the commander for building factories. Money is used to purchase weapons, units and vehicles.</German>
         <Russian>&lt;br/&gt;Краткое руководство по игре на карте Warfare&lt;br/&gt;&lt;br/&gt;Боевые действия проходят в Черноруссии/Такистане, на которой в зависимости от настроек игры располагаются от 10 до 30 селений (посёлков и городов), обычно их около 20. В начале игры все они принадлежат Местным, одинаково враждебным как команде Красных, так и команде Синих. &lt;br/&gt;На карте Черноруссии/Такистане независимые селения обычно отображаются зеленым цветом (здесь и далее для удобства изложения будем говорить об обычно используемых игровых настройках). Все игроки изначально (ещё до непосредственного вступления в игру) делятся на команды красных и синих, выбирая тот или иной слот, так же можно играть и за Местных (Зеленых). После загрузки карты сменить сторону уже нельзя (при попытке перезайти по умолчании вас будет выкидывать из игры, что не лишает, однако, возможности опять вступить в неё за "свою" сторону).</Russian>
-	<Italian>&lt;br/&gt;Warfare is a blend of a team-based multiplayer mission and realtime strategy, where BLUFOR and OPFOR fight for the island control. Key objectives are to capture towns, defend your base and destroy the base of enemy. Both sides are lead by a commander, who influences his side's strategy. There are two kinds of resources: Supply points are used by the commander for building factories. Money is used to purchase weapons, units and vehicles.</Italian>
+	      <Italian>&lt;br/&gt;Warfare is a blend of a team-based multiplayer mission and realtime strategy, where BLUFOR and OPFOR fight for the island control. Key objectives are to capture towns, defend your base and destroy the base of enemy. Both sides are lead by a commander, who influences his side's strategy. There are two kinds of resources: Supply points are used by the commander for building factories. Money is used to purchase weapons, units and vehicles.</Italian>
       </Key>
-	   <Key ID="STR_WF_CHAT_Teamstack"><!--shared U-->
-        <English>Player %1 (ID: %2) was not allowed to join %3 to guarantee team balance.</English>
+	<Key ID="STR_WF_CHAT_Teamstack"><!--shared U-->
+        <English>You are not allowed to join this team to guarantee balanced teams. Please join the other team.</English>
         <French>Le joueur %1 (ID: %2) n'a pas été autorisé à joindre %3 pour garantir l'équilibre des équipes.</French>
-		<German>Dem Spieler %1 (ID: %2) wurde nicht erlaubt %3 beizutreten, um die Fairness der Teams zu bewahren.)</German>
+		    <German>Dem Spieler %1 (ID: %2) wurde nicht erlaubt %3 beizutreten, um die Fairness der Teams zu bewahren.)</German>
+        <Russian>Игрок %1 с (ID: %2) не может присоеденится к %3 стороне из-за сохранения баланса сил.</Russian>
+        <Italian>Player %1 (ID: %2) was not allowed to join %3 to guarantee team balance.</Italian>
+      </Key>
+    <Key ID="STR_WF_CHAT_TeamstackOrTeamSwap"><!--shared U-->
+        <English>You are not allowed to join this team to guarantee balanced teams, or because you've been locked to other side in this match already. Please join the other team.</English>
+        <French>Le joueur %1 (ID: %2) n'a pas été autorisé à joindre %3 pour garantir l'équilibre des équipes.</French>
+		    <German>Dem Spieler %1 (ID: %2) wurde nicht erlaubt %3 beizutreten, um die Fairness der Teams zu bewahren.)</German>
         <Russian>Игрок %1 с (ID: %2) не может присоеденится к %3 стороне из-за сохранения баланса сил.</Russian>
         <Italian>Player %1 (ID: %2) was not allowed to join %3 to guarantee team balance.</Italian>
       </Key>
@@ -204,7 +211,7 @@
         <Italian>$%1 Received for the neutralization assistance of a %2.</Italian>
       </Key>
       <Key ID="STR_WF_CHAT_AI_Commander">
-        <English>AI Commander Selected!</English>
+        <English>No Commander Selected!</English>
         <French>Commandeur IA Sélectioné!</French>
         <German>KI wurde zum Commander gewählt!</German>
         <Russian>Командует ИИ!</Russian>
@@ -344,7 +351,7 @@
         <Italian>Player %1 (ID: %2) freaks out and rioted in Base (%3 has been destroyed)!</Italian>
       </Key>
       <Key ID="STR_WF_CHAT_Teamswap"><!--shared U-->
-        <English>Player %1 (ID: %2) has teamswapped! (From %3 to %4)</English>
+        <English>You have attempted to teamswap from %1 to %2. It is not allowed. You will be returned to game lobby soon.</English>
         <French>Le joueur %1 (ID: %2) a changé d'équipe! (De %3 à %4)</French>
         <German>Der Spieler %1 (ID: %2) hat das Team gewechselt! (von %3 nach %4)</German>
         <Russian>Игрок %1 (ID: %2) сменил сторону! (с %3 на %4)</Russian>
@@ -4112,11 +4119,11 @@
 
 <!--UNSORT - ALL DONE-->
       <Key ID="STR_WF_AI"><!--shared W-->
-        <English>AI Commander</English>
-        <French>AI Commander</French>
+        <English>No Commander</English>
+        <French>No Commander</French>
         <German>KI Commander</German>
         <Russian>Командир ИИ</Russian>
-        <Italian>AI Commander</Italian>
+        <Italian>No Commander</Italian>
       </Key>
       <Key ID="STR_WF_Commander"><!--shared U-->
         <English>Commander: %1</English>

@@ -146,7 +146,8 @@ WFBE_CO_FNC_WaypointPatrolTown = Compile preprocessFileLineNumbers "Common\Funct
 WFBE_CO_FNC_WaypointSimple = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointSimple.sqf";
 WFBE_CO_FNC_WaypointsAdd = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointsAdd.sqf";
 WFBE_CO_FNC_WaypointsRemove = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointsRemove.sqf";
-WFBE_CO_FNC_findVariableInNestedArray = Compile preprocessFileLineNumbers "Common\Functions\Common_FindVariableInNestedArray.sqf";
+WFBE_CO_FNC_IRS_PlayWarningSound = Compile preprocessFileLineNumbers "Common\Module\IRS\IRS_PlayWarningSound.sqf";
+WFBE_CO_FNC_IRS_ShowWarning = Compile preprocessFileLineNumbers "Common\Module\IRS\IRS_ShowWarning.sqf";
 
 ["INITIALIZATION", "Init_Common.sqf: Functions are initialized."] Call WFBE_CO_FNC_LogContent;
 

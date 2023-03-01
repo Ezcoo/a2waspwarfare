@@ -84,6 +84,7 @@ WFBE_SE_FNC_SupplyMissionActive = Compile preprocessFileLineNumbers "Server\Modu
 WFBE_SE_FNC_ChangeSideSupply = Call Compile preprocessFileLineNumbers "Server\Functions\Server_ChangeSideSupply.sqf";
 WFBE_SE_PV_RequestSupplyValue = Call Compile preprocessFileLineNumbers "Server\Functions\Server_PV_RequestSupplyValue.sqf";
 
+
 //--- Define Headless Client functions (server ones).
 if (ARMA_VERSION >= 162 && ARMA_RELEASENUMBER >= 101334 || ARMA_VERSION > 162) then {
 	WFBE_CO_FNC_DelegateAITownHeadless = Compile preprocessFileLineNumbers "Server\Functions\Server_DelegateAITownHeadless.sqf";
@@ -591,7 +592,12 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_ALICE") > 0) then {
 waitUntil {time > 0};
 
 call WFBE_CO_FNC_InitAFKkickHandler;
+
 [] execVM "Server\Module\serverFPS\monitorServerFPS.sqf";
+
+[] execVM "Server\Module\AntiStack\countPlayerScores.sqf";
+
+[] execVM "Server\Module\AntiStack\monitorTeamToJoin.sqf";
 
 _logMatchWinPlayerCountThreshold = 10;
 
