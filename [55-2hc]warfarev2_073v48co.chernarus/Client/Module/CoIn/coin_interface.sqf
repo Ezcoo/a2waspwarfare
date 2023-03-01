@@ -497,7 +497,7 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 
 					_structuresCosts = missionNamespace getVariable Format["WFBE_%1STRUCTURECOSTS",sideJoinedText];
 					if ((missionNamespace getVariable "WFBE_C_ECONOMY_CURRENCY_SYSTEM") == 0) then {
-						[sideJoined,-(_structuresCosts select _index)] Call ChangeSideSupply;
+						[sideJoined,-(_structuresCosts select _index),"New base structure building started."] Call ChangeSideSupply;
 					} else {
 						-(_structuresCosts select _index) Call ChangePlayerFunds;
 					};
@@ -667,7 +667,7 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 						if (_index != -1) then {
 							_price = _costs select _index;
 							if ((missionNamespace getVariable "WFBE_C_ECONOMY_CURRENCY_SYSTEM") == 0) then {
-								[sideJoined, -_price] Call ChangeSideSupply;
+								[sideJoined, -_price,"Either HQ deployed or undeployed, or base structure building started."] Call ChangeSideSupply;
 							} else {
 								-(_price) Call ChangePlayerFunds;
 							};

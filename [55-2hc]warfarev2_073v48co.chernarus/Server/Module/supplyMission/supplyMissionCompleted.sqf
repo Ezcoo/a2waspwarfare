@@ -23,7 +23,7 @@
 
     WFBE_Server_PV_SupplyMissionCompletedMessage = [format ["%1 has brought our team S %2 from %3.", _namePlayer, _supplyAmount, _sourceTownStr], _sidePlayer];
 
-    [_sidePlayer, _supplyAmount] Call ChangeSideSupply;
+    [_sidePlayer, _supplyAmount, format ["Supply mission completed by %1. S %2 brought from %3 for team %4. ",_namePlayer, _supplyAmount, _sourceTown, _sidePlayer]] Call ChangeSideSupply;
     _associatedSupplyTruck setVariable ["SupplyAmount", 0, true];
     _associatedSupplyTruck setVariable ["SupplyFromTown", objNull, true];
 
