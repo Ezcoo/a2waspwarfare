@@ -24,10 +24,7 @@ if (_procedureName == "RETRIEVE") then {
 
 _requestID = call compile _requestID;
 
-// diag_log _requestID;
-
 // Strip request ID from the response body
-diag_log "Stripping request ID from the response body...";
 _requestID = _requestID select 1;
 
 ["INFORMATION", format ["CallDatabaseRetrieve.sqf: Request ID is: %1, starting to poll the database for result with the ID.",_requestID]] Call WFBE_CO_FNC_LogContent;

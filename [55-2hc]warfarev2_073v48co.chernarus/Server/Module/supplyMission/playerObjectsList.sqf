@@ -12,13 +12,13 @@
 			WFBE_SE_PLAYERLIST = [[objNull, "0"]];
 		};
 
-		diag_log format ["WFBE_SE_PLAYERLIST: %1", WFBE_SE_PLAYERLIST];
+		// diag_log format ["WFBE_SE_PLAYERLIST: %1", WFBE_SE_PLAYERLIST];
 
 		{
 			_i = 0;
 			_iteratedPlayerUID = _x select 1;
 
-			diag_log format ["_iteratedPlayerUID: %1, _currentPlayerUID: %2", _iteratedPlayerUID, _currentPlayerUID];
+			// diag_log format ["_iteratedPlayerUID: %1, _currentPlayerUID: %2", _iteratedPlayerUID, _currentPlayerUID];
 
 			if (_iteratedPlayerUID == _currentPlayerUID) then {
 				_matchFound = true;
@@ -34,7 +34,7 @@
 			WFBE_SE_PLAYERLIST set [count WFBE_SE_PLAYERLIST, [_playerObject, _currentPlayerUID]];
 		};
 
-		diag_log format ["WFBE_SE_PLAYERLIST after iterating: %1", WFBE_SE_PLAYERLIST];
+		// diag_log format ["WFBE_SE_PLAYERLIST after iterating: %1", WFBE_SE_PLAYERLIST];
 		
 	};
 };
