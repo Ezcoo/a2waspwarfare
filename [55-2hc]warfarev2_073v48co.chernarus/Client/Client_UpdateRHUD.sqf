@@ -18,6 +18,8 @@ private["_total"];
 _total = count towns;
 // _secondExecRUBHUD = false;
 
+sleep 10;
+
 while {true} do {
 	sleep 1;
 	if (RUBHUD) then {
