@@ -14,10 +14,11 @@ private["_total"];
 
 //// Getting the amount of all towns
 _total = count towns;
+_secondExecRUBHUD = false;
 
 while {true} do {
 	sleep 1;
-	if (RUBHUD) then {
+	if (RUBHUD && !_secondExecRUBHUD) then {
 		if (isNull (["currentCutDisplay"] call BIS_FNC_GUIget)) then {CutRsc["OptionsAvailable","PLAIN",0];_delay = 0};	
 		if (!isNull (["currentCutDisplay"] call BIS_FNC_GUIget)) then {
 			_lineLabel = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1345;	
@@ -147,6 +148,8 @@ while {true} do {
 			_textControl_FPS_6 ctrlSetTextColor [0, 1, 0, 1];_textControl_FPS_6 ctrlSetText Format ["%1",_serverFPS];
 			if (_serverFPS < 35) then {_textControl_FPS_6 ctrlSetTextColor [1, 0.8431, 0, 1];_textControl_FPS_6 ctrlSetText Format ["%1", str (_serverFPS)]};
 			if (_serverFPS < 20) then {_textControl_FPS_6 ctrlSetTextColor [1, 0, 0, 1];_textControl_FPS_6 ctrlSetText Format ["%1", str (_serverFPS)]};
+
+			if {_secondExecRUBHUD == false} then {_secondExecRUBHUD = true;} else {_secondExecRUBHUD = false};
 						
 		};
 	} else {
