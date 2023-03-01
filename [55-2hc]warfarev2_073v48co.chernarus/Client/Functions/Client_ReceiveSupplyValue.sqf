@@ -4,5 +4,5 @@
 
 	_supplyValueRequested = _this select 1;
 
-	missionNamespace setVariable format [["wfbe_supply_%1", str (side player)], _supplyValueRequested];
+	missionNamespace setVariable [format ["wfbe_supply_%1", str (side player)], _supplyValueRequested];
 };
