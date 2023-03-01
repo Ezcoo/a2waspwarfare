@@ -1,4 +1,4 @@
-"wfbe_supply_west" addPublicVariableEventHandler {
+"wfbe_supply_temp_west" addPublicVariableEventHandler {
 	Private ['_amount','_change','_currentSupply','_side'];
 
 	_side = _this select 1 select 0;
@@ -22,7 +22,7 @@
 
 };
 
-"wfbe_supply_east" addPublicVariableEventHandler {
+"wfbe_supply_temp_east" addPublicVariableEventHandler {
 	Private ['_amount','_change','_currentSupply','_side'];
 
 	_side = _this select 1 select 0;
