@@ -18,9 +18,6 @@ if (_change >= _maxSupplyLimit) then {_change = _maxSupplyLimit};
 
 missionNamespace setVariable [format ["wfbe_supply_temp_%1", _side], [_side, _amount, _reason]];
 
-diag_log "wfbe_supply_temp_%1:";
-diag_log wfbe_supply_temp_west;
-
 publicVariableServer format ["wfbe_supply_temp_%1", _side];
 
 // (_side Call WFBE_CO_FNC_GetSideLogic) setVariable ["wfbe_supply", _change, true];
