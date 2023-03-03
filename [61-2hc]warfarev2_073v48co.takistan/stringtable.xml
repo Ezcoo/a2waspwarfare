@@ -4112,11 +4112,11 @@
 
 <!--UNSORT - ALL DONE-->
       <Key ID="STR_WF_AI"><!--shared W-->
-        <English>AI Commander</English>
-        <French>AI Commander</French>
+        <English>No Commander</English>
+        <French>No Commander</French>
         <German>KI Commander</German>
         <Russian>Командир ИИ</Russian>
-        <Italian>AI Commander</Italian>
+        <Italian>No Commander</Italian>
       </Key>
       <Key ID="STR_WF_Commander"><!--shared U-->
         <English>Commander: %1</English>
