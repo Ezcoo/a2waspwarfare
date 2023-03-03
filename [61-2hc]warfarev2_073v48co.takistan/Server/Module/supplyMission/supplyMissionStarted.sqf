@@ -21,12 +21,18 @@
             
             sleep 3;
 			
+            if ( count(getPos _associatedSupplyTruck nearEntities ["Base_WarfareBUAVterminal", 80]) > 0 ) then {
+                _friendlyCommandCenterInProximity = true;
+            };
+
+            /*
             {
        			if (_x isKindOf "Base_WarfareBUAVterminal") then {
             	    _friendlyCommandCenterInProximity = true;
         		};
     		} forEach (nearestObjects [(getPos _associatedSupplyTruck), [], 80]);
-
+            */
+            
             if (_friendlyCommandCenterInProximity) exitWith {
                 {
                     _iteratedPlayerUID = _x select 1;
