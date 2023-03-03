@@ -1,6 +1,6 @@
 "WFBE_Client_PV_SupplyMissionStarted" addPublicVariableEventHandler {
     (_this select 1) spawn {
-        private ['_associatedSupplyTruck', '_associatedSourceTown', '_sidePlayer','_iteratedObject','_friendlyCommandCenterInProximity','_playerObject','_match','_currentSupplyTruckDriverLeader','_playerIsDrivingSupplyTruck','_playerisInProximityOfSupplyTruck'];
+        private ['_associatedSupplyTruck', '_associatedSourceTown', '_sidePlayer','_iteratedObject','_friendlyCommandCenterInProximity','_playerObject','_match','_CCinProximity','_currentSupplyTruckDriverLeader','_playerIsDrivingSupplyTruck','_playerisInProximityOfSupplyTruck'];
         _playerObject = _this select 0;
         _associatedSupplyTruck = _this select 1;
         _associatedSourceTown = _this select 2;
@@ -21,11 +21,9 @@
             
             sleep 2;
 			
-            {
-       			if (_x isKindOf "Base_WarfareBUAVterminal") then {
-            	    _friendlyCommandCenterInProximity = true;
-        		};
-    		} forEach (nearestObjects [(getPos _associatedSupplyTruck), [], 100]);
+            _CCinProximity = [_associatedSupplyTruck] spawn WFBE_SE_FNC_CheckCCProximity;
+
+            waitUntil {scriptDone _CCinProximity};
 
             if (_friendlyCommandCenterInProximity) exitWith {
                 {
