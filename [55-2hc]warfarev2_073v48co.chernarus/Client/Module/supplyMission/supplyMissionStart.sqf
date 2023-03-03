@@ -30,25 +30,3 @@ if (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 
 sleep 0.1;
 
 publicVariableServer "WFBE_Client_PV_IsSupplyMissionActiveInTown";
-
-/*
-diag_log "SupplyMissionStart: PHASE ONE";
-
-diag_log "SupplyMissionStart: PHASE TWO";
-
-player addAction [
-    "<t color='#00e83e'>" + 'UNLOAD SUPPLIES FROM TRUCK' + "</t>",
-    'Client\Module\supplyMission\supplyMissionComplete.sqf',
-    [WFBE_CL_VAR_ASSOCIATED_SUPPLY_TRUCK],
-    70,
-    false,
-    true,
-    "",
-    "(count (nearestObjects [(getPos WFBE_CL_VAR_ASSOCIATED_SUPPLY_TRUCK), ['Base_WarfareBUAVterminal'], 100]) > 0) && (cursorTarget == WFBE_CL_VAR_ASSOCIATED_SUPPLY_TRUCK)"
-];
-
-diag_log format ["SupplyMissionStart: cursorTarget == WFBE_CL_VAR_ASSOCIATED_SUPPLY_TRUCK: %1", (cursorTarget == WFBE_CL_VAR_ASSOCIATED_SUPPLY_TRUCK)];
-diag_log format ["SupplyMissionStart: WFBE_CL_FNC_CheckCCProximity: %1", WFBE_CL_FNC_CheckCCProximity];
-
-diag_log "SupplyMissionStart: PHASE THREE";
-*/
