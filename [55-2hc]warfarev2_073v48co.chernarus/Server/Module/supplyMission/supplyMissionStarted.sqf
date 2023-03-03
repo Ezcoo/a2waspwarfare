@@ -15,7 +15,7 @@
 
         diag_log format ["Player %1 started supply mission in town %2.", (name leader group _playerObject), _associatedSourceTown];
 
-        [_friendlyCommandCenterInProximity, _associatedSourceTown] spawn WFBE_SE_FNC_SupplyMissionTimerForTown;
+        [_associatedSourceTown] spawn WFBE_SE_FNC_SupplyMissionTimerForTown;
 
         while { alive _associatedSupplyTruck } do {
             
