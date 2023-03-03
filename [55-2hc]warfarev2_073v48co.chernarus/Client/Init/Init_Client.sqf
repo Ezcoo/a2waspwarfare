@@ -295,7 +295,7 @@ if ((missionNamespace getVariable "WFBE_C_UNITS_TRACK_LEADERS") > 0) then {[] ex
 	if ((missionNamespace getVariable "WFBE_C_ECONOMY_CURRENCY_SYSTEM") == 0) then {
 		waitUntil {!isNil {missionNamespace getVariable format ["wfbe_supply_%1", sideJoinedText]}};
 	};
-	missionNamespace setVariable ["wfbe_supply", missionNamespace getVariable Format ["WFBE_C_ECONOMY_SUPPLY_START_%1", sideJoinedText]];
+	missionNamespace setVariable ["wfbe_supply", missionNamespace getVariable Format ["wfbe_supply_%1", sideJoinedText]];
 	/* Handle the client actions */
 	["INITIALIZATION", "Init_Client.sqf: Initializing the Available Actions FSM"] Call WFBE_CO_FNC_LogContent;
 	[] execFSM "Client\FSM\updateavailableactions.fsm";
