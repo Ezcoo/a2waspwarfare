@@ -1,7 +1,9 @@
-private ["_friendlyCommandCenterInProximity","_associatedSupplyTruck"];
+private ["_associatedSupplyTruck"];
 
-_friendlyCommandCenterInProximity = false;
-_associatedSupplyTruck = _this select 0;
+// Don't set _friendlyCommandCenterInProximity variable to private (innermost) scope!
+_friendlyCommandCenterInProximity = _this select 0;
+
+_associatedSupplyTruck = _this select 1;
 
 {
 		if (_x isKindOf "Base_WarfareBUAVterminal") then {

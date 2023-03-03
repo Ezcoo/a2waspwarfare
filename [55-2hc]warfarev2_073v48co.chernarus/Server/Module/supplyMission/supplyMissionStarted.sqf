@@ -21,7 +21,7 @@
             
             sleep 2;
 			
-            _CCinProximity = [_associatedSupplyTruck] spawn WFBE_SE_FNC_CheckCCProximity;
+            _CCinProximity = [_friendlyCommandCenterInProximity, _associatedSupplyTruck] spawn WFBE_SE_FNC_CheckCCProximity;
 
             waitUntil {scriptDone _CCinProximity};
 
