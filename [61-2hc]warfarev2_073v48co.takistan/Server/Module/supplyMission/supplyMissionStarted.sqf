@@ -13,24 +13,24 @@
         
         _match = false;
 
-        diag_log format ["Player %1 started supply mission in town %2.", (name leader group _playerObject), _associatedSourceTown];
+        ["INFORMATION", Format ["SupplyMissionStarted.sqf: Player %1 started supply mission in town %2.",(name leader group _playerObject), _associatedSourceTown]] Call WFBE_CO_FNC_LogContent;
 
         [_associatedSourceTown] spawn WFBE_SE_FNC_SupplyMissionTimerForTown;
 
         while { alive _associatedSupplyTruck } do {
             
-            sleep 2;
+            sleep 3;
 			
             {
        			if (_x isKindOf "Base_WarfareBUAVterminal") then {
             	    _friendlyCommandCenterInProximity = true;
         		};
-    		} forEach (nearestObjects [(getPos _associatedSupplyTruck), [], 100]);
+    		} forEach (nearestObjects [(getPos _associatedSupplyTruck), [], 80]);
 
             if (_friendlyCommandCenterInProximity) exitWith {
                 {
                     _iteratedPlayerUID = _x select 1;
-                    diag_log format ["_associatedSupplyTruck: %1, leader group: %2, getPlayerUID leader group _associatedSupplyTruck: %3, _iteratedPlayerUID: %4, _playerObject: %5", _associatedSupplyTruck, leader group _associatedSupplyTruck, getPlayerUID leader group _associatedSupplyTruck, _iteratedPlayerUID, _playerObject];
+                    // diag_log format ["_associatedSupplyTruck: %1, leader group: %2, getPlayerUID leader group _associatedSupplyTruck: %3, _iteratedPlayerUID: %4, _playerObject: %5", _associatedSupplyTruck, leader group _associatedSupplyTruck, getPlayerUID leader group _associatedSupplyTruck, _iteratedPlayerUID, _playerObject];
                     
                     {
                         _iteratedObject = _x;
@@ -39,7 +39,7 @@
                         if ((isPlayer _leaderGroupIteratedObject) && (getPlayerUID (_leaderGroupIteratedObject) == _iteratedPlayerUID)) then {
                             _playerisInProximityOfSupplyTruck = true;
                             _playerObject = _leaderGroupIteratedObject;
-                            diag_log format ["_playerIsInProximityOfSupplyTruck, _iteratedObject: %1, _leaderGroupIteratedObject: %2", _iteratedObject, _leaderGroupIteratedObject];
+                            // diag_log format ["_playerIsInProximityOfSupplyTruck, _iteratedObject: %1, _leaderGroupIteratedObject: %2", _iteratedObject, _leaderGroupIteratedObject];
                         };
                     } forEach (nearestObjects [(getPos _associatedSupplyTruck), [], 8]);
 
@@ -51,12 +51,12 @@
                         if (!(isNull _iteratedObjectDriver)) then {
                             _playerObject = _iteratedObjectDriver;
                         };
-                        diag_log format ["_playerObject (_iteratedObjectDriver): %1", _playerObject];
+                        // diag_log format ["_playerObject (_iteratedObjectDriver): %1", _playerObject];
                     };
                     
                 } forEach (WFBE_SE_PLAYERLIST);
 
-                diag_log format ["_playerObject/_currentSupplyTruckDriverLeader: %1", _playerObject];
+                // diag_log format ["_playerObject/_currentSupplyTruckDriverLeader: %1", _playerObject];
 
                 _match = !(isNull _playerObject);
 

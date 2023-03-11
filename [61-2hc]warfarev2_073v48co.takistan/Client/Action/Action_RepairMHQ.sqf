@@ -27,7 +27,7 @@ _currencySym = if (_currency_system == 0) then {"S"} else {"$"};
 if (_currency < _repairPrice) exitWith {hint Format [localize "STR_WF_INFO_Repair_MHQ_Funds",_currencySym,_repairPrice - _currency]};
 
 if (_currency_system == 0) then {
-	[sideJoined,-_repairPrice] Call ChangeSideSupply;
+	[sideJoined,-_repairPrice, "MHQ repaired."] Call ChangeSideSupply;
 } else {
 	-(_repairPrice) Call ChangePlayerFunds;
 };

@@ -68,7 +68,7 @@ while {true} do {
 					Call Compile Format ["_site AddEventHandler ['killed',{[_this select 0,_this select 1,'%1'] Spawn BuildingKilled}];",_type];
 					
 					if ((missionNamespace getVariable "WFBE_C_ECONOMY_CURRENCY_SYSTEM") == 0) then {
-						[_side, -round((_buildingsCosts select _index)/2)] Call ChangeSideSupply;
+						[_side, -round((_buildingsCosts select _index)/2),"Factory being repaired. (It's normal for this message to show repeatedly.)"] Call ChangeSideSupply;
 					};
 					
 					["INFORMATION", Format ["Server_HandleBuildingRepair.sqf: [%1] Structure [%2] has been repaired.", str _side,_type]] Call WFBE_CO_FNC_LogContent;

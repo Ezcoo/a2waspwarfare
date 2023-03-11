@@ -111,7 +111,7 @@ WFBE_CL_FNC_TownSupplyStatus = Call Compile preprocessFileLineNumbers "Client\Mo
 WFBE_CL_FNC_CheckCCProximity = Compile preprocessFileLineNumbers "Client\Module\supplyMission\checkCCProximity.sqf";
 WFBE_CL_FNC_ReceiverMASHmarker = Call Compile preprocessFileLineNumbers "Client\Module\MASH\receiverMASHmarker.sqf";
 WFBE_CL_FNC_FindVariableInNestedArray = Compile preprocessFileLineNumbers "Client\Functions\Client_FindVariableInNestedArray.sqf";
-WFBE_CL_PVEH_HasConnectedAtLaunch = Call Compile preprocessFileLineNumbers "Client\Module\AntiStack\hasConnectedAtLaunchACK.sqf";
+WFBE_CL_PV_ReceiveSupplyValue = Call Compile preprocessFileLineNumbers "Client\Functions\Client_ReceiveSupplyValue.sqf";
 
 
 //Affichage Rubber maps:
@@ -120,7 +120,7 @@ WFBE_CL_PVEH_HasConnectedAtLaunch = Call Compile preprocessFileLineNumbers "Clie
 	zoomgps = 0.025;
 
 	[]spawn{
-		while {!gameover} do{
+		while {!WFBE_gameover} do{
 			if (/*Local_GUIActive &&*/ !Local_GUIWorking /*&& (isNull Local_Camera)*/ && !(visibleMap) && (isNil "BIS_CONTROL_CAM") /*&& (RUBOSD == 1)*/) then {Local_GUIWorking=true; 1365 cutRsc ["RscOverlay","PLAIN",0]};//if GUI is not working, but it should - restart it
 			sleep 0.8;
 		};
@@ -294,8 +294,9 @@ if ((missionNamespace getVariable "WFBE_C_UNITS_TRACK_LEADERS") > 0) then {[] ex
 	[] execVM "Client\FSM\updatetownmarkers.sqf";
 	waitUntil {!isNil {WFBE_Client_Logic getVariable "wfbe_structures"}};
 	if ((missionNamespace getVariable "WFBE_C_ECONOMY_CURRENCY_SYSTEM") == 0) then {
-		waitUntil {!isNil {WFBE_Client_Logic getVariable "wfbe_supply"}};
+		waitUntil {!isNil {missionNamespace getVariable format ["wfbe_supply_%1", sideJoinedText]}};
 	};
+	missionNamespace setVariable ["wfbe_supply", missionNamespace getVariable Format ["wfbe_supply_%1", sideJoinedText]];
 	/* Handle the client actions */
 	["INITIALIZATION", "Init_Client.sqf: Initializing the Available Actions FSM"] Call WFBE_CO_FNC_LogContent;
 	[] execFSM "Client\FSM\updateavailableactions.fsm";

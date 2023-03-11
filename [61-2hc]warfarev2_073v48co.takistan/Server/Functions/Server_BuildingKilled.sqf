@@ -48,7 +48,7 @@ if (!(isNull _killer) && (isPlayer _killer)) then {
             _score = _bounty * (missionNamespace getVariable "WFBE_C_BUILDINGS_SCORE_COEF") / 100;
             [_side_killer, "LocalizeMessage", ["HeadHunterReceiveBountyInSupplies", _side_killer, _type, _supplies, _side]] call WFBE_CO_FNC_SendToClients;
             [_side_killer, "LocalizeMessage", ["HeadHunterReceiveBounty", (name _killer), _bounty, _type, _side]] call WFBE_CO_FNC_SendToClients;
-            [_side_killer, _supplies] Call ChangeSideSupply;
+            [_side_killer, _supplies,format["Guerilla Barracks destroyed by %1.", (name _killer)]] Call ChangeSideSupply;
             ['SRVFNCREQUESTCHANGESCORE',[leader _killer_group, (score leader _killer_group) + _score]] Spawn WFBE_SE_FNC_HandlePVF;
         } else {
             [_side_killer, "LocalizeMessage", ["HeadHunterReceiveBounty", (name _killer), _bounty, _type, _side]] call WFBE_CO_FNC_SendToClients;
