@@ -33,7 +33,7 @@
         <English>You are not allowed to join this team to guarantee balanced teams. Please join the team with lower skill value.  ---  BLUFOR skill: %1  ---  OPFOR skill: %2  ---</English>
         <French>You are not allowed to join this team to guarantee balanced teams. Please join the team with lower skill value.  BLUFOR skill: %1  OPFOR skill: %2</French>
 		    <German>Du darfst diesem Team nicht beitreten, um die Ausgeglichenheit der Teams zu wahren. Bitte tritt dem Team mit dem geringeren Skill-Wert bei.  ---  BLUFOR-Skill: %1  ---  OPFOR-Skill: %2  ---</German>
-        <Russian>You are not allowed to join this team to guarantee balanced teams. Please join the team with lower skill value.  BLUFOR skill: %1  OPFOR skill: %2</Russian>
+         <Russian>Вам запрещено присоединяться к этой команде, чтобы не нарушать баланс команд. Пожалуйста, присоединитесь к команде с недостающим уровнем навыков.  Навык синих: %1  ---  Навык красных: %2  --- </Russian>
         <Italian>You are not allowed to join this team to guarantee balanced teams. Please join the team with lower skill value.  BLUFOR skill: %1  OPFOR skill: %2</Italian>
       </Key>
     <Key ID="STR_WF_CHAT_TeamstackOrTeamSwap"><!--shared U-->
