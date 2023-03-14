@@ -168,3 +168,4 @@ missionNamespace setVariable [format["WFBE_CO_OLD_SCORE_PLAYER_%1", _uid], _play
 _playerScoreDiff = _playerScore - _oldScore;
 
 _result = ["STORE", [_uid, _playerScoreDiff]] call WFBE_SE_FNC_CallDatabaseStore;
+_result = ["STORE_SIDE", [_uid, "NONE"]] call WFBE_SE_FNC_CallDatabaseStoreSide;
