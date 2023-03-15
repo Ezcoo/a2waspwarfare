@@ -21,7 +21,11 @@ switch (_request) do {
 	case "hq-setstatus": {_args spawn WFBE_CL_FNC_HQ_SetStatus};
 	case "icbm-display": {_args spawn WFBE_CL_FNC_Display_ICBM};
 	case "irsmoke-createfx": {{_x spawn WFBE_CO_MOD_IRS_CreateSmoke} forEach (_args select 0)};
-	case "join-answer": {missionNamespace setVariable ['WFBE_P_CANJOIN', (_args select 0)]};
+	case "join-answer": {
+		missionNamespace setVariable ['WFBE_P_CANJOIN', (_args select 0)]; 
+		missionNamespace setVariable ['WFBE_BLUFOR_SCORE_JOIN', (_args select 1)];
+		missionNamespace setVariable ['WFBE_OPFOR_SCORE_JOIN', (_args select 2)]
+		};
 	case "uav-reveal": {_args spawn WFBE_CL_FNC_Reveal_UAV};
 	case "upgrade-started": {_args spawn WFBE_CL_FNC_Upgrade_Started};
 	case "upgrade-complete": {_args spawn WFBE_CL_FNC_Upgrade_Complete};
