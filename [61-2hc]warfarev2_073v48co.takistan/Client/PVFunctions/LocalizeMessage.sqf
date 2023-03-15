@@ -6,7 +6,17 @@ _txt = "";
 switch (_localize) do {
 	case "BuildingTeamkill": {_txt = Format [Localize "STR_WF_CHAT_Teamkill_Building",_this select 1, _this select 2, [_this select 3, 'displayName'] Call GetConfigInfo]};
     case "Teamswap": {_txt = Format [Localize "STR_WF_CHAT_Teamswap",_this select 3, _this select 4]};
-	case "Teamstack": {_txt = Format [Localize "STR_WF_CHAT_Teamstack",_this select 1, _this select 2, _this select 3];};
+	case "Teamstack": {
+        waitUntil { !(isNil {missionNamespace getVariable "WFBE_BLUFOR_SCORE_JOIN"}) && !(isNil {missionNamespace getVariable "WFBE_OPFOR_SCORE_JOIN"}) };
+
+        _totalSkillBLUFOR = missionNamespace getVariable "WFBE_BLUFOR_SCORE_JOIN";
+        _totalSkillOPFOR = missionNamespace getVariable "WFBE_OPFOR_SCORE_JOIN";
+
+        _totalSkillBLUFOR = [_totalSkillBLUFOR, 2] call BIS_fnc_cutDecimals;
+        _totalSkillOPFOR = [_totalSkillOPFOR, 2] call BIS_fnc_cutDecimals;
+
+        _txt = Format [Localize "STR_WF_CHAT_Teamstack",str _totalSkillBLUFOR, str _totalSkillOPFOR];
+    };
 	case "CommanderDisconnected": {_txt = Localize "strwfcommanderdisconnected"};
 	case "TacticalLaunch": {_txt = Localize "STR_WF_CHAT_ICBM_Launch"};
 	case "Teamkill": {_txt = Format [Localize "STR_WF_CHAT_Teamkill",(missionNamespace getVariable "WFBE_C_PLAYERS_PENALTY_TEAMKILL")]; -(missionNamespace getVariable "WFBE_C_PLAYERS_PENALTY_TEAMKILL") Call ChangePlayerFunds};
