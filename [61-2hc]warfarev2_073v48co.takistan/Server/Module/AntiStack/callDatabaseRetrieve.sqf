@@ -1,5 +1,5 @@
 // Call to database
-private ["_procedureName","_procedureCode","_attemptsMax","_attempts","_responseReceived","_parameters","_uid","_score","_requestID","_response","_responseCode","_responseTotalScore","_responseTicks","_playerSkill","_responseStats","_isArray","_parametersTemp"];
+private ["_procedureName","_procedureCode","_attemptsMax","_sleep","_attempts","_responseReceived","_parameters","_uid","_score","_requestID","_response","_responseCode","_responseTotalScore","_responseTicks","_playerSkill","_responseStats","_isArray","_parametersTemp"];
 
 _procedureName = _this select 0;
 _parameters = _this select 1;
@@ -24,10 +24,7 @@ if (_procedureName == "RETRIEVE") then {
 
 _requestID = call compile _requestID;
 
-// diag_log _requestID;
-
 // Strip request ID from the response body
-diag_log "Stripping request ID from the response body...";
 _requestID = _requestID select 1;
 
 ["INFORMATION", format ["CallDatabaseRetrieve.sqf: Request ID is: %1, starting to poll the database for result with the ID.",_requestID]] Call WFBE_CO_FNC_LogContent;

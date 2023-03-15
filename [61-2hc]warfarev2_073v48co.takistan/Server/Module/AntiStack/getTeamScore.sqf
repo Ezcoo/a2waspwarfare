@@ -12,9 +12,9 @@ _teamSkill = 0;
 	// We must exclude the player itself from score counting.
 	if (isPlayer _x && _sideMatches && (getPlayerUID _x != _uid)) then {
 		_playerScore = score _x;
-		// ["INFORMATION", Format["GetTeamScore.sqf: Calling database: RETRIEVE: player UID: %1, _playerScore: %2", getPlayerUID _x, _playerScore]] Call WFBE_CO_FNC_LogContent;
+		["INFORMATION", Format["GetTeamScore.sqf: Calling database: RETRIEVE: player UID: %1, _playerScore: %2", getPlayerUID _x, _playerScore]] Call WFBE_CO_FNC_LogContent;
 		_playerStats = ["RETRIEVE", getPlayerUID _x] call WFBE_SE_FNC_CallDatabaseRetrieve;
-		// ["INFORMATION", Format["GetTeamScore.sqf: Called database! RETRIEVE: results: _playerStats: %1", _playerStats]] Call WFBE_CO_FNC_LogContent;
+		["INFORMATION", Format["GetTeamScore.sqf: Called database! RETRIEVE: results: _playerStats: %1", _playerStats]] Call WFBE_CO_FNC_LogContent;
 		_playerScoreTotal = _playerStats select 0;
 		_playerTimePlayedTotal = _playerStats select 1;
 
