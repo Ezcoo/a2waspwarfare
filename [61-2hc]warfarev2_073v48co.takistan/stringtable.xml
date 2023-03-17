@@ -31,10 +31,11 @@
       </Key>
 	<Key ID="STR_WF_CHAT_Teamstack"><!--shared U-->
         <English>You are not allowed to join this team to guarantee balanced teams. Please join the team with lower skill value.  ---  BLUFOR skill: %1  ---  OPFOR skill: %2  ---</English>
-        <French>You are not allowed to join this team to guarantee balanced teams. Please join the team with lower skill value.  BLUFOR skill: %1  OPFOR skill: %2</French>
-		    <German>Du darfst diesem Team nicht beitreten, um die Ausgeglichenheit der Teams zu wahren. Bitte tritt dem Team mit dem geringeren Skill-Wert bei.  ---  BLUFOR-Skill: %1  ---  OPFOR-Skill: %2  ---</German>
-         <Russian>Вам запрещено присоединяться к этой команде, чтобы не нарушать баланс команд. Пожалуйста, присоединитесь к команде с недостающим уровнем навыков.  Навык синих: %1  ---  Навык красных: %2  --- </Russian>
-        <Italian>You are not allowed to join this team to guarantee balanced teams. Please join the team with lower skill value.  BLUFOR skill: %1  OPFOR skill: %2</Italian>
+        <French>Vous n'êtes pas autorisé à rejoindre cette équipe pour préserver l'équilibre des forces. Merci de rejoindre l'équipe la plus faible. -- BLUFOR skill: %1 -- OPFOR skill: %2 --</French>
+		    <German>Du darfst diesem Team nicht beitreten, um die Ausgeglichenheit der Teams zu wahren. Bitte tritt dem Team mit dem geringeren Skill-Wert bei. -- BLUFOR-Skill: %1 -- OPFOR-Skill: %2 --</German>
+        <Russian>Вам запрещено присоединяться к этой команде, чтобы не нарушать баланс команд. Пожалуйста, присоединитесь к команде с недостающим уровнем навыков. -- Навык синих: %1 -- Навык красных: %2 --</Russian>
+        <Italian>You are not allowed to join this team to guarantee balanced teams. Please join the team with lower skill value.  ---  BLUFOR skill: %1  ---  OPFOR skill: %2  ---</Italian>
+        <Spanish>No tienes permitido unirte a este equipo para garantizar equipos equilibrados. Únete al equipo con menor valor de habilidad. -- Habilidad en BLUFOR: %1 -- Habilidad en OPFOR: %2 --</Spanish>
       </Key>
     <Key ID="STR_WF_CHAT_TeamstackOrTeamSwap"><!--shared U-->
         <English>You are not allowed to join this team to guarantee balanced teams, or because you've been locked to other side in this match already. Please join the other team.</English>
@@ -352,10 +353,11 @@
       </Key>
       <Key ID="STR_WF_CHAT_Teamswap"><!--shared U-->
         <English>You have attempted to teamswap from %1 to %2. It is not allowed. You will be returned to game lobby soon.</English>
-        <French>Le joueur %1 (ID: %2) a changé d'équipe! (De %3 à %4)</French>
-        <German>Der Spieler %1 (ID: %2) hat das Team gewechselt! (von %3 nach %4)</German>
+        <French>Vous avez essayé de changer d'équipe de %1 à %2. Ce n'est pas autorisé. Du coup vous revenez à la case départ.</French>
+        <German>You have attempted to teamswap from %1 to %2. It is not allowed. You will be returned to game lobby soon.</German>
         <Russian>Вы попробовали перейти со стороны %1 на сторону %2. Так нельзя. Скоро вас вернут в игровое лобби.</Russian>
-        <Italian>Il Giocatore %1 (ID: %2) ha cambiato squadra! (da %3 a %4)</Italian>
+        <Italian>You have attempted to teamswap from %1 to %2. It is not allowed. You will be returned to game lobby soon.</Italian>
+        <Spanish>Has intentado cambiar bandos de %1 a %2. No esta permitido. Pronto volverás al lobby del juego.</Spanish>
       </Key>
       <Key ID="STR_WF_CHAT_Teamkill">
         <English>$%1 removed for a teamkill! Please check your fire next time and ask for help from other players or on our Discord if you're a new player. :)</English>
