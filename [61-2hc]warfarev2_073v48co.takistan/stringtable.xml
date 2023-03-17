@@ -355,7 +355,7 @@
       <Key ID="STR_WF_CHAT_Teamswap"><!--shared U-->
         <English>You have attempted to teamswap from %1 to %2. It is not allowed. You will be returned to game lobby soon.</English>
         <French>Vous avez essayé de changer d'équipe de %1 à %2. Ce n'est pas autorisé. Du coup vous revenez à la case départ.</French>
-        <German>You have attempted to teamswap from %1 to %2. It is not allowed. You will be returned to game lobby soon.</German>
+        <German>Du hast versucht zum besseren Team zu wechseln. Von 1% zu 2%. Das ist nicht erlaubt. Du kehrst zur Lobby zurück.</German>
         <Russian>Вы попробовали перейти со стороны %1 на сторону %2. Так нельзя. Скоро вас вернут в игровое лобби.</Russian>
         <Italian>You have attempted to teamswap from %1 to %2. It is not allowed. You will be returned to game lobby soon.</Italian>
         <Spanish>Has intentado cambiar bandos de %1 a %2. No esta permitido. Pronto volverás al lobby del juego.</Spanish>
