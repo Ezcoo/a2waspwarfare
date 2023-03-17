@@ -1,7 +1,7 @@
 private ["_playerStats","_playerScore","_playerPrevStats","_playerPrevScoreTotal","_playerPrevTimePlayedTotal","_result","_oldScore","_playerScoreDiff","_playerNewScore","_playerNewScoreTotal","_sleep","_mainsleep","_miniSleep","_hasConnectedAtLaunch","_flushSleep","_initialSleep"];
 
 // In seconds
-_miniSleep = 0.01;
+_miniSleep = 0.15;
 _mainSleep = 120;
 
 ["INFORMATION", "CountPlayerScores.sqf got execVMd!"] Call WFBE_CO_FNC_LogContent;

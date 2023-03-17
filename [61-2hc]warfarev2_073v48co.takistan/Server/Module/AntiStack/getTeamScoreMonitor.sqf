@@ -1,8 +1,9 @@
-private ["_side","_sideMatches","_teamSkill","_playerStats","_playerScoreTotal","_playerTimePlayedTotal"];
+private ["_side","_sideMatches","_teamSkill","_playerStats","_playerScoreTotal","_playerTimePlayedTotal","_miniSleep"];
 
 _side = _this select 0;
 
 _teamSkill = 0;
+_miniSleep = 0.10;
 
 ["INFORMATION", Format ["GetTeamScoreMonitor.sqf: Checking stats of side: [%1].", _side]] Call WFBE_CO_FNC_LogContent;
 
@@ -20,6 +21,8 @@ _teamSkill = 0;
 		_playerSkill = _playerScoreTotal / _playerTimePlayedTotal;
 
 		_teamSkill = _teamSkill + _playerSkill;
+
+		uiSleep _miniSleep;
 	};
 
 } forEach allUnits;

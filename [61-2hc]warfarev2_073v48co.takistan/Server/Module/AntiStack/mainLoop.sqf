@@ -4,7 +4,7 @@ private ["_playerStats","_playerScore","_playerPrevStats","_playerPrevScoreTotal
 _miniSleep = _this select 0;
 _mainSleep = _this select 1;
 
-["INFORMATION", "CountPlayerScores.sqf: Starting main loop..."] Call WFBE_CO_FNC_LogContent;
+["INFORMATION", "MainLoop.sqf: Starting main loop..."] Call WFBE_CO_FNC_LogContent;
 
 while { !WFBE_GameOver } do {
 	uiSleep _mainSleep;
@@ -23,6 +23,7 @@ while { !WFBE_GameOver } do {
 			_playerNewScore = _playerPrevScoreTotal + _playerScoreDiff;
 			uiSleep _miniSleep;
 			_result = ["STORE", [getPlayerUID _x, _playerScoreDiff]] call WFBE_SE_FNC_CallDatabaseStore;
+			uiSleep _miniSleep;
 		};
 	} forEach allUnits;
 };

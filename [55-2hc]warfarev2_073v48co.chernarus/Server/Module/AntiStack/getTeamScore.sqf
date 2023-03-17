@@ -1,8 +1,9 @@
-private ["_side","_sideMatches","_teamSkill","_playerStats","_playerScoreTotal","_playerTimePlayedTotal","_uid"];
+private ["_side","_sideMatches","_teamSkill","_playerStats","_playerScoreTotal","_playerTimePlayedTotal","_uid","_miniSleep"];
 
 _side = _this select 0;
 _uid = _this select 1;
 _teamSkill = 0;
+_miniSleep = 0.10;
 
 ["INFORMATION", Format ["GetTeamScore.sqf: The UID of client who requested the info: [%1]. Checking stats of side: [%2].", _uid, _side]] Call WFBE_CO_FNC_LogContent;
 
@@ -21,6 +22,8 @@ _teamSkill = 0;
 		_playerSkill = _playerScoreTotal / _playerTimePlayedTotal;
 
 		_teamSkill = _teamSkill + _playerSkill;
+
+		uiSleep _miniSleep;
 	};
 
 } forEach allUnits;

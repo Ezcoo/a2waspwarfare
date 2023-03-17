@@ -593,6 +593,7 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_ALICE") > 0) then {
 waitUntil {time > 0};
 
 call WFBE_CO_FNC_InitAFKkickHandler;
+
 [] execVM "Server\Module\serverFPS\monitorServerFPS.sqf";
 
 [] execVM "Server\Module\AntiStack\countPlayerScores.sqf";
