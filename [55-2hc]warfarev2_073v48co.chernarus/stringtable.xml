@@ -39,7 +39,7 @@
       </Key>
     <Key ID="STR_WF_CHAT_TeamstackOrTeamSwap"><!--shared U-->
         <English>You are not allowed to join this team to guarantee balanced teams, or because you've been locked to other side in this match already. Please join the other team.</English>
-        <French>You are not allowed to join this team to guarantee balanced teams, or because you've been locked to other side in this match already. Please join the other team.</French>
+        <French>Vous n'êtes pas autorisé à rejoindre cette équipe pour préserver l'équilibre des forces, ou parce que vous êtes déjà assigné à l'autre équipe. Merci de rejoindre l'autre équipe.</French>
 		    <German>Es ist dir nicht gestattet diesem Team beizutreten um die Ausgeglichenheit zu wahren, oder weil du vorher schon dem anderen Team beigetreten warst. Bitte trete dem anderen Team bei.</German>
         <Russian>Вы не можете подключиться к этой команде, поскольку может быть нарушен баланс команд, либо потому, что вы уже прикреплены к другой команде в текущем матче. Пожалуйста, смените сторону!</Russian>
         <Italian>You are not allowed to join this team to guarantee balanced teams, or because you've been locked to other side in this match already. Please join the other team.</Italian>
