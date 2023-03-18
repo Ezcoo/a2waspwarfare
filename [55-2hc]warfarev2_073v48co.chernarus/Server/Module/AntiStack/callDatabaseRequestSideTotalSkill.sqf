@@ -43,7 +43,7 @@ _attempts = 0;
 
 while { (_responseCode < 0) && (_attempts < _attemptsMax) } do 
 {
-	_response = "A2WaspDatabase" callExtension format ["%1,%2",_procedureCodeTryRetrieve,_requestID];
+	_response = "A2WaspDatabase" callExtension format ["%1,%2",_procedureCodeRequestTotalSkill,_requestID];
 	
 	_response = call compile _response;
 	
