@@ -1,5 +1,5 @@
 // Call to database
-private ["_procedureName","_procedureCode","_parameters","_uid","_score","_response","_requestID","_responseCode","_responseTotalScore","_responseTicks","_playerSkill","_responseStats","_isArray","_parametersTemp","_side","_responseTotalSkill","_sleep"];
+private ["_procedureName","_procedureCode","_parameters","_uid","_score","_response","_requestID","_responseCode","_responseTotalScore","_responseTicks","_playerSkill","_responseStats","_isArray","_parametersTemp","_side","_responseTotalSkill","_sleep","_procedureCodeRequestTotalSkill","_attempts","_attemptsMax","_sideAsNumber"];
 
 _procedureName = _this select 0;
 _side = _this select 1;
@@ -34,8 +34,8 @@ _requestID = _requestID select 1;
 
 ["INFORMATION", format ["CallDatabaseRequestSideTotalSkill.sqf: Procedure: [%1]. Request ID is: %2, starting to poll the database for result with the ID.",_procedureName,_requestID]] Call WFBE_CO_FNC_LogContent;
 
-_procedureCodeTryRetrieve = 707;
-_response = "A2WaspDatabase" callExtension format ["%1,%2",_procedureCodeTryRetrieve,_requestID];
+_procedureCodeRequestTotalSkill = 707;
+_response = "A2WaspDatabase" callExtension format ["%1,%2",_procedureCodeRequestTotalSkill,_requestID];
 _response = call compile _response;
 _responseCode = _response select 0;
 _attemptsMax = 20;
