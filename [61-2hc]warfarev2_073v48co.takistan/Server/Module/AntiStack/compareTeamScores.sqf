@@ -4,14 +4,10 @@ _side = _this select 0;
 _name = _this select 1;
 _uid = _this select 2;
 _player = _this select 3;
+_totalSkillBLUFOR = _this select 4;
+_totalSkillOPFOR = _this select 5;
 
 _canJoin = true;
-
-_totalSkillBLUFOR = 0;
-_totalSkillOPFOR = 0;
-
-_totalSkillBLUFOR = [west, _uid] call WFBE_SE_FNC_GetTeamScore;
-_totalSkillOPFOR = [east, _uid] call WFBE_SE_FNC_GetTeamScore;
 
 if (_side == west) then {
 	if (_totalSkillBLUFOR > _totalSkillOPFOR) then {
