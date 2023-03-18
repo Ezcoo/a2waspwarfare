@@ -43,6 +43,7 @@ _attempts = 0;
 
 while { (_responseCode < 0) && (_attempts < _attemptsMax) } do 
 {
+	sleep _sleep;
 	_response = "A2WaspDatabase" callExtension format ["%1,%2",_procedureCodeRequestTotalSkill,_requestID];
 	
 	_response = call compile _response;
@@ -50,7 +51,6 @@ while { (_responseCode < 0) && (_attempts < _attemptsMax) } do
 	_responseCode = _response select 0;
 
 	_attempts = _attempts + 1;
-	sleep _sleep;
 };
 
 if (_responseCode < 0) then {
