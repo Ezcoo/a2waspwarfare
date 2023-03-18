@@ -3,7 +3,7 @@ private ["_procedureName","_procedureCode","_attemptsMax","_sleep","_attempts","
 
 _procedureName = _this select 0;
 _parameters = _this select 1;
-_sleep = if (count _this > 2) then {_this select 2} else {0.05};
+_sleep = if (count _this > 2) then {_this select 2} else {0.10};
 
 _uid = _parameters;
 
@@ -38,6 +38,7 @@ _attempts = 0;
 
 while { (_responseCode < 0) && (_attempts < _attemptsMax) } do 
 {
+	sleep _sleep;
 	_response = "A2WaspDatabase" callExtension format ["%1,%2",_procedureCodeTryRetrieve,_requestID];
 	
 	_response = call compile _response;
@@ -45,7 +46,6 @@ while { (_responseCode < 0) && (_attempts < _attemptsMax) } do
 	_responseCode = _response select 0;
 
 	_attempts = _attempts + 1;
-	sleep _sleep;
 };
 
 if (_responseCode < 0) then {
