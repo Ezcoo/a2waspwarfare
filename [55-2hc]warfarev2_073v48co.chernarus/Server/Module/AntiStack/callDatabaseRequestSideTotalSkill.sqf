@@ -3,7 +3,7 @@ private ["_procedureName","_procedureCode","_parameters","_uid","_score","_respo
 
 _procedureName = _this select 0;
 _side = _this select 1;
-_sleep = 2;
+_sleep = 5;
 
 _sideAsNumber = 0;
 
