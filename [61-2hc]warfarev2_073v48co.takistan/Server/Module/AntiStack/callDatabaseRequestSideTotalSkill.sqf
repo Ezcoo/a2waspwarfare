@@ -3,7 +3,7 @@ private ["_procedureName","_procedureCode","_parameters","_uid","_score","_respo
 
 _procedureName = _this select 0;
 _side = _this select 1;
-_sleep = 5;
+_sleep = 3;
 
 _sideAsNumber = 0;
 
@@ -38,7 +38,7 @@ _procedureCodeRequestTotalSkill = 707;
 _response = "A2WaspDatabase" callExtension format ["%1,%2",_procedureCodeRequestTotalSkill,_requestID];
 _response = call compile _response;
 _responseCode = _response select 0;
-_attemptsMax = 10;
+_attemptsMax = 9;
 _attempts = 0;
 
 while { (_responseCode < 0) && (_attempts < _attemptsMax) } do 
