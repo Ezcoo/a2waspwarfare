@@ -1,5 +1,5 @@
 // Call to database
-private ["_procedureName","_procedureCode","_parameters","_uid","_score","_response","_responseCode","_responseTotalScore","_responseTicks","_playerSkill","_responseStats","_isArray","_parametersTemp","_side","_responseTotalSkill","_sleep"];
+private ["_procedureName","_procedureCode","_parameters","_uid","_score","_response","_requestID","_responseCode","_responseTotalScore","_responseTicks","_playerSkill","_responseStats","_isArray","_parametersTemp","_side","_responseTotalSkill","_sleep"];
 
 _procedureName = _this select 0;
 _side = _this select 1;
@@ -15,7 +15,7 @@ if (_side == east) then {
 	_sideAsNumber = 2;
 };
 
-_response = {};
+_requestID = {};
 
 _procedureCode = "";
 
