@@ -6,7 +6,7 @@ _parameters = _this select 1;
 
 _uid =  _parameters select 0;
 _side = _parameters select 1;
-_sideAsNumber = 1;
+_sideAsNumber = 0;
 
 // Special case: set team to 'NONE' in database when player disconnects
 if (typeName _side == "STRING") then {
