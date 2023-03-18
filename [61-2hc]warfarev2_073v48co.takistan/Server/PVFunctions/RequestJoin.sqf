@@ -1,4 +1,4 @@
-private ["_canJoin","_name","_player","_side","_uid","_totalSkillBLUFOR","_totalSkillOPFOR","_hasConnectedAtLaunchToSide","_teamJoinedConfirmed"];
+private ["_canJoin","_name","_player","_side","_uid","_skillBLUFOR","_skillOPFOR","_hasConnectedAtLaunchToSide","_teamJoinedConfirmed"];
 
 _player = _this select 0;
 _side = _this select 1;
@@ -9,6 +9,9 @@ _canJoin = true;
 
 _teamJoinedConfirmed = missionNamespace getVariable Format["WFBE_JIP_USER%1_TEAM_JOINED", _uid];
 _hasConnectedAtLaunchToSide = missionNamespace getVariable format ["WFBE_PLAYER_%1_CONNECTED_AT_LAUNCH", _uid];
+
+_skillBLUFOR = 1;
+_skillOPFOR = 1;
 
 if ( !(isNil "_teamJoinedConfirmed")) then { //--- Retrieve JIP Information if there's any.
 
@@ -40,7 +43,7 @@ if ( !(isNil "_teamJoinedConfirmed")) then { //--- Retrieve JIP Information if t
 		};
 
 	} else {
-		
+
 		["WARNING", Format["RequestJoin.sqf: Unable to find JIP information for player [%1] [%2].", _name, _uid]] Call WFBE_CO_FNC_LogContent;
 
 		_skillBLUFOR = [west, _uid] Call WFBE_SE_FNC_GetTeamScore;

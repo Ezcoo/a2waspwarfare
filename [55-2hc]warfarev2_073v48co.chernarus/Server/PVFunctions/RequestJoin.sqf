@@ -10,6 +10,9 @@ _canJoin = true;
 _teamJoinedConfirmed = missionNamespace getVariable Format["WFBE_JIP_USER%1_TEAM_JOINED", _uid];
 _hasConnectedAtLaunchToSide = missionNamespace getVariable format ["WFBE_PLAYER_%1_CONNECTED_AT_LAUNCH", _uid];
 
+_skillBLUFOR = 1;
+_skillOPFOR = 1;
+
 if ( !(isNil "_teamJoinedConfirmed")) then { //--- Retrieve JIP Information if there's any.
 
 	if (_teamJoinedConfirmed != _side) then {
@@ -56,7 +59,7 @@ if (WF_A2_Vanilla) then {
 	[_uid, "HandleSpecial", ["join-answer", _canJoin, _skillBLUFOR, _skillOPFOR]] Call WFBE_CO_FNC_SendToClients;
 
 } else {
-	
+
 	[_player, "HandleSpecial", ["join-answer", _canJoin, _skillBLUFOR, _skillOPFOR]] Call WFBE_CO_FNC_SendToClient;
 
 };
