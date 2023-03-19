@@ -85,6 +85,7 @@ WFBE_SE_FNC_ChangeSideSupply = Call Compile preprocessFileLineNumbers "Server\Fu
 WFBE_SE_PV_RequestSupplyValue = Call Compile preprocessFileLineNumbers "Server\Functions\Server_PV_RequestSupplyValue.sqf";
 WFBE_SE_FNC_CallDatabaseRequestSideTotalSkill = Compile preprocessFileLineNumbers "Server\Module\AntiStack\callDatabaseRequestSideTotalSkill.sqf";
 WFBE_SE_FNC_CallDatabaseFlushPlayerList = Compile preprocessFileLineNumbers "Server\Module\AntiStack\callDatabaseFlushPlayerList.sqf";
+WFBE_SE_FNC_CallDatabaseSetMap = Compile preprocessFileLineNumbers "Server\Module\AntiStack\callDatabaseSetMap.sqf";
 
 //--- Define Headless Client functions (server ones).
 if (ARMA_VERSION >= 162 && ARMA_RELEASENUMBER >= 101334 || ARMA_VERSION > 162) then {
@@ -599,6 +600,11 @@ call WFBE_CO_FNC_InitAFKkickHandler;
 [] execVM "Server\Module\AntiStack\countPlayerScores.sqf";
 
 [] execVM "Server\Module\AntiStack\monitorTeamToJoin.sqf";
+
+// 0 = NONE
+// 1 = CHERNARUS
+// 2 = TAKISTAN
+["SET_MAP", 1] call WFBE_SE_FNC_CallDatabaseSetMap;
 
 _logMatchWinPlayerCountThreshold = 10;
 
