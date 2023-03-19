@@ -21,7 +21,7 @@ _procedureCode = "";
 
 if (_procedureName == "REQUEST_SIDE_SKILL") then {
 	_procedureCode = 606;
-	["INFORMATION", format ["CallDatabaseRequestSideTotalSkill.sqf: Calling database with procedure: [%1]. Side: %2", _procedureName, _side]] Call WFBE_CO_FNC_LogContent;
+	["INFORMATION", format ["CallDatabaseRequestSideTotalSkill.sqf: Calling database with procedure: [%1]. Side: [%2].", _procedureName, _side]] Call WFBE_CO_FNC_LogContent;
 	_requestID = "A2WaspDatabase" callExtension format ["%1,%2",_procedureCode,_sideAsNumber];
 };
 
@@ -32,7 +32,7 @@ _requestID = _requestID select 1;
 
 // ["INFORMATION", format ["CallDatabaseRequestSideTotalSkill.sqf: Called database with procedure: [%1], RESPONSE (REQUEST ID) IS: %2", _procedureName, _requestID]] Call WFBE_CO_FNC_LogContent;
 
-["INFORMATION", format ["CallDatabaseRequestSideTotalSkill.sqf: Procedure: [%1]. Request ID is: %2, starting to poll the database for result with the ID.",_procedureName,_requestID]] Call WFBE_CO_FNC_LogContent;
+["INFORMATION", format ["CallDatabaseRequestSideTotalSkill.sqf: Procedure: [%1]. Request ID is: [%2], starting to poll the database for result with the ID.",_procedureName,_requestID]] Call WFBE_CO_FNC_LogContent;
 
 _procedureCodeRequestTotalSkill = 707;
 _response = "A2WaspDatabase" callExtension format ["%1,%2",_procedureCodeRequestTotalSkill,_requestID];
@@ -54,13 +54,12 @@ while { (_responseCode < 0) && (_attempts < _attemptsMax) } do
 };
 
 if (_responseCode < 0) then {
-	["ERROR", format ["CallDatabaseRequestSideTotalSkill.sqf: CRITICAL ERROR! Something went wrong with database. Couldn't retrieve team: [%1] stats. Request ID: %2",_side, _requestID]] Call WFBE_CO_FNC_LogContent;
+	["ERROR", format ["CallDatabaseRequestSideTotalSkill.sqf: CRITICAL ERROR! Something went wrong with database. Couldn't retrieve team: [%1] stats. Request ID: [%2].",_side, _requestID]] Call WFBE_CO_FNC_LogContent;
 	_responseStats = [1, 1];
 	_responseStats;
 } else {
-	["INFORMATION", format ["CallDatabaseRequestSideTotalSkill.sqf: Received requested data from database with request ID: %1.",_requestID]] Call WFBE_CO_FNC_LogContent;
 	_responseTotalSkill = _response select 1;
 
-	["INFORMATION", format ["CallDatabaseRequestSideTotalSkill.sqf: Response from database with request ID: %1 is: Total team skill is: %2",_requestID,_responseTotalSkill]] Call WFBE_CO_FNC_LogContent;
+	["INFORMATION", format ["CallDatabaseRequestSideTotalSkill.sqf: Response from database with request ID: [%1] is: Total team skill is: %2.",_requestID,_responseTotalSkill]] Call WFBE_CO_FNC_LogContent;
 	_responseTotalSkill;
 };

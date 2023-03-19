@@ -36,7 +36,7 @@ if (_procedureName == "STORE_SIDE") then {
 };
 
 
-["INFORMATION", format ["CallDatabaseStoreSide.sqf: Called database with procedure: [%1], RESPONSE IS: %2", _procedureName, _response]] Call WFBE_CO_FNC_LogContent;
+["INFORMATION", format ["CallDatabaseStoreSide.sqf: Called database with procedure: [%1], response is: %2", _procedureName, _response]] Call WFBE_CO_FNC_LogContent;
 
 _response = call compile _response;
 

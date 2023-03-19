@@ -15,19 +15,19 @@ _procedureCode = "";
 
 if (_procedureName == "RETRIEVE") then {
 	_procedureCode = 101;
-	["INFORMATION", format ["CallDatabaseRetrieve.sqf: Calling database with procedure: [%1], UID being checked against database is: [%2]. Parameters: %3", _procedureName, _uid, _parameters]] Call WFBE_CO_FNC_LogContent;
+	["INFORMATION", format ["CallDatabaseRetrieve.sqf: Calling database with procedure: [%1], UID being checked against database is: [%2]. Parameters: [%3].", _procedureName, _uid, _parameters]] Call WFBE_CO_FNC_LogContent;
 	_requestID= "A2WaspDatabase" callExtension format ["%1,%2",_procedureCode,_parameters];
 };
 
 
-["INFORMATION", format ["CallDatabaseRetrieve.sqf: Called database with procedure: [%1], RESPONSE (REQUEST ID) IS: %2", _procedureName, _requestID]] Call WFBE_CO_FNC_LogContent;
+["INFORMATION", format ["CallDatabaseRetrieve.sqf: Called database with procedure: [%1], RESPONSE (REQUEST ID) IS: [%2].", _procedureName, _requestID]] Call WFBE_CO_FNC_LogContent;
 
 _requestID = call compile _requestID;
 
 // Strip request ID from the response body
 _requestID = _requestID select 1;
 
-["INFORMATION", format ["CallDatabaseRetrieve.sqf: Request ID is: %1, starting to poll the database for result with the ID.",_requestID]] Call WFBE_CO_FNC_LogContent;
+["INFORMATION", format ["CallDatabaseRetrieve.sqf: Request ID is: [%1], starting to poll the database for result with the ID.",_requestID]] Call WFBE_CO_FNC_LogContent;
 
 _procedureCodeTryRetrieve = 505;
 _response = "A2WaspDatabase" callExtension format ["%1,%2",_procedureCodeTryRetrieve,_requestID];
@@ -49,18 +49,18 @@ while { (_responseCode < 0) && (_attempts < _attemptsMax) } do
 };
 
 if (_responseCode < 0) then {
-	["ERROR", format ["CallDatabaseRetrieve.sqf: CRITICAL ERROR! Something went wrong with database. Couldn't retrieve player UID [%1] stats. Request ID: %2",_uid, _requestID]] Call WFBE_CO_FNC_LogContent;
+	["ERROR", format ["CallDatabaseRetrieve.sqf: CRITICAL ERROR! Something went wrong with database. Couldn't retrieve player UID [%1] stats. Request ID: [%2].",_uid, _requestID]] Call WFBE_CO_FNC_LogContent;
 	_responseStats = [1, 1];
 	_responseStats;
 } else {
-	["INFORMATION", format ["CallDatabaseRetrieve.sqf: Received requested data from database with request ID: %1.",_requestID]] Call WFBE_CO_FNC_LogContent;
+	["INFORMATION", format ["CallDatabaseRetrieve.sqf: Received requested data from database with request ID: [%1].",_requestID]] Call WFBE_CO_FNC_LogContent;
 	_responseTotalScore = _response select 1;
 	_responseTicks = _response select 2;
 	
 	// diag_log "Managed to fetch total score and number of ticks.";
 	_responseStats = [_responseTotalScore, _responseTicks];
 
-	["INFORMATION", format ["CallDatabaseRetrieve.sqf: Response from database with request ID: %1 is: player UID: %2. Total score: %3, ticks: %4.",_requestID,_uid,_responseTotalScore,_responseTicks]] Call WFBE_CO_FNC_LogContent;
+	["INFORMATION", format ["CallDatabaseRetrieve.sqf: Response from database with request ID: [%1] is: player UID: %2. Total score: %3, ticks: %4.",_requestID,_uid,_responseTotalScore,_responseTicks]] Call WFBE_CO_FNC_LogContent;
 	_responseStats;
 };
 
