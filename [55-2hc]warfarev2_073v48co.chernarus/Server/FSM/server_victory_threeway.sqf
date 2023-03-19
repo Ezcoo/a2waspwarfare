@@ -22,6 +22,12 @@ while {!gameOver} do {
 
 			if (!(alive _hq)  && _factories == 0 || _towns == _total && !WFBE_GameOver) then {
 				[nil, "HandleSpecial", ["endgame", (_x) Call WFBE_CO_FNC_GetSideID]] Call WFBE_CO_FNC_SendToClients;
+
+				// 0 = NONE
+				// 1 = CHERNARUS
+				// 2 = TAKISTAN
+				["SET_MAP", 0] call WFBE_SE_FNC_CallDatabaseSetMap;
+
 				WF_Logic setVariable ["WF_Winner", _x];
 				gameOver = true;
 				WFBE_GameOver = true;
