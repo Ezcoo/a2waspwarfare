@@ -69,11 +69,6 @@ while {!gameOver} do {
 
 ["FLUSH_PLAYERLIST"] call WFBE_SE_FNC_CallDatabaseFlushPlayerList;
 
-// 0 = NONE
-// 1 = CHERNARUS
-// 2 = TAKISTAN
-["SET_MAP", 0] call WFBE_SE_FNC_CallDatabaseSetMap;
-
 sleep 5;
 diag_log Format["[WFBE (OUTRO)][frameno:%1 | ticktime:%2] server_victory_threeway.sqf: Mission end - [Done]",diag_frameno,diag_tickTime];
 failMission "END1";

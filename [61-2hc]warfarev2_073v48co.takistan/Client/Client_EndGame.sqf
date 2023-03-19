@@ -10,6 +10,11 @@ if (_side == west) then {
 	if (_side == east) then {_side = west};
 };
 
+// 0 = NONE
+// 1 = CHERNARUS
+// 2 = TAKISTAN
+["SET_MAP", 0] call WFBE_SE_FNC_CallDatabaseSetMap;
+
 [_side] ExecVM "Client\GUI\GUI_EndOfGameStats.sqf";
 //_track = if (WF_A2_Vanilla) then {"Track21_Rise_Of_The_Fallen"} else {"EP1_Track15"}; //---old
 _track = if (WF_A2_Vanilla) then {["Track21_Rise_Of_The_Fallen",41]} else {["EP1_Track13",91]}; //---changed-MrNiceGuy
