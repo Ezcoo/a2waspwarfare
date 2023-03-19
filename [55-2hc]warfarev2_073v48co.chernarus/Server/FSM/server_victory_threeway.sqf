@@ -67,6 +67,8 @@ while {!gameOver} do {
 	};
 } forEach allUnits;
 
+["FLUSH_PLAYERLIST"] call WFBE_SE_FNC_CallDatabaseFlushPlayerList;
+
 sleep 5;
 diag_log Format["[WFBE (OUTRO)][frameno:%1 | ticktime:%2] server_victory_threeway.sqf: Mission end - [Done]",diag_frameno,diag_tickTime];
 failMission "END1";
