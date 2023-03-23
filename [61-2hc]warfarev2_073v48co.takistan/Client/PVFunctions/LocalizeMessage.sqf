@@ -12,8 +12,8 @@ switch (_localize) do {
         _totalSkillBLUFOR = missionNamespace getVariable "WFBE_BLUFOR_SCORE_JOIN";
         _totalSkillOPFOR = missionNamespace getVariable "WFBE_OPFOR_SCORE_JOIN";
 
-        _totalSkillBLUFOR = [_totalSkillBLUFOR, 2] call BIS_fnc_cutDecimals;
-        _totalSkillOPFOR = [_totalSkillOPFOR, 2] call BIS_fnc_cutDecimals;
+        _totalSkillBLUFOR = [_totalSkillBLUFOR, 1] call BIS_fnc_cutDecimals;
+        _totalSkillOPFOR = [_totalSkillOPFOR, 1] call BIS_fnc_cutDecimals;
 
         _txt = Format [Localize "STR_WF_CHAT_Teamstack",str _totalSkillBLUFOR, str _totalSkillOPFOR];
     };
