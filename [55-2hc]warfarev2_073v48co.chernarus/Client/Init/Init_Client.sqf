@@ -652,7 +652,7 @@ sleep 3;
 [sideJoinedText,'UnitsCreated',1] Call UpdateStatistics;
 
 /* Towns Task System */
-["TownAddComplete"] Spawn TaskSystem;
+// ["TownAddComplete"] Spawn TaskSystem;
 
 /* Client death handler. */
 WFBE_PLAYERKEH = player addEventHandler ['Killed', {[_this select 0,_this select 1] Spawn WFBE_CL_FNC_OnKilled; [_this select 0,_this select 1, sideID] Spawn WFBE_CO_FNC_OnUnitKilled}];

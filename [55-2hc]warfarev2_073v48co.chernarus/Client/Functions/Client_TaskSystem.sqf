@@ -27,7 +27,7 @@ switch (_type) do {
 			_town setVariable ['taskLink',_task];
 		};
 		
-		["TownAssignClosest"] Spawn TaskSystem;
+		// ["TownAssignClosest"] Spawn TaskSystem;
 	};
 	
 	//--- Assign the closest town to the player.
@@ -35,7 +35,7 @@ switch (_type) do {
 		sleep 4;
 		_next = [player,sideJoined] Call GetClosestLocationBySide;
 		if !(isNull _next) then {
-			["TownHintNew",_next] Spawn TaskSystem;
+			// ["TownHintNew",_next] Spawn TaskSystem;
 			_task = (_next getVariable 'taskLink');
 			/* Keep the commander order ! */
 			if (!isNull comTask) then {

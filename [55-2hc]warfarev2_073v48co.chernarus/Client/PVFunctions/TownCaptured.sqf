@@ -32,7 +32,7 @@ _ptask = currentTask player;
 if (isNil '_task') then {_task = objNull};
 
 //--- Taskman
-["TownUpdate", _town] Spawn TaskSystem;
+// ["TownUpdate", _town] Spawn TaskSystem;
 
 //--- Client side capture.
 if (_town_side_value_new == WFBE_Client_SideID) then {
@@ -84,7 +84,7 @@ if (_town_side_value_new == WFBE_Client_SideID) then {
 	//--- Taskman
 	if !(isNull _task) then {
 		if (_ptask == _task) then {
-			["TownAssignClosest"] Spawn TaskSystem;
+			// ["TownAssignClosest"] Spawn TaskSystem;
 		};
 	};
 };
