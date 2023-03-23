@@ -332,7 +332,7 @@ while {alive player && dialog} do {
 					_selected = clientTeams select (_x - 1);
 					if (alive (leader _selected) && isPlayer(leader _selected)) then {
 						// if (WF_A2_Vanilla) then {
-							[getPlayerUID(leader _selected), "SetTask", [_taskType,_taskTime,_taskTimeLabel,_position]] Call WFBE_CO_FNC_SendToClients;
+							// [getPlayerUID(leader _selected), "SetTask", [_taskType,_taskTime,_taskTimeLabel,_position]] Call WFBE_CO_FNC_SendToClients;
 						// } else {
 							// [leader _selected, "SetTask", [_taskType,_taskTime,_taskTimeLabel,_position]] Call WFBE_CO_FNC_SendToClient;
 						// };
@@ -340,7 +340,7 @@ while {alive player && dialog} do {
 				} forEach _teams;
 			} else {
 				player kbTell [sideHQ, WFBE_V_HQTopicSide, "OrderSentAll",["1","","All",["all"]],["2","","moving to position",["HC_MovingToPosition"]],["3","","over.",["Over1"]],true];
-				[sideJoined, "SetTask", [_taskType,_taskTime,_taskTimeLabel,_position]] Call WFBE_CO_FNC_SendToClients;
+				// [sideJoined, "SetTask", [_taskType,_taskTime,_taskTimeLabel,_position]] Call WFBE_CO_FNC_SendToClients;
 			};
 		};
 	};
