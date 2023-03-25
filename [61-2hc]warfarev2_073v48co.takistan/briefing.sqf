@@ -8,8 +8,8 @@ player createDiaryRecord["Diary", ["Summary", "<br/>Warfare is a blend of a team
 
 player createDiaryRecord["Diary", ["Our Discord server", "<br/>
 
-Up-to-date server rules are listed on Discord (open the link with a web browser like Firefox or Chrome):  https://discord.me/warfare <br />
+Up-to-date server rules are listed on Discord (open the link with a web browser like Firefox or Google Chrome): <br /> <br />  https://discord.me/warfare <br /> <br />
 
-The Discord server has lots of useful tips like a complete FPS optimization guide and commanding guide. You can also ask questions and contact admins there. Check it out! <br />
+The Discord server has lots of useful tips like a complete FPS optimization guide and commanding guide. You can also ask questions about this server and gamemode and contact admins there. Check it out! <br />
 
 "]];
