@@ -11,6 +11,7 @@ missionNamespace setVariable [Format["WFBE_%1SOLDIER", _side], 'CDF_Soldier'];
 missionNamespace setVariable [Format["WFBE_%1FLAG", _side], '\ca\ca_e\data\flag_cdf_co.paa'];
 
 missionNamespace setVariable [Format["WFBE_%1AMBULANCES", _side], ['BMP2_Ambul_CDF']];
+missionNamespace setVariable [Format ["WFBE_%1MASHES", _side], ['MASH']];
 missionNamespace setVariable [Format["WFBE_%1REPAIRTRUCKS", _side], ['UralRepair_CDF']];
 missionNamespace setVariable [Format["WFBE_%1SALVAGETRUCK", _side], ['WarfareSalvageTruck_CDF']];
 missionNamespace setVariable [Format["WFBE_%1SUPPLYTRUCKS", _side], ['WarfareSupplyTruck_CDF']];
@@ -27,7 +28,7 @@ missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL3", _side],['CDF_Sold
 
 missionNamespace setVariable [Format["WFBE_%1PARACARGO", _side], 'Mi17_CDF'];	//--- Paratroopers, Vehicle.
 missionNamespace setVariable [Format["WFBE_%1REPAIRTRUCK", _side], 'UralRepair_CDF'];//--- Repair Truck model.
-missionNamespace setVariable [Format["WFBE_%1STARTINGVEHICLES", _side], ['BMP2_Ambul_CDF','Ural_CDF']];//--- Starting Vehicles.
+missionNamespace setVariable [Format["WFBE_%1STARTINGVEHICLES", _side], ['BMP2_Ambul_CDF','BTR90']];//--- Starting Vehicles.
 missionNamespace setVariable [Format["WFBE_%1PARAAMMO", _side], ['RUBasicAmmunitionBox','RUBasicWeaponsBox','RULaunchersBox']];//--- Supply Paradropping, Dropped Ammunition.
 missionNamespace setVariable [Format["WFBE_%1PARAVEHICARGO", _side], 'BRDM2_CDF'];//--- Supply Paradropping, Dropped Vehicle.
 missionNamespace setVariable [Format["WFBE_%1PARAVEHI", _side], 'Mi17_CDF'];//--- Supply Paradropping, Vehicle

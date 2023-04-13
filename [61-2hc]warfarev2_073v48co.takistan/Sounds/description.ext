@@ -1,6 +1,7 @@
 class CfgSounds
 {
 sounds[] = {};
+
 class inbound {
 		name = "inbound";
 		sound[] = {"\sounds\inbound.ogg",10,1};
@@ -12,4 +13,23 @@ class Bipod_ON {
 		sound[] = {"\sounds\Bipod_ON.ogg",10,1};
 		titles[] = {};
 	};
+
+class newCommander {
+        name = "newCommander";
+        sound[] = {"\sounds\newCommander.ogg",10,1};
+        titles[] = {};
+    };
+
+class airRaid {
+        name = "airRaid";
+        sound[] = {"\sounds\airRaid.ogg",10,1};
+        titles[] = {};
+    };
+
+class commanderNotification {
+        name = "commanderNotification";
+        sound[] = {"\sounds\commanderNotification.ogg",10,1};
+        titles[] = {};
+    };
+
 };

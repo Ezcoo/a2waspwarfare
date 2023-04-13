@@ -98,14 +98,18 @@ _u = _u		+ ['M1128_MGS_EP1'];
 _u = _u		+ ['M1133_MEV_EP1'];
 _u = _u		+ ['LandRover_Special_CZ_EP1'];
 _u = _u		+ ['HMMWV_M1035_DES_EP1'];
+_u = _u		+ ['Dingo_WDL_ACR'];
+_u = _u		+ ['Dingo_GL_Wdl_ACR'];
+_u = _u		+ ['Pandur2_ACR'];
 
-if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['MtvrSupply_DES_EP1']};
+// // if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['MtvrSupply_DES_EP1']};
 _u = _u		+ ['MTVR'];
 _u = _u		+ ['MtvrRepair'];
 _u = _u		+ ['WarfareReammoTruck_USMC'];
 _u = _u		+ ['MtvrRefuel'];
 _u = _u		+ ['WarfareSalvageTruck_USMC'];
-if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['WarfareSupplyTruck_USMC']};
+// // if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {
+_u = _u		+ ['WarfareSupplyTruck_USMC'];
 _u = _u		+ ['RHIB'];
 _u = _u		+ ['RHIB2Turret'];
 _u = _u		+ ['LAV25'];
@@ -147,6 +151,7 @@ if (_restriction_air == 0) then {
 	_u = _u		+ ['MV22'];
 	_u = _u		+ ['C130J_US_EP1'];
 	_u = _u		+ ['F35B'];
+	_u = _u		+ ['L159_ACR'];
 	_u = _u		+ ['AV8B'];
 	_u = _u		+ ['AV8B2'];
 	_u = _u		+ ['A10'];
@@ -168,6 +173,7 @@ if (_restriction_air == 0) then {
 	_u = _u 	+ ['MV22'];
 	_u = _u		+ ['C130J_US_EP1'];
 	_u = _u		+ ['F35B'];
+	_u = _u		+ ['L159_ACR'];
 	_u = _u		+ ['AV8B'];
 	_u = _u		+ ['AV8B2'];
 	_u = _u		+ ['A10'];

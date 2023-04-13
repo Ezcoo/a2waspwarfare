@@ -1,57 +1,42 @@
 /*
-	Script: Spec Ops Skill System by Benny.
-	Description: Add special skills to the defined spec ops unit.
+	Script: Officer Skill System by Benny.
+	Description: Add special skills to the defined officer.
+	Edited by: Net_2 (--> SpecOps/Support class)
 */
-Private ['_min','_ran','_skip','_vehicle','_vehicles','_z'];
+Private ['_array','_exist','_skip','_tent','_toWorld','_type','_z','_tentObject'];
 
-_vehicles = player nearEntities [["Car","Motorcycle","Tank","Ship","Air"],5];
-if (count _vehicles < 1) exitWith {};
+_type = missionNamespace getVariable Format ["WFBE_%1FARP",sideJoinedText];
+_exist = WFBE_Client_Logic getVariable "wfbe_mash";
+if !(isNull _exist) then {deleteVehicle _exist};
 
-if (isNil "WFBE_SK_V_LockpickChance") then {
-	//--- Some units will have less troubles lockpicking than the others, negative means more chance
-	WFBE_SK_V_LockpickChance = switch (WFBE_SK_V_Type) do {
-		case "SpecOps": {-20};
-		default {0};
-	};
-};
-
-_vehicle = [player,_vehicles] Call WFBE_CO_FNC_GetClosestEntity;
-
-if (!locked _vehicle) exitWith {};
-
-WFBE_SK_V_LastUse_Lockpick = time;
+WFBE_SK_V_LastUse_MASH = time;
 
 _skip = false;
-for [{_z = 0},{_z < 4},{_z = _z + 1}] do {
+for [{_z = 0},{_z < 7},{_z = _z + 1}] do {
 	sleep 0.5;
 	player playMove "AinvPknlMstpSlayWrflDnon_medic";
 	sleep 0.5;
-	waitUntil {animationState player == "ainvpknlmstpslaywrfldnon_amovpknlmstpsraswrfldnon" || !alive player || vehicle player != player || !alive _vehicle || _vehicle distance player > 5};
-	if (!alive player || vehicle player != player || !alive _vehicle || _vehicle distance player > 5) exitWith {_skip = true};
+	waitUntil {animationState player == "ainvpknlmstpslaywrfldnon_amovpknlmstpsraswrfldnon" || !alive player || vehicle player != player};
+	if ((!alive player) || (vehicle player != player)) exitWith {_skip = true};
 };
 
-if (!locked _vehicle) exitWith {};
+_tent = objNull;
 
 if (!_skip) then {
-	_min = 51;
-	switch (typeOf _vehicle) do {
-		case "Motorcycle": {_min = 45};
-		case "Car": {_min = 52};
-		case "Tank": {_min = 53};
-		case "Ship": {_min = 25};
-		case "Air": {_min = 65};
-	};
-	_ran = ((random 100)- WFBE_SK_V_LockpickChance);
-	
-	if (_ran >= _min) then {
-		//--- Unlocked, gain experience.
-		if (WFBE_SK_V_LockpickChance > -51) then {WFBE_SK_V_LockpickChance = WFBE_SK_V_LockpickChance - 1};
-		// WFBE_RequestVehicleLock = ['SRVFNCREQUESTVEHICLELOCK',[_vehicle,false]];
-		// publicVariable 'WFBE_RequestVehicleLock';
-		// if (isHostedServer) then {['SRVFNCREQUESTVEHICLELOCK',[_vehicle,false]] Spawn HandleSPVF};
-		["RequestVehicleLock", [_vehicle, false]] Call WFBE_CO_FNC_SendToServer;
-		hint (localize "STR_WF_INFO_Lockpick_Succeed");
-	} else {
-		hint (localize "STR_WF_INFO_Lockpick_Failed");
-	};
+	_array = [((player worldToModel (getPos player)) select 0),((player worldToModel (getPos player)) select 1) + 10];
+	_toWorld = player modelToWorld _array;
+	_tent = _type createVehicle _toWorld;
+	WFBE_Client_Logic setVariable ["wfbe_mash", _tent];
+	_tent addAction ["<t color='#f8d664'>" + localize 'STR_WF_ACTION_UndeployMASH'+ "</t>", "Client\Module\Skill\Actions\Officer_Undeploy_MASH.sqf", [], 75, false, true, "", "alive _target && time - WFBE_SK_V_LastUse_MASH > 240"];
+} else {
+	WFBE_Client_Logic setVariable ["wfbe_mash", objNull];
+};
+
+[_tent] spawn {
+	_tentObject = _this select 0;
+
+	WFBE_CL_MASH_MARKER_CREATED = [_tentObject, side player, player];
+
+	publicVariableServer "WFBE_CL_MASH_MARKER_CREATED";
+
 };

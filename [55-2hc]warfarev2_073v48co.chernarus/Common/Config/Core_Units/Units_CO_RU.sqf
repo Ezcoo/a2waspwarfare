@@ -66,11 +66,13 @@ _u = _u		+ ['KamazRepair'];
 _u = _u		+ ['WarfareReammoTruck_RU'];
 _u = _u		+ ['KamazRefuel'];
 _u = _u		+ ['WarfareSalvageTruck_RU'];
-if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['WarfareSupplyTruck_RU']};
+// if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {
+_u = _u		+ ['WarfareSupplyTruck_RU'];
 _u = _u		+ ['M113Ambul_TK_EP1'];
 _u = _u		+ ['GAZ_Vodnik_MedEvac'];
 _u = _u		+ ['BRDM2_INS'];
 _u = _u		+ ['BRDM2_ATGM_INS'];
+_u = _u     + ['BRDM2_ATGM_TK_EP1'];
 _u = _u		+ ['GAZ_Vodnik'];
 _u = _u		+ ['GAZ_Vodnik_HMG'];
 _u = _u		+ ['BTR60_TK_EP1'];
@@ -82,6 +84,7 @@ missionNamespace setVariable [Format ["WFBE_%1LIGHTUNITS", _side], _u];
 if (local player) then {['LIGHT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
 _u 			= ['M113_TK_EP1'];
+_u = _u		+ ['BVP1_TK_ACR'];
 _u = _u		+ ['BMP2_INS'];
 _u = _u		+ ['BMP3'];
 _u = _u		+ ['ZSU_INS'];
@@ -149,6 +152,7 @@ if ((missionNamespace getVariable "WFBE_C_UNITS_TOWN_PURCHASE") > 0) then {
 	_u = _u		+ ['RU_Soldier_Medic'];
 	_u = _u		+ ['TK_Soldier_Engineer_EP1'];
 	_u = _u		+ ['RU_Soldier_LAT'];
+	_u = _u		+ ['RU_Soldier_AT'];
     _u = _u		+ ['Ins_Soldier_MG'];
 	_u = _u		+ ['RU_Soldier_AA'];
 _u = _u		+ ["UralCivil"];

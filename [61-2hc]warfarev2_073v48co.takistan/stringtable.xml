@@ -37,11 +37,11 @@
         <Italian>Player %1 (ID: %2) was not allowed to join %3 to guarantee team balance.</Italian>
       </Key>
 	<Key ID="STR_Voting">
-        <English>Voting</English>
-        <French>Voting</French>
-        <German>Voting</German>
+        <English>Start Comm Vote</English>
+        <French>Start Comm Vote</French>
+        <German>Start Comm Vote</German>
         <Russian>Цель</Russian>
-        <Italian>Voting</Italian>
+        <Italian>Start Comm Vote</Italian>
       </Key>
 	<Key ID="STR_Voting_2">
         <English>&lt;br/&gt;After starting the warfare mission, you are confronted with the Vote Commander screen. Click on any name in the player list to cast your vote. If you join a game that has already started, you will not see the Vote Commander screen. A new vote for a new Commander can be started anytime using the Vote option in the Options interface. The commander assigns a mission and a role to a team leader, whether it be AI or human player. The role can include the type of equipment and vehicles the AI teams will use. Players have control of what they will use in their team. Mission is the task for the team to perform. You may disable the Commander Vote Pop-up in the Team Menu.</English>
@@ -246,11 +246,11 @@
         <Italian>You were deducted from $%1 due to your gear</Italian>
       </Key>
       <Key ID="STR_WF_CHAT_ICBM_Launch">
-        <English>WARNING! An intercontinental ballistic missile launch has been detected!</English>
-        <French>ATTENTION! Le lancement d'un Missile balistique intercontinental a été detecté!</French>
-        <German>WARNUNG! Der Abschuss einer Interkontinentalrakete wurde gemeldet!</German>
-        <Russian>ВНИМАНИЕ! Зафиксирован запуск ядерной ракеты!</Russian>
-        <Italian>ATTENZIONE! Un Missile Balistico intercontinentale è stato avvistato!</Italian>
+        <English>WARNING! An Intercontinental ballistic missile launch has been detected! Five minutes to impact!</English>
+        <French>ATTENTION! Le lancement d'un Missile balistique intercontinental a été detecté! Cinq minutes pour avoir un impact!</French>
+        <German>WARNUNG! Der Abschuss einer Interkontinentalrakete wurde gemeldet! Fünf Minuten bis zum Aufprall!</German>
+        <Russian>ВНИМАНИЕ! Зафиксирован запуск ядерной ракеты! Пять минут до удара!</Russian>
+        <Italian>ATTENZIONE! Un Missile Balistico intercontinentale è stato avvistato! Cinque minuti per avere un impatto!</Italian>
       </Key>
       <Key ID="STR_WF_CHAT_IRS_Deployed" >
         <English>Deploying IR Smoke! %1 ammunitions remaining.</English>
@@ -267,6 +267,13 @@
         <Italian>$%1 Perduti per aver neutralizzato un civile! stai attento!</Italian>
       </Key>
       <Key ID="STR_WF_CHAT_PlayerCommander"><!--shared U-->
+        <English>You are the new Commander! Good luck! &lt;br/&gt;&lt;br/&gt;If you're new to commanding: &lt;br/&gt;&lt;br/&gt;It's important to build some factories in Construction Menu (HQ) (mouse scroll, you also need to be right next to the friendly HQ) but it's often even more important to do upgrades: >> WF menu (use your mouse scroll again) -> Factory Upgrade. &lt;br/&gt;&lt;br/&gt;Spend your supply carefully and build only necessary factories and focus on the relevant technology upgrades. &lt;br/&gt;&lt;br/&gt;You can also move the base if needed by undeploying HQ (if not undeployed already), moving it to another position and deploying it there. &lt;br/&gt;&lt;br/&gt;Don't worry too much, you'll learn by doing and you can always ask for guidance! </English>
+        <French>Vous êtes le Commandeur! Bonne Chance!</French>
+        <German>Du bist der neue Commander! Viel Erfolg!</German>
+        <Russian>Вы Командующий!</Russian>
+        <Italian>Sei il Comandante!</Italian>
+      </Key>
+      <Key ID="STR_WF_CHAT_PlayerCommanderTitleText"><!--shared U-->
         <English>You are the new Commander! Good luck!</English>
         <French>Vous êtes le Commandeur! Bonne Chance!</French>
         <German>Du bist der neue Commander! Viel Erfolg!</German>
@@ -344,7 +351,7 @@
         <Italian>Il Giocatore %1 (ID: %2) ha cambiato squadra! (da %3 a %4)</Italian>
       </Key>
       <Key ID="STR_WF_CHAT_Teamkill">
-        <English>$%1 removed for a teamkill! go to the ophthalmologist...</English>
+        <English>$%1 removed for a teamkill! Please check your fire next time and ask for help from other players or on our Discord if you're a new player. :)</English>
         <French>$%1 Enlever pour un tir fratricide.</French>
         <German>$%1 Strafe für einen Teamkill! Ab zum Augenarzt...</German>
         <Russian>-$%1 за огонь по своим.</Russian>
@@ -373,11 +380,11 @@
       </Key>
 
       <Key ID="STR_WF_CHAT_Upgrade_Started_Message">
-        <English>%1 Upgrade is started, upgrading level is %2.</English>
-        <French>%1 Upgrade is started, upgrading level is %2.</French>
-        <German>%1 Upgrade is started, upgrading level is %2.</German>
+        <English>%1 Upgrade has been started, upgrade level is %2.</English>
+        <French>%1 Upgrade has been started, upgrade level is %2.</French>
+        <German>%1 Upgrade has been started, upgrade level is %2.</German>
         <Russian>%1 модернизация до уровня %2 начата.</Russian>
-        <Italian>%1 Upgrade is started, upgrading level is %2.</Italian>
+        <Italian>%1 Upgrade has been started, upgrade level is %2.</Italian>
       </Key>
 
       <Key ID="STR_WF_CHAT_Upgrade_Complete_Message">
@@ -667,7 +674,7 @@
         <Italian>%1 ha Vinto!</Italian>
       </Key>
 
-<!--BuyGear Menu - ALL DONE-->	  
+<!--BuyGear Menu - ALL DONE-->
 	  <Key ID="STR_WF_GEAR_CostLabel">
         <English>Cost:</English>
         <French>Coût:</French>
@@ -810,6 +817,13 @@
         <Russian>Информация:\n\n %1 %2 необходимо для восстановления КШМ.</Russian>
         <Italian>Informazioni:\n\n %1 %2 Needed in order to repair the MHQ.</Italian>
       </Key>
+        <Key ID="STR_WF_INFO_MHQ_Repairs_Used">
+            <English>Information:\n\n The MHQ has been repaired 3 times already, it can't be repaired anymore.</English>
+            <French>Information:\n\n The MHQ has been repaired 3 times already, it can't be repaired anymore.</French>
+            <German>Information:\n\n Das MHQ wurde bereits 3 mal repariert. Es kann nicht mehr repariert werden.</German>
+            <Russian>Информация:\n\n The MHQ has been repaired 3 times already, it can't be repaired anymore.</Russian>
+            <Italian>Informazioni:\n\n The MHQ has been repaired 3 times already, it can't be repaired anymore.</Italian>
+        </Key>
       <Key ID="STR_WF_INFO_Repair_MHQ_None"><!--need rework -0.71-->
         <English>Information:\n\n There is no MHQ to repair around.</English>
         <French>Information:\n\n Il n'y a aucun PC à réparer a proximité.</French>
@@ -1123,11 +1137,11 @@
         <Italian>Menu Aggiornamenti</Italian>
       </Key>
       <Key ID="STR_WF_MAIN_VotingMenu">
-        <English>Voting</English>
-        <French>Voting</French>
-        <German>Voting</German>
+        <English>Start Comm Vote</English>
+        <French>Start Comm Vote</French>
+        <German>Start Comm Vote</German>
         <Russian>Голосование</Russian>
-        <Italian>Voting</Italian>
+        <Italian>Start Comm Vote</Italian>
       </Key>
 
 <!--SUBMISSION Strings - ALL DONE-->
@@ -1941,28 +1955,28 @@
         <German>There must be no crew in the vehicle for field repairs!</German>
         <Russian>При полевом ремонте в машине не должно быть экипажа!</Russian>
         <Italian>There must be no crew in the vehicle for field repairs!</Italian>
-      </Key>  
+      </Key>
       <Key ID="STR_HINT_Medpacks">
         <English>Medpacks left: %1</English>
         <French>Medpacks left: %1</French>
         <German>Medpacks left: %1</German>
         <Russian>Осталось медпакетов: %1</Russian>
         <Italian>Medpacks left: %1</Italian>
-      </Key>       
+      </Key>
       <Key ID="STR_HINT_FirstAid">
         <English>First aid</English>
         <French>First aid</French>
         <German>First aid</German>
         <Russian>Первая помощь</Russian>
         <Italian>First aid</Italian>
-      </Key>      
+      </Key>
       <Key ID="STR_HINT_GPSight">
         <English>Grenade launcher zeroing: %1m</English>
         <French>Grenade launcher zeroing: %1m</French>
         <German>Grenade launcher zeroing: %1m</German>
         <Russian>Прицел подствольного гранатомета: %1м</Russian>
         <Italian>Grenade launcher zeroing: %1m</Italian>
-      </Key>      
+      </Key>
       <Key ID="STR_HINT_ATSight">
         <English>Missile launcher zeroing: %1m</English>
         <French>Grenade launcher zeroing: %1m</French>
@@ -2237,7 +2251,7 @@
         <Italian>UAV: The drone is damaged!</Italian>
       </Key>
 	<!--Values-->
-     
+
  <Key ID="STR_WF_PARAMETER_AI_Delegation_Client">
         <English>Client-side Delegation</English>
         <French>Délégation côté client</French>
@@ -2924,7 +2938,7 @@
         <German>Schnelles Reisen</German>
         <Russian>Быстрое перемещение</Russian>
         <Italian>Fast Travel</Italian>
-      </Key>      
+      </Key>
       <Key ID="STR_WF_TACTICAL_ParadropAmmo">
         <English>Paradrop - Ammunition</English>
         <French>Parachutage - Munitions</French>
@@ -3646,11 +3660,11 @@
         <Italian>This upgrade unlocks heavy vehicles.&lt;br/&gt;&lt;br/&gt;This allows the team to buy better vehicles at the Heavy Factory.</Italian>
       </Key>
 	  <Key ID="STR_WF_UPGRADE_ArtilleryUpgrade_Desc">
-        <English>This upgrade decreases the cooldown time of artillery missions called via the Tactical Center.&lt;br/&gt; - Cooldown:&lt;br/&gt;   Level 0 = 300 seconds&lt;br/&gt;   Level 1 = 250 seconds&lt;br/&gt;   Level 2 = 200 seconds&lt;br/&gt;   Level 3 = 150 seconds</English>
-        <French>This upgrade decreases the cooldown time of artillery missions called via the Tactical Center.&lt;br/&gt; - Cooldown:&lt;br/&gt;   Level 0 = 300 seconds&lt;br/&gt;   Level 1 = 250 seconds&lt;br/&gt;   Level 2 = 200 seconds&lt;br/&gt;   Level 3 = 150 seconds</French>
-        <German>Dieses Upgrade verringert die Nachladezeit der Artillerie im Tactical Center.&lt;br/&gt; - Nachladezeit:&lt;br/&gt;   Stufe 0 = 300 Sekunden&lt;br/&gt;   Stufe 1 = 250 Sekunden&lt;br/&gt;   Stufe 2 = 200 Sekunden&lt;br/&gt;   Stufe 3 = 150 Sekunden</German>
-        <Russian>Эта модернизация уменьшается время перезарядки артиллерии, вызываемой в миссии через Тактический центр.&lt;br/&gt; - Перезарядка:&lt;br/&gt;   Уровень 0 = 300 секунд&lt;br/&gt;   Уровень 1 = 250 секунд&lt;br/&gt;   Уровень 2 = 200 секунд&lt;br/&gt;   Уровень 3 = 150 секунд</Russian>
-        <Italian>This upgrade decreases the cooldown time of artillery missions called via the Tactical Center.&lt;br/&gt; - Cooldown:&lt;br/&gt;   Level 0 = 300 seconds&lt;br/&gt;   Level 1 = 250 seconds&lt;br/&gt;   Level 2 = 200 seconds&lt;br/&gt;   Level 3 = 150 seconds</Italian>
+        <English>This upgrade decreases the cooldown time of artillery missions called via the Tactical Center.&lt;br/&gt; - Cooldown:&lt;br/&gt;   Level 0 = 400 seconds&lt;br/&gt;   Level 1 = 350 seconds&lt;br/&gt;   Level 2 = 300 seconds&lt;br/&gt;   Level 3 = 250 seconds</English>
+        <French>This upgrade decreases the cooldown time of artillery missions called via the Tactical Center.&lt;br/&gt; - Cooldown:&lt;br/&gt;   Level 0 = 400 seconds&lt;br/&gt;   Level 1 = 350 seconds&lt;br/&gt;   Level 2 = 300 seconds&lt;br/&gt;   Level 3 = 250 seconds</French>
+          <German>Dieses Upgrade verringert die Nachladezeit der Artillerie im Tactical Center.&lt;br/&gt; - Nachladezeit:&lt;br/&gt;   Stufe 0 = 400 Sekunden&lt;br/&gt;   Stufe 1 = 350 Sekunden&lt;br/&gt;   Stufe 2 = 300 Sekunden&lt;br/&gt;   Stufe 3 = 250 Sekunden</German>
+          <Russian>Эта модернизация уменьшается время перезарядки артиллерии, вызываемой в миссии через Тактический центр.&lt;br/&gt; - Перезарядка:&lt;br/&gt;   Уровень 0 = 400 секунд&lt;br/&gt;   Уровень 1 = 350 секунд&lt;br/&gt;   Уровень 2 = 300 секунд&lt;br/&gt;   Уровень 3 = 250 секунд</Russian>
+        <Italian>This upgrade decreases the cooldown time of artillery missions called via the Tactical Center.&lt;br/&gt; - Cooldown:&lt;br/&gt;   Level 0 = 400 seconds&lt;br/&gt;   Level 1 = 350 seconds&lt;br/&gt;   Level 2 = 300 seconds&lt;br/&gt;   Level 3 = 250 seconds</Italian>
       </Key>
 	  <Key ID="STR_WF_UPGRADE_ArtilleryAmmo_Desc">
         <English>This upgrade unlocks new ammunition for artillery pieces.&lt;br/&gt;&lt;br/&gt;This allows the artillery-units to fire improved ammunition.</English>
@@ -3871,7 +3885,7 @@
         <Russian>Назначить</Russian>
         <Italian>Assign</Italian>
       </Key>
-	  
+
 <!--COIN Strings - ALL DONE-->
       <Key ID="STR_WF_AircraftFactory"><!--shared W-->
         <English>Aircraft Factory</English>
@@ -3893,7 +3907,7 @@
         <German>Feldbefestigungen</German>
         <Russian>Укрепления</Russian>
         <Italian>Fortificazione</Italian>
-      </Key>      
+      </Key>
       <Key ID="STR_WF_Strategic">
         <English>Strategic</English>
         <French>Stratégique</French>
@@ -4098,11 +4112,11 @@
 
 <!--UNSORT - ALL DONE-->
       <Key ID="STR_WF_AI"><!--shared W-->
-        <English>AI Commander</English>
-        <French>AI Commander</French>
+        <English>No Commander</English>
+        <French>No Commander</French>
         <German>KI Commander</German>
         <Russian>Командир ИИ</Russian>
-        <Italian>AI Commander</Italian>
+        <Italian>No Commander</Italian>
       </Key>
       <Key ID="STR_WF_Commander"><!--shared U-->
         <English>Commander: %1</English>
@@ -4146,14 +4160,14 @@
         <Russian>Town SV: %1/%2</Russian>
         <Italian>Town SV: %1/%2</Italian>
       </Key>
-  
+
 	  <Key ID="STR_WF_MissleCamEnable">
         <English>Missle Camera On</English>
         <French>Missle Camera On</French>
         <German>Missle Camera On</German>
         <Russian>Камера на ракете Вкл.</Russian>
         <Italian>Missle Camera On</Italian>
-      </Key>	
+      </Key>
 
       <Key ID="STR_WF_MissleCamDisable">
         <English>Missle Camera Off</English>
@@ -4161,7 +4175,7 @@
         <German>Missle Camera Off</German>
         <Russian>Камера на ракете Выкл.</Russian>
         <Italian>Missle Camera Off</Italian>
-      </Key>	 
+      </Key>
 
       <Key ID="STR_WF_Gameplay_MissleCamera">
         <English>Gameplay: Missle Camera</English>
@@ -4313,7 +4327,7 @@
         <Italian>We have lost %1</Italian>
     </Key>
     <Key ID="STR_WF_PARAMETER_ReinforcedBuildings">
-        <English>GAMEPLAY: Reinforced Buildings</English> 
+        <English>GAMEPLAY: Reinforced Buildings</English>
         <French>JOUABILITÉ: Reinforced Buildings</French>
         <German>SPIEL: Reinforced Buildings</German>
         <Russian>Геймплей: Укреплённые постройки</Russian>

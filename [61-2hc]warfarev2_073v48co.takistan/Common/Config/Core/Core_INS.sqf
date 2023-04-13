@@ -112,20 +112,20 @@ _c = _c + ['BRDM2_INS'];
 _i = _i + [['','',1200,25,-2,3,1,0,'Insurgents',[]]];
 
 _c = _c + ['BRDM2_ATGM_INS'];
-_i = _i + [['','',1650,25,-2,4,1,0,'Insurgents',[]]];
+_i = _i + [['','',1650,25,-2,3,1,0,'Insurgents',[]]];
 
 _c = _c + ['Ural_ZU23_INS'];
 _i = _i + [['','',1750,20,-2,3,1,0,'Insurgents',[]]];
 
 _c = _c + ['GRAD_INS'];
-_i = _i + [['','',7800,35,-2,5,1,0,'Insurgents',[]]];
+_i = _i + [['','',5300,35,-2,5,1,0,'Insurgents',[]]];
 
 /* Heavy Vehicles */
 _c = _c + ['BMP2_Ambul_INS'];
 _i = _i + [['','',3950,20,-2,1,2,0,'Insurgents',[]]];
 
 _c = _c + ['BMP2_INS'];
-_i = _i + [['','',3400,30,-2,1,2,0,'Insurgents',[]]];
+_i = _i + [['','',3400,28,-2,1,2,0,'Insurgents',[]]];
 
 _c = _c + ['ZSU_INS'];
 _i = _i + [['','',3500,35,-2,3,2,0,'Insurgents',[]]];
@@ -141,7 +141,7 @@ _c = _c + ['Mi17_medevac_Ins'];
 _i = _i + [['','',9120,35,-2,1,3,0,'Insurgents',[]]];
 
 _c = _c + ['Su25_Ins'];
-_i = _i + [['SU-25 (KH29)','',50640,55,-2,4,3,0,'Insurgents',[]]];
+_i = _i + [['SU-25 (KH29)','',42640,55,-2,4,3,0,'Insurgents',[]]];
 
 /* Static Defenses */
 _c = _c + ['Ins_WarfareBMGNest_PK'];

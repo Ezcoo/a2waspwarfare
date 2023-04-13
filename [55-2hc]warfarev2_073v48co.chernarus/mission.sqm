@@ -9,12 +9,14 @@ class Mission
 		"ca_highcommand",
 		"warfare2vehicles",
 		"ca_animals2_chicken",
-		"ca_communityconfigurationproject_e"
+		"ca_communityconfigurationproject_e",
+		"CorePatch_CCP_70799"
 	};
 	addOnsAuto[]=
 	{
 		"ca_modules_functions",
 		"cacharacters2",
+		"CorePatch_CCP_70799",
 		"chernarus"
 	};
 	randomSeed=10034581;
@@ -42,7 +44,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12759.626,36.173397,5629.8994};
+					position[]={11229.373,253.78244,4705.3555};
 					id=0;
 					side="LOGIC";
 					vehicle="LocationLogicStart";
@@ -241,7 +243,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={1329.3534,145.0426,5295.0283};
+					position[]={5072.7295,25.954288,2897.1919};
 					azimut=90;
 					id=10;
 					side="LOGIC";
@@ -276,7 +278,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={8905.209,331.3728,5935.124};
+					position[]={9198.749,111.29079,4995.9619};
 					id=12;
 					side="LOGIC";
 					vehicle="LocationLogicStart";
@@ -293,7 +295,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11481.38,317.29825,11325.817};
+					position[]={13004.452,6,10413.365};
 					azimut=270;
 					id=13;
 					side="LOGIC";
@@ -311,7 +313,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={9577.46,135.04993,13220.866};
+					position[]={3167.5537,170.05875,3520.5774};
 					azimut=180;
 					id=14;
 					side="LOGIC";
@@ -3274,7 +3276,7 @@ class Mission
 					position[]={2259.1614,512.45703,15296.355};
 					id=229;
 					side="WEST";
-					vehicle="FR_R";
+					vehicle="FR_Miles";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3296,7 +3298,7 @@ class Mission
 					position[]={2259.1116,512.63934,15297.525};
 					id=230;
 					side="WEST";
-					vehicle="FR_R";
+					vehicle="FR_Miles";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3324,7 +3326,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Support (Deploy MASH, Supply run)";
 					synchronizations[]={255};
 				};
 			};
@@ -3346,7 +3348,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Support (Deploy MASH, Supply run)";
 					synchronizations[]={255};
 				};
 			};
@@ -3478,7 +3480,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Support (Deploy MASH, Supply run)";
 					synchronizations[]={255};
 				};
 			};
@@ -3516,7 +3518,7 @@ class Mission
 					position[]={2265.4153,513.08765,15296.825};
 					id=240;
 					side="WEST";
-					vehicle="USMC_Soldier_Medic";
+					vehicle="FR_Corpsman";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3538,7 +3540,7 @@ class Mission
 					position[]={2265.4199,513.18121,15297.688};
 					id=241;
 					side="WEST";
-					vehicle="USMC_Soldier_Medic";
+					vehicle="FR_Corpsman";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3560,7 +3562,7 @@ class Mission
 					position[]={2265.4893,512.97742,15295.754};
 					id=242;
 					side="WEST";
-					vehicle="USMC_Soldier_Medic";
+					vehicle="FR_Corpsman";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3582,7 +3584,7 @@ class Mission
 					position[]={2265.6299,512.90686,15295.005};
 					id=243;
 					side="WEST";
-					vehicle="USMC_Soldier_Medic";
+					vehicle="FR_Corpsman";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3654,7 +3656,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Support (Deploy MASH, Supply run)";
 					synchronizations[]={256};
 				};
 			};
@@ -3676,7 +3678,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Support (Deploy MASH, Supply run)";
 					synchronizations[]={256};
 				};
 			};
@@ -3714,7 +3716,7 @@ class Mission
 					position[]={38.771675,5.6875744,1589.5959};
 					id=249;
 					side="EAST";
-					vehicle="Ins_Soldier_Sapper";
+					vehicle="Ins_Soldier_CO";
 					player="PLAYER COMMANDER";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3736,7 +3738,7 @@ class Mission
 					position[]={38.699684,5.6916676,1591.527};
 					id=250;
 					side="EAST";
-					vehicle="Ins_Soldier_Sapper";
+					vehicle="Ins_Soldier_CO";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3764,7 +3766,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Support (Deploy MASH, Supply run)";
 					synchronizations[]={256};
 				};
 			};
@@ -3780,7 +3782,7 @@ class Mission
 					position[]={36.583462,5.6596994,1592.0947};
 					id=252;
 					side="EAST";
-					vehicle="RU_Soldier_Medic";
+					vehicle="RUS_Soldier_Medic";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3802,7 +3804,7 @@ class Mission
 					position[]={36.381126,5.6644397,1595.1875};
 					id=253;
 					side="EAST";
-					vehicle="RU_Soldier_Medic";
+					vehicle="RUS_Soldier_Medic";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3824,7 +3826,7 @@ class Mission
 					position[]={36.570293,5.6570129,1591.1727};
 					id=254;
 					side="EAST";
-					vehicle="RU_Soldier_Medic";
+					vehicle="RUS_Soldier_Medic";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3890,7 +3892,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Support (Deploy MASH, Supply run)";
 					synchronizations[]={255};
 				};
 			};
@@ -3928,7 +3930,7 @@ class Mission
 					position[]={2259.1794,512.27637,15295.221};
 					id=259;
 					side="WEST";
-					vehicle="FR_R";
+					vehicle="FR_Miles";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3950,7 +3952,7 @@ class Mission
 					position[]={2265.6404,512.8111,15294.111};
 					id=260;
 					side="WEST";
-					vehicle="USMC_Soldier_Medic";
+					vehicle="FR_Corpsman";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -4038,7 +4040,7 @@ class Mission
 					position[]={36.294403,5.6603398,1594.2137};
 					id=264;
 					side="EAST";
-					vehicle="RU_Soldier_Medic";
+					vehicle="RUS_Soldier_Medic";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -4060,7 +4062,7 @@ class Mission
 					position[]={36.403797,5.6594124,1593.1549};
 					id=265;
 					side="EAST";
-					vehicle="RU_Soldier_Medic";
+					vehicle="RUS_Soldier_Medic";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -4104,7 +4106,7 @@ class Mission
 					position[]={38.538906,5.6939874,1593.2811};
 					id=267;
 					side="EAST";
-					vehicle="Ins_Soldier_Sapper";
+					vehicle="Ins_Soldier_CO";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -4147,7 +4149,7 @@ class Mission
 					position[]={38.622597,5.6929927,1592.4479};
 					id=269;
 					side="EAST";
-					vehicle="Ins_Soldier_Sapper";
+					vehicle="Ins_Soldier_CO";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -4197,7 +4199,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Support (Deploy MASH, Supply run)";
 					synchronizations[]={256};
 				};
 			};
@@ -4213,7 +4215,7 @@ class Mission
 					position[]={38.678738,5.6889749,1590.6324};
 					id=272;
 					side="EAST";
-					vehicle="Ins_Soldier_Sapper";
+					vehicle="Ins_Soldier_CO";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -4263,7 +4265,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Support (Deploy MASH, Supply run)";
 					synchronizations[]={255};
 				};
 			};
@@ -4279,7 +4281,7 @@ class Mission
 					position[]={38.528931,5.6985698,1595.0546};
 					id=275;
 					side="EAST";
-					vehicle="Ins_Soldier_Sapper";
+					vehicle="Ins_Soldier_CO";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -4301,7 +4303,7 @@ class Mission
 					position[]={38.654797,5.6980724,1594.1757};
 					id=276;
 					side="EAST";
-					vehicle="Ins_Soldier_Sapper";
+					vehicle="Ins_Soldier_CO";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -4329,7 +4331,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="SpecOPS (Lockpick)";
+					description="Support (Deploy MASH, Supply run)";
 					synchronizations[]={256};
 				};
 			};
@@ -4342,7 +4344,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={1039.1605,5.9110723,2241.6956};
+					position[]={12333.479,159,12615.402};
 					azimut=90;
 					id=278;
 					side="LOGIC";
@@ -4361,7 +4363,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={9300.583,251.40849,11157.296};
+					position[]={13401.526,9.5888805,4124.2896};
 					azimut=90;
 					id=279;
 					side="LOGIC";
@@ -4379,7 +4381,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={7186.3169,384.90009,9668.1602};
+					position[]={7136.4961,338.96051,11411.425};
 					azimut=90;
 					id=280;
 					side="LOGIC";
@@ -4397,7 +4399,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={2059.1777,256.53839,10964.708};
+					position[]={1659.6544,302.97736,9091.3232};
 					azimut=90;
 					id=281;
 					side="LOGIC";
@@ -4415,7 +4417,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={6701.6621,217.88573,4613.9004};
+					position[]={10390.624,46.446251,3472.9731};
 					azimut=90;
 					id=282;
 					side="LOGIC";
@@ -4433,7 +4435,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={3315.4441,223.79518,4135.4502};
+					position[]={12222.04,91.845673,8073.8628};
 					azimut=90;
 					id=283;
 					side="LOGIC";
@@ -4451,7 +4453,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={8544.6719,338.52679,8139.8115};
+					position[]={10538.631,118.62068,7071.0952};
 					azimut=90;
 					id=284;
 					side="LOGIC";
@@ -4472,7 +4474,7 @@ class Mission
 					position[]={2265.6147,512.72858,15293.364};
 					id=285;
 					side="WEST";
-					vehicle="USMC_Soldier_Medic";
+					vehicle="FR_Corpsman";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -4494,7 +4496,7 @@ class Mission
 					position[]={36.512131,5.6509633,1589.2822};
 					id=286;
 					side="EAST";
-					vehicle="RU_Soldier_Medic";
+					vehicle="RUS_Soldier_Medic";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -4538,7 +4540,7 @@ class Mission
 					position[]={2259.1797,512.0885,15294.057};
 					id=288;
 					side="WEST";
-					vehicle="FR_R";
+					vehicle="FR_Miles";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -4560,7 +4562,7 @@ class Mission
 					position[]={2259.2188,511.95605,15293.204};
 					id=289;
 					side="WEST";
-					vehicle="FR_R";
+					vehicle="FR_Miles";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -4645,7 +4647,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={5044.1787,338.63751,7606.124};
+					position[]={5964.8672,181.54884,5676.814};
 					azimut=180;
 					id=293;
 					side="LOGIC";

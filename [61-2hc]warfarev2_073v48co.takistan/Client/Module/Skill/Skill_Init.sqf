@@ -10,7 +10,7 @@ WFBE_SK_V_Root = 'Client\Module\Skill\Skill_';
 WFBE_SK_FNC_Apply = Compile preprocessFile "Client\Module\Skill\Skill_Apply.sqf";
 
 /* Define which classname belong to which skill group */
-WFBE_SK_V_Engineers = ['USMC_SoldierS_Engineer','BAF_Soldier_EN_DDPM','MVD_Soldier_TL','US_Soldier_Engineer_EP1','TK_Soldier_Engineer_EP1','CDF_Soldier_Engineer','Ins_Soldier_Sapper','USMC_Soldier_TL','BAF_Soldier_SL_DDPM'];
+WFBE_SK_V_Engineers = ['USMC_SoldierS_Engineer','BAF_Soldier_EN_DDPM','MVD_Soldier_TL','US_Soldier_Engineer_EP1','TK_Soldier_Engineer_EP1','CDF_Soldier_Engineer','Ins_Soldier_Sapper','USMC_Soldier_TL','BAF_Soldier_SL_DDPM','Ins_Soldier_CO','TK_Soldier_Officer_EP1','US_Soldier_Officer_EP1'];
 WFBE_SK_V_Soldiers = ['FR_R','RUS_Soldier1','US_Delta_Force_EP1','TK_Special_Forces_EP1','CDF_Soldier','Ins_Soldier_1'];
 WFBE_SK_V_SpecsOps = ['FR_TL','RUS_Soldier_TL','RUS_Commander','GER_Soldier_Scout_EP1','US_Soldier_TL_EP1','US_Delta_Force_TL_EP1','TK_Special_Forces_TL_EP1','CDF_Soldier_TL','Ins_Soldier_2'];
 WFBE_SK_V_Spotters = ['USMC_SoldierS_Sniper','RU_Soldier_Sniper','US_Soldier_Sniper_EP1','TK_Soldier_Sniper_EP1','CDF_Soldier_Sniper','Ins_Soldier_Sniper'];
@@ -27,9 +27,9 @@ WFBE_SK_V_LastUse_Lockpick = -1200;
 WFBE_SK_V_LastUse_Spot = -1200;
 
 /* Skills Timeout */
-WFBE_SK_V_Reload_Repair = 5;
+WFBE_SK_V_Reload_Repair = 25;
 WFBE_SK_V_Reload_LR = 300;
-WFBE_SK_V_Reload_MASH = 600;
+WFBE_SK_V_Reload_MASH = 1800;
 WFBE_SK_V_Reload_Lockpick = 5;
 WFBE_SK_V_Reload_Spot = 8;
 

@@ -5,7 +5,7 @@ uiNamespace setVariable ["wfbe_display_vote", _this select 0];
 
 _u = 1;
 lnbClear 500100;
-lnbAddRow[500100, ["AI Commander", "0"]];
+lnbAddRow[500100, ["No Commander", "0"]];
 lnbSetValue[500100, [0, 0], -1];
 for '_i' from 0 to count(WFBE_Client_Teams)-1 do {
 	if (isPlayer leader (WFBE_Client_Teams select _i)) then {

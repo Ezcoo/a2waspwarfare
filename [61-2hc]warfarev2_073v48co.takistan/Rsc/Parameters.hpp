@@ -101,7 +101,7 @@ class Params {
 		title = "$STR_WF_PARAMETER_StartingDistance";
 		values[] = {-1,1000,1500,2000,2500,3000,3500,4000,4500,5000,5500,6000,6500,7000,7500,8000,8500,9000};
 		texts[] = {"$STR_WF_PARAMETER_StartingLocations_Random","1000m","1500m","2000m","2500m","3000m","3500m","4000m","4500m","5000m","5500m","6000m","6500m","7000m","7500m","8000m","8500m","9000m"};
-		default = 7500;
+		default = 6000;
 	};
 	class WFBE_C_BASE_STARTING_MODE {
 		title = "$STR_WF_PARAMETER_StartingLocations";
@@ -135,14 +135,14 @@ class WFBE_C_ECONOMY_FUNDS_START_EAST {
 	};
 	class WFBE_C_ECONOMY_SUPPLY_START_EAST {
 		title = "$STR_WF_PARAMETER_Supply_East";
-		values[] = {1200,2400,3600,4800,6000,7200,8400,9600,19200,38400,76800};
-		texts[] = {"S 1200","S 2400","S 3600","S 4800","S 6000","S 7200","S 8400","S 9600","S 19200","S 38400","S 76800"};
+		values[] = {1200,2400,3600,4800,6000,7200,8400,9600,12800,16000,19200,25600,38400,76800};
+		texts[] = {"S 1200","S 2400","S 3600","S 4800","S 6000","S 7200","S 8400","S 9600","S 12800","S 16000","S 19200","S 25600","S 38400","S 76800"};
 		default = 6000;
 	};
 	class WFBE_C_ECONOMY_SUPPLY_START_WEST {
 		title = "$STR_WF_PARAMETER_Supply_West";
-		values[] = {1200,2400,3600,4800,6000,7200,8400,9600,19200,38400,76800};
-		texts[] = {"S 1200","S 2400","S 3600","S 4800","S 6000","S 7200","S 8400","S 9600","S 19200","S 38400","S 76800"};
+		values[] = {1200,2400,3600,4800,6000,7200,8400,9600,12800,16000,19200,25600,38400,76800};
+		texts[] = {"S 1200","S 2400","S 3600","S 4800","S 6000","S 7200","S 8400","S 9600","S 12800","S 16000","S 19200","S 25600","S 38400","S 76800"};
 		default = 6000;
 	};
 
@@ -371,7 +371,7 @@ class WFBE_C_ECONOMY_FUNDS_START_EAST {
 		title = "$STR_WF_PARAMETER_Respawn_MASH";
 		values[] = {0,1,2};
 		texts[] = {"$STR_WF_Disabled","$STR_WF_Enabled","$STR_WF_Enabled_DefaultGear"};
-		default = 0;
+		default = 1;
 	};
 	class WFBE_C_RESPAWN_MOBILE {
 		title = "$STR_WF_PARAMETER_MobileRespawn";
@@ -544,7 +544,7 @@ class WFBE_C_ECONOMY_FUNDS_START_EAST {
 		title = "$STR_WF_PARAMETER_DroppedItemsCleanerInterval";
 		values[] = {60,75,90,105,120,150,180,240,300,360,420,480,540,600};
 		texts[] = {"1 Minute","1 Minute 15 Seconds","1 Minute 30 Seconds","1 Minute 45 Seconds","2 Minutes","2 Minutes 30 Seconds","3 Minutes","4 Minutes","5 Minutes","6 Minutes","7 Minutes","8 Minutes","9 Minutes","10 Minutes"};
-		default = 240;
+		default = 120;
 	};
 	class WFBE_C_MINEFIELDS_CLEANER_TIME_PERIOD {
 		title = "$STR_WF_PARAMETER_MinefieldCleanerInterval";

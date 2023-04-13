@@ -21,7 +21,7 @@ for "_j" from 0 to 1 do
     ];
     hintSilent _text;
     if (_dam == 100 && _currentSupply == 0) exitWith {repairprocess = "no";};
-	[sideJoined, -15] Call ChangeSideSupply;
+	[sideJoined, -15, "Factory being repaired. (It's normal for this message to show repeatedly.)"] Call ChangeSideSupply;
     _dam = _dam + (baseb select objnum select 3);
     _dam = 1 - (_dam/100);	
     obj setDamage _dam;

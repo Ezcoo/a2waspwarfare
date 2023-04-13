@@ -50,10 +50,12 @@ _u = _u		+ ['UralRepair_TK_EP1'];
 _u = _u		+ ['UralReammo_TK_EP1'];
 _u = _u		+ ['UralRefuel_TK_EP1'];
 _u = _u		+ ['UralSalvage_TK_EP1'];
-if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['UralSupply_TK_EP1']};
+// if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {
+_u = _u		+ ['UralSupply_TK_EP1'];
 _u = _u		+ ['M113Ambul_TK_EP1'];
 _u = _u		+ ['BRDM2_TK_EP1'];
-_u = _u		+ ['BRDM2_ATGM_TK_EP1'];
+_u = _u		+ ['BRDM2_ATGM_INS'];
+_u = _u     + ['BRDM2_ATGM_TK_EP1'];
 _u = _u		+ ['BTR60_TK_EP1'];
 _u = _u		+ ['Ural_ZU23_TK_EP1'];
 _u = _u		+ ['GRAD_TK_EP1'];
@@ -62,6 +64,7 @@ missionNamespace setVariable [Format ["WFBE_%1LIGHTUNITS", _side], _u];
 if (local player) then {['LIGHT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
 _u 			= ['M113_TK_EP1'];
+_u = _u		+ ['BVP1_TK_ACR'];
 _u = _u		+ ['BMP2_TK_EP1'];
 _u = _u		+ ['ZSU_TK_EP1'];
 _u = _u		+ ['T34_TK_EP1'];

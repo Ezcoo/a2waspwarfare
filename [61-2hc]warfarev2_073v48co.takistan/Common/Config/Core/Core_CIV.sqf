@@ -86,7 +86,7 @@ _i = _i + [['','',800,30,-2,0,1,0,'Civilians',[]]];
 
 /* Air Vehicles */
 _c = _c + ['Mi17_Civilian'];
-_i = _i + [['','',15000,35,-2,0,3,0,'Civilians',[]]];
+_i = _i + [['','',9000,35,-2,0,3,0,'Civilians',[]]];
 /* Defense Structures */
 _c = _c + ['Land_HBarrier3'];
 _i = _i + [['','',30,0,0,0,'Fortification',0,'Civilians',[]]];

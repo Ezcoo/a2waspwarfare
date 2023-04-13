@@ -137,13 +137,18 @@ if (_isMan) then { //--- Man.
 	};
 	_params = [_type,_color,_size,_txt,_markerName,_unit,1,true,"DestroyedVehicle",_color,false,_side,[1,1]];
 } else { //--- Vehicle.
-        if (local _unit && isMultiplayer) then {_color = "ColorOrange"};
+    if (_unit isKindOf "Bicycle") then {_color = "ColorWhite"};
+	if (_unit isKindOf "Plane") then {_color = "ColorPink"}; // Placeholder, change to light blue later, if it's possible?
+	if (_unit isKindOf "Helicopter") then {_color = "ColorPink"};
+	if (local _unit && isMultiplayer) then {_color = "ColorOrange"};
 	if (_unit_kind in (missionNamespace getVariable Format['WFBE_%1SUPPLYTRUCKS',str _side])) then {_type = "SupplyVehicle";_size = [1,1]};//--- Supply.
 	if (_unit_kind in (missionNamespace getVariable Format['WFBE_%1REPAIRTRUCKS',str _side])) then {_type = "RepairVehicle"};//--- Repair.
 	if (_unit_kind in (missionNamespace getVariable Format['WFBE_%1AMBULANCES',str _side])) then {_color = "ColorYellow"};//--- Medical.
+	if (_unit_kind in (missionNamespace getVariable Format['WFBE_%1MASHES',str _side])) then {_type = "n_med"; _color = "ColorYellow";};//--- MASH.
 	if (_unit_kind in (missionNamespace getVariable Format['WFBE_%1SALVAGETRUCK',str _side])) then {_type = "SalvageVehicle"};//--- Salvage.
+
 	_params = [_type,_color,_size,_txt,_markerName,_unit,1,true,"DestroyedVehicle",_color,false,_side,[2,2]];
-        if (_unit == ((_side) Call WFBE_CO_FNC_GetSideHQ)) then {_color = "ColorOrange";_params = ['Headquarters',_color,[1,1],'','HQUndeployed',_unit,0.2,false,'','',false,_side]};//--- HQ.
+        if (_unit == ((_side) Call WFBE_CO_FNC_GetSideHQ)) then {_color = "ColorPink";_params = ['Headquarters',_color,[1,1],'','HQUndeployed',_unit,0.2,false,'','',false,_side]};//--- HQ.	
 };
 
 _params Spawn MarkerUpdate;

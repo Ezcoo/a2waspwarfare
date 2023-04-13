@@ -13,7 +13,6 @@ _currentCost = 0;
 _currentIDC = 0;
 _disabledColor = [0.7961, 0.8000, 0.7961, 1];
 _display = _this select 0;
-_driver = false;
 _enabledColor = [0, 1, 0, 1];
 _enabledColor2 = [1, 0, 0, 1]; //---NEW (LOCK)
 _gunner = false;
@@ -36,6 +35,13 @@ _updateList = true;
 _updateMap = true;
 _val = 0;
 _mbu = missionNamespace getVariable 'WFBE_C_PLAYERS_AI_MAX';
+
+_driverEnabledByDefault = profileNamespace getVariable "WFBE_C_DRIVER_ENABLED_BY_DEFAULT";
+
+if (isNil "_driverEnabledByDefault") then {
+	profileNamespace setVariable ["WFBE_C_DRIVER_ENABLED_BY_DEFAULT", false];
+};
+
 
 ctrlSetText[12025,localize 'STR_WF_UNITS_FactionChoiceLabel' + ":"]; // changed-MrNiceGuy
 
@@ -86,7 +92,7 @@ while {alive player && dialog} do {
 		_isInfantry = if (_unit isKindOf 'Man') then {true} else {false};
 		if !(_isInfantry) then {
 			_extra = 0;
-			if (_driver) then {_extra = _extra + 1};
+			if (profilenamespace getvariable "wfbe_c_driver_enabled_by_default" ) then {_extra = _extra + 1};
 			if (_gunner) then {_extra = _extra + 1};
 			if (_commander) then {_extra = _extra + 1};
 			if (_extracrew) then {_extra = _extra + ((_currentUnit select QUERYUNITCREW) select 3)};
@@ -95,7 +101,8 @@ while {alive player && dialog} do {
 		if ((_currentRow) != -1) then {
 			_funds = Call GetPlayerFunds;
 			_skip = false;
-			if (_funds < _currentCost) then {_skip = true;hint parseText(Format[localize 'STR_WF_INFO_Funds_Missing',_currentCost - _funds,_currentUnit select QUERYUNITLABEL])};
+			_currentUnitQueryCheckBRDMIglaAA = if ((_currentUnit select QUERYUNITLABEL == "BRDM-2 (ATGM)") && (_currentUnit select QUERYUNITFACTION == "Insurgents")) then {"BRDM-2 (Igla AA)";} else {_currentUnit select QUERYUNITLABEL};
+			if (_funds < _currentCost) then {_skip = true;hint parseText(Format[localize 'STR_WF_INFO_Funds_Missing',_currentCost - _funds,_currentUnitQueryCheckBRDMIglaAA])};
 			//--- Make sure that we own all camps before being able to purchase infantry.
 			if (_type == "Depot" && _isInfantry) then {
 				_totalCamps = _closest Call GetTotalCamps;
@@ -123,7 +130,7 @@ while {alive player && dialog} do {
 
 				if (!_isInfantry && !_skip) then {
 					_cpt = 0;
-					if (_driver) then {_cpt = _cpt + 1};
+					if (profilenamespace getvariable "wfbe_c_driver_enabled_by_default" ) then {_cpt = _cpt + 1};
 					if (_gunner) then {_cpt = _cpt + 1};
 					if (_commander) then {_cpt = _cpt + 1};
 					if (_extracrew) then {_cpt = _cpt + ((_currentUnit select QUERYUNITCREW) select 3)};
@@ -136,10 +143,12 @@ while {alive player && dialog} do {
 					missionNamespace setVariable [Format["WFBE_C_QUEUE_%1",_type],(missionNamespace getVariable Format["WFBE_C_QUEUE_%1",_type])+1];
 					
 					_queu = _closest getVariable 'queu';
-					_txt = parseText(Format [localize 'STR_WF_INFO_BuyEffective',_currentUnit select QUERYUNITLABEL]);
-					if (!isNil '_queu') then {if (count _queu > 0) then {_txt = parseText(Format [localize 'STR_WF_INFO_Queu',_currentUnit select QUERYUNITLABEL])}};
+					_currentUnitQueryCheckBRDMIglaAA = if ((_currentUnit select QUERYUNITLABEL == "BRDM-2 (ATGM)") && (_currentUnit select QUERYUNITFACTION == "Insurgents")) then {"BRDM-2 (Igla AA)";} else {_currentUnit select QUERYUNITLABEL};
+					_txt = parseText(Format [localize 'STR_WF_INFO_BuyEffective',_currentUnitQueryCheckBRDMIglaAA]);
+					_currentUnitQueryCheckBRDMIglaAA = if ((_currentUnit select QUERYUNITLABEL == "BRDM-2 (ATGM)") && (_currentUnit select QUERYUNITFACTION == "Insurgents")) then {"BRDM-2 (Igla AA)";} else {_currentUnit select QUERYUNITLABEL};
+					if (!isNil '_queu') then {if (count _queu > 0) then {_txt = parseText(Format [localize 'STR_WF_INFO_Queu',_currentUnitQueryCheckBRDMIglaAA])}};
 					hint _txt;
-					_params = if (_isInfantry) then {[_closest,_unit,[],_type,_cpt]} else {[_closest,_unit,[_driver,_gunner,_commander,_extracrew,_isLocked],_type,_cpt]};
+					_params = if (_isInfantry) then {[_closest,_unit,[],_type,_cpt]} else {[_closest,_unit,[profilenamespace getvariable "wfbe_c_driver_enabled_by_default" ,_gunner,_commander,_extracrew,_isLocked],_type,_cpt]};
 					_params Spawn BuildUnit;
 					-(_currentCost) Call ChangePlayerFunds;
 				} else {
@@ -158,11 +167,11 @@ while {alive player && dialog} do {
 	if (MenuAction == 106) then {MenuAction = -1;if (hangarInRange) then {_currentIDC = 12021;_type = 'Airport';_val = 3;_update = true}};
 	
 	//--- driver-gunner-commander icons.
-	if (MenuAction == 201) then {MenuAction = -1;_driver = if (_driver) then {false} else {true};_updateDetails = true};
+	if (MenuAction == 201) then {MenuAction = -1;if (profileNamespace getVariable "WFBE_C_DRIVER_ENABLED_BY_DEFAULT") then {profileNamespace setVariable ["WFBE_C_DRIVER_ENABLED_BY_DEFAULT", false]} else {profileNamespace setVariable ["WFBE_C_DRIVER_ENABLED_BY_DEFAULT", true]};_updateDetails = true};
 	if (MenuAction == 202) then {MenuAction = -1;_gunner = if (_gunner) then {false} else {true};_updateDetails = true};
 	if (MenuAction == 203) then {MenuAction = -1;_commander = if (_commander) then {false} else {true};_updateDetails = true};
 	if (MenuAction == 204) then {MenuAction = -1;_extracrew = if (_extracrew) then {false} else {true};_updateDetails = true};
-	
+
 	//--- Factory DropDown list value has changed.
 	if (MenuAction == 301) then {MenuAction = -1;_factSel = lbCurSel 12018;_closest = _sorted select _factSel;_updateMap = true};
 	
@@ -267,9 +276,9 @@ while {alive player && dialog} do {
 						
 						_maxOut = false;
 						if (_lastType != _type || _lastSel != _currentRow) then {_maxOut = true};
-						
+
 						if (_maxOut) then {
-							_driver = true;
+							profilenamespace getvariable "wfbe_c_driver_enabled_by_default";
 							_gunner = true;
 							_commander = true;
 							_extracrew = false;
@@ -293,9 +302,9 @@ while {alive player && dialog} do {
 							_con ctrlSetTextColor _color;
 
 							_c = _c + 1;
-						} forEach [_driver,_gunner,_commander,_extracrew];
+						} forEach [profilenamespace getvariable "wfbe_c_driver_enabled_by_default" ,_gunner,_commander,_extracrew];
 						
-						if (_driver) then {_extra = _extra + 1};
+						if (profilenamespace getvariable "wfbe_c_driver_enabled_by_default" ) then {_extra = _extra + 1};
 						if (_gunner) then {_extra = _extra + 1};
 						if (_commander) then {_extra = _extra + 1};
 						if (_extracrew) then {_extra = _extra + _turretsCount};
@@ -313,20 +322,20 @@ while {alive player && dialog} do {
 						
 						switch (_slots) do {
 							case 1: {
-								if (_maxOut) then {_driver = true};
-								if (_driver) then {_extra = _extra + 1};
+								if (_maxOut) then {profilenamespace setVariable ["wfbe_c_driver_enabled_by_default", true]};
+								if (profilenamespace getvariable "wfbe_c_driver_enabled_by_default" ) then {_extra = _extra + 1};
 								_gunner = false;
 								_commander = false;
 							};
 							case 2: {
-								if (_maxOut) then {_driver = true;_gunner = true};
-								if (_driver) then {_extra = _extra + 1};
+								if (_maxOut) then {profilenamespace setVariable ["wfbe_c_driver_enabled_by_default", true];_gunner = true};
+								if (profilenamespace getvariable "wfbe_c_driver_enabled_by_default" ) then {_extra = _extra + 1};
 								if (_gunner) then {_extra = _extra + 1};
 								_commander = false;
 							};
 							case 3: {
-								if (_maxOut) then {_driver = true;_gunner = true;_commander = true};
-								if (_driver) then {_extra = _extra + 1};
+								if (_maxOut) then {profilenamespace setVariable ["wfbe_c_driver_enabled_by_default", true];_gunner = true;_commander = true};
+								if (profilenamespace getvariable "wfbe_c_driver_enabled_by_default" ) then {_extra = _extra + 1};
 								if (_gunner) then {_extra = _extra + 1};
 								if (_commander) then {_extra = _extra + 1};					
 							};
@@ -351,14 +360,14 @@ while {alive player && dialog} do {
 							_con = _display displayCtrl (_IDCSVehi select _i);
 							_con ctrlSetTextColor _color;
 							_i = _i + 1;
-						} forEach [_driver,_gunner,_commander,_extracrew];
+						} forEach [profilenamespace getvariable "wfbe_c_driver_enabled_by_default" ,_gunner,_commander,_extracrew];
 
 						//--- Set the 'extra' price.
 						_currentCost = _currentCost + ((missionNamespace getVariable "WFBE_C_UNITS_CREW_COST") * _extra);
 					};
 				} else {
 					{ctrlShow [_x,false]} forEach (_IDCSVehi);
-					_driver = false;
+					profilenamespace setVariable ["wfbe_c_driver_enabled_by_default", false];
 					_gunner = false;
 					_commander = false;
 					_extracrew = false;
@@ -370,7 +379,7 @@ while {alive player && dialog} do {
 				ctrlSetText [12039,"N/A"];
 			
 				{ctrlShow [_x,false]} forEach (_IDCSVehi);
-				_driver = false;
+				profilenamespace setVariable ["wfbe_c_driver_enabled_by_default", false];
 				_gunner = false;
 				_commander = false;
 				_extracrew = false;
@@ -424,6 +433,27 @@ while {alive player && dialog} do {
 				if (isClass (configFile >> 'CfgVehicles' >> _unit >> 'Library')) then {
 					_txt = getText (configFile >> 'CfgVehicles' >> _unit >> 'Library' >> 'libTextDesc');
 					(_display displayCtrl 12022) ctrlSetStructuredText (parseText _txt);
+
+					hintSilent "";
+
+					if (_unit in (missionNamespace getVariable Format ["WFBE_%1AMBULANCES", sideJoinedText])) then {
+						hintSilent parseText "Ambulances are important vehicles because they can be used as mobile respawn points. <br/> <br/>You can see the current maximum allowed respawn range from any friendly ambulance from >> WF Menu -> Factory Upgrade -> Ambulance Range upgrade."
+					};
+					if (_unit in (missionNamespace getVariable Format ["WFBE_%1REPAIRTRUCKS", sideJoinedText])) then {
+						hintSilent parseText "Repair trucks are special vehicles that can be used to build static structures and weapons. They are especially useful for advanced tactics. <br/> <br/>Get in driver seat of your repair truck and open action menu (mouse scroll). You should see the repair truck build menu option, select it and start building!";
+					};
+					if (_unit in (missionNamespace getVariable Format ["WFBE_%1SUPPLYTRUCKS", sideJoinedText])) then {
+						hintSilent parseText "Supply trucks can be used to boost the supply income of your team. <br/> <br/>You can collect extra supply by driving to friendly town center (next to main depot of town), getting out of your supply truck, aiming at it and using action menu (mouse scroll) -> LOAD SUPPLIES... Then just drive next to friendly Command Center (marked with C) on map. <br/> <br/> Note that you need to have selected Support slot/class in server lobby. There also needs to be [+SUPPLY] mark after town name for you to be able to collect the extra supply.";
+					};
+					
+					_artyClassnames = missionNamespace getVariable Format ['WFBE_%1_ARTILLERY_CLASSNAMES', sideJoinedText];
+					_varPosInNestedArray = [_artyClassnames, _unit] call WFBE_CL_FNC_FindVariableInNestedArray;
+					_isNotArtillery = [_varPosInNestedArray, -1] call BIS_fnc_areEqual;
+					
+					if (!(_isNotArtillery)) then {
+						hintSilent parseText "Artillery units can be used by placing AI in artillery unit's gunner seat. <br/> <br/>For your convenience, there will be an AI in gunner seat in vehicles that you buy, unless you change the default selections. <br/> <br/>You can call an artillery strike via >> WF menu -> Tactical Center. <br/> <br/>You need to select the correct artillery type, set target radius, set the arty strike center point (within allowed range) and finally, call the arty strike. <br/><br/>Note that there are static arty units as well. You can build them with repair truck or as the commander of your side."
+					};
+
 				} else {
 					(_display displayCtrl 12022) ctrlSetStructuredText (parseText '');
 				};

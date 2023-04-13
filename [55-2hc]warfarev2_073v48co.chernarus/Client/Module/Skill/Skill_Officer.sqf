@@ -16,15 +16,15 @@ for [{_z = 0},{_z < 7},{_z = _z + 1}] do {
 	player playMove "AinvPknlMstpSlayWrflDnon_medic";
 	sleep 0.5;
 	waitUntil {animationState player == "ainvpknlmstpslaywrfldnon_amovpknlmstpsraswrfldnon" || !alive player || vehicle player != player};
-	if (!alive player || vehicle player != player) exitWith {_skip = true};
+	if ((!alive player) || (vehicle player != player)) exitWith {_skip = true};
 };
 
 if (!_skip) then {
 	_array = [((player worldToModel (getPos player)) select 0),((player worldToModel (getPos player)) select 1) + 10];
 	_toWorld = player modelToWorld _array;
 	_tent = _type createVehicle _toWorld;
-	WFBE_Client_Logic setVariable ["wfbe_mash", _tent, true];
+	WFBE_Client_Logic setVariable ["wfbe_mash", _tent];
 	_tent addAction ["<t color='#f8d664'>" + localize 'STR_WF_ACTION_UndeployMASH'+ "</t>", "Client\Module\Skill\Actions\Officer_Undeploy_MASH.sqf", [], 75, false, true, "", "alive _target && time - WFBE_SK_V_LastUse_MASH > 240"];
 } else {
-	WFBE_Client_Logic setVariable ["wfbe_mash", objNull, true];
+	WFBE_Client_Logic setVariable ["wfbe_mash", objNull];
 };

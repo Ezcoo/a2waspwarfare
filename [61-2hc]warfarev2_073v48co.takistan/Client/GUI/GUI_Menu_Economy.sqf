@@ -138,7 +138,7 @@ while {alive player && dialog} do {
 							_supplyB = (missionNamespace getVariable Format ["WFBE_%1STRUCTURECOSTS",sideJoinedText]) select _id;
 							_supplyB = round((_supplyB * (missionNamespace getVariable "WFBE_C_STRUCTURES_SALE_PERCENT")) / 100);
 						
-							if ((missionNamespace getVariable "WFBE_C_ECONOMY_CURRENCY_SYSTEM") == 0) then {[sideJoined, _supplyB] Call ChangeSideSupply} else {(_supplyB) Call ChangePlayerFunds};
+							if ((missionNamespace getVariable "WFBE_C_ECONOMY_CURRENCY_SYSTEM") == 0) then {[sideJoined, _supplyB, "Factory sold."] Call ChangeSideSupply} else {(_supplyB) Call ChangePlayerFunds};
 						};
 						
 						//--- Inform the side.

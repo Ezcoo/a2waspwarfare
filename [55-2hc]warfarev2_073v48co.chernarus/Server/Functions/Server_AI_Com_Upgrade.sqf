@@ -45,7 +45,7 @@ if (count _to_upgrade > 0) then {
 		[_side,-(_cost select 0)] Call ChangeAICommanderFunds;
 		
 		if ((missionNamespace getVariable "WFBE_C_ECONOMY_CURRENCY_SYSTEM") == 0) then {
-			[_side,-(_cost select 1)] Call ChangeSideSupply;
+			[_side,-(_cost select 1),"AI commander tech upgrade."] Call ChangeSideSupply;
 		};
 	};
 };

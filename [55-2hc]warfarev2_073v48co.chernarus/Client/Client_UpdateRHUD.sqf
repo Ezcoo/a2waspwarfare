@@ -6,7 +6,9 @@ _icons = [
 ""
 ];
 
-if (isNil 'BIS_CONTROL_CAM') then { RUBHUD = True } else {RUBHUD = false};
+// if (isNil 'BIS_CONTROL_CAM') then { RUBHUD = True } else {RUBHUD = false};
+
+RUBHUD = true;
 
 waituntil{!isnil"totalTowns"};
 
@@ -14,6 +16,9 @@ private["_total"];
 
 //// Getting the amount of all towns
 _total = count towns;
+// _secondExecRUBHUD = false;
+
+sleep 10;
 
 while {true} do {
 	sleep 1;
@@ -33,6 +38,8 @@ while {true} do {
 			_textLabel8 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1360;
 			//FPS
 			_textLabel_FPS_3 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1363;
+			//Server FPS
+			_textLabel_FPS_5 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1365;
 			
 			
 			
@@ -55,6 +62,7 @@ while {true} do {
 			_textLabel7 ctrlSetText "SV Min:";
 			_textLabel8 ctrlSetText "City:";
 			_textLabel_FPS_3 ctrlSetText "FPS Client:";
+			_textLabel_FPS_5 ctrlSetText "FPS Server:";
 			_textLabel1 ctrlShow true;
 			_textLabel2 ctrlShow true;
 			_textLabel3 ctrlShow true;
@@ -63,7 +71,8 @@ while {true} do {
 			_textLabel6 ctrlShow true;
 			_textLabel7 ctrlShow true;
 			_textLabel8 ctrlShow true;
-			_textLabel_FPS_3 ctrlShow true;		
+			_textLabel_FPS_3 ctrlShow true;
+			_textLabel_FPS_5 ctrlShow true;
 			_lineLabel ctrlShow true;	
 				
 			//HEALTH		
@@ -133,9 +142,22 @@ while {true} do {
 			_textControl_FPS_4 ctrlSetTextColor [0, 1, 0, 1];_textControl_FPS_4 ctrlSetText Format ["%1",_clientFPS];
 			if (_clientFPS < 40) then {_textControl_FPS_4 ctrlSetTextColor [1, 0.8431, 0, 1];_textControl_FPS_4 ctrlSetText Format ["%1",_clientFPS]};
 			if (_clientFPS < 20) then {_textControl_FPS_4 ctrlSetTextColor [1, 0, 0, 1];_textControl_FPS_4 ctrlSetText Format ["%1",_clientFPS]};
+
+			//Server FPS
+			waitUntil { !isNil {missionNamespace getVariable "WFBE_VAR_SERVER_FPS"};};
+			
+			_serverFPS = missionNamespace getVariable "WFBE_VAR_SERVER_FPS";			
+			_textControl_FPS_6 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1366;
+			_textControl_FPS_6 ctrlShow true;
+			_textControl_FPS_6 ctrlSetTextColor [0, 1, 0, 1];_textControl_FPS_6 ctrlSetText Format ["%1",_serverFPS];
+			if (_serverFPS < 35) then {_textControl_FPS_6 ctrlSetTextColor [1, 0.8431, 0, 1];_textControl_FPS_6 ctrlSetText Format ["%1", str (_serverFPS)]};
+			if (_serverFPS < 20) then {_textControl_FPS_6 ctrlSetTextColor [1, 0, 0, 1];_textControl_FPS_6 ctrlSetText Format ["%1", str (_serverFPS)]};
+
+			// if (!_secondExecRUBHUD) then {_secondExecRUBHUD = true;};
 						
 		};
 	} else {
+		// if (_secondExecRUBHUD) then {_secondExecRUBHUD = false;};
 		if (isNull (["currentCutDisplay"] call BIS_FNC_GUIget)) then {CutRsc["OptionsAvailable","PLAIN",0];_delay = 0};	
 		if (!isNull (["currentCutDisplay"] call BIS_FNC_GUIget)) then {
 			_lineLabel = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1345;	

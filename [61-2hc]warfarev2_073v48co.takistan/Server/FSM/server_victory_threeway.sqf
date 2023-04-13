@@ -3,7 +3,7 @@ private["_victory","_total","_side","_hq","_structures","_towns","_factories"];
 _victory = missionNamespace getVariable "WFBE_C_VICTORY_THREEWAY";
 _total = totalTowns;
 _innerTimer = 0;
-_loopTimer = 60;
+_loopTimer = 80;
 
 while {!gameOver} do {
 
@@ -24,16 +24,19 @@ while {!gameOver} do {
 				WF_Logic setVariable ["WF_Winner", _x];
 				gameOver = true;
 				WFBE_GameOver = true;
+
+				_side = west;
+
+				if (_x == west) then {
+				    _side = east;
+				};
+
+				[_side] call WFBE_CO_FNC_LogGameEnd;
+				
 			};
 		} forEach WFBE_PRESENTSIDES - [WFBE_DEFENDER];
 	};
 
-	if(_innerTimer >= 300)then{
-	_procedureName = "UPDATE_GAME_MATCH_DURATION";
-	_parameters = format["[duration=%1]",time];
-	[_procedureName,_parameters] call persistent_fnc_callDatabase;
-		_innerTimer = 0;
-	};
 	sleep _loopTimer;
 	_innerTimer = _innerTimer + _loopTimer;
 };

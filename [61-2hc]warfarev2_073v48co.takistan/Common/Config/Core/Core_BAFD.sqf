@@ -95,7 +95,7 @@ _i = _i + [['','',725,21,-2,2,1,0,'British (Desert)',[]]];
 
 /* Heavy Vehicles */
 _c = _c + ['BAF_FV510_D'];
-_i = _i + [['','',5000,30,-2,3,2,0,'British (Desert)',[]]];
+_i = _i + [['','',6000,30,-2,3,2,0,'British (Desert)',[]]];
 
 for '_z' from 0 to (count _c)-1 do {
 	if (isClass (configFile >> 'CfgVehicles' >> (_c select _z))) then {
