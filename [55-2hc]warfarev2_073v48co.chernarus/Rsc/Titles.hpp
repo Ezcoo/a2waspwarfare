@@ -21,9 +21,9 @@
 #endif
 
 class RscTitles {
-	
+
 	titles[] = {RscOverlay,CaptureBar,OptionsAvailable,EndOfGameStats};
-	      	class b2zgroup
+	class b2zgroup
 	{
 						idd=-2;
 						movingEnable=0;
@@ -49,8 +49,8 @@ class RscTitles {
 		name="gps";
 		controls[]={"txt_dwn","txt_crw","OptionsIcon0","OptionsIcon1","OptionsIcon2","OptionsIcon3","OptionsIcon4","OptionsIcon5","OptionsIcon6"};
 		onload="uiNamespace setVariable['GUI',_this select 0];";
-		
-		
+
+
 		class txt_dwn:RscStructuredTextB
 		{
 			idc=6003;
@@ -66,16 +66,16 @@ class RscTitles {
 			w=0.25;
 			h=0.55;
 			colorBackground[]={0,0,0,0};
-			
+
 		};
-		class OptionsImageAspectRatio: RscPicture 
+		class OptionsImageAspectRatio: RscPicture
 		{
 			w = 0.078431;
 			h = 0.104575;
 			style = "0x30+0x800";
 		};
 
-		class OptionsIcon0: OptionsImageAspectRatio 
+		class OptionsIcon0: OptionsImageAspectRatio
 		{
 			IDC = 6005;
 			x = "(SafeZoneW + SafeZoneX) - (0.0392157)";
@@ -86,50 +86,50 @@ class RscTitles {
 			text = "";
 		};
 
-		class OptionsIcon1: OptionsIcon0 
+		class OptionsIcon1: OptionsIcon0
 		{
 			IDC = 6006;
 			y = "0.3+(0.0522876*1)";
 		};
 
-		class OptionsIcon2: OptionsIcon0 
+		class OptionsIcon2: OptionsIcon0
 		{
 			IDC = 6007;
 			y = "0.3+(0.0522876*2)";
 		};
 
-		class OptionsIcon3: OptionsIcon0 
+		class OptionsIcon3: OptionsIcon0
 		{
 			IDC = 6008;
 			y = "0.3+(0.0522876*3)";
 		};
 
-		class OptionsIcon4: OptionsIcon0 
+		class OptionsIcon4: OptionsIcon0
 		{
 			IDC = 6009;
 			y = "0.3+(0.0522876*4)";
 		};
 
-		class OptionsIcon5: OptionsIcon0 
+		class OptionsIcon5: OptionsIcon0
 		{
 			IDC = 6010;
 			y = "0.3+(0.0522876*5)";
 		};
-		class OptionsIcon6: OptionsIcon0 
+		class OptionsIcon6: OptionsIcon0
 		{
 			IDC = 6011;
 			y = "0.3+(0.0522876*6)";
 		};
-		
+
 	};
-	
+
 	class CaptureBar {
 		idd = 600100;
 		duration = 15000;
 		name = "Capture Bar";
 		onLoad = "uiNamespace setVariable ['wfbe_title_capture', _this select 0]";
 		onUnload = "uiNamespace setVariable ['wfbe_title_capture', displayNull]";
-		
+
 		class controls {
 			class CA_Progress_Bar_Background : RscText {
 				style = ST_TEXT_BG;
@@ -140,7 +140,7 @@ class RscTitles {
 				h = 0.06;
 				colorBackground[] = {0,0,0,0.001};
 			};
-				
+
 			class CA_Progress_Bar : CA_Progress_Bar_Background {
 				idc = 601001;
 				x = 0.31;
@@ -148,7 +148,7 @@ class RscTitles {
 				w = 0.38;
 				h = 0.04;
 			};
-			
+
 			class CA_Progress_Label : RscText {
 				idc = 601002;
 				style = ST_CENTER;
@@ -160,7 +160,7 @@ class RscTitles {
 			};
 		};
 	};
-	
+
 	class OptionsAvailable {
 		idd = 10200;
 		movingEnable = 0;
@@ -183,7 +183,7 @@ class RscTitles {
 			h = 0.001 * safezoneH;
 			colorBackground[] = {0,0,0,0};
 		};
-		
+
 		class RUBHUD_Health : RscText
 		{
 			idc = 1346;
@@ -194,7 +194,7 @@ class RscTitles {
 			h = 0.0228518 * safezoneH;
 			sizeEx = 0.030;
 		};
-		
+
 		class RUBHUD_Health_Value : RscText
 		{
 			idc = 1347;
@@ -205,7 +205,7 @@ class RscTitles {
 			h = 0.0228518 * safezoneH;
 			sizeEx = 0.030;
 		};
-		
+
 		class RUBHUD_Uptime: RscText {
 			idc = 1348;
 			text = "";
@@ -216,7 +216,7 @@ class RscTitles {
 			sizeEx = 0.026;
 			colorText[] = {1,1,1,1};
 		};
-		
+
 		class RUBHUD_Uptime_Value: RscText {
 			idc = 1349;
 			text = "";
@@ -227,7 +227,7 @@ class RscTitles {
 			sizeEx = 0.026;
 			colorText[] = {1,1,1,1};
 		};
-		
+
 		class RUBHUD_Commander: RscText {
 			idc = 1350;
 			text = "";
@@ -238,7 +238,7 @@ class RscTitles {
 			sizeEx = 0.026;
 			colorText[] = {1,1,1,1};
 		};
-		
+
 		class RUBHUD_Commander_Value: RscText {
 			idc = 1351;
 			text = "";
@@ -249,7 +249,7 @@ class RscTitles {
 			sizeEx = 0.026;
 			colorText[] = {1,1,1,1};
 		};
-		
+
 		class RUBHUD_Money: RscText {
 			idc = 1352;
 			text = "";
@@ -260,7 +260,7 @@ class RscTitles {
 			sizeEx = 0.026;
 			colorText[] = {1,1,1,1};
 		};
-		
+
 		class RUBHUD_Money_Value: RscText {
 			idc = 1353;
 			text = "";
@@ -271,7 +271,7 @@ class RscTitles {
 			sizeEx = 0.026;
 			colorText[] = {1,1,1,1};
 		};
-		
+
 		class RUBHUD_Income: RscText {
 			idc = 1354;
 			text = "";
@@ -282,7 +282,7 @@ class RscTitles {
 			sizeEx = 0.026;
 			colorText[] = {1,1,1,1};
 		};
-		
+
 		class RUBHUD_Income_Value: RscText {
 			idc = 1355;
 			text = "";
@@ -293,7 +293,7 @@ class RscTitles {
 			sizeEx = 0.026;
 			colorText[] = {1,1,1,1};
 		};
-		
+
 		class RUBHUD_Supply: RscText {
 			idc = 1356;
 			text = "";
@@ -304,7 +304,7 @@ class RscTitles {
 			sizeEx = 0.026;
 			colorText[] = {1,1,1,1};
 		};
-		
+
 		class RUBHUD_Supply_Value: RscText {
 			idc = 1357;
 			text = "";
@@ -315,7 +315,7 @@ class RscTitles {
 			sizeEx = 0.026;
 			colorText[] = {1,1,1,1};
 		};
-		
+
 		class RUBHUD_SupplyMin: RscText {
 			idc = 1358;
 			text = "";
@@ -326,7 +326,7 @@ class RscTitles {
 			sizeEx = 0.026;
 			colorText[] = {1,1,1,1};
 		};
-		
+
 		class RUBHUD_SupplyMin_Value: RscText {
 			idc = 1359;
 			text = "";
@@ -337,7 +337,7 @@ class RscTitles {
 			sizeEx = 0.026;
 			colorText[] = {1,1,1,1};
 		};
-		
+
 		class RUBHUD_City: RscText {
 			idc = 1360;
 			text = "";
@@ -348,7 +348,7 @@ class RscTitles {
 			sizeEx = 0.026;
 			colorText[] = {1,1,1,1};
 		};
-		
+
 		class RUBHUD_City_Value: RscText {
 			idc = 1361;
 			text = "";
@@ -358,9 +358,9 @@ class RscTitles {
 			h = 0.0255556 * safezoneH;
 			sizeEx = 0.028;
 			colorText[] = {1,1,1,1};
-		};		
-		
-		
+		};
+
+
 		class RUBHUD_FPS_Client: RscText {
 			idc = 1363;
 			text = "";
@@ -371,7 +371,7 @@ class RscTitles {
 			sizeEx = 0.026;
 			colorText[] = {1,1,1,1};
 		}
-		
+
 		class RUBHUD_FPS_Client_Value: RscText {
 			idc = 1364;
 			text = "";
@@ -381,15 +381,15 @@ class RscTitles {
 			h = 0.0255556 * safezoneH;
 			sizeEx = 0.028;
 			colorText[] = {1,1,1,1};
-		};	
-		
+		};
+
 		//Original
 		class OptionsImageAspectRatio : RscPicture {
 			w = 0.0784314;
 			h = 0.104575;
 			style = 0x30+0x800;
 		};
-			
+
 		class OptionsIcon0 : OptionsImageAspectRatio {
 			idc = 3500;
 			x = "(SafeZoneW + SafeZoneX) - (0.0392157)";
@@ -399,93 +399,93 @@ class RscTitles {
 			colorText[] = WFBE_OA_Icon;
 			text = "";
 		};
-			
+
 		class OptionsIcon1 : OptionsIcon0 {
 			idc = 3500 + 1;
 			y = 0+(0.0522876*16);
 		};
-		
+
 		class OptionsIcon2 : OptionsIcon0 {
 			idc = 3500 + 2;
 			y = 0+(0.0522876*15);
 		};
-		
+
 		class OptionsIcon3 : OptionsIcon0 {
 			idc = 3500 + 3;
 			y = 0+(0.0522876*14);
 		};
-		
+
 		class OptionsIcon4 : OptionsIcon0 {
 			idc = 3500 + 4;
 			y = 0+(0.0522876*13);
 		};
-		
+
 		class OptionsIcon5 : OptionsIcon0 {
 			idc = 3500 + 5;
 			y = 0+(0.0522876*12);
 		};
-		
+
 		class OptionsIcon6 : OptionsIcon0 {
 			idc = 3500 + 6;
 			y = 0+(0.0522876*11);
 		};
-		
+
 		class OptionsIcon7 : OptionsIcon0 {
 			idc = 3500 + 7;
 			y = 0+(0.0522876*10);
 		};
-		
+
 		class OptionsIcon8 : OptionsIcon0 {
 			idc = 3500 + 8;
 			y = 0+(0.0522876*9);
 		};
-		
+
 		class OptionsIcon9 : OptionsIcon0 {
 			idc = 3500 + 9;
 			y = 0+(0.0522876*8);
 		};
-		
+
 		class OptionsIcon10 : OptionsIcon0 {
 			idc = 3500 + 10;
 			y = 0+(0.0522876*7);
 		};
-		
+
 		class OptionsIcon11 : OptionsIcon0 {
 			idc = 3500 + 11;
 			y = 0+(0.0522876*6);
 		};
-		
+
 		class OptionsIcon12 : OptionsIcon0 {
 			idc = 3500 + 12;
 			y = 0+(0.0522876*5);
 		};
-		
+
 		class OptionsIcon13 : OptionsIcon0 {
 			idc = 3500 + 13;
 			y = 0+(0.0522876*4);
 		};
-		
+
 		class OptionsIcon14 : OptionsIcon0 {
 			idc = 3500 + 14;
 			y = 0+(0.0522876*3);
 		};
-		
+
 		class OptionsIcon15 : OptionsIcon0 {
 			idc = 3500 + 15;
 			y = 0+(0.0522876*2);
 		};
-		
+
 		class OptionsIcon16 : OptionsIcon0 {
 			idc = 3500 + 16;
 			y = 0+(0.0522876*1);
 		};
-		
+
 		class OptionsIcon17 : OptionsIcon0 {
 			idc = 3500 + 17;
 			y = 0.0522876;
 		};
 	};
-	
+
 	class EndOfGameStats {
 		idd = 90000;
 		duration = 15000;
@@ -494,7 +494,7 @@ class RscTitles {
 		name = "EndOfGameStats";
 
 		onLoad = "_this ExecVM ""Client\GUI\GUI_SetCurrentCutDisplay.sqf""";
-		onUnload = "_this ExecVM ""Client\GUI\GUI_ClearCurrentCutDisplay.sqf"""; 
+		onUnload = "_this ExecVM ""Client\GUI\GUI_ClearCurrentCutDisplay.sqf""";
 
 		controls[] = {StatsBackGroundHeader,SideWinsText,StatsBackGround,EastImage,WestImage,SoldiersRecruitedLabel,SoldiersLostLabel,VehiclesCreatedLabel,VehiclesLostLabel,
 					  EastSoldiersRecruitedBar,EastSoldiersRecruitedCount,WestSoldiersRecruitedBar,WestSoldiersRecruitedCount,
@@ -503,7 +503,7 @@ class RscTitles {
 					  EastVehiclesLostBar,EastVehiclesLostCount,WestVehiclesLostBar,WestVehiclesLostCount};
 
 		controlsBackground[] = {};
-		
+
 		class StatsBackGroundHeader : RscText {
 			style = 128;
 			idc = 90002;
@@ -513,7 +513,7 @@ class RscTitles {
 			h = 0.18;
 			colorBackground[] = WFBE_EOGS_Background;
 		};
-		
+
 		class SideWinsText : RscText {
 			idc = 90001;
 			style = 2;
@@ -524,7 +524,7 @@ class RscTitles {
 			h = 0.08;
 			colorText[] = {1.0,1.0,1.0,1};
 		};
-		
+
 		class StatsBackGround : RscText {
 			style = 128;
 			idc = 90003;
@@ -543,7 +543,7 @@ class RscTitles {
 			h = 0.2;
 			text = ruflag;
 		};
-		
+
 		class WestImage:EastImage {
 			x = 0.792857;
 			text = usflag;
@@ -676,7 +676,7 @@ class RscTitles {
 			x = 0.55;
 		};
 	};
-	
+
 	class WFBE_ConstructionInterface {
 		idd = 112200;
 		movingEnable = 0;
@@ -684,7 +684,7 @@ class RscTitles {
 		name = "Construction Interface";
 		onLoad = "uiNamespace setVariable ['wfbe_title_coin', _this select 0]";
 		onUnload = "uiNamespace setVariable ['wfbe_title_coin', displayNull]";
-		
+
 		class controls {
 			class center : RscPictureKeepAspect {
 				idc = 112201;
@@ -695,7 +695,7 @@ class RscTitles {
 				colorText[] = {1, 1, 1, 0.1};
 				text = "\ca\ui\data\cursor_w_laserlock_gs.paa";
 			};
-			
+
 			class descBackLeft : IGUIBack {
 				idc = 112211;
 				x = "SafezoneX + 0.01";
@@ -713,7 +713,7 @@ class RscTitles {
 				x = "SafezoneX + SafeZoneW - 0.01 -	0.3";
 				w = 0.3;
 			};
-			
+
 			class descText : RscStructuredText {
 				idc = 112214;
 				x = "SafezoneX + 0.01 + 0.3";
@@ -721,7 +721,7 @@ class RscTitles {
 				w = "SafeZoneW - 0.02 -	0.3*2";
 				h = 0.11;
 				size = 0.035;
-				
+
 				class Attributes {
 					font = "Zeppelin32";
 					color = "#B6F862";
@@ -729,7 +729,7 @@ class RscTitles {
 					shadow = true;
 				};
 			};
-			
+
 			class controlsText : descText {
 				idc = 112215;
 				x = "SafezoneX + SafeZoneW - 0.01 -	0.3";
@@ -737,7 +737,7 @@ class RscTitles {
 				w = 0.3;
 				h = 0.11;
 			};
-			
+
 			class cashText : descText {
 				idc = 112224;
 				x = "SafezoneX + 0.012*2";
