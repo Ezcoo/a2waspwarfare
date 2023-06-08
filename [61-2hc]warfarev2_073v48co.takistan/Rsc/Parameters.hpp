@@ -308,9 +308,9 @@ class WFBE_C_ECONOMY_FUNDS_START_EAST {
 	};
 	class WFBE_C_ENVIRONMENT_MAX_VIEW {
 		title = "$STR_WF_PARAMETER_ViewDistance";
-		values[] = {200,500,800,1000,1500,2000,2500,3000,3500,4000,4500,5000};
-		texts[] = {"200m","500m","800m","1000m","1500m","2000m","2500m","3000m","3500m","4000m","4500m","5000m"};
-		default = 5000;
+		values[] = {200,500,800,1000,1500,2000,2500,3000,3500,4000,4500,5000,6000};
+		texts[] = {"200m","500m","800m","1000m","1500m","2000m","2500m","3000m","3500m","4000m","4500m","5000m","6000m"};
+		default = 6000;
 	};
 		class WFBE_C_MODULE_WFBE_FLARES {
 			title = "$STR_WF_PARAMETER_Countermeasures";
