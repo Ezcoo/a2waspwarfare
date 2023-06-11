@@ -11,7 +11,7 @@ if (_get) exitWith {hint "HQ cannot be repaired using cash twice!"};
 if (WFBE_Client_Logic getVariable "wfbe_hq_repairing") exitWith {hint (localize "STR_WF_INFO_Repair_MHQ_BeingRepaired")};
 
 _currency_system = missionNamespace getVariable "WFBE_C_ECONOMY_CURRENCY_SYSTEM";
-_repairPrice = (missionNameSpace getVariable "WFBE_C_BASE_HQ_REPAIR_PRICE_CASH") * (1+0.05*((WFBE_Client_Logic getVariable "wfbe_hq_repair_count")-1));
+_repairPrice = (missionNameSpace getVariable "WFBE_C_BASE_HQ_REPAIR_PRICE_CASH");
 _currency = Call GetPlayerFunds;
 _currencySym = "$";
 if (_currency < _repairPrice) exitWith {hint Format [localize "STR_WF_INFO_Repair_MHQ_Funds",_currencySym,_repairPrice - _currency]};
