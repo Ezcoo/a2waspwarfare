@@ -41,13 +41,7 @@ missionNamespace setVariable ['WFBE_NEURODEF_COMMANDCENTER_WALLS',[
 ]];
 
 missionNamespace setVariable ['WFBE_NEURODEF_SERVICEPOINT_WALLS',[
-	['Land_HBarrier_large',[4,-3.5,0],90],
-	['Land_HBarrier_large',[4,4,0],90],
-	['Land_HBarrier_large',[1,7.5,0],180],
-	['Land_HBarrier_large',[-2.5,7.5,0],180],
-	['Land_HBarrier_large',[-5.5,4,0],90],
-	['Land_HBarrier_large',[-5.5,-3.5,0],90],
-	['Land_HBarrier5',[4,-6.5,0],180]
+
 ]];
 
 missionNamespace setVariable ['WFBE_NEURODEF_HEAVY_WALLS',[
