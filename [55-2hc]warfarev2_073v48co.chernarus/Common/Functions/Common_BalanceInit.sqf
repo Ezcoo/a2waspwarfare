@@ -82,7 +82,7 @@ switch (typeOf _this) do
 
 	};
 
-		case "M2A2_EP1": {
+        case "M2A2_EP1": {
 
 				_this removeMagazine "2Rnd_TOW2";
 				_this removeMagazine "2Rnd_TOW2";
