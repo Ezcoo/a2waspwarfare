@@ -173,9 +173,9 @@ case "L159_ACR":{
     _this addweapon "MaverickLauncher";
     _this addWeapon "BombLauncherF35";
     _this addWeapon "MaverickLauncher";
-    _this addWeapon "FFARLauncher";
+    _this addWeapon "BombLauncherF35";
     _this addMagazine "2Rnd_Maverick_A10";
-    _this addMagazine "38Rnd_FFAR";
+    _this addMagazine "2Rnd_GBU12";
 };
 
 
