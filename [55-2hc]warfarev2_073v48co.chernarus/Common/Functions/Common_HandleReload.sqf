@@ -4,7 +4,7 @@ private ["_unit","_weapon","_reduction","_affected"];
 _unit = _this select 0;
 _weapon = currentMuzzle (gunner (vehicle _unit));
 _reloadTime = 1;
-_affected = ["AT5LauncherSingle","M242BC","M242","2A46MRocket"];
+_affected = ["AT5LauncherSingle","M242BC","M242","2A46MRocket","M_TOW_AT","M_TOW_AT2"];
 
 if !(_weapon in _affected) exitWith {};
 
