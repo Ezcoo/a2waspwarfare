@@ -212,7 +212,6 @@ switch (_type) do {
 
   		_vehicle addeventhandler ["HandleDamage",format ["_this Call %1", _rearmor]];
 	};
-	case "Ka52":{
 
 	 	_rearmor = {
 
