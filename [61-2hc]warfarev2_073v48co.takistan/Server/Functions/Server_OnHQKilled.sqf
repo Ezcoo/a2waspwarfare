@@ -14,10 +14,6 @@ _structure_kind = typeOf _structure;
 _side = _structure getVariable "wfbe_side";
 _logik = (_side) Call WFBE_CO_FNC_GetSideLogic;
 
-_killer_group = group _killer;
-// HQ kill price ($30,000) / 100 * building kill coef
-_points = 30000 / 100 * WFBE_C_BUILDINGS_SCORE_COEF;
-
 //--- If HQ was mobibilized, spawn a dead hq.
 if ((_side) Call WFBE_CO_FNC_GetSideHQDeployStatus) then {
 	Private ["_hq"];
@@ -33,12 +29,6 @@ if ((_side) Call WFBE_CO_FNC_GetSideHQDeployStatus) then {
 	
 	//--- Remove the structure after the burial.
 	(_structure) Spawn {sleep 10; deleteVehicle _this};
-};
-
-if (isServer) then {
-	['SRVFNCREQUESTCHANGESCORE',[leader _killer_group, (score leader _killer_group) + _points]] Spawn WFBE_SE_FNC_HandlePVF;
-} else {
-	["RequestChangeScore", [leader _killer_group, (score leader _killer_group) + _points]] Call WFBE_CO_FNC_SendToServer;
 };
 
 //--- Spawn a radio message.

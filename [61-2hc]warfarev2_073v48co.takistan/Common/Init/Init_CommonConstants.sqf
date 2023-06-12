@@ -289,7 +289,6 @@ if (WF_A2_Vanilla) then {
 	if (isNil "WFBE_C_UNITS_TRACK_INFANTRY") then {WFBE_C_UNITS_TRACK_INFANTRY = 1}; //--- Track units on map (infantry).
 	if (isNil "WFBE_C_UNITS_TRACK_LEADERS") then {WFBE_C_UNITS_TRACK_LEADERS = 1}; //--- Track playable Team Leaders on map (infantry).
 	WFBE_C_UNITS_BOUNTY_COEF = 1; //--- Bounty is the unit price * coef.
-	WFBE_C_BUILDINGS_SCORE_COEF = 3; // Score for killing base structures and HQ is building bounty * coef
 	WFBE_C_UNITS_BOUNTY_ASSISTANCE_COEF = 0.5; //--- Bounty assistance is the unit price * coef * assist coef.
 	WFBE_C_UNITS_COUNTERMEASURE_PLANES = 64;
 	WFBE_C_UNITS_COUNTERMEASURE_CHOPPERS = 32;
