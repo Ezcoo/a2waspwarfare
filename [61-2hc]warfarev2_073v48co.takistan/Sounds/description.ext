@@ -12,4 +12,10 @@ class Bipod_ON {
 		sound[] = {"\sounds\Bipod_ON.ogg",10,1};
 		titles[] = {};
 	};
+
+class icbmLaunch {
+		name = "icbmLaunch";
+		sound[] = {"\sounds\icbmLaunch.ogg",10,1};
+		titles[] = {};
+	};
 };
