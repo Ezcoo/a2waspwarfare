@@ -595,6 +595,9 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_ALICE") > 0) then {
 	["INITIALIZATION", "Init_Server.sqf: BIS ALICE is defined."] Call WFBE_CO_FNC_LogContent;
 };
 
+// Execute the server fps script on a seperate thread
+[] ExecVM "Server\GUI\serverFpsGUI.sqf"
+
 ["INITIALIZATION", Format ["Init_Server.sqf: Server initialization ended at [%1]", time]] Call WFBE_CO_FNC_LogContent;
 
 //--- Waiting until that the game is launched.

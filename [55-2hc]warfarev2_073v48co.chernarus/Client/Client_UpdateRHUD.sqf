@@ -134,6 +134,23 @@ while {true} do {
 			if (_clientFPS < 40) then {_textControl_FPS_4 ctrlSetTextColor [1, 0.8431, 0, 1];_textControl_FPS_4 ctrlSetText Format ["%1",_clientFPS]};
 			if (_clientFPS < 20) then {_textControl_FPS_4 ctrlSetTextColor [1, 0, 0, 1];_textControl_FPS_4 ctrlSetText Format ["%1",_clientFPS]};
 
+
+            // Server FPS, only update when the server FPS GUI variable has been loaded on the server side
+            _serverFPS = missionNamespace getVariable "SERVER_FPS_GUI";
+            if (!isNil {_serverFPS}) then {
+                _textControl_FPS_5 = (["currentCutDisplay"] call BIS_FNC_GUIget) displayCtrl 1366;
+                _textControl_FPS_5 ctrlShow true;
+                _textControl_FPS_5 ctrlSetTextColor [0, 1, 0, 1];
+                _textControl_FPS_5 ctrlSetText format ["%1", _serverFPS];
+                if (_serverFPS < 40) then {
+                    _textControl_FPS_5 ctrlSetTextColor [1, 0.8431, 0, 1];
+                    _textControl_FPS_5 ctrlSetText format ["%1", _serverFPS];
+                };
+                if (_serverFPS < 20) then {
+                    _textControl_FPS_5 ctrlSetTextColor [1, 0, 0, 1];
+                    _textControl_FPS_5 ctrlSetText format ["%1", _serverFPS];
+                };
+            };
 		};
 	} else {
 		if (isNull (["currentCutDisplay"] call BIS_FNC_GUIget)) then {CutRsc["OptionsAvailable","PLAIN",0];_delay = 0};
