@@ -2,7 +2,7 @@
 This script allows air vehicles and Linebacker and Tunguska to use Tablock, but prohibits anything else doing so
 return value: true (tablock disabled), false (tablock enabled for Air and ground vehicles Linebacker/Tunguska with their rockets)
 
-TODO: Add vehicles such as Avenger, BRDM AA (later) to this script
+TODO: Add weapons such as stinger and igla (from player), and vehicles such BRDM AA (later when added back) to this script
 
 Author: Die neunte Seele / Midnattsol, Miksuu
 */
@@ -17,7 +17,9 @@ _vehicle = vehicle player;
 
 if ((vehicle player isKindOf "Air") ||
     ((typeOf _vehicle == "M6_EP1") && (currentWeapon _vehicle == "9M311Laucher")) ||
-    ((typeOf _vehicle == "2S6M_Tunguska") && (currentWeapon _vehicle == "9M311Laucher"))) then
+    ((typeOf _vehicle == "2S6M_Tunguska") && (currentWeapon _vehicle == "9M311Laucher")) ||
+    ((typeOf _vehicle == "HMMWV_Avenger") && (currentWeapon _vehicle == "StingerLaucher")) ||
+    ((typeOf _vehicle == "HMMWV_Avenger_DES_EP1") && (currentWeapon _vehicle == "StingerLaucher"))) then
 {
     _handled = false
 }
