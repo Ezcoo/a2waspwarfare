@@ -54,7 +54,7 @@ while {true} do {
 			_textLabel6 ctrlSetText "Supply:";
 			_textLabel7 ctrlSetText "SV Min:";
 			_textLabel8 ctrlSetText "City:";
-			_textLabel_FPS_3 ctrlSetText "FPS Client:";
+			_textLabel_FPS_3 ctrlSetText "FPS:";
 			_textLabel1 ctrlShow true;
 			_textLabel2 ctrlShow true;
 			_textLabel3 ctrlShow true;
