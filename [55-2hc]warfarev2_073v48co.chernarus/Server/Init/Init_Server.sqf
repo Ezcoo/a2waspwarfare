@@ -596,7 +596,7 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_ALICE") > 0) then {
 };
 
 // Execute the server fps script on a seperate thread
-[] ExecVM "Server\GUI\serverFpsGUI.sqf"
+[] ExecVM "Server\GUI\serverFpsGUI.sqf";
 
 ["INITIALIZATION", Format ["Init_Server.sqf: Server initialization ended at [%1]", time]] Call WFBE_CO_FNC_LogContent;
 
