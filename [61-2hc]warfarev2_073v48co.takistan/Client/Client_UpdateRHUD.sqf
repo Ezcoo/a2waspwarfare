@@ -54,7 +54,7 @@ while {true} do {
 			_textLabel6 ctrlSetText "Supply:";
 			_textLabel7 ctrlSetText "SV Min:";
 			_textLabel8 ctrlSetText "City:";
-			_textLabel_FPS_3 ctrlSetText "FPS Client:";
+			_textLabel_FPS_3 ctrlSetText "FPS:";
 			_textLabel1 ctrlShow true;
 			_textLabel2 ctrlShow true;
 			_textLabel3 ctrlShow true;
@@ -126,14 +126,37 @@ while {true} do {
 			_textControl7 ctrlSetTextColor [0.85, 0, 0, 1];
 			_textControl7 ctrlSetText Format ["%1 on %2", sideJoined Call GetTownsHeld,_total];
 
-			//Client FPS
-			_clientFPS = round(diag_fps);
-			_textControl_FPS_4 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1364;
-			_textControl_FPS_4 ctrlShow true;
-			_textControl_FPS_4 ctrlSetTextColor [0, 1, 0, 1];_textControl_FPS_4 ctrlSetText Format ["%1",_clientFPS];
-			if (_clientFPS < 40) then {_textControl_FPS_4 ctrlSetTextColor [1, 0.8431, 0, 1];_textControl_FPS_4 ctrlSetText Format ["%1",_clientFPS]};
-			if (_clientFPS < 20) then {_textControl_FPS_4 ctrlSetTextColor [1, 0, 0, 1];_textControl_FPS_4 ctrlSetText Format ["%1",_clientFPS]};
+			// Client FPS
+            _clientFPS = round(diag_fps);
+            _textControl_FPS_4 = (["currentCutDisplay"] call BIS_FNC_GUIget) displayCtrl 1364;
+            _textControl_FPS_4 ctrlShow true;
+            _textControl_FPS_4 ctrlSetTextColor [0, 1, 0, 1];
+            _textControl_FPS_4 ctrlSetText format ["%1", _clientFPS];
+            if (_clientFPS < 40) then {
+                _textControl_FPS_4 ctrlSetTextColor [1, 0.8431, 0, 1];
+                _textControl_FPS_4 ctrlSetText format ["%1", _clientFPS];
+            };
+            if (_clientFPS < 20) then {
+                _textControl_FPS_4 ctrlSetTextColor [1, 0, 0, 1];
+                _textControl_FPS_4 ctrlSetText format ["%1", _clientFPS];
+            };
 
+            // Server FPS, only update when the server FPS GUI variable has been loaded on the server side
+            _serverFPS = missionNamespace getVariable "SERVER_FPS_GUI";
+            if (!isNil {_serverFPS}) then {
+                _textControl_FPS_5 = (["currentCutDisplay"] call BIS_FNC_GUIget) displayCtrl 1366;
+                _textControl_FPS_5 ctrlShow true;
+                _textControl_FPS_5 ctrlSetTextColor [0, 1, 0, 1];
+                _textControl_FPS_5 ctrlSetText format ["%1", _serverFPS];
+                if (_serverFPS < 40) then {
+                    _textControl_FPS_5 ctrlSetTextColor [1, 0.8431, 0, 1];
+                    _textControl_FPS_5 ctrlSetText format ["%1", _serverFPS];
+                };
+                if (_serverFPS < 20) then {
+                    _textControl_FPS_5 ctrlSetTextColor [1, 0, 0, 1];
+                    _textControl_FPS_5 ctrlSetText format ["%1", _serverFPS];
+                };
+            };
 		};
 	} else {
 		if (isNull (["currentCutDisplay"] call BIS_FNC_GUIget)) then {CutRsc["OptionsAvailable","PLAIN",0];_delay = 0};
