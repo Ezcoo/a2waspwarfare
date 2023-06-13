@@ -432,7 +432,7 @@ while {alive player && dialog} do {
 			_nukeMarker setMarkerTypeLocal "mil_warning";
 			_nukeMarker setMarkerTextLocal "ICBM";
 			_nukeMarker setMarkerColorLocal "ColorRed";
-			[_obj,_nukeMarker] Spawn NukeIncomming;
+			[_obj,_nukeMarker] Spawn NukeIncoming;
 		};
 		//--- Vehicle Paradrop.
 		if (MenuAction == 9) then {
