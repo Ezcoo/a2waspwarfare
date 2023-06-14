@@ -23,7 +23,7 @@ while {!gameOver} do {
 		deleteMarkerLocal _label;
 
 		if !(isNil '_x') then {
-			//_markerType = "b_inf";
+			//_markerType = "b_inf"; //Marty : I don't think it is necessary if it's already initialized at begining of the script.
 			//_markerType = "Arrow"; //Marty change.
 			_marker = Format["%1AdvancedSquad%2Marker",_sideText,_count];
 
@@ -49,7 +49,7 @@ while {!gameOver} do {
 				};
 				deleteMarkerLocal _label;
 			};
-			_marker setMarkerTypeLocal _markerType;
+			//_marker setMarkerTypeLocal _markerType; //Marty : I don't think it is necessary if it's already initialized at begining of the script.
 		};
 
 
