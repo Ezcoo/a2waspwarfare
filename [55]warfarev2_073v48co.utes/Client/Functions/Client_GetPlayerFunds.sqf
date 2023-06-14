@@ -1,1 +1,0 @@
-(clientTeam) Call GetTeamFunds
