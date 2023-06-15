@@ -8,7 +8,7 @@ _markerName = Format ["unitMarker%1",unitMarker];
 
 createMarkerLocal [_markerName,[0,0,0]];
 //_markerName setMarkerTypeLocal "Vehicle";
-//_markerName setMarkerTypeLocal "mil_arrow2"; 	//Marty : draw marker as a filled arrow
+_markerName setMarkerTypeLocal "mil_arrow2"; 	//Marty : draw marker as a filled arrow
 _markerName setMarkerColorLocal "ColorRed";
 _markerName setMarkerSizeLocal [5,5];
 //_markerName setMarkerSizeLocal [1,1];			//Marty : same size value of the marker as for the updateTeamMarkers
