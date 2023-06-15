@@ -8,7 +8,7 @@ _count = 1;
 	_marker = Format["%1AdvancedSquad%2Marker",_sideText,_count];
 	createMarkerLocal [_marker,[0,0,0]];
 	_marker setMarkerTypeLocal "Arrow";
-	_marker setMarkerColorLocal "ColorWhite";
+	_marker setMarkerColorLocal "ColorBlack";
 	_marker setMarkerSizeLocal [1,1];
 	_count = _count + 1;
 } forEach clientTeams;
