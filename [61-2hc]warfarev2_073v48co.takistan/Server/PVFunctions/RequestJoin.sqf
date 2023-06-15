@@ -24,7 +24,7 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 
 	_skip = _get select 4;
 	_sideOrigin = _get select 2; //--- Get the original side.
-	
+
 	if (_skip == 0) then {
 
 		_players_difference =  _playersinside - _playersinotherside;
@@ -39,16 +39,16 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 		};
 
 	}else{
-	if (_sideOrigin != _side) then { //--- The joined side differs from the original one.
+		if (_sideOrigin != _side) then { //--- The joined side differs from the original one.
 
-		_canJoin = false;
+			_canJoin = false;
 
-		[nil, "LocalizeMessage", ['Teamswap',_name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_SendToClients; //--- Inform the clients about the teamswap.
-		
-		["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamswapping, original side [%3], joined side [%4].", _name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_LogContent;
+			[nil, "LocalizeMessage", ['Teamswap',_name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_SendToClients; //--- Inform the clients about the teamswap.
+
+			["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamswapping, original side [%3], joined side [%4].", _name,_uid,_sideOrigin,_side]] Call WFBE_CO_FNC_LogContent;
 		}else {
 			_canJoin = true;
-	};
+		};
 	};
 
 } else {
