@@ -29,7 +29,7 @@ while {alive _object && !(isNull _object)} do {
 		};
 	};
 	
-	sleep 0.01 ; //Marty : refresh frequency is same as the updateTeamMarker in order to refresh faster on map. (May be we should increase this value in case of performances issues !)
+	sleep 1; //Marty : refresh frequency is same as the updateTeamMarker in order to refresh faster on map. (May be we should increase this value in case of performances issues !)
 };
 
 deleteMarkerLocal _markerName;
