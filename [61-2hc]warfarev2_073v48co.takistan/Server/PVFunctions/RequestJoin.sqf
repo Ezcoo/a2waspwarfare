@@ -26,18 +26,8 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 	_sideOrigin = _get select 2; //--- Get the original side.
 
 	if (_skip == 0) then {
-
 		_players_difference =  _playersinside - _playersinotherside;
-
-
-		if(_players_difference > 2) then {
-	        _canJoin = false;
-			missionNamespace setVariable [format["WFBE_JIP_USER%1",_uid], nil];
-			[_player, "LocalizeMessage", ['Teamstack',_name,_uid,_side]] Call WFBE_CO_FNC_SendToClient;
-			["INFORMATION", Format["RequestJoin.sqf: Player [%1] [%2] has been sent back to the lobby for teamstacking,joined side [%3].", _name,_uid,_side]] Call WFBE_CO_FNC_LogContent;
-			_get set [4,0];
-		};
-
+		_canJoin = true
 	}else{
 		if (_sideOrigin != _side) then { //--- The joined side differs from the original one.
 
