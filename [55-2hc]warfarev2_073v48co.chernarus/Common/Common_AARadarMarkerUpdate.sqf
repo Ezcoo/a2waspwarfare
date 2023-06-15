@@ -8,10 +8,9 @@ _markerName = Format ["unitMarker%1",unitMarker];
 
 createMarkerLocal [_markerName,[0,0,0]];
 //_markerName setMarkerTypeLocal "Vehicle";
-//_markerName setMarkerTypeLocal "mil_arrow2"; 	//Marty : draw marker as a filled arrow
+_markerName setMarkerTypeLocal "mil_arrow2"; 	//Marty : draw marker as a filled arrow
 _markerName setMarkerColorLocal "ColorRed";
-_markerName setMarkerSizeLocal [5,5];
-//_markerName setMarkerSizeLocal [1,1];			//Marty : same size value of the marker as for the updateTeamMarkers
+_markerName setMarkerSizeLocal [0.5, 0.5]; // Made the marker a bit smaller still, might need adjustmenets
 _markerName setMarkerAlphaLocal 0;
 _height = missionNamespace getVariable "WFBE_C_STRUCTURES_ANTIAIRRADAR_DETECTION";
 
@@ -29,7 +28,7 @@ while {alive _object && !(isNull _object)} do {
 		};
 	};
 	
-	sleep 0.01 ; //Marty : refresh frequency is same as the updateTeamMarker in order to refresh faster on map. (May be we should increase this value in case of performances issues !)
+	sleep 1; //Marty : refresh frequency is same as the updateTeamMarker in order to refresh faster on map. (May be we should increase this value in case of performances issues !)
 };
 
 deleteMarkerLocal _markerName;
