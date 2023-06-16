@@ -26,8 +26,7 @@ if !(isNil '_get') then { //--- Retrieve JIP Information if there's any.
 	_sideOrigin = _get select 2; //--- Get the original side.
 
 	if (_skip == 0) then {
-		_players_difference =  _playersinside - _playersinotherside;
-		_canJoin = true
+		_canJoin = true;
 	}else{
 		if (_sideOrigin != _side) then { //--- The joined side differs from the original one.
 
