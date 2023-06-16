@@ -57,18 +57,20 @@ switch (typeOf _this) do
 				_this addMagazine "2Rnd_Maverick_A10";
 				_this addMagazine "2Rnd_Maverick_A10";
 				_this addMagazine "2Rnd_Maverick_A10";
-				_this addweapon "MaverickLauncher";
+				_this addWeapon "MaverickLauncher";
 	};
      case "AV8B": {
 
-			    _this removeWeapon "GAU12";
-				_this removeMagazine "300Rnd_25mm_GAU12";
+			    _this removeWeapon "BombLauncher";
+				_this removeMagazine "6Rnd_GBU12_AV8B";
+				_this addWeapon "BombLauncherA10";
+				_this addMagazine "4Rnd_GBU12";
 	};
 
         case "F35B": {
 
 				_this addMagazine "2Rnd_Maverick_A10";
-				_this addweapon "MaverickLauncher";
+				_this addWeapon "MaverickLauncher";
 
 	};
 
@@ -97,6 +99,9 @@ switch (typeOf _this) do
 
                 _this addweapon "CMFlareLauncher";
                 _this addMagazine "60Rnd_CMFlareMagazine";
+                _this addweapon "R73Launcher_2";
+                _this addMagazine "2Rnd_R73";
+
 
 	};
          case "Mi24_V": {
@@ -133,6 +138,16 @@ case "BMP2_INS":{
 
     	_this removeWeapon "AT5LauncherSingle";
 	};
+};
+
+
+case "L159_ACR":{
+    _this removeWeapon "MaverickLauncher_ACR";
+    _this removeMagazine "4Rnd_Maverick_L159";
+    _this addWeapon "MaverickLauncher";
+    _this addWeapon "FFARLauncher";
+    _this addMagazine "2Rnd_Maverick_A10";
+    _this addMagazine "38Rnd_FFAR";
 };
 
 
