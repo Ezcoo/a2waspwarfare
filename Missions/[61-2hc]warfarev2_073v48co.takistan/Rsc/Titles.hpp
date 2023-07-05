@@ -264,7 +264,7 @@ class RscTitles {
 		class RUBHUD_AICOUNT_Value: RscText {
 			idc = 1353;
 			text = "";
-			x = 0.921958 * safezoneW + safezoneX;
+			x = 0.925958 * safezoneW + safezoneX;
 			y = 0.246000 * safezoneH + safezoneY;
 			w = 0.4401041 * safezoneW;
 			h = 0.0255556 * safezoneH;
