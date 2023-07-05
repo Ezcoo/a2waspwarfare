@@ -204,11 +204,11 @@
                 <Italian>$%1 Received for the neutralization assistance of a %2.</Italian>
             </Key>
             <Key ID="STR_WF_CHAT_AI_Commander">
-                <English>AI Commander Selected!</English>
-                <French>Commandeur IA Sélectioné!</French>
-                <German>KI wurde zum Commander gewählt!</German>
-                <Russian>Командует ИИ!</Russian>
-                <Italian>Comandante IA Selezionato!</Italian>
+                <English>No Commander Selected!</English>
+                <French>Aucun commandant n'a été sélectionné!</French>
+                <German>Kein Kommandant ausgewählt!</German>
+                <Russian>Командир не выбран!</Russian>
+                <Italian>Nessun comandante selezionato!</Italian>
             </Key>
             <Key ID="STR_WF_CHAT_Commander_Bounty_Town"><!--shared U-->
                 <English>Our team has captured %2. $%1 Commander-Bonus.</English>
@@ -4098,11 +4098,11 @@
 
             <!--UNSORT - ALL DONE-->
             <Key ID="STR_WF_AI"><!--shared W-->
-                <English>AI Commander</English>
-                <French>AI Commander</French>
-                <German>KI Commander</German>
-                <Russian>Командир ИИ</Russian>
-                <Italian>AI Commander</Italian>
+                <English>No Commander</English>
+                <French>Pas de commandant</French>
+                <German>Kein Kommandant</German>
+                <Russian>Нет командира</Russian>
+                <Italian>Nessun comandante</Italian>
             </Key>
             <Key ID="STR_WF_Commander"><!--shared U-->
                 <English>Commander: %1</English>
