@@ -169,7 +169,7 @@ class RscTitles {
 		name = "OptionsAvailable";
 		onLoad = "_this ExecVM ""Client\GUI\GUI_SetCurrentCutDisplay.sqf""";
 		onUnload = "_this ExecVM ""Client\GUI\GUI_ClearCurrentCutDisplay.sqf""";
-		controls[] = {"RUBHUD_Background","RUBHUD_Health","RUBHUD_Health_Value","RUBHUD_Uptime","RUBHUD_Uptime_Value","RUBHUD_Commander", "RUBHUD_Commander_Value","RUBHUD_Money","RUBHUD_Money_Value","RUBHUD_Income","RUBHUD_Income_Value","RUBHUD_Supply","RUBHUD_Supply_Value","RUBHUD_SupplyMin","RUBHUD_SupplyMin_Value","RUBHUD_City","RUBHUD_City_Value",
+		controls[] = {"RUBHUD_Background","RUBHUD_Health","RUBHUD_Health_Value","RUBHUD_Uptime","RUBHUD_Uptime_Value","RUBHUD_Commander", "RUBHUD_Commander_Value","RUBHUD_AICOUNT","RUBHUD_AICOUNT_Value","RUBHUD_Money","RUBHUD_Money_Value","RUBHUD_Income","RUBHUD_Income_Value","RUBHUD_Supply","RUBHUD_Supply_Value","RUBHUD_SupplyMin","RUBHUD_SupplyMin_Value","RUBHUD_City","RUBHUD_City_Value",
 		"RUBHUD_FPS_Client","RUBHUD_FPS_Client_Value","RUBHUD_FPS_Server","RUBHUD_FPS_Server_Value",
 		"OptionsIcon0", "OptionsIcon1", "OptionsIcon2", "OptionsIcon3", "OptionsIcon4", "OptionsIcon5", "OptionsIcon6", "OptionsIcon7", "OptionsIcon8", "OptionsIcon9", "OptionsIcon10",
 		"OptionsIcon11", "OptionsIcon12", "OptionsIcon13", "OptionsIcon14", "OptionsIcon15", "OptionsIcon16", "OptionsIcon17"};
@@ -250,11 +250,33 @@ class RscTitles {
 			colorText[] = {1,1,1,1};
 		};
 
-		class RUBHUD_Money: RscText {
+		class RUBHUD_AICOUNT: RscText {
 			idc = 1352;
 			text = "";
 			x = 0.881728 * safezoneW + safezoneX;
+			y = 0.24600 * safezoneH + safezoneY;
+			w = 0.1025 * safezoneW;
+			h = 0.0255556 * safezoneH;
+			sizeEx = 0.026;
+			colorText[] = {1,1,1,1};
+		};
+
+		class RUBHUD_AICOUNT_Value: RscText {
+			idc = 1353;
+			text = "";
+			x = 0.921958 * safezoneW + safezoneX;
 			y = 0.246000 * safezoneH + safezoneY;
+			w = 0.4401041 * safezoneW;
+			h = 0.0255556 * safezoneH;
+			sizeEx = 0.026;
+			colorText[] = {1,1,1,1};
+		};
+
+		class RUBHUD_Money: RscText {
+			idc = 1354;
+			text = "";
+			x = 0.881728 * safezoneW + safezoneX;
+			y = 0.266000 * safezoneH + safezoneY;
 			w = 0.1025 * safezoneW;
 			h = 0.0255556 * safezoneH;
 			sizeEx = 0.026;
@@ -262,10 +284,10 @@ class RscTitles {
 		};
 
 		class RUBHUD_Money_Value: RscText {
-			idc = 1353;
+			idc = 1355;
 			text = "";
 			x = 0.925958 * safezoneW + safezoneX;
-			y = 0.246000 * safezoneH + safezoneY;
+			y = 0.266000 * safezoneH + safezoneY;
 			w = 0.4401041 * safezoneW;
 			h = 0.0255556 * safezoneH;
 			sizeEx = 0.026;
@@ -273,10 +295,10 @@ class RscTitles {
 		};
 
 		class RUBHUD_Income: RscText {
-			idc = 1354;
+			idc = 1356;
 			text = "";
 			x = 0.881728 * safezoneW + safezoneX;
-			y = 0.26600 * safezoneH + safezoneY;
+			y = 0.28600 * safezoneH + safezoneY;
 			w = 0.1025 * safezoneW;
 			h = 0.0255556 * safezoneH;
 			sizeEx = 0.026;
@@ -284,10 +306,10 @@ class RscTitles {
 		};
 
 		class RUBHUD_Income_Value: RscText {
-			idc = 1355;
+			idc = 1357;
 			text = "";
 			x = 0.925958 * safezoneW + safezoneX;
-			y = 0.26600 * safezoneH + safezoneY;
+			y = 0.28600 * safezoneH + safezoneY;
 			w = 0.4401041 * safezoneW;
 			h = 0.0255556 * safezoneH;
 			sizeEx = 0.026;
@@ -295,10 +317,10 @@ class RscTitles {
 		};
 
 		class RUBHUD_Supply: RscText {
-			idc = 1356;
+			idc = 1358;
 			text = "";
 			x = 0.881728 * safezoneW + safezoneX;
-			y = 0.286000 * safezoneH + safezoneY;
+			y = 0.306000 * safezoneH + safezoneY;
 			w = 0.1025 * safezoneW;
 			h = 0.0255556 * safezoneH;
 			sizeEx = 0.026;
@@ -306,10 +328,10 @@ class RscTitles {
 		};
 
 		class RUBHUD_Supply_Value: RscText {
-			idc = 1357;
+			idc = 1359;
 			text = "";
 			x = 0.925958 * safezoneW + safezoneX;
-			y = 0.286000 * safezoneH + safezoneY;
+			y = 0.306000 * safezoneH + safezoneY;
 			w = 0.4401041 * safezoneW;
 			h = 0.0255556 * safezoneH;
 			sizeEx = 0.026;
@@ -317,10 +339,10 @@ class RscTitles {
 		};
 
 		class RUBHUD_SupplyMin: RscText {
-			idc = 1358;
+			idc = 1360;
 			text = "";
 			x = 0.881728 * safezoneW + safezoneX;
-			y = 0.30600 * safezoneH + safezoneY;
+			y = 0.32600 * safezoneH + safezoneY;
 			w = 0.1025 * safezoneW;
 			h = 0.0255556 * safezoneH;
 			sizeEx = 0.026;
@@ -328,10 +350,10 @@ class RscTitles {
 		};
 
 		class RUBHUD_SupplyMin_Value: RscText {
-			idc = 1359;
+			idc = 1361;
 			text = "";
 			x = 0.925958 * safezoneW + safezoneX;
-			y = 0.30600 * safezoneH + safezoneY;
+			y = 0.32600 * safezoneH + safezoneY;
 			w = 0.4401041 * safezoneW;
 			h = 0.0255556 * safezoneH;
 			sizeEx = 0.026;
@@ -339,10 +361,10 @@ class RscTitles {
 		};
 
 		class RUBHUD_City: RscText {
-			idc = 1360;
+			idc = 1362;
 			text = "";
 			x = 0.881728 * safezoneW + safezoneX;
-			y = 0.326000 * safezoneH + safezoneY;
+			y = 0.346000 * safezoneH + safezoneY;
 			w = 0.1025 * safezoneW;
 			h = 0.0255556 * safezoneH;
 			sizeEx = 0.026;
@@ -350,22 +372,21 @@ class RscTitles {
 		};
 
 		class RUBHUD_City_Value: RscText {
-			idc = 1361;
+			idc = 1363;
 			text = "";
 			x = 0.925958 * safezoneW + safezoneX;
-			y = 0.326000 * safezoneH + safezoneY;
+			y = 0.346000 * safezoneH + safezoneY;
 			w = 0.4401041 * safezoneW;
 			h = 0.0255556 * safezoneH;
 			sizeEx = 0.028;
 			colorText[] = {1,1,1,1};
 		};
 
-
 		class RUBHUD_FPS_Client: RscText {
-			idc = 1363;
+			idc = 1364;
 			text = "";
 			x = 0.881728 * safezoneW + safezoneX;
-			y = 0.346000 * safezoneH + safezoneY;
+			y = 0.366000 * safezoneH + safezoneY;
 			w = 0.1025 * safezoneW;
 			h = 0.0255556 * safezoneH;
 			sizeEx = 0.026;
@@ -373,10 +394,10 @@ class RscTitles {
 		}
 
 		class RUBHUD_FPS_Client_Value: RscText {
-			idc = 1364;
+			idc = 1365;
 			text = "";
 			x = 0.925958 * safezoneW + safezoneX;
-			y = 0.346000 * safezoneH + safezoneY;
+			y = 0.366000 * safezoneH + safezoneY;
 			w = 0.4401041 * safezoneW;
 			h = 0.0255556 * safezoneH;
 			sizeEx = 0.028;
@@ -384,10 +405,10 @@ class RscTitles {
 		};
 
 		class RUBHUD_FPS_Server: RscText {
-			idc = 1365;
+			idc = 1366;
 			text = "";
 			x = 0.881728 * safezoneW + safezoneX;
-			y = 0.366000 * safezoneH + safezoneY;
+			y = 0.386000 * safezoneH + safezoneY;
 			w = 0.1025 * safezoneW;
 			h = 0.0255556 * safezoneH;
 			sizeEx = 0.026;
@@ -395,10 +416,10 @@ class RscTitles {
 		}
 
 		class RUBHUD_FPS_Server_Value: RscText {
-			idc = 1366;
+			idc = 1367;
 			text = "";
 			x = 0.925958 * safezoneW + safezoneX;
-			y = 0.366000 * safezoneH + safezoneY;
+			y = 0.386000 * safezoneH + safezoneY;
 			w = 0.4401041 * safezoneW;
 			h = 0.0255556 * safezoneH;
 			sizeEx = 0.028;

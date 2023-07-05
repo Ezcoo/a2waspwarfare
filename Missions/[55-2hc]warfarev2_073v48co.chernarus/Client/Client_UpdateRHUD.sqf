@@ -23,18 +23,14 @@ while {true} do {
 			_lineLabel = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1345;
 			_textLabel1 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1346;
 			_textLabel2 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1348;
-			//Commander name
-			_textLabel3 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1350;
-
-			_textLabel4 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1352;
-			_textLabel5 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1354;
-			_textLabel6 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1356;
-			_textLabel7 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1358;
-			_textLabel8 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1360;
-			//FPS
-			_textLabel_FPS_3 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1363;
-
-
+			_textLabel3 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1350; //Commander name
+			_textLabel_AICOUNT = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1352; //AI Count
+			_textLabel4 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1354;
+			_textLabel5 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1356;
+			_textLabel6 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1358;
+			_textLabel7 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1360;
+			_textLabel8 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1362;
+			_textLabel_FPS_3 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1364; //FPS
 
 			_player = Leader player;
 			//Show background
@@ -49,6 +45,7 @@ while {true} do {
 			_textLabel2 ctrlSetText "UpTime:";
 
 			_textLabel3 ctrlSetText "Commander:";
+			_textLabel_AICOUNT ctrlSetText "AI:";
 			_textLabel4 ctrlSetText "Money:";
 			_textLabel5 ctrlSetText "Income:";
 			_textLabel6 ctrlSetText "Supply:";
@@ -58,6 +55,7 @@ while {true} do {
 			_textLabel1 ctrlShow true;
 			_textLabel2 ctrlShow true;
 			_textLabel3 ctrlShow true;
+			_textLabel_AICOUNT ctrlShow true;
 			_textLabel4 ctrlShow true;
 			_textLabel5 ctrlShow true;
 			_textLabel6 ctrlShow true;
@@ -97,66 +95,6 @@ while {true} do {
 			}else{
 			_textControl2 ctrlSetTextColor [0.85, 0, 0, 1];_textControl2 ctrlSetText Format [" %1", "AI"];
 			};
-			//MONEY
-			_logik = (side player) Call WFBE_CO_FNC_GetSideLogic;
-
-			_textControl3 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1353;
-			_textControl3 ctrlShow true;
-			_textControl3 ctrlSetTextColor [0, 0.825294, 0.449803, 1];
-			_textControl3 ctrlSetText Format ["%1 $",Call GetPlayerFunds];
-
-			_textControl4 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1355;
-			_textControl4 ctrlShow true;
-			_textControl4 ctrlSetTextColor [0, 0.825294, 0.449803, 1];
-			_textControl4 ctrlSetText Format ["+ %1 $",sideJoined Call GetIncome];
-			//SUPPLY
-			_textControl5 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1357;
-			_textControl5 ctrlShow true;
-			_textControl5 ctrlSetTextColor [1, 0.8831, 0, 1];
-			_textControl5 ctrlSetText Format ["%1",(sideJoined) Call GetSideSupply];
-
-			_textControl6 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1359;
-			_textControl6 ctrlShow true;
-			_textControl6 ctrlSetTextColor [1, 0.6831, 0, 1];
-			_textControl6 ctrlSetText Format ["+ %1", (sideJoined Call GetTotalSupplyValue)]; //, sideJoined Call GetTownsHeld];
-
-
-			_textControl7 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1361;
-			_textControl7 ctrlShow true;
-			_textControl7 ctrlSetTextColor [0.85, 0, 0, 1];
-			_textControl7 ctrlSetText Format ["%1 on %2", sideJoined Call GetTownsHeld,_total];
-
-			// Client FPS
-            _clientFPS = round(diag_fps);
-            _textControl_FPS_4 = (["currentCutDisplay"] call BIS_FNC_GUIget) displayCtrl 1364;
-            _textControl_FPS_4 ctrlShow true;
-            _textControl_FPS_4 ctrlSetTextColor [0, 1, 0, 1];
-            _textControl_FPS_4 ctrlSetText format ["%1", _clientFPS];
-            if (_clientFPS < 40) then {
-                _textControl_FPS_4 ctrlSetTextColor [1, 0.8431, 0, 1];
-                _textControl_FPS_4 ctrlSetText format ["%1", _clientFPS];
-            };
-            if (_clientFPS < 20) then {
-                _textControl_FPS_4 ctrlSetTextColor [1, 0, 0, 1];
-                _textControl_FPS_4 ctrlSetText format ["%1", _clientFPS];
-            };
-
-            // Server FPS, only update when the server FPS GUI variable has been loaded on the server side
-            _serverFPS = missionNamespace getVariable "SERVER_FPS_GUI";
-            if (!isNil {_serverFPS}) then {
-                _textControl_FPS_5 = (["currentCutDisplay"] call BIS_FNC_GUIget) displayCtrl 1366;
-                _textControl_FPS_5 ctrlShow true;
-                _textControl_FPS_5 ctrlSetTextColor [0, 1, 0, 1];
-                _textControl_FPS_5 ctrlSetText format ["%1", _serverFPS];
-                if (_serverFPS < 40) then {
-                    _textControl_FPS_5 ctrlSetTextColor [1, 0.8431, 0, 1];
-                    _textControl_FPS_5 ctrlSetText format ["%1", _serverFPS];
-                };
-                if (_serverFPS < 20) then {
-                    _textControl_FPS_5 ctrlSetTextColor [1, 0, 0, 1];
-                    _textControl_FPS_5 ctrlSetText format ["%1", _serverFPS];
-                };
-            };
 
             // Get the current AI amount and calculate the max amount to be shown in the UI
             _mbu = missionNamespace getVariable 'WFBE_C_PLAYERS_AI_MAX';
@@ -178,17 +116,78 @@ while {true} do {
 
             // Show AI amount (current/max) on the UI
             if (!isNil {_currentUnitsCount} || !isNil{_maxUnitsCount}) then {
-                _textControl_AICOUNT_2 = (["currentCutDisplay"] call BIS_FNC_GUIget) displayCtrl 1353;
-                _textControl_AICOUNT_2 ctrlShow true;
-                _textControl_AICOUNT_2 ctrlSetTextColor [0, 1, 0, 1];
-                _textControl_AICOUNT_2 ctrlSetText format ["%1 / %2", _currentUnitsCount, _maxUnitsCount];
+                _textControl_AICOUNT = (["currentCutDisplay"] call BIS_FNC_GUIget) displayCtrl 1353;
+                _textControl_AICOUNT ctrlShow true;
+                _textControl_AICOUNT ctrlSetTextColor [0, 1, 0, 1];
+                _textControl_AICOUNT ctrlSetText format ["%1 / %2", _currentUnitsCount, _maxUnitsCount];
                 if (_currentUnitsCount >= _maxUnitsCount/2) then {
-                    _textControl_AICOUNT_2 ctrlSetTextColor [1, 0.8431, 0, 1];
-                    _textControl_AICOUNT_2 ctrlSetText format ["%1 / %2", _currentUnitsCount, _maxUnitsCount];
+                    _textControl_AICOUNT ctrlSetTextColor [1, 0.8431, 0, 1];
+                    _textControl_AICOUNT ctrlSetText format ["%1 / %2", _currentUnitsCount, _maxUnitsCount];
                 };
                 if (_currentUnitsCount >= _maxUnitsCount) then {
-                    _textControl_AICOUNT_2 ctrlSetTextColor [1, 0, 0, 1];
-                    _textControl_AICOUNT_2 ctrlSetText format ["%1 / %2", _currentUnitsCount, _maxUnitsCount];
+                    _textControl_AICOUNT ctrlSetTextColor [1, 0, 0, 1];
+                    _textControl_AICOUNT ctrlSetText format ["%1 / %2", _currentUnitsCount, _maxUnitsCount];
+                };
+            };
+
+			//MONEY
+			_logik = (side player) Call WFBE_CO_FNC_GetSideLogic;
+
+			_textControl3 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1355;
+			_textControl3 ctrlShow true;
+			_textControl3 ctrlSetTextColor [0, 0.825294, 0.449803, 1];
+			_textControl3 ctrlSetText Format ["%1 $",Call GetPlayerFunds];
+
+			_textControl4 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1357;
+			_textControl4 ctrlShow true;
+			_textControl4 ctrlSetTextColor [0, 0.825294, 0.449803, 1];
+			_textControl4 ctrlSetText Format ["+ %1 $",sideJoined Call GetIncome];
+			//SUPPLY
+			_textControl5 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1359;
+			_textControl5 ctrlShow true;
+			_textControl5 ctrlSetTextColor [1, 0.8831, 0, 1];
+			_textControl5 ctrlSetText Format ["%1",(sideJoined) Call GetSideSupply];
+
+			_textControl6 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1361;
+			_textControl6 ctrlShow true;
+			_textControl6 ctrlSetTextColor [1, 0.6831, 0, 1];
+			_textControl6 ctrlSetText Format ["+ %1", (sideJoined Call GetTotalSupplyValue)]; //, sideJoined Call GetTownsHeld];
+
+
+			_textControl7 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1363;
+			_textControl7 ctrlShow true;
+			_textControl7 ctrlSetTextColor [0.85, 0, 0, 1];
+			_textControl7 ctrlSetText Format ["%1 on %2", sideJoined Call GetTownsHeld,_total];
+
+			// Client FPS
+            _clientFPS = round(diag_fps);
+            _textControl_FPS_4 = (["currentCutDisplay"] call BIS_FNC_GUIget) displayCtrl 1365;
+            _textControl_FPS_4 ctrlShow true;
+            _textControl_FPS_4 ctrlSetTextColor [0, 1, 0, 1];
+            _textControl_FPS_4 ctrlSetText format ["%1", _clientFPS];
+            if (_clientFPS < 40) then {
+                _textControl_FPS_4 ctrlSetTextColor [1, 0.8431, 0, 1];
+                _textControl_FPS_4 ctrlSetText format ["%1", _clientFPS];
+            };
+            if (_clientFPS < 20) then {
+                _textControl_FPS_4 ctrlSetTextColor [1, 0, 0, 1];
+                _textControl_FPS_4 ctrlSetText format ["%1", _clientFPS];
+            };
+
+            // Server FPS, only update when the server FPS GUI variable has been loaded on the server side
+            _serverFPS = missionNamespace getVariable "SERVER_FPS_GUI";
+            if (!isNil {_serverFPS}) then {
+                _textControl_FPS_5 = (["currentCutDisplay"] call BIS_FNC_GUIget) displayCtrl 1367;
+                _textControl_FPS_5 ctrlShow true;
+                _textControl_FPS_5 ctrlSetTextColor [0, 1, 0, 1];
+                _textControl_FPS_5 ctrlSetText format ["%1", _serverFPS];
+                if (_serverFPS < 40) then {
+                    _textControl_FPS_5 ctrlSetTextColor [1, 0.8431, 0, 1];
+                    _textControl_FPS_5 ctrlSetText format ["%1", _serverFPS];
+                };
+                if (_serverFPS < 20) then {
+                    _textControl_FPS_5 ctrlSetTextColor [1, 0, 0, 1];
+                    _textControl_FPS_5 ctrlSetText format ["%1", _serverFPS];
                 };
             };
 		};
@@ -199,24 +198,26 @@ while {true} do {
 			_textLabel1 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1346;
 			_textLabel2 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1348;
 			_textLabel3 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1350;
-			_textLabel4 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1352;
-			_textLabel5 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1354;
-			_textLabel6 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1356;
-			_textLabel7 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1358;
-			_textLabel8 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1360;
+			_textLabel_AICOUNT = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1352;
+			_textLabel4 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1354;
+			_textLabel5 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1356;
+			_textLabel6 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1358;
+			_textLabel7 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1360;
+			_textLabel8 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1362;
+            _textLabel_FPS_3 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1364;
 
 			_textControl2 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1351;
-			_textControl3 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1353;
-			_textControl4 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1355;
-			_textControl5 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1357;
-			_textControl6 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1359;
-			_textControl7 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1361;
-
-			_textLabel_FPS_3 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1362;
-			_textControl_FPS_2 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1361;
-			_textControl_FPS_4 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1363;
+			_textControl_AICOUNT = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1353;
+			_textControl3 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1355;
+			_textControl4 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1357;
+			_textControl5 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1359;
+			_textControl6 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1361;
+			_textControl7 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1363;
+			_textControl_FPS_2 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1365;
+			_textControl_FPS_4 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1367;
 
 			_textControl2 ctrlShow false;
+			_textControl_AICOUNT ctrlShow false;
 			_textControl3 ctrlShow false;
 			_textControl4 ctrlShow false;
 			_textControl5 ctrlShow false;
@@ -226,6 +227,7 @@ while {true} do {
 			_textLabel1 ctrlShow false;
 			_textLabel2 ctrlShow false;
 			_textLabel3 ctrlShow false;
+			_textLabel_AICOUNT ctrlShow false;
 			_textLabel4 ctrlShow false;
 			_textLabel5 ctrlShow false;
 			_textLabel6 ctrlShow false;
