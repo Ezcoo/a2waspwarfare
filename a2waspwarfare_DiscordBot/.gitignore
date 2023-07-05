@@ -1,8 +1,8 @@
 
 .vs/
 
-DiscordBotFrameworkSampleBot/bin/Debug/net7.0/
+a2waspwarfare_DiscordBot/bin/Debug/net7.0/
 
-DiscordBotFrameworkSampleBot/obj/
+a2waspwarfare_DiscordBot/obj/
 
-DiscordBotFrameworkSampleBot/DiscordBotFrameworkSampleBotScripts/
+a2waspwarfare_DiscordBot/a2waspwarfare_DiscordBotScripts/
