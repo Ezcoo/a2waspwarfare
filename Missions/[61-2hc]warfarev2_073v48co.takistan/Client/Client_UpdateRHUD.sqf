@@ -157,6 +157,40 @@ while {true} do {
                     _textControl_FPS_5 ctrlSetText format ["%1", _serverFPS];
                 };
             };
+
+            // Get the current AI amount and calculate the max amount to be shown in the UI
+            _mbu = missionNamespace getVariable 'WFBE_C_PLAYERS_AI_MAX';
+            _currentUnitsCount = Count ((Units (group player)) Call GetLiveUnits);
+            //--- Get the infantry limit based off the infantry upgrade.
+            _maxUnitsCount = ((sideJoined) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_BARRACKS;
+            switch (_maxUnitsCount) do {
+                case 0: {_maxUnitsCount = round(_mbu / 4)};
+            	case 1: {_maxUnitsCount = round(_mbu / 4)*2};
+            	case 2: {_maxUnitsCount = round(_mbu / 4)*3};
+            	case 3: {_maxUnitsCount = _mbu};
+            	default {_maxUnitsCount = _mbu};
+            };
+            if (!isNull(commanderTeam)) then {
+                if (commanderTeam == group player) then {
+                   _maxUnitsCount = _maxUnitsCount + 10;
+                };
+            };
+
+            // Show AI amount (current/max) on the UI
+            if (!isNil {_currentUnitsCount} || !isNil{_maxUnitsCount}) then {
+                _textControl_AICOUNT_2 = (["currentCutDisplay"] call BIS_FNC_GUIget) displayCtrl 1353;
+                _textControl_AICOUNT_2 ctrlShow true;
+                _textControl_AICOUNT_2 ctrlSetTextColor [0, 1, 0, 1];
+                _textControl_AICOUNT_2 ctrlSetText format ["%1 / %2", _currentUnitsCount, _maxUnitsCount];
+                if (_currentUnitsCount >= _maxUnitsCount/2) then {
+                    _textControl_AICOUNT_2 ctrlSetTextColor [1, 0.8431, 0, 1];
+                    _textControl_AICOUNT_2 ctrlSetText format ["%1 / %2", _currentUnitsCount, _maxUnitsCount];
+                };
+                if (_currentUnitsCount >= _maxUnitsCount) then {
+                    _textControl_AICOUNT_2 ctrlSetTextColor [1, 0, 0, 1];
+                    _textControl_AICOUNT_2 ctrlSetText format ["%1 / %2", _currentUnitsCount, _maxUnitsCount];
+                };
+            };
 		};
 	} else {
 		if (isNull (["currentCutDisplay"] call BIS_FNC_GUIget)) then {CutRsc["OptionsAvailable","PLAIN",0];_delay = 0};
