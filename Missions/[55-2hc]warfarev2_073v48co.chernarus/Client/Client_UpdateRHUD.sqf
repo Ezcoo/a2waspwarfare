@@ -93,7 +93,7 @@ while {true} do {
 			if (!isNull commanderTeam) then {
 			_textControl2 ctrlSetTextColor [0.85, 0, 0, 1];_textControl2 ctrlSetText Format [" %1", name (leader commanderTeam)];
 			}else{
-			_textControl2 ctrlSetTextColor [0.85, 0, 0, 1];_textControl2 ctrlSetText Format [" %1", "AI"];
+			_textControl2 ctrlSetTextColor [0.85, 0, 0, 1];_textControl2 ctrlSetText Format [" %1", "No Commander"];
 			};
 
             // Get the current AI amount and calculate the max amount to be shown in the UI
