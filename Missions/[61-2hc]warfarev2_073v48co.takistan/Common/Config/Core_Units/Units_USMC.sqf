@@ -52,11 +52,14 @@ _u = _u		+ ['MTVR'];
 _u = _u		+ ['MtvrRepair'];
 _u = _u		+ ['WarfareReammoTruck_USMC'];
 _u = _u		+ ['MtvrRefuel'];
+_u = _u		+ ['Dingo_DST_ACR'];
+_u = _u		+ ['Dingo_GL_DST_ACR'];
 _u = _u		+ ['WarfareSalvageTruck_USMC'];
 if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['WarfareSupplyTruck_USMC']};
 _u = _u		+ ['RHIB'];
 _u = _u		+ ['RHIB2Turret'];
 _u = _u		+ ['LAV25'];
+_u = _u		+ ['Pandur2_ACR'];
 
 missionNamespace setVariable [Format ["WFBE_%1LIGHTUNITS", _side], _u];
 if (local player) then {['LIGHT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
