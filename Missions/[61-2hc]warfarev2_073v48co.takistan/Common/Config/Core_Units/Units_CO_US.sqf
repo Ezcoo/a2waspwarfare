@@ -102,6 +102,8 @@ _u = _u		+ ['MtvrRepair_DES_EP1'];
 _u = _u		+ ['MtvrReammo_DES_EP1'];
 _u = _u		+ ['MtvrRefuel_DES_EP1'];
 _u = _u		+ ['MtvrSalvage_DES_EP1'];
+_u = _u		+ ['Dingo_DST_ACR'];
+_u = _u		+ ['Dingo_GL_DST_ACR'];
 _u = _u		+ ['LandRover_Special_CZ_EP1'];
 if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['MtvrSupply_DES_EP1']};
 if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['WarfareSupplyTruck_USMC']};
@@ -110,6 +112,7 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_BAF") > 0) then {
 	_u = _u		+ ['BAF_Offroad_D'];
 	_u = _u		+ ['BAF_Jackal2_GMG_D'];
 	_u = _u		+ ['BAF_Jackal2_L2A1_D'];
+	_u = _u		+ ['Pandur2_ACR'];
 };
 
 missionNamespace setVariable [Format ["WFBE_%1LIGHTUNITS", _side], _u];
