@@ -156,7 +156,6 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_BAF") > 0) then {
 	_u = _u		+ ['BAF_Merlin_HC3_D'];
 	_u = _u		+ ['CH_47F_BAF'];
 	if (_restriction_air == 0 || _restriction_air == 1) then {
-		_u = _u		+ ['AW159_Lynx_BAF'];
 		_u = _u		+ ['BAF_Apache_AH1_D'];
 	};
 };
