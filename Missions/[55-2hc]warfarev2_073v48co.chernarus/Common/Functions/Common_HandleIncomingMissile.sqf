@@ -20,3 +20,10 @@ if (_irLock == 1) then { //--- IR Lock is affected
 		deleteVehicle _missile;
 	};
 };
+
+//Maverick fix
+_indirectHit = getNumber(configFile >> "CfgAmmo" >> _ammo >> "indirectHit");
+    if (_ammo in ["M_Maverick_AT"])
+        then {
+            _indirectHit = 849
+            };
