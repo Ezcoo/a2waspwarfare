@@ -15,7 +15,8 @@ _tabbuttons = actionKeys "VehLockTargets";
 
 _vehicle = vehicle player;
 
-if ((_vehicle isKindOf "Air") ||
+if ((_vehicle == player) || // Fixes not being able to use tablock for bipod
+    (_vehicle isKindOf "Air") ||
     ((typeOf _vehicle == "M6_EP1") && (currentWeapon _vehicle == "9M311Laucher")) ||
     ((typeOf _vehicle == "2S6M_Tunguska") && (currentWeapon _vehicle == "9M311Laucher")) ||
     ((typeOf _vehicle == "HMMWV_Avenger") && (currentWeapon _vehicle == "StingerLaucher")) ||
