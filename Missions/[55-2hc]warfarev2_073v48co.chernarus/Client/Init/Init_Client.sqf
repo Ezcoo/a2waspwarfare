@@ -606,7 +606,7 @@ sleep 3;
 
 /* Client death handler. */
 WFBE_PLAYERKEH = player addEventHandler ['Killed', {[_this select 0,_this select 1] Spawn WFBE_CL_FNC_OnKilled; [_this select 0,_this select 1, sideID] Spawn WFBE_CO_FNC_OnUnitKilled}];
-hint parseText "<t color='#ffff00'>v16062023<br/><br/>The Mission is being reworked from it's original 2018 state. Check the changelogs in our discord! Expect weekly updates to rebuild the mission to better state than it's ever been in the coming months! Your feedback will be very important, please post it on our discord: discord.me/warfare or https://discord.gg/gRhPHUuWpy . Thanks! </t>";
+hint parseText "<t color='#ffff00'>v06072023<br/><br/>The Mission is being reworked from it's original 2018 state. Check the changelogs in our discord! Expect weekly updates to rebuild the mission to better state than it's ever been in the coming months! Your feedback will be very important, please post it on our discord: discord.me/warfare or https://discord.gg/gRhPHUuWpy . Thanks! </t>";
 //--- Valhalla init.
 [] Spawn {
 	[] Call Compile preprocessFile "Client\Module\Valhalla\Init_Valhalla.sqf";
