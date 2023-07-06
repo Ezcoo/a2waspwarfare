@@ -22,7 +22,25 @@ switch (typeOf _this) do
 		_this addMagazine "4Rnd_FAB_250";
 
 	};
+	    // Cherno T-34
 		case "T34_TK_EP1": {
+
+				_this addMagazineTurret ["60Rnd_762x54_DT",[1]];
+				_this addMagazineTurret ["60Rnd_762x54_DT",[1]];
+				_this addMagazineTurret ["60Rnd_762x54_DT",[1]];
+				_this addMagazineTurret ["60Rnd_762x54_DT",[1]];
+				_this addMagazineTurret ["60Rnd_762x54_DT",[1]];
+				_this addMagazine "60Rnd_762x54_DT";
+				_this addMagazine "60Rnd_762x54_DT";
+				_this addMagazine "60Rnd_762x54_DT";
+				_this addMagazine "60Rnd_762x54_DT";
+				_this addMagazine "60Rnd_762x54_DT";
+				_this addMagazine "60Rnd_762x54_DT";
+				_this addMagazine "60Rnd_762x54_DT";
+				_this addMagazine "10Rnd_85mmAP";
+	};
+	    // Takistan T-34
+		case "T34_TK_GUE_EP1": {
 
 				_this addMagazineTurret ["60Rnd_762x54_DT",[1]];
 				_this addMagazineTurret ["60Rnd_762x54_DT",[1]];
@@ -70,11 +88,11 @@ switch (typeOf _this) do
         case "F35B": {
 
 				_this addMagazine "2Rnd_Maverick_A10";
-				_this addWeapon "MaverickLauncher";
+				_this addweapon "MaverickLauncher";
 
 	};
 
-        case "M2A2_EP1": {
+		case "M2A2_EP1": {
 
 				_this removeMagazine "210Rnd_25mm_M242_HEI";
 				_this removeMagazine "210Rnd_25mm_M242_APDS";
@@ -89,11 +107,12 @@ switch (typeOf _this) do
 	};
 
         case "UH1Y":
-{
+	{
                      _this addMagazine "60Rnd_CMFlareMagazine";
                      _this addMagazine "38Rnd_FFAR";
                      _this addweapon "CMFlareLauncher";
-                     _this addweapon "FFARLauncher";};
+                     _this addweapon "FFARLauncher";
+	};
 
         case "L39_TK_EP1": {
 
@@ -131,7 +150,7 @@ case "AH6J_EP1":{
     _this addMagazine "14Rnd_FFAR";
 };
 
-
+// Cherno BMP2
 case "BMP2_INS":{
 	_current_heavy_level = ((side player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_HEAVY;
     if(_current_heavy_level < 2)then{
@@ -140,6 +159,14 @@ case "BMP2_INS":{
 	};
 };
 
+// Takistan BMP2
+case "BMP2_TK_EP1":{
+	_current_heavy_level = ((side player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_HEAVY;
+    if(_current_heavy_level < 2)then{
+
+    	_this removeWeapon "AT5LauncherSingle";
+	};
+};
 
 case "L159_ACR":{
     _this removeWeapon "MaverickLauncher_ACR";
@@ -149,6 +176,5 @@ case "L159_ACR":{
     _this addMagazine "2Rnd_Maverick_A10";
     _this addMagazine "38Rnd_FFAR";
 };
-
 
 };
