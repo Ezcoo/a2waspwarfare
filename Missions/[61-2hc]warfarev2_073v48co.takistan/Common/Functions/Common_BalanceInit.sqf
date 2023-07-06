@@ -177,4 +177,8 @@ case "L159_ACR":{
     _this addMagazine "38Rnd_FFAR";
 };
 
+case "M1128_MGS_EP1":{
+    _this addMagazineTurret ["6RND_105mm_APDS", [0]];
+};
+
 };
