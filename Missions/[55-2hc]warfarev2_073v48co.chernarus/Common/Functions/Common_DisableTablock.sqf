@@ -15,7 +15,7 @@ _tabbuttons = actionKeys "VehLockTargets";
 
 _vehicle = vehicle player;
 
-if ((vehicle player isKindOf "Air") ||
+if ((_vehicle isKindOf "Air") ||
     ((typeOf _vehicle == "M6_EP1") && (currentWeapon _vehicle == "9M311Laucher")) ||
     ((typeOf _vehicle == "2S6M_Tunguska") && (currentWeapon _vehicle == "9M311Laucher")) ||
     ((typeOf _vehicle == "HMMWV_Avenger") && (currentWeapon _vehicle == "StingerLaucher")) ||
