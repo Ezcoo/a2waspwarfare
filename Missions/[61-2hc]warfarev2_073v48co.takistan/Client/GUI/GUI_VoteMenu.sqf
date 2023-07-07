@@ -5,7 +5,7 @@ uiNamespace setVariable ["wfbe_display_vote", _this select 0];
 
 _u = 1;
 lnbClear 500100;
-lnbAddRow[500100, ["AI Commander", "0"]];
+lnbAddRow[500100, ["No Commander", "0"]];
 lnbSetValue[500100, [0, 0], -1];
 for '_i' from 0 to count(WFBE_Client_Teams)-1 do {
 	if (isPlayer leader (WFBE_Client_Teams select _i)) then {
@@ -69,7 +69,7 @@ while {alive player && dialog} do {
 		};
 	};
 
-	if ((((uiNamespace getVariable "wfbe_display_vote") displayCtrl 500100) lnbText [0, 1]) != str(_voteArray select 0)) then {lnbSetText [500100, [0, 1], str(_voteArray select 0)]}; //--- AI Commander
+	if ((((uiNamespace getVariable "wfbe_display_vote") displayCtrl 500100) lnbText [0, 1]) != str(_voteArray select 0)) then {lnbSetText [500100, [0, 1], str(_voteArray select 0)]}; //--- No Commander
 
 	for '_i' from 1 to ((lnbSize 500100) select 0)-1 do { //--- Update the UI list properties (name / votes) for players.
 		_value = lnbValue [500100,[_i, 0]];

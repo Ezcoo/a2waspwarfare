@@ -26,7 +26,7 @@ missionNamespace setVariable [Format["WFBE_%1PARACHUTELEVEL3", _side],['TK_Speci
 
 missionNamespace setVariable [Format["WFBE_%1PARACARGO", _side], 'Mi17_Ins'];//--- Paratroopers, Vehicle.
 missionNamespace setVariable [Format["WFBE_%1REPAIRTRUCK", _side], 'UralRepair_TK_EP1'];//--- Repair Truck model.
-missionNamespace setVariable [Format["WFBE_%1STARTINGVEHICLES", _side], ['GAZ_Vodnik_MedEvac','V3S_TK_EP1']];//--- Starting Vehicles.
+missionNamespace setVariable [Format["WFBE_%1STARTINGVEHICLES", _side], ['GAZ_Vodnik_MedEvac','BTR90']];//--- Starting Vehicles.
 missionNamespace setVariable [Format["WFBE_%1PARAAMMO", _side], ['TKBasicAmmunitionBox_EP1','TKBasicWeapons_EP1','TKLaunchers_EP1']];//--- Supply Paradropping, Dropped Ammunition.
 missionNamespace setVariable [Format["WFBE_%1PARAVEHICARGO", _side], 'UralRepair_TK_EP1'];//--- Supply Paradropping, Dropped Vehicle.
 missionNamespace setVariable [Format["WFBE_%1PARAVEHI", _side], 'Mi17_TK_EP1'];//--- Supply Paradropping, Vehicle
@@ -166,7 +166,7 @@ missionNamespace setVariable [Format["WFBE_%1_DefaultGearSoldier", _side], [
 // Lock MAN
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearLock", _side], [
 	['RPK_74','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular','NVGoggles'],
-	['45Rnd_545x39_RPK','45Rnd_545x39_RPK','45Rnd_545x39_RPK','45Rnd_545x39_RPK','45Rnd_545x39_RPK','45Rnd_545x39_RPK','45Rnd_545x39_RPK','45Rnd_545x39_RPK','HandGrenade_East','HandGrenade_East','HandGrenade_East','HandGrenade_East'],
+	['75Rnd_545x39_RPK','75Rnd_545x39_RPK','75Rnd_545x39_RPK','75Rnd_545x39_RPK','75Rnd_545x39_RPK','75Rnd_545x39_RPK','75Rnd_545x39_RPK','75Rnd_545x39_RPK','HandGrenade_East','HandGrenade_East','HandGrenade_East','HandGrenade_East'],
 	['RPK_74']
 ]];
 

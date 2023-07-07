@@ -166,7 +166,7 @@ missionNamespace setVariable [Format["WFBE_%1_DefaultGearSoldier", _side], [
 // Lock MAN
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearLock", _side], [
 	['RPK_74','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular','NVGoggles'],
-	['45Rnd_545x39_RPK','45Rnd_545x39_RPK','45Rnd_545x39_RPK','45Rnd_545x39_RPK','45Rnd_545x39_RPK','45Rnd_545x39_RPK','45Rnd_545x39_RPK','45Rnd_545x39_RPK','HandGrenade_East','HandGrenade_East','HandGrenade_East','HandGrenade_East'],
+	['75Rnd_545x39_RPK','75Rnd_545x39_RPK','75Rnd_545x39_RPK','75Rnd_545x39_RPK','75Rnd_545x39_RPK','75Rnd_545x39_RPK','75Rnd_545x39_RPK','75Rnd_545x39_RPK','HandGrenade_East','HandGrenade_East','HandGrenade_East','HandGrenade_East'],
 	['RPK_74']
 ]];
 

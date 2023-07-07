@@ -98,6 +98,9 @@ _u = _u		+ ['M1128_MGS_EP1'];
 _u = _u		+ ['M1133_MEV_EP1'];
 _u = _u		+ ['LandRover_Special_CZ_EP1'];
 _u = _u		+ ['HMMWV_M1035_DES_EP1'];
+_u = _u		+ ['Dingo_WDL_ACR'];
+_u = _u		+ ['Dingo_GL_Wdl_ACR'];
+_u = _u		+ ['Pandur2_ACR'];
 
 if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['MtvrSupply_DES_EP1']};
 _u = _u		+ ['MTVR'];
@@ -156,7 +159,6 @@ if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_BAF") > 0) then {
 	_u = _u		+ ['BAF_Merlin_HC3_D'];
 	_u = _u		+ ['CH_47F_BAF'];
 	if (_restriction_air == 0 || _restriction_air == 1) then {
-		_u = _u		+ ['AW159_Lynx_BAF'];
 		_u = _u		+ ['BAF_Apache_AH1_D'];
 	};
 };
