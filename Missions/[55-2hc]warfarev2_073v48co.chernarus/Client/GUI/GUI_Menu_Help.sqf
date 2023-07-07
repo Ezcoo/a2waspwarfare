@@ -177,7 +177,6 @@ Changelog (48): <br/>
 - Decreased amount of bots for player from 16 to 10 in parameter list <br/>
 - Added HC support for static defence on bases and in res rowns <br/>
 - Added dynamic defender resp in town according current upgrade level on team side <br/>
-- Added Persistance DB support <br/>
 - Added switcher to enable/disable auto wall construction around base structures (user/custom action 14)<br/>
 - Enabled friendly ai tacking on map<br/>
 Changelog (47): <br/>
