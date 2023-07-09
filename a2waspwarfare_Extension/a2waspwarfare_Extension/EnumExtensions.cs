@@ -1,4 +1,5 @@
-﻿using System;
+﻿using a2waspwarfare_Extension;
+using System;
 using System.Linq;
 using System.Runtime.Serialization;
 
@@ -6,26 +7,35 @@ public static class EnumExtensions
 {
     public static object GetInstance(string _string)
     {
-        Log.WriteLine("GetInstance string: " + _string);
-
-        Type t = Type.GetType(_string.ToUpper());
-
-        if (t == null)
+        try
         {
-            Log.WriteLine("type was null for: " + _string.ToUpper(), LogLevel.CRITICAL);
-            throw new InvalidOperationException("type was null for: " + _string.ToUpper());
-        }
-        Log.WriteLine("Generated type: " + t);
 
-        var instance = Activator.CreateInstance(t);
-        if (instance == null)
+            Log.WriteLine("GetInstance string: " + _string);
+
+            Type t = Type.GetType(_string.ToUpper());
+
+            if (t == null)
+            {
+                Log.WriteLine("type was null for: " + _string.ToUpper(), LogLevel.CRITICAL);
+                throw new InvalidOperationException("type was null for: " + _string.ToUpper());
+            }
+            Log.WriteLine("Generated type: " + t);
+
+            var instance = Activator.CreateInstance(t);
+            if (instance == null)
+            {
+                Log.WriteLine("instance was null for: " + _string.ToUpper(), LogLevel.CRITICAL);
+                throw new InvalidOperationException("instance was null for: " + _string.ToUpper());
+            }
+            Log.WriteLine("Generated instance: " + instance);
+
+            return instance;
+        }
+        catch (Exception _ex)
         {
-            Log.WriteLine("instance was null for: " + _string.ToUpper(), LogLevel.CRITICAL);
-            throw new InvalidOperationException("instance was null for: " + _string.ToUpper());
+            Log.WriteLine(_ex.Message);
+            throw new InvalidOperationException(_ex.Message);
         }
-        Log.WriteLine("Generated instance: " + instance);
-
-        return instance;
     }
 
     //public static string GetEnumMemberAttrValue(object _enumVal)
