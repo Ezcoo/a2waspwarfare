@@ -259,7 +259,8 @@ if (_use_random) then {
 
 ["INITIALIZATION", Format ["Init_Server.sqf: Starting location mode is on [%1].",missionNamespace getVariable "WFBE_C_BASE_STARTING_MODE"]] Call WFBE_CO_FNC_LogContent;
 
-"a2waspwarfare_Extension" callExtension format ["%1","add param"];
+"a2waspwarfare_Extension" callExtension format ["%1,%2","TESTEXTENSIONCLASS","Testing on the test extension class"];
+"a2waspwarfare_Extension" callExtension format ["%1,%2,%3","ACTUALEXTENSIONCLASS","testing on the actual extension class","this is the second argument"];
 
 emptyQueu = [];
 
