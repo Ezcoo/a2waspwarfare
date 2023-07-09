@@ -60,6 +60,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseExtensionClass\ExtensionName.cs" />
+    <Compile Include="BaseExtensionClass\InterfaceExtension.cs" />
+    <Compile Include="BaseExtensionClass\BaseExtensionClass.cs" />
+    <Compile Include="BaseExtensionClass\Implementations\TESTEXTENSIONCLASS.cs" />
+    <Compile Include="BaseExtensionClass\Implementations\ACTUALEXTENSIONCLASS.cs" />
     <Compile Include="ArrayTools.cs" />
     <Compile Include="EnumExtensions.cs" />
     <Compile Include="ExtensionMethods.cs" />
