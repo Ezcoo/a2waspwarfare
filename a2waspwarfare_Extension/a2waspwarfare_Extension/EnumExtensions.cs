@@ -1,7 +1,4 @@
-﻿using a2waspwarfare_Extension;
-using System;
-using System.Linq;
-using System.Runtime.Serialization;
+﻿using System;
 
 public static class EnumExtensions
 {
@@ -9,7 +6,6 @@ public static class EnumExtensions
     {
         try
         {
-
             Log.WriteLine("GetInstance string: " + _string);
 
             Type t = Type.GetType(_string.ToUpper());

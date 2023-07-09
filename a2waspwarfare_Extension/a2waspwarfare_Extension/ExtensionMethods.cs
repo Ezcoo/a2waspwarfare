@@ -22,13 +22,13 @@ namespace a2waspwarfare_Extension
         public abstract void ActivateExtensionMethod(string[] _args);
     }
 
-    public class TestExtensionClass : BaseExtensionClass
+    public class TESTEXTENSIONCLASS : BaseExtensionClass
     {
         public override void ActivateExtensionMethod(string[] _args)
         {
             try
             {
-                Log.WriteLine("testing functionality of " + nameof(TestExtensionClass));
+                Log.WriteLine("testing functionality of " + nameof(TESTEXTENSIONCLASS));
                 Log.WriteLine("asd", LogLevel.DEBUG);
             }
             catch (Exception _ex)
@@ -38,13 +38,13 @@ namespace a2waspwarfare_Extension
             }
         }
 
-        public class ActualExtensionClass : BaseExtensionClass
+        public class ACTUALEXTENSIONCLASS : BaseExtensionClass
         {
             public override void ActivateExtensionMethod(string[] _args)
             {
                 try
                 {
-                    Log.WriteLine("testing functionality of " + nameof(ActualExtensionClass));
+                    Log.WriteLine("testing functionality of " + nameof(ACTUALEXTENSIONCLASS));
                 }
                 catch (Exception _ex)
                 {
@@ -61,7 +61,7 @@ namespace a2waspwarfare_Extension
             {
                 try
                 {
-                    Log.WriteLine("Received args as: " + _argsAsString);
+                    Log.WriteLine("Received args as: " + _argsAsString, LogLevel.DEBUG);
 
                     var splitArgsArray = SplitArgsToArray(_argsAsString);
                     var extensionNameAsString = splitArgsArray[0];
