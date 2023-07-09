@@ -259,6 +259,8 @@ if (_use_random) then {
 
 ["INITIALIZATION", Format ["Init_Server.sqf: Starting location mode is on [%1].",missionNamespace getVariable "WFBE_C_BASE_STARTING_MODE"]] Call WFBE_CO_FNC_LogContent;
 
+"a2waspwarfare_Extension" callExtension format ["%1","add param"];
+
 emptyQueu = [];
 
 //--- Global sides initialization.
