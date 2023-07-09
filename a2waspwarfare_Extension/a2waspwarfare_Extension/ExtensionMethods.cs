@@ -57,17 +57,19 @@ namespace a2waspwarfare_Extension
         public class ExtensionMethods
         {
             [DllExport("_RVExtension@12", CallingConvention = CallingConvention.Winapi)]
-            public static void RvExtension(StringBuilder _output, int _outputSize, [MarshalAs(UnmanagedType.LPStr)] string _argsAsString)
+            public static void RvExtension(
+                StringBuilder _output, int _outputSize, [MarshalAs(UnmanagedType.LPStr)] string _argsAsString)
             {
                 try
                 {
                     Log.WriteLine("Received args as: " + _argsAsString, LogLevel.DEBUG);
 
-                    var splitArgsArray = SplitArgsToArray(_argsAsString);
+                    var splitArgsArray = ArrayTools.SplitArgsToArray(_argsAsString);
                     var extensionNameAsString = splitArgsArray[0];
-                    splitArgsArray = RemoveFirstElement(splitArgsArray);
+                    splitArgsArray = ArrayTools.RemoveFirstElement(splitArgsArray);
 
-                    Log.WriteLine("Reveived args count: " + splitArgsArray.Length + " with " + nameof(BaseExtensionClass));
+                    Log.WriteLine("Reveived args count: " + splitArgsArray.Length +
+                        " with " + nameof(BaseExtensionClass));
                     foreach (var item in splitArgsArray)
                     {
                         Log.WriteLine(item);
@@ -97,35 +99,6 @@ namespace a2waspwarfare_Extension
                     return (InterfaceExtension)EnumExtensions.GetInstance(_extensionName.ToString());
                 }
                 catch (Exception _ex)
-                {
-                    Log.WriteLine(_ex.Message, LogLevel.CRITICAL);
-                    throw new InvalidOperationException(_ex.Message);
-                }
-            }
-
-            public static string[] SplitArgsToArray(string _argsString)
-            {
-                try
-                {
-                    Log.WriteLine("Splitting args to array: " + _argsString);
-                    return _argsString.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-                }
-                catch (Exception _ex)
-                {
-                    Log.WriteLine(_ex.Message, LogLevel.CRITICAL);
-                    throw new InvalidOperationException(_ex.Message);
-                }
-            }
-
-            public static string[] RemoveFirstElement(string[] _array)
-            {
-                try
-                {
-                    string[] newArray = new string[_array.Length - 1];
-                    Array.Copy(_array, 1, newArray, 0, _array.Length - 1);
-                    return newArray;
-                }
-                 catch (Exception _ex)
                 {
                     Log.WriteLine(_ex.Message, LogLevel.CRITICAL);
                     throw new InvalidOperationException(_ex.Message);

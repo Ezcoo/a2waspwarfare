@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrayTools.cs" />
     <Compile Include="EnumExtensions.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="FileManager.cs" />
