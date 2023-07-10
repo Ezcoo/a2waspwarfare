@@ -2,11 +2,12 @@ if (!isServer || time > 30) exitWith {diag_log Format["[WFBE (WARNING)][frameno:
 
 ["INITIALIZATION", Format ["Init_Server.sqf: Server initialization begins at [%1]", time]] Call WFBE_CO_FNC_LogContent;
 
+[] execVM "Server/CallExtensions/GlobalGameStats.sqf";
+
 //--- Allow resistance group to be spawned without a placeholder.
 createCenter resistance;
 resistance setFriend [west,0];
 resistance setFriend [east,0];
-
 
 AIBuyUnit = Compile preprocessFile "Server\Functions\Server_BuyUnit.sqf";
 if (WF_A2_Vanilla) then {AISquadRespawn = Compile preprocessFile "Server\AI\AI_SquadRespawn.sqf"};
@@ -258,9 +259,6 @@ if (_use_random) then {
 };
 
 ["INITIALIZATION", Format ["Init_Server.sqf: Starting location mode is on [%1].",missionNamespace getVariable "WFBE_C_BASE_STARTING_MODE"]] Call WFBE_CO_FNC_LogContent;
-
-"a2waspwarfare_Extension" callExtension format ["%1,%2","TESTEXTENSIONCLASS","Testing on the test extension class"];
-"a2waspwarfare_Extension" callExtension format ["%1,%2,%3","ACTUALEXTENSIONCLASS","testing on the actual extension class","this is the second argument"];
 
 emptyQueu = [];
 

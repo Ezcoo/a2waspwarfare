@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 
 public static class Log
 {
-    public static string logsPath = @"C:\DiscordBotFramework\Logs\";
+    public static string logsPath = @"C:\a2waspwarfare\Logs\";
 
     public static void WriteLine(
         string _message,

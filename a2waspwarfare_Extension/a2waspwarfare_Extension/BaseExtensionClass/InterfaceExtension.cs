@@ -1,4 +1,5 @@
 ﻿public interface InterfaceExtension
 {
-    void ActivateExtensionMethod(string[] _args);
+    void ActivateExtensionMethodAndSerialize(string[] _args);
+    void ActivateExtensionMethodOnTheDerivedClass(string[] _args);
 }

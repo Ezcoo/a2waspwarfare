@@ -39,6 +39,9 @@
     <OutputPath>bin\x86\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationFramework" />
     <Reference Include="RGiesecke.DllExport.Metadata, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8f52d83c1a22df51, processorArchitecture=MSIL">
       <HintPath>..\packages\UnmanagedExports.1.2.7\lib\net\RGiesecke.DllExport.Metadata.dll</HintPath>
@@ -51,6 +54,7 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -63,15 +67,16 @@
     <Compile Include="BaseExtensionClass\ExtensionName.cs" />
     <Compile Include="BaseExtensionClass\InterfaceExtension.cs" />
     <Compile Include="BaseExtensionClass\BaseExtensionClass.cs" />
-    <Compile Include="BaseExtensionClass\Implementations\TESTEXTENSIONCLASS.cs" />
-    <Compile Include="BaseExtensionClass\Implementations\ACTUALEXTENSIONCLASS.cs" />
+    <Compile Include="BaseExtensionClass\Implementations\GLOBALGAMESTATS.cs" />
     <Compile Include="ArrayTools.cs" />
     <Compile Include="EnumExtensions.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="FileManager.cs" />
+    <Compile Include="GameData.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="LogLevel.cs" />
     <Compile Include="LogLevelNormalization.cs" />
+    <Compile Include="SerializationManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

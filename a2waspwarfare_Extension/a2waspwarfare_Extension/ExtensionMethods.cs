@@ -3,6 +3,8 @@ using System.Text;
 using RGiesecke.DllExport;
 using System.Runtime.InteropServices;
 
+// https://community.bistudio.com/wiki/Extensions
+
 public class ExtensionMethods
 {
     [DllExport("_RVExtension@12", CallingConvention = CallingConvention.Winapi)]
@@ -31,7 +33,7 @@ public class ExtensionMethods
             }
 
             BaseExtensionClass extensionClass = (BaseExtensionClass)GetExtensionInstance(_extensionName);
-            extensionClass.ActivateExtensionMethod(splitArgsArray);
+            extensionClass.ActivateExtensionMethodAndSerialize(splitArgsArray);
         }
         catch (Exception _ex)
         {
