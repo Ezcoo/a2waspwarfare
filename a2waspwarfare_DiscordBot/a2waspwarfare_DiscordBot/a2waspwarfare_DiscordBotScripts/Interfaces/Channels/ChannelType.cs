@@ -12,6 +12,6 @@ public enum ChannelType
     BOTLOG,
     
     // TEST CATEGORY
-    [EnumMember(Value = "test-channel")]
-    TESTCHANNEL,
+    [EnumMember(Value = "game-status")]
+    GAMESTATUSCHANNEL,
 }

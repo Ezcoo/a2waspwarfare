@@ -9,6 +9,6 @@ public enum MessageName
     [EnumMember(Value = "RAW MESSAGE INPUT")]
     RAWMESSAGEINPUT,
 
-    [EnumMember(Value = "TESTING MESSAGE")]
-    TESTINGMESSAGE,
+    [EnumMember(Value = "GAME STATUS MESSAGE")]
+    GAMESTATUSMESSAGE,
 }

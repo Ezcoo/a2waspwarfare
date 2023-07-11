@@ -30,7 +30,7 @@ public static class SerializationManager
 
             serializer.Converters.Add(new Newtonsoft.Json.Converters.JavaScriptDateTimeConverter());
             serializer.NullValueHandling = Newtonsoft.Json.NullValueHandling.Include;
-            serializer.TypeNameHandling = Newtonsoft.Json.TypeNameHandling.All;
+            serializer.TypeNameHandling = Newtonsoft.Json.TypeNameHandling.None;
             serializer.Formatting = Newtonsoft.Json.Formatting.Indented;
             serializer.ObjectCreationHandling = ObjectCreationHandling.Replace;
             serializer.ContractResolver = new DataMemberContractResolver();

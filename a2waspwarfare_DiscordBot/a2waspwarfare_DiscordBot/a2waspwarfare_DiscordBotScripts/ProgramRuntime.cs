@@ -1,9 +1,12 @@
 ﻿using Discord;
 using Discord.WebSocket;
+using System.Collections.Concurrent;
 
 public class ProgramRuntime
 {
     DiscordSocketClient client;
+
+    public static EventManager eventManager = new EventManager();
 
     public async Task ProgramRuntimeTask()
     {
@@ -39,6 +42,10 @@ public class ProgramRuntime
                 // !!!
 
                 await SetupProgramListenersAndSchedulers();
+
+                await GameDataDeSerialization.DeSerializeGameDataFromExtension();
+
+                new GameDataUpdateEvent(eventManager.ClassScheduledEvents);
             }
             else
             {
@@ -59,7 +66,7 @@ public class ProgramRuntime
         // Creates the league references to the database
         //await LeagueManager.CreateLeaguesOnStartupIfNecessary();
 
-        //await SetupEventScheduler();
+        await SetupEventScheduler();
 
         //await SerializationManager.SerializeUsersOnTheServer();
         await SerializationManager.SerializeDB();

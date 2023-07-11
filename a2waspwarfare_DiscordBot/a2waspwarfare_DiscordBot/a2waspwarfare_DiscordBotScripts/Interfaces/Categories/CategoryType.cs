@@ -11,6 +11,6 @@ public enum CategoryType
     [EnumMember(Value = "bot-stuff")]
     BOTSTUFF = 0,
 
-    [EnumMember(Value = "some-random-category")]
-    SOMERANDOMCATEGORY = 1,
+    [EnumMember(Value = "game-status")]
+    GAMESTATUSCATEGORY = 1,
 }
