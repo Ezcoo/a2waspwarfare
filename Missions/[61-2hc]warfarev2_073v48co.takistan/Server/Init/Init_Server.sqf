@@ -2,7 +2,7 @@ if (!isServer || time > 30) exitWith {diag_log Format["[WFBE (WARNING)][frameno:
 
 ["INITIALIZATION", Format ["Init_Server.sqf: Server initialization begins at [%1]", time]] Call WFBE_CO_FNC_LogContent;
 
-[] execVM "Server/CallExtensions/GlobalGameStats.sqf";
+[] execVM "Server\CallExtensions\GlobalGameStats.sqf";
 
 //--- Allow resistance group to be spawned without a placeholder.
 createCenter resistance;
