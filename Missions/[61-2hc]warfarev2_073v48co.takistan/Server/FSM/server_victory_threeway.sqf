@@ -29,9 +29,6 @@ while {!gameOver} do {
 	};
 
 	if(_innerTimer >= 300)then{
-	_procedureName = "UPDATE_GAME_MATCH_DURATION";
-	_parameters = format["[duration=%1]",time];
-	[_procedureName,_parameters] call persistent_fnc_callDatabase;
 		_innerTimer = 0;
 	};
 	sleep _loopTimer;
