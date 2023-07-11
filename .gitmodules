@@ -1,0 +1,3 @@
+[submodule "a2waspwarfare_DiscordBot/a2waspwarfare_DiscordBot/DiscordBotFramework"]
+	path = a2waspwarfare_DiscordBot/a2waspwarfare_DiscordBot/DiscordBotFramework
+	url = https://github.com/Miksuu/DiscordBotFramework.git
