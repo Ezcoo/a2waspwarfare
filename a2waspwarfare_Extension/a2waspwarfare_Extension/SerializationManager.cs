@@ -19,19 +19,25 @@ public static class SerializationManager
 
     public static async void SerializeDB()
     {
+        await semaphore.WaitAsync();
         try
         {
-            await semaphore.WaitAsync();
-
             Log.WriteLine("SERIALIZING DB", LogLevel.SERIALIZATION);
 
             Newtonsoft.Json.JsonSerializer serializer = new Newtonsoft.Json.JsonSerializer();
+
+            Log.WriteLine("Created serializer");
+
             serializer.Converters.Add(new Newtonsoft.Json.Converters.JavaScriptDateTimeConverter());
             serializer.NullValueHandling = Newtonsoft.Json.NullValueHandling.Include;
             serializer.TypeNameHandling = Newtonsoft.Json.TypeNameHandling.All;
             serializer.Formatting = Newtonsoft.Json.Formatting.Indented;
             serializer.ObjectCreationHandling = ObjectCreationHandling.Replace;
             serializer.ContractResolver = new DataMemberContractResolver();
+
+            Log.WriteLine("Writing to temp file");
+
+            FileManager.CheckIfFileAndPathExistsAndCreateItIfNecessary(dbPath, dbTempFileName);
 
             using (StreamWriter sw = new StreamWriter(dbTempPathWithFileName))
             using (JsonWriter writer = new JsonTextWriter(sw))
@@ -41,10 +47,19 @@ public static class SerializationManager
                 sw.Close();
             }
 
+            Log.WriteLine("Writing to temp file is complete");
+
+            FileManager.CheckIfFileAndPathExistsAndCreateItIfNecessary(dbPath, dbFileName);
+
             // Atomic file replacement
             File.Replace(dbTempPathWithFileName, dbPathWithFileName, null);
 
             Log.WriteLine("DONE SERIALIZING DB", LogLevel.SERIALIZATION);
+        }
+        catch (Exception _ex)
+        {
+            Log.WriteLine(_ex.Message, LogLevel.CRITICAL);
+            throw new InvalidOperationException(_ex.Message);
         }
         finally
         {

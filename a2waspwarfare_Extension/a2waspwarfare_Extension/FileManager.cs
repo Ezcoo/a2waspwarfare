@@ -20,59 +20,65 @@ public static class FileManager
         }
         catch (Exception _ex)
         {
-            Log.WriteLine(_ex.Message);
+            Log.WriteLine(_ex.Message, LogLevel.CRITICAL);
             throw new InvalidOperationException(_ex.Message);
         }
     }
 
-    //public async static void CheckIfFileAndPathExistsAndCreateItIfNecessary(
-    //    string _filePath, string _fileName, System.IO.Stream _optionalFileContent = null)
-    //{
-    //    string _filePathWithFileName = _filePath + @"\" + _fileName;
+    public async static void CheckIfFileAndPathExistsAndCreateItIfNecessary(
+        string _filePath, string _fileName, System.IO.Stream _optionalFileContent = null)
+    {
+        try 
+        {
+            string _filePathWithFileName = _filePath + @"\" + _fileName;
 
-    //    Log.WriteLine("Starting to create: " + _filePathWithFileName);
-    //    if (!Directory.Exists(_filePath))
-    //    {
-    //        Directory.CreateDirectory(_filePath);
-    //        Log.WriteLine("Done creating: " + _filePath);
-    //    }
-    //    else
-    //    {
-    //        Log.WriteLine("Already exists, did not create : " + _filePath);
-    //    }
+            Log.WriteLine("Starting to create: " + _filePathWithFileName);
+            if (!Directory.Exists(_filePath))
+            {
+                Directory.CreateDirectory(_filePath);
+                Log.WriteLine("Done creating: " + _filePath);
+            }
+            else
+            {
+                Log.WriteLine("Already exists, did not create : " + _filePath);
+            }
 
-    //    Log.WriteLine("Starting to create: " + _filePathWithFileName);
-    //    if (!File.Exists(_filePathWithFileName))
-    //    {
-    //        using (var fileStream = new FileStream(_filePathWithFileName, FileMode.CreateNew))
-    //        {
-    //            if (_optionalFileContent != null)
-    //            {
-    //                Log.WriteLine("File has content, setting stream");
-    //                await _optionalFileContent.CopyToAsync(fileStream);
-    //            }
+            Log.WriteLine("Starting to create: " + _filePathWithFileName);
+            if (!File.Exists(_filePathWithFileName))
+            {
+                using (var fileStream = new FileStream(_filePathWithFileName, FileMode.CreateNew))
+                {
+                    if (_optionalFileContent != null)
+                    {
+                        Log.WriteLine("File has content, setting stream");
+                        await _optionalFileContent.CopyToAsync(fileStream);
+                    }
 
-    //            //await fileStream.CopyToAsync(fileStream);
-    //            fileStream.Dispose();
-    //            Log.WriteLine("Done creating: " + _filePathWithFileName);
-    //        }
-    //    }
-    //    else if (File.Exists(_filePathWithFileName) && File.ReadAllText(_filePathWithFileName) == "0")
-    //    {
-    //        using (var fileStream = new FileStream(_filePathWithFileName, FileMode.Truncate))
-    //        {
-    //            if (_optionalFileContent != null)
-    //            {
-    //                Log.WriteLine("File has content, setting stream");
-    //                await _optionalFileContent.CopyToAsync(fileStream);
-    //            }
+                    fileStream.Dispose();
+                    Log.WriteLine("Done creating: " + _filePathWithFileName);
+                }
+            }
+            else if (File.Exists(_filePathWithFileName) && File.ReadAllText(_filePathWithFileName) == "0")
+            {
+                using (var fileStream = new FileStream(_filePathWithFileName, FileMode.Truncate))
+                {
+                    if (_optionalFileContent != null)
+                    {
+                        Log.WriteLine("File has content, setting stream");
+                        await _optionalFileContent.CopyToAsync(fileStream);
+                    }
 
-    //            //await fileStream.CopyToAsync(fileStream);
-    //            fileStream.Dispose();
-    //            Log.WriteLine("Already exists, truncated: " + _filePathWithFileName);
-    //        }
-    //    }
-    //}
+                    fileStream.Dispose();
+                    Log.WriteLine("Already exists, truncated: " + _filePathWithFileName);
+                }
+            }
+        }
+        catch (Exception _ex)
+        {
+            Log.WriteLine(_ex.Message, LogLevel.CRITICAL);
+            throw new InvalidOperationException(_ex.Message);
+        }
+    }
 
     //public async static void DeleteDirectoryIfItExists(string _directoryPath)
     //{

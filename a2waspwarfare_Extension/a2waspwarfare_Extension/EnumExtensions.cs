@@ -29,7 +29,7 @@ public static class EnumExtensions
         }
         catch (Exception _ex)
         {
-            Log.WriteLine(_ex.Message);
+            Log.WriteLine(_ex.Message, LogLevel.CRITICAL);
             throw new InvalidOperationException(_ex.Message);
         }
     }

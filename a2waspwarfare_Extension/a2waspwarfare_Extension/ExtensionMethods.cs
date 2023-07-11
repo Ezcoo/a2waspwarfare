@@ -37,7 +37,7 @@ public class ExtensionMethods
         }
         catch (Exception _ex)
         {
-            Log.WriteLine(_ex.Message);
+            Log.WriteLine(_ex.Message, LogLevel.CRITICAL);
             return;
         }
     }
