@@ -31,5 +31,5 @@ public class GameData
     private static GameData instance;
     private static readonly object padlock = new object();
 
-    [DataMember] public string[] exportedArgs = new string[2];
+    [DataMember] public string[] exportedArgs = new string[4];
 }

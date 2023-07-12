@@ -57,7 +57,7 @@ public class GAMESTATUSMESSAGE : BaseMessage
     // Add array here of custom maps later
     private string GetMaxPlayerCountByWorldNameAndChangeMessageColor(string _worldName)
     {
-        if (_worldName == "Chernarus")
+        if (_worldName == "chernarus")
         {
             thisInterfaceMessage.MessageEmbedColor = Color.DarkGreen;
             return "55";
