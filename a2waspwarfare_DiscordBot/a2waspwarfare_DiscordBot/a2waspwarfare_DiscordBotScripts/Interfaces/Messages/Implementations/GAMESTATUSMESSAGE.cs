@@ -29,13 +29,16 @@ public class GAMESTATUSMESSAGE : BaseMessage
 
     public override Task<string> GenerateMessage(ulong _leagueCategoryId = 0)
     {
-        // Get max player count here by the world name
-        // Change the embed message color to green or light yellow
+        string message = string.Empty;
+
+        // Get max player count here by the world name GameData.Instance.exportedArgs[2]
+        string _worldName = GameData.Instance.exportedArgs[2];
+
+        string playerCount = GameData.Instance.exportedArgs[4];
+        string maxPlayerCount = GetMaxPlayerCountByWorldNameAndChangeMessageColor(_worldName);
 
         // worldName as the title (add player count here)
-        thisInterfaceMessage.MessageEmbedTitle = "Game Status " + "[" + GameData.Instance.exportedArgs[2] + "]";
-
-        string message = string.Empty;
+        thisInterfaceMessage.MessageEmbedTitle = _worldName + "[" + playerCount + "/" + maxPlayerCount + "]";
 
         message += "Uptime: " + GameData.Instance.exportedArgs[3] + "\n";
 
@@ -49,5 +52,19 @@ public class GAMESTATUSMESSAGE : BaseMessage
     public override string GenerateMessageFooter()
     {
         return "Last updated at: " + DateTime.UtcNow.ToLongTimeString() + " " + DateTime.UtcNow.ToLongDateString() + " (GMT+0)";
+    }
+
+    // Add array here of custom maps later
+    private string GetMaxPlayerCountByWorldNameAndChangeMessageColor(string _worldName)
+    {
+        if (_worldName == "Chernarus")
+        {
+            thisInterfaceMessage.MessageEmbedColor = Color.DarkGreen;
+            return "55";
+        }
+
+        // Takistan/desert maps
+        thisInterfaceMessage.MessageEmbedColor = Color.Gold;
+        return "61";
     }
 }
