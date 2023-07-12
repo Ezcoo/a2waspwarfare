@@ -59,8 +59,8 @@ public class GameData
     {
         string message = string.Empty;
 
-        message += EnumExtensions.GetEnumMemberAttrValue(EmojiName.BLUFORICON) + exportedArgs[0] +
-            " vs " + EnumExtensions.GetEnumMemberAttrValue(EmojiName.OPFORICON) + exportedArgs[1];
+        message += "Score: " + EnumExtensions.GetEnumMemberAttrValue(EmojiName.BLUFORICON) + exportedArgs[0] +
+            " vs " + exportedArgs[1] + EnumExtensions.GetEnumMemberAttrValue(EmojiName.OPFORICON);
         message += "\nUptime: " + ConvertUpTimeToSecondsAsString();
 
         message += "\n\nPlease balance the teams accordingly!";
