@@ -43,7 +43,7 @@ public class GAMESTATUSMESSAGE : BaseMessage
         string maxPlayerCount = GetMaxPlayerCountByWorldNameAndChangeMessageColor(worldName);
 
         // worldName as the title (add player count here)
-        thisInterfaceMessage.MessageEmbedTitle = "[" + playerCount + "/" + maxPlayerCount + "]" + worldName; 
+        thisInterfaceMessage.MessageEmbedTitle = "[" + playerCount + "/" + maxPlayerCount + "] " + worldName; 
 
         message += "Uptime: " + uptimeConvertedToSeconds + "\n";
 
