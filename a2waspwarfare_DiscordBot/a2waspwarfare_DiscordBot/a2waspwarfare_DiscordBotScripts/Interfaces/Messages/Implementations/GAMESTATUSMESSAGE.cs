@@ -31,9 +31,11 @@ public class GAMESTATUSMESSAGE : BaseMessage
     {
         string message = string.Empty;
 
-        // Get max player count here by the world name GameData.Instance.exportedArgs[2]
+        // Get the world name and capitalize the first letter
         string worldName = GameData.Instance.exportedArgs[2];
-        string uptimeConvertedToSeconds = 
+        worldName = worldName.Substring(0, 1).ToUpper() + worldName.Substring(1);
+
+        string uptimeConvertedToSeconds =
             TimeService.ReturnTimeLeftAsStringFromTheTimeTheActionWillTakePlaceWithTimeLeft(
                 ulong.Parse(GameData.Instance.exportedArgs[3]));
 
@@ -41,9 +43,9 @@ public class GAMESTATUSMESSAGE : BaseMessage
         string maxPlayerCount = GetMaxPlayerCountByWorldNameAndChangeMessageColor(worldName);
 
         // worldName as the title (add player count here)
-        thisInterfaceMessage.MessageEmbedTitle = worldName + "[" + playerCount + "/" + maxPlayerCount + "]";
+        thisInterfaceMessage.MessageEmbedTitle = "[" + playerCount + "/" + maxPlayerCount + "]" + worldName; 
 
-        message += "Uptime: " + uptimeConvertedToSeconds  + "\n";
+        message += "Uptime: " + uptimeConvertedToSeconds + "\n";
 
         message += "\n" + EnumExtensions.GetEnumMemberAttrValue(EmojiName.BLUFORICON) + " BLUFOR: " + GameData.Instance.exportedArgs[0] + "\n";
         message += EnumExtensions.GetEnumMemberAttrValue(EmojiName.OPFORICON) + " OPFOR: " + GameData.Instance.exportedArgs[1] + "\n" +
@@ -60,7 +62,7 @@ public class GAMESTATUSMESSAGE : BaseMessage
     // Add array here of custom maps later
     private string GetMaxPlayerCountByWorldNameAndChangeMessageColor(string _worldName)
     {
-        if (_worldName == "chernarus")
+        if (_worldName == "Chernarus")
         {
             thisInterfaceMessage.MessageEmbedColor = Color.DarkGreen;
             return "55";
