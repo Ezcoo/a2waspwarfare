@@ -8,7 +8,7 @@ while {true} do {
     _scoreSideWest = scoreSide west;
     _scoreSideEast = scoreSide east;
     _uptime = round(time);
-    _playerCount = abs(count allPlayers - 1); // Exclude headless client
+    _playerCount = count(call BIS_fnc_listPlayers - entities "HeadlessClient_F"); // Exclude headless client
 
     "a2waspwarfare_Extension" callExtension format ["%1,%2,%3,%4,%5,%6",_cSharpClassName,_scoreSideWest,_scoreSideEast,_currentMap,_uptime,_playerCount];
     ["INFORMATION", Format ["Done %1: %2 | %3 | %4 | %5 | %6",_cSharpClassName,_scoreSideWest,_scoreSideEast,_currentMap,_uptime,_playerCount]] Call WFBE_CO_FNC_LogContent;
