@@ -38,6 +38,8 @@ public class GameDataUpdateEvent : ScheduledEvent
                 CategoryType.GAMESTATUSCATEGORY).FindInterfaceChannelWithNameInTheCategory(
                     ChannelType.GAMESTATUSCHANNEL).FindInterfaceMessageWithNameInTheChannel(
                         MessageName.GAMESTATUSMESSAGE).GenerateAndModifyTheMessage();
+
+            SetTheBotStatus();
         }
         catch (Exception ex)
         {
@@ -46,4 +48,25 @@ public class GameDataUpdateEvent : ScheduledEvent
         }
     }
 
+    // Changes the bot status message to: "Playing: Chernarus[35/55]" for example, and the status to online/away depending on the map
+    private void SetTheBotStatus()
+    {
+        var client = BotReference.GetClientRef();
+        string worldName = GameData.Instance.GetWorldNameAsCapitalFirstLetter();
+
+        client.SetGameAsync(GameData.Instance.GetGameMapAndPlayerCount());
+
+        if (worldName == "Chernarus")
+        {
+            client.SetStatusAsync(status: Discord.UserStatus.Online);
+        }
+        else if (worldName == "Takistan")
+        {
+            client.SetStatusAsync(status: Discord.UserStatus.AFK);
+        }
+        else
+        {
+            client.SetStatusAsync(status: Discord.UserStatus.DoNotDisturb);
+        }
+    }
 }

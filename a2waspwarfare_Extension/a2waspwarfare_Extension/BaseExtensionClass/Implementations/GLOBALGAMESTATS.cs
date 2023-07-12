@@ -5,11 +5,11 @@ public class GLOBALGAMESTATS : BaseExtensionClass
     // Args:
     // [0] BLUFOR SCORE
     // [1] OPFOR SCORE
+    // [2] Current map
     // Todo:
-    // [2] Uptime
-    // [3] Current map
+    // [3] Uptime
     // [4] Player count
-    // [5] Match id etc
+
     public override void ActivateExtensionMethodOnTheDerivedClass(string[] _args)
     {
         try

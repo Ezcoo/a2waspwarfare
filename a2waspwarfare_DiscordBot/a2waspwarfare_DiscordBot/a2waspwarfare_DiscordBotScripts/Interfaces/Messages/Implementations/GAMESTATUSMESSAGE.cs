@@ -19,7 +19,7 @@ public class GAMESTATUSMESSAGE : BaseMessage
             {
             });
 
-        thisInterfaceMessage.MessageEmbedTitle = "Game Status (scores)";
+        thisInterfaceMessage.MessageEmbedTitle = "Game Status [insert map here]";
     }
 
     protected override void GenerateButtons(ComponentBuilder _component, ulong _leagueCategoryId)
@@ -29,17 +29,28 @@ public class GAMESTATUSMESSAGE : BaseMessage
 
     public override Task<string> GenerateMessage(ulong _leagueCategoryId = 0)
     {
-        string message = string.Empty;
+        thisInterfaceMessage.MessageEmbedTitle = GameData.Instance.GetGameMapAndPlayerCount();
+        thisInterfaceMessage.MessageDescription = GameData.Instance.GenerateGameStatusMessage();
+        ChangeMessageColorDependingOnTheCurrentWorldName();
 
-        message += EnumExtensions.GetEnumMemberAttrValue(EmojiName.BLUFORICON) + " BLUFOR: " + GameData.Instance.exportedArgs[0] + "\n";
-        message += EnumExtensions.GetEnumMemberAttrValue(EmojiName.OPFORICON) + " OPFOR: " + GameData.Instance.exportedArgs[1] + "\n" +
-            "\nPlease balance the teams accordingly!";
-
-        return Task.FromResult(message);
+        return Task.FromResult(thisInterfaceMessage.MessageDescription);
     }
 
     public override string GenerateMessageFooter()
     {
         return "Last updated at: " + DateTime.UtcNow.ToLongTimeString() + " " + DateTime.UtcNow.ToLongDateString() + " (GMT+0)";
+    }
+
+    // Add array here of custom maps later
+    private void ChangeMessageColorDependingOnTheCurrentWorldName()
+    {
+        if (GameData.Instance.GetWorldNameAsCapitalFirstLetter() == "Chernarus")
+        {
+            thisInterfaceMessage.MessageEmbedColor = Color.DarkGreen;
+            return;
+        }
+
+        // Takistan/desert maps
+        thisInterfaceMessage.MessageEmbedColor = Color.Gold;
     }
 }
