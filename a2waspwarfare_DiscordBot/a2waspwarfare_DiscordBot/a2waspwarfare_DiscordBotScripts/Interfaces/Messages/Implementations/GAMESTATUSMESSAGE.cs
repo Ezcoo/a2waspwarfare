@@ -19,7 +19,7 @@ public class GAMESTATUSMESSAGE : BaseMessage
             {
             });
 
-        thisInterfaceMessage.MessageEmbedTitle = "Game Status (scores)";
+        thisInterfaceMessage.MessageEmbedTitle = "Game Status [insert map here]";
     }
 
     protected override void GenerateButtons(ComponentBuilder _component, ulong _leagueCategoryId)
@@ -29,6 +29,12 @@ public class GAMESTATUSMESSAGE : BaseMessage
 
     public override Task<string> GenerateMessage(ulong _leagueCategoryId = 0)
     {
+        // Get max player count here by the world name
+        // Change the embed message color to green or light yellow
+
+        // worldName as the title (add player count here)
+        thisInterfaceMessage.MessageEmbedTitle = "Game Status " + "[" + GameData.Instance.exportedArgs[2] + "]";
+
         string message = string.Empty;
 
         message += EnumExtensions.GetEnumMemberAttrValue(EmojiName.BLUFORICON) + " BLUFOR: " + GameData.Instance.exportedArgs[0] + "\n";
