@@ -58,11 +58,12 @@ public class GameData
     public string GenerateGameStatusMessage()
     {
         string message = string.Empty;
-        message += "Uptime: " + ConvertUpTimeToSecondsAsString() + "\n";
 
-        message += "\n" + EnumExtensions.GetEnumMemberAttrValue(EmojiName.BLUFORICON) + " BLUFOR: " + exportedArgs[0] + "\n";
-        message += EnumExtensions.GetEnumMemberAttrValue(EmojiName.OPFORICON) + " OPFOR: " + exportedArgs[1] + "\n" +
-            "\nPlease balance the teams accordingly!";
+        message += EnumExtensions.GetEnumMemberAttrValue(EmojiName.BLUFORICON) + exportedArgs[0] +
+            " vs " + EnumExtensions.GetEnumMemberAttrValue(EmojiName.OPFORICON) + exportedArgs[1];
+        message += "\nUptime: " + ConvertUpTimeToSecondsAsString();
+
+        message += "\n\nPlease balance the teams accordingly!";
         return message;
     }
 
