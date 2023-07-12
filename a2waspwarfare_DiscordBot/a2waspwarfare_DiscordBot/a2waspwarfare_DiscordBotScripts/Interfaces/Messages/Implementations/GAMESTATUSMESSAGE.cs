@@ -37,4 +37,9 @@ public class GAMESTATUSMESSAGE : BaseMessage
 
         return Task.FromResult(message);
     }
+
+    public override string GenerateMessageFooter()
+    {
+        return "Last updated at: " + DateTime.UtcNow.ToLongTimeString() + " " + DateTime.UtcNow.ToLongDateString() + " (GMT+0)";
+    }
 }
