@@ -37,7 +37,9 @@ public class GAMESTATUSMESSAGE : BaseMessage
 
         string message = string.Empty;
 
-        message += EnumExtensions.GetEnumMemberAttrValue(EmojiName.BLUFORICON) + " BLUFOR: " + GameData.Instance.exportedArgs[0] + "\n";
+        message += "Uptime: " + GameData.Instance.exportedArgs[3] + "\n";
+
+        message += "\n" + EnumExtensions.GetEnumMemberAttrValue(EmojiName.BLUFORICON) + " BLUFOR: " + GameData.Instance.exportedArgs[0] + "\n";
         message += EnumExtensions.GetEnumMemberAttrValue(EmojiName.OPFORICON) + " OPFOR: " + GameData.Instance.exportedArgs[1] + "\n" +
             "\nPlease balance the teams accordingly!";
 
