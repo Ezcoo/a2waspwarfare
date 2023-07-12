@@ -15,7 +15,7 @@ public class RAWMESSAGEINPUT : BaseMessage
                 new KeyValuePair<ButtonName, int>(ButtonName.REPORTSCOREBUTTON, 4),
             });*/
 
-        thisInterfaceMessage.MessageDescription = "Empty message"; 
+        thisInterfaceMessage.MessageDescription = "Empty message";
     }
 
     protected override void GenerateButtons(ComponentBuilder _component, ulong _leagueCategoryId)
@@ -41,5 +41,10 @@ public class RAWMESSAGEINPUT : BaseMessage
         thisInterfaceMessage.MessageEmbedTitle = _embedTitle;
         thisInterfaceMessage.MessageDescription = _input;
         return thisInterfaceMessage.MessageDescription;
+    }
+
+    public override string GenerateMessageFooter()
+    {
+        return DateTime.UtcNow.Date.ToLongDateString();
     }
 }
