@@ -606,7 +606,7 @@ sleep 3;
 
 /* Client death handler. */
 WFBE_PLAYERKEH = player addEventHandler ['Killed', {[_this select 0,_this select 1] Spawn WFBE_CL_FNC_OnKilled; [_this select 0,_this select 1, sideID] Spawn WFBE_CO_FNC_OnUnitKilled}];
-hint parseText "<t color='#ffff00'>v11072023<br/><br/>First iteration of a discord bot has been deployed on to the server. It has a score of both teams visible on the #game-status channel. Veterans are adviced to check this channel before joining the game, and balance the game accordingly. Join on our discord: discord.me/warfare or https://discord.gg/gRhPHUuWpy . Thanks! </t>";
+hint parseText "<t color='#ffff00'>v13072023<br/><br/>First iteration of a discord bot has been deployed on to the server. It has a score of both teams visible on the #game-status channel. Veterans are adviced to check this channel before joining the game, and balance the game accordingly. Join on our discord: discord.me/warfare or https://discord.gg/gRhPHUuWpy . Thanks! </t>";
 //--- Valhalla init.
 [] Spawn {
 	[] Call Compile preprocessFile "Client\Module\Valhalla\Init_Valhalla.sqf";
