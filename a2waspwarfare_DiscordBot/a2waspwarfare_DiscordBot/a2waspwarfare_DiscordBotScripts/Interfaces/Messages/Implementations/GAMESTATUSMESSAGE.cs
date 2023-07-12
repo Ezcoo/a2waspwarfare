@@ -32,8 +32,8 @@ public class GAMESTATUSMESSAGE : BaseMessage
         string message = string.Empty;
 
         message += "BLUFOR: " + GameData.Instance.exportedArgs[0] + "\n";
-        message += "OPFOR: " + GameData.Instance.exportedArgs[1] + "\n\n" +
-            "Please balance the teams accordingly!";
+        message += "OPFOR: " + GameData.Instance.exportedArgs[1] + "\n" +
+            "\nPlease balance the teams accordingly!";
 
         return Task.FromResult(message);
     }
