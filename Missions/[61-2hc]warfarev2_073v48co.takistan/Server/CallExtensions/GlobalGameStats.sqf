@@ -7,7 +7,7 @@ while {true} do {
 
     _scoreSideWest = scoreSide west;
     _scoreSideEast = scoreSide east;
-    _uptime = Call GetTime;
+    _uptime = round(time);
     _playerCount = abs(count allPlayers - 1); // Exclude headless client
 
     "a2waspwarfare_Extension" callExtension format ["%1,%2,%3,%4,%5,%6",_cSharpClassName,_scoreSideWest,_scoreSideEast,_currentMap,_uptime,_playerCount];
