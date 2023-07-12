@@ -32,15 +32,18 @@ public class GAMESTATUSMESSAGE : BaseMessage
         string message = string.Empty;
 
         // Get max player count here by the world name GameData.Instance.exportedArgs[2]
-        string _worldName = GameData.Instance.exportedArgs[2];
+        string worldName = GameData.Instance.exportedArgs[2];
+        string uptimeConvertedToSeconds = 
+            TimeService.ReturnTimeLeftAsStringFromTheTimeTheActionWillTakePlaceWithTimeLeft(
+                ulong.Parse(GameData.Instance.exportedArgs[3]));
 
         string playerCount = GameData.Instance.exportedArgs[4];
-        string maxPlayerCount = GetMaxPlayerCountByWorldNameAndChangeMessageColor(_worldName);
+        string maxPlayerCount = GetMaxPlayerCountByWorldNameAndChangeMessageColor(worldName);
 
         // worldName as the title (add player count here)
-        thisInterfaceMessage.MessageEmbedTitle = _worldName + "[" + playerCount + "/" + maxPlayerCount + "]";
+        thisInterfaceMessage.MessageEmbedTitle = worldName + "[" + playerCount + "/" + maxPlayerCount + "]";
 
-        message += "Uptime: " + GameData.Instance.exportedArgs[3] + "\n";
+        message += "Uptime: " + uptimeConvertedToSeconds  + "\n";
 
         message += "\n" + EnumExtensions.GetEnumMemberAttrValue(EmojiName.BLUFORICON) + " BLUFOR: " + GameData.Instance.exportedArgs[0] + "\n";
         message += EnumExtensions.GetEnumMemberAttrValue(EmojiName.OPFORICON) + " OPFOR: " + GameData.Instance.exportedArgs[1] + "\n" +
