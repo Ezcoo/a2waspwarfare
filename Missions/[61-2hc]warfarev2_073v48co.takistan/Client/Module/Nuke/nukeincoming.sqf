@@ -6,6 +6,8 @@ _nukeMarker = _this select 1;
 [nil, "LocalizeMessage", ['TacticalLaunch']] Call WFBE_CO_FNC_SendToClients;
 if (isMultiplayer) then {(localize "STR_WF_CHAT_ICBM_Launch") Call CommandChatMessage};
 
+[nil, "IcbmNotify", []] Call WFBE_CO_FNC_SendToClients;
+
 sleep 300;
 
 _path = "\ca\air2\cruisemissile\"; //";
