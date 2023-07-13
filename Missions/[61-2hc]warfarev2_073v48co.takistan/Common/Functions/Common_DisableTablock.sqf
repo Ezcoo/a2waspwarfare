@@ -20,7 +20,11 @@ if ((_vehicle == player) || // Fixes not being able to use tablock for bipod
     ((typeOf _vehicle == "M6_EP1") && (currentWeapon _vehicle == "9M311Laucher")) ||
     ((typeOf _vehicle == "2S6M_Tunguska") && (currentWeapon _vehicle == "9M311Laucher")) ||
     ((typeOf _vehicle == "HMMWV_Avenger") && (currentWeapon _vehicle == "StingerLaucher")) ||
-    ((typeOf _vehicle == "HMMWV_Avenger_DES_EP1") && (currentWeapon _vehicle == "StingerLaucher"))) then
+    ((typeOf _vehicle == "HMMWV_Avenger_DES_EP1") && (currentWeapon _vehicle == "StingerLaucher")) ||
+    ((typeOf _vehicle == "ZSU_INS") && (currentWeapon _vehicle == "AZP85")) ||
+    ((typeOf _vehicle == "ZSU_CDF") && (currentWeapon _vehicle == "AZP85")) ||
+    ((typeOf _vehicle == "ZSU_TK_EP1") && (currentWeapon _vehicle == "AZP85"))
+    ) then
 {
     _handled = false
 }
