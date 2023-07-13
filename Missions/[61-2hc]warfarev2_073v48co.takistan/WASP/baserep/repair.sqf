@@ -20,7 +20,7 @@ for "_j" from 0 to 1 do
     parseText format ["<t size='1'>%1</t><br /><t size='1.2'>%2:</t><t size='1.2' color='%3' align='center'> %4 %5</t>",(baseb select objnum) select 1,localize "RB_state",_color ,str (_dam), "%"]
     ];
     hintSilent _text;
-    if (_dam == 100 && _currentSupply == 0) exitWith {repairprocess = "no";};
+    if (_dam == 100 || _currentSupply == 0) exitWith {repairprocess = "no";};
 	[sideJoined, -15] Call ChangeSideSupply;
     _dam = _dam + (baseb select objnum select 3);
     _dam = 1 - (_dam/100);	
