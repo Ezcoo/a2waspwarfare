@@ -12,4 +12,10 @@ class Bipod_ON {
 		sound[] = {"\sounds\Bipod_ON.ogg",10,1};
 		titles[] = {};
 	};
+
+class playerSelectedAsCommander {
+		name = "playerSelectedAsCommander";
+		sound[] = {"\sounds\playerSelectedAsCommander.ogg",10,1};
+		titles[] = {};
+	};
 };
