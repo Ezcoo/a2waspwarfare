@@ -14,7 +14,7 @@ while {alive _defense} do {
 			_index = (missionNamespace getVariable Format["WFBE_%1STRUCTURENAMES",str _side]) find _type;
 			_distance = (missionNamespace getVariable Format["WFBE_%1STRUCTUREDISTANCES",str _side]) select _index;
 			_direction = (missionNamespace getVariable Format["WFBE_%1STRUCTUREDIRECTIONS",str _side]) select _index;
-			_position = [getPosATL _closest,_distance,getDir (_closest) + _direction] Call WFBE_CO_FNC_GetPositionFrom;
+			_position = [getPos _closest,_distance,getDir (_closest) + _direction] Call GetPositionFrom;
 
 			_HC = missionNamespace getVariable "WFBE_HEADLESSCLIENTS_ID";
 			if (count _HC > 0) then {
