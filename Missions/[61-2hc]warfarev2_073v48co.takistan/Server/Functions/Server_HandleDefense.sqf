@@ -22,16 +22,14 @@ while {alive _defense} do {
 				_positions = [] + [_position];
 				[_side, _groups, _positions, _team, _defense, false] Call WFBE_SE_FNC_DelegateAIStaticDefenceHeadless;
 			}else{
-			    if(!((typeof _defense) in WFBE_C_ADV_AIR_DEFENCE)) then{
-			        _sideID = (_side) Call WFBE_CO_FNC_GetSideID;
-                    _type = missionNamespace getVariable Format ["WFBE_%1SOLDIER", _side];
-                    _soldier = [_type,_team,getPosATL _defense,_sideID] Call WFBE_CO_FNC_CreateUnit;
-                    [_soldier] allowGetIn true;
-                    _soldier assignAsGunner _defense;
-                    [_soldier] orderGetIn true;
-                    _soldier moveInGunner _defense;
-                    [_team, 1000, getPosATL _defense] spawn WFBE_CO_FNC_RevealArea;
-			    };
+			    _sideID = (_side) Call WFBE_CO_FNC_GetSideID;
+                _type = missionNamespace getVariable Format ["WFBE_%1SOLDIER", _side];
+                _soldier = [_type,_team,getPosATL _defense,_sideID] Call WFBE_CO_FNC_CreateUnit;
+                [_soldier] allowGetIn true;
+                _soldier assignAsGunner _defense;
+                [_soldier] orderGetIn true;
+                _soldier moveInGunner _defense;
+                [_team, 1000, getPosATL _defense] spawn WFBE_CO_FNC_RevealArea;
 			};
 
 			[str _side,'UnitsCreated',1] Call WFBE_CO_FNC_UpdateStatistics;
