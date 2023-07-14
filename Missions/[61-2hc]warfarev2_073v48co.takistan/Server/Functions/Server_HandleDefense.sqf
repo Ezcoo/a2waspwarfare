@@ -18,10 +18,8 @@ while {alive _defense} do {
 
 			_HC = missionNamespace getVariable "WFBE_HEADLESSCLIENTS_ID";
 			if (count _HC > 0) then {
-				_groups = [];
-				_groups pushBack (missionNamespace getVariable Format ["WFBE_%1SOLDIER", _side]);
-				_positions = [];
-				_positions pushBack _position;
+				_groups = [] + [missionNamespace getVariable Format ["WFBE_%1SOLDIER", _side]];
+				_positions = [] + [_position];
 				[_side, _groups, _positions, _team, _defense, false] Call WFBE_SE_FNC_DelegateAIStaticDefenceHeadless;
 			}else{
 			    if(!((typeof _defense) in WFBE_C_ADV_AIR_DEFENCE)) then{
