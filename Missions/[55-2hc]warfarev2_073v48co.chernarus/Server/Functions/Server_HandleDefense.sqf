@@ -32,7 +32,7 @@ while {alive _defense} do {
                 [_team, 1000, getPosATL _defense] spawn WFBE_CO_FNC_RevealArea;
 			};
 
-			[str _side,'UnitsCreated',1] Call WFBE_CO_FNC_UpdateStatistics;
+			[str _side,'UnitsCreated',1] Call UpdateStatistics;
 			["INFORMATION", Format ["Server_HandleDefense.sqf: [%1] Unit has been dispatched to a [%2] defense.", str _side,_type]] Call WFBE_CO_FNC_LogContent;
 
 		} else {
