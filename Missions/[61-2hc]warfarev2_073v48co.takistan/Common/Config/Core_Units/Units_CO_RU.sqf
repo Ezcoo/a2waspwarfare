@@ -137,7 +137,7 @@ if ((missionNamespace getVariable "WFBE_C_UNITS_TOWN_PURCHASE") > 0) then {
 	_u = _u		+ [missionNamespace getVariable "WFBE_EASTSOLDIER"];
 	_u = _u		+ ['TK_Soldier_Medic_EP1'];
 	_u = _u		+ ['TK_Soldier_Engineer_EP1'];
-	_u = _u		+ ['TK_Soldier_LAT_EP1'];
+	_u = _u		+ ['TK_Soldier_AT_EP1'];
 	_u = _u		+ ['TK_Soldier_MG_EP1'];
 	_u = _u		+ ['TK_Soldier_AA_EP1'];
 _u = _u		+ ["UralCivil"];
