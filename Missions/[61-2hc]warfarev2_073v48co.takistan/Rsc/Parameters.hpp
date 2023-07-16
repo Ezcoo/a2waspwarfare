@@ -17,7 +17,7 @@ class Params {
 		title = "$STR_WF_PARAMETER_GroupSizePlayer";
 		values[] = {2,4,6,8,10,12,14,16};
 		texts[] = {"2","4","6","8","10","12","14","16"};
-		default = 12;
+		default = 14;
 	};
 	class WFBE_C_AI_TEAMS_JIP_PRESERVE {
 		title = "$STR_WF_PARAMETER_KeepAI";
