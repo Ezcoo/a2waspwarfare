@@ -6,6 +6,12 @@ _nukeMarker = _this select 1;
 [nil, "LocalizeMessage", ['TacticalLaunch']] Call WFBE_CO_FNC_SendToClients;
 if (isMultiplayer) then {(localize "STR_WF_CHAT_ICBM_Launch") Call CommandChatMessage};
 
+// Plays the sound on the client
+playSound ["icbmLaunch",true];
+
+// Sends the sound to played on the other clients
+[nil, "IcbmNotify", []] Call WFBE_CO_FNC_SendToClients;
+
 sleep 300;
 
 _path = "\ca\air2\cruisemissile\"; //";
