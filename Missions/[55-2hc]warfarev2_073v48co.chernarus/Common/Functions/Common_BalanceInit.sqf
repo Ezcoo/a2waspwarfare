@@ -181,4 +181,9 @@ case "M1128_MGS_EP1":{
     _this addMagazineTurret ["6RND_105mm_APDS", [0]];
 };
 
+case "Mi24_P": {
+    _this addMagazineTurret ["750Rnd_30mm_GSh301",[-1]];
+    _this addMagazineTurret ["750Rnd_30mm_GSh301",[-1]];
+};
+
 };
