@@ -54,9 +54,13 @@ if ((!isNull _killer) && (isPlayer _killer)) then
     };
 };
 
-// Change the score of the leader of the group upon killing the hq
-_score = 900; // HQ bounty award / 100*3
-['SRVFNCREQUESTCHANGESCORE',[leader _killerGroup, score leader _killerGroup + _score]] Spawn WFBE_SE_FNC_HandlePVF;
+// Only awards score for non-teamkills of the HQ
+if (_side != side _killer) then
+{
+    // Change the score of the leader of the group upon killing the hq
+    _score = 900; // HQ bounty award / 100*3
+    ['SRVFNCREQUESTCHANGESCORE',[leader _killerGroup, score leader _killerGroup + _score]] Spawn WFBE_SE_FNC_HandlePVF;
+};
 
 ["INFORMATION", Format["Server_OnHQKilled.sqf : [%1] HQ [%2] has been destroyed by [%3], Teamkill? [%4], Side Teamkill? [%5]", _side, _structure_kind, name _killer, _teamkill, side _killer]] Call WFBE_CO_FNC_LogContent;
 
