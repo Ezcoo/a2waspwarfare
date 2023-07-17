@@ -5,7 +5,7 @@
 		- Shooter
 */
 
-Private ["_building","_dammages","_dammages_current","_get","_killer","_logik","_origin","_structure","_structure_kind"];
+Private ["_building","_dammages","_dammages_current","_get","_killer","_logik","_origin","_structure","_structure_kind","_score","_killerGroup"];
 
 _structure = _this select 0;
 _killer = _this select 1;
@@ -13,6 +13,7 @@ _killer = _this select 1;
 _structure_kind = typeOf _structure;
 _side = _structure getVariable "wfbe_side";
 _logik = (_side) Call WFBE_CO_FNC_GetSideLogic;
+_killerGroup = group _killer;
 
 //--- If HQ was mobibilized, spawn a dead hq.
 if ((_side) Call WFBE_CO_FNC_GetSideHQDeployStatus) then {
@@ -53,7 +54,9 @@ if ((!isNull _killer) && (isPlayer _killer)) then
     };
 };
 
-
+// Change the score of the leader of the group upon killing the hq
+_score = 900; // HQ bounty award / 100*3
+['SRVFNCREQUESTCHANGESCORE',[leader _killerGroup, score leader _killerGroup + _score]] Spawn WFBE_SE_FNC_HandlePVF;
 
 ["INFORMATION", Format["Server_OnHQKilled.sqf : [%1] HQ [%2] has been destroyed by [%3], Teamkill? [%4], Side Teamkill? [%5]", _side, _structure_kind, name _killer, _teamkill, side _killer]] Call WFBE_CO_FNC_LogContent;
 
