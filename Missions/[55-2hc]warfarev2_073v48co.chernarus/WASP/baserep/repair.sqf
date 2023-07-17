@@ -30,7 +30,7 @@ for "_j" from 0 to 1 do
     sleep 1;
    };
  };}
- else {_text = composeText [parseText format ["<t size='1'>%1</t><br /><t size='1.2'>%2:</t><t size='1.2' color='%3' align='center'> %4 %5</t>",(baseb select objnum) select 1,localize "RB_have_no_suppluys_for_rep",_color ,str (_dam), "%"]];
+ else {_text = composeText [parseText format ["<t size='1'>%1</t><br /><t size='1.2'>%2:</t><t size='1.2' color='%3' align='center'> %4 %5</t>",(baseb select objnum) select 1,localize "RB_state",_color ,str (_dam), "%"]];
  hint _text;
  };
 
