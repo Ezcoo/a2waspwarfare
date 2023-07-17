@@ -5,7 +5,7 @@
 		- Shooter
 */
 
-Private ["_building","_dammages","_dammages_current","_get","_killer","_logik","_origin","_structure","_structure_kind","_score","_killerGroup"];
+Private ["_building","_dammages","_dammages_current","_get","_killer","_logik","_origin","_structure","_structure_kind","_killerGroup"];
 
 _structure = _this select 0;
 _killer = _this select 1;
@@ -57,8 +57,10 @@ if ((!isNull _killer) && (isPlayer _killer)) then
 // Only awards score for non-teamkills of the HQ
 if (_side != side _killer) then
 {
-    // Change the score of the leader of the group upon killing the hq
+    Private ["_score"];
     _score = 900; // HQ bounty award / 100*3
+
+    // Change the score of the leader of the group upon killing the hq
     ['SRVFNCREQUESTCHANGESCORE',[leader _killerGroup, score leader _killerGroup + _score]] Spawn WFBE_SE_FNC_HandlePVF;
 };
 
