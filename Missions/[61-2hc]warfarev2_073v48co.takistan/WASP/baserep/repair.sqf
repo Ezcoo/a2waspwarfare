@@ -5,7 +5,7 @@ _dr = 100 - _dam;
 sleep 1;
 _currentSupply = 0;
 _currentSupply = (sideJoined) Call GetSideSupply;
-if (_currentSupply > 5) then {
+if (_currentSupply > 15) then {
 for "_j" from 0 to 1 do
  {
   sleep 1;
@@ -33,6 +33,5 @@ for "_j" from 0 to 1 do
  else {_text = composeText [parseText format ["<t size='1'>%1</t><br /><t size='1.2'>%2:</t><t size='1.2' color='%3' align='center'> %4 %5</t>",(baseb select _i) select 1,localize "RB_have_no_suppluys_for_rep",_color ,str (_dam), "%"]];
  hint _text;
  };
-
 
 repairprocess = "no";
