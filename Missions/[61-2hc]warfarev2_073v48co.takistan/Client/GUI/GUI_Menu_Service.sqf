@@ -204,28 +204,34 @@ while {true} do {
 		//--- Repair.
 		if (MenuAction == 2) then {
 			MenuAction = -1;
-			-_repairPrice Call ChangePlayerFunds;
-			
-			//--- Spawn a Repair thread.
-			[_veh,_nearSupport select _curSel,_typeRepair,_spType] Spawn SupportRepair;
+
+			if (_repairPrice > 0) then {
+                -_repairPrice Call ChangePlayerFunds;
+
+                //--- Spawn a Repair thread.
+                [_veh,_nearSupport select _curSel,_typeRepair,_spType] Spawn SupportRepair;
+			};
 		};
-		
+
 		//--- Refuel.
 		if (MenuAction == 3) then {
 			MenuAction = -1;
 			-_refuelPrice Call ChangePlayerFunds;
-			
+
 			//--- Spawn a Refuel thread.
 			[_veh,_nearSupport select _curSel,_typeRepair,_spType] Spawn SupportRefuel;
 		};
-		
+
 		//--- Heal.
 		if (MenuAction == 5) then {
 			MenuAction = -1;
-			-_healPrice Call ChangePlayerFunds;
-			
-			//--- Spawn a Healing thread.
-			[_veh,_nearSupport select _curSel,_typeRepair,_spType] Spawn SupportHeal;
+
+			if (_healPrice > 0) then {
+			    -_healPrice Call ChangePlayerFunds;
+
+			    //--- Spawn a Healing thread.
+			    [_veh,_nearSupport select _curSel,_typeRepair,_spType] Spawn SupportHeal;
+			};
 		};
 	} else {
 		{ctrlEnable[_x,false]} forEach [20003,20004,20005,20008];
