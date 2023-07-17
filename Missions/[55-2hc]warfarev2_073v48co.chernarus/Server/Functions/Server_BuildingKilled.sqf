@@ -20,6 +20,7 @@ if ((!isNull _killer) && (isPlayer _killer)) then
     }
     else
     {
+        Private ['_killerGroup'];
         _killerGroup = group _killer;
         _supplies = 0;
 		_bounty = switch (true) do {
@@ -59,6 +60,9 @@ if ((!isNull _killer) && (isPlayer _killer)) then
        {
             [_side_killer, "LocalizeMessage", ["HeadHunterReceiveBounty", (name _killer), _bounty, _type, _side]] call WFBE_CO_FNC_SendToClients;
        };
+
+       // Increased the score gain a bit
+       _score = _score * 3;
 
        // Change the score of the leader of the group upon killing a factory
        ['SRVFNCREQUESTCHANGESCORE',[leader _killerGroup, score leader _killerGroup + _score]] Spawn WFBE_SE_FNC_HandlePVF;
