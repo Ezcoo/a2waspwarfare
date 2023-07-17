@@ -12,6 +12,8 @@ for "_j" from 0 to 1 do
   player playMove "AinvPknlMstpSlayWrflDnon_medic";
   for "_i" from 0 to 6 do
    {
+    // Get the updated supply value between the repair cycles too
+    _currentSupply = (sideJoined) Call GetSideSupply;
 
     _dam = (1 - getDammage obj)*100;
 	if ( _dam > 67) then {_color = "#00ff00";} else {
