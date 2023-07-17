@@ -20,7 +20,7 @@ while {alive _defense} do {
 			if (count _HC > 0) then {
 				_groups = [] + [missionNamespace getVariable Format ["WFBE_%1SOLDIER", _side]];
 				_positions = [] + [_position];
-				[_side, _groups, _positions, _team, _defense, false] Call WFBE_SE_FNC_DelegateAIStaticDefenceHeadless;
+				[_side, _groups, _positions, _team, _defense, false] Call WFBE_CO_FNC_DelegateAIStaticDefenceHeadless;
 			}else{
 			    _sideID = (_side) Call WFBE_CO_FNC_GetSideID;
                 _type = missionNamespace getVariable Format ["WFBE_%1SOLDIER", _side];
