@@ -20,6 +20,7 @@ if ((!isNull _killer) && (isPlayer _killer)) then
     }
     else
     {
+        Private ['_killerGroup'];
         _killerGroup = group _killer;
         _supplies = 0;
 		_bounty = switch (true) do {
