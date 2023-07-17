@@ -5,13 +5,15 @@ _dr = 100 - _dam;
 sleep 1;
 _currentSupply = 0;
 _currentSupply = (sideJoined) Call GetSideSupply;
-if (_currentSupply > 5) then {
+if (_currentSupply > 15) then {
 for "_j" from 0 to 1 do
  {
   sleep 1;
   player playMove "AinvPknlMstpSlayWrflDnon_medic";
   for "_i" from 0 to 6 do
    {
+    // Get the updated supply value between the repair cycles too
+    _currentSupply = (sideJoined) Call GetSideSupply;
 
     _dam = (1 - getDammage obj)*100;
 	if ( _dam > 67) then {_color = "#00ff00";} else {
@@ -28,9 +30,8 @@ for "_j" from 0 to 1 do
     sleep 1;
    };
  };}
- else {_text = composeText [parseText format ["<t size='1'>%1</t><br /><t size='1.2'>%2:</t><t size='1.2' color='%3' align='center'> %4 %5</t>",(baseb select _i) select 1,localize "RB_have_no_suppluys_for_rep",_color ,str (_dam), "%"]];
+ else {_text = composeText [parseText format ["<t size='1'>%1</t><br /><t size='1.2'>%2:</t><t size='1.2' color='%3' align='center'> %4 %5</t>",(baseb select objnum) select 1,localize "RB_have_no_suppluys_for_rep",_color ,str (_dam), "%"]];
  hint _text;
  };
-
 
 repairprocess = "no";
