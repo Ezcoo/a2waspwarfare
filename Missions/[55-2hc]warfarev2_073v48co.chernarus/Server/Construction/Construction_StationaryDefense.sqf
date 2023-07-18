@@ -74,6 +74,20 @@ Call Compile Format ["_defense addEventHandler ['Killed',{[_this select 0,_this 
 if (_defense emptyPositions "gunner" > 0 && (((missionNamespace getVariable "WFBE_C_BASE_DEFENSE_MAX_AI") > 0) || _isAIQuery)) then {
 	Private ["_alives","_check","_closest","_team"];
 	_team = _area getVariable "DefenseTeam";
+
+	if (isNil '_team') then {
+        _team = createGroup [_side, true];
+        _area setVariable ["DefenseTeam", _team];
+    }else{
+        if(side _team != _side) then{
+            _team = createGroup [_side, true];
+        };
+        if((count units _team) > 10) then {
+            _team = createGroup [_side, true];
+        };
+        _area setVariable ["DefenseTeam", _team];
+    };
+
 	emptyQueu = emptyQueu + [_defense];
 	[_defense] Spawn WFBE_SE_FNC_HandleEmptyVehicle;
 	if (_manned) then {
