@@ -25,7 +25,10 @@ if (alive _vehicle) then {
 					(_vehicle) Spawn WFBE_CO_MOD_IRS_DeploySmoke;
 					_vehicle setVariable ["wfbe_irs_lastfired", time];
 					_vehicle setVariable ["wfbe_irs_flares", (_vehicle getVariable "wfbe_irs_flares") - 1, true];
-					if (local player) then {_vehicle vehicleChat Format[localize "STR_WF_CHAT_IRS_Deployed",_vehicle getVariable "wfbe_irs_flares"]};
+					if (local player) then {
+					    _vehicle vehicleChat Format[localize "STR_WF_CHAT_IRS_Deployed",_vehicle getVariable "wfbe_irs_flares"];
+					    playSound ["inboundMissileGround", true];
+                    };
 				};
 			};
 		};
