@@ -4,33 +4,39 @@ _brr = missionNamespace getVariable "WFBE_C_BASE_AREA_RANGE";
 _mbr = missionNamespace getVariable "WFBE_C_BASE_HQ_BUILD_RANGE";
 
 _onAreaRemoved = {
-	Private ["_areas", "_center", "_delete", "_objects", "_side"];
-	_center = _this select 0;
-	_side = _this select 1;
-	_areas = _this select 2;
-	
-	_objects = nearestObjects [_center, missionNamespace getVariable Format["WFBE_%1DEFENSENAMES", _side], (missionNamespace getVariable "WFBE_C_BASE_AREA_RANGE") + (missionNamespace getVariable "WFBE_C_BASE_HQ_BUILD_RANGE")];
-	{_objects = _objects - (nearestObjects [getPos _x, missionNamespace getVariable Format["WFBE_%1DEFENSENAMES", _side], (missionNamespace getVariable "WFBE_C_BASE_AREA_RANGE") + (missionNamespace getVariable "WFBE_C_BASE_HQ_BUILD_RANGE")])} forEach _areas;
-	
-	sleep 60;
-	
-	{
-		if !(isNil {_x getVariable "wfbe_defense"}) then {
-			_delete = true;
-			if (_x isKindOf "StaticWeapon") then {
-				_unit = gunner _x;
-				if (alive _unit) then {
-					if (isNil {(group _unit) getVariable "wfbe_funds"}) then {
-						_unit setPos (getPos _x);
-						deleteVehicle _unit;
-					} else {
-						_delete = false;
-					};
-				};
-			};
-			if (_delete) then {deleteVehicle _x};
-		};
-	} forEach _objects;
+    Private ["_areas", "_center", "_delete", "_objects", "_side"];
+    _center = _this select 0;
+    _side = _this select 1;
+    _areas = _this select 2;
+
+    _objects = nearestObjects [_center, missionNamespace getVariable Format["WFBE_%1DEFENSENAMES", _side], (missionNamespace getVariable "WFBE_C_BASE_AREA_RANGE") + (missionNamespace getVariable "WFBE_C_BASE_HQ_BUILD_RANGE")];
+    {_objects = _objects - (nearestObjects [getPos _x, missionNamespace getVariable Format["WFBE_%1DEFENSENAMES", _side], (missionNamespace getVariable "WFBE_C_BASE_AREA_RANGE") + (missionNamespace getVariable "WFBE_C_BASE_HQ_BUILD_RANGE")])} forEach _areas;
+
+    sleep 60;
+
+    {
+        if !(isNil {_x getVariable "wfbe_defense"}) then {
+            _delete = true;
+            if (_x isKindOf "StaticWeapon") then {
+                _unit = gunner _x;
+                if (alive _unit) then {
+                    if (isNil {(group _unit) getVariable "wfbe_funds"}) then {
+                        _unit setPos (getPos _x);
+                        deleteVehicle _unit;
+                    } else {
+                        _delete = false;
+                    };
+                };
+            };
+            if (_x isKindOf "CDF_WarfareBVehicleServicePoint") then {
+                deleteVehicle _x;
+            } else {
+                if (_delete) then {
+                    deleteVehicle _x;
+                };
+            };
+        };
+    } forEach _objects;
 };
 
 while {!gameOver} do {
