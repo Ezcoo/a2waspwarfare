@@ -28,7 +28,7 @@ _onAreaRemoved = {
                     };
                 };
             };
-            if (_x isKindOf "CDF_WarfareBVehicleServicePoint") then {
+            if (_x isKindOf "CDF_WarfareBVehicleServicePoint" || _x isKindOf "INS_WarfareBVehicleServicePoint") then {
                 deleteVehicle _x;
             } else {
                 if (_delete) then {
