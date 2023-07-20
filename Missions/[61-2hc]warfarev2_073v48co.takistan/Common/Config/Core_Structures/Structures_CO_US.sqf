@@ -152,13 +152,11 @@ _n = _n		+ ["Fort_RazorWire"];
 _n = _n		+ ["Concrete_Wall_EP1"];
 
 _n = _n		+ ["Land_Campfire"];
-/*
 _n = _n		+ ["USOrdnanceBox_EP1"];
 _n = _n		+ ["USVehicleBox_EP1"];
 _n = _n		+ ["USBasicAmmunitionBox_EP1"];
 _n = _n		+ ["USBasicWeapons_EP1"];
 _n = _n		+ ["USLaunchers_EP1"];
-*/
 _n = _n		+ ["USSpecialWeapons_EP1"];
 _n = _n		+ ["US_WarfareBVehicleServicePoint_Base_EP1"];
 
