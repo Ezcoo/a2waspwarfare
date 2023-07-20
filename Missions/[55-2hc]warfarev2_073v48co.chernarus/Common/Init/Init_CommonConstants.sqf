@@ -54,6 +54,7 @@ WFBE_UP_SUPPLYPARADROP = 16;
 WFBE_UP_ARTYAMMO = 17;
 WFBE_UP_IRSMOKE = 18;
 WFBE_UP_AIRAAM = 19;
+WFBE_UP_AAR = 20;
 
 /*
 	### Working with the missionNamespace ###
