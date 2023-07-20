@@ -17,6 +17,10 @@ missionNamespace setVariable [Format["WFBE_%1SUPPLYTRUCKS", _side], ['WarfareSup
 missionNamespace setVariable [Format["WFBE_%1UAV", _side], 'Pchela1T'];
 
 missionNamespace setVariable [Format["WFBE_%1AMMOTRUCKS", _side], ['MtvrReammo_DES_EP1','WarfareReammoTruck_USMC','WarfareReammoTruck_RU','UralReammo_TK_EP1']];//listed to get gearaccess in updateavailablaactions.sqf (listed both to get capture skill too)
+missionNamespace setVariable [Format["WFBE_%1ECMTRUCKS", _side], ['KamazRefuel','UralRefuel_TK_EP1']];//listed to add ecm stuff
+missionNamespace setVariable [Format["WFBE_%1LIFTVEHICLE", _side], ["Mi17_Ins","Mi17_medevac_RU","Mi17_TK_EP1"]];
+missionNamespace setVariable [Format["WFBE_%1ARTYVEHICLE", _side], ['GRAD_TK_EP1','GRAD_RU']];
+
 
 //--- Radio Announcers.
 missionNamespace setVariable [Format ["WFBE_%1_RadioAnnouncers", _side], ['WFHQ_RU0','WFHQ_RU1','WFHQ_RU2']];
