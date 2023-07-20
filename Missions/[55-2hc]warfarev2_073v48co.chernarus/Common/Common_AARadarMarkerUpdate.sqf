@@ -24,8 +24,8 @@ while {alive _object && !(isNull _object)} do {
             _aarUpgradeLevel = _upgrades select WFBE_UP_AAR;
 
             _speed = round(speed _object) + "km/h"; // Get the speed (AAR0)
-            _altitude = ""; // Defined empty (AAR1)
-            _aircraftName = ""; // Defined empty (AAR2)
+            _altitude = " "; // Defined empty (AAR1)
+            _aircraftName = " "; // Defined empty (AAR2)
 
             // Get the aircraft altitude (AAR1)
             if (_aarUpgradeLevel > 0) then {
