@@ -1,8 +1,12 @@
 /* SADARM Handler, Armor Killer */ 
-Private ['_altitude','_barrel','_burst','_chuteModel','_deployPos','_destination','_dir','_dx','_dy','_dz','_force','_hmag','_mag','_parachute','_projectile','_px','_py','_pz','_shell','_targetFound','_targets','_targetToHit','_ux','_uy','_uz','_v1','_velocity','_xoff','_yoff','_zcomp','_zoff'];
+Private ['_altitude','_barrel','_burst','_chuteModel','_deployPos','_destination','_dir','_dx','_dy','_dz','_force','_hmag','_mag','_parachute','_projectile','_px','_py','_pz','_shell','_targetFound','_targets','_targetToHit','_ux','_uy','_uz','_v1','_velocity','_xoff','_yoff','_zcomp','_zoff', '_airTypes', '_impactAreaSimulation'];
 _shell = _this select 0;
 _destination = _this select 1;
 _velocity = _this select 2;
+
+_airTypes = ["Plane", "AH1_Base", "AH64_base_EP1", "AW159_Lynx_BAF", "BAF_Merlin_HC3_D",
+			"Kamov_Base", "Mi17_base", "Mi24_Base", "UH1Y", "UH60_Base"
+			];
 
 //--- 1KM Above.
 _destination set [2, 1000];
@@ -10,6 +14,8 @@ _destination set [2, 1000];
 //--- Positionate the shell in the air.
 _shell setPos _destination;
 _targetToHit = objNull;
+
+_impactAreaSimulation = objNull;
 
 //--- Fall straigh.
 _shell setVelocity [0,0,-_velocity];
@@ -51,10 +57,11 @@ waitUntil
 	//--- Awaits for the altitude.
 	if (_pz < 275 and _pz > 75) then {
 		//--- Retrieve an potential target list.
-		_targets = _barrel nearEntities [["Car","Motorcycle","Tank","Ship","StaticCannon"], missionNamespace getVariable "WFBE_C_ARTILLERY_AMMO_RANGE_SADARM"];
+		_targets = _barrel nearEntities [["Car","Motorcycle","Tank","Ship","StaticCannon"] + _airTypes, missionNamespace getVariable "WFBE_C_ARTILLERY_AMMO_RANGE_SADARM"];
+
 		if (count _targets > 0) then {
 			_targetToHit = _targets select floor(random count _targets);
-			sleep (random 3); 
+			sleep (random 3);
 			_targetFound = true;
 		};
 	};
@@ -77,32 +84,59 @@ if (_targetFound && alive _barrel) then {
 	// Create burst.
 	_burst = "ARTY_SADARM_BURST" createVehicleLocal [_px, _py, _pz + 5];
 	_burst setPos [_px, _py, _pz + 5];
-	
-	// Create projectile
-	_projectile = "ARTY_SADARM_PROJO" createVehicleLocal [_px, _py, _pz + 5];
-	_projectile setPos [_px, _py, _pz + 5];
 
-	// Calculate direction
-	_xoff = (getPos _targetToHit select 0) - _px;
-	_yoff = (getPos _targetToHit select 1) - _py;
-	_zoff = - _pz;
-	_mag = sqrt(_xoff*_xoff + _yoff*_yoff + _zoff*_zoff);
-	_dir = [_xoff/_mag, _yoff/_mag, _zoff/_mag];
-	_dx = _dir select 0;
-	_dy = _dir select 1;
-	_dz = _dir select 2;
-	_hmag = sqrt(_dx*_dx + _dy*_dy);
-	_zcomp = -_dz/_hmag;
-	_ux = _zcomp*_dx;
-	_uy = _zcomp*_dy;
-	_uz = _hmag;
-	
-	//--- Positionate the projectile.
-	_projectile setVectorDir _dir;
-	_projectile setVectorUp [_ux,_uy,_uz];
-	_projectile setVelocity [(_dir select 0) * 300, (_dir select 1) * 300, (_dir select 2) * 300];
+	if (_targetToHit isKindOf "Air") then {
+
+		_px = (getPos _targetToHit select 0);
+		_py = (getPos _targetToHit select 1);
+		_pz = (getPos _targetToHit select 2);
+
+		// Create air-burst.
+		_px = _px + random(8);
+		_py = _py + random(8);
+		_pz = _pz + random(5);
+
+		// when these two collide, it creates a mid-air explosion
+
+		// Create projectile
+		_projectile = "ARTY_SADARM_PROJO" createVehicleLocal [_px, _py, _pz];
+		_projectile = createVehicle ["ARTY_SADARM_PROJO", [_px, _py, _pz], [], 0, "CAN_COLLIDE"];
+		_impactAreaSimulation = createVehicle ["weaponHolder", [_px,_py,_pz], [], 0, "CAN_COLLIDE"];
+		_projectile setPosATL (getPosATL _impactAreaSimulation);
+	} else {
+		// Create projectile
+		_projectile = "ARTY_SADARM_PROJO" createVehicleLocal [_px, _py, _pz + 5];
+		_projectile setPos [_px, _py, _pz + 5];
+
+		// Calculate direction
+		_xoff = (getPos _targetToHit select 0) - _px;
+		_yoff = (getPos _targetToHit select 1) - _py;
+		_zoff = - _pz;
+		_mag = sqrt(_xoff*_xoff + _yoff*_yoff + _zoff*_zoff);
+		_dir = [_xoff/_mag, _yoff/_mag, _zoff/_mag];
+		_dx = _dir select 0;
+		_dy = _dir select 1;
+		_dz = _dir select 2;
+		_hmag = sqrt(_dx*_dx + _dy*_dy);
+		_zcomp = -_dz/_hmag;
+		_ux = _zcomp*_dx;
+		_uy = _zcomp*_dy;
+		_uz = _hmag;
+
+		//--- Positionate the projectile.
+		_projectile setVectorDir _dir;
+		_projectile setVectorUp [_ux,_uy,_uz];
+		_projectile setVelocity [(_dir select 0) * 300, (_dir select 1) * 300, (_dir select 2) * 300];
+	};
 };
 
 //--- Delete the model.
 deleteVehicle _barrel;
 if !(isNull _parachute) then {deleteVehicle _parachute};
+
+if !(isNull _impactAreaSimulation) then {
+	while {true} do {
+		sleep 1;
+		deleteVehicle _impactAreaSimulation;
+	}
+};
