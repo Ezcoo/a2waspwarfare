@@ -1,4 +1,4 @@
-Private ["_height","_object","_markerName","_side"];
+Private ["_height","_object","_markerName","_side","_speed","_altitude"];
 
 _object = _this select 0;
 _side = _this select 1;
@@ -17,17 +17,20 @@ _height = missionNamespace getVariable "WFBE_C_STRUCTURES_ANTIAIRRADAR_DETECTION
 while {alive _object && !(isNull _object)} do {
 	if (antiAirRadarInRange) then {
 		if (((getPos _object) select 2) > _height) then {
+            _speed = round(speed _object); // AAR0
+            _altitude = round(getPosATL _object select 2); // AAR1
+
 			_markerName setMarkerAlphaLocal 1;
 			_markerName setMarkerPosLocal (getPos _object);
-            _markerName setMarkerTextLocal (format ["%1km/h %2m", round(speed _object), round(getPosATL _object select 2)]);			
-			_playerDirection = getDir _object; 				//Marty : get the player's angle direction (= azimut) in order to draw the arrow marker in the same direction. 
+            _markerName setMarkerTextLocal (format ["%1km/h %2m", _speed, _altitude]);
+			_playerDirection = getDir _object; 				//Marty : get the player's angle direction (= azimut) in order to draw the arrow marker in the same direction.
 			_markerName setMarkerDirLocal _playerDirection;	//Marty : set the player's angle direction to the marker.
 
 		} else {
 			_markerName setMarkerAlphaLocal 0;
 		};
 	};
-	
+
 	sleep 1; //Marty : refresh frequency is same as the updateTeamMarker in order to refresh faster on map. (May be we should increase this value in case of performances issues !)
 };
 
