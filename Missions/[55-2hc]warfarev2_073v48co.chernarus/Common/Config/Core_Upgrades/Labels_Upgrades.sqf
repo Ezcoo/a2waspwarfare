@@ -71,7 +71,8 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_LABELS"], [
 	localize 'STR_WF_TACTICAL_Paradrop', 
 	localize 'STR_WF_UPGRADE_ArtilleryAmmo',
 	localize 'STR_WF_UPGRADE_IRS',
-	localize 'STR_WF_UPGRADE_AirAA'
+	localize 'STR_WF_UPGRADE_AirAA',
+	localize 'STR_WF_UPGRADE_AntiAirRadar'
 ]];
 missionNamespace setVariable [Format["WFBE_C_UPGRADES_DESCRIPTIONS"], [
 	localize 'STR_WF_UPGRADE_barracks_Desc',
@@ -91,7 +92,7 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_DESCRIPTIONS"], [
 	localize 'STR_WF_UPGRADE_Ammo_Desc',
 	localize 'STR_WF_UPGRADE_EASA_Desc',
 	localize 'STR_WF_UPGRADE_Paradrop_Desc',
-	localize 'STR_WF_UPGRADE_ArtilleryAmmo_Desc',
+	localize 'STR_WF_UPGRADE_AntiAirRadar_Desc',
 	localize 'STR_WF_UPGRADE_IRS_Desc',
 	localize 'STR_WF_UPGRADE_AirAA_Desc'
 ]];
