@@ -322,14 +322,14 @@ switch (true) do {
 
 //--- Overall mission coloration.
 if (side player == west) then{
-missionNamespace setVariable ["WFBE_C_WEST_COLOR", "ColorGreen"];
+missionNamespace setVariable ["WFBE_C_WEST_COLOR", "ColorKhaki"];
 missionNamespace setVariable ["WFBE_C_EAST_COLOR", "ColorRed"];
 missionNamespace setVariable ["WFBE_C_GUER_COLOR", "ColorBlue"];
 missionNamespace setVariable ["WFBE_C_CIV_COLOR", "ColorYellow"];
 missionNamespace setVariable ["WFBE_C_UNKNOWN_COLOR", "ColorBlue"];
 }else{
 missionNamespace setVariable ["WFBE_C_WEST_COLOR", "ColorRed"];
-missionNamespace setVariable ["WFBE_C_EAST_COLOR", "ColorGreen"];
+missionNamespace setVariable ["WFBE_C_EAST_COLOR", "ColorKhaki"];
 missionNamespace setVariable ["WFBE_C_GUER_COLOR", "ColorBlue"];
 missionNamespace setVariable ["WFBE_C_CIV_COLOR", "ColorYellow"];
 missionNamespace setVariable ["WFBE_C_UNKNOWN_COLOR", "ColorBlue"];
