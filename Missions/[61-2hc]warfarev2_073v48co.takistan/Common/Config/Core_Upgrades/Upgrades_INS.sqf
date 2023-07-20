@@ -22,13 +22,14 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_ENABLED", _side], [
 	true, //--- Supply Paradrop
 	if ((missionNamespace getVariable "WFBE_C_ARTILLERY") > 0) then {true} else {false}, //--- Artillery Ammo
 	if ((missionNamespace getVariable "WFBE_C_MODULE_WFBE_IRSMOKE") > 0) then {true} else {false}, //--- IR Smoke
-	if ((missionNamespace getVariable "WFBE_C_MODULE_WFBE_FLARES") == 1) then {true} else {false} //--- Aircraft AA Missiles
+	if ((missionNamespace getVariable "WFBE_C_MODULE_WFBE_FLARES") == 1) then {true} else {false}, //--- Aircraft AA Missiles
+	true //--- Anti Air radar
 ]];
 
 missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_COSTS", _side], [
 	[[540,0],[1350,0],[2070,0]], //--- Barracks
-	[[320,0],[720,0],[1600,0],[3200,0],[5080,0]], //--- Light
-	[[1200,0],[3200,0],[8000,0],[10600,0]], //--- Heavy
+	[[250,0],[950,0],[1900,0],[3500,0]], //--- Light
+	[[1200,0],[4400,0],[9500,0],[10500,0]], //--- Heavy
 	[[1200,0],[4000,0],[9200,0],[10500,0],[17600,0]], //--- Air
 	[[1500,0],[2500,0],[3500,0]], //--- Paratroopers
 	[[2000,0]], //--- UAV
@@ -37,7 +38,7 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_COSTS", _side], [
 	[[1000,0]], //--- Airlift
 	[[4500,0]], //--- Custom Flares
 	[[2000,0],[2500,0],[3500,0]], //--- Artillery Time
-	[[50000,250000]], //--- ICBM
+	[[50000,80000]], //--- ICBM
 	[[1500,0]], //--- Fast Travel
 	[[250,0],[650,0],[1200,0],[2100,0],[2400,0]], //--- Gear
 	[[750,0]], //--- Build Ammo
@@ -45,7 +46,8 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_COSTS", _side], [
 	[[2000,0]], //--- Supply Paradrop
 	[[2500,0],[3500,0],[4500,0]], //--- Artillery Ammo
 	[[3000,0]], //--- IR Smoke
-	[[7500,0]] //--- Aircraft AA Missiles
+	[[7500,0]], //--- Aircraft AA Missiles
+	[[15000,0],[35000,0]] //--- Anti Air Radar
 ]];
 
 missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LEVELS", _side], [

@@ -1,4 +1,4 @@
-Private ["_height","_object","_markerName","_side"];
+Private ["_height","_object","_markerName","_side","_speed","_altitude","_aircraftName","_aarUpgradeLevel","_updateFrequency"];
 
 _object = _this select 0;
 _side = _this select 1;
@@ -15,20 +15,42 @@ _markerName setMarkerAlphaLocal 0;
 _height = missionNamespace getVariable "WFBE_C_STRUCTURES_ANTIAIRRADAR_DETECTION";
 
 while {alive _object && !(isNull _object)} do {
+    _updateFrequency = 2; // AAR0: 2, AAR1: 1, AAR2: 0.5
+
 	if (antiAirRadarInRange) then {
 		if (((getPos _object) select 2) > _height) then {
+		    // Get the AAR upgrade level
+            _upgrades = (_side) Call WFBE_CO_FNC_GetSideUpgrades;
+            _aarUpgradeLevel = _upgrades select WFBE_UP_AAR;
+
+            _speed = round(speed _object) + "km/h"; // Get the speed (AAR0)
+            _altitude = ""; // Defined empty (AAR1)
+            _aircraftName = ""; // Defined empty (AAR2)
+
+            // Get the aircraft altitude (AAR1)
+            if (_aarUpgradeLevel > 0) then {
+                _altitude = round(getPosATL _object select 2) + "m";
+                _updateFrequency = 1;
+            };
+
+            // Get the aircraft name (AAR2)
+            if (_aarUpgradeLevel > 1) then {
+                _aircraftName = name _object;
+                _updateFrequency = 0.5;
+            };
+
 			_markerName setMarkerAlphaLocal 1;
 			_markerName setMarkerPosLocal (getPos _object);
-            _markerName setMarkerTextLocal (format ["%1km/h %2m", round(speed _object), round(getPosATL _object select 2)]);			
-			_playerDirection = getDir _object; 				//Marty : get the player's angle direction (= azimut) in order to draw the arrow marker in the same direction. 
+            _markerName setMarkerTextLocal (format ["%1 %2 %3", _speed, _altitude, _aircraftName]);
+			_playerDirection = getDir _object; 				//Marty : get the player's angle direction (= azimut) in order to draw the arrow marker in the same direction.
 			_markerName setMarkerDirLocal _playerDirection;	//Marty : set the player's angle direction to the marker.
 
 		} else {
 			_markerName setMarkerAlphaLocal 0;
 		};
 	};
-	
-	sleep 1; //Marty : refresh frequency is same as the updateTeamMarker in order to refresh faster on map. (May be we should increase this value in case of performances issues !)
+
+	sleep _updateFrequency; //Marty : refresh frequency is same as the updateTeamMarker in order to refresh faster on map. (May be we should increase this value in case of performances issues !)
 };
 
 deleteMarkerLocal _markerName;

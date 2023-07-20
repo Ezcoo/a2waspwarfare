@@ -22,7 +22,8 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_ENABLED", _side], [
 	true, //--- Supply Paradrop
 	if ((missionNamespace getVariable "WFBE_C_ARTILLERY") > 0) then {true} else {false}, //--- Artillery Ammo
 	if ((missionNamespace getVariable "WFBE_C_MODULE_WFBE_IRSMOKE") > 0) then {true} else {false}, //--- IR Smoke
-	if ((missionNamespace getVariable "WFBE_C_MODULE_WFBE_FLARES") == 1) then {true} else {false} //--- Aircraft AA Missiles
+	if ((missionNamespace getVariable "WFBE_C_MODULE_WFBE_FLARES") == 1) then {true} else {false}, //--- Aircraft AA Missiles
+	true //--- Anti Air radar
 ]];
 
 missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_COSTS", _side], [
@@ -68,7 +69,8 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LEVELS", _side], [
 	1, //--- Supply Paradrop
 	3, //--- Artillery Ammo
 	1, //--- IR Smoke
-	1 //--- Aircraft AA Missiles
+	1, //--- Aircraft AA Missiles
+	2  //--- Anti Air Radar
 ]];
 
 missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LINKS", _side], [
@@ -106,7 +108,8 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LINKS", _side], [
 		[[WFBE_UP_GEAR,3],[WFBE_UP_HEAVY,3]]
 	], //--- Artillery Ammo
 	[[WFBE_UP_HEAVY, 3]], //--- IR Smoke
-	[[WFBE_UP_AIR, 3]] //--- Aircraft AA Missiles
+	[[WFBE_UP_AIR, 3]], //--- Aircraft AA Missiles
+	[[],[]] //--- Anti Air Radar
 ]];
 
 missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_TIMES", _side], [
@@ -129,7 +132,8 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_TIMES", _side], [
 	[50], //--- Supply Paradrop
 	[60,120,180], //--- Artillery Ammo
 	[120], //--- IR Smoke
-	[120] //--- Aircraft AA Missiles
+	[120], //--- Aircraft AA Missiles
+	[150,250] //--- Anti Air Radar
 ]];
 
 //todo, on commander missing link checkup, skip disabled upgrades.
@@ -167,7 +171,9 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_AI_ORDER", _side], [
 	[WFBE_UP_SUPPLYPARADROP,1],
 	[WFBE_UP_AIRAAM,1],
 	[WFBE_UP_GEAR,4],
-	[WFBE_UP_LIGHT,4]
+	[WFBE_UP_LIGHT,4],
+	[WFBE_UP_AAR,1],
+	[WFBE_UP_AAR,2]
 ]];
 
 //--- Check potential missing definition.
