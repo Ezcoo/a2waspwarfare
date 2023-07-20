@@ -117,5 +117,6 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_IMAGES"], [
 	"", 
 	"", 
 	"", 
-	""
+	"",
+	"Client\Images\icon_wf_building_aa_radar.paa"
 ]];ExecVM "Common\Module\CIPHER\CIPHER_Sort.sqf";
