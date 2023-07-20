@@ -230,7 +230,7 @@ class Mission
 					position[]={7180.5913,40.92551,12768.79};
 					id=8;
 					side="WEST";
-					vehicle="BAF_Soldier_EN_DDPM";
+					vehicle="US_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -252,7 +252,7 @@ class Mission
 					position[]={7180.54,40.885139,12767.36};
 					id=9;
 					side="WEST";
-					vehicle="BAF_Soldier_EN_DDPM";
+					vehicle="US_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3209,7 +3209,7 @@ class Mission
 					position[]={7180.6255,40.818298,12764.827};
 					id=207;
 					side="WEST";
-					vehicle="BAF_Soldier_EN_DDPM";
+					vehicle="US_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
