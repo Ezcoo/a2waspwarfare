@@ -2933,11 +2933,11 @@
                 <Italian>Paradrop - Ammunition</Italian>
             </Key>
             <Key ID="STR_WF_TACTICAL_ParadropVehicle">
-                <English>Paradrop - Vehicle</English>
-                <French>Parachutage - Véhicule</French>
-                <German>Abwurf - Fahrzeug</German>
-                <Russian>Сброс - Машина</Russian>
-                <Italian>Paradrop - Vehicle</Italian>
+                <English>Paradrop - Repair Truck</English>
+                <French>Parachutage - Camion de réparation</French>
+                <German>Abwurf - Reparatur-LKW</German>
+                <Russian>Сброс - Ремонтный грузовик</Russian>
+                <Italian>Paradrop - Camion di riparazione</Italian>
             </Key>
             <Key ID="STR_WF_TACTICAL_Paratroop"><!--shared W-->
                 <English>Paratroops</English>
