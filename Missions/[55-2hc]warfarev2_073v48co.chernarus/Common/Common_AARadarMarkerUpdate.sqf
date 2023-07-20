@@ -15,7 +15,7 @@ _markerName setMarkerAlphaLocal 0;
 _height = missionNamespace getVariable "WFBE_C_STRUCTURES_ANTIAIRRADAR_DETECTION";
 
 while {alive _object && !(isNull _object)} do {
-    _updateFrequency = 2; // AAR0: 2, AAR1: 1, AAR2: 0.5
+    _updateFrequency = 3; // AAR0: 3, AAR1: 2, AAR2: 1
 
 	if (antiAirRadarInRange) then {
 		if (((getPos _object) select 2) > _height) then {
@@ -24,19 +24,19 @@ while {alive _object && !(isNull _object)} do {
             _aarUpgradeLevel = _upgrades select WFBE_UP_AAR;
 
             _speed = round(speed _object) + "km/h"; // Get the speed (AAR0)
-            _altitude = ""; // Defined empty (AAR1)
-            _aircraftName = ""; // Defined empty (AAR2)
+            _altitude = " "; // Defined empty (AAR1)
+            _aircraftName = " "; // Defined empty (AAR2)
 
             // Get the aircraft altitude (AAR1)
             if (_aarUpgradeLevel > 0) then {
                 _altitude = round(getPosATL _object select 2) + "m";
-                _updateFrequency = 1;
+                _updateFrequency = 2;
             };
 
             // Get the aircraft name (AAR2)
             if (_aarUpgradeLevel > 1) then {
                 _aircraftName = name _object;
-                _updateFrequency = 0.5;
+                _updateFrequency = 1;
             };
 
 			_markerName setMarkerAlphaLocal 1;
