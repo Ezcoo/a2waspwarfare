@@ -130,7 +130,8 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_TIMES", _side], [
 	[50], //--- Supply Paradrop
 	[60,120,180], //--- Artillery Ammo
 	[120], //--- IR Smoke
-	[120] //--- Aircraft AA Missiles
+	[120], //--- Aircraft AA Missiles
+	[150,250] //--- Anti Air Radar
 ]];
 
 //todo, on commander missing link checkup, skip disabled upgrades.
