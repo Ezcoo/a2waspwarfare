@@ -123,7 +123,7 @@ Call Compile preprocessFileLineNumbers 'Client\Functions\Client_FNC_Groups.sqf';
 Call Compile preprocessFileLineNumbers 'Client\Functions\Client_FNC_OnFired.sqf'; //--- FUNCTIONS: onFired EH.
 Call Compile preprocessFileLineNumbers 'Client\Functions\Client_FNC_Special.sqf'; //--- FUNCTIONS: Specials.
 
-clientInitComplete = true;
+//clientInitComplete = true;
 
 //--- UI Namespace release from previous possible games (only on titles dialog!).
 {uiNamespace setVariable [_x, displayNull]} forEach ["wfbe_title_capture"];
@@ -616,3 +616,4 @@ hint parseText "<t color='#ffff00'>v20072023<br/><br/>Join on our discord:<br/>d
 12452 cutText [(localize 'STR_WF_Loading')+"...","BLACK IN",5];
 
 ["INITIALIZATION", Format ["Init_Client.sqf: Client initialization ended at [%1]", time]] Call WFBE_CO_FNC_LogContent;
+clientInitComplete = true;
