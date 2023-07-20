@@ -147,11 +147,13 @@ _n = _n		+ ["HeliH"];
 _n = _n		+ ["Fort_RazorWire"];
 _n = _n		+ ["Concrete_Wall_EP1"];
 _n = _n		+ ["Land_Campfire"];
+/*
 _n = _n		+ ["TKOrdnanceBox_EP1"];
 _n = _n		+ ["TKVehicleBox_EP1"];
 _n = _n		+ ["TKBasicAmmunitionBox_EP1"];
 _n = _n		+ ["TKBasicWeapons_EP1"];
 _n = _n		+ ["TKLaunchers_EP1"];
+*/
 _n = _n		+ ["TKSpecialWeapons_EP1"];
 
 /* Class used for AI, AI will attempt to build those */

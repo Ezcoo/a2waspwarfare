@@ -149,11 +149,13 @@ _n = _n		+ ["HeliH"];
 _n = _n		+ ["Fort_RazorWire"];
 _n = _n		+ ["Land_Ind_IlluminantTower"];
 _n = _n		+ ["Land_Campfire"];
+/*
 _n = _n		+ ["RUOrdnanceBox"];
 _n = _n		+ ["RUVehicleBox"];
 _n = _n		+ ["RUBasicAmmunitionBox"];
 _n = _n		+ ["RUBasicWeaponsBox"];
 _n = _n		+ ["RULaunchersBox"];
+*/
 _n = _n		+ ["RUSpecialWeaponsBox"];
 
 /* Class used for AI, AI will attempt to build those */
