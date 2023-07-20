@@ -3412,7 +3412,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Repair)";
 					synchronizations[]={255};
 				};
 			};
@@ -3434,7 +3434,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Repair)";
 					synchronizations[]={255};
 				};
 			};
@@ -3456,7 +3456,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Repair)";
 					synchronizations[]={255};
 				};
 			};
@@ -3500,7 +3500,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Repair)";
 					synchronizations[]={255};
 				};
 			};
@@ -3720,7 +3720,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Repair)";
 					synchronizations[]={256};
 				};
 			};
@@ -3742,7 +3742,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Repair)";
 					synchronizations[]={256};
 				};
 			};
@@ -3978,7 +3978,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Repair)";
 					synchronizations[]={255};
 				};
 			};
@@ -4110,7 +4110,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Repair)";
 					synchronizations[]={256};
 				};
 			};
@@ -4153,7 +4153,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Repair)";
 					synchronizations[]={256};
 				};
 			};
@@ -4175,7 +4175,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Repair)";
 					synchronizations[]={255};
 				};
 			};
@@ -4219,7 +4219,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Repair)";
 					synchronizations[]={256};
 				};
 			};
@@ -4241,7 +4241,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Repair)";
 					synchronizations[]={255};
 				};
 			};
@@ -4285,7 +4285,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Repair)";
 					synchronizations[]={256};
 				};
 			};
@@ -4307,7 +4307,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					init="removeAllWeapons this";
-					description="Engineer (Fast repair)";
+					description="Engineer (Repair)";
 					synchronizations[]={256};
 				};
 			};
