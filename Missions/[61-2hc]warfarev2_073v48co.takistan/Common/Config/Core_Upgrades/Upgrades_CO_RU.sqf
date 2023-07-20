@@ -108,7 +108,8 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LINKS", _side], [
 		[[WFBE_UP_GEAR,3],[WFBE_UP_HEAVY,3]]
 	], //--- Artillery Ammo
 	[[WFBE_UP_HEAVY, 3]], //--- IR Smoke
-	[[WFBE_UP_AIR, 3]] //--- Aircraft AA Missiles
+	[[WFBE_UP_AIR, 3]], //--- Aircraft AA Missiles
+	[[],[]] //--- Anti Air Radar
 ]];
 
 missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_TIMES", _side], [
