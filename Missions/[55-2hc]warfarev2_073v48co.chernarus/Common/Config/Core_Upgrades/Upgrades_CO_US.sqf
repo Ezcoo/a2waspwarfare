@@ -69,7 +69,8 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LEVELS", _side], [
 	1, //--- Supply Paradrop
 	3, //--- Artillery Ammo
 	1, //--- IR Smoke
-	1 //--- Aircraft AA Missiles
+	1, //--- Aircraft AA Missiles
+	2  //--- Anti Air Radar
 ]];
 
 missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LINKS", _side], [
