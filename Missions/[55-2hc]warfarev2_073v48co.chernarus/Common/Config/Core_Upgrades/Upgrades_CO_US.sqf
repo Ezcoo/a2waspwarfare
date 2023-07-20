@@ -172,7 +172,9 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_AI_ORDER", _side], [
 	[WFBE_UP_SUPPLYPARADROP,1],
 	[WFBE_UP_AIRAAM,1],
 	[WFBE_UP_GEAR,4],
-	[WFBE_UP_LIGHT,4]
+	[WFBE_UP_LIGHT,4],
+	[WFBE_UP_AAR,1],
+	[WFBE_UP_AAR,2]
 ]];
 
 //--- Check potential missing definition.
