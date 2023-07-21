@@ -16,10 +16,10 @@ _height = missionNamespace getVariable "WFBE_C_STRUCTURES_ANTIAIRRADAR_DETECTION
 
 // Need to flip the logic for getting the upgrade level
 if (_side == BLUFOR) then {
-    _oppositeSide == OPFOR;
+    _oppositeSide = OPFOR;
 };
 if (_side == OPFOR) then {
-    _oppositeSide == BLUFOR;
+    _oppositeSide = BLUFOR;
 };
 
 // Place any aircraft warning logic here before the loop (done once)?
