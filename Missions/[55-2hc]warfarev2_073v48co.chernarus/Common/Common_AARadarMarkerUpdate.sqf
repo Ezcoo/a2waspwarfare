@@ -2,6 +2,7 @@ Private ["_height","_object","_markerName","_side","_speed","_altitude","_aircra
 
 _object = _this select 0;
 _side = _this select 1;
+_sideID = _this select 2;
 
 unitMarker = unitMarker + 1;
 _markerName = Format ["unitMarker%1",unitMarker];
@@ -15,11 +16,11 @@ _markerName setMarkerAlphaLocal 0;
 _height = missionNamespace getVariable "WFBE_C_STRUCTURES_ANTIAIRRADAR_DETECTION";
 
 // Need to flip the logic for getting the upgrade level
-if (_side == blufor) then {
-    _oppositeSide = opfor;
+if (_sideID == 0) then {
+    _oppositeSide = (1) Call GetSideFromID;
 };
-if (_side == opfor) then {
-    _oppositeSide = blufor;
+if (_sideID == 1) then {
+    _oppositeSide = (0) Call GetSideFromID;
 };
 
 // Place any aircraft warning logic here before the loop (done once)?
