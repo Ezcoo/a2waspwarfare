@@ -15,11 +15,11 @@ _markerName setMarkerAlphaLocal 0;
 _height = missionNamespace getVariable "WFBE_C_STRUCTURES_ANTIAIRRADAR_DETECTION";
 
 // Need to flip the logic for getting the upgrade level
-if (_side == BLUFOR) then {
-    _oppositeSide = OPFOR;
+if (_side == blufor) then {
+    _oppositeSide = opfor;
 };
-if (_side == OPFOR) then {
-    _oppositeSide = BLUFOR;
+if (_side == opfor) then {
+    _oppositeSide = blufor;
 };
 
 // Place any aircraft warning logic here before the loop (done once)?
