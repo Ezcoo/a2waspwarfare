@@ -82,9 +82,6 @@ if (_defense emptyPositions "gunner" > 0 && (((missionNamespace getVariable "WFB
         if(side _team != _side) then{
             _team = createGroup [_side, true];
         };
-        if((count units _team) > 10) then {
-            _team = createGroup [_side, true];
-        };
         _area setVariable ["DefenseTeam", _team];
     };
 
