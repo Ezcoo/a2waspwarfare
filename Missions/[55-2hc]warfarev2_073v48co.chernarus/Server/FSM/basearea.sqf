@@ -28,9 +28,10 @@ _onAreaRemoved = {
                     };
                 };
             };
-            if (_x isKindOf "CDF_WarfareBVehicleServicePoint" ||
-                _x isKindOf "INS_WarfareBVehicleServicePoint" ||
-                _x isKindOf "TK_WarfareBVehicleServicePoint_Base_EP1")
+            if (_x isKindOf "CDF_WarfareBVehicleServicePoint" || // Cherno BLU
+                _x isKindOf "INS_WarfareBVehicleServicePoint" || // Cherno OPFOR
+                _x isKindOf "US_WarfareBVehicleServicePoint_Base_EP1" || // Taki BLU
+                _x isKindOf "TK_WarfareBVehicleServicePoint_Base_EP1") // Taki OPFOR
                  then {
                 deleteVehicle _x;
             } else {
