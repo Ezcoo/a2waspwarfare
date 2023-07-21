@@ -94,7 +94,7 @@ if (_unit isKindOf "Air") then { //--- Air units.
 
 	if ((missionNamespace getVariable "WFBE_C_STRUCTURES_ANTIAIRRADAR") > 0) then { //--- AAR Tracking.
 		if (sideJoined != _side) then { //--- Track the unit via AAR System, skip if the unit side is the same as the player one.
-			[_unit, _side] ExecVM 'Common\Common_AARadarMarkerUpdate.sqf';
+			[_unit, _side, _sideID] ExecVM 'Common\Common_AARadarMarkerUpdate.sqf';
 		};
 	};
 
