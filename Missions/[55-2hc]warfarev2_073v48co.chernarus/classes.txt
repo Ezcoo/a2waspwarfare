@@ -1,0 +1,19 @@
+HeliH		lf
+HeliHRescue	hf
+HeliHCivil	air
+
+//T810Refuel_ACR
+KamazRefuel
+MtvrRefuel
+
+
+class Item0
+		{
+			position[]={7153.9609,306.23285,7884.2744};
+			name="a";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorBlack";
+			a=2000;
+			b=2000;
+		};
