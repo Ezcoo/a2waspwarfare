@@ -92,6 +92,7 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_DESCRIPTIONS"], [
 	localize 'STR_WF_UPGRADE_Ammo_Desc',
 	localize 'STR_WF_UPGRADE_EASA_Desc',
 	localize 'STR_WF_UPGRADE_Paradrop_Desc',
+    localize 'STR_WF_UPGRADE_ArtilleryAmmo_Desc',
 	localize 'STR_WF_UPGRADE_IRS_Desc',
 	localize 'STR_WF_UPGRADE_AirAA_Desc',
 	localize 'STR_WF_UPGRADE_AntiAirRadar_Desc'
