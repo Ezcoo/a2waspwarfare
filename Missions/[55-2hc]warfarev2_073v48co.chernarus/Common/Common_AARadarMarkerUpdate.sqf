@@ -1,4 +1,4 @@
-Private ["_height","_object","_markerName","_side","_speed","_altitude","_aircraftName","_aarUpgradeLevel","_updateFrequency"];
+Private ["_height","_object","_markerName","_side","_speed","_altitude","_aircraftName","_aarUpgradeLevel","_updateFrequency","_oppositeSide"];
 
 _object = _this select 0;
 _side = _this select 1;
@@ -14,13 +14,25 @@ _markerName setMarkerSizeLocal [0.5, 0.5]; // Made the marker a bit smaller stil
 _markerName setMarkerAlphaLocal 0;
 _height = missionNamespace getVariable "WFBE_C_STRUCTURES_ANTIAIRRADAR_DETECTION";
 
+// Need to flip the logic for getting the upgrade level
+if (_side == BLUFOR) then {
+    _oppositeSide == OPFOR;
+};
+if (_side == OPFOR) then {
+    _oppositeSide == BLUFOR;
+};
+
+// Place any aircraft warning logic here before the loop (done once)?
+
+// The main update loop
 while {alive _object && !(isNull _object)} do {
     _updateFrequency = 3; // AAR0: 3, AAR1: 2, AAR2: 1
 
 	if (antiAirRadarInRange) then {
 		if (((getPos _object) select 2) > _height) then {
-		    // Get the AAR upgrade level
-            _upgrades = (_side) Call WFBE_CO_FNC_GetSideUpgrades;
+
+		    // Get the AAR upgrade level from the _oppositeSite variable
+            _upgrades = (_oppositeSide) Call WFBE_CO_FNC_GetSideUpgrades;
             _aarUpgradeLevel = _upgrades select WFBE_UP_AAR;
 
             _speed = str(round(speed _object)) + "km/h"; // Get the speed (AAR0)
