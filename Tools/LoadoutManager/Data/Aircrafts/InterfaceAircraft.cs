@@ -6,4 +6,6 @@ public interface InterfaceAircraft
     public int pylonAmount { get; set; }
     public List<AmmunitionType> allowedAmmunitionTypes { get; set; }
     public Loadout defaultLoadout { get; set; }
+
+    public void GenerateLoadoutsForTheAircraft();
 }
