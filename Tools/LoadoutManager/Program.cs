@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-public abstract class AmmunitionDefinition
+public abstract class AmmunitionDefinition : InterfaceAmmunition
 {
     public int AmountPerPylon { get; set; }
     public WeaponDefinition WeaponDefinition { get; set; }
@@ -62,8 +62,9 @@ class Program
 {
     static void Main()
     {
-        var ammunitionR73 = Activator.CreateInstance<R73>();
-        var ammunitionCh29 = Activator.CreateInstance<Ch29>();
+        var ammoTest = (InterfaceAmmunition)EnumExtensions.GetInstance("R73");
+        Console.WriteLine(ammoTest.WeaponDefinition.DisplayName);
+
 
         var loadoutDefault = new Loadout
         {
