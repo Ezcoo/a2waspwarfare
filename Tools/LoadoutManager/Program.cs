@@ -1,44 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
-public abstract class AmmunitionDefinition : InterfaceAmmunition
-{
-    public int AmountPerPylon { get; set; }
-    public WeaponDefinition WeaponDefinition { get; set; }
-    public int CostPerPylon { get; set; }
-}
 
-public class R73 : AmmunitionDefinition
-{
-    public R73()
-    {
-        AmountPerPylon = 2;
-        WeaponDefinition = new WeaponDefinition
-        {
-            ClassName = "R73Launcher_2",
-            DisplayName = "R-73",
-            CostPerWeaponLauncher = 1000 // Fill in the actual cost here
-        };
-        CostPerPylon = 2322; // Fill in the actual cost here
-    }
-}
-
-public class Ch29 : AmmunitionDefinition
-{
-    public Ch29()
-    {
-        AmountPerPylon = 6;
-        WeaponDefinition = new WeaponDefinition
-        {
-            ClassName = "Ch29Launcher_Su34",
-            DisplayName = "Ch-29",
-            CostPerWeaponLauncher = 3900 // Fill in the actual cost here
-        };
-        CostPerPylon = 1231231; // Fill in the actual cost here
-    }
-}
-
-public class WeaponDefinition
+public class BaseWeapon
 {
     public string ClassName { get; set; }
     public string DisplayName { get; set; }
@@ -63,7 +27,7 @@ class Program
     static void Main()
     {
         var ammoTest = (InterfaceAmmunition)EnumExtensions.GetInstance("R73");
-        Console.WriteLine(ammoTest.WeaponDefinition.DisplayName);
+        //Console.WriteLine(ammoTest.WeaponDefinition.DisplayName);
 
 
         var loadoutDefault = new Loadout
