@@ -3,8 +3,9 @@
     public FOURROUNDFAB250()
     {
         AmmunitionType = AmmunitionType.FOURROUNDFAB250;
-        AmountPerPylon = 4;
-        WeaponDefinition = (InterfaceWeapon)EnumExtensions.GetInstance(WeaponType.AIRBOMBLAUNCHER.ToString()) as BaseWeapon;
-        CostPerPylon = 23222;
+        amountPerPylon = 4;
+        weaponDefinition = (InterfaceWeapon)EnumExtensions.GetInstance(WeaponType.AIRBOMBLAUNCHER.ToString()) as BaseWeapon;
+        ammoDisplayName = "FAB-250";
+        costPerPylon = 23222;
     }
 }

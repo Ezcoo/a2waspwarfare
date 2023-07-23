@@ -24,7 +24,7 @@ class Program
     {
         Console.WriteLine("_easaLoadout = _easaLoadout + [\n[");
 
-        List<List<AmmunitionType>> combinations = GenerateCombinations(_interfaceAircraft.AllowedAmmunitionTypes.ToArray(), _interfaceAircraft.PylonAmount / 2);
+        List<List<AmmunitionType>> combinations = GenerateCombinations(_interfaceAircraft.allowedAmmunitionTypes.ToArray(), _interfaceAircraft.pylonAmount / 2);
 
         int index = 0;
 
@@ -64,7 +64,7 @@ class Program
     {
         Console.WriteLine("_easaDefault = _easaDefault + ");
 
-        string ammunitionArray = GenerateLoadoutRow(_interfaceAircraft.DefaultLoadout.AmmunitionTypesWithCount, false);
+        string ammunitionArray = GenerateLoadoutRow(_interfaceAircraft.defaultLoadout.AmmunitionTypesWithCount, false);
 
         Console.WriteLine(ammunitionArray + ";");
     }
@@ -80,22 +80,23 @@ class Program
         string priceAndWeaponsInfo = string.Empty;
         string weaponsInfo = string.Empty;
 
-        Dictionary<string, int> alreadyAddedWeaponLaunchersWithWeaponAmountInTotal = new Dictionary<string, int>();
+        Dictionary<(string, string), int> alreadyAddedWeaponLaunchersWithWeaponAmountInTotal = new Dictionary<(string, string), int>();
         foreach (var ammoTypeKvp in _input)
         {
             int weaponAmount = 0;
 
             var ammunitionType = (InterfaceAmmunition)EnumExtensions.GetInstance(ammoTypeKvp.Key.ToString());
-            var weaponDefinition = (InterfaceWeapon)ammunitionType.WeaponDefinition;
+            var weaponDefinition = (InterfaceWeapon)ammunitionType.weaponDefinition;
             var weaponSqfName = EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.WeaponType);
+            var ammoDisplayName = EnumExtensions.GetEnumMemberAttrValue(ammunitionType.AmmunitionType);
 
             int amount = ammoTypeKvp.Value / 2;
 
             // Calculates the the other halves of the pylons
             for (int p = 0; p < amount; p++)
             {
-                totalPrice += ammunitionType.CostPerPylon * 2;
-                weaponAmount += ammunitionType.AmountPerPylon * 2;
+                totalPrice += ammunitionType.costPerPylon * 2;
+                weaponAmount += ammunitionType.amountPerPylon * 2;
 
                 ammunitionArray += "'";
                 ammunitionArray += EnumExtensions.GetEnumMemberAttrValue(ammunitionType.AmmunitionType);
@@ -104,26 +105,26 @@ class Program
 
             if (_generateWithPriceAndWeaponsInfo)
             {
-                totalPrice += weaponDefinition.CostPerWeaponLauncher;
+                totalPrice += weaponDefinition.costPerWeaponLauncher;
             }
 
             // Do not add duplicate weapon launchers
-            if (alreadyAddedWeaponLaunchersWithWeaponAmountInTotal.ContainsKey(weaponSqfName))
+            if (alreadyAddedWeaponLaunchersWithWeaponAmountInTotal.ContainsKey((weaponSqfName, ammunitionType.ammoDisplayName)))
             {
-                alreadyAddedWeaponLaunchersWithWeaponAmountInTotal[weaponSqfName] += weaponAmount;
+                alreadyAddedWeaponLaunchersWithWeaponAmountInTotal[(weaponSqfName, ammunitionType.ammoDisplayName)] += weaponAmount;
                 continue;
             }
 
             weaponTypesArray += "'";
-            weaponTypesArray += weaponSqfName;
+            weaponTypesArray += EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.WeaponType);
             weaponTypesArray += "',";
 
-            alreadyAddedWeaponLaunchersWithWeaponAmountInTotal.Add(weaponSqfName, weaponAmount);
+            alreadyAddedWeaponLaunchersWithWeaponAmountInTotal.Add((weaponSqfName, ammunitionType.ammoDisplayName), weaponAmount);
         }
 
         foreach (var kvp in alreadyAddedWeaponLaunchersWithWeaponAmountInTotal)
         {
-            weaponsInfo += kvp.Key + " (" + kvp.Value + ") | ";
+            weaponsInfo += kvp.Key.Item2 + " (" + kvp.Value + ") | ";
         }
         weaponsInfo = weaponsInfo.TrimEnd(' ');
         weaponsInfo = weaponsInfo.TrimEnd('|');

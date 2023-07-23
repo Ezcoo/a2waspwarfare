@@ -3,6 +3,6 @@
     public R73_WEAPON()
     {
         WeaponType = WeaponType.R73_WEAPON;
-        CostPerWeaponLauncher = 1000;
+        costPerWeaponLauncher = 1000;
     }
 }

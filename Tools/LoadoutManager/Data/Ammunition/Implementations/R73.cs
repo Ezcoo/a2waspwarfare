@@ -3,8 +3,9 @@
     public R73()
     {
         AmmunitionType = AmmunitionType.R73;
-        AmountPerPylon = 1;
-        WeaponDefinition = (InterfaceWeapon)EnumExtensions.GetInstance(WeaponType.R73_WEAPON.ToString()) as BaseWeapon;
-        CostPerPylon = 2322; // Fill in the actual cost here
+        amountPerPylon = 1;
+        weaponDefinition = (InterfaceWeapon)EnumExtensions.GetInstance(WeaponType.R73_WEAPON.ToString()) as BaseWeapon;
+        ammoDisplayName = "R-73";
+        costPerPylon = 2322;
     }
 }
