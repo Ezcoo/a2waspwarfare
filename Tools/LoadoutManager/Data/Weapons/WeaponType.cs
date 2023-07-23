@@ -3,5 +3,5 @@
 public enum WeaponType
 {
     [EnumMember(Value = "R73Launcher_2")]
-    R73_Weapon,
+    R73_WEAPON,
 }

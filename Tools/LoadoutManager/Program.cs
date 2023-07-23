@@ -18,9 +18,9 @@ class Program
 {
     static void Main()
     {
-        //var ammoTest = (InterfaceAmmunition)EnumExtensions.GetInstance(AmmunitionType.R73.ToString());
-        //Console.WriteLine(ammoTest.WeaponDefinition.DisplayName);
-        //Console.WriteLine(EnumExtensions.GetEnumMemberAttrValue(AmmunitionType.R73));
+        var ammoTest = (InterfaceAmmunition)EnumExtensions.GetInstance(AmmunitionType.R73.ToString());
+        Console.WriteLine(ammoTest.WeaponDefinition.DisplayName);
+        Console.WriteLine(EnumExtensions.GetEnumMemberAttrValue(AmmunitionType.R73));
 
 
         var loadoutDefault = new Loadout

@@ -4,12 +4,7 @@
     {
         Type = AmmunitionType.R73;
         AmountPerPylon = 1;
-        //WeaponDefinition = new BaseWeapon
-        //{
-        //    ClassName = "R73Launcher_2",
-        //    DisplayName = "R-73",
-        //    CostPerWeaponLauncher = 1000 // Fill in the actual cost here
-        //};
+        WeaponDefinition = (InterfaceWeapon)EnumExtensions.GetInstance(WeaponType.R73_WEAPON.ToString()) as BaseWeapon;
         CostPerPylon = 2322; // Fill in the actual cost here
     }
 
