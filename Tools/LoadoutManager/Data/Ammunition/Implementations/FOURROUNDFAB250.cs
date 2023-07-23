@@ -1,9 +1,9 @@
-﻿public class TWOROUNDFAB250 : BaseAmmunition
+﻿public class FOURROUNDFAB250 : BaseAmmunition
 {
-    public TWOROUNDFAB250()
+    public FOURROUNDFAB250()
     {
-        AmmunitionType = AmmunitionType.TWOROUNDFAB250;
-        AmountPerPylon = 2;
+        AmmunitionType = AmmunitionType.FOURROUNDFAB250;
+        AmountPerPylon = 4;
         WeaponDefinition = (InterfaceWeapon)EnumExtensions.GetInstance(WeaponType.AIRBOMBLAUNCHER.ToString()) as BaseWeapon;
         CostPerPylon = 23222;
     }

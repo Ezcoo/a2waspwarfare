@@ -9,7 +9,7 @@
         defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.R73, 8},
-                { AmmunitionType.TWOROUNDFAB250, 2},
+                { AmmunitionType.FOURROUNDFAB250, 2},
             };
 
         DefaultLoadout = defaultLoadout;
@@ -17,7 +17,7 @@
         AllowedAmmunitionTypes = new List<AmmunitionType>
         {
             AmmunitionType.R73,
-            AmmunitionType.TWOROUNDFAB250,
+            AmmunitionType.FOURROUNDFAB250,
         };
     }
 }
