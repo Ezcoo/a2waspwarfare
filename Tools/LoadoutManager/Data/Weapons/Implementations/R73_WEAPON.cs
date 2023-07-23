@@ -2,9 +2,7 @@
 {
     public R73_WEAPON()
     {
-        Type = WeaponType.R73_WEAPON;
-        CostPerWeaponLauncher = 1000; // Fill in the actual cost here
+        WeaponType = WeaponType.R73_WEAPON;
+        CostPerWeaponLauncher = 1000;
     }
-
-    public WeaponType Type { get; }
 }

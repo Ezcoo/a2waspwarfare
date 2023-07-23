@@ -30,28 +30,37 @@ class Program
             var aircraftDefinition = (InterfaceAircraft)EnumExtensions.GetInstance(aircraftType.ToString());
 
             // Generate the SQF code
-            Console.WriteLine("_easaVehi = _easaVehi + ['" + EnumExtensions.GetEnumMemberAttrValue(aircraftDefinition.Type) + "'];");
+            Console.WriteLine("_easaVehi = _easaVehi + ['" + EnumExtensions.GetEnumMemberAttrValue(aircraftDefinition.AircraftType) + "'];");
             Console.WriteLine("_easaDefault = _easaDefault + [[");
 
+            Console.Write("[");
+
+            string weaponTypesArray = string.Empty;
             List<string> alreadyAddedWeaponLaunchers = new List<string>();
             foreach (var ammoTypeKvp in aircraftDefinition.DefaultLoadout.AmmunitionTypesWithCount)
             {
+                //Console.WriteLine(ammoTypeKvp);
                 var ammunitionType = (InterfaceAmmunition)EnumExtensions.GetInstance(ammoTypeKvp.Key.ToString());
                 var weaponDefinition = (InterfaceWeapon)ammunitionType.WeaponDefinition;
-                var weaponSqfName = EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.Type);
+                var weaponSqfName = EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.WeaponType);
 
-                // Do not add duplicate weapon launchers
+                //Do not add duplicate weapon launchers
                 if (alreadyAddedWeaponLaunchers.Contains(weaponSqfName))
                 {
                     continue;
                 }
 
-                Console.Write("[[['");
-                Console.Write(string.Join("','", weaponSqfName));
-                Console.Write("'],");
+                weaponTypesArray += "'";
+                weaponTypesArray += weaponSqfName;
+                weaponTypesArray += "',";
+
+                alreadyAddedWeaponLaunchers.Add(weaponSqfName);
             }
 
-            Console.WriteLine("]];");
+            weaponTypesArray = weaponTypesArray.Substring(0, weaponTypesArray.Length - 1);
+            weaponTypesArray += "]";
+
+            Console.WriteLine(weaponTypesArray + "]];");
 
 
 

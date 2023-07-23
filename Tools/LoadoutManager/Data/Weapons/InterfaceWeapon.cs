@@ -2,6 +2,6 @@
 
 public interface InterfaceWeapon
 {
-    public WeaponType Type { get; set; }
+    public WeaponType WeaponType { get; set; }
     public int CostPerWeaponLauncher { get; set; }
 }

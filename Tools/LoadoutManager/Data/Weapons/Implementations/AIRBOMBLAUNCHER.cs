@@ -2,9 +2,7 @@
 {
     public AIRBOMBLAUNCHER()
     {
-        Type = WeaponType.AIRBOMBLAUNCHER;
-        CostPerWeaponLauncher = 1000; // Fill in the actual cost here
+        WeaponType = WeaponType.AIRBOMBLAUNCHER;
+        CostPerWeaponLauncher = 500;
     }
-
-    public WeaponType Type { get; }
 }

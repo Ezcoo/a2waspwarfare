@@ -2,14 +2,15 @@
 {
     public SU34()
     {
-        Type = AircraftType.SU34;
+        AircraftType = AircraftType.SU34;
         PylonAmount = 10;
 
 
         Loadout defaultLoadout = new();
         defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.R73, 10},
+                { AmmunitionType.R73, 8},
+                { AmmunitionType.TWOROUNDFAB250, 2},
             };
 
         DefaultLoadout = defaultLoadout;
@@ -17,8 +18,7 @@
         AllowedAmmunitionTypes = new List<AmmunitionType>
         {
             AmmunitionType.R73,
+            AmmunitionType.TWOROUNDFAB250,
         };
     }
-
-    public AircraftType Type { get; }
 }
