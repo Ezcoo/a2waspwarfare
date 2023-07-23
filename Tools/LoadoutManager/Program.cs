@@ -5,26 +5,6 @@ class Program
 {
     static void Main()
     {
-        //var ammoTest = (InterfaceAmmunition)EnumExtensions.GetInstance(AmmunitionType.R73.ToString());
-        //Console.WriteLine(ammoTest.WeaponDefinition.DisplayName);
-        //Console.WriteLine(EnumExtensions.GetEnumMemberAttrValue(AmmunitionType.R73));
-
-
-        //var easaLoadouts = new List<Loadout>
-        //{
-        //    // Define all the loadouts here with the specified ammunition
-        //    // and calculate the costs per pylon accordingly
-        //    // Example:
-        //     new Loadout
-        //     {
-        //         Weapons = new List<List<string>>
-        //         {
-        //             new List<string> { "Ch29Launcher_Su34", "R73Launcher_2", "80mmLauncher" },
-        //             new List<string> { "6Rnd_Ch29", "2Rnd_R73", "2Rnd_R73", "2Rnd_R73" }
-        //         }
-        //     }
-        //};
-
         foreach (AircraftType aircraftType in Enum.GetValues(typeof(AircraftType)))
         {
             var aircraftDefinition = (InterfaceAircraft)EnumExtensions.GetInstance(aircraftType.ToString());
@@ -45,7 +25,7 @@ class Program
                 var weaponSqfName = EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.WeaponType);
 
                 // Calculates the the other halves of the pylons
-                for (int p = 0; p < ammoTypeKvp.Value/2; p++)
+                for (int p = 0; p < ammoTypeKvp.Value / 2; p++)
                 {
                     ammunitionArray += "'";
                     ammunitionArray += EnumExtensions.GetEnumMemberAttrValue(ammunitionType.AmmunitionType);
@@ -74,36 +54,44 @@ class Program
             ammunitionArray = ammunitionArray.Substring(0, ammunitionArray.Length - 1);
             ammunitionArray += "]";
 
-
             Console.WriteLine(ammunitionArray + "\n]];");
 
+            int r = aircraftDefinition.PylonAmount/2; // Number of elements in each combination
 
+            List<List<AmmunitionType>> combinations = GenerateCombinations(aircraftDefinition.AllowedAmmunitionTypes.ToArray(), r);
 
+            // Display the combinations
+            foreach (var combination in combinations)
+            {
+                Console.WriteLine(string.Join(", ", combination));
+            }
+        }
+    }
 
+    static List<List<AmmunitionType>> GenerateCombinations(AmmunitionType[] _inputArray, int _r)
+    {
+        List<List<AmmunitionType>> result = new List<List<AmmunitionType>>();
+        List<AmmunitionType> combination = new List<AmmunitionType>();
 
-            //Console.WriteLine("_easaLoadout = _easaLoadout + [");
-            //foreach (var loadout in aircraftDefinition.EASALoadouts)
-            //{
-            //    Console.WriteLine("  [");
-            //    foreach (var weapon in loadout.Weapons)
-            //    {
-            //        Console.Write("   [");
-            //        // Here you can calculate the cost per pylon using the ammunition definitions
-            //        // and weapon definitions.
-            //        Console.Write("0, '" + weapon[0] + " (" + weapon.Count + ")', [");
-            //        for (int i = 0; i < weapon.Count; i++)
-            //        {
-            //            Console.Write("'" + weapon[i] + "'");
-            //            if (i < weapon.Count - 1)
-            //            {
-            //                Console.Write(",");
-            //            }
-            //        }
-            //        Console.WriteLine("]],");
-            //    }
-            //    Console.WriteLine(" ],");
-            //}
-            //Console.WriteLine("];")
+        GenerateCombinationsUtil(_inputArray, _r, 0, combination, result);
+
+        return result;
+    }
+
+    static void GenerateCombinationsUtil(
+        AmmunitionType[] _inputArray, int r, int start, List<AmmunitionType> _combination, List<List<AmmunitionType>> _result)
+    {
+        if (r == 0)
+        {
+            _result.Add(new List<AmmunitionType>(_combination));
+            return;
+        }
+
+        for (int i = start; i < _inputArray.Length; i++)
+        {
+            _combination.Add(_inputArray[i]);
+            GenerateCombinationsUtil(_inputArray, r - 1, i, _combination, _result);
+            _combination.RemoveAt(_combination.Count - 1);
         }
     }
 }
