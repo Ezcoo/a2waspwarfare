@@ -102,6 +102,11 @@ class Program
                 ammunitionArray += "',";
             }
 
+            if (_generateWithPriceAndWeaponsInfo)
+            {
+                totalPrice += weaponDefinition.CostPerWeaponLauncher;
+            }
+
             // Do not add duplicate weapon launchers
             if (alreadyAddedWeaponLaunchersWithWeaponAmountInTotal.ContainsKey(weaponSqfName))
             {
@@ -114,11 +119,6 @@ class Program
             weaponTypesArray += "',";
 
             alreadyAddedWeaponLaunchersWithWeaponAmountInTotal.Add(weaponSqfName, weaponAmount);
-
-            if (_generateWithPriceAndWeaponsInfo)
-            {
-                totalPrice += weaponDefinition.CostPerWeaponLauncher;
-            }
         }
 
         foreach (var kvp in alreadyAddedWeaponLaunchersWithWeaponAmountInTotal)
