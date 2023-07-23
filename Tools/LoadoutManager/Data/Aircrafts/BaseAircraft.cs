@@ -128,7 +128,7 @@
         weaponsInfo = weaponsInfo.TrimEnd('|');
         weaponsInfo = weaponsInfo.TrimEnd(' ');
 
-        priceAndWeaponsInfo = totalPrice.ToString() + ",'" + weaponsInfo + "'";
+        priceAndWeaponsInfo = totalPrice.ToString() + ",'" + weaponsInfo + "',";
 
         Console.Write("[" + priceAndWeaponsInfo + "[[");
 
