@@ -13,15 +13,33 @@ class Program
 
             GenerateDefaultLoadout(_interfaceAircraft);
 
-            int r = _interfaceAircraft.PylonAmount / 2; // Number of elements in each combination
+            GenerateCombinationLoadouts(_interfaceAircraft);
+        }
+    }
 
-            //List<List<AmmunitionType>> combinations = GenerateCombinations(_interfaceAircraft);
+    private static void GenerateCombinationLoadouts(InterfaceAircraft _interfaceAircraft)
+    {
+        List<List<AmmunitionType>> combinations = GenerateCombinations(_interfaceAircraft.AllowedAmmunitionTypes.ToArray(), _interfaceAircraft.PylonAmount / 2);
 
-            //// Display the combinations
-            //foreach (var combination in combinations)
-            //{
-            //    Console.WriteLine(string.Join(", ", combination));
-            //}
+        // Display the combinations
+        foreach (var combination in combinations)
+        {
+            Dictionary<AmmunitionType, int> loadoutss = new Dictionary<AmmunitionType, int>();
+
+            //Console.WriteLine(string.Join(", ", combination));
+
+            foreach (var item in combination)
+            {
+                if (!loadoutss.ContainsKey(item))
+                {
+                    loadoutss.Add(item, 2);
+                }
+                else
+                {
+                    loadoutss[item] += 2;
+                }
+            }
+            Console.WriteLine(GenerateLoadoutRow(loadoutss, _interfaceAircraft) + ",\n");
         }
     }
 
