@@ -101,13 +101,13 @@ class Program
             alreadyAddedWeaponLaunchers.Add(weaponSqfName);
         }
 
-        weaponTypesArray = weaponTypesArray.Substring(0, weaponTypesArray.Length - 1);
+        weaponTypesArray = weaponTypesArray.TrimEnd(',');
         weaponTypesArray += "]";
 
         Console.WriteLine(weaponTypesArray + ",");
         Console.Write("[");
 
-        ammunitionArray = ammunitionArray.Substring(0, ammunitionArray.Length - 1);
+        ammunitionArray = ammunitionArray.TrimEnd(',');
         ammunitionArray += "]]]";
 
         return ammunitionArray;
