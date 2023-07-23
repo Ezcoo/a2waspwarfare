@@ -7,31 +7,31 @@ class Program
     {
         foreach (AircraftType aircraftType in Enum.GetValues(typeof(AircraftType)))
         {
-            var aircraftDefinition = (InterfaceAircraft)EnumExtensions.GetInstance(aircraftType.ToString());
+            var _interfaceAircraft = (InterfaceAircraft)EnumExtensions.GetInstance(aircraftType.ToString());
 
-            Console.WriteLine("_easaVehi = _easaVehi + ['" + EnumExtensions.GetEnumMemberAttrValue(aircraftDefinition.AircraftType) + "'];");
+            Console.WriteLine("_easaVehi = _easaVehi + ['" + EnumExtensions.GetEnumMemberAttrValue(_interfaceAircraft.AircraftType) + "'];");
 
-            GenerateDefaultLoadout(aircraftDefinition.DefaultLoadout.AmmunitionTypesWithCount, aircraftDefinition);
+            GenerateDefaultLoadout(_interfaceAircraft);
 
-            int r = aircraftDefinition.PylonAmount / 2; // Number of elements in each combination
+            int r = _interfaceAircraft.PylonAmount / 2; // Number of elements in each combination
 
-            List<List<AmmunitionType>> combinations = GenerateCombinations(aircraftDefinition.AllowedAmmunitionTypes.ToArray(), r);
+            //List<List<AmmunitionType>> combinations = GenerateCombinations(_interfaceAircraft);
 
-            // Display the combinations
-            foreach (var combination in combinations)
-            {
-                Console.WriteLine(string.Join(", ", combination));
-            }
+            //// Display the combinations
+            //foreach (var combination in combinations)
+            //{
+            //    Console.WriteLine(string.Join(", ", combination));
+            //}
         }
     }
 
-    private static void GenerateDefaultLoadout(Dictionary<AmmunitionType, int> _input, InterfaceAircraft _af)
+    private static void GenerateDefaultLoadout(InterfaceAircraft _interfaceAircraft)
     {
         Console.WriteLine("_easaDefault = _easaDefault + [[");
 
         Console.Write("[");
 
-        string ammunitionArray = GenerateLoadoutRow(_input, _af);
+        string ammunitionArray = GenerateLoadoutRow(_interfaceAircraft.DefaultLoadout.AmmunitionTypesWithCount, _interfaceAircraft);
 
         Console.WriteLine(ammunitionArray + "\n]];");
     }
