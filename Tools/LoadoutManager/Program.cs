@@ -1,13 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-public class BaseWeapon
-{
-    public string ClassName { get; set; }
-    public string DisplayName { get; set; }
-    public int CostPerWeaponLauncher { get; set; }
-}
-
 public class Loadout
 {
     public List<List<string>> Weapons { get; set; }
@@ -25,11 +18,9 @@ class Program
 {
     static void Main()
     {
-        
-
-        var ammoTest = (InterfaceAmmunition)EnumExtensions.GetInstance(AmmunitionType.R73.ToString());
-        Console.WriteLine(ammoTest.WeaponDefinition.DisplayName);
-        Console.WriteLine(EnumExtensions.GetEnumMemberAttrValue(AmmunitionType.R73));
+        //var ammoTest = (InterfaceAmmunition)EnumExtensions.GetInstance(AmmunitionType.R73.ToString());
+        //Console.WriteLine(ammoTest.WeaponDefinition.DisplayName);
+        //Console.WriteLine(EnumExtensions.GetEnumMemberAttrValue(AmmunitionType.R73));
 
 
         var loadoutDefault = new Loadout
