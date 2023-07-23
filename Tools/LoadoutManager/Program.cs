@@ -47,16 +47,7 @@ class Program
             var weaponDefinition = (InterfaceWeapon)ammunitionType.WeaponDefinition;
             var weaponSqfName = EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.WeaponType);
 
-            int amount = 0;
-
-            if (ammoTypeKvp.Value <= 0)
-            {
-                amount = _af.PylonAmount;
-            }
-            else
-            {
-                amount = ammoTypeKvp.Value / 2;
-            }
+            int amount = ammoTypeKvp.Value / 2;
 
             // Calculates the the other halves of the pylons
             for (int p = 0; p < amount; p++)
