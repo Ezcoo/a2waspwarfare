@@ -19,43 +19,44 @@ class Program
 
     private static void GenerateCombinationLoadouts(InterfaceAircraft _interfaceAircraft)
     {
+        Console.WriteLine("_easaLoadout = _easaLoadout + [\n[");
+
         List<List<AmmunitionType>> combinations = GenerateCombinations(_interfaceAircraft.AllowedAmmunitionTypes.ToArray(), _interfaceAircraft.PylonAmount / 2);
 
         // Display the combinations
         foreach (var combination in combinations)
         {
-            Dictionary<AmmunitionType, int> loadoutss = new Dictionary<AmmunitionType, int>();
+            Dictionary<AmmunitionType, int> combinationLoadouts = new Dictionary<AmmunitionType, int>();
 
             //Console.WriteLine(string.Join(", ", combination));
 
             foreach (var item in combination)
             {
-                if (!loadoutss.ContainsKey(item))
+                if (!combinationLoadouts.ContainsKey(item))
                 {
-                    loadoutss.Add(item, 2);
+                    combinationLoadouts.Add(item, 2);
                 }
                 else
                 {
-                    loadoutss[item] += 2;
+                    combinationLoadouts[item] += 2;
                 }
             }
-            Console.WriteLine(GenerateLoadoutRow(loadoutss, _interfaceAircraft) + ",\n");
+            Console.WriteLine(GenerateLoadoutRow(combinationLoadouts) + ",\n");
         }
     }
 
     private static void GenerateDefaultLoadout(InterfaceAircraft _interfaceAircraft)
     {
-        Console.WriteLine("_easaDefault = _easaDefault + [[");
+        Console.WriteLine("_easaDefault = _easaDefault + ");
 
-        Console.Write("[");
+        string ammunitionArray = GenerateLoadoutRow(_interfaceAircraft.DefaultLoadout.AmmunitionTypesWithCount);
 
-        string ammunitionArray = GenerateLoadoutRow(_interfaceAircraft.DefaultLoadout.AmmunitionTypesWithCount, _interfaceAircraft);
-
-        Console.WriteLine(ammunitionArray + "\n]];");
+        Console.WriteLine(ammunitionArray + ";");
     }
 
-    private static string GenerateLoadoutRow(Dictionary<AmmunitionType, int> _input, InterfaceAircraft _af)
+    private static string GenerateLoadoutRow(Dictionary<AmmunitionType, int> _input)
     {
+        Console.Write("[[[");
         string weaponTypesArray = string.Empty;
         string ammunitionArray = string.Empty;
         List<string> alreadyAddedWeaponLaunchers = new List<string>();
@@ -95,7 +96,7 @@ class Program
         Console.Write("[");
 
         ammunitionArray = ammunitionArray.Substring(0, ammunitionArray.Length - 1);
-        ammunitionArray += "]";
+        ammunitionArray += "]]]";
 
         return ammunitionArray;
     }
