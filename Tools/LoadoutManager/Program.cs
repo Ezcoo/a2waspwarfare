@@ -8,14 +8,13 @@ class Program
         foreach (AircraftType aircraftType in Enum.GetValues(typeof(AircraftType)))
         {
             var aircraftDefinition = (InterfaceAircraft)EnumExtensions.GetInstance(aircraftType.ToString());
+            int pylonAmountDividedByTwo = aircraftDefinition.PylonAmount / 2; // Number of elements in each combinatio
 
             Console.WriteLine("_easaVehi = _easaVehi + ['" + EnumExtensions.GetEnumMemberAttrValue(aircraftDefinition.AircraftType) + "'];");
 
-            GenerateDefaultLoadout(aircraftDefinition.DefaultLoadout.AmmunitionTypesWithCount, aircraftDefinition);
+            GenerateDefaultLoadout(aircraftDefinition.DefaultLoadout.AmmunitionTypesWithCount, pylonAmountDividedByTwo);
 
-            int r = aircraftDefinition.PylonAmount / 2; // Number of elements in each combination
-
-            List<List<AmmunitionType>> combinations = GenerateCombinations(aircraftDefinition.AllowedAmmunitionTypes.ToArray(), r);
+            List<List<AmmunitionType>> combinations = GenerateCombinations(aircraftDefinition.AllowedAmmunitionTypes.ToArray(), pylonAmountDividedByTwo);
 
             // Display the combinations
             foreach (var combination in combinations)
@@ -25,18 +24,18 @@ class Program
         }
     }
 
-    private static void GenerateDefaultLoadout(Dictionary<AmmunitionType, int> _input, InterfaceAircraft _af)
+    private static void GenerateDefaultLoadout(Dictionary<AmmunitionType, int> _input, int _pylonAmountDividedByTwo)
     {
         Console.WriteLine("_easaDefault = _easaDefault + [[");
 
         Console.Write("[");
 
-        string ammunitionArray = GenerateLoadoutRow(_input, _af);
+        string ammunitionArray = GenerateLoadoutRow(_input, _pylonAmountDividedByTwo);
 
         Console.WriteLine(ammunitionArray + "\n]];");
     }
 
-    private static string GenerateLoadoutRow(Dictionary<AmmunitionType, int> _input, InterfaceAircraft _af)
+    private static string GenerateLoadoutRow(Dictionary<AmmunitionType, int> _input, int _pylonAmountDividedByTwo)
     {
         string weaponTypesArray = string.Empty;
         string ammunitionArray = string.Empty;
@@ -47,19 +46,8 @@ class Program
             var weaponDefinition = (InterfaceWeapon)ammunitionType.WeaponDefinition;
             var weaponSqfName = EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.WeaponType);
 
-            int amount = 0;
-
-            if (ammoTypeKvp.Value <= 0)
-            {
-                amount = _af.PylonAmount;
-            }
-            else
-            {
-                amount = ammoTypeKvp.Value / 2;
-            }
-
             // Calculates the the other halves of the pylons
-            for (int p = 0; p < amount; p++)
+            for (int p = 0; p < _pylonAmountDividedByTwo; p++)
             {
                 ammunitionArray += "'";
                 ammunitionArray += EnumExtensions.GetEnumMemberAttrValue(ammunitionType.AmmunitionType);
