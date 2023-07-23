@@ -2,7 +2,8 @@
 {
     public R73()
     {
-        AmountPerPylon = 2;
+        Type = AmmunitionType.R73;
+        AmountPerPylon = 1;
         WeaponDefinition = new BaseWeapon
         {
             ClassName = "R73Launcher_2",
@@ -11,4 +12,6 @@
         };
         CostPerPylon = 2322; // Fill in the actual cost here
     }
+
+    public AmmunitionType Type { get; }
 }

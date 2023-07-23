@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-
 public class BaseWeapon
 {
     public string ClassName { get; set; }
@@ -26,8 +25,11 @@ class Program
 {
     static void Main()
     {
-        var ammoTest = (InterfaceAmmunition)EnumExtensions.GetInstance("R73");
-        //Console.WriteLine(ammoTest.WeaponDefinition.DisplayName);
+        
+
+        var ammoTest = (InterfaceAmmunition)EnumExtensions.GetInstance(AmmunitionType.R73.ToString());
+        Console.WriteLine(ammoTest.WeaponDefinition.DisplayName);
+        Console.WriteLine(EnumExtensions.GetEnumMemberAttrValue(AmmunitionType.R73));
 
 
         var loadoutDefault = new Loadout
