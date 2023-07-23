@@ -5,17 +5,19 @@
         Type = AircraftType.SU34;
         PylonAmount = 10;
 
-        var loadoutDefault = new Loadout
-        {
-            Weapons = new List<List<string>>
-            {
-                new List<string> { "Ch29Launcher_Su34", "R73Launcher_2", "80mmLauncher" },
-                new List<string> { "6Rnd_Ch29", "2Rnd_R73", "2Rnd_R73", "2Rnd_R73", "2Rnd_R73", "2Rnd_R73" }
-            }
-        };
 
-        DefaultLoadout = loadoutDefault;
-        //EASALoadouts = easaLoadouts;
+        Loadout defaultLoadout = new();
+        defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+                { AmmunitionType.R73, 10},
+            };
+
+        DefaultLoadout = defaultLoadout;
+
+        AllowedAmmunitionTypes = new List<AmmunitionType>
+        {
+            AmmunitionType.R73,
+        };
     }
 
     public AircraftType Type { get; }
