@@ -36,13 +36,21 @@ class Program
             Console.Write("[");
 
             string weaponTypesArray = string.Empty;
+            string ammunitionArray = string.Empty;
             List<string> alreadyAddedWeaponLaunchers = new List<string>();
             foreach (var ammoTypeKvp in aircraftDefinition.DefaultLoadout.AmmunitionTypesWithCount)
             {
-                //Console.WriteLine(ammoTypeKvp);
                 var ammunitionType = (InterfaceAmmunition)EnumExtensions.GetInstance(ammoTypeKvp.Key.ToString());
                 var weaponDefinition = (InterfaceWeapon)ammunitionType.WeaponDefinition;
                 var weaponSqfName = EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.WeaponType);
+
+                // Calculates the the other halves of the pylons
+                for (int p = 0; p < ammoTypeKvp.Value/2; p++)
+                {
+                    ammunitionArray += "'";
+                    ammunitionArray += EnumExtensions.GetEnumMemberAttrValue(ammunitionType.AmmunitionType);
+                    ammunitionArray += "',";
+                }
 
                 //Do not add duplicate weapon launchers
                 if (alreadyAddedWeaponLaunchers.Contains(weaponSqfName))
@@ -60,7 +68,16 @@ class Program
             weaponTypesArray = weaponTypesArray.Substring(0, weaponTypesArray.Length - 1);
             weaponTypesArray += "]";
 
-            Console.WriteLine(weaponTypesArray + "]];");
+            Console.WriteLine(weaponTypesArray + ",");
+            Console.Write("[");
+
+            ammunitionArray = ammunitionArray.Substring(0, ammunitionArray.Length - 1);
+            ammunitionArray += "]";
+
+
+            Console.WriteLine(ammunitionArray + "\n]];");
+
+
 
 
 

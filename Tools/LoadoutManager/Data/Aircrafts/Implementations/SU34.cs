@@ -5,7 +5,6 @@
         AircraftType = AircraftType.SU34;
         PylonAmount = 10;
 
-
         Loadout defaultLoadout = new();
         defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
