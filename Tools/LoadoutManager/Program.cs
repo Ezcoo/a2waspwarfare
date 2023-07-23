@@ -45,7 +45,7 @@ class Program
             }
 
 
-            if (index == combinations.Count - 2)
+            if (index == combinations.Count - 1)
             {
                 Console.WriteLine(GenerateLoadoutRow(combinationLoadouts).TrimEnd(','));
                 break;
