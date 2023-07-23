@@ -23,6 +23,8 @@ class Program
 
         List<List<AmmunitionType>> combinations = GenerateCombinations(_interfaceAircraft.AllowedAmmunitionTypes.ToArray(), _interfaceAircraft.PylonAmount / 2);
 
+        int index = 0;
+
         // Display the combinations
         foreach (var combination in combinations)
         {
@@ -41,7 +43,17 @@ class Program
                     combinationLoadouts[item] += 2;
                 }
             }
+
+
+            if (index == combinations.Count - 2)
+            {
+                Console.WriteLine(GenerateLoadoutRow(combinationLoadouts).TrimEnd(','));
+                break;
+            }
+
             Console.WriteLine(GenerateLoadoutRow(combinationLoadouts) + ",\n");
+
+            index++;
         }
     }
 
