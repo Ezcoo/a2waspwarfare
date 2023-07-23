@@ -1,29 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
 
-public enum WeaponType
+public abstract class AmmunitionDefinition
 {
-    R73,
-    Ch29,
-}
-
-public enum AmmunitionType
-{
-    R73_2Rnd,
-    Ch29_6Rnd,
-}
-
-public class AmmunitionDefinition
-{
-    public AmmunitionType Type { get; set; }
     public int AmountPerPylon { get; set; }
     public WeaponDefinition WeaponDefinition { get; set; }
     public int CostPerPylon { get; set; }
 }
 
+public class R73 : AmmunitionDefinition
+{
+    public R73()
+    {
+        AmountPerPylon = 2;
+        WeaponDefinition = new WeaponDefinition
+        {
+            ClassName = "R73Launcher_2",
+            DisplayName = "R-73",
+            CostPerWeaponLauncher = 1000 // Fill in the actual cost here
+        };
+        CostPerPylon = 2322; // Fill in the actual cost here
+    }
+}
+
+public class Ch29 : AmmunitionDefinition
+{
+    public Ch29()
+    {
+        AmountPerPylon = 6;
+        WeaponDefinition = new WeaponDefinition
+        {
+            ClassName = "Ch29Launcher_Su34",
+            DisplayName = "Ch-29",
+            CostPerWeaponLauncher = 3900 // Fill in the actual cost here
+        };
+        CostPerPylon = 1231231; // Fill in the actual cost here
+    }
+}
+
 public class WeaponDefinition
 {
-    public WeaponType Type { get; set; }
     public string ClassName { get; set; }
     public string DisplayName { get; set; }
     public int CostPerWeaponLauncher { get; set; }
@@ -46,34 +62,8 @@ class Program
 {
     static void Main()
     {
-        // Creating the ammunition definitions
-        var ammunitionR73 = new AmmunitionDefinition
-        {
-            Type = AmmunitionType.R73_2Rnd,
-            AmountPerPylon = 2,
-            WeaponDefinition = new WeaponDefinition
-            {
-                Type = WeaponType.R73,
-                ClassName = "R73Launcher_2",
-                DisplayName = "R-73",
-                CostPerWeaponLauncher = 1000 // Fill in the actual cost here
-            },
-            CostPerPylon = 2322 // Fill in the actual cost here
-        };
-
-        var ammunitionCh29 = new AmmunitionDefinition
-        {
-            Type = AmmunitionType.Ch29_6Rnd,
-            AmountPerPylon = 6,
-            WeaponDefinition = new WeaponDefinition
-            {
-                Type = WeaponType.Ch29,
-                ClassName = "Ch29Launcher_Su34",
-                DisplayName = "Ch-29",
-                CostPerWeaponLauncher = 3900 // Fill in the actual cost here
-            },
-            CostPerPylon = 1231231 // Fill in the actual cost here
-        };
+        var ammunitionR73 = Activator.CreateInstance<R73>();
+        var ammunitionCh29 = Activator.CreateInstance<Ch29>();
 
         var loadoutDefault = new Loadout
         {
