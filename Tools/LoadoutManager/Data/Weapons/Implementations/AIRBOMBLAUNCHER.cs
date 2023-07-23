@@ -1,9 +1,8 @@
-﻿public class R73_WEAPON : BaseWeapon
+﻿public class AIRBOMBLAUNCHER : BaseWeapon
 {
-    public R73_WEAPON()
+    public AIRBOMBLAUNCHER()
     {
-        Type = WeaponType.R73_WEAPON;
-        DisplayName = "R-73";
+        Type = WeaponType.AIRBOMBLAUNCHER;
         CostPerWeaponLauncher = 1000; // Fill in the actual cost here
     }
 

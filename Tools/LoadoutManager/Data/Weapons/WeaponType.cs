@@ -4,4 +4,7 @@ public enum WeaponType
 {
     [EnumMember(Value = "R73Launcher_2")]
     R73_WEAPON,
+
+    [EnumMember(Value = "AirBombLauncher")]
+    AIRBOMBLAUNCHER,
 }
