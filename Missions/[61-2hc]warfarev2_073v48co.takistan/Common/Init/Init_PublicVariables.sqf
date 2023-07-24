@@ -35,7 +35,6 @@ _l = _l + ["SetMHQLock"];
 _l = _l + ["Available"];
 _l = _l + ["RequestBaseArea"];
 _l = _l + ["IcbmNotify"];
-_l = _l + ["HandleParatrooperMarkerCreation"];
 
 _clientCommandPV = _l;
 
