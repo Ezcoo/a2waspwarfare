@@ -128,9 +128,17 @@
         weaponsInfo = weaponsInfo.TrimEnd('|');
         weaponsInfo = weaponsInfo.TrimEnd(' ');
 
-        priceAndWeaponsInfo = totalPrice.ToString() + ",'" + weaponsInfo + "',";
 
-        Console.Write("[" + priceAndWeaponsInfo + "[[");
+        if (_generateWithPriceAndWeaponsInfo)
+        {
+            priceAndWeaponsInfo = totalPrice.ToString() + ",'" + weaponsInfo + "',";
+
+            Console.Write("[" + priceAndWeaponsInfo + "[[");
+        }
+        else
+        {
+            Console.Write("[[[");
+        }
 
         weaponTypesArray = weaponTypesArray.TrimEnd(',');
         weaponTypesArray += "]";
