@@ -48,7 +48,7 @@ while {alive _object && !(isNull _object)} do {
 
             // Get the aircraft name (AAR2)
             if (_aarUpgradeLevel > 1) then {
-                _aircraftName = typeOf _object;
+                _aircraftName = [typeOf _object, 'displayName'] Call GetConfigInfo;
                 _updateFrequency = 1;
             };
 
