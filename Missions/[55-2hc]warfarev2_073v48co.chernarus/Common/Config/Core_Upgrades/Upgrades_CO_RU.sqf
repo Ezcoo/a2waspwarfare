@@ -47,7 +47,7 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_COSTS", _side], [
 	[[2500,0],[3500,0],[6000,0]], //--- Artillery Ammo
 	[[3000,0]], //--- IR Smoke
 	[[7500,0]], //--- Aircraft AA Missiles
-	[[15000,0],[35000,0]] //--- Anti Air Radar
+	[[5000,0],[12500,0]] //--- Anti Air Radar
 ]];
 
 missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LEVELS", _side], [
@@ -134,7 +134,7 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_TIMES", _side], [
 	[60,120,180], //--- Artillery Ammo
 	[120], //--- IR Smoke
 	[120], //--- Aircraft AA Missiles
-	[150,250] //--- Anti Air Radar
+	[50,125] //--- Anti Air Radar
 ]];
 
 //todo, on commander missing link checkup, skip disabled upgrades.
