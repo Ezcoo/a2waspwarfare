@@ -266,7 +266,7 @@ _l = _l + [_u];
 
 _k = _k + ["Armored_4"];
 _u		= ["M1A2_US_TUSK_MG_EP1"];
-_u = _u + ["M6_EP1"];
+_u = _u + ["M1A2_US_TUSK_MG_EP1"];
 _u = _u + ["M1A2_US_TUSK_MG_EP1"];
 _l = _l + [_u];
 
