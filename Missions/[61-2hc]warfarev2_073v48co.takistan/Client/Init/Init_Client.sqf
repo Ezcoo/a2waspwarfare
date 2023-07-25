@@ -177,8 +177,10 @@ paramBoundariesRunning = false;
 
 disableserialization;
 keyPressed = compile preprocessFile "Common\Functions\Common_DisableTablock.sqf";
+keyPressedViewDistance = compile preprocessFile "Common\Functions\Common_AdjustViewDistance.sqf";
 _display = findDisplay 46;
 _display displayAddEventHandler ["KeyDown","_this call keyPressed"];
+_display displayAddEventHandler ["KeyDown","_this call keyPressedViewDistance"];
 
 (vehicle player) addEventHandler ["Fired",{_this Spawn HandleAT}];
 execVM "WASP\global_marking_monitor.sqf";
