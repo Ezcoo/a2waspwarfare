@@ -59,7 +59,7 @@ lnbClear _listBox;
 	if (_UpAirlift > 0) then {
 	
 		if(_x in (missionNamespace getVariable [format["WFBE_%1LIFTVEHICLE", sideJoinedText], []])) then {
-			lnbSetColor [_listBox,[_i,1],[0.0, 0.16, 1.0, 1.0]]
+			lnbSetColor [_listBox,[_i,1],[0.0, 0.26, 1.0, 1.0]]
 		};
 	};	
 		
