@@ -238,7 +238,7 @@ _l = _l + [_u];
 
 _k = _k + ["Mechanized_4"];
 _u		= ["BAF_FV510_W"];
-_u = _u + ["M6_EP1"];
+_u = _u + ["BAF_FV510_W"];
 _u = _u + ["M2A3_EP1"];
 _l = _l + [_u];
 
@@ -266,7 +266,7 @@ _l = _l + [_u];
 
 _k = _k + ["Armored_4"];
 _u		= ["M1A2_TUSK_MG"];
-_u = _u + ["M6_EP1"];
+_u = _u + ["M1A2_TUSK_MG"];
 _u = _u + ["M1A2_TUSK_MG"];
 _l = _l + [_u];
 
