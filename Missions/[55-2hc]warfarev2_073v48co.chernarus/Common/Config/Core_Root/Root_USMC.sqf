@@ -152,7 +152,7 @@ missionNamespace setVariable [Format["WFBE_%1_DefaultGearEngineer", _side], [
 
 // Sniper
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearSpot", _side], [
-	['M24','glock17_EP1','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular','NVGoggles'],
+	['M24','glock17_EP1','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular_Vector','NVGoggles'],
 	['5Rnd_762x51_M24','5Rnd_762x51_M24','5Rnd_762x51_M24','5Rnd_762x51_M24','17Rnd_9x19_glock17','17Rnd_9x19_glock17','17Rnd_9x19_glock17','17Rnd_9x19_glock17','SmokeShellRed'],
 	['M24']
 ]];
