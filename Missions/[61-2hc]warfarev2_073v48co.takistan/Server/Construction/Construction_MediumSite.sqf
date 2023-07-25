@@ -140,6 +140,6 @@ if (!IsNull _site) then {
 	};
 	Call Compile Format ["_site AddEventHandler ['killed',{[_this select 0,_this select 1,'%1'] Spawn BuildingKilled}];",_type];
 
-    _commanderOfTheTeam = name leader (_side) Call WFBE_CO_FNC_GetCommanderTeam;
+    _commanderOfTheTeam = (_side) Call WFBE_CO_FNC_GetCommanderTeam;
 	["INFORMATION", Format ["Construction_MediumSite.sqf: [%1] Structure [%2] has been constructed by: [%3]", str _side, _type, _commanderOfTheTeam]] Call WFBE_CO_FNC_LogContent;
 };
