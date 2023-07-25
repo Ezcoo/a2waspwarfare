@@ -1,7 +1,7 @@
 //*****************************************************************************************
 //Description: Creates a small construction site.
 //*****************************************************************************************
-Private ["_construct","_constructed","_direction","_group","_index","_logik","_nearLogic","_objects","_position","_rlType","_side","_sideID","_site","_siteName","_startTime","_structures","_structuresNames","_time","_timeNextUpdate","_type","_commanderOfTheTeam"];
+Private ["_construct","_constructed","_direction","_group","_index","_logik","_nearLogic","_objects","_position","_rlType","_side","_sideID","_site","_siteName","_startTime","_structures","_structuresNames","_time","_timeNextUpdate","_type"];
 _type = _this select 0;
 _side = _this select 1;
 _position = _this select 2;
@@ -140,6 +140,5 @@ if (!IsNull _site) then {
 	};
 	Call Compile Format ["_site AddEventHandler ['killed',{[_this select 0,_this select 1,'%1'] Spawn BuildingKilled}];",_type];
 	
-    _commanderOfTheTeam = (_side) Call WFBE_CO_FNC_GetCommanderTeam;
-	["INFORMATION", Format ["Construction_MediumSite.sqf: [%1] Structure [%2] has been constructed by: [%3]", str _side, _type, _commanderOfTheTeam]] Call WFBE_CO_FNC_LogContent;
+	["INFORMATION", Format ["Construction_MediumSite.sqf: [%1] Structure [%2] has been constructed.", str _side, _type]] Call WFBE_CO_FNC_LogContent;
 };

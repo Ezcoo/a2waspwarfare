@@ -1,7 +1,7 @@
 //*****************************************************************************************
 //Description: Creates a small construction site.
 //*****************************************************************************************
-Private ["_construct","_constructed","_direction","_group","_index","_logik","_nearLogic","_objects","_position","_rlType","_side","_sideID","_site","_siteName","_startTime","_structures","_structuresNames","_time","_timeNextUpdate","_type","_commanderOfTheTeam"];
+Private ["_construct","_constructed","_direction","_group","_index","_logik","_nearLogic","_objects","_position","_rlType","_side","_sideID","_site","_siteName","_startTime","_structures","_structuresNames","_time","_timeNextUpdate","_type"];
 _type = _this select 0;
 _side = _this select 1;
 _position = _this select 2;
@@ -11,7 +11,7 @@ _logik = (_side) Call WFBE_CO_FNC_GetSideLogic;
 _sideID = (_side) Call WFBE_CO_FNC_GetSideID;
 
 _time = ((missionNamespace getVariable Format ["WFBE_%1STRUCTURETIMES",str _side]) select _index) / 2;
-
+	
 _siteName = missionNamespace getVariable Format["WFBE_%1CONSTRUCTIONSITE",str _side];
 
 _structures = missionNamespace getVariable Format ['WFBE_%1STRUCTURES',str _side];
@@ -35,12 +35,12 @@ if ((missionNamespace getVariable "WFBE_C_STRUCTURES_CONSTRUCTION_MODE") == 0) t
 	//--- Grab the logic.
 	_nearLogic = _position nearEntities [["LocationLogicStart"],15];
 	_nearLogic = [_position, _nearLogic] Call WFBE_CO_FNC_GetClosestEntity;
-
+	
 	if (isNull _nearLogic) exitWith {};
-
+	
 	//--- Position the logic.
 	_nearLogic setPos _position;
-
+	
 	_nearLogic setVariable ["WFBE_B_Type", _rlType];
 
 	waitUntil {time >= _timeNextUpdate};
@@ -49,12 +49,12 @@ if ((missionNamespace getVariable "WFBE_C_STRUCTURES_CONSTRUCTION_MODE") == 0) t
 	//--- Grab the logic.
 	_nearLogic = _position nearEntities [["LocationLogicStart"],15];
 	_nearLogic = [_position, _nearLogic] Call WFBE_CO_FNC_GetClosestEntity;
-
+	
 	if (isNull _nearLogic) exitWith {};
-
+	
 	//--- Position the logic.
 	_nearLogic setPos _position;
-
+	
 	//--- Instanciate the logic.
 	_nearLogic setVariable ["WFBE_B_Completion", 0];
 	_nearLogic setVariable ["WFBE_B_CompletionRatio", 1.1];
@@ -62,10 +62,10 @@ if ((missionNamespace getVariable "WFBE_C_STRUCTURES_CONSTRUCTION_MODE") == 0) t
 	_nearLogic setVariable ["WFBE_B_Position", _position];
 	_nearLogic setVariable ["WFBE_B_Repair", false];
 	_nearLogic setVariable ["WFBE_B_Type", _rlType];
-
+	
 	//--- Add the logic to the list.
 	_logik setVariable ["wfbe_structures_logic", (_logik getVariable "wfbe_structures_logic") + [_nearLogic]];
-
+	
 	//--- Awaits for 50% of completion.
 	while {true} do {
 		sleep 1;
@@ -79,7 +79,7 @@ _constructed = _constructed + ([_position,_direction,_objects] Call _construct);
 
 if ((missionNamespace getVariable "WFBE_C_STRUCTURES_CONSTRUCTION_MODE") == 0) then {
 	waitUntil {time >= _timeNextUpdate};
-
+	
 	if !(isNull _nearLogic) then {
 		_group = group _nearLogic;
 		deleteVehicle _nearLogic;
@@ -91,11 +91,11 @@ if ((missionNamespace getVariable "WFBE_C_STRUCTURES_CONSTRUCTION_MODE") == 0) t
 		sleep 1;
 		if ((_nearLogic getVariable "WFBE_B_Completion") >= 100) exitWith {};
 	};
-
+	
 	//--- Remove the logic from the list since it's built. Add it back if destroyed.
 	_logik setVariable ["wfbe_structures_logic", (_logik getVariable "wfbe_structures_logic") + [_nearLogic]];
 };
-
+	
 {if !(isNull _x) then {DeleteVehicle _x}} ForEach _constructed;
 
 _site = createVehicle [_type, _position, [], 0, "NONE"];
@@ -113,10 +113,10 @@ _site setVariable ["WFBE_Walls", _defenses];
 
 if (!isNull _site) then {
 	_logik setVariable ["wfbe_structures", (_logik getVariable "wfbe_structures") + [_site], true];
-
+	
 	_site setVehicleInit Format["[this,false,%1] ExecVM 'Client\Init\Init_BaseStructure.sqf'",_sideID];
 	processInitCommands;
-
+	
 	_site addEventHandler ["hit",{_this Spawn BuildingDamaged}];
 	if ((missionNamespace getVariable "WFBE_C_GAMEPLAY_HANDLE_FRIENDLYFIRE") > 0) then {
 		_site addEventHandler ['handleDamage',{[_this select 0,_this select 2,_this select 3] Call BuildingHandleDamages}];
@@ -124,7 +124,6 @@ if (!isNull _site) then {
 		_site addEventHandler ['handleDamage',{[_this select 0, _this select 2] Call HandleBuildingDamage}];
 	};
 	Call Compile Format ["_site AddEventHandler ['killed',{[_this select 0,_this select 1,'%1'] Spawn BuildingKilled}];",_type];
-
-    _commanderOfTheTeam = (_side) Call WFBE_CO_FNC_GetCommanderTeam;
-	["INFORMATION", Format ["Construction_SmallSite.sqf: [%1] Structure [%2] has been constructed by: [%3]", str _side, _type, _commanderOfTheTeam]] Call WFBE_CO_FNC_LogContent;
+	
+	["INFORMATION", Format ["Construction_SmallSite.sqf: [%1] Structure [%2] has been constructed.", str _side, _type]] Call WFBE_CO_FNC_LogContent;
 };
