@@ -8,7 +8,7 @@
         Loadout defaultLoadout = new();
         defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                // KH here
+                { AmmunitionType.SIXROUNDCH29, 2},
                 { AmmunitionType.FOURROUNDR73, 2},
             };
 
