@@ -84,7 +84,7 @@
             int weaponAmount = 0;
 
             var ammunitionType = (InterfaceAmmunition)EnumExtensions.GetInstance(ammoTypeKvp.Key.ToString());
-            if (ammunitionType.canNotBeUsedAsLoadoutOption && !_generateWithPriceAndWeaponsInfo)
+            if (ammunitionType.canNotBeUsedAsLoadoutOption && _generateWithPriceAndWeaponsInfo)
             {
                 continue;
             }
