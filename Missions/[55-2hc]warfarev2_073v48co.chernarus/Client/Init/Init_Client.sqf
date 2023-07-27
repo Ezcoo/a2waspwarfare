@@ -175,8 +175,8 @@ playerType = typeOf player;
 playerDead = false;
 paramBoundariesRunning = false;
 
-// Temp
-elapsedTimeGlobal = 0;
+// View distance timer stuff
+timerInstanceCount = 0;
 newViewDistance = 0;
 
 disableserialization;
