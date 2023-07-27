@@ -8,8 +8,8 @@
         Loadout defaultLoadout = new();
         defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.TWOROUNDR73, 8},
-                { AmmunitionType.FOURROUNDFAB250, 2},
+                // KH here
+                { AmmunitionType.FOURROUNDR73, 2},
             };
 
         base.defaultLoadout = defaultLoadout;
