@@ -27,7 +27,7 @@ if (_sideID == 1) then {
 
 // The main update loop
 while {alive _object && !(isNull _object)} do {
-    _updateFrequency = 3; // AAR0: 3, AAR1: 2, AAR2: 1
+    _updateFrequency = 5; // AAR0: 5, AAR1: 3, AAR2: 1
 
 	if (antiAirRadarInRange) then {
 		if (((getPos _object) select 2) > _height) then {
@@ -43,12 +43,12 @@ while {alive _object && !(isNull _object)} do {
             // Get the aircraft altitude (AAR1)
             if (_aarUpgradeLevel > 0) then {
                 _altitude = str(round(getPosATL _object select 2)) + "m";
-                _updateFrequency = 2;
+                _updateFrequency = 3;
             };
 
             // Get the aircraft name (AAR2)
             if (_aarUpgradeLevel > 1) then {
-                _aircraftName = typeOf _object;
+                _aircraftName = [typeOf _object, 'displayName'] Call GetConfigInfo;
                 _updateFrequency = 1;
             };
 
