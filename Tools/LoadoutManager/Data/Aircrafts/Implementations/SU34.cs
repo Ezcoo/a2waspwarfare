@@ -8,7 +8,7 @@
         Loadout defaultLoadout = new();
         defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.R73, 8},
+                { AmmunitionType.TWOROUNDR73, 8},
                 { AmmunitionType.FOURROUNDFAB250, 2},
             };
 
@@ -16,7 +16,7 @@
 
         allowedAmmunitionTypes = new List<AmmunitionType>
         {
-            AmmunitionType.R73,
+            AmmunitionType.TWOROUNDR73,
             AmmunitionType.FOURROUNDFAB250,
             //S8 rockets
             //KH29 (atm limited to 4 and 6 pylons)
