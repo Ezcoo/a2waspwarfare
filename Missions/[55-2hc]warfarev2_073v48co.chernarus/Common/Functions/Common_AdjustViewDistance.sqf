@@ -7,7 +7,7 @@ Author: Miksuu
 */
 Private ["_key","_adjustViewDistanceBy","_newViewDistance"];
 _key = _this select 1;
-_adjustViewDistanceBy = 500;
+_adjustViewDistanceBy = 1000;
 
 //--- Decrease View Distance
 if (_key in (actionKeys "User19")) then {
