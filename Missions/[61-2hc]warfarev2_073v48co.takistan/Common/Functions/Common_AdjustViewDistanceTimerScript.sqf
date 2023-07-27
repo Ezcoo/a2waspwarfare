@@ -23,7 +23,7 @@ while {_elapsedTime < _timerDuration} do {
 
     // Show the remaining time as a hint
     _remainingTime = _timerDuration - _elapsedTime;
-    hint format ["Timer: %1 seconds remaining", _remainingTime];
+    //hint format ["Timer: %1 seconds remaining", _remainingTime];
 
     // Adjust the sleep time for better accuracy (optional)
     // For example, using 10 milliseconds sleep gives better accuracy
