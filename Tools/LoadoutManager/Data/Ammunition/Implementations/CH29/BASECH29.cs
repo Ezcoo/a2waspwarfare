@@ -1,8 +1,8 @@
-﻿public class SIXROUNDCH29 : BASECH29
+﻿public class BASECH29 : BaseAmmunition
 {
-    public SIXROUNDCH29()
+    public BASECH29()
     {
-        AmmunitionType = AmmunitionType.SIXROUNDCH29;
+        AmmunitionType = AmmunitionType.BASECH29;
         amountPerPylon = 1;
         weaponDefinition = (InterfaceWeapon)EnumExtensions.GetInstance(WeaponType.CH29LAUNCHER.ToString()) as BaseWeapon;
         ammoDisplayName = "Kh-29";
