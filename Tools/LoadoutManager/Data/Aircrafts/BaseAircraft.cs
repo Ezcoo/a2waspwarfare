@@ -27,12 +27,13 @@ public abstract class BaseAircraft : InterfaceAircraft
 
         List<List<AmmunitionType>> combinations = GenerateCombinations(allowedAmmunitionTypes.ToArray(), pylonAmount / 2);
 
-        int index = 0;
+        Dictionary<string, int> unsortedListByPrice = new Dictionary<string, int>();
+        Dictionary<string, int> finalPricesSortedByPrice = new Dictionary<string, int>();
 
         // Display the combinations
         foreach (var combination in combinations)
         {
-            string loadout = "";
+            (string, int) loadout = ("",0);
 
             Dictionary<AmmunitionType, int> combinationLoadouts = new Dictionary<AmmunitionType, int>();
 
@@ -52,34 +53,86 @@ public abstract class BaseAircraft : InterfaceAircraft
 
             loadout = GenerateLoadoutRow(combinationLoadouts);
 
-            if  (loadout == "")
+            if (loadout.Item1 == "" || loadout.Item2 == 0)
             {
                 continue;
             }
 
+            unsortedListByPrice.Add(loadout.Item1, loadout.Item2);
+        }
+
+        finalPricesSortedByPrice = unsortedListByPrice
+            .OrderBy(pair => pair.Value)
+            .ToDictionary(pair => pair.Key, pair => pair.Value);
+
+        int index = 0;
+
+        foreach (var item in finalPricesSortedByPrice)
+        {
             if (index == combinations.Count - 1)
             {
-
-                Console.WriteLine(loadout.TrimEnd(','));
+                Console.WriteLine(item.Key.TrimEnd(','));
                 break;
             }
 
-            Console.WriteLine(loadout + ",\n");
+            Console.WriteLine(item.Key + ",\n");
 
             index++;
         }
     }
 
-    private void GenerateDefaultLoadout()
+    private string GenerateDefaultLoadout()
     {
         Console.WriteLine("_easaDefault = _easaDefault + ");
 
-        string ammunitionArray = GenerateLoadoutRow(defaultLoadout.AmmunitionTypesWithCount, false);
+        var ammunitionArray = GenerateLoadoutRow(defaultLoadout.AmmunitionTypesWithCount, false);
 
-        Console.WriteLine(ammunitionArray + ";");
+        if (ammunitionArray.Item1 == "")
+        {
+            return "";
+        }
+
+        Console.WriteLine(ammunitionArray.Item1 + ";");
+
+        return ammunitionArray.Item1;
     }
 
-    private string GenerateLoadoutRow(
+    private (string, int) GenerateLoadoutRow(
+        Dictionary<AmmunitionType, int> _input,
+        bool _generateWithPriceAndWeaponsInfo = true)
+    {
+        string finalRowOutput = string.Empty;
+
+        var calculatedLoadoutRow = CalculateLoadoutRow(_input, _generateWithPriceAndWeaponsInfo);
+
+        if (_generateWithPriceAndWeaponsInfo)
+        {
+            string priceAndWeaponsInfo = calculatedLoadoutRow.Item1.ToString() + ",'" + calculatedLoadoutRow.Item4 + "',";
+
+            finalRowOutput += "[" + priceAndWeaponsInfo + "[[";
+        }
+        else
+        {
+            finalRowOutput += "[[[";
+        }
+
+        calculatedLoadoutRow.Item2 = calculatedLoadoutRow.Item2.TrimEnd(',');
+        calculatedLoadoutRow.Item2 += "]";
+
+        finalRowOutput += calculatedLoadoutRow.Item2 + ",";
+        finalRowOutput += "[";
+
+        calculatedLoadoutRow.Item3 = calculatedLoadoutRow.Item3.TrimEnd(',');
+        calculatedLoadoutRow.Item3 += "]]]";
+
+        finalRowOutput += calculatedLoadoutRow.Item3;
+
+        //Console.WriteLine("RETURNING: " + finalRowOutput);
+
+        return (finalRowOutput, calculatedLoadoutRow.Item1);
+    }
+
+    private (int,string,string,string) CalculateLoadoutRow(
         Dictionary<AmmunitionType, int> _input,
         bool _generateWithPriceAndWeaponsInfo = true) // For non-default loadouts, show the information on the easa screen
     {
@@ -114,7 +167,7 @@ public abstract class BaseAircraft : InterfaceAircraft
 
         if (disregardLoadout)
         {
-            return "";
+            return (0, "", "", "");
         }
 
         string weaponTypesArray = string.Empty;
@@ -153,7 +206,6 @@ public abstract class BaseAircraft : InterfaceAircraft
 
                 if (type == "ERROR_UNDEFINED_VARIANTS")
                 {
-                    //Console.WriteLine(ammoTypeKvp.Value);
                     continue;
                 }
 
@@ -204,28 +256,7 @@ public abstract class BaseAircraft : InterfaceAircraft
         weaponsInfo = weaponsInfo.TrimEnd('|');
         weaponsInfo = weaponsInfo.TrimEnd(' ');
 
-
-        if (_generateWithPriceAndWeaponsInfo)
-        {
-            priceAndWeaponsInfo = totalPrice.ToString() + ",'" + weaponsInfo + "',";
-
-            Console.Write("[" + priceAndWeaponsInfo + "[[");
-        }
-        else
-        {
-            Console.Write("[[[");
-        }
-
-        weaponTypesArray = weaponTypesArray.TrimEnd(',');
-        weaponTypesArray += "]";
-
-        Console.WriteLine(weaponTypesArray + ",");
-        Console.Write("[");
-
-        ammunitionArray = ammunitionArray.TrimEnd(',');
-        ammunitionArray += "]]]";
-
-        return ammunitionArray;
+        return (totalPrice, weaponTypesArray, ammunitionArray, weaponsInfo);
     }
 
     private List<List<AmmunitionType>> GenerateCombinations(AmmunitionType[] _inputArray, int _r)
