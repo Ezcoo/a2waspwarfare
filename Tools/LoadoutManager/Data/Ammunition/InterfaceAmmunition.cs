@@ -8,4 +8,6 @@ public interface InterfaceAmmunition
     public string ammoDisplayName { get; set; }
     public int costPerPylon { get; set; }
     public bool canNotBeUsedAsLoadoutOption { get; set; }
+    public Dictionary<int, List<AmmunitionType>> optionalAmmunitionDictionary { get; set; }
+    public int ammoCountOverride { get; set; }
 }
