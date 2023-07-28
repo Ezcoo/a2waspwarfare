@@ -7,6 +7,5 @@
         weaponDefinition = (InterfaceWeapon)EnumExtensions.GetInstance(WeaponType.CH29LAUNCHER.ToString()) as BaseWeapon;
         ammoDisplayName = "Kh-29";
         costPerPylon = 1234;
-        ammoCountOverride = 6;
     }
 }
