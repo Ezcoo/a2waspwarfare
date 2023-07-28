@@ -4,7 +4,7 @@ _shell = _this select 0;
 _destination = _this select 1;
 _velocity = _this select 2;
 
-_airTypes = ["Plane", "AH1_Base", "AH64_base_EP1", "AW159_Lynx_BAF", "BAF_Merlin_HC3_D", 
+_airTypes = ["Plane", "AH1_Base", "AH64_base_EP1", "AW159_Lynx_BAF", "BAF_Merlin_HC3_D",
 			"Kamov_Base", "Mi17_base", "Mi24_Base", "UH1Y", "UH60_Base"
 			];
 
@@ -26,7 +26,7 @@ waitUntil {(getPos _shell select 2) < 600};
 //--- Retrieve the shell position.
 _deployPos = getPos _shell;
 deleteVehicle _shell;
-f
+
 //--- Deploy the model.
 _chuteModel = missionNamespace getVariable Format ["WFBE_%1PARACHUTE",sideJoined];
 _parachute = _chuteModel createVehicle _deployPos;
@@ -61,7 +61,7 @@ waitUntil
 
 		if (count _targets > 0) then {
 			_targetToHit = _targets select floor(random count _targets);
-			sleep (random 3); 
+			sleep (random 3);
 			_targetFound = true;
 		};
 	};
@@ -122,7 +122,7 @@ if (_targetFound && alive _barrel) then {
 		_ux = _zcomp*_dx;
 		_uy = _zcomp*_dy;
 		_uz = _hmag;
-		
+
 		//--- Positionate the projectile.
 		_projectile setVectorDir _dir;
 		_projectile setVectorUp [_ux,_uy,_uz];

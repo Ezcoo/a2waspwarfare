@@ -54,6 +54,7 @@ WFBE_UP_SUPPLYPARADROP = 16;
 WFBE_UP_ARTYAMMO = 17;
 WFBE_UP_IRSMOKE = 18;
 WFBE_UP_AIRAAM = 19;
+WFBE_UP_AAR = 20;
 
 /*
 	### Working with the missionNamespace ###
@@ -84,7 +85,7 @@ with missionNamespace do {
 	WFBE_C_ARTILLERY_AMMO_RANGE_LASER = 175; //--- Artillery laser rounds detection range (Per Shell).
 	WFBE_C_ARTILLERY_AMMO_RANGE_SADARM = 200; //--- Artillery SADARM rounds operative range (Per Shell).
 	WFBE_C_ARTILLERY_AREA_MAX = 300; //---  Maximum spread area of artillery support.
-	WFBE_C_ARTILLERY_INTERVALS = [1, 1, 1, 1]; //--- Delay between each fire mission for each upgrades.
+	WFBE_C_ARTILLERY_INTERVALS = [400, 350, 300, 250]; //--- Delay between each fire mission for each upgrades.
 
 	//--- Base
 	if (isNil "WFBE_C_BASE_AREA") then {WFBE_C_BASE_AREA = 2}; //--- Force the bases to be grouped by areas.

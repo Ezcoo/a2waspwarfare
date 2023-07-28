@@ -76,7 +76,6 @@ TrashObject = Compile preprocessFile "Common\Functions\Common_TrashObject.sqf";
 
 // Module: Arty
 ARTY_HandleILLUM = Compile preprocessFile "Common\Module\Arty\ARTY_HandleILLUM.sqf";
-ARTY_HandleMines= Compile preprocessFile "Common\Module\Arty\ARTY_HandleMines.sqf";
 ARTY_HandleSADARM = Compile preprocessFile "Common\Module\Arty\ARTY_HandleSADARM.sqf";
 ARTY_Prep = Compile preprocessFile "Common\Module\Arty\ARTY_mobileMissionPrep.sqf";
 ARTY_Finish = Compile preprocessFile "Common\Module\Arty\ARTY_mobileMissionFinish.sqf";

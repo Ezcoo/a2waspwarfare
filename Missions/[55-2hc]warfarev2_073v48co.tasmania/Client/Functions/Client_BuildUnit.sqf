@@ -182,7 +182,7 @@ if (_isMan) then {
 _vehicle allowCrewInImmobile true;
 _vehicle addEventHandler ["Fired",{_this Spawn HandleRocketTraccer}];
 
-if ((typeOf _vehicle ) in ['MLRS','GRAD','GRAD_CDF','MLRS_DES_EP1','M1129_MC_EP1', 'GRAD_CDF','GRAD_TK_EP1','GRAD_CDF','GRAD_RU','GRAD_INS']) then {
+if ((typeOf _vehicle ) in ['MLRS','GRAD','GRAD_CDF','MLRS_DES_EP1','M1129_MC_EP1','GRAD_TK_EP1','GRAD_CDF','GRAD_RU','GRAD_INS']) then {
 	_vehicle setVariable ["restricted",false];_vehicle addEventHandler ["GetIn",{_this Spawn HandleArty}]
 };
 

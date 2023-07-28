@@ -36,7 +36,6 @@
 
 //#include "scripts\unitCaching\description.ext"
 //--- Define which 'part' of the game to run.
-#include "Rsc\Config.cpp"
 #include "version.sqf"
 #include "Sounds\description.ext"
 //--- Header contains the mission tite.

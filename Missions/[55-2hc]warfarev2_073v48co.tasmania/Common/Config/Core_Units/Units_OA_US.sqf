@@ -155,7 +155,6 @@ _u = _u		+ ['MtvrSalvage_DES_EP1'];
 _u = _u		+ ['M1126_ICV_M2_EP1'];
 _u = _u		+ ['M1126_ICV_mk19_EP1'];
 _u = _u		+ ['M1129_MC_EP1'];
-_u = _u		+ ['GRAD_CDF'];
 _u = _u		+ ['M1135_ATGMV_EP1'];
 _u = _u		+ ['M1128_MGS_EP1'];
 _u = _u		+ ['M1133_MEV_EP1'];

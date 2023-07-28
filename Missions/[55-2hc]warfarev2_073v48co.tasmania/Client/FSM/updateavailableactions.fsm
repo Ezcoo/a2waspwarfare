@@ -41,7 +41,7 @@ class FSM
        "_buygearfrom = missionNamespace getVariable ""WFBE_C_TOWNS_GEAR"";" \n
        "_gear_field_range = missionNamespace getVariable ""WFBE_C_UNITS_PURCHASE_GEAR_MOBILE_RANGE"";" \n
        "_currency_system = missionNamespace getVariable ""WFBE_C_ECONOMY_CURRENCY_SYSTEM"";" \n
-       "_acenabled = false;" \n
+	   "_acenabled = false;" \n
        "_antiairradar_enabled = if ((missionNamespace getVariable ""WFBE_C_STRUCTURES_ANTIAIRRADAR"") > 0) then {true} else {false};" \n
        "_boundaries_enabled = if ((missionNamespace getVariable ""WFBE_C_GAMEPLAY_BOUNDARIES_ENABLED"") > 0) then {true} else {false};" \n
        "_hc_enabled =false;" \n
@@ -56,7 +56,8 @@ class FSM
        "_commandCenter = objNull;" \n
        "" \n
        "_typeRepair = missionNamespace getVariable Format['WFBE_%1REPAIRTRUCKS',sideJoinedText];" \n
-       "" \n
+	   "_typeAmmo = missionNamespace getVariable Format['WFBE_%1AMMOTRUCKS',sideJoinedText];" \n   
+	   "" \n
        "//--- Keep actions updated (GUI). - changed-MrNiceGuy " \n
        "12450 cutRsc [""OptionsAvailable"",""PLAIN"",0];" \n
        "_icons = [" \n
@@ -152,7 +153,7 @@ class FSM
        "" \n
        "barracksInRange = if (isNull (['BARRACKSTYPE',_buildings,_purchaseRange,sideJoined,player] Call BuildingInRange)) then {false} else {true};" \n
        "gearInRange = if (isNull (['BARRACKSTYPE',_buildings,_pgr,sideJoined,player] Call BuildingInRange)) then {false} else {true};" \n
-       "if !(gearInRange) then {" \n
+	   "if !(gearInRange) then {" \n
        "	if (_buygearfrom in [1,2,3]) then {" \n
        "		_nObject = objNull;" \n
        "		switch (_buygearfrom) do { " \n
@@ -162,6 +163,11 @@ class FSM
        "		};" \n
        "		gearInRange = if !(isNull _nObject) then {true} else {false};" \n
        "	};" \n
+       "};" \n
+       "" \n
+	   "if !(gearInRange) then {" \n
+	   " _checks = (getPos player) nearEntities[_typeAmmo,_gear_field_range];" \n
+	   "if (count _checks > 0) then {gearInRange = true;};" \n
        "};" \n
        "" \n
        "lightInRange = if (isNull (['LIGHTTYPE',_buildings,_purchaseRange,sideJoined,player] Call BuildingInRange)) then {false} else {true};" \n

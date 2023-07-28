@@ -27,8 +27,6 @@ if (_ammo in _ammoList) then {
 	//--- Default Position.
 	_landDestination = [((_destination select 0)+((sin _direction)*_distance))+(random _dispersion)-(random _dispersion),(_destination select 1)+((cos _direction)*_distance)+(random _dispersion)-(random _dispersion),0];
 	_keepShellAlive = true;
-
-	diag_log Format["[Arty] %1 %2 ",_ammo,_projectile,diag_frameno,diag_tickTime];
 	
 	//--- SADARM Rounds.
 	if (_ammo in (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_AMMO_SADARM",_side])) then {
@@ -40,13 +38,6 @@ if (_ammo in _ammoList) then {
 	if (_ammo in (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_AMMO_ILLUMN",_side])) then {
 		[_projectile,_landDestination,_velocity] Spawn ARTY_HandleILLUM;
 		_keepShellAlive = false; //--- ILLUM Destroy the original round.
-	};
-
-	//--- Mine Rounds.
-	if (_ammo in (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_AMMO_MINES",_side])) then {
-		diag_log Format["[Arty MINE] %1 %2 ",_ammo,_projectile,diag_frameno,diag_tickTime];
-		[_projectile,_landDestination,_velocity] Spawn ARTY_HandleMines;
-		_keepShellAlive = false; //--- Mine Destroy the original round.
 	};
 	
 	//--- Some rounds remove the projectile, make sure that it's not removed or anything.

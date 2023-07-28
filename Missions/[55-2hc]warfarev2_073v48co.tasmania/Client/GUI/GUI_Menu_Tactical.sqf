@@ -52,10 +52,10 @@ _currentFee = -1;
 
 //--- Support List.
 _lastSel = -1;
-_addToList = [localize 'STR_WF_TACTICAL_FastTravel',localize 'STR_WF_ICBM',localize 'STR_WF_TACTICAL_ParadropAmmo',localize 'STR_WF_TACTICAL_ParadropVehicle',localize 'STR_WF_TACTICAL_Paratroop',localize 'STR_WF_TACTICAL_UnitCam',localize 'STR_WF_TACTICAL_UAV',localize 'STR_WF_TACTICAL_UAVDestroy',localize 'STR_WF_TACTICAL_UAVRemoteControl', localize 'STR_WF_TACTICAL_SatCam'];
-_addToListID = ["Fast_Travel","ICBM","Paradrop_Ammo","Paradrop_Vehicle","Paratroopers","Units_Camera","UAV","UAV_Destroy","UAV_Remote_Control", "Sat_Camera"];
-_addToListFee = [0,150000,9500,3500,8500,0,12500,0,0, 100];
-_addToListInterval = [0,1000,800,600,900,0,0,0,0, 100];
+_addToList = [localize 'STR_WF_TACTICAL_FastTravel',localize 'STR_WF_ICBM',localize 'STR_WF_TACTICAL_ParadropAmmo',localize 'STR_WF_TACTICAL_ParadropVehicle',localize 'STR_WF_TACTICAL_Paratroop',localize 'STR_WF_TACTICAL_UnitCam',localize 'STR_WF_TACTICAL_UAV',localize 'STR_WF_TACTICAL_UAVDestroy',localize 'STR_WF_TACTICAL_UAVRemoteControl'];
+_addToListID = ["Fast_Travel","ICBM","Paradrop_Ammo","Paradrop_Vehicle","Paratroopers","Units_Camera","UAV","UAV_Destroy","UAV_Remote_Control"];
+_addToListFee = [0,150000,9500,3500,8500,0,12500,0,0];
+_addToListInterval = [0,1000,800,600,900,0,0,0,0];
 
 for '_i' from 0 to count(_addToList)-1 do {
 	lbAdd [_listBox,_addToList select _i];
@@ -244,9 +244,6 @@ while {alive player && dialog} do {
 			case "Units_Camera": {
 				_controlEnable = commandInRange;
 			};
-			case "Sat_Camera": {
-				_controlEnable = true;
-			};
 		};
 		
 		ctrlEnable[17020, _controlEnable];
@@ -303,10 +300,6 @@ while {alive player && dialog} do {
 			case "Units_Camera": {
 				closeDialog 0;
 				createDialog "RscMenu_UnitCamera";
-			};
-			case "Sat_Camera": {
-				closeDialog 0;
-				createDialog "RscMenu_SatCamera";
 			};
 		};
 		

@@ -22,5 +22,5 @@ _deployPos = getPos _shell;
 deleteVehicle _shell;
 
 //--- Deploy a Flare.
-_flare = "ARTY_Sh_105_SADARM" createVehicle _deployPos;
+_flare = "ARTY_Flare_Medium" createVehicle _deployPos;
 _flare setPos _deployPos;
