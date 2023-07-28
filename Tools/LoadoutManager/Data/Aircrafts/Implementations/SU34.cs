@@ -18,13 +18,8 @@
         {
             AmmunitionType.TWOROUNDR73,
             AmmunitionType.FOURROUNDFAB250,
-
-            //KH29 (atm limited to 4 and 6 pylons)
             AmmunitionType.BASECH29,
-
-
-            //S8 rockets
-
+            AmmunitionType.FOURTYROUNDS8,
         };
     }
 }
