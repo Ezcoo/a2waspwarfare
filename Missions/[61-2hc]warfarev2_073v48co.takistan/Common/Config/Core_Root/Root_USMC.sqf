@@ -16,6 +16,12 @@ missionNamespace setVariable [Format["WFBE_%1SALVAGETRUCK", _side], ['WarfareSal
 missionNamespace setVariable [Format["WFBE_%1SUPPLYTRUCKS", _side], ['WarfareSupplyTruck_USMC','MtvrSupply_DES_EP1']];
 missionNamespace setVariable [Format["WFBE_%1UAV", _side], 'MQ9PredatorB'];
 
+missionNamespace setVariable [Format["WFBE_%1AMMOTRUCKS", _side], ['MtvrReammo_DES_EP1','WarfareReammoTruck_USMC','WarfareReammoTruck_RU','UralReammo_TK_EP1']];//listed to get gearaccess in updateavailablaactions.sqf (listed both to get capture skill too)
+missionNamespace setVariable [Format["WFBE_%1ECMTRUCKS", _side], ['MtvrRefuel_DES_EP1','MtvrRefuel']];//listed to add ecm stuff
+missionNamespace setVariable [Format["WFBE_%1LIFTVEHICLE", _side], ["MH60S","MV22","C130J","UH60M_EP1","UH60M_MEV_EP1","CH_47F_EP1","C130J_US_EP1","BAF_Merlin_HC3_D","CH_47F_BAF","Mi17_Civilian"]];
+missionNamespace setVariable [Format["WFBE_%1ARTYVEHICLE", _side], ['MLRS_DES_EP1','MLRS','M1129_MC_EP1']];
+
+
 //--- Radio Announcers.
 missionNamespace setVariable [Format ["WFBE_%1_RadioAnnouncers", _side], ['WFHQ_EN0','WFHQ_EN1','WFHQ_EN2']];
 missionNamespace setVariable [Format ["WFBE_%1_RadioAnnouncers_Config", _side], 'RadioProtocolEN'];
@@ -140,13 +146,13 @@ if (WF_A2_CombinedOps) then {
 //Engineer
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearEngineer", _side], [
 	['M16A2GL','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular','NVGoggles'],
-	['30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','PipeBomb'],
+	['30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','30Rnd_556x45_Stanag','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','1Rnd_HE_M203','HandGrenade_West','HandGrenade_West','HandGrenade_West','HandGrenade_West'],
 	['M16A2GL']
 ]];
 
 // Sniper
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearSpot", _side], [
-	['M24','glock17_EP1','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular','NVGoggles'],
+	['M24','glock17_EP1','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular_Vector','NVGoggles'],
 	['5Rnd_762x51_M24','5Rnd_762x51_M24','5Rnd_762x51_M24','5Rnd_762x51_M24','17Rnd_9x19_glock17','17Rnd_9x19_glock17','17Rnd_9x19_glock17','17Rnd_9x19_glock17','SmokeShellRed'],
 	['M24']
 ]];

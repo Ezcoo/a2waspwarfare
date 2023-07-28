@@ -2933,11 +2933,11 @@
                 <Italian>Paradrop - Ammunition</Italian>
             </Key>
             <Key ID="STR_WF_TACTICAL_ParadropVehicle">
-                <English>Paradrop - Vehicle</English>
-                <French>Parachutage - Véhicule</French>
-                <German>Abwurf - Fahrzeug</German>
-                <Russian>Сброс - Машина</Russian>
-                <Italian>Paradrop - Vehicle</Italian>
+                <English>Paradrop - Repair Truck</English>
+                <French>Parachutage - Camion de réparation</French>
+                <German>Abwurf - Reparatur-LKW</German>
+                <Russian>Сброс - Ремонтный грузовик</Russian>
+                <Italian>Paradrop - Camion di riparazione</Italian>
             </Key>
             <Key ID="STR_WF_TACTICAL_Paratroop"><!--shared W-->
                 <English>Paratroops</English>
@@ -3458,6 +3458,13 @@
                 <Russian>Артиллерийская Амуниция</Russian>
                 <Italian>Munizioni Artiglieria</Italian>
             </Key>
+            <Key ID="STR_WF_UPGRADE_AntiAirRadar">
+                <English>Anti Air Radar</English>
+                <French>Radar anti-aérien</French>
+                <German>Anti-Luft-Radar</German>
+                <Russian>Противовоздушная радиолокационная станция</Russian>
+                <Italian>Radar antiaereo</Italian>
+            </Key>
             <Key ID="STR_WF_UPGRADE_Airlift"><!--shared U-->
                 <English>Airlift</English>
                 <French>Transport Aérien</French>
@@ -3658,6 +3665,13 @@
                 <German>Dieses Upgrade schaltet neue Munition für die Artillerie frei.&lt;br/&gt;&lt;br/&gt;Dadurch können die Artillerie-Einheiten verbesserte Munition verschießen.</German>
                 <Russian>Эта модернизация разблокирует новую аммуницию для артиллерии.&lt;br/&gt;&lt;br/&gt;Это позволяет артиллерии стрелять улучшенными снарядами.</Russian>
                 <Italian>This upgrade unlocks new ammunition for artillery pieces.&lt;br/&gt;&lt;br/&gt;This allows the artillery-units to fire improved ammunition.</Italian>
+            </Key>
+            <Key ID="STR_WF_UPGRADE_AntiAirRadar_Desc">
+                <English>This upgrade unlocks better and faster functionality for your Anti-air radar (AAR).&lt;br/&gt; - Features and refresh rate:&lt;br/&gt;   Level 0 = Position, direction, speed (5 seconds)&lt;br/&gt;   Level 1 = Altitude (3 seconds)&lt;br/&gt;   Level 2 = Aircraft Type (1 second)</English>
+                <French>Cet upgrade débloque une fonctionnalité améliorée et plus rapide pour votre radar antiaérien (AAR).&lt;br/&gt; - Fonctionnalités et fréquence de rafraîchissement:&lt;br/&gt;   Niveau 0 = Position, direction, vitesse (3 secondes)&lt;br/&gt;   Niveau 1 = Altitude (2 secondes)&lt;br/&gt;   Niveau 2 = Type d'avion (1 seconde)</French>
+                <German>Dieses Upgrade schaltet eine bessere und schnellere Funktionalität für Ihren Anti-Luft-Radar (AAR) frei.&lt;br/&gt; - Funktionen und Aktualisierungsfrequenz:&lt;br/&gt;   Level 0 = Position, Richtung, Geschwindigkeit (3 Sekunden)&lt;br/&gt;   Level 1 = Höhe (2 Sekunden)&lt;br/&gt;   Level 2 = Flugzeugtyp (1 Sekunde)</German>
+                <Russian>Это улучшение открывает лучшую и более быструю функциональность для вашего анти-радара (AAR).&lt;br/&gt; - Функции и частота обновления:&lt;br/&gt;   Уровень 0 = Позиция, направление, скорость (3 секунды)&lt;br/&gt;   Уровень 1 = Высота (2 секунды)&lt;br/&gt;   Уровень 2 = Тип самолета (1 секунда)</Russian>
+                <Italian>Questo aggiornamento sblocca una funzionalità migliore e più veloce per il tuo radar anti-aereo (AAR).&lt;br/&gt; - Funzionalità e frequenza di aggiornamento:&lt;br/&gt;   Livello 0 = Posizione, direzione, velocità (3 secondi)&lt;br/&gt;   Livello 1 = Altitudine (2 secondi)&lt;br/&gt;   Livello 2 = Tipo di aeromobile (1 secondo)</Italian>
             </Key>
             <!--Air-Factory-->
             <Key ID="STR_WF_UPGRADE_aircraftfactory_Desc">

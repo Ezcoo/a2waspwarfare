@@ -240,6 +240,12 @@ _u = _u + ["BMP2_INS"];
 _u = _u + ["BMP3"];
 _l = _l + [_u];
 
+_k = _k + ["Mechanized_4"];
+_u		= ["BMP2_INS"];
+_u = _u + ["BMP3"];
+_u = _u + ["BMP3"];
+_l = _l + [_u];
+
 _k = _k + ["Armored_0"];
 _u		= ["BMP2_INS"];
 _u = _u + ["BMP3"];
@@ -257,6 +263,12 @@ _l = _l + [_u];
 
 _k = _k + ["Armored_3"];
 _u		= ["T72_RU"];
+_u = _u + ["T90"];
+_u = _u + ["T90"];
+_l = _l + [_u];
+
+_k = _k + ["Armored_4"];
+_u		= ["T90"];
 _u = _u + ["T90"];
 _u = _u + ["T90"];
 _l = _l + [_u];

@@ -123,7 +123,7 @@ Call Compile preprocessFileLineNumbers 'Client\Functions\Client_FNC_Groups.sqf';
 Call Compile preprocessFileLineNumbers 'Client\Functions\Client_FNC_OnFired.sqf'; //--- FUNCTIONS: onFired EH.
 Call Compile preprocessFileLineNumbers 'Client\Functions\Client_FNC_Special.sqf'; //--- FUNCTIONS: Specials.
 
-clientInitComplete = true;
+//clientInitComplete = true;
 
 //--- UI Namespace release from previous possible games (only on titles dialog!).
 {uiNamespace setVariable [_x, displayNull]} forEach ["wfbe_title_capture"];
@@ -606,7 +606,7 @@ sleep 3;
 
 /* Client death handler. */
 WFBE_PLAYERKEH = player addEventHandler ['Killed', {[_this select 0,_this select 1] Spawn WFBE_CL_FNC_OnKilled; [_this select 0,_this select 1, sideID] Spawn WFBE_CO_FNC_OnUnitKilled}];
-hint parseText "<t color='#ffff00'>v18072023<br/><br/>Join on our discord:<br/>discord.me/warfare<br/>or<br/>https://discord.gg/gRhPHUuWpy<br/><br/>New players, check the Guides section for the #tips-and-tricks channel and read the #commanding-guide. More guides coming soon(tm). If you have any questions, don't hesitate to ask in the side chat preferably, or on our discord! <br/><br/>Veterans! Check the #game-status channel before joining the game, and balance the game accordingly (count other veterans per team and see the bot's message for the current score status of the match). Thanks! </t>";
+hint parseText "<t color='#ffff00'>v25072023<br/>Full changelog available in our Discord!<br/><br/>Be sure to join it:<br/>discord.me/warfare<br/>or<br/>https://discord.gg/gRhPHUuWpy<br/><br/>New players, check the Guides section for the #tips-and-tricks channel and read the #commanding-guide. More guides coming soon(tm). If you have any questions, don't hesitate to ask in the side chat preferably, or on our discord! <br/><br/>Veterans! Check the #game-status channel before joining the game, and balance the game accordingly (count other veterans per team and see the bot's message for the current score status of the match)!<br/><br/>As always, thanks to our contributors for helping me to develop the mission:<br/>An-2 is a good plane<br/>Quad<br/>0=1<br/>Marty<br/><br/>Remember to check our discord every 1-2 weeks or so for new suggestions that we're voting on the #vote-suggestions channel (will @everyone ping for this). It will help us to prioritise things for development that the community wants! Thanks again, and have fun on the server! :)</t>";
 //--- Valhalla init.
 [] Spawn {
 	[] Call Compile preprocessFile "Client\Module\Valhalla\Init_Valhalla.sqf";
@@ -616,3 +616,4 @@ hint parseText "<t color='#ffff00'>v18072023<br/><br/>Join on our discord:<br/>d
 12452 cutText [(localize 'STR_WF_Loading')+"...","BLACK IN",5];
 
 ["INITIALIZATION", Format ["Init_Client.sqf: Client initialization ended at [%1]", time]] Call WFBE_CO_FNC_LogContent;
+clientInitComplete = true;

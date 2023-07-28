@@ -15,6 +15,13 @@ missionNamespace setVariable [Format["WFBE_%1REPAIRTRUCKS", _side], ['KamazRepai
 missionNamespace setVariable [Format["WFBE_%1SALVAGETRUCK", _side], ['WarfareSalvageTruck_RU','UralSalvage_TK_EP1']];
 missionNamespace setVariable [Format["WFBE_%1SUPPLYTRUCKS", _side], ['WarfareSupplyTruck_RU','UralSupply_TK_EP1']];
 
+missionNamespace setVariable [Format["WFBE_%1AMMOTRUCKS", _side], ['MtvrReammo_DES_EP1','WarfareReammoTruck_USMC','WarfareReammoTruck_RU','UralReammo_TK_EP1']];//listed to get gearaccess in updateavailablaactions.sqf (listed both to get capture skill too)
+missionNamespace setVariable [Format["WFBE_%1ECMTRUCKS", _side], ['KamazRefuel','UralRefuel_TK_EP1']];//listed to add ecm stuff
+missionNamespace setVariable [Format["WFBE_%1LIFTVEHICLE", _side], ["Mi17_Ins","Mi17_medevac_RU","Mi17_TK_EP1"]];
+missionNamespace setVariable [Format["WFBE_%1ARTYVEHICLE", _side], ['GRAD_TK_EP1','GRAD_RU']];
+
+
+
 //--- Radio Announcers.
 missionNamespace setVariable [Format ["WFBE_%1_RadioAnnouncers", _side], ['WFHQ_TK0_EP1','WFHQ_TK1_EP1','WFHQ_TK2_EP1','WFHQ_TK3_EP1','WFHQ_TK4_EP1']];
 missionNamespace setVariable [Format ["WFBE_%1_RadioAnnouncers_Config", _side], 'RadioProtocol_EP1_TK'];
@@ -138,13 +145,13 @@ if (WF_A2_CombinedOps) then {
 //Engineer
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearEngineer", _side], [
 	['AK_74_GL','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular','NVGoggles'],
-	['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25"','1Rnd_HE_GP25"','PipeBomb'],
+	['30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','30Rnd_545x39_AK','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25','1Rnd_HE_GP25','HandGrenade_East','HandGrenade_East','HandGrenade_East','HandGrenade_East'],
 	['AK_74_GL']
 ]];
 
 // Sniper
 missionNamespace setVariable [Format["WFBE_%1_DefaultGearSpot", _side], [
-	['huntingrifle','Sa61_EP1','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular','NVGoggles'],
+	['huntingrifle','Sa61_EP1','ItemCompass','ItemMap','ItemWatch','ItemRadio','Binocular_Vector','NVGoggles'],
 	['5x_22_LR_17_HMR','5x_22_LR_17_HMR','5x_22_LR_17_HMR','5x_22_LR_17_HMR','20Rnd_B_765x17_Ball','20Rnd_B_765x17_Ball','20Rnd_B_765x17_Ball','20Rnd_B_765x17_Ball','SmokeShellRed'],
 	['huntingrifle']
 ]];

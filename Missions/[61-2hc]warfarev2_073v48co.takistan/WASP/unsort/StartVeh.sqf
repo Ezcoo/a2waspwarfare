@@ -22,4 +22,5 @@ WEST_StartVeh =
  ['HMMWV_M998_crows_MK19_DES_EP1']+
  ['HMMWV_TOW_DES_EP1']+
  ['LAV25']+
-  ['BAF_Jackal2_L2A1_D'];
+ ['Pandur2_ACR']+
+ ['BAF_Jackal2_L2A1_D'];

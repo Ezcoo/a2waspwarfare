@@ -1,0 +1,32 @@
+-paramarker fixed
+-added gearaccess at ammotrucks,increased price,made cutom marker
+-failed adding gearaccess at ammobox,in a3 you can make it like ammotruck
+maybe its other kind of object here
+
+-failed implement the marker spawncode, seems there some function in which
+a2 not know.canceled to search this problem
+
+Markerclasses:HeliH		
+	      HeliHRescue	
+	      HeliHCivil
+
+-canceled implement ECM, i used A3 funktion isEqualTypeArray in my code.
+looking for downgrade code or rewriting this is a bit mindfuck.
+
+-----------------------------------------------------------
+
+i suggest asking in your discord for a3 community feedback.
+if you organize some debugevents,maybe every last saturday in month or
+such stuff with 10+ player,we can make the a3 build good enough to
+get the full community on a3.just make a red text with the date
+and servername in a2 server too,if you do,maybe im not the only one which
+not is using discord.
+
+a3 is not free to play atm but vanilla should 
+be cheap enough maybe. i made it for vanilla is enough,so fuck this dlc
+ shit there are nice free mods.idk just check out my build,if you get time for it.
+in general everyone had better fps there, a2 is and stays a 32bit game.
+
+
+
+

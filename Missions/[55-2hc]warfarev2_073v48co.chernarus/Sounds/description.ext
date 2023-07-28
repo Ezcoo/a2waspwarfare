@@ -25,4 +25,10 @@ class icbmLaunch {
 		titles[] = {};
 	};
 
+class inboundMissileGround {
+		name = "inboundMissileGround";
+		sound[] = {"\sounds\inboundMissileGround.ogg",10,1};
+		titles[] = {};
+	};
+
 };
