@@ -1,4 +1,6 @@
-﻿public abstract class BaseAircraft : InterfaceAircraft
+﻿using System.Collections.Generic;
+
+public abstract class BaseAircraft : InterfaceAircraft
 {
     public AircraftType AircraftType { get => aircraftType; set => aircraftType = value; }
 
@@ -30,6 +32,8 @@
         // Display the combinations
         foreach (var combination in combinations)
         {
+            string loadout = "";
+
             Dictionary<AmmunitionType, int> combinationLoadouts = new Dictionary<AmmunitionType, int>();
 
             //Console.WriteLine(string.Join(", ", combination));
@@ -46,13 +50,21 @@
                 }
             }
 
+            loadout = GenerateLoadoutRow(combinationLoadouts);
+
+            if  (loadout == "")
+            {
+                continue;
+            }
+
             if (index == combinations.Count - 1)
             {
-                Console.WriteLine(GenerateLoadoutRow(combinationLoadouts).TrimEnd(','));
+
+                Console.WriteLine(loadout.TrimEnd(','));
                 break;
             }
 
-            Console.WriteLine(GenerateLoadoutRow(combinationLoadouts) + ",\n");
+            Console.WriteLine(loadout + ",\n");
 
             index++;
         }
@@ -71,6 +83,40 @@
         Dictionary<AmmunitionType, int> _input,
         bool _generateWithPriceAndWeaponsInfo = true) // For non-default loadouts, show the information on the easa screen
     {
+        Dictionary<AmmunitionType, int> newInput = new();
+        bool disregardLoadout = false;
+
+        foreach (var kvp in _input)
+        {
+            newInput.Add(kvp.Key, kvp.Value);
+        }
+
+        //Console.WriteLine("Generating:");
+        foreach (var ammunitionKvp in newInput)
+        {
+            //Console.WriteLine(ammunitionKvp.Key + " | " + ammunitionKvp.Value);
+
+            // Replace with list if needed
+            var ammoToSearch = AmmunitionType.BASECH29;
+            if (ammunitionKvp.Key != ammoToSearch)
+            {
+                continue;
+            }
+
+            var interfaceAmmunition = (InterfaceAmmunition)EnumExtensions.GetInstance(ammunitionKvp.Key.ToString());
+
+            if (ammunitionKvp.Value == 2)
+            {
+                disregardLoadout = true;
+                break;
+            }
+        }
+
+        if (disregardLoadout)
+        {
+            return "";
+        }
+
         string weaponTypesArray = string.Empty;
         string ammunitionArray = string.Empty;
 
@@ -78,12 +124,19 @@
         string priceAndWeaponsInfo = string.Empty;
         string weaponsInfo = string.Empty;
 
+
+        bool doneAddingSpecialAmounts = false;
         Dictionary<(string, string), int> alreadyAddedWeaponLaunchersWithWeaponAmountInTotal = new Dictionary<(string, string), int>();
-        foreach (var ammoTypeKvp in _input)
+        foreach (var ammoTypeKvp in newInput)
         {
             int weaponAmount = 0;
 
             var ammunitionType = (InterfaceAmmunition)EnumExtensions.GetInstance(ammoTypeKvp.Key.ToString());
+            if (ammunitionType.canNotBeUsedAsLoadoutOption && _generateWithPriceAndWeaponsInfo)
+            {
+                continue;
+            }
+
             var weaponDefinition = (InterfaceWeapon)ammunitionType.weaponDefinition;
             var weaponSqfName = EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.WeaponType);
             var ammoDisplayName = EnumExtensions.GetEnumMemberAttrValue(ammunitionType.AmmunitionType);
@@ -96,9 +149,32 @@
                 totalPrice += ammunitionType.costPerPylon * 2;
                 weaponAmount += ammunitionType.amountPerPylon * 2;
 
+                string type = EnumExtensions.GetEnumMemberAttrValue(ammunitionType.AmmunitionType);
+
+                if (type == "ERROR_UNDEFINED_VARIANTS")
+                {
+                    //Console.WriteLine(ammoTypeKvp.Value);
+                    continue;
+                }
+
                 ammunitionArray += "'";
-                ammunitionArray += EnumExtensions.GetEnumMemberAttrValue(ammunitionType.AmmunitionType);
+                ammunitionArray += type;
                 ammunitionArray += "',";
+            }
+
+            // Temp solution to add kh29
+            if (ammoTypeKvp.Key == AmmunitionType.BASECH29 && !doneAddingSpecialAmounts)
+            {
+                var tempCh29 = (InterfaceAmmunition)EnumExtensions.GetInstance(AmmunitionType.BASECH29.ToString());
+
+                foreach (var item in tempCh29.optionalAmmunitionDictionary[ammoTypeKvp.Value])
+                {
+                    string type = EnumExtensions.GetEnumMemberAttrValue(item);
+
+                    ammunitionArray += "'";
+                    ammunitionArray += type;
+                    ammunitionArray += "',";
+                }
             }
 
             if (_generateWithPriceAndWeaponsInfo)
