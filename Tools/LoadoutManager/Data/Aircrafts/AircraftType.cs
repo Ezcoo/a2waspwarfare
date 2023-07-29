@@ -2,6 +2,8 @@
 
 public enum AircraftType
 {
+    // Su-34
+
     [EnumMember(Value = "Su34")]
     SU34,
 
@@ -12,4 +14,8 @@ public enum AircraftType
     SU25TKEP1,
     [EnumMember(Value = "Su39")]
     SU39,
+
+    // L-39
+    [EnumMember(Value = "L39_TK_EP1")]
+    L39TKEP1,
 }
