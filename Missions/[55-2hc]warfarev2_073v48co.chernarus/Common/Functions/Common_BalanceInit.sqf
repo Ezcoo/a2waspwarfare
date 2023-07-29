@@ -177,6 +177,19 @@ case "L159_ACR":{
     _this addMagazine "38Rnd_FFAR";
 };
 
+case "AW159_Lynx_BAF":{
+    _this removeWeaponTurret ["CRV7_PG", [-1]];
+    _this addMagazineTurret ["2Rnd_Spike_ACR", [-1]];
+    _this addMagazineTurret ["2Rnd_Spike_ACR", [-1]];
+    _this AddWeaponTurret ["SpikeLauncher_ACR", [-1]];
+    _this removeWeaponTurret ["BAF_M621", [-1]];
+    _this addMagazineTurret ["200Rnd_40mmSABOT_FV510", [-1]];
+    _this addMagazineTurret ["200Rnd_40mmHE_FV510", [-1]];
+    _this AddWeaponTurret ["CTWS", [-1]];
+    _this addMagazineTurret ["6Rnd_CRV7_HEPD", [-1]];
+    _this addWeaponTurret ["CRV7_HEPD",[-1]];
+};
+
 case "M1128_MGS_EP1":{
     _this addMagazineTurret ["6RND_105mm_APDS", [0]];
 };
