@@ -225,7 +225,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={9601.8311,47.313107,5879.1079};
+					position[]={9762.1836,51.213951,5987.4463};
 					azimut=90;
 					id=9;
 					side="LOGIC";
@@ -243,7 +243,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={4923.2769,133.44461,7876.6943};
+					position[]={4732.1235,120.80215,7557.9492};
 					id=10;
 					side="LOGIC";
 					vehicle="LocationLogicStart";
@@ -260,7 +260,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={6563.2061,11.333412,2133.5928};
+					position[]={6608.5962,8.4049406,2103.3179};
 					id=11;
 					side="LOGIC";
 					vehicle="LocationLogicStart";
@@ -295,7 +295,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={3024.2593,12.513122,6258.3975};
+					position[]={3037.4978,13.989391,6190.2793};
 					azimut=180;
 					id=13;
 					side="LOGIC";
@@ -719,7 +719,7 @@ class Mission
 				items=5;
 				class Item0
 				{
-					position[]={4548.2271,73.168694,6858.5845};
+					position[]={7786.8853,57.128674,5422.27};
 					azimut=345;
 					special="NONE";
 					id=45;
@@ -727,14 +727,14 @@ class Mission
 					vehicle="LocationLogicDepot";
 					leader=1;
 					skill=0.60000002;
-					text="Mine";
-					init="nullReturn = [this,""Mine"",""+"",10,50,300,[""MediumTown1"",""MediumTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
+					text="Park";
+					init="nullReturn = [this,""Park"",""+"",10,50,300,[""MediumTown1"",""MediumTown2""]] execVM ""Common\Init\Init_Town.sqf"";this enableSimulation false;";
 					synchronizations[]={46,47,48,49};
 				};
 				class Item1
 				{
-					position[]={4596.5894,70.061493,6829.5532};
-					azimut=270;
+					position[]={7844.4175,56.03706,5363.1763};
+					azimut=219.71159;
 					special="NONE";
 					id=47;
 					side="LOGIC";
@@ -745,8 +745,8 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={4470.8491,71.728561,6833.4233};
-					azimut=205;
+					position[]={7736.3735,59.667061,5425.6343};
+					azimut=138.06281;
 					special="NONE";
 					id=46;
 					side="LOGIC";
@@ -757,8 +757,8 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={4552.0972,72.361839,6810.1987};
-					azimut=290;
+					position[]={7833.2769,55.515007,5353.7437};
+					azimut=133.50713;
 					special="NONE";
 					id=48;
 					side="LOGIC";
@@ -769,8 +769,8 @@ class Mission
 				};
 				class Item4
 				{
-					position[]={4486.3247,80.008278,6790.8447};
-					azimut=175;
+					position[]={7728.3892,59.490448,5417.8584};
+					azimut=330.9371;
 					special="NONE";
 					id=49;
 					side="LOGIC";
@@ -2126,7 +2126,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="WF_Logic";
-					init="this setVariable [""totalTowns"",27];this enableSimulation false;   this setVariable [""Towns_RemovedXSmall"",[""Corinna"",""Hastings"", ""Strickland"",""Smithton"",""Edith"", ""Queenstown"",""Mole"",""Bight"",""Mine"",""Launceston"", ""Gold"",""Mersey"",""Hobart"",""Helens"",""Gladstone"",""Devonport"",  ""Westerway"",""Sorell"",""Bothwell"",""Bridge"",""Meadowbank"",""Beach"",""Scottsdale""]];  this setVariable [""Towns_RemovedSmall"",[""Corinna"",""Huon"",""Hastings"", ""Strickland"",""Smithton"",""Edith"",  ""Strathgordon"",""Queenstown"",""Mole"",""Campbell"",""Bight"",""Mine"",""Launceston"", ""Gold"",""Mersey"",""Hobart"",""Helens"",  ""Gladstone"",""Devonport"",""Westerway"",""Sorell"",""Bothwell"",""Waratah"",""Bridge"",""Meadowbank"",""Beach"",""Scottsdale""]];        this setVariable [""Towns_RemovedMedium"",[""Dolina"",""Queenstown"",""Hobart"",""Mole"",""Mersey"",""Helens"",""Devonport"",""Westerway"",""Sorell"",""Meadowbank"",""Beach"",""Scottsdale""]];        this setVariable [""Towns_RemovedLarge"",[""Helens"",""Westerway"",""Bothwell"",""Meadowbank"",""Strathgordon"",""Mersey"",""Waratah"",""Devonport""]];this setVariable [""Towns_RemovedBigTowns"",[""Hobart"",""Smithton"",""Corinna"",""Huon"",""Launceston"", ""Gold"",""Queenstown""]];     this setVariable [""Towns_RemovedCentralLine"",[""Meadowbank"",""Strathgordon"",""Devonport"",""Helens"",""Huon"",""Sorell"",""Campbell"",""Scottsdale"",""Gladstone"",""Bight"",""Bridge"",""Olsa"",""Hastings""]];  this setVariable [""Towns_RemovedSmallTowns"",[""Waratah"",""Bight"",""Westerway"",""Mole"",""Strathgordon"",""Campbell"",""Mole"",""Helens"",""Devonport"",""Sorell"",""Bridge"",""Meadowbank""]];  nullReturn = [this] ExecVM ""Common\Init\Init_TownMode.sqf""";
+					init="this setVariable [""totalTowns"",27];this enableSimulation false;   this setVariable [""Towns_RemovedXSmall"",[""Corinna"",""Hastings"", ""Strickland"",""Smithton"",""Edith"", ""Queenstown"",""Mole"",""Bight"",""Park"",""Launceston"", ""Gold"",""Mersey"",""Hobart"",""Helens"",""Gladstone"",""Devonport"",  ""Westerway"",""Sorell"",""Bothwell"",""Bridge"",""Meadowbank"",""Beach"",""Scottsdale""]];  this setVariable [""Towns_RemovedSmall"",[""Corinna"",""Huon"",""Hastings"", ""Strickland"",""Smithton"",""Edith"",  ""Strathgordon"",""Queenstown"",""Mole"",""Campbell"",""Bight"",""Park"",""Launceston"", ""Gold"",""Mersey"",""Hobart"",""Helens"",  ""Gladstone"",""Devonport"",""Westerway"",""Sorell"",""Bothwell"",""Waratah"",""Bridge"",""Meadowbank"",""Beach"",""Scottsdale""]];        this setVariable [""Towns_RemovedMedium"",[""Dolina"",""Queenstown"",""Hobart"",""Mole"",""Mersey"",""Helens"",""Devonport"",""Westerway"",""Sorell"",""Meadowbank"",""Beach"",""Scottsdale""]];        this setVariable [""Towns_RemovedLarge"",[""Helens"",""Westerway"",""Bothwell"",""Meadowbank"",""Strathgordon"",""Mersey"",""Waratah"",""Devonport""]];this setVariable [""Towns_RemovedBigTowns"",[""Hobart"",""Smithton"",""Corinna"",""Huon"",""Launceston"", ""Gold"",""Queenstown""]];     this setVariable [""Towns_RemovedCentralLine"",[""Meadowbank"",""Strathgordon"",""Devonport"",""Helens"",""Huon"",""Sorell"",""Campbell"",""Scottsdale"",""Gladstone"",""Bight"",""Bridge"",""Olsa"",""Hastings""]];  this setVariable [""Towns_RemovedSmallTowns"",[""Waratah"",""Bight"",""Westerway"",""Mole"",""Strathgordon"",""Campbell"",""Mole"",""Helens"",""Devonport"",""Sorell"",""Bridge"",""Meadowbank""]];  nullReturn = [this] ExecVM ""Common\Init\Init_TownMode.sqf""";
 				};
 			};
 		};
@@ -3264,7 +3264,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={10282.414,47.051483,7932.4253};
+					position[]={10282.414,48.975246,7972.3584};
 					azimut=90;
 					id=199;
 					side="LOGIC";
