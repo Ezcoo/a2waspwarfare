@@ -20,6 +20,7 @@
             AmmunitionType.FOURROUNDFAB250,
             AmmunitionType.FOURTYROUNDS8,
             AmmunitionType.SIXTYFOURROUNDS5,
+            AmmunitionType.FOURROUNDATAKA,
         };
     }
 }
