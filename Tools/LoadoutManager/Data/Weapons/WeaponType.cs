@@ -19,4 +19,7 @@ public enum WeaponType
 
     [EnumMember(Value = "AT9Launcher")]
     ATAKALAUNCHER,
+
+    [EnumMember(Value = "BombLauncherF35")]
+    GBU12BOMBLAUNCHER,
 }

@@ -24,4 +24,7 @@ public enum AmmunitionType
 
     [EnumMember(Value = "4Rnd_AT9_Mi24P")]
     FOURROUNDATAKA,
+
+    [EnumMember(Value = "2Rnd_GBU12")]
+    TWOROUNDGBU12,
 }
