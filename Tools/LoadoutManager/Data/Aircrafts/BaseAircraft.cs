@@ -6,7 +6,7 @@ public abstract class BaseAircraft : InterfaceAircraft
 
     private AircraftType aircraftType { get; set; }
     public int pylonAmount { get; set; }
-    public List<AmmunitionType> allowedAmmunitionTypes { get; set; }
+    public Dictionary<AmmunitionType, int> allowedAmmunitionTypesWithTheirLimitationAmount { get; set; }
     public Loadout defaultLoadout { get; set; }
 
     public void GenerateLoadoutsForTheAircraft()
@@ -25,7 +25,7 @@ public abstract class BaseAircraft : InterfaceAircraft
     {
         Console.WriteLine("_easaLoadout = _easaLoadout + [\n[");
 
-        List<List<AmmunitionType>> combinations = GenerateCombinations(allowedAmmunitionTypes.ToArray(), pylonAmount / 2);
+        List<List<AmmunitionType>> combinations = GenerateCombinations(allowedAmmunitionTypesWithTheirLimitationAmount.Keys.ToArray(), pylonAmount / 2);
 
         Dictionary<string, int> unsortedListByPrice = new Dictionary<string, int>();
         Dictionary<string, int> finalPricesSortedByPrice = new Dictionary<string, int>();

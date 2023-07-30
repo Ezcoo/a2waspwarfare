@@ -14,12 +14,12 @@
 
         base.defaultLoadout = defaultLoadout;
 
-        allowedAmmunitionTypes = new List<AmmunitionType>
+        allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {
-            AmmunitionType.TWOROUNDR73,
-            AmmunitionType.FOURROUNDFAB250,
-            AmmunitionType.BASECH29,
-            AmmunitionType.FOURTYROUNDS8,
+            { AmmunitionType.TWOROUNDR73, 0 },
+            { AmmunitionType.FOURROUNDFAB250, 0 },
+            { AmmunitionType.BASECH29, 0 },
+            { AmmunitionType.FOURTYROUNDS8, 0 },
         };
     }
 }
