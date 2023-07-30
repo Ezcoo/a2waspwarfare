@@ -25,4 +25,10 @@ public enum WeaponType
 
     [EnumMember(Value = "Igla_twice")]
     IGLALAUNCHER,
+
+    [EnumMember(Value = "SidewinderLaucher_F35")]
+    SIDEWINDERLAUNCHER,
+
+    [EnumMember(Value = "MaverickLauncher")]
+    MAVERICKLAUNCHER,
 }

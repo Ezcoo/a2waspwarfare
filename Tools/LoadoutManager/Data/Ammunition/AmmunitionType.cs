@@ -30,4 +30,10 @@ public enum AmmunitionType
 
     [EnumMember(Value = "2Rnd_Igla")]
     TWOROUNDIGLA,
+
+    [EnumMember(Value = "2Rnd_Sidewinder_F35")]
+    TWOROUNDSIDEWINDER,
+
+    [EnumMember(Value = "2Rnd_Maverick_A10")]
+    TWOROUNDMAVERICK,
 }

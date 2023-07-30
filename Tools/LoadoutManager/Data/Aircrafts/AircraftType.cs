@@ -18,4 +18,7 @@ public enum AircraftType
     // L-39
     [EnumMember(Value = "L39_TK_EP1")]
     L39TKEP1,
+
+    [EnumMember(Value = "F35B")]
+    F35B,
 }
