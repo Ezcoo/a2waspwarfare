@@ -35,7 +35,7 @@ public enum WeaponType
     [EnumMember(Value = "MaverickLauncher")]
     MAVERICKLAUNCHER,
 
-    [EnumMember(Value = "Mk82BombLauncher")]
+    [EnumMember(Value = "Mk82BombLauncher_6")]
     MK82BOMBLAUNCHER,
 
     [EnumMember(Value = "FFARLauncher")]

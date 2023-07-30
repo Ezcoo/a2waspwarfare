@@ -18,7 +18,7 @@
             { AmmunitionType.TWOROUNDSIDEWINDER_AH1Z, 4 },
             { AmmunitionType.TWOROUNDMAVERICK, 0 },
             { AmmunitionType.THIRTYEIGHTROUNDHYDRA, 0 },
-            { AmmunitionType.THREEROUNDMK82, 0 },
+            { AmmunitionType.SIXROUNDMK82, 0 },
             { AmmunitionType.EIGHTROUNDHELLFIRE, 2 },
         };
     }

@@ -40,8 +40,8 @@ public enum AmmunitionType
     [EnumMember(Value = "2Rnd_Maverick_A10")]
     TWOROUNDMAVERICK,
 
-    [EnumMember(Value = "3Rnd_Mk82")]
-    THREEROUNDMK82,
+    [EnumMember(Value = "6Rnd_Mk82")]
+    SIXROUNDMK82,
 
     [EnumMember(Value = "38Rnd_FFAR")]
     THIRTYEIGHTROUNDHYDRA,
