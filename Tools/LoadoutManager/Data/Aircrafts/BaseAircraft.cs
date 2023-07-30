@@ -74,14 +74,14 @@ public abstract class BaseAircraft : InterfaceAircraft
 
         foreach (var item in finalPricesSortedByPrice)
         {
-            if (index == combinations.Count - 1)
+            string finalString = item.Key + ",";
+
+            if (index == finalPricesSortedByPrice.Count - 1)
             {
-                Console.WriteLine(item.Key.TrimEnd(','));
-                break;
+                finalString = finalString.TrimEnd(',');
             }
 
-            Console.WriteLine(item.Key + ",\n");
-
+            Console.WriteLine(finalString);
             index++;
         }
     }
