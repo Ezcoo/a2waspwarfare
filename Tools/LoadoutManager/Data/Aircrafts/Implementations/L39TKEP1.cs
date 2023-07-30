@@ -1,23 +1,24 @@
-﻿public class SU34 : BaseAircraft
+﻿public class L39TKEP1 : BaseAircraft
 {
-    public SU34()
+    public L39TKEP1()
     {
-        AircraftType = AircraftType.SU34;
-        pylonAmount = 10;
+        AircraftType = AircraftType.L39TKEP1;
+        pylonAmount = 4;
 
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.SIXROUNDCH29, 2},
-                { AmmunitionType.FOURROUNDR73, 2},
+                { AmmunitionType.SIXTYFOURROUNDS5, 2},
+                { AmmunitionType.TWOROUNDR73, 2},
             };
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {
             { AmmunitionType.TWOROUNDR73, 0 },
             { AmmunitionType.FOURROUNDFAB250, 0 },
-            { AmmunitionType.BASECH29, 0 },
             { AmmunitionType.FOURTYROUNDS8, 0 },
-            { AmmunitionType.TWOROUNDGBU12, 8 },
+            { AmmunitionType.SIXTYFOURROUNDS5, 0 },
+            { AmmunitionType.FOURROUNDATAKA, 0 },
+            { AmmunitionType.TWOROUNDGBU12, 2 },
         };
     }
 }

@@ -16,4 +16,18 @@ public enum AmmunitionType
     FOURROUNDCH29,
     [EnumMember(Value = "6Rnd_Ch29")]
     SIXROUNDCH29,
+
+    [EnumMember(Value = "40Rnd_S8T")]
+    FOURTYROUNDS8,
+    [EnumMember(Value = "64Rnd_57mm")]
+    SIXTYFOURROUNDS5,
+
+    [EnumMember(Value = "4Rnd_AT9_Mi24P")]
+    FOURROUNDATAKA,
+
+    [EnumMember(Value = "2Rnd_GBU12")]
+    TWOROUNDGBU12,
+
+    [EnumMember(Value = "2Rnd_Igla")]
+    TWOROUNDIGLA,
 }

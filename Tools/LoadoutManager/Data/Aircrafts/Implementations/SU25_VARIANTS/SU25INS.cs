@@ -1,23 +1,22 @@
-﻿public class SU34 : BaseAircraft
+﻿public class SU25INS : BaseAircraft
 {
-    public SU34()
+    public SU25INS()
     {
-        AircraftType = AircraftType.SU34;
-        pylonAmount = 10;
+        AircraftType = AircraftType.SU25INS;
+        pylonAmount = 6;
 
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.SIXROUNDCH29, 2},
+                { AmmunitionType.FOURROUNDCH29, 2},
                 { AmmunitionType.FOURROUNDR73, 2},
             };
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {
-            { AmmunitionType.TWOROUNDR73, 0 },
             { AmmunitionType.FOURROUNDFAB250, 0 },
             { AmmunitionType.BASECH29, 0 },
-            { AmmunitionType.FOURTYROUNDS8, 0 },
-            { AmmunitionType.TWOROUNDGBU12, 8 },
+            { AmmunitionType.SIXTYFOURROUNDS5, 0 },
+            { AmmunitionType.TWOROUNDIGLA, 2 },
         };
     }
 }
