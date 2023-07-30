@@ -206,26 +206,33 @@ public abstract class BaseAircraft : InterfaceAircraft
 
             var weaponDefinition = (InterfaceWeapon)ammunitionType.weaponDefinition;
             var weaponSqfName = EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.WeaponType);
-            var ammoDisplayName = EnumExtensions.GetEnumMemberAttrValue(ammunitionType.AmmunitionType);
+            var ammoDisplayName = EnumExtensions.GetEnumMemberAttrValue(ammunitionType.AmmunitionTypes[0]);
 
             int amount = ammoTypeKvp.Value / 2;
 
             // Calculates the the other halves of the pylons
             for (int p = 0; p < amount; p++)
             {
+                string totalTypes = string.Empty;
+
                 totalPrice += ammunitionType.costPerPylon * 2;
                 weaponAmount += ammunitionType.amountPerPylon * 2;
 
-                string type = EnumExtensions.GetEnumMemberAttrValue(ammunitionType.AmmunitionType);
-
-                if (type == "ERROR_UNDEFINED_VARIANTS")
+                foreach (var ammunitonType in ammunitionType.AmmunitionTypes)
                 {
-                    continue;
+                    string type = EnumExtensions.GetEnumMemberAttrValue(ammunitonType);
+
+                    if (type == "ERROR_UNDEFINED_VARIANTS")
+                    {
+                        continue;
+                    }
+
+                    totalTypes += "'";
+                    totalTypes += type;
+                    totalTypes += "',";
                 }
 
-                ammunitionArray += "'";
-                ammunitionArray += type;
-                ammunitionArray += "',";
+                ammunitionArray += totalTypes;
             }
 
             // Temp solution to add kh29

@@ -2,7 +2,7 @@
 {
     public EIGHTROUNDHELLFIRE()
     {
-        AmmunitionType = AmmunitionType.EIGHTROUNDHELLFIRE;
+        AmmunitionTypes = new List<AmmunitionType>() { AmmunitionType.EIGHTROUNDHELLFIRE };
         amountPerPylon = 4;
         weaponDefinition = (InterfaceWeapon)EnumExtensions.GetInstance(WeaponType.HELLFIRELAUNCHER.ToString()) as BaseWeapon;
         ammoDisplayName = "AGM-114";

@@ -2,7 +2,7 @@
 {
     public THIRTYEIGHTROUNDHYDRA()
     {
-        AmmunitionType = AmmunitionType.THIRTYEIGHTROUNDHYDRA;
+        AmmunitionTypes = new List<AmmunitionType>() { AmmunitionType.THIRTYEIGHTROUNDHYDRA };
         amountPerPylon = 19;
         weaponDefinition = (InterfaceWeapon)EnumExtensions.GetInstance(WeaponType.HYDRALAUNCHER.ToString()) as BaseWeapon;
         ammoDisplayName = "Hydra";

@@ -13,7 +13,7 @@
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {
-            { AmmunitionType.FOURROUNDFAB250, 0 },
+            { AmmunitionType.SIXROUNDFAB250, 0 },
             { AmmunitionType.BASECH29, 0 },
             { AmmunitionType.SIXTYFOURROUNDS5, 0 },
             { AmmunitionType.TWOROUNDIGLA, 2 },

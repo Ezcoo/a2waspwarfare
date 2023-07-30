@@ -1,8 +1,8 @@
 ﻿public abstract class BaseAmmunition : InterfaceAmmunition
 {
-    public AmmunitionType AmmunitionType { get => ammunitionType; set => ammunitionType = value; }
+    public List<AmmunitionType> AmmunitionTypes { get => ammunitionType; set => ammunitionType = value; }
 
-    private AmmunitionType ammunitionType { get; set; }
+    private List<AmmunitionType> ammunitionType { get; set; }
     public int amountPerPylon { get; set; }
     public BaseWeapon weaponDefinition { get; set; }
     public string ammoDisplayName { get; set; }
