@@ -18,6 +18,7 @@
             { AmmunitionType.FOURTYROUNDS8, 0 },
             { AmmunitionType.SIXTYFOURROUNDS5, 0 },
             { AmmunitionType.FOURROUNDATAKA, 0 },
+            { AmmunitionType.TWOROUNDGBU12, 2 },
         };
     }
 }
