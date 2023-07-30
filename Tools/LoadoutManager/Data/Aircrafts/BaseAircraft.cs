@@ -56,7 +56,7 @@ public abstract class BaseAircraft : InterfaceAircraft
                 }
             }
 
-            loadout = GenerateLoadoutRow(combinationLoadouts);
+            loadout = GenerateLoadoutRow(combinationLoadouts, allowedAmmunitionTypesWithTheirLimitationAmount);
 
             if (loadout.Item1 == "" || loadout.Item2 == 0)
             {
@@ -90,7 +90,7 @@ public abstract class BaseAircraft : InterfaceAircraft
     {
         Console.WriteLine("_easaDefault = _easaDefault + ");
 
-        var ammunitionArray = GenerateLoadoutRow(defaultLoadout.AmmunitionTypesWithCount, false);
+        var ammunitionArray = GenerateLoadoutRow(defaultLoadout.AmmunitionTypesWithCount, new Dictionary<AmmunitionType, int>(), false);
 
         if (ammunitionArray.Item1 == "")
         {
@@ -103,12 +103,12 @@ public abstract class BaseAircraft : InterfaceAircraft
     }
 
     private (string, int) GenerateLoadoutRow(
-        Dictionary<AmmunitionType, int> _input,
+        Dictionary<AmmunitionType, int> _input, Dictionary<AmmunitionType, int> _allowedAmmunitionTypesWithTheirLimitationAmount,
         bool _generateWithPriceAndWeaponsInfo = true)
     {
         string finalRowOutput = string.Empty;
 
-        var calculatedLoadoutRow = CalculateLoadoutRow(_input, _generateWithPriceAndWeaponsInfo);
+        var calculatedLoadoutRow = CalculateLoadoutRow(_input, _allowedAmmunitionTypesWithTheirLimitationAmount, _generateWithPriceAndWeaponsInfo);
 
         if (_generateWithPriceAndWeaponsInfo)
         {
@@ -138,7 +138,7 @@ public abstract class BaseAircraft : InterfaceAircraft
     }
 
     private (int,string,string,string) CalculateLoadoutRow(
-        Dictionary<AmmunitionType, int> _input,
+        Dictionary<AmmunitionType, int> _input, Dictionary<AmmunitionType, int> _allowedAmmunitionTypesWithTheirLimitationAmount,
         bool _generateWithPriceAndWeaponsInfo = true) // For non-default loadouts, show the information on the easa screen
     {
         Dictionary<AmmunitionType, int> newInput = new();
@@ -153,6 +153,15 @@ public abstract class BaseAircraft : InterfaceAircraft
         foreach (var ammunitionKvp in newInput)
         {
             //Console.WriteLine(ammunitionKvp.Key + " | " + ammunitionKvp.Value);
+
+            // Check for weapon specific limitations
+            if (_allowedAmmunitionTypesWithTheirLimitationAmount.Count > 0 &&
+                allowedAmmunitionTypesWithTheirLimitationAmount[ammunitionKvp.Key] != 0 &&
+                ammunitionKvp.Value > allowedAmmunitionTypesWithTheirLimitationAmount[ammunitionKvp.Key])
+            {
+                disregardLoadout = true;
+                break;
+            }
 
             // Replace with list if needed
             var ammoToSearch = AmmunitionType.BASECH29;
