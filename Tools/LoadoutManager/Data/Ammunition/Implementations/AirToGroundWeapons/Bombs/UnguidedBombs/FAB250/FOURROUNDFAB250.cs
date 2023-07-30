@@ -3,7 +3,7 @@
     public FOURROUNDFAB250()
     {
         AmmunitionType = AmmunitionType.FOURROUNDFAB250;
-        amountPerPylon = 4;
+        amountPerPylon = 2;
         weaponDefinition = (InterfaceWeapon)EnumExtensions.GetInstance(WeaponType.AIRBOMBLAUNCHER.ToString()) as BaseWeapon;
         ammoDisplayName = "FAB-250";
         costPerPylon = 300;
