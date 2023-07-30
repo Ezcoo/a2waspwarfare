@@ -5,14 +5,11 @@
         AircraftType = AircraftType.SU34;
         pylonAmount = 10;
 
-        Loadout defaultLoadout = new();
-        defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+        base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.SIXROUNDCH29, 2},
                 { AmmunitionType.FOURROUNDR73, 2},
             };
-
-        base.defaultLoadout = defaultLoadout;
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {

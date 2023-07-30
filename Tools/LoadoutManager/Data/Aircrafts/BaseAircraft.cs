@@ -9,6 +9,11 @@ public abstract class BaseAircraft : InterfaceAircraft
     public Dictionary<AmmunitionType, int> allowedAmmunitionTypesWithTheirLimitationAmount { get; set; }
     public Loadout defaultLoadout { get; set; }
 
+    protected BaseAircraft()
+    {
+        defaultLoadout = new Loadout();
+    }
+
     public void GenerateLoadoutsForTheAircraft()
     {
         Console.WriteLine("_easaVehi = _easaVehi + ['" + EnumExtensions.GetEnumMemberAttrValue(AircraftType) + "'];");
