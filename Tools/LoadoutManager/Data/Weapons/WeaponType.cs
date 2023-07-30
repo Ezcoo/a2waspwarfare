@@ -29,6 +29,9 @@ public enum WeaponType
     [EnumMember(Value = "SidewinderLaucher_F35")]
     SIDEWINDERLAUNCHER,
 
+    [EnumMember(Value = "SidewinderLaucher_AH1Z")]
+    SIDEWINDERLAUNCHER_AH1Z,
+
     [EnumMember(Value = "MaverickLauncher")]
     MAVERICKLAUNCHER,
 
