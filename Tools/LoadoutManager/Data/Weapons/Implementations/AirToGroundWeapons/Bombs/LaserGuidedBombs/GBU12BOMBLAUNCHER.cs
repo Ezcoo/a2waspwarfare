@@ -3,6 +3,6 @@
     public GBU12BOMBLAUNCHER()
     {
         WeaponType = WeaponType.GBU12BOMBLAUNCHER;
-        costPerWeaponLauncher = 1337;
+        costPerWeaponLauncher = 1000;
     }
 }

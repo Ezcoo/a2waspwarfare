@@ -6,6 +6,6 @@
         amountPerPylon = 1;
         weaponDefinition = (InterfaceWeapon)EnumExtensions.GetInstance(WeaponType.R73_WEAPON.ToString()) as BaseWeapon;
         ammoDisplayName = "R-73";
-        costPerPylon = 222;
+        costPerPylon = 700;
     }
 }

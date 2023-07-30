@@ -6,6 +6,6 @@
         amountPerPylon = 20;
         weaponDefinition = (InterfaceWeapon)EnumExtensions.GetInstance(WeaponType.S8LAUNCHER.ToString()) as BaseWeapon;
         ammoDisplayName = "S-8";
-        costPerPylon = 222;
+        costPerPylon = 3000;
     }
 }

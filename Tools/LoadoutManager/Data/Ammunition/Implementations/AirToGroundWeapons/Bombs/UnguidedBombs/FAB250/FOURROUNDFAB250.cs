@@ -6,6 +6,6 @@
         amountPerPylon = 4;
         weaponDefinition = (InterfaceWeapon)EnumExtensions.GetInstance(WeaponType.AIRBOMBLAUNCHER.ToString()) as BaseWeapon;
         ammoDisplayName = "FAB-250";
-        costPerPylon = 23222;
+        costPerPylon = 300;
     }
 }

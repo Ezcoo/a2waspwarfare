@@ -3,6 +3,6 @@
     public ATAKALAUNCHER()
     {
         WeaponType = WeaponType.ATAKALAUNCHER;
-        costPerWeaponLauncher = 2222;
+        costPerWeaponLauncher = 1000;
     }
 }

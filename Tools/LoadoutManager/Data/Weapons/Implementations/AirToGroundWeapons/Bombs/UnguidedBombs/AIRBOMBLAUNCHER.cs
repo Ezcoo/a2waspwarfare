@@ -3,6 +3,6 @@
     public AIRBOMBLAUNCHER()
     {
         WeaponType = WeaponType.AIRBOMBLAUNCHER;
-        costPerWeaponLauncher = 500;
+        costPerWeaponLauncher = 1000;
     }
 }

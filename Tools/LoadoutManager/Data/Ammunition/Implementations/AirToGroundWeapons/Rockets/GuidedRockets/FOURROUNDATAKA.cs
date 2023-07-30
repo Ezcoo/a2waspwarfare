@@ -6,6 +6,6 @@
         amountPerPylon = 2;
         weaponDefinition = (InterfaceWeapon)EnumExtensions.GetInstance(WeaponType.ATAKALAUNCHER.ToString()) as BaseWeapon;
         ammoDisplayName = "Ataka-V";
-        costPerPylon = 333;
+        costPerPylon = 600;
     }
 }
