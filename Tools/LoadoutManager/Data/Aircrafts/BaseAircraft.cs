@@ -56,7 +56,7 @@ public abstract class BaseAircraft : InterfaceAircraft
                 }
             }
 
-            loadout = GenerateLoadoutRow(combinationLoadouts, allowedAmmunitionTypesWithTheirLimitationAmount);
+            loadout = GenerateLoadoutRow(combinationLoadouts);
 
             if (loadout.Item1 == "" || loadout.Item2 == 0)
             {
@@ -90,7 +90,7 @@ public abstract class BaseAircraft : InterfaceAircraft
     {
         Console.WriteLine("_easaDefault = _easaDefault + ");
 
-        var ammunitionArray = GenerateLoadoutRow(defaultLoadout.AmmunitionTypesWithCount, new Dictionary<AmmunitionType, int>(), false);
+        var ammunitionArray = GenerateLoadoutRow(defaultLoadout.AmmunitionTypesWithCount, false);
 
         if (ammunitionArray.Item1 == "")
         {
@@ -103,7 +103,7 @@ public abstract class BaseAircraft : InterfaceAircraft
     }
 
     private (string, int) GenerateLoadoutRow(
-        Dictionary<AmmunitionType, int> _input, Dictionary<AmmunitionType, int> _allowedAmmunitionTypesWithTheirLimitationAmount,
+        Dictionary<AmmunitionType, int> _input,
         bool _generateWithPriceAndWeaponsInfo = true)
     {
         string finalRowOutput = string.Empty;
