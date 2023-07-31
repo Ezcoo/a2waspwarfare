@@ -27,4 +27,8 @@ public enum AircraftType
     A10,
     [EnumMember(Value = "A10_US_EP1")]
     A10USEP1,
+
+    // AV8B variants
+    [EnumMember(Value = "AV8B")]
+    AV8BLGB,
 }

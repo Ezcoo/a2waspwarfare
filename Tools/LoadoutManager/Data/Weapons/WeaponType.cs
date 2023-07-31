@@ -45,4 +45,7 @@ public enum WeaponType
 
     [EnumMember(Value = "HellfireLauncher")]
     HELLFIRELAUNCHER,
+
+    [EnumMember(Value = "GAU12")]
+    GAU12,
 }
