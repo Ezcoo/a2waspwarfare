@@ -81,8 +81,10 @@ switch (typeOf _this) do
 
 			    _this removeWeapon "BombLauncher";
 				_this removeMagazine "6Rnd_GBU12_AV8B";
-				_this addWeapon "BombLauncherA10";
-				_this addMagazine "4Rnd_GBU12";
+				_this addWeapon "BombLauncherF35";
+				_this addMagazine "2Rnd_GBU12";
+				_this addMagazine "2Rnd_GBU12";
+				_this addMagazine "2Rnd_GBU12";
 	};
 
         case "F35B": {
