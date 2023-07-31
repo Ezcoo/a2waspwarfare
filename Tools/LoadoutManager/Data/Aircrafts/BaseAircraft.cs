@@ -112,7 +112,7 @@ public abstract class BaseAircraft : InterfaceAircraft
 
         if (_generateWithPriceAndWeaponsInfo)
         {
-            string priceAndWeaponsInfo = calculatedLoadoutRow.Item1.ToString() + ",'" + calculatedLoadoutRow.Item4 + "',";
+            string priceAndWeaponsInfo = calculatedLoadoutRow.totalPrice.ToString() + ",'" + calculatedLoadoutRow.weaponsInfo + "',";
 
             finalRowOutput += "[" + priceAndWeaponsInfo + "[[";
         }
@@ -121,26 +121,27 @@ public abstract class BaseAircraft : InterfaceAircraft
             finalRowOutput += "[[[";
         }
 
-        calculatedLoadoutRow.Item2 = calculatedLoadoutRow.Item2.TrimEnd(',');
-        calculatedLoadoutRow.Item2 += "]";
+        calculatedLoadoutRow.weaponTypesArray = calculatedLoadoutRow.weaponTypesArray.TrimEnd(',');
+        calculatedLoadoutRow.weaponTypesArray += "]";
 
-        finalRowOutput += calculatedLoadoutRow.Item2 + ",";
+        finalRowOutput += calculatedLoadoutRow.weaponTypesArray + ",";
         finalRowOutput += "[";
 
-        calculatedLoadoutRow.Item3 = calculatedLoadoutRow.Item3.TrimEnd(',');
-        calculatedLoadoutRow.Item3 += "]]]";
+        calculatedLoadoutRow.ammunitionArray = calculatedLoadoutRow.ammunitionArray.TrimEnd(',');
+        calculatedLoadoutRow.ammunitionArray += "]]]";
 
-        finalRowOutput += calculatedLoadoutRow.Item3;
+        finalRowOutput += calculatedLoadoutRow.ammunitionArray;
 
         //Console.WriteLine("RETURNING: " + finalRowOutput);
 
-        return (finalRowOutput, calculatedLoadoutRow.Item1);
+        return (finalRowOutput, calculatedLoadoutRow.totalPrice);
     }
 
-    private (int,string,string,string) CalculateLoadoutRow(
+    private LoadoutRow CalculateLoadoutRow(
         Dictionary<AmmunitionType, int> _input, Dictionary<AmmunitionType, int> _allowedAmmunitionTypesWithTheirLimitationAmount,
         bool _generateWithPriceAndWeaponsInfo = true) // For non-default loadouts, show the information on the easa screen
     {
+        LoadoutRow newLoadoutRow = new LoadoutRow();
         Dictionary<AmmunitionType, int> newInput = new();
         bool disregardLoadout = false;
 
@@ -181,16 +182,10 @@ public abstract class BaseAircraft : InterfaceAircraft
 
         if (disregardLoadout)
         {
-            return (0, "", "", "");
+            return new LoadoutRow();
         }
 
-        string weaponTypesArray = string.Empty;
-        string ammunitionArray = string.Empty;
-
-        int totalPrice = 0;
         string priceAndWeaponsInfo = string.Empty;
-        string weaponsInfo = string.Empty;
-
 
         bool doneAddingSpecialAmounts = false;
         Dictionary<(string, string), int> alreadyAddedWeaponLaunchersWithWeaponAmountInTotal = new Dictionary<(string, string), int>();
@@ -215,7 +210,7 @@ public abstract class BaseAircraft : InterfaceAircraft
             {
                 string totalTypes = string.Empty;
 
-                totalPrice += ammunitionType.costPerPylon * 2;
+                newLoadoutRow.totalPrice += ammunitionType.costPerPylon * 2;
                 weaponAmount += ammunitionType.amountPerPylon * 2;
 
                 foreach (var ammunitonType in ammunitionType.AmmunitionTypes)
@@ -232,7 +227,7 @@ public abstract class BaseAircraft : InterfaceAircraft
                     totalTypes += "',";
                 }
 
-                ammunitionArray += totalTypes;
+                newLoadoutRow.ammunitionArray += totalTypes;
             }
 
             // Temp solution to add kh29
@@ -244,15 +239,15 @@ public abstract class BaseAircraft : InterfaceAircraft
                 {
                     string type = EnumExtensions.GetEnumMemberAttrValue(item);
 
-                    ammunitionArray += "'";
-                    ammunitionArray += type;
-                    ammunitionArray += "',";
+                    newLoadoutRow.ammunitionArray += "'";
+                    newLoadoutRow.ammunitionArray += type;
+                    newLoadoutRow.ammunitionArray += "',";
                 }
             }
 
             if (_generateWithPriceAndWeaponsInfo)
             {
-                totalPrice += weaponDefinition.costPerWeaponLauncher;
+                newLoadoutRow.totalPrice += weaponDefinition.costPerWeaponLauncher;
             }
 
             // Do not add duplicate weapon launchers
@@ -262,22 +257,22 @@ public abstract class BaseAircraft : InterfaceAircraft
                 continue;
             }
 
-            weaponTypesArray += "'";
-            weaponTypesArray += EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.WeaponType);
-            weaponTypesArray += "',";
+            newLoadoutRow.weaponTypesArray += "'";
+            newLoadoutRow.weaponTypesArray += EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.WeaponType);
+            newLoadoutRow.weaponTypesArray += "',";
 
             alreadyAddedWeaponLaunchersWithWeaponAmountInTotal.Add((weaponSqfName, ammunitionType.ammoDisplayName), weaponAmount);
         }
 
         foreach (var kvp in alreadyAddedWeaponLaunchersWithWeaponAmountInTotal)
         {
-            weaponsInfo += kvp.Key.Item2 + " (" + kvp.Value + ") | ";
+            newLoadoutRow.weaponsInfo += kvp.Key.Item2 + " (" + kvp.Value + ") | ";
         }
-        weaponsInfo = weaponsInfo.TrimEnd(' ');
-        weaponsInfo = weaponsInfo.TrimEnd('|');
-        weaponsInfo = weaponsInfo.TrimEnd(' ');
+        newLoadoutRow.weaponsInfo = newLoadoutRow.weaponsInfo.TrimEnd(' ');
+        newLoadoutRow.weaponsInfo = newLoadoutRow.weaponsInfo.TrimEnd('|');
+        newLoadoutRow.weaponsInfo = newLoadoutRow.weaponsInfo.TrimEnd(' ');
 
-        return (totalPrice, weaponTypesArray, ammunitionArray, weaponsInfo);
+        return newLoadoutRow;
     }
 
     private List<List<AmmunitionType>> GenerateCombinations(AmmunitionType[] _inputArray, int _r)
