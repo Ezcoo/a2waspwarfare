@@ -2,7 +2,6 @@
 
 public enum AircraftType
 {
-    // Su-34
     [EnumMember(Value = "Su34")]
     SU34,
 
@@ -14,7 +13,6 @@ public enum AircraftType
     [EnumMember(Value = "Su39")]
     SU39,
 
-    // L-39
     [EnumMember(Value = "L39_TK_EP1")]
     L39TKEP1,
 
@@ -23,4 +21,10 @@ public enum AircraftType
 
     [EnumMember(Value = "L159_ACR")]
     L159ACR,
+
+    // A-10 variants
+    [EnumMember(Value = "A10")]
+    A10,
+    [EnumMember(Value = "A10_US_EP1")]
+    A10USEP1,
 }

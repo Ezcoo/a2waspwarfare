@@ -22,6 +22,8 @@ public enum WeaponType
 
     [EnumMember(Value = "BombLauncherF35")]
     GBU12BOMBLAUNCHER,
+    [EnumMember(Value = "BombLauncherA10")]
+    GBU12BOMBLAUNCHER_A10,
 
     [EnumMember(Value = "Igla_twice")]
     IGLALAUNCHER,
