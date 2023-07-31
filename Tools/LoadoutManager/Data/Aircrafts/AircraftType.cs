@@ -31,4 +31,6 @@ public enum AircraftType
     // AV8B variants
     [EnumMember(Value = "AV8B")]
     AV8BLGB,
+    [EnumMember(Value = "AV8B2")]
+    AV8B2,
 }
