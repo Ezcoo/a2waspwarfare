@@ -69,13 +69,19 @@ switch (typeOf _this) do
 
 	};
         case "AV8B2": {
-
 			    _this removeWeapon "Mk82BombLauncher_6";
 				_this removeMagazine "6Rnd_Mk82";
+
+                _this addMagazine "38Rnd_FFAR";
+                _this addweapon "FFARLauncher";
+
 				_this addMagazine "2Rnd_Maverick_A10";
 				_this addMagazine "2Rnd_Maverick_A10";
 				_this addMagazine "2Rnd_Maverick_A10";
 				_this addWeapon "MaverickLauncher";
+
+				//_this addMagazine "2Rnd_Sidewinder_AH1Z";
+				//_this addWeapon "SidewinderLaucher_AH1Z";
 	};
      case "AV8B": {
 
