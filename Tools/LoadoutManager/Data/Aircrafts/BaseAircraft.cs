@@ -185,8 +185,6 @@ public abstract class BaseAircraft : InterfaceAircraft
             return new LoadoutRow();
         }
 
-        string priceAndWeaponsInfo = string.Empty;
-
         bool doneAddingSpecialAmounts = false;
         Dictionary<(string, string), int> alreadyAddedWeaponLaunchersWithWeaponAmountInTotal = new Dictionary<(string, string), int>();
         foreach (var ammoTypeKvp in newInput)
