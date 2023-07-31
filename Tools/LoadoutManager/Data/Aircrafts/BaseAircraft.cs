@@ -284,18 +284,18 @@ public abstract class BaseAircraft : InterfaceAircraft
     }
 
     private void GenerateCombinationsUtil(
-        AmmunitionType[] _inputArray, int r, int start, List<AmmunitionType> _combination, List<List<AmmunitionType>> _result)
+        AmmunitionType[] _inputArray, int _r, int _start, List<AmmunitionType> _combination, List<List<AmmunitionType>> _result)
     {
-        if (r == 0)
+        if (_r == 0)
         {
             _result.Add(new List<AmmunitionType>(_combination));
             return;
         }
 
-        for (int i = start; i < _inputArray.Length; i++)
+        for (int i = _start; i < _inputArray.Length; i++)
         {
             _combination.Add(_inputArray[i]);
-            GenerateCombinationsUtil(_inputArray, r - 1, i, _combination, _result);
+            GenerateCombinationsUtil(_inputArray, _r - 1, i, _combination, _result);
             _combination.RemoveAt(_combination.Count - 1);
         }
     }
