@@ -5,4 +5,5 @@
     public string weaponTypesArray = string.Empty;
     public string ammunitionArray = string.Empty;
     public string weaponsInfo = string.Empty;
+    public bool isDefaultLoadout = false;
 }
