@@ -55,7 +55,7 @@ if (isHostedServer || (!isHeadLessClient && !isDedicated)) then {
 	12452 cutText [(localize 'STR_WF_Loading')+"...","BLACK FADED",50000];
 };
 
-setViewDistance 4000; //--- Server & Client default View Distance.
+setViewDistance 6000; //--- Server & Client default View Distance.
 
 clientInitComplete = false;
 commonInitComplete = false;
