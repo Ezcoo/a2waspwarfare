@@ -175,10 +175,17 @@ playerType = typeOf player;
 playerDead = false;
 paramBoundariesRunning = false;
 
+// View distance timer stuff
+timerInstanceCount = 0;
+newViewDistance = 0;
+
 disableserialization;
+
 keyPressed = compile preprocessFile "Common\Functions\Common_DisableTablock.sqf";
+keyPressedForAdjustingViewDistance = compile preprocessFile "Common\Functions\Common_AdjustViewDistance.sqf";
 _display = findDisplay 46;
 _display displayAddEventHandler ["KeyDown","_this call keyPressed"];
+_display displayAddEventHandler ["KeyDown","_this call keyPressedForAdjustingViewDistance"];
 
 (vehicle player) addEventHandler ["Fired",{_this Spawn HandleAT}];
 execVM "WASP\global_marking_monitor.sqf";
