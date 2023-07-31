@@ -108,7 +108,7 @@ public abstract class BaseAircraft : InterfaceAircraft
     {
         string finalRowOutput = string.Empty;
 
-        var calculatedLoadoutRow = CalculateLoadoutRow(_input, _allowedAmmunitionTypesWithTheirLimitationAmount, _generateWithPriceAndWeaponsInfo);
+        var calculatedLoadoutRow = CalculateLoadoutRow(_input, _generateWithPriceAndWeaponsInfo);
 
         if (_generateWithPriceAndWeaponsInfo)
         {
@@ -138,7 +138,7 @@ public abstract class BaseAircraft : InterfaceAircraft
     }
 
     private LoadoutRow CalculateLoadoutRow(
-        Dictionary<AmmunitionType, int> _input, Dictionary<AmmunitionType, int> _allowedAmmunitionTypesWithTheirLimitationAmount,
+        Dictionary<AmmunitionType, int> _input,
         bool _generateWithPriceAndWeaponsInfo = true) // For non-default loadouts, show the information on the easa screen
     {
         LoadoutRow newLoadoutRow = new LoadoutRow();
@@ -156,7 +156,7 @@ public abstract class BaseAircraft : InterfaceAircraft
             //Console.WriteLine(ammunitionKvp.Key + " | " + ammunitionKvp.Value);
 
             // Check for weapon specific limitations
-            if (_allowedAmmunitionTypesWithTheirLimitationAmount.Count > 0 &&
+            if (_generateWithPriceAndWeaponsInfo &&
                 allowedAmmunitionTypesWithTheirLimitationAmount[ammunitionKvp.Key] != 0 &&
                 ammunitionKvp.Value > allowedAmmunitionTypesWithTheirLimitationAmount[ammunitionKvp.Key])
             {
