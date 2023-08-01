@@ -22,7 +22,7 @@ _waitTime = _currentUnit select QUERYUNITTIME;
 _description = _currentUnit select QUERYUNITLABEL;
 
 // Change the names of the vehicles, override the _currentUnitLabel
-if (_currentUnit == "A10") then {
+if (_unit == "A10") then {
     _description = "A-10A";
 };
 
