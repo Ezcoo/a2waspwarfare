@@ -4,12 +4,12 @@
     {
         AircraftType = AircraftType.A10USEP1;
         pylonAmount = 8;
-
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.FOURROUNDGBU12, 2},
-                { AmmunitionType.TWOROUNDMAVERICK, 2},
                 { AmmunitionType.TWOROUNDSIDEWINDER_AH1Z, 2},
+                { AmmunitionType.TWOROUNDMAVERICK, 2},
+                { AmmunitionType.THIRTYEIGHTROUNDHYDRA, 2},
+                { AmmunitionType.SIXROUNDMK82, 2},
             };
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
