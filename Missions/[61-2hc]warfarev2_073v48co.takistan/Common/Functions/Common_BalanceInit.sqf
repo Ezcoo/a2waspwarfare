@@ -166,6 +166,10 @@ case "Su34":{
 
 // A-10A
 case "A10":{
+    // Remove the vanilla game 14rnd Hydra launcher
+    _this removeWeapon "FFARLauncher";
+    _this removeMagazine "14Rnd_FFAR";
+
     // Remove vanilla game GBU's
     _this removeWeapon "BombLauncherA10";
     _this removeMagazine "4Rnd_GBU12";
@@ -187,6 +191,10 @@ case "A10":{
 
 // A-10C
 case "A10_US_EP1":{
+    // Remove the vanilla game 14rnd Hydra launcher
+    _this removeWeapon "FFARLauncher";
+    _this removeMagazine "14Rnd_FFAR";
+
     // Remove vanilla game GBU's
     _this removeWeapon "BombLauncherA10";
     _this removeMagazine "4Rnd_GBU12";
