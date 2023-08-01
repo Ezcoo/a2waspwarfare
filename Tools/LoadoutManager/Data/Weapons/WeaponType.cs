@@ -54,4 +54,7 @@ public enum WeaponType
 
     [EnumMember(Value = "StingerLauncher_twice")]
     STINGERLAUNCHER,
+
+    [EnumMember(Value = "GSh301")]
+    GSHGUNPOD,
 }
