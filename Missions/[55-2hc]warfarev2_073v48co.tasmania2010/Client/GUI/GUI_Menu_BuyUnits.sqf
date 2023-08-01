@@ -95,7 +95,20 @@ while {alive player && dialog} do {
 		if ((_currentRow) != -1) then {
 			_funds = Call GetPlayerFunds;
 			_skip = false;
-			if (_funds < _currentCost) then {_skip = true;hint parseText(Format[localize 'STR_WF_INFO_Funds_Missing',_currentCost - _funds,_currentUnit select QUERYUNITLABEL])};
+
+			Private ["_currentUnitLabelForFundsMissing"];
+            _currentUnitLabelForFundsMissing = _currentUnit select QUERYUNITLABEL;
+
+            // Change the names of the vehicles, override the _currentUnitLabel
+            if (_unit == "A10") then {
+                _currentUnitLabelForFundsMissing = "A-10A";
+            };
+
+            if (_unit == "A10_US_EP1") then {
+                _currentUnitLabelForFundsMissing = "A-10C";
+            };
+
+			if (_funds < _currentCost) then {_skip = true;hint parseText(Format[localize 'STR_WF_INFO_Funds_Missing',_currentCost - _funds,_currentUnitLabelForFundsMissing])};
 			//--- Make sure that we own all camps before being able to purchase infantry.
 			if (_type == "Depot" && _isInfantry) then {
 				_totalCamps = _closest Call GetTotalCamps;
