@@ -72,9 +72,6 @@ switch (typeOf _this) do
 			    _this removeWeapon "Mk82BombLauncher_6";
 				_this removeMagazine "6Rnd_Mk82";
 
-                _this addMagazine "38Rnd_FFAR";
-                _this addweapon "FFARLauncher";
-
 				_this addMagazine "2Rnd_Maverick_A10";
 				_this addMagazine "2Rnd_Maverick_A10";
 				_this addMagazine "2Rnd_Maverick_A10";
