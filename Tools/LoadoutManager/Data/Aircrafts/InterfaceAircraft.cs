@@ -8,6 +8,7 @@ public interface InterfaceAircraft
     public Loadout defaultLoadout { get; set; }
     public string inGameDisplayName { get; set; }
     public int inGameAircraftFactoryLevel { get; set; }
+    public bool addToDefaultLoadoutPrice { get; set; }
 
     public void GenerateLoadoutsForTheAircraft();
 }

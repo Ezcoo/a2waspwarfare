@@ -10,6 +10,7 @@ public abstract class BaseAircraft : InterfaceAircraft
     public Loadout defaultLoadout { get; set; }
     public string inGameDisplayName { get; set; }
     public int inGameAircraftFactoryLevel { get; set; }
+    public bool addToDefaultLoadoutPrice { get; set; }
 
     // Add price etc here for more advanced SQF generation
 
@@ -223,7 +224,16 @@ public abstract class BaseAircraft : InterfaceAircraft
             {
                 string totalTypes = string.Empty;
 
-                newLoadoutRow.totalPrice += ammunitionType.costPerPylon * 2;
+                if (!addToDefaultLoadoutPrice)
+                {
+                    newLoadoutRow.totalPrice += ammunitionType.costPerPylon * 2;
+                }
+                // Compare to default loadout and see what it adds to the aircraft EASA total cost
+                else
+                {
+                    // Add GPT stuff here
+                }
+
                 weaponAmount += ammunitionType.amountPerPylon * 2;
 
                 foreach (var ammunitonType in ammunitionType.AmmunitionTypes)
