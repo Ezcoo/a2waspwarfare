@@ -223,15 +223,10 @@ public abstract class BaseAircraft : InterfaceAircraft
             for (int p = 0; p < amount; p++)
             {
                 string totalTypes = string.Empty;
-
                 if (!addToDefaultLoadoutPrice)
                 {
+                    // If not adding to default loadout price, just add the cost of the current ammunition type
                     newLoadoutRow.totalPrice += ammunitionType.costPerPylon * 2;
-                }
-                // Compare to default loadout and see what it adds to the aircraft EASA total cost
-                else
-                {
-                    // Add GPT stuff here
                 }
 
                 weaponAmount += ammunitionType.amountPerPylon * 2;
@@ -251,6 +246,21 @@ public abstract class BaseAircraft : InterfaceAircraft
                 }
 
                 newLoadoutRow.ammunitionArray += totalTypes;
+            }
+
+            // Compare to default loadout and see what it adds to the aircraft EASA total cost
+            if (addToDefaultLoadoutPrice)
+            {
+                var ammo = ammunitionType.AmmunitionTypes[0];
+                var defaultLoadcoutAmmoCount = 0;
+                if (defaultLoadout.AmmunitionTypesWithCount.ContainsKey(ammo))
+                {
+                    defaultLoadcoutAmmoCount = defaultLoadout.AmmunitionTypesWithCount[ammo];
+                }
+
+                var easaAmmoCount = ammoTypeKvp.Value;
+
+                newLoadoutRow.totalPrice += ammunitionType.costPerPylon * (easaAmmoCount - defaultLoadcoutAmmoCount);
             }
 
             // Temp solution to add kh29
