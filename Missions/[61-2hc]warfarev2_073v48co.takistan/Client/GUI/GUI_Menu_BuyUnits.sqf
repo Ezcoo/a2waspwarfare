@@ -135,17 +135,7 @@ while {alive player && dialog} do {
 				if ((missionNamespace getVariable Format["WFBE_C_QUEUE_%1",_type]) < (missionNamespace getVariable Format["WFBE_C_QUEUE_%1_MAX",_type])) then {
 					missionNamespace setVariable [Format["WFBE_C_QUEUE_%1",_type],(missionNamespace getVariable Format["WFBE_C_QUEUE_%1",_type])+1];
 					Private ["_currentUnitLabel"];
-
                     _currentUnitLabel = _currentUnit select QUERYUNITLABEL;
-
-					// Change the names of the vehicles, override the _currentUnitLabel
-					if (_unit == "A10") then {
-                        _currentUnitLabel = "A-10A";
-					};
-
-					if (_unit == "A10_US_EP1") then {
-					    _currentUnitLabel = "A-10C";
-					};
 
 					_queu = _closest getVariable 'queu';
 					_txt = parseText(Format [localize 'STR_WF_INFO_BuyEffective',_currentUnitLabel]);
