@@ -69,20 +69,28 @@ switch (typeOf _this) do
 
 	};
         case "AV8B2": {
-
 			    _this removeWeapon "Mk82BombLauncher_6";
 				_this removeMagazine "6Rnd_Mk82";
+
+                _this addMagazine "38Rnd_FFAR";
+                _this addweapon "FFARLauncher";
+
 				_this addMagazine "2Rnd_Maverick_A10";
 				_this addMagazine "2Rnd_Maverick_A10";
 				_this addMagazine "2Rnd_Maverick_A10";
 				_this addWeapon "MaverickLauncher";
+
+				//_this addMagazine "2Rnd_Sidewinder_AH1Z";
+				//_this addWeapon "SidewinderLaucher_AH1Z";
 	};
      case "AV8B": {
 
 			    _this removeWeapon "BombLauncher";
 				_this removeMagazine "6Rnd_GBU12_AV8B";
-				_this addWeapon "BombLauncherA10";
-				_this addMagazine "4Rnd_GBU12";
+				_this addWeapon "BombLauncherF35";
+				_this addMagazine "2Rnd_GBU12";
+				_this addMagazine "2Rnd_GBU12";
+				_this addMagazine "2Rnd_GBU12";
 	};
 
         case "F35B": {
@@ -148,6 +156,13 @@ switch (typeOf _this) do
 
 case "AH6J_EP1":{
     _this addMagazine "14Rnd_FFAR";
+};
+
+// For easier default loadout management in the Loadout tool
+case "Su34":{
+    _this removeMagazine "4Rnd_R73";
+    _this addMagazine "2Rnd_R73";
+    _this addMagazine "2Rnd_R73";
 };
 
 // Cherno BMP2

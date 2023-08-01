@@ -158,6 +158,13 @@ case "AH6J_EP1":{
     _this addMagazine "14Rnd_FFAR";
 };
 
+// For easier default loadout management in the Loadout tool
+case "Su34":{
+    _this removeMagazine "4Rnd_R73";
+    _this addMagazine "2Rnd_R73";
+    _this addMagazine "2Rnd_R73";
+};
+
 // Cherno BMP2
 case "BMP2_INS":{
 	_current_heavy_level = ((side player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_HEAVY;
