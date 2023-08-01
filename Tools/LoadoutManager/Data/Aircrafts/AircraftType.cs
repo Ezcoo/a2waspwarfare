@@ -7,9 +7,9 @@ public enum AircraftType
 
     // Su-25 variants
     [EnumMember(Value = "Su25_Ins")]
-    SU25INS,
+    SU25A,
     [EnumMember(Value = "Su25_TK_EP1")]
-    SU25TKEP1,
+    SU25T,
     [EnumMember(Value = "Su39")]
     SU39,
 

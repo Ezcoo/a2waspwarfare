@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 public abstract class BaseAircraft : InterfaceAircraft
 {
@@ -161,18 +161,6 @@ public abstract class BaseAircraft : InterfaceAircraft
             newInput.Add(kvp.Key, kvp.Value);
         }
 
-        //Console.WriteLine("---");
-        //foreach (var kvp in newInput)
-        //{
-        //    Console.WriteLine(kvp.Key + "|" + kvp.Value);
-        //}
-        //Console.WriteLine("-------------------------------------");
-        //foreach (var kvp in defaultLoadout.AmmunitionTypesWithCount)
-        //{
-        //    Console.WriteLine(kvp.Key + "|" + kvp.Value);
-        //}
-        //Console.WriteLine("---");
-
         // Detect the default loadout
         if (newInput.SequenceEqual(defaultLoadout.AmmunitionTypesWithCount) && _generateWithPriceAndWeaponsInfo)
         {
@@ -199,8 +187,6 @@ public abstract class BaseAircraft : InterfaceAircraft
             {
                 continue;
             }
-
-            var interfaceAmmunition = (InterfaceAmmunition)EnumExtensions.GetInstance(ammunitionKvp.Key.ToString());
 
             if (ammunitionKvp.Value == 2)
             {
@@ -293,7 +279,7 @@ public abstract class BaseAircraft : InterfaceAircraft
 
         if (newLoadoutRow.isDefaultLoadout)
         {
-            newLoadoutRow.weaponsInfo += "[DEFAULT] ";
+            newLoadoutRow.weaponsInfo += "DEFAULT | ";
         }
 
         foreach (var kvp in alreadyAddedWeaponLaunchersWithWeaponAmountInTotal)
@@ -303,6 +289,39 @@ public abstract class BaseAircraft : InterfaceAircraft
         newLoadoutRow.weaponsInfo = newLoadoutRow.weaponsInfo.TrimEnd(' ');
         newLoadoutRow.weaponsInfo = newLoadoutRow.weaponsInfo.TrimEnd('|');
         newLoadoutRow.weaponsInfo = newLoadoutRow.weaponsInfo.TrimEnd(' ');
+
+        // Detect the default loadout for su34 etc
+        if (!newLoadoutRow.isDefaultLoadout)
+        {
+            string defaultLoadoutWeaponsInfo = string.Empty;
+            foreach (var kvp in defaultLoadout.AmmunitionTypesWithCount)
+            {
+                int finalKvpValue = kvp.Value;
+
+                var ammunitionType = (InterfaceAmmunition)EnumExtensions.GetInstance(kvp.Key.ToString());
+
+                if (ammunitionType.AmmunitionTypes[0] == AmmunitionType.FOURROUNDCH29)
+                {
+                    finalKvpValue = 4;
+                }
+
+                if (ammunitionType.AmmunitionTypes[0] == AmmunitionType.SIXROUNDCH29)
+                {
+                    finalKvpValue = 6;
+                }
+
+                defaultLoadoutWeaponsInfo += ammunitionType.ammoDisplayName + " (" + finalKvpValue + ") | ";
+            }
+            defaultLoadoutWeaponsInfo = defaultLoadoutWeaponsInfo.TrimEnd(' ');
+            defaultLoadoutWeaponsInfo = defaultLoadoutWeaponsInfo.TrimEnd('|');
+            defaultLoadoutWeaponsInfo = defaultLoadoutWeaponsInfo.TrimEnd(' ');
+
+            if (_generateWithPriceAndWeaponsInfo && (defaultLoadoutWeaponsInfo == newLoadoutRow.weaponsInfo))
+            {
+                newLoadoutRow.weaponsInfo = newLoadoutRow.weaponsInfo.Insert(0, "DEFAULT | ");
+                newLoadoutRow.isDefaultLoadout = true;
+            }
+        }
 
         return newLoadoutRow;
     }
@@ -328,9 +347,25 @@ public abstract class BaseAircraft : InterfaceAircraft
 
         for (int i = _start; i < _inputArray.Length; i++)
         {
-            _combination.Add(_inputArray[i]);
-            GenerateCombinationsUtil(_inputArray, _r - 1, i, _combination, _result);
-            _combination.RemoveAt(_combination.Count - 1);
+            // Check if the current ammunition type is HELLFIRE
+            if (_inputArray[i] == AmmunitionType.EIGHTROUNDHELLFIRE)
+            {
+                // If it is, then reduce the remaining slots by 2 instead of 1
+                // Also make sure there are enough slots left for HELLFIRE
+                if (_r >= 2)
+                {
+                    _combination.Add(_inputArray[i]);
+                    GenerateCombinationsUtil(_inputArray, _r - 2, i, _combination, _result);
+                    _combination.RemoveAt(_combination.Count - 1);
+                }
+            }
+            else
+            {
+                // Otherwise, proceed as usual
+                _combination.Add(_inputArray[i]);
+                GenerateCombinationsUtil(_inputArray, _r - 1, i, _combination, _result);
+                _combination.RemoveAt(_combination.Count - 1);
+            }
         }
     }
 }
