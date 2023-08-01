@@ -95,7 +95,20 @@ while {alive player && dialog} do {
 		if ((_currentRow) != -1) then {
 			_funds = Call GetPlayerFunds;
 			_skip = false;
-			if (_funds < _currentCost) then {_skip = true;hint parseText(Format[localize 'STR_WF_INFO_Funds_Missing',_currentCost - _funds,_currentUnit select QUERYUNITLABEL])};
+
+			Private ["_currentUnitLabelForFundsMissing"];
+            _currentUnitLabelForFundsMissing = _currentUnit select QUERYUNITLABEL;
+
+            // Change the names of the vehicles, override the _currentUnitLabel
+            if (_unit == "A10") then {
+                _currentUnitLabelForFundsMissing = "A-10A";
+            };
+
+            if (_unit == "A10_US_EP1") then {
+                _currentUnitLabelForFundsMissing = "A-10C";
+            };
+
+			if (_funds < _currentCost) then {_skip = true;hint parseText(Format[localize 'STR_WF_INFO_Funds_Missing',_currentCost - _funds,_currentUnitLabelForFundsMissing])};
 			//--- Make sure that we own all camps before being able to purchase infantry.
 			if (_type == "Depot" && _isInfantry) then {
 				_totalCamps = _closest Call GetTotalCamps;
@@ -134,10 +147,21 @@ while {alive player && dialog} do {
 				//--- Check the max queu.
 				if ((missionNamespace getVariable Format["WFBE_C_QUEUE_%1",_type]) < (missionNamespace getVariable Format["WFBE_C_QUEUE_%1_MAX",_type])) then {
 					missionNamespace setVariable [Format["WFBE_C_QUEUE_%1",_type],(missionNamespace getVariable Format["WFBE_C_QUEUE_%1",_type])+1];
-					
+					Private ["_currentUnitLabel"];
+                    _currentUnitLabel = _currentUnit select QUERYUNITLABEL;
+
+                    // Change the names of the vehicles, override the _currentUnitLabel
+                    if (_unit == "A10") then {
+                        _currentUnitLabel = "A-10A";
+                    };
+
+                    if (_unit == "A10_US_EP1") then {
+                        _currentUnitLabel = "A-10C";
+                    };
+
 					_queu = _closest getVariable 'queu';
-					_txt = parseText(Format [localize 'STR_WF_INFO_BuyEffective',_currentUnit select QUERYUNITLABEL]);
-					if (!isNil '_queu') then {if (count _queu > 0) then {_txt = parseText(Format [localize 'STR_WF_INFO_Queu',_currentUnit select QUERYUNITLABEL])}};
+					_txt = parseText(Format [localize 'STR_WF_INFO_BuyEffective',_currentUnitLabel]);
+					if (!isNil '_queu') then {if (count _queu > 0) then {_txt = parseText(Format [localize 'STR_WF_INFO_Queu',_currentUnitLabel])}};
 					hint _txt;
 					_params = if (_isInfantry) then {[_closest,_unit,[],_type,_cpt]} else {[_closest,_unit,[_driver,_gunner,_commander,_extracrew,_isLocked],_type,_cpt]};
 					_params Spawn BuildUnit;
