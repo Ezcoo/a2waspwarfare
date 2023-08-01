@@ -161,18 +161,6 @@ public abstract class BaseAircraft : InterfaceAircraft
             newInput.Add(kvp.Key, kvp.Value);
         }
 
-        //Console.WriteLine("---");
-        //foreach (var kvp in newInput)
-        //{
-        //    Console.WriteLine(kvp.Key + "|" + kvp.Value);
-        //}
-        //Console.WriteLine("-------------------------------------");
-        //foreach (var kvp in defaultLoadout.AmmunitionTypesWithCount)
-        //{
-        //    Console.WriteLine(kvp.Key + "|" + kvp.Value);
-        //}
-        //Console.WriteLine("---");
-
         // Detect the default loadout
         if (newInput.SequenceEqual(defaultLoadout.AmmunitionTypesWithCount) && _generateWithPriceAndWeaponsInfo)
         {
