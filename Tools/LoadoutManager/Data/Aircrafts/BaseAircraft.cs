@@ -200,8 +200,6 @@ public abstract class BaseAircraft : InterfaceAircraft
                 continue;
             }
 
-            var interfaceAmmunition = (InterfaceAmmunition)EnumExtensions.GetInstance(ammunitionKvp.Key.ToString());
-
             if (ammunitionKvp.Value == 2)
             {
                 disregardLoadout = true;
