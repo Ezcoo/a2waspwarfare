@@ -21,5 +21,8 @@
             { AmmunitionType.SIXROUNDMK82, 0 },
             { AmmunitionType.EIGHTROUNDHELLFIRE, 4 },
         };
+
+        inGameDisplayName = "A-10C";
+        inGameAircraftFactoryLevel = 4;
     }
 }

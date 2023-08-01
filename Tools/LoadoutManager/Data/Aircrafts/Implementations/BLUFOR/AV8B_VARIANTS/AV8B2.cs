@@ -21,5 +21,8 @@
             { AmmunitionType.EIGHTROUNDHELLFIRE, 2},
             { AmmunitionType.SIXROUNDMK82, 0},
         };
+
+        inGameDisplayName = "AV8B";
+        inGameAircraftFactoryLevel = 5;
     }
 }

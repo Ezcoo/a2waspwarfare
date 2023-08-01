@@ -8,14 +8,25 @@ public abstract class BaseAircraft : InterfaceAircraft
     public int pylonAmount { get; set; }
     public Dictionary<AmmunitionType, int> allowedAmmunitionTypesWithTheirLimitationAmount { get; set; }
     public Loadout defaultLoadout { get; set; }
+    public string inGameDisplayName { get; set; }
+    public int inGameAircraftFactoryLevel { get; set; }
+
+    // Add price etc here for more advanced SQF generation
 
     protected BaseAircraft()
     {
         defaultLoadout = new Loadout();
     }
 
+    private string GenerateCommentForTheSqfCode()
+    {
+        return "// " + inGameDisplayName + " [AF" + inGameAircraftFactoryLevel + "]";
+    }
+
     public void GenerateLoadoutsForTheAircraft()
     {
+        Console.WriteLine(GenerateCommentForTheSqfCode());
+
         Console.WriteLine("_easaVehi = _easaVehi + ['" + EnumExtensions.GetEnumMemberAttrValue(AircraftType) + "'];");
 
         GenerateDefaultLoadout();

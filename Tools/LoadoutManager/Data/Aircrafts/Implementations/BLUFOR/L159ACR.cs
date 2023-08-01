@@ -21,5 +21,8 @@
             { AmmunitionType.SIXROUNDMK82, 0 },
             { AmmunitionType.EIGHTROUNDHELLFIRE, 2 },
         };
+
+        inGameDisplayName = "L-159";
+        inGameAircraftFactoryLevel = 3;
     }
 }

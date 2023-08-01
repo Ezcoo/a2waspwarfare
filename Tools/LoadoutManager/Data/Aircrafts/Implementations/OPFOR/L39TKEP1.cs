@@ -20,5 +20,8 @@
             { AmmunitionType.FOURROUNDATAKA, 0 },
             { AmmunitionType.TWOROUNDGBU12, 2 },
         };
+
+        inGameDisplayName = "L-39";
+        inGameAircraftFactoryLevel = 3;
     }
 }

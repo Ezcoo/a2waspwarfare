@@ -16,5 +16,8 @@
             { AmmunitionType.TWOROUNDGBU12, 0 },
             { AmmunitionType.THIRTYEIGHTROUNDHYDRA, 2 },
         };
+
+        inGameDisplayName = "AV8B (LGB)";
+        inGameAircraftFactoryLevel = 4;
     }
 }

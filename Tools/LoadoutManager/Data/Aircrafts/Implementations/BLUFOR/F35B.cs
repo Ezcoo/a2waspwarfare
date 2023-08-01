@@ -18,5 +18,8 @@
             { AmmunitionType.TWOROUNDSIDEWINDER, 0 },
             { AmmunitionType.TWOROUNDMAVERICK, 0 },
         };
+
+        inGameDisplayName = "F-35B";
+        inGameAircraftFactoryLevel = 5;
     }
 }

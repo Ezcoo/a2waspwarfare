@@ -19,5 +19,7 @@
             { AmmunitionType.FOURTYROUNDS8, 0 },
             { AmmunitionType.TWOROUNDGBU12, 8 },
         };
+        inGameDisplayName = "Su-34";
+        inGameAircraftFactoryLevel = 5;
     }
 }

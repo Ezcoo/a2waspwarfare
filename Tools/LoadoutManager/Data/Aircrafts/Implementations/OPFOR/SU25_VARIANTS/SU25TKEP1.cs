@@ -14,9 +14,11 @@
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {
             { AmmunitionType.SIXROUNDFAB250, 0 },
-            { AmmunitionType.BASECH29, 0 },
             { AmmunitionType.SIXTYFOURROUNDS5, 0 },
             { AmmunitionType.TWOROUNDIGLA, 2 },
         };
+
+        inGameDisplayName = "Su-25A";
+        inGameAircraftFactoryLevel = 3;
     }
 }

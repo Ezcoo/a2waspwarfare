@@ -19,5 +19,8 @@
             { AmmunitionType.FOURTYROUNDS8, 0 },
             { AmmunitionType.TWOROUNDGBU12, 6 },
         };
+
+        inGameDisplayName = "Su-25T";
+        inGameAircraftFactoryLevel = 4;
     }
 }
