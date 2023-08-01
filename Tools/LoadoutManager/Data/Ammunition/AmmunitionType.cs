@@ -7,8 +7,13 @@ public enum AmmunitionType
     [EnumMember(Value = "4Rnd_R73")]
     FOURROUNDR73,
 
+    // Combined in to 6rnd for better balance vs Mk-82
+    [EnumMember(Value = "ERROR_UNDEFINED_VARIANT")]
+    SIXROUNDFAB250,
     [EnumMember(Value = "4Rnd_FAB_250")]
     FOURROUNDFAB250,
+    [EnumMember(Value = "2Rnd_FAB_250")]
+    TWOROUNDFAB250,
 
     [EnumMember(Value = "ERROR_UNDEFINED_VARIANTS")]
     BASECH29,
@@ -27,7 +32,30 @@ public enum AmmunitionType
 
     [EnumMember(Value = "2Rnd_GBU12")]
     TWOROUNDGBU12,
+    [EnumMember(Value = "4Rnd_GBU12")]
+    FOURROUNDGBU12,
 
     [EnumMember(Value = "2Rnd_Igla")]
     TWOROUNDIGLA,
+
+    [EnumMember(Value = "2Rnd_Sidewinder_F35")]
+    TWOROUNDSIDEWINDER,
+
+    [EnumMember(Value = "2Rnd_Sidewinder_AH1Z")]
+    TWOROUNDSIDEWINDER_AH1Z,
+
+    [EnumMember(Value = "2Rnd_Maverick_A10")]
+    TWOROUNDMAVERICK,
+
+    [EnumMember(Value = "6Rnd_Mk82")]
+    SIXROUNDMK82,
+
+    [EnumMember(Value = "38Rnd_FFAR")]
+    THIRTYEIGHTROUNDHYDRA,
+
+    [EnumMember(Value = "8Rnd_Hellfire")]
+    EIGHTROUNDHELLFIRE,
+
+    [EnumMember(Value = "300Rnd_25mm_GAU12")]
+    THREEHUNDREDROUNDGAU12,
 }
