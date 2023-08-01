@@ -61,4 +61,7 @@ public enum AmmunitionType
 
     [EnumMember(Value = "2Rnd_Stinger")]
     TWOROUNDSTINGER,
+
+    [EnumMember(Value = "12Rnd_Vikhr_KA50")]
+    TWELVEROUNDSVIKHR,
 }
