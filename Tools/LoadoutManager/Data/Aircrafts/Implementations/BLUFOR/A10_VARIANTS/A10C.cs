@@ -1,15 +1,15 @@
-﻿public class A10 : BaseAircraft
+﻿public class A10C : BaseAircraft
 {
-    public A10()
+    public A10C()
     {
-        AircraftType = AircraftType.A10;
+        AircraftType = AircraftType.A10C;
         pylonAmount = 8;
-
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.FOURROUNDGBU12, 2},
-                { AmmunitionType.TWOROUNDMAVERICK, 2},
                 { AmmunitionType.TWOROUNDSIDEWINDER_AH1Z, 2},
+                { AmmunitionType.TWOROUNDMAVERICK, 2},
+                { AmmunitionType.THIRTYEIGHTROUNDHYDRA, 2},
+                { AmmunitionType.SIXROUNDMK82, 2},
             };
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
@@ -22,7 +22,7 @@
             { AmmunitionType.EIGHTROUNDHELLFIRE, 4 },
         };
 
-        inGameDisplayName = "A-10A";
-        inGameAircraftFactoryLevel = 3;
+        inGameDisplayName = "A-10C";
+        inGameAircraftFactoryLevel = 4;
     }
 }

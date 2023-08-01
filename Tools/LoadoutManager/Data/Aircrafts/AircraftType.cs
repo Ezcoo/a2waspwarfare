@@ -24,9 +24,9 @@ public enum AircraftType
 
     // A-10 variants
     [EnumMember(Value = "A10")]
-    A10,
+    A10A,
     [EnumMember(Value = "A10_US_EP1")]
-    A10USEP1,
+    A10C,
 
     // AV8B variants
     [EnumMember(Value = "AV8B")]

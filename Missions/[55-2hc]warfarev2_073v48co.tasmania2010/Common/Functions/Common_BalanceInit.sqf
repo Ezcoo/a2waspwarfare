@@ -164,9 +164,30 @@ case "Su34":{
     _this addMagazine "2Rnd_R73";
 };
 
+// A-10A
+case "A10":{
+    // Remove vanilla game GBU's
+    _this removeWeapon "BombLauncherA10";
+    _this removeMagazine "4Rnd_GBU12";
+
+    // Remove sidewinders of the vanilla game loadout
+    _this removeWeapon "SidewinderLaucher_AH1Z";
+    _this removeMagazine "2Rnd_Sidewinder_AH1Z";
+
+    // Remove mavericks of the vanilla game loadout
+    _this removeWeapon "MaverickLauncher";
+    _this removeMagazine "2Rnd_Maverick_A10";
+
+    _this addWeapon "FFARLauncher";
+    _this addMagazine "38Rnd_FFAR";
+
+    _this addWeapon "Mk82BombLauncher_6";
+    _this addMagazine "6Rnd_Mk82";
+};
+
 // A-10C
 case "A10_US_EP1":{
-    // Remode vanilla game GBU's
+    // Remove vanilla game GBU's
     _this removeWeapon "BombLauncherA10";
     _this removeMagazine "4Rnd_GBU12";
 

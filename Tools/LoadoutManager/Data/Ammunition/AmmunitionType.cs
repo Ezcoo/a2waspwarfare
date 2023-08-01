@@ -58,4 +58,7 @@ public enum AmmunitionType
 
     [EnumMember(Value = "300Rnd_25mm_GAU12")]
     THREEHUNDREDROUNDGAU12,
+
+    [EnumMember(Value = "2Rnd_Stinger")]
+    TWOROUNDSTINGER,
 }

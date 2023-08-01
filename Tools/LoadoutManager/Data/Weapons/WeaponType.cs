@@ -48,4 +48,7 @@ public enum WeaponType
 
     [EnumMember(Value = "GAU12")]
     GAU12,
+
+    [EnumMember(Value = "StingerLauncher_twice")]
+    STINGERLAUNCHER,
 }
