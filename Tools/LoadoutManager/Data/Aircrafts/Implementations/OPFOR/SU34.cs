@@ -7,8 +7,8 @@
 
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.SIXROUNDCH29, 2},
                 { AmmunitionType.TWOROUNDR73, 4},
+                { AmmunitionType.SIXROUNDCH29, 2},
             };
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
