@@ -155,11 +155,30 @@ case "AH6J_EP1":{
     _this addMagazine "14Rnd_FFAR";
 };
 
-// For easier default loadout management in the Loadout tool
 case "Su34":{
+    // Six KH-29
+
+    // Remove vanilla game R73 4rnd mag, add 2rnd magazines instead
     _this removeMagazine "4Rnd_R73";
     _this addMagazine "2Rnd_R73";
     _this addMagazine "2Rnd_R73";
+};
+
+// A-10C
+case "A10_US_EP1":{
+    // Remode vanilla game GBU's
+    _this removeWeapon "BombLauncherA10";
+    _this removeMagazine "4Rnd_GBU12";
+
+    // Two sidewinders
+
+    // Two mavericks
+
+    _this addWeapon "FFARLauncher";
+    _this addMagazine "38Rnd_FFAR";
+
+    _this addWeapon "Mk82BombLauncher_6";
+    _this addMagazine "6Rnd_Mk82";
 };
 
 // Cherno BMP2
