@@ -137,6 +137,15 @@ while {alive player && dialog} do {
 					Private ["_currentUnitLabel"];
                     _currentUnitLabel = _currentUnit select QUERYUNITLABEL;
 
+                    // Change the names of the vehicles, override the _currentUnitLabel
+                    if (_unit == "A10") then {
+                        _currentUnitLabel = "A-10A";
+                    };
+
+                    if (_unit == "A10_US_EP1") then {
+                        _currentUnitLabel = "A-10C";
+                    };
+
 					_queu = _closest getVariable 'queu';
 					_txt = parseText(Format [localize 'STR_WF_INFO_BuyEffective',_currentUnitLabel]);
 					if (!isNil '_queu') then {if (count _queu > 0) then {_txt = parseText(Format [localize 'STR_WF_INFO_Queu',_currentUnitLabel])}};
