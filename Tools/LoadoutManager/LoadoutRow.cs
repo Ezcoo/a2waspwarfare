@@ -1,4 +1,4 @@
-﻿public class LoadoutRow
+public class LoadoutRow
 {
     // return (totalPrice, weaponTypesArray, ammunitionArray, weaponsInfo);
     public int totalPrice = 0;
