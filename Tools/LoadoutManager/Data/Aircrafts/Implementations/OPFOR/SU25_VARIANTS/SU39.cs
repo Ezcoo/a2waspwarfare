@@ -13,11 +13,12 @@
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {
-            { AmmunitionType.TWOROUNDR73, 2 },
             { AmmunitionType.SIXROUNDFAB250, 0 },
-            { AmmunitionType.BASECH29, 0 },
             { AmmunitionType.FOURTYROUNDS8, 0 },
-            { AmmunitionType.TWOROUNDGBU12, 6 },
+            { AmmunitionType.TWELVEROUNDSVIKHR, 4 },
+            { AmmunitionType.BASECH29, 0 },
+            { AmmunitionType.TWOROUNDGBU12, 8 },
+            { AmmunitionType.FOURROUNDR73, 4 },
         };
 
         inGameDisplayName = "Su-39";
