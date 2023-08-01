@@ -202,6 +202,20 @@ case "A10_US_EP1":{
     _this addMagazine "6Rnd_Mk82";
 };
 
+// AH-64A
+
+case "AH64D":{
+    // Remove Hellfire Launcher
+    _this removeWeaponTurret ["HellfireLauncher",[0]];
+    _this removeMagazineTurret ["8Rnd_Hellfire", [0]];
+
+    // Six TOW2 Missiles
+
+    _this addWeaponTurret ["TOWLauncherSingle",[0]];
+    _this addMagazineTurret ["6Rnd_TOW2", [0]];
+
+};
+
 // Cherno BMP2
 case "BMP2_INS":{
 	_current_heavy_level = ((side player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_HEAVY;
