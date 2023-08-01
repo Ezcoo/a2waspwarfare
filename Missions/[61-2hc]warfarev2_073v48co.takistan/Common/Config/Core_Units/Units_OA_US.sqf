@@ -198,6 +198,7 @@ if (_restriction_air == 0 || _restriction_air == 1) then {
 if (_restriction_air == 0) then {
 	_u = _u		+ ['C130J_US_EP1'];
 	_u = _u		+ ['A10_US_EP1'];
+
 };
 if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_BAF") > 0) then {
 	_u = _u		+ ['BAF_Merlin_HC3_D'];

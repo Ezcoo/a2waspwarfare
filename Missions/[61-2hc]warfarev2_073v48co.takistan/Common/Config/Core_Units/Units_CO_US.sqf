@@ -151,6 +151,7 @@ if (_restriction_air == 0) then {
 	_u = _u		+ ['AV8B'];
 	_u = _u		+ ['AV8B2'];
 	_u = _u		+ ['A10_US_EP1'];
+	_u = _u		+ ['A10'];
 };
 if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_BAF") > 0) then {
 	_u = _u		+ ['BAF_Merlin_HC3_D'];
@@ -172,6 +173,7 @@ if (_restriction_air == 0) then {
 	_u = _u		+ ['AV8B'];
 	_u = _u		+ ['AV8B2'];
 	_u = _u		+ ['A10_US_EP1'];
+	_u = _u		+ ['A10'];
 };
 
 missionNamespace setVariable [Format ["WFBE_%1AIRPORTUNITS", _side], _u];
