@@ -167,7 +167,7 @@ case "Su34":{
 // A-10A
 case "A10":{
     // Remove the vanilla game 14rnd Hydra launcher
-    _this removeWeapon "FFARLauncher";
+    _this removeWeapon "FFARLauncher_14";
     _this removeMagazine "14Rnd_FFAR";
 
     // Remove vanilla game GBU's
@@ -192,7 +192,7 @@ case "A10":{
 // A-10C
 case "A10_US_EP1":{
     // Remove the vanilla game 14rnd Hydra launcher
-    _this removeWeapon "FFARLauncher";
+    _this removeWeapon "FFARLauncher_14";
     _this removeMagazine "14Rnd_FFAR";
 
     // Remove vanilla game GBU's
@@ -219,8 +219,8 @@ case "AH64D":{
 
     // Six TOW2 Missiles
 
-    _this addWeaponTurret ["TOWLauncherSingle",[0]];
     _this addMagazineTurret ["6Rnd_TOW2", [0]];
+    _this addWeaponTurret ["TOWLauncherSingle",[0]];
 
 };
 
