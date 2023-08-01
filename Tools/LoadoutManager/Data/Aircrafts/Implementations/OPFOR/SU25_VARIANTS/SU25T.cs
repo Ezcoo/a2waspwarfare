@@ -1,9 +1,9 @@
-﻿public class SU25TKEP1 : BaseAircraft
+﻿public class SU25T : BaseAircraft
 {
-    public SU25TKEP1()
+    public SU25T()
     {
-        AircraftType = AircraftType.SU25TKEP1;
-        pylonAmount = 6;
+        AircraftType = AircraftType.SU25T;
+        pylonAmount = 8;
 
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
@@ -18,7 +18,7 @@
             { AmmunitionType.TWOROUNDIGLA, 2 },
         };
 
-        inGameDisplayName = "Su-25A";
-        inGameAircraftFactoryLevel = 3;
+        inGameDisplayName = "Su-25T";
+        inGameAircraftFactoryLevel = 4;
     }
 }

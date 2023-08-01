@@ -1,8 +1,8 @@
-﻿public class SU25INS : BaseAircraft
+﻿public class SU25A : BaseAircraft
 {
-    public SU25INS()
+    public SU25A()
     {
-        AircraftType = AircraftType.SU25INS;
+        AircraftType = AircraftType.SU25A;
         pylonAmount = 6;
 
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>

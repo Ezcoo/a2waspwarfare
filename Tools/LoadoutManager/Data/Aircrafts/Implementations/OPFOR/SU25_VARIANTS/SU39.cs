@@ -3,7 +3,7 @@
     public SU39()
     {
         AircraftType = AircraftType.SU39;
-        pylonAmount = 8;
+        pylonAmount = 10;
 
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
@@ -20,7 +20,7 @@
             { AmmunitionType.TWOROUNDGBU12, 6 },
         };
 
-        inGameDisplayName = "Su-25T";
-        inGameAircraftFactoryLevel = 4;
+        inGameDisplayName = "Su-39";
+        inGameAircraftFactoryLevel = 5;
     }
 }
