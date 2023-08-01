@@ -10,6 +10,7 @@ public abstract class BaseAircraft : InterfaceAircraft
     public Loadout defaultLoadout { get; set; }
     public string inGameDisplayName { get; set; }
     public int inGameAircraftFactoryLevel { get; set; }
+    public bool addToDefaultLoadoutPrice { get; set; }
 
     // Add price etc here for more advanced SQF generation
 
@@ -222,8 +223,12 @@ public abstract class BaseAircraft : InterfaceAircraft
             for (int p = 0; p < amount; p++)
             {
                 string totalTypes = string.Empty;
+                if (!addToDefaultLoadoutPrice)
+                {
+                    // If not adding to default loadout price, just add the cost of the current ammunition type
+                    newLoadoutRow.totalPrice += ammunitionType.costPerPylon * 2;
+                }
 
-                newLoadoutRow.totalPrice += ammunitionType.costPerPylon * 2;
                 weaponAmount += ammunitionType.amountPerPylon * 2;
 
                 foreach (var ammunitonType in ammunitionType.AmmunitionTypes)
@@ -241,6 +246,21 @@ public abstract class BaseAircraft : InterfaceAircraft
                 }
 
                 newLoadoutRow.ammunitionArray += totalTypes;
+            }
+
+            // Compare to default loadout and see what it adds to the aircraft EASA total cost
+            if (addToDefaultLoadoutPrice)
+            {
+                var ammo = ammunitionType.AmmunitionTypes[0];
+                var defaultLoadcoutAmmoCount = 0;
+                if (defaultLoadout.AmmunitionTypesWithCount.ContainsKey(ammo))
+                {
+                    defaultLoadcoutAmmoCount = defaultLoadout.AmmunitionTypesWithCount[ammo];
+                }
+
+                var easaAmmoCount = ammoTypeKvp.Value;
+
+                newLoadoutRow.totalPrice += ammunitionType.costPerPylon * (easaAmmoCount - defaultLoadcoutAmmoCount);
             }
 
             // Temp solution to add kh29

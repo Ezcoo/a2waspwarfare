@@ -19,5 +19,7 @@
 
         inGameDisplayName = "AV8B (LGB)";
         inGameAircraftFactoryLevel = 4;
+
+        addToDefaultLoadoutPrice = true;
     }
 }
