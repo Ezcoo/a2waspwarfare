@@ -22,7 +22,30 @@ public enum WeaponType
 
     [EnumMember(Value = "BombLauncherF35")]
     GBU12BOMBLAUNCHER,
+    [EnumMember(Value = "BombLauncherA10")]
+    GBU12BOMBLAUNCHER_A10,
 
     [EnumMember(Value = "Igla_twice")]
     IGLALAUNCHER,
+
+    [EnumMember(Value = "SidewinderLaucher_F35")]
+    SIDEWINDERLAUNCHER,
+
+    [EnumMember(Value = "SidewinderLaucher_AH1Z")]
+    SIDEWINDERLAUNCHER_AH1Z,
+
+    [EnumMember(Value = "MaverickLauncher")]
+    MAVERICKLAUNCHER,
+
+    [EnumMember(Value = "Mk82BombLauncher_6")]
+    MK82BOMBLAUNCHER,
+
+    [EnumMember(Value = "FFARLauncher")]
+    HYDRALAUNCHER,
+
+    [EnumMember(Value = "HellfireLauncher")]
+    HELLFIRELAUNCHER,
+
+    [EnumMember(Value = "GAU12")]
+    GAU12,
 }

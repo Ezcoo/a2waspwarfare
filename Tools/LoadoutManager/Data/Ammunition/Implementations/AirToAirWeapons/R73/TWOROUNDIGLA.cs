@@ -2,7 +2,7 @@
 {
     public TWOROUNDIGLA()
     {
-        AmmunitionType = AmmunitionType.TWOROUNDIGLA;
+        AmmunitionTypes = new List<AmmunitionType>() { AmmunitionType.TWOROUNDIGLA };
         amountPerPylon = 1;
         weaponDefinition = (InterfaceWeapon)EnumExtensions.GetInstance(WeaponType.IGLALAUNCHER.ToString()) as BaseWeapon;
         ammoDisplayName = "Igla-V";

@@ -2,7 +2,7 @@
 {
     public FOURROUNDATAKA()
     {
-        AmmunitionType = AmmunitionType.FOURROUNDATAKA;
+        AmmunitionTypes = new List<AmmunitionType>() { AmmunitionType.FOURROUNDATAKA };
         amountPerPylon = 2;
         weaponDefinition = (InterfaceWeapon)EnumExtensions.GetInstance(WeaponType.ATAKALAUNCHER.ToString()) as BaseWeapon;
         ammoDisplayName = "Ataka-V";

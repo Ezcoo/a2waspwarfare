@@ -10,7 +10,7 @@ class Program
             var _interfaceAircraft = (InterfaceAircraft)EnumExtensions.GetInstance(aircraftType.ToString());
             _interfaceAircraft.GenerateLoadoutsForTheAircraft();
 
-            Console.WriteLine("\n\n");
+            Console.WriteLine("\n");
         }
     }
 }

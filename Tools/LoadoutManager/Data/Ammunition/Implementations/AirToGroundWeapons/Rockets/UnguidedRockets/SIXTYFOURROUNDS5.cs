@@ -2,7 +2,7 @@
 {
     public SIXTYFOURROUNDS5()
     {
-        AmmunitionType = AmmunitionType.SIXTYFOURROUNDS5;
+        AmmunitionTypes = new List<AmmunitionType>() { AmmunitionType.SIXTYFOURROUNDS5 };
         amountPerPylon = 32;
         weaponDefinition = (InterfaceWeapon)EnumExtensions.GetInstance(WeaponType.S8LAUNCHER.ToString()) as BaseWeapon;
         ammoDisplayName = "S-5";

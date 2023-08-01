@@ -6,6 +6,8 @@ public interface InterfaceAircraft
     public int pylonAmount { get; set; }
     public Dictionary<AmmunitionType, int> allowedAmmunitionTypesWithTheirLimitationAmount { get; set; }
     public Loadout defaultLoadout { get; set; }
+    public string inGameDisplayName { get; set; }
+    public int inGameAircraftFactoryLevel { get; set; }
 
     public void GenerateLoadoutsForTheAircraft();
 }
