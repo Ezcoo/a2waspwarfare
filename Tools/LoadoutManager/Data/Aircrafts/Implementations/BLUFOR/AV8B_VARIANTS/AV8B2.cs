@@ -14,8 +14,8 @@
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {
             { AmmunitionType.TWOROUNDGBU12, 0 },
-            { AmmunitionType.THIRTYEIGHTROUNDHYDRA, 2 },
-            { AmmunitionType.TWOROUNDSIDEWINDER_AH1Z, 2 },
+            { AmmunitionType.THIRTYEIGHTROUNDHYDRA, 0 },
+            { AmmunitionType.TWOROUNDSIDEWINDER_AH1Z, 4 },
             { AmmunitionType.TWOROUNDMAVERICK, 0},
             { AmmunitionType.EIGHTROUNDHELLFIRE, 2},
             { AmmunitionType.SIXROUNDMK82, 0},
