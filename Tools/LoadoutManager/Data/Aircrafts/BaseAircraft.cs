@@ -348,7 +348,7 @@ public abstract class BaseAircraft : InterfaceAircraft
 
         foreach (var item in newLoadoutRow.ammunitionList)
         {
-            if (item == "12Rnd_Vikhr_KA50" || item == "4Rnd_Ch29")
+            if (item == "12Rnd_Vikhr_KA50" || item == "4Rnd_Ch29" || item == "8Rnd_Hellfire")
             {
                 countOfWeapons += 4;
                 continue;
@@ -398,25 +398,9 @@ public abstract class BaseAircraft : InterfaceAircraft
 
         for (int i = _start; i < _inputArray.Length; i++)
         {
-            // Check if the current ammunition type is HELLFIRE/VIKHR
-            if (_inputArray[i] == AmmunitionType.EIGHTROUNDHELLFIRE || _inputArray[i] == AmmunitionType.TWELVEROUNDSVIKHR)
-            {
-                // If it is, then reduce the remaining slots by 2 instead of 1
-                // Also make sure there are enough slots left for HELLFIRE/VIKHR
-                if (_r >= 2)
-                {
-                    _combination.Add(_inputArray[i]);
-                    GenerateCombinationsUtil(_inputArray, _r - 2, i, _combination, _result);
-                    _combination.RemoveAt(_combination.Count - 1);
-                }
-            }
-            else
-            {
-                // Otherwise, proceed as usual
-                _combination.Add(_inputArray[i]);
-                GenerateCombinationsUtil(_inputArray, _r - 1, i, _combination, _result);
-                _combination.RemoveAt(_combination.Count - 1);
-            }
+            _combination.Add(_inputArray[i]);
+            GenerateCombinationsUtil(_inputArray, _r - 1, i, _combination, _result);
+            _combination.RemoveAt(_combination.Count - 1);
         }
     }
 }
