@@ -139,10 +139,17 @@ public abstract class BaseAircraft : InterfaceAircraft
         finalRowOutput += calculatedLoadoutRow.weaponTypesArray + ",";
         finalRowOutput += "[";
 
-        calculatedLoadoutRow.ammunitionArray = calculatedLoadoutRow.ammunitionArray.TrimEnd(',');
-        calculatedLoadoutRow.ammunitionArray += "]]]";
+        foreach (var item in calculatedLoadoutRow.ammunitionList)
+        {
+            calculatedLoadoutRow.finalAmmunitionString += "'";
+            calculatedLoadoutRow.finalAmmunitionString += item;
+            calculatedLoadoutRow.finalAmmunitionString += "',";
+        }
 
-        finalRowOutput += calculatedLoadoutRow.ammunitionArray;
+        calculatedLoadoutRow.finalAmmunitionString = calculatedLoadoutRow.finalAmmunitionString.TrimEnd(',');
+        calculatedLoadoutRow.finalAmmunitionString += "]]]";
+
+        finalRowOutput += calculatedLoadoutRow.finalAmmunitionString;
 
         //Console.WriteLine("RETURNING: " + finalRowOutput);
 
@@ -240,12 +247,8 @@ public abstract class BaseAircraft : InterfaceAircraft
                         continue;
                     }
 
-                    totalTypes += "'";
-                    totalTypes += type;
-                    totalTypes += "',";
+                    newLoadoutRow.ammunitionList.Add(type);
                 }
-
-                newLoadoutRow.ammunitionArray += totalTypes;
             }
 
             // Compare to default loadout and see what it adds to the aircraft EASA total cost
@@ -272,9 +275,7 @@ public abstract class BaseAircraft : InterfaceAircraft
                 {
                     string type = EnumExtensions.GetEnumMemberAttrValue(item);
 
-                    newLoadoutRow.ammunitionArray += "'";
-                    newLoadoutRow.ammunitionArray += type;
-                    newLoadoutRow.ammunitionArray += "',";
+                    newLoadoutRow.ammunitionList.Add(type);
                 }
             }
 
@@ -343,7 +344,37 @@ public abstract class BaseAircraft : InterfaceAircraft
             }
         }
 
-        return newLoadoutRow;
+        int countOfWeapons = 0;
+
+        foreach (var item in newLoadoutRow.ammunitionList)
+        {
+            if (item == "12Rnd_Vikhr_KA50" || item == "4Rnd_Ch29")
+            {
+                countOfWeapons += 4;
+                continue;
+            }
+
+            if (item == "4Rnd_FAB_250" || item == "2Rnd_FAB_250")
+            {
+                countOfWeapons += 1;
+                continue;
+            }
+
+            if (item == "6Rnd_Ch29")
+            {
+                countOfWeapons += 6;
+                continue;
+            }
+
+            countOfWeapons += 2;
+        }
+
+        if (countOfWeapons == pylonAmount)
+        {
+            return newLoadoutRow;
+        }
+
+        return new LoadoutRow();
     }
 
     private List<List<AmmunitionType>> GenerateCombinations(AmmunitionType[] _inputArray, int _r)
