@@ -6,6 +6,6 @@
         amountPerPylon = 1;
         weaponDefinition = (InterfaceWeapon)EnumExtensions.GetInstance(WeaponType.IGLALAUNCHER.ToString()) as BaseWeapon;
         ammoDisplayName = "Igla-V";
-        costPerPylon = 700;
+        costPerPylon = 200;
     }
 }

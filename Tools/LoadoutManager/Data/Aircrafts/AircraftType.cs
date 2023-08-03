@@ -42,4 +42,13 @@ public enum AircraftType
 
     [EnumMember(Value = "Mi24_V")]
     MI24V,
+
+    [EnumMember(Value = "Mi24_P")]
+    MI24P,
+
+    [EnumMember(Value = "Ka52")]
+    KA52,
+
+    [EnumMember(Value = "Ka52Black")]
+    KA52BLACK,
 }
