@@ -34,9 +34,9 @@ if (_unit == "AH64D") then {
     _description = "AH-64A";
 };
 
-
-
-
+if (_unit == "Su25_TK_EP1") then {
+    _description = "Su-25T";
+};
 
 _type = typeOf _building;
 _index = (missionNamespace getVariable Format ["WFBE_%1STRUCTURENAMES",sideJoinedText]) find _type;

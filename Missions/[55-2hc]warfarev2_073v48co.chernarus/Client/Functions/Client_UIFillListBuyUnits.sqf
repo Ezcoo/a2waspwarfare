@@ -53,6 +53,10 @@ lnbClear _listBox;
         _description = "AH-64A";
     };
 
+    if (_x == "Su25_TK_EP1") then {
+        _description = "Su-25T";
+    };
+
 	if (((_c select QUERYUNITUPGRADE) <= (_currentUpgrades select _value) && _addin) || (_addit&&_addin)) then {
 		lnbAddRow [_listBox,['$'+str (_c select QUERYUNITPRICE),_description]];
 		lnbSetData [_listBox,[_i,0],_filler];

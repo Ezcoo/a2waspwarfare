@@ -112,6 +112,10 @@ while {alive player && dialog} do {
                 _currentUnitLabelForFundsMissing = "AH-64A";
             };
 
+            if (_unit == "Su25_TK_EP1") then {
+                _currentUnitLabelForFundsMissing = "Su-25T";
+            };
+
 			if (_funds < _currentCost) then {_skip = true;hint parseText(Format[localize 'STR_WF_INFO_Funds_Missing',_currentCost - _funds,_currentUnitLabelForFundsMissing])};
 			//--- Make sure that we own all camps before being able to purchase infantry.
 			if (_type == "Depot" && _isInfantry) then {
@@ -165,6 +169,10 @@ while {alive player && dialog} do {
 
                     if (_unit == "AH64D") then {
                         _currentUnitLabel = "AH-64A";
+                    };
+
+                    if (_unit == "Su25_TK_EP1") then {
+                        _currentUnitLabel = "Su-25T";
                     };
 
 					_queu = _closest getVariable 'queu';
