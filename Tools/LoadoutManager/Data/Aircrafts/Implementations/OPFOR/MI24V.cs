@@ -13,7 +13,7 @@
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {
-            { AmmunitionType.TWOROUNDSTINGER, 2 },
+            { AmmunitionType.TWOROUNDIGLA, 2 },
         };
 
         inGameDisplayName = "Mi-24V";
