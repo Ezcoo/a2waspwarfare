@@ -125,10 +125,10 @@ switch (typeOf _this) do
          case "Mi24_V": {
 		_this removeWeapon "AT6Launcher";
 
-                _this addMagazine "4Rnd_AT9_Mi24P";
+        _this addMagazine "4Rnd_AT9_Mi24P";
 		_this addweapon "AT9Launcher";
 
-
+		_this addWeaponTurret ["YakB",[-1]];
 	};
 
 
