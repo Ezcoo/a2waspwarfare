@@ -16,7 +16,7 @@
             { AmmunitionType.TWOROUNDSTINGER, 2 },
         };
 
-        inGameDisplayName = "Mi-24 (CZ)";
+        inGameDisplayName = "Mi-24V (CZ)";
         inGameAircraftFactoryLevel = 3;
             
         addToDefaultLoadoutPrice = true;
