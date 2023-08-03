@@ -232,11 +232,13 @@ public abstract class BaseAircraft : InterfaceAircraft
             var weaponSqfName = EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.WeaponType);
             var ammoDisplayName = EnumExtensions.GetEnumMemberAttrValue(ammunitionType.AmmunitionTypes[0]);
 
-            int amount = ammoTypeKvp.Value / 2;
-
-            // Calculates the the other halves of the pylons
-            for (int p = 0; p < amount; p++)
+            for (int p = 0; p < ammoTypeKvp.Value; p++)
             {
+                if (p % 2 != 0)
+                {
+                    continue;
+                }
+
                 string totalTypes = string.Empty;
                 if (!addToDefaultLoadoutPrice)
                 {
