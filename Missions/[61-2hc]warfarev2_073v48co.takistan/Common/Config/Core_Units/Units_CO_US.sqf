@@ -143,6 +143,7 @@ if (_restriction_air == 0 || _restriction_air == 1) then {
 	_u = _u		+ ['AH1Z'];
 	_u = _u		+ ['AH64D_EP1'];
 	_u = _u		+ ['AH64D'];
+	_u = _u		+ ['Mi24_D_CZ_ACR'];
 };
 if (_restriction_air == 0) then {
 	_u = _u		+ ['MV22'];
