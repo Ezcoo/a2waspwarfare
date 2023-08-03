@@ -60,4 +60,13 @@ public enum WeaponType
 
     [EnumMember(Value = "TOWLauncherSingle")]
     TOWLAUNCHERSINGLE,
+
+    [EnumMember(Value = "SpikeLauncher_ACR")]
+    SPIKELAUNCHER,
+
+    [EnumMember(Value = "CTWS")]
+    CTWS,
+
+    [EnumMember(Value = "CRV7_HEPD")]
+    CRV7HEPD,
 }

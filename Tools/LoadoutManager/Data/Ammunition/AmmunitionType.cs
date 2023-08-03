@@ -70,4 +70,16 @@ public enum AmmunitionType
 
     [EnumMember(Value = "6Rnd_TOW2")]
     SIXROUNDTOWTWO,
+
+    [EnumMember(Value = "2Rnd_Spike_ACR")]
+    TWOROUNDSPIKE,
+
+    [EnumMember(Value = "200Rnd_40mmSABOT_FV510")]
+    TWOHUNDREDROUNDCTWSSABOT,
+
+    [EnumMember(Value = "200Rnd_40mmHE_FV510")]
+    TWOHUNDREDROUNDCTWSHE,
+
+    [EnumMember(Value = "6Rnd_CRV7_HEPD")]
+    SIXROUNDCRV7HEPD,
 }

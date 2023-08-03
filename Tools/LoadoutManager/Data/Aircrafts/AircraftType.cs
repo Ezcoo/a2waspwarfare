@@ -40,6 +40,18 @@ public enum AircraftType
     [EnumMember(Value = "AH64D")]
     AH64A,
 
+    [EnumMember(Value = "AH64D_EP1")]
+    AH64DEP1,
+
+    [EnumMember(Value = "BAF_Apache_AH1_D")]
+    APACHEAH1,
+
+    [EnumMember(Value = "AH1Z")]
+    AH1Z,
+
+    [EnumMember(Value = "AW159_Lynx_BAF")]
+    WILDCAT,
+
     [EnumMember(Value = "Mi24_V")]
     MI24V,
 
