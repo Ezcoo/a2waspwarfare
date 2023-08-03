@@ -3,7 +3,7 @@
     public MI24VCZ()
     {
         AircraftType = AircraftType.MI24VCZ;
-        pylonAmount = 2;
+        pylonAmount = 6;
 
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
@@ -13,7 +13,7 @@
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {
-            { AmmunitionType.TWOROUNDSTINGER, 0 },
+            { AmmunitionType.TWOROUNDSTINGER, 2 },
         };
 
         inGameDisplayName = "Mi-24 (CZ)";
