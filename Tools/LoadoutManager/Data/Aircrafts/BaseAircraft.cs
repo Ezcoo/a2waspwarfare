@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 public abstract class BaseAircraft : InterfaceAircraft
 {
     public AircraftType AircraftType { get => aircraftType; set => aircraftType = value; }
