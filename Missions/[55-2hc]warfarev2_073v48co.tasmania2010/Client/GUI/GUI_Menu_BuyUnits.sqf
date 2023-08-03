@@ -112,6 +112,10 @@ while {alive player && dialog} do {
                 _currentUnitLabelForFundsMissing = "AH-64A";
             };
 
+            if (_unit == "AH64D_EP1") then {
+                _currentUnitLabelForFundsMissing = "AH-64D (Longbow)";
+            };
+
             if (_unit == "Su25_TK_EP1") then {
                 _currentUnitLabelForFundsMissing = "Su-25T";
             };
@@ -169,6 +173,10 @@ while {alive player && dialog} do {
 
                     if (_unit == "AH64D") then {
                         _currentUnitLabel = "AH-64A";
+                    };
+
+                    if (_unit == "AH64D_EP1") then {
+                        _currentUnitLabel = "AH-64D (Longbow)";
                     };
 
                     if (_unit == "Su25_TK_EP1") then {

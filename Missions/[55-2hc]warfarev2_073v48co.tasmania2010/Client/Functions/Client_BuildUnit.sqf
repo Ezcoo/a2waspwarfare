@@ -34,6 +34,10 @@ if (_unit == "AH64D") then {
     _description = "AH-64A";
 };
 
+if (_unit == "AH64D_EP1") then {
+    _description = "AH-64D (Longbow)";
+};
+
 if (_unit == "Su25_TK_EP1") then {
     _description = "Su-25T";
 };
