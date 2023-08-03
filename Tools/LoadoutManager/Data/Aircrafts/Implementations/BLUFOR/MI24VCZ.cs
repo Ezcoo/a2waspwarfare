@@ -3,7 +3,7 @@
     public MI24VCZ()
     {
         AircraftType = AircraftType.MI24VCZ;
-        pylonAmount = 6;
+        pylonAmount = 2;
 
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {

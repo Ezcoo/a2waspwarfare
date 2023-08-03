@@ -377,7 +377,7 @@ public abstract class BaseAircraft : InterfaceAircraft
             countOfWeapons += 2;
         }
 
-        if (countOfWeapons == pylonAmount)
+        if (countOfWeapons == pylonAmount || addToDefaultLoadoutPrice) // Fix for helis with addToDefaultLoadoutPrice
         {
             return newLoadoutRow;
         }
