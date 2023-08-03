@@ -21,7 +21,7 @@ public abstract class BaseAircraft : InterfaceAircraft
 
     private string GenerateCommentForTheSqfCode()
     {
-        return "// " + inGameDisplayName + " [AF" + inGameAircraftFactoryLevel + "]";
+        return "// " + inGameDisplayName + " [AF" + inGameAircraftFactoryLevel + "] - " + pylonAmount + " pylons";
     }
 
     public void GenerateLoadoutsForTheAircraft()
