@@ -269,4 +269,13 @@ case "Mi24_P": {
     _this addMagazineTurret ["750Rnd_30mm_GSh301",[-1]];
 };
 
+case "Ka52": {
+    _this removeWeaponTurret ["VikhrLauncher",[-1]];
+    _this removeMagazineTurret ["12Rnd_Vikhr_KA50",[-1]];
+
+    _this addWeaponTurret ["AT9Launcher", [-1]];
+    _this addMagazine "4Rnd_AT9_Mi24P";
+    _this addMagazine "4Rnd_AT9_Mi24P";
+};
+
 };
