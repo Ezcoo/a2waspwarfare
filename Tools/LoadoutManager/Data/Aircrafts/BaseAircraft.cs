@@ -9,6 +9,7 @@ public abstract class BaseAircraft : InterfaceAircraft
     public string inGameDisplayName { get; set; }
     public int inGameAircraftFactoryLevel { get; set; }
     public bool addToDefaultLoadoutPrice { get; set; }
+    public Dictionary<AmmunitionType, float> ammunitionTypeCostFloatModifier { get; set; }
 
     // Add price etc here for more advanced SQF generation
 
@@ -110,6 +111,17 @@ public abstract class BaseAircraft : InterfaceAircraft
         Console.WriteLine(ammunitionArray.Item1 + ";");
 
         return ammunitionArray.Item1;
+    }
+
+    private int CalculateLoadoutTotalPrice(AmmunitionType _ammunitionType, int _priceWithoutModifier)
+    {
+        if (ammunitionTypeCostFloatModifier == null ||
+            !ammunitionTypeCostFloatModifier.ContainsKey(_ammunitionType))
+        {
+            return _priceWithoutModifier;
+        }
+
+        return _priceWithoutModifier * (int)ammunitionTypeCostFloatModifier[_ammunitionType];
     }
 
     private (string, int) GenerateLoadoutRow(
@@ -231,7 +243,7 @@ public abstract class BaseAircraft : InterfaceAircraft
                 if (!addToDefaultLoadoutPrice)
                 {
                     // If not adding to default loadout price, just add the cost of the current ammunition type
-                    newLoadoutRow.totalPrice += ammunitionType.costPerPylon * 2;
+                    newLoadoutRow.totalPrice += CalculateLoadoutTotalPrice(ammoTypeKvp.Key, ammunitionType.costPerPylon * 2);
                 }
 
                 weaponAmount += ammunitionType.amountPerPylon * 2;
@@ -261,7 +273,7 @@ public abstract class BaseAircraft : InterfaceAircraft
 
                 var easaAmmoCount = ammoTypeKvp.Value;
 
-                newLoadoutRow.totalPrice += ammunitionType.costPerPylon * (easaAmmoCount - defaultLoadcoutAmmoCount);
+                newLoadoutRow.totalPrice += CalculateLoadoutTotalPrice(ammoTypeKvp.Key, ammunitionType.costPerPylon * (easaAmmoCount - defaultLoadcoutAmmoCount));
             }
 
             // Temp solution to add kh29
