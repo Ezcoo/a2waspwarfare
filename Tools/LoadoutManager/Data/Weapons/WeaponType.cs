@@ -57,4 +57,7 @@ public enum WeaponType
 
     [EnumMember(Value = "GSh301")]
     GSHGUNPOD,
+
+    [EnumMember(Value = "TOWLauncherSingle")]
+    TOWLAUNCHERSINGLE,
 }

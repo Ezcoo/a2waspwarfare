@@ -67,4 +67,7 @@ public enum AmmunitionType
 
     [EnumMember(Value = "180Rnd_30mm_GSh301")]
     ONEHUNDREDEIGHTYGSH301ROUNDS,
+
+    [EnumMember(Value = "6Rnd_TOW2")]
+    SIXROUNDTOWTWO,
 }

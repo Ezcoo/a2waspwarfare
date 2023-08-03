@@ -36,4 +36,7 @@ public enum AircraftType
 
     [EnumMember(Value = "Mi24_D_CZ_ACR")]
     MI24VCZ,
+
+    [EnumMember(Value = "AH64D")]
+    AH64A,
 }
