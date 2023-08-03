@@ -33,4 +33,7 @@ public enum AircraftType
     AV8BLGB,
     [EnumMember(Value = "AV8B2")]
     AV8B2,
+
+    [EnumMember(Value = "Mi24_D_CZ_ACR")]
+    MI24VCZ,
 }
