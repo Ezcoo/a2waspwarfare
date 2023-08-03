@@ -151,15 +151,13 @@ public abstract class BaseAircraft : InterfaceAircraft
 
         foreach (var item in calculatedLoadoutRow.ammunitionList)
         {
-            calculatedLoadoutRow.finalAmmunitionString += "'";
-            calculatedLoadoutRow.finalAmmunitionString += item;
-            calculatedLoadoutRow.finalAmmunitionString += "',";
+            finalRowOutput += "'";
+            finalRowOutput += item;
+            finalRowOutput += "',";
         }
 
-        calculatedLoadoutRow.finalAmmunitionString = calculatedLoadoutRow.finalAmmunitionString.TrimEnd(',');
-        calculatedLoadoutRow.finalAmmunitionString += "]]]";
-
-        finalRowOutput += calculatedLoadoutRow.finalAmmunitionString;
+        finalRowOutput = finalRowOutput.TrimEnd(',');
+        finalRowOutput += "]]]";
 
         //Console.WriteLine("RETURNING: " + finalRowOutput);
 
