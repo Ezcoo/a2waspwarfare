@@ -166,7 +166,7 @@ public abstract class BaseAircraft : InterfaceAircraft
     }
 
     private void CheckDefaultLoadout(
-        Dictionary<AmmunitionType, int> _input, ref LoadoutRow newLoadoutRow, bool _generateWithPriceAndWeaponsInfo)
+        Dictionary<AmmunitionType, int> _input, LoadoutRow newLoadoutRow, bool _generateWithPriceAndWeaponsInfo)
     {
         if (_input.SequenceEqual(defaultLoadout.AmmunitionTypesWithCount) && _generateWithPriceAndWeaponsInfo)
         {
@@ -210,7 +210,7 @@ public abstract class BaseAircraft : InterfaceAircraft
         LoadoutRow newLoadoutRow = new LoadoutRow();
         _input = CreateNewInput(_input);
 
-        CheckDefaultLoadout(_input, ref newLoadoutRow, _generateWithPriceAndWeaponsInfo);
+        CheckDefaultLoadout(_input, newLoadoutRow, _generateWithPriceAndWeaponsInfo);
 
         if (CheckDisregardedLoadout(_input, _generateWithPriceAndWeaponsInfo))
         {
@@ -355,7 +355,7 @@ public abstract class BaseAircraft : InterfaceAircraft
             }
         }
 
-        if (CalculateWeaponsCount(ref newLoadoutRow) ==
+        if (CalculateWeaponsCount(newLoadoutRow) ==
             pylonAmount || addToDefaultLoadoutPrice) // Fix for helis with addToDefaultLoadoutPrice
         {
             return newLoadoutRow;
@@ -364,8 +364,8 @@ public abstract class BaseAircraft : InterfaceAircraft
         return new LoadoutRow();
     }
 
-    private int CalculateWeaponsCount(ref LoadoutRow newLoadoutRow)
-    {
+    private int CalculateWeaponsCount(LoadoutRow newLoadoutRow)
+    {   
         int countOfWeapons = 0;
 
         foreach (var item in newLoadoutRow.ammunitionList)
