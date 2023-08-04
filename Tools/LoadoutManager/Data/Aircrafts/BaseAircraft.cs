@@ -165,6 +165,15 @@ public abstract class BaseAircraft : InterfaceAircraft
         return newInput;
     }
 
+    private void CheckDefaultLoadout(
+        Dictionary<AmmunitionType, int> _input, ref LoadoutRow newLoadoutRow, bool _generateWithPriceAndWeaponsInfo)
+    {
+        if (_input.SequenceEqual(defaultLoadout.AmmunitionTypesWithCount) && _generateWithPriceAndWeaponsInfo)
+        {
+            newLoadoutRow.isDefaultLoadout = true;
+        }
+    }
+
     private LoadoutRow CalculateLoadoutRow(
         Dictionary<AmmunitionType, int> _input,
         bool _generateWithPriceAndWeaponsInfo = true) // For non-default loadouts, show the information on the easa screen
@@ -173,11 +182,7 @@ public abstract class BaseAircraft : InterfaceAircraft
         bool disregardLoadout = false;
         _input = CreateNewInput(_input);
 
-        // Detect the default loadout
-        if (_input.SequenceEqual(defaultLoadout.AmmunitionTypesWithCount) && _generateWithPriceAndWeaponsInfo)
-        {
-            newLoadoutRow.isDefaultLoadout = true;
-        }
+        CheckDefaultLoadout(_input, ref newLoadoutRow, _generateWithPriceAndWeaponsInfo);
 
         //Console.WriteLine("Generating:");
         foreach (var ammunitionKvp in _input)
