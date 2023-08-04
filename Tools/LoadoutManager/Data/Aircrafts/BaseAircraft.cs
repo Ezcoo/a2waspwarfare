@@ -18,98 +18,89 @@ public abstract class BaseAircraft : InterfaceAircraft
         defaultLoadout = new Loadout();
     }
 
+    public void GenerateLoadoutsForTheAircraft()
+    {
+        Console.WriteLine(GenerateCommentForTheSqfCode());
+        Console.WriteLine("_easaVehi = _easaVehi + ['" + EnumExtensions.GetEnumMemberAttrValue(AircraftType) + "'];");
+        GenerateDefaultLoadout();
+        GenerateCombinationLoadouts();
+        Console.WriteLine("]");
+        Console.WriteLine("];");
+    }
+
     private string GenerateCommentForTheSqfCode()
     {
         return "// " + inGameDisplayName + " [AF" + inGameAircraftFactoryLevel + "] - " + pylonAmount + " pylons";
     }
 
-    public void GenerateLoadoutsForTheAircraft()
-    {
-        Console.WriteLine(GenerateCommentForTheSqfCode());
-
-        Console.WriteLine("_easaVehi = _easaVehi + ['" + EnumExtensions.GetEnumMemberAttrValue(AircraftType) + "'];");
-
-        GenerateDefaultLoadout();
-
-        GenerateCombinationLoadouts();
-
-        Console.WriteLine("]");
-        Console.WriteLine("];");
-    }
-
     private void GenerateCombinationLoadouts()
     {
         Console.WriteLine("_easaLoadout = _easaLoadout + [\n[");
+        var combinations = GenerateCombinations(allowedAmmunitionTypesWithTheirLimitationAmount.Keys.ToArray(), pylonAmount / 2);
+        PrintSortedCombinations(combinations);
+    }
 
-        List<List<AmmunitionType>> combinations = GenerateCombinations(allowedAmmunitionTypesWithTheirLimitationAmount.Keys.ToArray(), pylonAmount / 2);
-
-        Dictionary<string, int> unsortedListByPrice = new Dictionary<string, int>();
-        Dictionary<string, int> finalPricesSortedByPrice = new Dictionary<string, int>();
-
-        // Display the combinations
-        foreach (var combination in combinations)
-        {
-            (string, int) loadout = ("",0);
-
-            Dictionary<AmmunitionType, int> combinationLoadouts = new Dictionary<AmmunitionType, int>();
-
-            //Console.WriteLine(string.Join(", ", combination));
-
-            foreach (var item in combination)
-            {
-                if (!combinationLoadouts.ContainsKey(item))
-                {
-                    combinationLoadouts.Add(item, 2);
-                }
-                else
-                {
-                    combinationLoadouts[item] += 2;
-                }
-            }
-
-            loadout = GenerateLoadoutRow(combinationLoadouts);
-
-            if (loadout.Item1 == "" || loadout.Item2 == 0)
-            {
-                continue;
-            }
-
-            unsortedListByPrice.Add(loadout.Item1, loadout.Item2);
-        }
-
-        finalPricesSortedByPrice = unsortedListByPrice
-            .OrderBy(pair => pair.Value)
-            .ToDictionary(pair => pair.Key, pair => pair.Value);
+    private void PrintSortedCombinations(List<List<AmmunitionType>> combinations)
+    {
+        var finalPricesSortedByPrice = GetSortedCombinationsByPrice(combinations);
 
         int index = 0;
-
         foreach (var item in finalPricesSortedByPrice)
         {
             string finalString = item.Key + ",";
-
             if (index == finalPricesSortedByPrice.Count - 1)
             {
                 finalString = finalString.TrimEnd(',');
             }
-
             Console.WriteLine(finalString);
             index++;
         }
     }
 
+    private Dictionary<string, int> GetSortedCombinationsByPrice(List<List<AmmunitionType>> combinations)
+    {
+        Dictionary<string, int> unsortedListByPrice = new Dictionary<string, int>();
+        foreach (var combination in combinations)
+        {
+            var loadout = GenerateLoadoutForCombination(combination);
+            if (loadout.Item1 != "" && loadout.Item2 != 0)
+            {
+                unsortedListByPrice.Add(loadout.Item1, loadout.Item2);
+            }
+        }
+        return unsortedListByPrice.OrderBy(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
+    }
+
+    private (string, int) GenerateLoadoutForCombination(List<AmmunitionType> combination)
+    {
+        (string, int) loadout = ("", 0);
+        Dictionary<AmmunitionType, int> combinationLoadouts = new Dictionary<AmmunitionType, int>();
+
+        foreach (var item in combination)
+        {
+            if (!combinationLoadouts.ContainsKey(item))
+            {
+                combinationLoadouts.Add(item, 2);
+            }
+            else
+            {
+                combinationLoadouts[item] += 2;
+            }
+        }
+
+        loadout = GenerateLoadoutRow(combinationLoadouts);
+        return loadout;
+    }
+
     private string GenerateDefaultLoadout()
     {
         Console.WriteLine("_easaDefault = _easaDefault + ");
-
         var ammunitionArray = GenerateLoadoutRow(defaultLoadout.AmmunitionTypesWithCount, false);
-
         if (ammunitionArray.Item1 == "")
         {
             return "";
         }
-
         Console.WriteLine(ammunitionArray.Item1 + ";");
-
         return ammunitionArray.Item1;
     }
 
