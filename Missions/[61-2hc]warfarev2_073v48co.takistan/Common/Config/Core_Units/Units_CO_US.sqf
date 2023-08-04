@@ -193,7 +193,7 @@ _u = _u		+ ["Ikarus"];
 if ((missionNamespace getVariable "WFBE_C_UNITS_TOWN_PURCHASE") > 0) then {
 	_u = _u		+ [missionNamespace getVariable "WFBE_WESTSOLDIER"];
 	_u = _u		+ ['US_Soldier_Medic_EP1'];
-	_u = _u		+ ['US_Soldier_Engineer_EP1'];
+	_u = _u		+ ['BAF_Soldier_EN_W'];
 	_u = _u		+ ['US_Soldier_LAT_EP1'];
 	_u = _u		+ ['US_Soldier_MG_EP1'];
 	_u = _u		+ ['US_Soldier_AA_EP1'];
