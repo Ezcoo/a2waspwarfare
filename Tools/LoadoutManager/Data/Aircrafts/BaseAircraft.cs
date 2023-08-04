@@ -155,27 +155,32 @@ public abstract class BaseAircraft : InterfaceAircraft
         return (finalRowOutput, calculatedLoadoutRow.totalPrice);
     }
 
+    private Dictionary<AmmunitionType, int> CreateNewInput(Dictionary<AmmunitionType, int> _input)
+    {
+        Dictionary<AmmunitionType, int> newInput = new();
+        foreach (var kvp in _input)
+        {
+            newInput.Add(kvp.Key, kvp.Value);
+        }
+        return newInput;
+    }
+
     private LoadoutRow CalculateLoadoutRow(
         Dictionary<AmmunitionType, int> _input,
         bool _generateWithPriceAndWeaponsInfo = true) // For non-default loadouts, show the information on the easa screen
     {
         LoadoutRow newLoadoutRow = new LoadoutRow();
-        Dictionary<AmmunitionType, int> newInput = new();
         bool disregardLoadout = false;
-
-        foreach (var kvp in _input)
-        {
-            newInput.Add(kvp.Key, kvp.Value);
-        }
+        _input = CreateNewInput(_input);
 
         // Detect the default loadout
-        if (newInput.SequenceEqual(defaultLoadout.AmmunitionTypesWithCount) && _generateWithPriceAndWeaponsInfo)
+        if (_input.SequenceEqual(defaultLoadout.AmmunitionTypesWithCount) && _generateWithPriceAndWeaponsInfo)
         {
             newLoadoutRow.isDefaultLoadout = true;
         }
 
         //Console.WriteLine("Generating:");
-        foreach (var ammunitionKvp in newInput)
+        foreach (var ammunitionKvp in _input)
         {
             //Console.WriteLine(ammunitionKvp.Key + " | " + ammunitionKvp.Value);
 
@@ -209,7 +214,7 @@ public abstract class BaseAircraft : InterfaceAircraft
 
         bool doneAddingSpecialAmounts = false;
         Dictionary<(string, string), int> alreadyAddedWeaponLaunchersWithWeaponAmountInTotal = new Dictionary<(string, string), int>();
-        foreach (var ammoTypeKvp in newInput)
+        foreach (var ammoTypeKvp in _input)
         {
             int weaponAmount = 0;
 
