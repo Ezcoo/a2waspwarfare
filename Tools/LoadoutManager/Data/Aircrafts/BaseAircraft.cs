@@ -40,9 +40,9 @@ public abstract class BaseAircraft : InterfaceAircraft
         PrintSortedCombinations(combinations);
     }
 
-    private void PrintSortedCombinations(List<List<AmmunitionType>> combinations)
+    private void PrintSortedCombinations(List<List<AmmunitionType>> _combinations)
     {
-        var finalPricesSortedByPrice = GetSortedCombinationsByPrice(combinations);
+        var finalPricesSortedByPrice = GetSortedCombinationsByPrice(_combinations);
 
         int index = 0;
         foreach (var item in finalPricesSortedByPrice)
@@ -57,10 +57,10 @@ public abstract class BaseAircraft : InterfaceAircraft
         }
     }
 
-    private Dictionary<string, int> GetSortedCombinationsByPrice(List<List<AmmunitionType>> combinations)
+    private Dictionary<string, int> GetSortedCombinationsByPrice(List<List<AmmunitionType>> _combinations)
     {
         Dictionary<string, int> unsortedListByPrice = new Dictionary<string, int>();
-        foreach (var combination in combinations)
+        foreach (var combination in _combinations)
         {
             var loadout = GenerateLoadoutForCombination(combination);
             if (loadout.Item1 != "" && loadout.Item2 != 0)
@@ -71,12 +71,12 @@ public abstract class BaseAircraft : InterfaceAircraft
         return unsortedListByPrice.OrderBy(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
     }
 
-    private (string, int) GenerateLoadoutForCombination(List<AmmunitionType> combination)
+    private (string, int) GenerateLoadoutForCombination(List<AmmunitionType> _combination)
     {
         (string, int) loadout = ("", 0);
         Dictionary<AmmunitionType, int> combinationLoadouts = new Dictionary<AmmunitionType, int>();
 
-        foreach (var item in combination)
+        foreach (var item in _combination)
         {
             if (!combinationLoadouts.ContainsKey(item))
             {
@@ -166,11 +166,11 @@ public abstract class BaseAircraft : InterfaceAircraft
     }
 
     private void CheckDefaultLoadout(
-        Dictionary<AmmunitionType, int> _input, LoadoutRow newLoadoutRow, bool _generateWithPriceAndWeaponsInfo)
+        Dictionary<AmmunitionType, int> _input, LoadoutRow _newLoadoutRow, bool _generateWithPriceAndWeaponsInfo)
     {
         if (_input.SequenceEqual(defaultLoadout.AmmunitionTypesWithCount) && _generateWithPriceAndWeaponsInfo)
         {
-            newLoadoutRow.isDefaultLoadout = true;
+            _newLoadoutRow.isDefaultLoadout = true;
         }
     }
 
@@ -364,11 +364,11 @@ public abstract class BaseAircraft : InterfaceAircraft
         return new LoadoutRow();
     }
 
-    private int CalculateWeaponsCount(LoadoutRow newLoadoutRow)
+    private int CalculateWeaponsCount(LoadoutRow _newLoadoutRow)
     {   
         int countOfWeapons = 0;
 
-        foreach (var item in newLoadoutRow.ammunitionList)
+        foreach (var item in _newLoadoutRow.ammunitionList)
         {
             switch (item)
             {
