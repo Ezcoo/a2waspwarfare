@@ -174,22 +174,14 @@ public abstract class BaseAircraft : InterfaceAircraft
         }
     }
 
-    private LoadoutRow CalculateLoadoutRow(
-        Dictionary<AmmunitionType, int> _input,
-        bool _generateWithPriceAndWeaponsInfo = true) // For non-default loadouts, show the information on the easa screen
+    private bool CheckDisregardedLoadout(Dictionary<AmmunitionType, int> _input,
+        bool _generateWithPriceAndWeaponsInfo)
     {
-        LoadoutRow newLoadoutRow = new LoadoutRow();
         bool disregardLoadout = false;
-        _input = CreateNewInput(_input);
+        var ammoToSearch = AmmunitionType.BASECH29;
 
-        CheckDefaultLoadout(_input, ref newLoadoutRow, _generateWithPriceAndWeaponsInfo);
-
-        //Console.WriteLine("Generating:");
         foreach (var ammunitionKvp in _input)
         {
-            //Console.WriteLine(ammunitionKvp.Key + " | " + ammunitionKvp.Value);
-
-            // Check for weapon specific limitations
             if (_generateWithPriceAndWeaponsInfo &&
                 allowedAmmunitionTypesWithTheirLimitationAmount[ammunitionKvp.Key] != 0 &&
                 ammunitionKvp.Value > allowedAmmunitionTypesWithTheirLimitationAmount[ammunitionKvp.Key])
@@ -198,12 +190,7 @@ public abstract class BaseAircraft : InterfaceAircraft
                 break;
             }
 
-            // Replace with list if needed
-            var ammoToSearch = AmmunitionType.BASECH29;
-            if (ammunitionKvp.Key != ammoToSearch)
-            {
-                continue;
-            }
+            if (ammunitionKvp.Key != ammoToSearch) continue;
 
             if (ammunitionKvp.Value == 2)
             {
@@ -212,7 +199,20 @@ public abstract class BaseAircraft : InterfaceAircraft
             }
         }
 
-        if (disregardLoadout)
+        return disregardLoadout;
+    }
+
+
+    private LoadoutRow CalculateLoadoutRow(
+        Dictionary<AmmunitionType, int> _input,
+        bool _generateWithPriceAndWeaponsInfo = true) // For non-default loadouts, show the information on the easa screen
+    {
+        LoadoutRow newLoadoutRow = new LoadoutRow();
+        _input = CreateNewInput(_input);
+
+        CheckDefaultLoadout(_input, ref newLoadoutRow, _generateWithPriceAndWeaponsInfo);
+
+        if (CheckDisregardedLoadout(_input, _generateWithPriceAndWeaponsInfo))
         {
             return new LoadoutRow();
         }
