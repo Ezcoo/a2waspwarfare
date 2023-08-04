@@ -173,7 +173,7 @@ public abstract class BaseAircraft : InterfaceAircraft
         {
             newLoadoutRow.isDefaultLoadout = true;
         }
-        
+
         //Console.WriteLine("Generating:");
         foreach (var ammunitionKvp in newInput)
         {
@@ -345,38 +345,44 @@ public abstract class BaseAircraft : InterfaceAircraft
             }
         }
 
-        int countOfWeapons = 0;
-
-        foreach (var item in newLoadoutRow.ammunitionList)
-        {
-            if (item == "12Rnd_Vikhr_KA50" || item == "4Rnd_Ch29" || item == "8Rnd_Hellfire")
-            {
-                countOfWeapons += 4;
-                continue;
-            }
-
-            if (item == "4Rnd_FAB_250" || item == "2Rnd_FAB_250")
-            {
-                countOfWeapons += 1;
-                continue;
-            }
-
-            if (item == "6Rnd_Ch29")
-            {
-                countOfWeapons += 6;
-                continue;
-            }
-
-            countOfWeapons += 2;
-        }
-
-        if (countOfWeapons == pylonAmount || addToDefaultLoadoutPrice) // Fix for helis with addToDefaultLoadoutPrice
+        if (CalculateWeaponsCount(ref newLoadoutRow) ==
+            pylonAmount || addToDefaultLoadoutPrice) // Fix for helis with addToDefaultLoadoutPrice
         {
             return newLoadoutRow;
         }
 
         return new LoadoutRow();
     }
+
+    private int CalculateWeaponsCount(ref LoadoutRow newLoadoutRow)
+    {
+        int countOfWeapons = 0;
+
+        foreach (var item in newLoadoutRow.ammunitionList)
+        {
+            switch (item)
+            {
+                case "12Rnd_Vikhr_KA50":
+                case "4Rnd_Ch29":
+                case "8Rnd_Hellfire":
+                    countOfWeapons += 4;
+                    break;
+                case "4Rnd_FAB_250":
+                case "2Rnd_FAB_250":
+                    countOfWeapons += 1;
+                    break;
+                case "6Rnd_Ch29":
+                    countOfWeapons += 6;
+                    break;
+                default:
+                    countOfWeapons += 2;
+                    break;
+            }
+        }
+
+        return countOfWeapons;
+    }
+
 
     private List<List<AmmunitionType>> GenerateCombinations(AmmunitionType[] _inputArray, int _r)
     {
