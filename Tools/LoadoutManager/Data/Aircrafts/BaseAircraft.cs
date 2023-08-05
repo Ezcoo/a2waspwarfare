@@ -217,8 +217,13 @@ public abstract class BaseAircraft : InterfaceAircraft
             return new LoadoutRow();
         }
 
+        if (newLoadoutRow.isDefaultLoadout)
+        {
+            newLoadoutRow.weaponsInfo += "DEFAULT | ";
+        }
+
         bool doneAddingSpecialAmounts = false;
-        Dictionary<(string, string), int> alreadyAddedWeaponLaunchersWithWeaponAmountInTotal = new Dictionary<(string, string), int>();
+        Dictionary<string, int> alreadyAddedWeaponLaunchersWithWeaponAmountInTotal = new Dictionary<string, int>();
         foreach (var ammoTypeKvp in _input)
         {
             int weaponAmount = 0;
@@ -296,9 +301,9 @@ public abstract class BaseAircraft : InterfaceAircraft
             }
 
             // Do not add duplicate weapon launchers
-            if (alreadyAddedWeaponLaunchersWithWeaponAmountInTotal.ContainsKey((weaponSqfName, ammunitionType.ammoDisplayName)))
+            if (alreadyAddedWeaponLaunchersWithWeaponAmountInTotal.ContainsKey(weaponSqfName))
             {
-                alreadyAddedWeaponLaunchersWithWeaponAmountInTotal[(weaponSqfName, ammunitionType.ammoDisplayName)] += weaponAmount;
+                alreadyAddedWeaponLaunchersWithWeaponAmountInTotal[weaponSqfName] += weaponAmount;
                 continue;
             }
 
@@ -306,18 +311,11 @@ public abstract class BaseAircraft : InterfaceAircraft
             newLoadoutRow.weaponTypesArray += EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.WeaponType);
             newLoadoutRow.weaponTypesArray += "',";
 
-            alreadyAddedWeaponLaunchersWithWeaponAmountInTotal.Add((weaponSqfName, ammunitionType.ammoDisplayName), weaponAmount);
+            newLoadoutRow.weaponsInfo += ammunitionType.ammoDisplayName + " (" + weaponAmount + ") | ";
+
+            alreadyAddedWeaponLaunchersWithWeaponAmountInTotal.Add(weaponSqfName, weaponAmount);
         }
 
-        if (newLoadoutRow.isDefaultLoadout)
-        {
-            newLoadoutRow.weaponsInfo += "DEFAULT | ";
-        }
-
-        foreach (var kvp in alreadyAddedWeaponLaunchersWithWeaponAmountInTotal)
-        {
-            newLoadoutRow.weaponsInfo += kvp.Key.Item2 + " (" + kvp.Value + ") | ";
-        }
         newLoadoutRow.weaponsInfo = newLoadoutRow.weaponsInfo.TrimEnd(' ');
         newLoadoutRow.weaponsInfo = newLoadoutRow.weaponsInfo.TrimEnd('|');
         newLoadoutRow.weaponsInfo = newLoadoutRow.weaponsInfo.TrimEnd(' ');
