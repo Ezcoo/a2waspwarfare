@@ -3,7 +3,7 @@
     public AH1Z()
     {
         AircraftType = AircraftType.AH1Z;
-        pylonAmount = 8;
+        pylonAmount = 4;
 
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {

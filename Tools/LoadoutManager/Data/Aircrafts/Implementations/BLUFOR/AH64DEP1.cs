@@ -3,7 +3,7 @@
     public AH64DEP1()
     {
         AircraftType = AircraftType.AH64DEP1;
-        pylonAmount = 6;
+        pylonAmount = 4;
 
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {

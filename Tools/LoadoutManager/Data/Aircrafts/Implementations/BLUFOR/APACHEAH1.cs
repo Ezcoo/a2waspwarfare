@@ -3,7 +3,7 @@
     public APACHEAH1()
     {
         AircraftType = AircraftType.APACHEAH1;
-        pylonAmount = 6;
+        pylonAmount = 4;
 
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
