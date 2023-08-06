@@ -186,4 +186,13 @@ case "Mi24_P": {
     _this addMagazineTurret ["750Rnd_30mm_GSh301",[-1]];
 };
 
+case "BRDM2_ATGM_INS":{
+    _this RemoveWeaponTurret ["AT5Launcher", [0]];
+    _this addWeaponTurret ["Igla_twice", [0]];
+    _this addMagazineTurret ["2Rnd_Igla", [0]];
+    _this addMagazineTurret ["2Rnd_Igla", [0]];
+    _this addMagazineTurret ["2Rnd_Igla", [0]];
+    _this addMagazineTurret ["2Rnd_Igla", [0]];
+};
+
 };
