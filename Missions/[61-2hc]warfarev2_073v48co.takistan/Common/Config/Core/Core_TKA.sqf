@@ -165,7 +165,7 @@ _c = _c + ['L39_TK_EP1'];
 _i = _i + [['','',21904,40,-2,3,3,0,'Takistani Army',[]]];
 
 _c = _c + ['Su25_TK_EP1'];
-_i = _i + [['Su-25T','',31980,50,-2,4,3,0,'Takistani Army',[]]];
+_i = _i + [['Su-25T','',31980,45,-2,4,3,0,'Takistani Army',[]]];
 
 /* Static Defenses */
 _c = _c + ['WarfareBMGNest_PK_TK_EP1'];
