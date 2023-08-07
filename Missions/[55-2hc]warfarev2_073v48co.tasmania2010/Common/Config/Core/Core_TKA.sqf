@@ -118,7 +118,7 @@ _c = _c + ['BRDM2_TK_EP1'];
 _i = _i + [['','',1200,22,-2,3,1,0,'Takistani Army',[]]];
 
 _c = _c + ['BRDM2_ATGM_TK_EP1'];
-_i = _i + [['','',1650,22,-2,4,1,0,'Takistani Army',[]]];
+_i = _i + [['','',2150,22,-2,3,1,0,'Takistani Army',[]]];
 
 _c = _c + ['BTR60_TK_EP1'];
 _i = _i + [['','',1425,25,-2,3,1,0,'Takistani Army',[]]];
