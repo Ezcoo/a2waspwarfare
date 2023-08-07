@@ -61,6 +61,10 @@ lnbClear _listBox;
         _description = "Su-25T";
     };
 
+    if (_x == "BRDM2_ATGM_TK_EP1") then {
+        _description = "BRDM (Igla)";
+    };
+
 	if (((_c select QUERYUNITUPGRADE) <= (_currentUpgrades select _value) && _addin) || (_addit&&_addin)) then {
 		lnbAddRow [_listBox,['$'+str (_c select QUERYUNITPRICE),_description]];
 		lnbSetData [_listBox,[_i,0],_filler];

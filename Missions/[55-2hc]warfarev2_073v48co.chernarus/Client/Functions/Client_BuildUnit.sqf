@@ -42,6 +42,10 @@ if (_unit == "Su25_TK_EP1") then {
     _description = "Su-25T";
 };
 
+if (_unit == "BRDM2_ATGM_TK_EP1") then {
+    _description = "BRDM (Igla)";
+};
+
 _type = typeOf _building;
 _index = (missionNamespace getVariable Format ["WFBE_%1STRUCTURENAMES",sideJoinedText]) find _type;
 if (_index != -1) then {
