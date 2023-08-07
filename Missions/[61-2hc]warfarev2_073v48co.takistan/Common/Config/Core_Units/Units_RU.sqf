@@ -53,6 +53,7 @@ if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u
 _u = _u		+ ['GAZ_Vodnik_MedEvac'];
 _u = _u		+ ['BRDM2_INS'];
 _u = _u		+ ['BRDM2_ATGM_INS'];
+_u = _u		+ ['BRDM2_ATGM_TK_EP1'];
 _u = _u		+ ['GAZ_Vodnik'];
 _u = _u		+ ['GAZ_Vodnik_HMG'];
 _u = _u		+ ['Ural_ZU23_INS'];

@@ -278,4 +278,13 @@ case "Ka52": {
     _this addMagazine "4Rnd_AT9_Mi24P";
 };
 
+case "BRDM2_ATGM_INS":{
+    _this RemoveWeaponTurret ["AT5Launcher", [0]];
+    _this addWeaponTurret ["Igla_twice", [0]];
+    _this addMagazineTurret ["2Rnd_Igla", [0]];
+    _this addMagazineTurret ["2Rnd_Igla", [0]];
+    _this addMagazineTurret ["2Rnd_Igla", [0]];
+    _this addMagazineTurret ["2Rnd_Igla", [0]];
+};
+
 };
