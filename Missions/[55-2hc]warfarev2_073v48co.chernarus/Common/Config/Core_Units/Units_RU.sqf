@@ -87,6 +87,7 @@ if (_restriction_air == 0 ||_restriction_air == 1) then {
 if (_restriction_air == 0) then {
 	_u = _u		+ ['Su34'];
 	_u = _u		+ ['Su25_Ins'];
+    _u = _u		+ ['SU25_TK_EP1'];
 	_u = _u		+ ['Su39'];
 };
 
@@ -97,6 +98,7 @@ _u = [];
 if (_restriction_air == 0) then {
 	_u = _u 	+ ['Su34'];
 	_u = _u		+ ['Su25_Ins'];
+    _u = _u		+ ['SU25_TK_EP1'];
 	_u = _u		+ ['Su39'];
 };
 
