@@ -132,7 +132,7 @@ _c = _c + ['Su34'];
 _i = _i + [['','',37680,55,-2,5,3,0,'Russians',[]]];
 
 _c = _c + ['Su39'];
-_i = _i + [['SU-39 (KH29)','',31980,55,-2,4,3,0,'Russians',[]]];
+_i = _i + [['Su-39','',37520,55,-2,5,3,0,'Russians',[]]];
 
 _c = _c + ['Ka52'];
 _i = _i + [['','',if ((missionNamespace getVariable "WFBE_C_UNITS_BALANCING") > 0) then {41880} else {75000},55,-2,4,3,0,'Russians',[]]];
