@@ -1759,13 +1759,6 @@
                 <Russian>Запрет: Покупка оружия в лагерях</Russian>
                 <Italian>Restrizioni: Equipaggiamento Campi</Italian>
             </Key>
-            <Key ID="STR_WF_PARAMETER_Kamov">
-                <English>RESTRICTION: Kamov</English>
-                <French>RÉSTRICTION: Kamov</French>
-                <German>HANDICAP: Kamov (KA-52) verbieten</German>
-                <Russian>Запрет: КА-52</Russian>
-                <Italian>Restrizione: Kamov</Italian>
-            </Key>
             <Key ID="STR_WF_PARAMETER_TeamBalance">
                 <English>RESTRICTION: Team balance</English>
                 <French>RÉSTRICTION: Team balance</French>
