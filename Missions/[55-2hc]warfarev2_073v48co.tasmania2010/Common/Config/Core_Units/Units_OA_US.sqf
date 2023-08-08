@@ -1,7 +1,6 @@
-Private ['_restriction_air','_side','_u'];
+Private ['_side','_u'];
 
 _side = _this;
-_restriction_air = missionNamespace getVariable "WFBE_C_UNITS_RESTRICT_AIR";
 
 _u 			= ['US_Soldier_Light_EP1'];
 _u = _u		+ ['US_Soldier_EP1'];

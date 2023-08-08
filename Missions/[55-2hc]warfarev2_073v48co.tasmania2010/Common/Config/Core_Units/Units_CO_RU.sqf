@@ -1,7 +1,6 @@
-Private ['_restriction_air','_side','_tiMode','_u'];
+Private ['_side','_tiMode','_u'];
 
 _side = _this;
-_restriction_air = missionNamespace getVariable "WFBE_C_UNITS_RESTRICT_AIR";
 _tiMode = missionNamespace getVariable "WFBE_C_GAMEPLAY_THERMAL_IMAGING";
 _tiMode = if (_tiMode == 1 || _tiMode == 3) then {true} else {false};
 
