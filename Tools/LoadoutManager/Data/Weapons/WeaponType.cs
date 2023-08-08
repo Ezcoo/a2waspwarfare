@@ -11,7 +11,7 @@ public enum WeaponType
     [EnumMember(Value = "Ch29Launcher_Su34")]
     CH29LAUNCHER,
 
-    [EnumMember(Value = "80mmLauncher")]
+    [EnumMember(Value = "S8Launcher")]
     S8LAUNCHER,
 
     [EnumMember(Value = "57mmLauncher")]
