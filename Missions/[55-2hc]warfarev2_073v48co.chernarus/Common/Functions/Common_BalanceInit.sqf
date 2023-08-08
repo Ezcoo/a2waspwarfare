@@ -51,17 +51,37 @@ switch (typeOf _this) do
 				_this addMagazine "10Rnd_85mmAP";
 	};
         case "Su25_TK_EP1": {
+                _this removeMagazine "80Rnd_S8T";
+                _this addMagazine "40Rnd_S8T";
 
-                _this addMagazine "4Rnd_FAB_250";
-				_this addMagazine "4Rnd_FAB_250";
-
+                _this addWeapon "AT9Launcher";
+				_this addMagazine "4Rnd_AT9_Mi24P";
+				_this addMagazine "4Rnd_AT9_Mi24P";
 	};
         case "Su25_Ins": {
+                _this removeWeapon "R73Launcher_2";
+                _this removeMagazine "2Rnd_R73";
+
+                _this removeWeapon "S8Launcher";
+                _this removeMagazine "80Rnd_S8T";
 
                 _this addMagazine "4Rnd_FAB_250";
 				_this addMagazine "4Rnd_FAB_250";
 
+				_this addWeapon "57mmLauncher";
+				_this addMagazine "64Rnd_57mm";
 	};
+
+	    case "Su39": {
+                _this removeMagazine "80Rnd_S8T";
+                _this addMagazine "40Rnd_S8T";
+                _this addMagazine "40Rnd_S8T";
+
+                _this addWeapon "VikhrLauncher";
+    			_this addMagazine "12Rnd_Vikhr_KA50";
+
+    	};
+
         case "AV8B2": {
 			    _this removeWeapon "Mk82BombLauncher_6";
 				_this removeMagazine "6Rnd_Mk82";
