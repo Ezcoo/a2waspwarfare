@@ -243,7 +243,7 @@ switch (typeOf _this) do
         _this addMagazineTurret ["6RND_105mm_APDS", [0]];
     };
 
-    case "Mi24_D": {
+    case "Mi24_D_TK_EP1": {
         _this removeMagazine "128Rnd_57mm";
         _this addMagazine "64Rnd_57mm";
     };
