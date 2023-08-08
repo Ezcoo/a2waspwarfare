@@ -6,7 +6,6 @@ EAST_StartVeh =
  ['LandRover_MG_TK_EP1']+
  ['LandRover_SPG9_TK_EP1']+
  ['BRDM2_TK_EP1']+
- ['BRDM2_ATGM_TK_EP1']+
  ['GAZ_Vodnik_HMG']+
  ['BTR60_TK_EP1']+
  ['Ural_ZU23_TK_EP1']+
