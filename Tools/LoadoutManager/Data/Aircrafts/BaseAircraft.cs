@@ -155,16 +155,6 @@ public abstract class BaseAircraft : InterfaceAircraft
         return (finalRowOutput, calculatedLoadoutRow.totalPrice);
     }
 
-    private Dictionary<AmmunitionType, int> CreateNewInput(Dictionary<AmmunitionType, int> _input)
-    {
-        Dictionary<AmmunitionType, int> newInput = new();
-        foreach (var kvp in _input)
-        {
-            newInput.Add(kvp.Key, kvp.Value);
-        }
-        return newInput;
-    }
-
     private void CheckDefaultLoadout(
         Dictionary<AmmunitionType, int> _input, LoadoutRow _newLoadoutRow, bool _generateWithPriceAndWeaponsInfo)
     {
@@ -208,7 +198,6 @@ public abstract class BaseAircraft : InterfaceAircraft
         bool _generateWithPriceAndWeaponsInfo = true) // For non-default loadouts, show the information on the easa screen
     {
         LoadoutRow newLoadoutRow = new LoadoutRow();
-        _input = CreateNewInput(_input);
 
         CheckDefaultLoadout(_input, newLoadoutRow, _generateWithPriceAndWeaponsInfo);
 
@@ -229,6 +218,11 @@ public abstract class BaseAircraft : InterfaceAircraft
             int weaponAmount = 0;
 
             var ammunitionType = (InterfaceAmmunition)EnumExtensions.GetInstance(ammoTypeKvp.Key.ToString());
+            if (ammunitionType.canNotBeUsedAsLoadoutOption && _generateWithPriceAndWeaponsInfo)
+            {
+                continue;
+            }
+
             var weaponDefinition = (InterfaceWeapon)ammunitionType.weaponDefinition;
             var weaponSqfName = EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.WeaponType);
             var ammoDisplayName = EnumExtensions.GetEnumMemberAttrValue(ammunitionType.AmmunitionTypes[0]);
