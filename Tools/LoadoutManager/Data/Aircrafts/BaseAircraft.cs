@@ -431,18 +431,18 @@ public abstract class BaseAircraft : InterfaceAircraft
     public void GenerateCommonBalanceInitForTheAircraft()
     {
         Dictionary<string, List<string>> weaponsAndMagazinesToAdd = new();
-        Dictionary<string, List<string>> weaponsAndMagazinesToRemove = new();
 
         PopulateWeaponsAndMagazines(defaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToAdd);
-        PopulateWeaponsAndMagazines(vanillaGameDefaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToRemove);
 
-        List<string> magazinesToAdd = GetAllMagazines(weaponsAndMagazinesToAdd);
-        List<string> magazinesToRemove = GetAllMagazines(weaponsAndMagazinesToRemove).Except(magazinesToAdd).ToList();
+        List<string> magazinesToAdd = GetAllMagazines(weaponsAndMagazinesToAdd)
+            .Where(mag => !vanillaGameDefaultLoadout.AmmunitionTypesWithCount.Keys
+                .Select(a => EnumExtensions.GetEnumMemberAttrValue(a))
+                .Contains(mag))
+            .ToList();
 
         string addSQFCode = GenerateSQFCodeInner(magazinesToAdd, weaponsAndMagazinesToAdd.Keys, "add");
-        string removeSQFCode = GenerateSQFCodeInner(magazinesToRemove, weaponsAndMagazinesToRemove.Keys, "remove");
 
-        string finalSQFCode = $"case \"{aircraftType}\": {{\n" + addSQFCode + removeSQFCode + "};";
+        string finalSQFCode = $"case \"{aircraftType}\": {{\n" + addSQFCode + "};";
 
         Console.WriteLine(finalSQFCode);
     }
@@ -483,7 +483,7 @@ public abstract class BaseAircraft : InterfaceAircraft
     private string GenerateSQFCodeInner(List<string> magazines, IEnumerable<string> weapons, string action)
     {
         string magazineAction = action == "add" ? "addMagazine" : "removeMagazine";
-        string weaponAction = action == "add" ? "addWeapon" : "removeWeapon";
+        string weaponAction = action == "add" ? "addWeapon" : "removeWeapon";  // Note: corrected "addweapon" to "addWeapon"
 
         return $"    _this {magazineAction} \"{string.Join($"\";\n    _this {magazineAction} \"", magazines)}\";\n" +
                $"    _this {weaponAction} \"{string.Join($"\";\n    _this {weaponAction} \"", weapons)}\";\n";
