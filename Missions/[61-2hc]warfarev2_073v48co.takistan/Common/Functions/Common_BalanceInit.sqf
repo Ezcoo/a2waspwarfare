@@ -149,9 +149,12 @@ switch (typeOf _this) do
     };
 
     case "Su34": {
-        _this removeMagazine "4Rnd_R73";
-        _this addMagazine "2Rnd_R73";
-        _this addMagazine "2Rnd_R73";
+        _this removeWeaponTurret ["R73Launcher", [-1]];
+        _this removeMagazineTurret ["4Rnd_R73", [-1]];
+
+        _this removeWeaponTurret ["R73Launcher_2", [-1]];
+        _this addMagazineTurret ["2Rnd_R73", [-1]];
+        _this addMagazineTurret ["2Rnd_R73", [-1]];
     };
 
     // A-10A
