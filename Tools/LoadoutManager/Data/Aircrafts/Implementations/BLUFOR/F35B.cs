@@ -8,8 +8,8 @@
         base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.THREEHUNDREDROUNDGAU12, 2},
-                //{ AmmunitionType.TWOROUNDGBU12, 2},
-                //{ AmmunitionType.TWOROUNDSIDEWINDER, 2},
+                { AmmunitionType.TWOROUNDGBU12, 2},
+                { AmmunitionType.TWOROUNDSIDEWINDER, 2},
             };
 
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
@@ -17,7 +17,7 @@
                 { AmmunitionType.TWOROUNDGBU12, 2},
                 { AmmunitionType.TWOROUNDSIDEWINDER, 2},
                 { AmmunitionType.TWOROUNDMAVERICK, 2},
-                //{ AmmunitionType.THREEHUNDREDROUNDGAU12, 2},
+                { AmmunitionType.THREEHUNDREDROUNDGAU12, 2},
             };
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
