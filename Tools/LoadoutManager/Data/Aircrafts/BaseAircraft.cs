@@ -434,18 +434,25 @@ public abstract class BaseAircraft : InterfaceAircraft
 
         PopulateWeaponsAndMagazines(defaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToAdd);
 
+        // Magazines and weapons to add
         List<string> magazinesToAdd = GetAllMagazines(weaponsAndMagazinesToAdd)
             .Where(mag => !vanillaGameDefaultLoadout.AmmunitionTypesWithCount.Keys
                 .Select(a => EnumExtensions.GetEnumMemberAttrValue(a))
                 .Contains(mag))
+            .Distinct()  // Ensure unique magazines
             .ToList();
 
-        string addSQFCode = GenerateSQFCodeInner(magazinesToAdd, weaponsAndMagazinesToAdd.Keys, "add");
+        IEnumerable<string> weaponsToAdd = weaponsAndMagazinesToAdd.Keys
+            .Where(weapon => !magazinesToAdd.Any(mag => weaponsAndMagazinesToAdd[weapon].Contains(mag)))
+            .Distinct();  // Ensure unique weapons
+
+        string addSQFCode = GenerateSQFCodeInner(magazinesToAdd, weaponsToAdd, "add");
 
         string finalSQFCode = $"case \"{aircraftType}\": {{\n" + addSQFCode + "};";
 
         Console.WriteLine(finalSQFCode);
     }
+
 
     private void PopulateWeaponsAndMagazines(
         Dictionary<AmmunitionType, int> _ammunitionTypesWithCount,
