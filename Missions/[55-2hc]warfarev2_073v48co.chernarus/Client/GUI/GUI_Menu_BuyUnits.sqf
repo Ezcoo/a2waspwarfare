@@ -99,31 +99,6 @@ while {alive player && dialog} do {
 			Private ["_currentUnitLabelForFundsMissing"];
             _currentUnitLabelForFundsMissing = _currentUnit select QUERYUNITLABEL;
 
-            // Change the names of the vehicles, override the _currentUnitLabel
-            if (_unit == "A10") then {
-                _currentUnitLabelForFundsMissing = "A-10A";
-            };
-
-            if (_unit == "A10_US_EP1") then {
-                _currentUnitLabelForFundsMissing = "A-10C";
-            };
-
-            if (_unit == "AH64D") then {
-                _currentUnitLabelForFundsMissing = "AH-64A";
-            };
-
-            if (_unit == "AH64D_EP1") then {
-                _currentUnitLabelForFundsMissing = "AH-64D (Longbow)";
-            };
-
-            if (_unit == "Su25_TK_EP1") then {
-                _currentUnitLabelForFundsMissing = "Su-25T";
-            };
-
-            if (_unit == "BRDM2_ATGM_TK_EP1") then {
-                _currentUnitLabelForFundsMissing = "BRDM (Igla)";
-            };
-
 			if (_funds < _currentCost) then {_skip = true;hint parseText(Format[localize 'STR_WF_INFO_Funds_Missing',_currentCost - _funds,_currentUnitLabelForFundsMissing])};
 			//--- Make sure that we own all camps before being able to purchase infantry.
 			if (_type == "Depot" && _isInfantry) then {
@@ -165,27 +140,6 @@ while {alive player && dialog} do {
 					missionNamespace setVariable [Format["WFBE_C_QUEUE_%1",_type],(missionNamespace getVariable Format["WFBE_C_QUEUE_%1",_type])+1];
 					Private ["_currentUnitLabel"];
                     _currentUnitLabel = _currentUnit select QUERYUNITLABEL;
-
-                    // Change the names of the vehicles, override the _currentUnitLabel
-                    if (_unit == "A10") then {
-                        _currentUnitLabel = "A-10A";
-                    };
-
-                    if (_unit == "A10_US_EP1") then {
-                        _currentUnitLabel = "A-10C";
-                    };
-
-                    if (_unit == "AH64D") then {
-                        _currentUnitLabel = "AH-64A";
-                    };
-
-                    if (_unit == "AH64D_EP1") then {
-                        _currentUnitLabel = "AH-64D (Longbow)";
-                    };
-
-                    if (_unit == "Su25_TK_EP1") then {
-                        _currentUnitLabel = "Su-25T";
-                    };
 
 					_queu = _closest getVariable 'queu';
 					_txt = parseText(Format [localize 'STR_WF_INFO_BuyEffective',_currentUnitLabel]);

@@ -40,31 +40,6 @@ lnbClear _listBox;
 
     _description = _c select QUERYUNITLABEL;
 
-    // Change the names of the vehicles, override the _currentUnitLabel
-    if (_x == "A10") then {
-        _description = "A-10A";
-    };
-
-    if (_x == "A10_US_EP1") then {
-        _description = "A-10C";
-    };
-
-    if (_x == "AH64D") then {
-        _description = "AH-64A";
-    };
-
-    if (_x == "AH64D_EP1") then {
-        _description = "AH-64D (Longbow)";
-    };
-
-    if (_x == "Su25_TK_EP1") then {
-        _description = "Su-25T";
-    };
-
-    if (_x == "BRDM2_ATGM_TK_EP1") then {
-        _description = "BRDM (Igla)";
-    };
-
 	if (((_c select QUERYUNITUPGRADE) <= (_currentUpgrades select _value) && _addin) || (_addit&&_addin)) then {
 		lnbAddRow [_listBox,['$'+str (_c select QUERYUNITPRICE),_description]];
 		lnbSetData [_listBox,[_i,0],_filler];

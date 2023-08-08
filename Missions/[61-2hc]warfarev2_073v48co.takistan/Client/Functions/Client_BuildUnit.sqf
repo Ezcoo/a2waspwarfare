@@ -21,31 +21,6 @@ _currentUnit = missionNamespace getVariable _unit;
 _waitTime = _currentUnit select QUERYUNITTIME;
 _description = _currentUnit select QUERYUNITLABEL;
 
-// Change the names of the vehicles, override the _currentUnitLabel
-if (_unit == "A10") then {
-    _description = "A-10A";
-};
-
-if (_unit == "A10_US_EP1") then {
-    _description = "A-10C";
-};
-
-if (_unit == "AH64D") then {
-    _description = "AH-64A";
-};
-
-if (_unit == "AH64D_EP1") then {
-    _description = "AH-64D (Longbow)";
-};
-
-if (_unit == "Su25_TK_EP1") then {
-    _description = "Su-25T";
-};
-
-if (_unit == "BRDM2_ATGM_TK_EP1") then {
-    _description = "BRDM (Igla)";
-};
-
 _type = typeOf _building;
 _index = (missionNamespace getVariable Format ["WFBE_%1STRUCTURENAMES",sideJoinedText]) find _type;
 if (_index != -1) then {
