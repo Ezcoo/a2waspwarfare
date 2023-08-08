@@ -342,11 +342,6 @@ public abstract class BaseAircraft : InterfaceAircraft
             }
         }
 
-        //if (!addToDefaultLoadoutPrice) // Fix for helis with addToDefaultLoadoutPrice
-        //{
-        //    return new LoadoutRow();
-        //}
-
         return newLoadoutRow;
     }
 
