@@ -107,21 +107,21 @@ _easaLoadout = _easaLoadout + [
 // Su-25A [AF3] - 6 pylons
 _easaVehi = _easaVehi + ['Su25_Ins'];
 _easaDefault = _easaDefault +
-[[['AirBombLauncher','80mmLauncher'],['4Rnd_FAB_250','2Rnd_FAB_250','4Rnd_FAB_250','2Rnd_FAB_250','64Rnd_57mm']]];
+[[['AirBombLauncher','57mmLauncher'],['4Rnd_FAB_250','2Rnd_FAB_250','4Rnd_FAB_250','2Rnd_FAB_250','64Rnd_57mm']]];
 _easaLoadout = _easaLoadout + [
 [
 [2800,'FAB-250 (18)',[['AirBombLauncher'],['4Rnd_FAB_250','2Rnd_FAB_250','4Rnd_FAB_250','2Rnd_FAB_250','4Rnd_FAB_250','2Rnd_FAB_250']]],
 [3600,'FAB-250 (12) | Igla-V (2)',[['AirBombLauncher','Igla_twice'],['4Rnd_FAB_250','2Rnd_FAB_250','4Rnd_FAB_250','2Rnd_FAB_250','2Rnd_Igla']]],
-[4000,'S-5 (192)',[['80mmLauncher'],['64Rnd_57mm','64Rnd_57mm','64Rnd_57mm']]],
-[4200,'DEFAULT | FAB-250 (12) | S-5 (64)',[['AirBombLauncher','80mmLauncher'],['4Rnd_FAB_250','2Rnd_FAB_250','4Rnd_FAB_250','2Rnd_FAB_250','64Rnd_57mm']]],
+[4000,'S-5 (192)',[['57mmLauncher'],['64Rnd_57mm','64Rnd_57mm','64Rnd_57mm']]],
+[4200,'DEFAULT | FAB-250 (12) | S-5 (64)',[['AirBombLauncher','57mmLauncher'],['4Rnd_FAB_250','2Rnd_FAB_250','4Rnd_FAB_250','2Rnd_FAB_250','64Rnd_57mm']]],
 [4400,'FAB-250 (12) | Gun rounds (360rnd) (2)',[['AirBombLauncher','GSh301'],['4Rnd_FAB_250','2Rnd_FAB_250','4Rnd_FAB_250','2Rnd_FAB_250','180Rnd_30mm_GSh301']]],
-[4400,'Igla-V (2) | S-5 (128)',[['Igla_twice','80mmLauncher'],['2Rnd_Igla','64Rnd_57mm','64Rnd_57mm']]],
-[4600,'FAB-250 (6) | S-5 (128)',[['AirBombLauncher','80mmLauncher'],['4Rnd_FAB_250','2Rnd_FAB_250','64Rnd_57mm','64Rnd_57mm']]],
-[5000,'FAB-250 (6) | Igla-V (2) | S-5 (64)',[['AirBombLauncher','Igla_twice','80mmLauncher'],['4Rnd_FAB_250','2Rnd_FAB_250','2Rnd_Igla','64Rnd_57mm']]],
+[4400,'Igla-V (2) | S-5 (128)',[['Igla_twice','57mmLauncher'],['2Rnd_Igla','64Rnd_57mm','64Rnd_57mm']]],
+[4600,'FAB-250 (6) | S-5 (128)',[['AirBombLauncher','57mmLauncher'],['4Rnd_FAB_250','2Rnd_FAB_250','64Rnd_57mm','64Rnd_57mm']]],
+[5000,'FAB-250 (6) | Igla-V (2) | S-5 (64)',[['AirBombLauncher','Igla_twice','57mmLauncher'],['4Rnd_FAB_250','2Rnd_FAB_250','2Rnd_Igla','64Rnd_57mm']]],
 [5200,'FAB-250 (6) | Igla-V (2) | Gun rounds (360rnd) (2)',[['AirBombLauncher','Igla_twice','GSh301'],['4Rnd_FAB_250','2Rnd_FAB_250','2Rnd_Igla','180Rnd_30mm_GSh301']]],
-[5200,'S-5 (128) | Gun rounds (360rnd) (2)',[['80mmLauncher','GSh301'],['64Rnd_57mm','64Rnd_57mm','180Rnd_30mm_GSh301']]],
-[5600,'Igla-V (2) | S-5 (64) | Gun rounds (360rnd) (2)',[['Igla_twice','80mmLauncher','GSh301'],['2Rnd_Igla','64Rnd_57mm','180Rnd_30mm_GSh301']]],
-[5800,'FAB-250 (6) | S-5 (64) | Gun rounds (360rnd) (2)',[['AirBombLauncher','80mmLauncher','GSh301'],['4Rnd_FAB_250','2Rnd_FAB_250','64Rnd_57mm','180Rnd_30mm_GSh301']]]
+[5200,'S-5 (128) | Gun rounds (360rnd) (2)',[['57mmLauncher','GSh301'],['64Rnd_57mm','64Rnd_57mm','180Rnd_30mm_GSh301']]],
+[5600,'Igla-V (2) | S-5 (64) | Gun rounds (360rnd) (2)',[['Igla_twice','57mmLauncher','GSh301'],['2Rnd_Igla','64Rnd_57mm','180Rnd_30mm_GSh301']]],
+[5800,'FAB-250 (6) | S-5 (64) | Gun rounds (360rnd) (2)',[['AirBombLauncher','57mmLauncher','GSh301'],['4Rnd_FAB_250','2Rnd_FAB_250','64Rnd_57mm','180Rnd_30mm_GSh301']]]
 ]
 ];
 
@@ -240,18 +240,18 @@ _easaLoadout = _easaLoadout + [
 // L-39 [AF3] - 4 pylons
 _easaVehi = _easaVehi + ['L39_TK_EP1'];
 _easaDefault = _easaDefault +
-[[['R73Launcher_2','80mmLauncher'],['2Rnd_R73','64Rnd_57mm']]];
+[[['R73Launcher_2','57mmLauncher'],['2Rnd_R73','64Rnd_57mm']]];
 _easaLoadout = _easaLoadout + [
 [
 [2200,'FAB-250 (12)',[['AirBombLauncher'],['4Rnd_FAB_250','2Rnd_FAB_250','4Rnd_FAB_250','2Rnd_FAB_250']]],
-[3000,'S-5 (128)',[['80mmLauncher'],['64Rnd_57mm','64Rnd_57mm']]],
+[3000,'S-5 (128)',[['57mmLauncher'],['64Rnd_57mm','64Rnd_57mm']]],
 [3400,'Ataka-V (8)',[['AT9Launcher'],['4Rnd_AT9_Mi24P','4Rnd_AT9_Mi24P']]],
-[3600,'FAB-250 (6) | S-5 (64)',[['AirBombLauncher','80mmLauncher'],['4Rnd_FAB_250','2Rnd_FAB_250','64Rnd_57mm']]],
+[3600,'FAB-250 (6) | S-5 (64)',[['AirBombLauncher','57mmLauncher'],['4Rnd_FAB_250','2Rnd_FAB_250','64Rnd_57mm']]],
 [3800,'R-73 (4)',[['R73Launcher_2'],['2Rnd_R73','2Rnd_R73']]],
 [3800,'FAB-250 (6) | Ataka-V (4)',[['AirBombLauncher','AT9Launcher'],['4Rnd_FAB_250','2Rnd_FAB_250','4Rnd_AT9_Mi24P']]],
 [4000,'R-73 (2) | FAB-250 (6)',[['R73Launcher_2','AirBombLauncher'],['2Rnd_R73','4Rnd_FAB_250','2Rnd_FAB_250']]],
-[4200,'S-5 (64) | Ataka-V (4)',[['80mmLauncher','AT9Launcher'],['64Rnd_57mm','4Rnd_AT9_Mi24P']]],
-[4400,'DEFAULT | R-73 (2) | S-5 (64)',[['R73Launcher_2','80mmLauncher'],['2Rnd_R73','64Rnd_57mm']]],
+[4200,'S-5 (64) | Ataka-V (4)',[['57mmLauncher','AT9Launcher'],['64Rnd_57mm','4Rnd_AT9_Mi24P']]],
+[4400,'DEFAULT | R-73 (2) | S-5 (64)',[['R73Launcher_2','57mmLauncher'],['2Rnd_R73','64Rnd_57mm']]],
 [4600,'R-73 (2) | Ataka-V (4)',[['R73Launcher_2','AT9Launcher'],['2Rnd_R73','4Rnd_AT9_Mi24P']]]
 ]
 ];
@@ -589,21 +589,21 @@ _easaLoadout = _easaLoadout + [
 //--- Now we check for AA-based loadouts.
 for '_i' from 0 to count(_easaVehi)-1 do {
 	_loadout = _easaLoadout select _i;
-	
+
 	for '_j' from 0 to count(_loadout)-1 do {
 		_loadout_line = _loadout select _j;
 		_is_AAMissile = false;
-		
+
 		//--- Browse each EASA magazines and check the ammunition kind.
 		{
 			_ammo = getText(configFile >> "CfgMagazines" >> _x >> "ammo"); //--- We grab the ammo used by the magazine.
-			
+
 			if (_ammo != "") then {
 				//--- We check if the ammo is air-lock based and that in inherits from the missile class.
 				if (getNumber(configFile >> "CfgAmmo" >> _ammo >> "airLock") == 1 && configName(inheritsFrom(configFile >> "CfgAmmo" >> _ammo)) == "MissileBase") exitWith {_is_AAMissile = true};
 			};
 		} forEach ((_loadout_line select 2) select 1);
-		
+
 		_loadout_line set [3, if (_is_AAMissile) then {true} else {false}];
 	};
 };
