@@ -301,7 +301,7 @@ public abstract class BaseAircraft : InterfaceAircraft
                 newLoadoutRow.weaponTypesArray += "'";
                 newLoadoutRow.weaponTypesArray += EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.WeaponType);
                 newLoadoutRow.weaponTypesArray += "',";
-            }            
+            }
 
             newLoadoutRow.weaponsInfo += ammunitionType.ammoDisplayName + " (" + weaponAmount + ") | ";
 
@@ -349,7 +349,7 @@ public abstract class BaseAircraft : InterfaceAircraft
     }
 
     private int CalculateWeaponsCount(Dictionary<AmmunitionType, int> _input)
-    {   
+    {
         int countOfWeapons = 0;
 
         foreach (var item in _input)
@@ -422,5 +422,37 @@ public abstract class BaseAircraft : InterfaceAircraft
                 _combination.RemoveAt(_combination.Count - 1);
             }
         }
+    }
+
+
+    public void GenerateCommonBalanceInitForTheAircraft()
+    {
+        List<WeaponType> weapons = new List<WeaponType>();
+        List<AmmunitionType> magazines = new List<AmmunitionType>();
+
+        foreach (var ammo in defaultLoadout.AmmunitionTypesWithCount)
+        {
+            var ammoMapping = (InterfaceAmmunition)EnumExtensions.GetInstance(ammo.Key.ToString());
+            var weaponMapping = (InterfaceWeapon)EnumExtensions.GetInstance(ammoMapping.weaponDefinition.WeaponType.ToString());
+
+            for (int i = 0; i < ammo.Value; i++)
+            {
+                magazines.Add(ammoMapping.AmmunitionTypes[0]);
+            }
+
+            // Assuming the ammunitionEnumMapping key is always a prefix for the weaponEnumMapping key
+            //string weaponKey = ammo.Key.Replace("ROUND", "BOMBLAUNCHER"); // Replace with correct mapping logic
+            //if (weaponEnumMapping.ContainsKey(weaponMappingng()))
+            //{
+                weapons.Add(weaponMapping.WeaponType);
+            //}
+        }
+
+        string sqfCode = $"case \"{aircraftType}\": {{\n";
+        sqfCode += $"    _this addMagazine \"{string.Join("\";\n    _this addMagazine \"", magazines)}\";\n";
+        sqfCode += $"    _this addWeapon \"{string.Join("\";\n    _this addWeapon \"", weapons)}\";\n";
+        sqfCode += "};";
+
+        Console.WriteLine(sqfCode);
     }
 }

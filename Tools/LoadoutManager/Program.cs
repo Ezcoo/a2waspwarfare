@@ -13,68 +13,18 @@ class Program
 
     private static void GenerateCommonBalanceInitSQF()
     {
-        SQFGenerator generator = new SQFGenerator();
-        Dictionary<string, int> f35bLoadout = new Dictionary<string, int>
-        {
-            {"TWOROUNDGBU12", 2},
-            {"TWOROUNDSIDEWINDER", 2},
-            {"TWOROUNDMAVERICK", 2}
-        };
 
-        string sqfCode = generator.GenerateSQFCode("F35B", f35bLoadout);
-        Console.WriteLine(sqfCode);
+        //foreach (AircraftType aircraftType in Enum.GetValues(typeof(AircraftType)))
+        //{
+
+        var _interfaceAircraft = (InterfaceAircraft)EnumExtensions.GetInstance("F35B");
+        _interfaceAircraft.GenerateCommonBalanceInitForTheAircraft();
+        //}
     }
 
     /// <summary>
     /// MOVE TO OWN CLASS
     /// </summary>
-    public class SQFGenerator
-    {
-        private Dictionary<string, string> ammunitionEnumMapping = new Dictionary<string, string>
-    {
-        // ... (Add the rest of the mappings here)
-        {"TWOROUNDGBU12", "2Rnd_GBU12"},
-        {"TWOROUNDSIDEWINDER", "2Rnd_Sidewinder_F35"},
-        {"TWOROUNDMAVERICK", "2Rnd_Maverick_A10"}
-    };
-
-        private Dictionary<string, string> weaponEnumMapping = new Dictionary<string, string>
-    {
-        // ... (Add the rest of the mappings here)
-        {"GBU12BOMBLAUNCHER", "BombLauncherF35"},
-        {"SIDEWINDERLAUNCHER", "SidewinderLaucher_F35"},
-        {"MAVERICKLAUNCHER", "MaverickLauncher"}
-    };
-
-        public string GenerateSQFCode(string aircraftName, Dictionary<string, int> loadout)
-        {
-            List<string> weapons = new List<string>();
-            List<string> magazines = new List<string>();
-
-            foreach (var ammo in loadout)
-            {
-                for (int i = 0; i < ammo.Value; i++)
-                {
-                    magazines.Add(ammunitionEnumMapping[ammo.Key]);
-                }
-
-                // Assuming the ammunitionEnumMapping key is always a prefix for the weaponEnumMapping key
-                string weaponKey = ammo.Key.Replace("ROUND", "BOMBLAUNCHER"); // Replace with correct mapping logic
-                if (weaponEnumMapping.ContainsKey(weaponKey))
-                {
-                    weapons.Add(weaponEnumMapping[weaponKey]);
-                }
-            }
-
-            string sqfCode = $"case \"{aircraftName}\": {{\n";
-            sqfCode += $"    _this addMagazine \"{string.Join("\";\n    _this addMagazine \"", magazines)}\";\n";
-            sqfCode += $"    _this addWeapon \"{string.Join("\";\n    _this addWeapon \"", weapons)}\";\n";
-            sqfCode += "};";
-
-            return sqfCode;
-        }
-    }
-
     private static void WaitForExitCommand()
     {
         string userInput;

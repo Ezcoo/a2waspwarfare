@@ -12,4 +12,5 @@ public interface InterfaceAircraft
     public Dictionary<AmmunitionType, float> ammunitionTypeCostFloatModifier { get; set; }
 
     public void GenerateLoadoutsForTheAircraft();
+    public void GenerateCommonBalanceInitForTheAircraft();
 }
