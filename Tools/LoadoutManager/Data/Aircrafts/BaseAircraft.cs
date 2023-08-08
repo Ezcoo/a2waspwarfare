@@ -469,7 +469,6 @@ public abstract class BaseAircraft : InterfaceAircraft
         Console.WriteLine(finalSQFCode);
     }
 
-
     private void PopulateWeaponsAndMagazines(
         Dictionary<AmmunitionType, int> _ammunitionTypesWithCount,
         Dictionary<string, List<string>> _weaponsAndMagazines)
@@ -522,6 +521,4 @@ public abstract class BaseAircraft : InterfaceAircraft
 
         return sqfCode.ToString();
     }
-
-
 }
