@@ -7,13 +7,13 @@ class Program
     {
         //GenerateTheEasaFile();
         GenerateCommonBalanceInitSQF();
-        WaitForExitCommand();
+        //WaitForExitCommand();
     }
 
 
     private static void GenerateCommonBalanceInitSQF()
     {
-
+        // Iterate through every aircraft (implement this later)
         //foreach (AircraftType aircraftType in Enum.GetValues(typeof(AircraftType)))
         //{
 

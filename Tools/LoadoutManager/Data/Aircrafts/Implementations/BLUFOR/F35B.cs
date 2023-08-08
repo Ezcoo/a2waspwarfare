@@ -5,6 +5,13 @@
         AircraftType = AircraftType.F35B;
         pylonAmount = 6;
 
+        base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+                { AmmunitionType.THREEHUNDREDROUNDGAU12, 2},
+                { AmmunitionType.FOURROUNDGBU12, 2},
+                { AmmunitionType.TWOROUNDSIDEWINDER, 2},
+            };
+
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.TWOROUNDGBU12, 2},

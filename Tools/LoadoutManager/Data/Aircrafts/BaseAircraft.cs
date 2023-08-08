@@ -5,6 +5,7 @@ public abstract class BaseAircraft : InterfaceAircraft
     private AircraftType aircraftType { get; set; }
     public int pylonAmount { get; set; }
     public Dictionary<AmmunitionType, int> allowedAmmunitionTypesWithTheirLimitationAmount { get; set; }
+    public Loadout vanillaGameDefaultLoadout { get; set; }
     public Loadout defaultLoadout { get; set; }
     public string inGameDisplayName { get; set; }
     public int inGameAircraftFactoryLevel { get; set; }
@@ -16,6 +17,7 @@ public abstract class BaseAircraft : InterfaceAircraft
     protected BaseAircraft()
     {
         defaultLoadout = new Loadout();
+        vanillaGameDefaultLoadout = new Loadout();
     }
 
     public void GenerateLoadoutsForTheAircraft()
@@ -429,6 +431,11 @@ public abstract class BaseAircraft : InterfaceAircraft
     {
         List<WeaponType> weapons = new List<WeaponType>();
         List<AmmunitionType> magazines = new List<AmmunitionType>();
+
+        //if (vanillaGameDefaultLoadout.AmmunitionTypesWithCount.Count < 1)
+        //{
+        //    return;
+        //}
 
         foreach (var ammo in defaultLoadout.AmmunitionTypesWithCount)
         {
