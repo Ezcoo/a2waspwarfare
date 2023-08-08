@@ -426,23 +426,30 @@ public abstract class BaseAircraft : InterfaceAircraft
         }
     }
 
-
     public void GenerateCommonBalanceInitForTheAircraft()
     {
-        Dictionary<WeaponType, List<AmmunitionType>> weaponsAndMagazines = new();
+        Dictionary<WeaponType, List<AmmunitionType>> weaponsAndMagazinesToAdd = new();
+        Dictionary<WeaponType, List<AmmunitionType>> weaponsAndMagazinesToRemove = new();
 
-        PopulateWeaponsAndMagazines(weaponsAndMagazines);
+        PopulateWeaponsAndMagazines(defaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToAdd);
+        PopulateWeaponsAndMagazines(vanillaGameDefaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToRemove);
 
-        List<AmmunitionType> allMagazines = GetAllMagazines(weaponsAndMagazines);
+        List<AmmunitionType> magazinesToAdd = GetAllMagazines(weaponsAndMagazinesToAdd);
+        List<AmmunitionType> magazinesToRemove = GetAllMagazines(weaponsAndMagazinesToRemove).Except(magazinesToAdd).ToList();
 
-        string sqfCode = GenerateSQFCode(allMagazines, weaponsAndMagazines.Keys);
+        string addSQFCode = GenerateSQFCodeInner(magazinesToAdd, weaponsAndMagazinesToAdd.Keys, "add");
+        string removeSQFCode = GenerateSQFCodeInner(magazinesToRemove, weaponsAndMagazinesToRemove.Keys, "remove");
 
-        Console.WriteLine(sqfCode);
+        string finalSQFCode = $"case \"{aircraftType}\": {{\n" + addSQFCode + removeSQFCode + "};";
+
+        Console.WriteLine(finalSQFCode);
     }
 
-    private void PopulateWeaponsAndMagazines(Dictionary<WeaponType, List<AmmunitionType>> weaponsAndMagazines)
+    private void PopulateWeaponsAndMagazines(
+        Dictionary<AmmunitionType, int> ammunitionTypesWithCount,
+        Dictionary<WeaponType, List<AmmunitionType>> weaponsAndMagazines)
     {
-        foreach (var ammo in defaultLoadout.AmmunitionTypesWithCount)
+        foreach (var ammo in ammunitionTypesWithCount)
         {
             var ammoMapping = (InterfaceAmmunition)EnumExtensions.GetInstance(ammo.Key.ToString());
             var weaponMapping = (InterfaceWeapon)EnumExtensions.GetInstance(ammoMapping.weaponDefinition.WeaponType.ToString());
@@ -474,12 +481,23 @@ public abstract class BaseAircraft : InterfaceAircraft
         return allMagazines;
     }
 
-    private string GenerateSQFCode(List<AmmunitionType> allMagazines, Dictionary<WeaponType, List<AmmunitionType>>.KeyCollection allWeapons)
+    private string GenerateSQFCodeInner(List<AmmunitionType> magazines, IEnumerable<WeaponType> weapons, string action)
     {
-        return $"case \"{aircraftType}\": {{\n" +
-               $"    _this addMagazine \"{string.Join("\";\n    _this addMagazine \"", allMagazines)}\";\n" +
-               $"    _this addWeapon \"{string.Join("\";\n    _this addWeapon \"", allWeapons)}\";\n" +
-               "};";
+        string magazineAction = action == "add" ? "addMagazine" : "removeMagazine";
+        string weaponAction = action == "add" ? "addWeapon" : "removeWeapon";
+
+        return $"    _this {magazineAction} \"{string.Join($"\";\n    _this {magazineAction} \"", magazines)}\";\n" +
+               $"    _this {weaponAction} \"{string.Join($"\";\n    _this {weaponAction} \"", weapons)}\";\n";
     }
 
+    //private string GenerateSQFCode(List<AmmunitionType> magazines, IEnumerable<WeaponType> weapons, string action)
+    //{
+    //    string magazineAction = action == "add" ? "addMagazine" : "removeMagazine";
+    //    string weaponAction = action == "add" ? "addWeapon" : "removeWeapon";
+
+    //    return $"case \"{aircraftType}\": {{\n" +
+    //           $"    _this {magazineAction} \"{string.Join($"\";\n    _this {magazineAction} \"", magazines)}\";\n" +
+    //           $"    _this {weaponAction} \"{string.Join($"\";\n    _this {weaponAction} \"", weapons)}\";\n" +
+    //           "};";
+    //}
 }
