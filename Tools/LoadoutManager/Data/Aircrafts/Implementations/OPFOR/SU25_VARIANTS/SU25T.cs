@@ -18,7 +18,7 @@
             { AmmunitionType.FOURTYROUNDS8, 0 },
             { AmmunitionType.FOURROUNDATAKA, 0 },
             { AmmunitionType.TWOROUNDGBU12, 6 },
-            { AmmunitionType.FOURROUNDR73, 2 },
+            { AmmunitionType.TWOROUNDR73, 2 },
         };
 
         inGameDisplayName = "Su-25T";

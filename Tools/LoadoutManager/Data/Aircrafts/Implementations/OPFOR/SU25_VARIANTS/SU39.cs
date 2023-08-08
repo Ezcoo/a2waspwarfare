@@ -19,7 +19,7 @@
             { AmmunitionType.TWELVEROUNDSVIKHR, 4 },
             { AmmunitionType.BASECH29, 0 },
             { AmmunitionType.TWOROUNDGBU12, 8 },
-            { AmmunitionType.FOURROUNDR73, 4 },
+            { AmmunitionType.TWOROUNDR73, 4 },
         };
 
         inGameDisplayName = "Su-39";
