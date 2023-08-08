@@ -410,9 +410,25 @@ public abstract class BaseAircraft : InterfaceAircraft
 
         for (int i = _start; i < _inputArray.Length; i++)
         {
-            _combination.Add(_inputArray[i]);
-            GenerateCombinationsUtil(_inputArray, _r - 1, i, _combination, _result);
-            _combination.RemoveAt(_combination.Count - 1);
+            // Check if the current ammunition type is HELLFIRE/VIKHR
+            if (_inputArray[i] == AmmunitionType.EIGHTROUNDHELLFIRE || _inputArray[i] == AmmunitionType.TWELVEROUNDSVIKHR)
+            {
+                // If it is, then reduce the remaining slots by 2 instead of 1
+                // Also make sure there are enough slots left for HELLFIRE/VIKHR
+                if (_r >= 2)
+                {
+                    _combination.Add(_inputArray[i]);
+                    GenerateCombinationsUtil(_inputArray, _r - 2, i, _combination, _result);
+                    _combination.RemoveAt(_combination.Count - 1);
+                }
+            }
+            else
+            {
+                // Otherwise, proceed as usual
+                _combination.Add(_inputArray[i]);
+                GenerateCombinationsUtil(_inputArray, _r - 1, i, _combination, _result);
+                _combination.RemoveAt(_combination.Count - 1);
+            }
         }
     }
 }
