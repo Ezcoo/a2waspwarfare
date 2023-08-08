@@ -430,14 +430,14 @@ public abstract class BaseAircraft : InterfaceAircraft
 
     public void GenerateCommonBalanceInitForTheAircraft()
     {
-        Dictionary<string, List<AmmunitionType>> weaponsAndMagazinesToAdd = new();
-        Dictionary<string, List<AmmunitionType>> weaponsAndMagazinesToRemove = new();
+        Dictionary<string, List<string>> weaponsAndMagazinesToAdd = new();
+        Dictionary<string, List<string>> weaponsAndMagazinesToRemove = new();
 
         PopulateWeaponsAndMagazines(defaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToAdd);
         PopulateWeaponsAndMagazines(vanillaGameDefaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToRemove);
 
-        List<AmmunitionType> magazinesToAdd = GetAllMagazines(weaponsAndMagazinesToAdd);
-        List<AmmunitionType> magazinesToRemove = GetAllMagazines(weaponsAndMagazinesToRemove).Except(magazinesToAdd).ToList();
+        List<string> magazinesToAdd = GetAllMagazines(weaponsAndMagazinesToAdd);
+        List<string> magazinesToRemove = GetAllMagazines(weaponsAndMagazinesToRemove).Except(magazinesToAdd).ToList();
 
         string addSQFCode = GenerateSQFCodeInner(magazinesToAdd, weaponsAndMagazinesToAdd.Keys, "add");
         string removeSQFCode = GenerateSQFCodeInner(magazinesToRemove, weaponsAndMagazinesToRemove.Keys, "remove");
@@ -449,17 +449,17 @@ public abstract class BaseAircraft : InterfaceAircraft
 
     private void PopulateWeaponsAndMagazines(
         Dictionary<AmmunitionType, int> _ammunitionTypesWithCount,
-        Dictionary<string, List<AmmunitionType>> _weaponsAndMagazines)
+        Dictionary<string, List<string>> _weaponsAndMagazines)
     {
         foreach (var ammo in _ammunitionTypesWithCount)
         {
             var ammoMapping = (InterfaceAmmunition)EnumExtensions.GetInstance(ammo.Key.ToString());
             var weaponMapping = (InterfaceWeapon)EnumExtensions.GetInstance(ammoMapping.weaponDefinition.WeaponType.ToString());
 
-            List<AmmunitionType> magazines = new List<AmmunitionType>();
+            List<string> magazines = new List<string>();
             for (int i = 0; i < ammo.Value; i++)
             {
-                magazines.AddRange(ammoMapping.AmmunitionTypes);
+                magazines.AddRange(ammoMapping.AmmunitionTypes.Select(a => EnumExtensions.GetEnumMemberAttrValue(a)));
             }
 
             string weaponTypeString = EnumExtensions.GetEnumMemberAttrValue(weaponMapping.WeaponType);
@@ -475,17 +475,12 @@ public abstract class BaseAircraft : InterfaceAircraft
         }
     }
 
-    private List<AmmunitionType> GetAllMagazines(Dictionary<string, List<AmmunitionType>> weaponsAndMagazines)
+    private List<string> GetAllMagazines(Dictionary<string, List<string>> weaponsAndMagazines)
     {
-        List<AmmunitionType> allMagazines = new List<AmmunitionType>();
-        foreach (var magazines in weaponsAndMagazines.Values)
-        {
-            allMagazines.AddRange(magazines);
-        }
-        return allMagazines;
+        return weaponsAndMagazines.Values.SelectMany(m => m).ToList();
     }
 
-    private string GenerateSQFCodeInner(List<AmmunitionType> magazines, IEnumerable<string> weapons, string action)
+    private string GenerateSQFCodeInner(List<string> magazines, IEnumerable<string> weapons, string action)
     {
         string magazineAction = action == "add" ? "addMagazine" : "removeMagazine";
         string weaponAction = action == "add" ? "addWeapon" : "removeWeapon";
@@ -493,4 +488,5 @@ public abstract class BaseAircraft : InterfaceAircraft
         return $"    _this {magazineAction} \"{string.Join($"\";\n    _this {magazineAction} \"", magazines)}\";\n" +
                $"    _this {weaponAction} \"{string.Join($"\";\n    _this {weaponAction} \"", weapons)}\";\n";
     }
+
 }
