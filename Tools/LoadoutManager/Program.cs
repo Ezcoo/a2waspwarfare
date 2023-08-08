@@ -25,7 +25,9 @@ class Program
         Console.WriteLine(sqfCode);
     }
 
-
+    /// <summary>
+    /// MOVE TO OWN CLASS
+    /// </summary>
     public class SQFGenerator
     {
         private Dictionary<string, string> ammunitionEnumMapping = new Dictionary<string, string>
@@ -73,7 +75,15 @@ class Program
         }
     }
 
-
+    private static void WaitForExitCommand()
+    {
+        string userInput;
+        do
+        {
+            //Console.WriteLine("Type 'exit' to close the program...");
+            userInput = Console.ReadLine();
+        } while (userInput?.ToLower() != "exit");
+    }
 
 
 
@@ -142,13 +152,5 @@ class Program
         Console.WriteLine("missionNamespace setVariable ['WFBE_EASA_Default',_easaDefault];");
     }
 
-    private static void WaitForExitCommand()
-    {
-        string userInput;
-        do
-        {
-            //Console.WriteLine("Type 'exit' to close the program...");
-            userInput = Console.ReadLine();
-        } while (userInput?.ToLower() != "exit");
-    }
+
 }
