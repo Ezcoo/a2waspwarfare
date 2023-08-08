@@ -400,7 +400,7 @@ public abstract class BaseAircraft : InterfaceAircraft
         for (int i = _start; i < _inputArray.Length; i++)
         {
             // Check if the current ammunition type is HELLFIRE/VIKHR
-            if (_inputArray[i] == AmmunitionType.EIGHTROUNDHELLFIRE || _inputArray[i] == AmmunitionType.TWELVEROUNDSVIKHR)
+            if ((_inputArray[i] == AmmunitionType.EIGHTROUNDHELLFIRE || _inputArray[i] == AmmunitionType.TWELVEROUNDSVIKHR) && !addToDefaultLoadoutPrice) // Quickfix for ah64, apache, ah1z with hellfires 
             {
                 // If it is, then reduce the remaining slots by 2 instead of 1
                 // Also make sure there are enough slots left for HELLFIRE/VIKHR
