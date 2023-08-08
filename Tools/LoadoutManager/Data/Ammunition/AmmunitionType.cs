@@ -4,6 +4,8 @@ public enum AmmunitionType
 {
     [EnumMember(Value = "2Rnd_R73")]
     TWOROUNDR73,
+    [EnumMember(Value = "4Rnd_R73")]
+    FOURROUNDR73,
 
     // Combined in to 6rnd for better balance vs Mk-82
     [EnumMember(Value = "ERROR_UNDEFINED_VARIANT")]
