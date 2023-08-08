@@ -53,6 +53,8 @@ switch (typeOf _this) do
         _this addWeapon "AT9Launcher";
         _this addMagazine "4Rnd_AT9_Mi24P";
         _this addMagazine "4Rnd_AT9_Mi24P";
+        _this removeWeapon "AirBombLauncher";
+        _this removeMagazine "4Rnd_FAB_250";
     };
 
     case "Su25_Ins": {
