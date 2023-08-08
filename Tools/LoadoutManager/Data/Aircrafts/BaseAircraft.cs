@@ -429,51 +429,57 @@ public abstract class BaseAircraft : InterfaceAircraft
 
     public void GenerateCommonBalanceInitForTheAircraft()
     {
-
         Dictionary<WeaponType, List<AmmunitionType>> weaponsAndMagazines = new();
 
-        //if (vanillaGameDefaultLoadout.AmmunitionTypesWithCount.Count < 1)
-        //{
-        //    return;
-        //}
+        PopulateWeaponsAndMagazines(weaponsAndMagazines);
 
+        List<AmmunitionType> allMagazines = GetAllMagazines(weaponsAndMagazines);
+
+        string sqfCode = GenerateSQFCode(allMagazines, weaponsAndMagazines.Keys);
+
+        Console.WriteLine(sqfCode);
+    }
+
+    private void PopulateWeaponsAndMagazines(Dictionary<WeaponType, List<AmmunitionType>> weaponsAndMagazines)
+    {
         foreach (var ammo in defaultLoadout.AmmunitionTypesWithCount)
         {
-            List<AmmunitionType> magazines = new();
-
             var ammoMapping = (InterfaceAmmunition)EnumExtensions.GetInstance(ammo.Key.ToString());
             var weaponMapping = (InterfaceWeapon)EnumExtensions.GetInstance(ammoMapping.weaponDefinition.WeaponType.ToString());
 
+            List<AmmunitionType> magazines = new List<AmmunitionType>();
             for (int i = 0; i < ammo.Value; i++)
             {
-                foreach (var weapon in ammoMapping.AmmunitionTypes)
-                {
-                    magazines.Add(weapon);
-                }
+                magazines.AddRange(ammoMapping.AmmunitionTypes);
             }
 
             if (weaponsAndMagazines.ContainsKey(weaponMapping.WeaponType))
             {
-                // Append to the existing magazines if the weapon type already exists in the dictionary
                 weaponsAndMagazines[weaponMapping.WeaponType].AddRange(magazines);
             }
             else
             {
-                weaponsAndMagazines.Add(weaponMapping.WeaponType, magazines);
+                weaponsAndMagazines[weaponMapping.WeaponType] = magazines;
             }
         }
-
-        List<AmmunitionType> allMagazines = new List<AmmunitionType>();
-        foreach (var kvp in weaponsAndMagazines)
-        {
-            allMagazines.AddRange(kvp.Value);
-        }
-
-        string sqfCode = $"case \"{aircraftType}\": {{\n";
-        sqfCode += $"    _this addMagazine \"{string.Join("\";\n    _this addMagazine \"", allMagazines)}\";\n";
-        sqfCode += $"    _this addWeapon \"{string.Join("\";\n    _this addWeapon \"", weaponsAndMagazines.Keys)}\";\n";
-        sqfCode += "};";
-
-        Console.WriteLine(sqfCode);
     }
+
+    private List<AmmunitionType> GetAllMagazines(Dictionary<WeaponType, List<AmmunitionType>> weaponsAndMagazines)
+    {
+        List<AmmunitionType> allMagazines = new List<AmmunitionType>();
+        foreach (var magazines in weaponsAndMagazines.Values)
+        {
+            allMagazines.AddRange(magazines);
+        }
+        return allMagazines;
+    }
+
+    private string GenerateSQFCode(List<AmmunitionType> allMagazines, Dictionary<WeaponType, List<AmmunitionType>>.KeyCollection allWeapons)
+    {
+        return $"case \"{aircraftType}\": {{\n" +
+               $"    _this addMagazine \"{string.Join("\";\n    _this addMagazine \"", allMagazines)}\";\n" +
+               $"    _this addWeapon \"{string.Join("\";\n    _this addWeapon \"", allWeapons)}\";\n" +
+               "};";
+    }
+
 }
