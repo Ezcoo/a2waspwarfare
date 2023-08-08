@@ -153,7 +153,7 @@ switch (typeOf _this) do
         _this removeWeaponTurret ["R73Launcher", [-1]];
         _this removeMagazineTurret ["4Rnd_R73", [-1]];
 
-        _this removeWeaponTurret ["R73Launcher_2", [-1]];
+        _this addWeaponTurret ["R73Launcher_2", [-1]];
         _this addMagazineTurret ["2Rnd_R73", [-1]];
         _this addMagazineTurret ["2Rnd_R73", [-1]];
     };
