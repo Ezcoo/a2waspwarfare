@@ -427,12 +427,14 @@ public abstract class BaseAircraft : InterfaceAircraft
             }
         }
     }
-
     public void GenerateCommonBalanceInitForTheAircraft()
     {
         Dictionary<string, List<string>> weaponsAndMagazinesToAdd = new();
+        Dictionary<string, List<string>> weaponsAndMagazinesToRemove = new();
 
+        // Populate weapons and magazines
         PopulateWeaponsAndMagazines(defaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToAdd);
+        PopulateWeaponsAndMagazines(vanillaGameDefaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToRemove);
 
         // Magazines and weapons to add
         List<string> magazinesToAdd = GetAllMagazines(weaponsAndMagazinesToAdd)
@@ -442,13 +444,26 @@ public abstract class BaseAircraft : InterfaceAircraft
             .Distinct()  // Ensure unique magazines
             .ToList();
 
+        // Magazines and weapons to remove
+        List<string> magazinesToRemove = GetAllMagazines(weaponsAndMagazinesToRemove)
+            .Where(mag => !defaultLoadout.AmmunitionTypesWithCount.Keys
+                .Select(a => EnumExtensions.GetEnumMemberAttrValue(a))
+                .Contains(mag))
+            .Distinct()  // Ensure unique magazines
+            .ToList();
+
         IEnumerable<string> weaponsToAdd = weaponsAndMagazinesToAdd.Keys
-            .Where(weapon => !magazinesToAdd.Any(mag => weaponsAndMagazinesToAdd[weapon].Contains(mag)))
+            .Where(weapon => magazinesToAdd.Any(mag => weaponsAndMagazinesToAdd[weapon].Contains(mag)))
+            .Distinct();  // Ensure unique weapons
+
+        IEnumerable<string> weaponsToRemove = weaponsAndMagazinesToRemove.Keys
+            .Where(weapon => magazinesToRemove.Any(mag => weaponsAndMagazinesToRemove[weapon].Contains(mag)))
             .Distinct();  // Ensure unique weapons
 
         string addSQFCode = GenerateSQFCodeInner(magazinesToAdd, weaponsToAdd, "add");
+        string removeSQFCode = GenerateSQFCodeInner(magazinesToRemove, weaponsToRemove, "remove");
 
-        string finalSQFCode = $"case \"{aircraftType}\": {{\n" + addSQFCode + "};";
+        string finalSQFCode = $"case \"{aircraftType}\": {{\n" + addSQFCode + removeSQFCode + "};";
 
         Console.WriteLine(finalSQFCode);
     }
