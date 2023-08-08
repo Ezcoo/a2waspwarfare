@@ -68,26 +68,22 @@ _u = _u		+ ['T72_TK_EP1'];
 missionNamespace setVariable [Format ["WFBE_%1HEAVYUNITS", _side], _u];
 if (local player) then {['HEAVY', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
-_u 			= ['Mi17_TK_EP1'];
-_u = _u		+ ['UH1H_TK_EP1'];
-if (_restriction_air == 0 ||_restriction_air == 1) then {
-	_u = _u		+ ['Mi24_D_TK_EP1'];
-};
-if (_restriction_air == 0) then {
-	_u = _u		+ ['An2_TK_EP1'];
-	_u = _u		+ ['L39_TK_EP1'];
-	_u = _u		+ ['Su25_TK_EP1'];
-};
+_u 			= ['UH1H_TK_EP1'];
+_u = _u		+ ['Mi17_TK_EP1'];
+_u = _u		+ ['Mi24_D_TK_EP1'];
+_u = _u		+ ['An2_TK_EP1'];
+_u = _u		+ ['L39_TK_EP1'];
+_u = _u		+ ['Su25_TK_EP1'];
+
 
 missionNamespace setVariable [Format ["WFBE_%1AIRCRAFTUNITS", _side], _u];
 if (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
 _u = [];
-if (_restriction_air == 0) then {
-	_u = _u		+ ['An2_TK_EP1'];
-	_u = _u		+ ['L39_TK_EP1'];
-	_u = _u		+ ['Su25_TK_EP1'];
-};
+_u = _u		+ ['An2_TK_EP1'];
+_u = _u		+ ['L39_TK_EP1'];
+_u = _u		+ ['Su25_TK_EP1'];
+
 
 missionNamespace setVariable [Format ["WFBE_%1AIRPORTUNITS", _side], _u];
 if (local player) then {['AIRPORT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};

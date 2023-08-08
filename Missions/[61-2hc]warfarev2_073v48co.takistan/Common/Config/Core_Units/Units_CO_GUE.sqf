@@ -82,25 +82,19 @@ if (local player) then {['HEAVY', _side, _u] Call Compile preProcessFile 'Client
 
 _u 			= ['Mi17_Civilian'];
 _u = _u		+ ['UH1H_TK_GUE_EP1'];
-if (_restriction_air == 0 ||_restriction_air == 1) then {
 	if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_PMC") > 0) then {
 		_u = _u		+ ['Ka60_PMC'];
 		_u = _u		+ ['Ka60_GL_PMC'];
 	};
-};
-if (_restriction_air == 0) then {
-	_u = _u		+ ['An2_1_TK_CIV_EP1'];
-	_u = _u		+ ['An2_2_TK_CIV_EP1'];
-};
+_u = _u		+ ['An2_1_TK_CIV_EP1'];
+_u = _u		+ ['An2_2_TK_CIV_EP1'];
 
 missionNamespace setVariable [Format ["WFBE_%1AIRCRAFTUNITS", _side], _u];
 if (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
 _u = [];
-if (_restriction_air == 0) then {
-	_u = _u		+ ['An2_1_TK_CIV_EP1'];
-	_u = _u		+ ['An2_2_TK_CIV_EP1'];
-};
+_u = _u		+ ['An2_1_TK_CIV_EP1'];
+_u = _u		+ ['An2_2_TK_CIV_EP1'];
 
 missionNamespace setVariable [Format ["WFBE_%1AIRPORTUNITS", _side], _u];
 if (local player) then {['AIRPORT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};

@@ -136,47 +136,40 @@ _u = _u		+ ['MH60S'];
 _u = _u		+ ['UH60M_EP1'];
 _u = _u		+ ['UH60M_MEV_EP1'];
 _u = _u		+ ['CH_47F_EP1'];
-if (_restriction_air == 0 || _restriction_air == 1) then {
-	_u = _u		+ ['UH1Y'];
-	_u = _u		+ ['AH6J_EP1'];
-	_u = _u		+ ['AH1Z'];
-	_u = _u		+ ['AH64D_EP1'];
-	_u = _u		+ ['AH64D'];
-	_u = _u		+ ['Mi24_D_CZ_ACR'];
-};
-if (_restriction_air == 0) then {
-	_u = _u		+ ['MV22'];
-	_u = _u		+ ['C130J_US_EP1'];
-	_u = _u		+ ['F35B'];
-	_u = _u		+ ['L159_ACR'];
-	_u = _u		+ ['AV8B'];
-	_u = _u		+ ['AV8B2'];
-	_u = _u		+ ['A10_US_EP1'];
-	_u = _u		+ ['A10'];
-};
+_u = _u		+ ['MV22'];
+_u = _u		+ ['C130J_US_EP1'];
+_u = _u		+ ['UH1Y'];
+_u = _u		+ ['AH6J_EP1'];
+_u = _u		+ ['Mi24_D_CZ_ACR'];
+_u = _u		+ ['AH64D'];
+_u = _u		+ ['AH64D_EP1'];
+_u = _u		+ ['AH1Z'];
+_u = _u		+ ['L159_ACR'];
+_u = _u		+ ['A10'];
+_u = _u		+ ['A10_US_EP1'];
+_u = _u		+ ['AV8B'];
+_u = _u		+ ['AV8B2'];
+_u = _u		+ ['F35B'];
+
 if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_BAF") > 0) then {
 	_u = _u		+ ['BAF_Merlin_HC3_D'];
 	_u = _u		+ ['CH_47F_BAF'];
-	if (_restriction_air == 0 || _restriction_air == 1) then {
 		_u = _u		+ ['AW159_Lynx_BAF'];
 		_u = _u		+ ['BAF_Apache_AH1_D'];
-	};
 };
 
 missionNamespace setVariable [Format ["WFBE_%1AIRCRAFTUNITS", _side], _u];
 if (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
 _u = [];
-if (_restriction_air == 0) then {
-	_u = _u 	+ ['MV22'];
-	_u = _u		+ ['C130J_US_EP1'];
-	_u = _u		+ ['F35B'];
-	_u = _u		+ ['L159_ACR'];
-	_u = _u		+ ['AV8B'];
-	_u = _u		+ ['AV8B2'];
-	_u = _u		+ ['A10_US_EP1'];
-	_u = _u		+ ['A10'];
-};
+_u = _u 	+ ['MV22'];
+_u = _u		+ ['C130J_US_EP1'];
+_u = _u		+ ['L159_ACR'];
+_u = _u		+ ['A10'];
+_u = _u		+ ['A10_US_EP1'];
+_u = _u		+ ['AV8B'];
+_u = _u		+ ['AV8B2'];
+_u = _u		+ ['F35B'];
 
 missionNamespace setVariable [Format ["WFBE_%1AIRPORTUNITS", _side], _u];
 if (local player) then {['AIRPORT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
