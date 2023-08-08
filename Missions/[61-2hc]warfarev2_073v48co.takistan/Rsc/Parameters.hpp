@@ -397,14 +397,6 @@ class WFBE_C_ECONOMY_FUNDS_START_EAST {
 		texts[] = {"$STR_WF_Disabled","$STR_WF_PARAMETER_Restriction_Air_H","$STR_WF_PARAMETER_Restriction_Air_HTransport"};
 		default = 0;
 	};
-	#ifndef ARROWHEAD
-		class WFBE_C_UNITS_KAMOV_DISABLED {
-			title = "$STR_WF_PARAMETER_Kamov";
-			values[] = {0,1};
-			texts[] = {"$STR_WF_Disabled","$STR_WF_Enabled"};
-			default = 0;
-		};
-	#endif
 	class WFBE_C_TOWNS_AMOUNT {
 		title = "$STR_WF_PARAMETER_TownsAmount";
 		values[] = {0,1,2,3,4,5,6,7};

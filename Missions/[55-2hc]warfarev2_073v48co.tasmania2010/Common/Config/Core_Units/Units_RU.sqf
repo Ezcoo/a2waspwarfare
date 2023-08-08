@@ -79,10 +79,8 @@ if (_restriction_air == 0 ||_restriction_air == 1) then {
 	_u = _u		+ ['Mi17_rockets_RU'];
 	_u = _u		+ ['Mi24_V'];
 	_u = _u		+ ['Mi24_P'];
-	if ((missionNamespace getVariable "WFBE_C_UNITS_KAMOV_DISABLED") == 0) then {
-		_u = _u		+ ['Ka52'];
-		_u = _u		+ ['Ka52Black'];
-	};
+    _u = _u		+ ['Ka52'];
+	_u = _u		+ ['Ka52Black'];
 };
 if (_restriction_air == 0) then {
 	_u = _u		+ ['Su34'];
