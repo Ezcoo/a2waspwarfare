@@ -437,7 +437,10 @@ public abstract class BaseAircraft : InterfaceAircraft
 
             for (int i = 0; i < ammo.Value; i++)
             {
-                magazines.Add(ammoMapping.AmmunitionTypes[0]);
+                foreach (var weapon in ammoMapping.AmmunitionTypes)
+                {
+                    magazines.Add(weapon);
+                }
             }
 
             // Assuming the ammunitionEnumMapping key is always a prefix for the weaponEnumMapping key
