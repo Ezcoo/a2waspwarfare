@@ -443,12 +443,7 @@ public abstract class BaseAircraft : InterfaceAircraft
                 }
             }
 
-            // Assuming the ammunitionEnumMapping key is always a prefix for the weaponEnumMapping key
-            //string weaponKey = ammo.Key.Replace("ROUND", "BOMBLAUNCHER"); // Replace with correct mapping logic
-            //if (weaponEnumMapping.ContainsKey(weaponMappingng()))
-            //{
-                weapons.Add(weaponMapping.WeaponType);
-            //}
+            weapons.Add(weaponMapping.WeaponType);
         }
 
         string sqfCode = $"case \"{aircraftType}\": {{\n";
