@@ -138,7 +138,7 @@ _c = _c + ['Ka52'];
 _i = _i + [['','',if ((missionNamespace getVariable "WFBE_C_UNITS_BALANCING") > 0) then {41880} else {75000},45,-2,4,3,0,'Russians',[]]];
 
 _c = _c + ['Ka52Black'];
-_i = _i + [['','',if ((missionNamespace getVariable "WFBE_C_UNITS_BALANCING") > 0) then {41880} else {75000},50,-2,4,3,0,'Russians',[]]];
+_i = _i + [['','',if ((missionNamespace getVariable "WFBE_C_UNITS_BALANCING") > 0) then {46800} else {75000},50,-2,5,3,0,'Russians',[]]];
 
 /* Special */
 _c = _c + ['Pchela1T'];
