@@ -64,7 +64,7 @@ public enum AmmunitionType
     TWELVEROUNDSVIKHR,
 
     [EnumMember(Value = "180Rnd_30mm_GSh301")]
-    ONEHUNDREDEIGHTYGSH301ROUNDS,
+    THREEHUNDREDSIXTYGSH301ROUNDS,
 
     [EnumMember(Value = "6Rnd_TOW2")]
     SIXROUNDTOWTWO,

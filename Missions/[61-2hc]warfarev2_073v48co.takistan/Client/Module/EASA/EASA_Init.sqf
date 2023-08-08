@@ -114,14 +114,14 @@ _easaLoadout = _easaLoadout + [
 [3600,'FAB-250 (12) | Igla-V (2)',[['AirBombLauncher','Igla_twice'],['4Rnd_FAB_250','2Rnd_FAB_250','4Rnd_FAB_250','2Rnd_FAB_250','2Rnd_Igla']]],
 [4000,'S-5 (192)',[['57mmLauncher'],['64Rnd_57mm','64Rnd_57mm','64Rnd_57mm']]],
 [4200,'DEFAULT | FAB-250 (12) | S-5 (64)',[['AirBombLauncher','57mmLauncher'],['4Rnd_FAB_250','2Rnd_FAB_250','4Rnd_FAB_250','2Rnd_FAB_250','64Rnd_57mm']]],
-[4400,'FAB-250 (12) | Gun rounds (360rnd) (2)',[['AirBombLauncher','GSh301'],['4Rnd_FAB_250','2Rnd_FAB_250','4Rnd_FAB_250','2Rnd_FAB_250','180Rnd_30mm_GSh301']]],
+[4400,'FAB-250 (12) | Gun rounds (360rnd) (2)',[['AirBombLauncher','GSh301'],['4Rnd_FAB_250','2Rnd_FAB_250','4Rnd_FAB_250','2Rnd_FAB_250','180Rnd_30mm_GSh301','180Rnd_30mm_GSh301']]],
 [4400,'Igla-V (2) | S-5 (128)',[['Igla_twice','57mmLauncher'],['2Rnd_Igla','64Rnd_57mm','64Rnd_57mm']]],
 [4600,'FAB-250 (6) | S-5 (128)',[['AirBombLauncher','57mmLauncher'],['4Rnd_FAB_250','2Rnd_FAB_250','64Rnd_57mm','64Rnd_57mm']]],
 [5000,'FAB-250 (6) | Igla-V (2) | S-5 (64)',[['AirBombLauncher','Igla_twice','57mmLauncher'],['4Rnd_FAB_250','2Rnd_FAB_250','2Rnd_Igla','64Rnd_57mm']]],
-[5200,'FAB-250 (6) | Igla-V (2) | Gun rounds (360rnd) (2)',[['AirBombLauncher','Igla_twice','GSh301'],['4Rnd_FAB_250','2Rnd_FAB_250','2Rnd_Igla','180Rnd_30mm_GSh301']]],
-[5200,'S-5 (128) | Gun rounds (360rnd) (2)',[['57mmLauncher','GSh301'],['64Rnd_57mm','64Rnd_57mm','180Rnd_30mm_GSh301']]],
-[5600,'Igla-V (2) | S-5 (64) | Gun rounds (360rnd) (2)',[['Igla_twice','57mmLauncher','GSh301'],['2Rnd_Igla','64Rnd_57mm','180Rnd_30mm_GSh301']]],
-[5800,'FAB-250 (6) | S-5 (64) | Gun rounds (360rnd) (2)',[['AirBombLauncher','57mmLauncher','GSh301'],['4Rnd_FAB_250','2Rnd_FAB_250','64Rnd_57mm','180Rnd_30mm_GSh301']]]
+[5200,'FAB-250 (6) | Igla-V (2) | Gun rounds (360rnd) (2)',[['AirBombLauncher','Igla_twice','GSh301'],['4Rnd_FAB_250','2Rnd_FAB_250','2Rnd_Igla','180Rnd_30mm_GSh301','180Rnd_30mm_GSh301']]],
+[5200,'S-5 (128) | Gun rounds (360rnd) (2)',[['57mmLauncher','GSh301'],['64Rnd_57mm','64Rnd_57mm','180Rnd_30mm_GSh301','180Rnd_30mm_GSh301']]],
+[5600,'Igla-V (2) | S-5 (64) | Gun rounds (360rnd) (2)',[['Igla_twice','57mmLauncher','GSh301'],['2Rnd_Igla','64Rnd_57mm','180Rnd_30mm_GSh301','180Rnd_30mm_GSh301']]],
+[5800,'FAB-250 (6) | S-5 (64) | Gun rounds (360rnd) (2)',[['AirBombLauncher','57mmLauncher','GSh301'],['4Rnd_FAB_250','2Rnd_FAB_250','64Rnd_57mm','180Rnd_30mm_GSh301','180Rnd_30mm_GSh301']]]
 ]
 ];
 
