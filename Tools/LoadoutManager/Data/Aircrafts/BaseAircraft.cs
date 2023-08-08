@@ -1,4 +1,5 @@
 using System.Runtime.Serialization;
+using System.Text;
 
 public abstract class BaseAircraft : InterfaceAircraft
 {
@@ -505,10 +506,22 @@ public abstract class BaseAircraft : InterfaceAircraft
     private string GenerateSQFCodeInner(List<string> magazines, IEnumerable<string> weapons, string action)
     {
         string magazineAction = action == "add" ? "addMagazine" : "removeMagazine";
-        string weaponAction = action == "add" ? "addWeapon" : "removeWeapon";  // Note: corrected "addweapon" to "addWeapon"
+        string weaponAction = action == "add" ? "addWeapon" : "removeWeapon";
 
-        return $"    _this {magazineAction} \"{string.Join($"\";\n    _this {magazineAction} \"", magazines)}\";\n" +
-               $"    _this {weaponAction} \"{string.Join($"\";\n    _this {weaponAction} \"", weapons)}\";\n";
+        StringBuilder sqfCode = new StringBuilder();
+
+        if (magazines.Any())
+        {
+            sqfCode.AppendLine($"    _this {magazineAction} \"{string.Join($"\";\n    _this {magazineAction} \"", magazines)}\";");
+        }
+
+        if (weapons.Any())
+        {
+            sqfCode.AppendLine($"    _this {weaponAction} \"{string.Join($"\";\n    _this {weaponAction} \"", weapons)}\";");
+        }
+
+        return sqfCode.ToString();
     }
+
 
 }
