@@ -429,16 +429,17 @@ public abstract class BaseAircraft : InterfaceAircraft
 
     public void GenerateCommonBalanceInitForTheAircraft()
     {
-        List<WeaponType> weapons = new List<WeaponType>();
-        List<AmmunitionType> magazines = new List<AmmunitionType>();
+
+        Dictionary<WeaponType, List<AmmunitionType>> weaponsAndMagazines = new();
 
         //if (vanillaGameDefaultLoadout.AmmunitionTypesWithCount.Count < 1)
         //{
         //    return;
         //}
 
-        foreach (var ammo in defaultLoadout.AmmunitionTypesWithCount)
         {
+            List<AmmunitionType> magazines = new();
+
             var ammoMapping = (InterfaceAmmunition)EnumExtensions.GetInstance(ammo.Key.ToString());
             var weaponMapping = (InterfaceWeapon)EnumExtensions.GetInstance(ammoMapping.weaponDefinition.WeaponType.ToString());
 
@@ -450,12 +451,26 @@ public abstract class BaseAircraft : InterfaceAircraft
                 }
             }
 
-            weapons.Add(weaponMapping.WeaponType);
+            if (weaponsAndMagazines.ContainsKey(weaponMapping.WeaponType))
+            {
+                // Append to the existing magazines if the weapon type already exists in the dictionary
+                weaponsAndMagazines[weaponMapping.WeaponType].AddRange(magazines);
+            }
+            else
+            {
+                weaponsAndMagazines.Add(weaponMapping.WeaponType, magazines);
+            }
+        }
+
+        List<string> allMagazines = new List<string>();
+        foreach (var kvp in weaponsAndMagazines)
+        {
+            allMagazines.AddRange(kvp.Value);
         }
 
         string sqfCode = $"case \"{aircraftType}\": {{\n";
-        sqfCode += $"    _this addMagazine \"{string.Join("\";\n    _this addMagazine \"", magazines)}\";\n";
-        sqfCode += $"    _this addWeapon \"{string.Join("\";\n    _this addWeapon \"", weapons)}\";\n";
+        sqfCode += $"    _this addMagazine \"{string.Join("\";\n    _this addMagazine \"", allMagazines)}\";\n";
+        sqfCode += $"    _this addWeapon \"{string.Join("\";\n    _this addWeapon \"", weaponsAndMagazines.Keys)}\";\n";
         sqfCode += "};";
 
         Console.WriteLine(sqfCode);
