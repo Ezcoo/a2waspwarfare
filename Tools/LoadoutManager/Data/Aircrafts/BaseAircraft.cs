@@ -199,6 +199,17 @@ public abstract class BaseAircraft : InterfaceAircraft
     {
         LoadoutRow newLoadoutRow = new LoadoutRow();
 
+
+        if (aircraftType == AircraftType.SU39 && _input.ContainsKey(AmmunitionType.TWELVEROUNDSVIKHR) && _generateWithPriceAndWeaponsInfo)
+        {
+
+        }
+
+        if (CalculateWeaponsCount(_input) != pylonAmount && !addToDefaultLoadoutPrice)
+        {
+            return newLoadoutRow;
+        }
+
         CheckDefaultLoadout(_input, newLoadoutRow, _generateWithPriceAndWeaponsInfo);
 
         if (CheckDisregardedLoadout(_input, _generateWithPriceAndWeaponsInfo))
@@ -337,39 +348,41 @@ public abstract class BaseAircraft : InterfaceAircraft
             }
         }
 
-        if (CalculateWeaponsCount(newLoadoutRow) ==
-            pylonAmount || addToDefaultLoadoutPrice) // Fix for helis with addToDefaultLoadoutPrice
-        {
-            return newLoadoutRow;
-        }
+        //if (!addToDefaultLoadoutPrice) // Fix for helis with addToDefaultLoadoutPrice
+        //{
+        //    return new LoadoutRow();
+        //}
 
-        return new LoadoutRow();
+        return newLoadoutRow;
     }
 
-    private int CalculateWeaponsCount(LoadoutRow _newLoadoutRow)
+    private int CalculateWeaponsCount(Dictionary<AmmunitionType, int> _input)
     {   
         int countOfWeapons = 0;
 
-        foreach (var item in _newLoadoutRow.ammunitionList)
+        foreach (var item in _input)
         {
-            switch (item)
+            int totalValue = 0;
+
+            switch (item.Key)
             {
-                case "12Rnd_Vikhr_KA50":
-                case "4Rnd_Ch29":
-                case "8Rnd_Hellfire":
-                    countOfWeapons += 4;
+                case AmmunitionType.TWELVEROUNDSVIKHR:
+                case AmmunitionType.FOURROUNDCH29:
+                case AmmunitionType.EIGHTROUNDHELLFIRE:
+                    totalValue += item.Value * 2;
                     break;
-                case "4Rnd_FAB_250":
-                case "2Rnd_FAB_250":
-                    countOfWeapons += 1;
+                case AmmunitionType.FOURROUNDFAB250:
+                case AmmunitionType.TWOROUNDFAB250:
+                    totalValue += item.Value / 2;
                     break;
-                case "6Rnd_Ch29":
-                    countOfWeapons += 6;
+                case AmmunitionType.SIXROUNDCH29:
+                    totalValue += item.Value * 3;
                     break;
                 default:
-                    countOfWeapons += 2;
+                    countOfWeapons += item.Value;
                     break;
             }
+            countOfWeapons += totalValue;
         }
 
         return countOfWeapons;
