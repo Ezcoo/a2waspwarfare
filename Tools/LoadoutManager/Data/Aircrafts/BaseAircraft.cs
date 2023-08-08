@@ -218,11 +218,6 @@ public abstract class BaseAircraft : InterfaceAircraft
             int weaponAmount = 0;
 
             var ammunitionType = (InterfaceAmmunition)EnumExtensions.GetInstance(ammoTypeKvp.Key.ToString());
-            if (ammunitionType.canNotBeUsedAsLoadoutOption && _generateWithPriceAndWeaponsInfo)
-            {
-                continue;
-            }
-
             var weaponDefinition = (InterfaceWeapon)ammunitionType.weaponDefinition;
             var weaponSqfName = EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.WeaponType);
             var ammoDisplayName = EnumExtensions.GetEnumMemberAttrValue(ammunitionType.AmmunitionTypes[0]);
