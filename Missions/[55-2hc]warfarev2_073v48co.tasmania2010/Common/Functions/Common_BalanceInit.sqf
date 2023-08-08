@@ -62,8 +62,9 @@ switch (typeOf _this) do
         _this removeMagazine "2Rnd_R73";
         _this removeWeapon "S8Launcher";
         _this removeMagazine "80Rnd_S8T";
+        _this addMagazine "2Rnd_FAB_250";
         _this addMagazine "4Rnd_FAB_250";
-        _this addMagazine "4Rnd_FAB_250";
+        _this addMagazine "2Rnd_FAB_250";
         _this addWeapon "57mmLauncher";
         _this addMagazine "64Rnd_57mm";
     };
