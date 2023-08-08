@@ -158,7 +158,6 @@ with missionNamespace do {
 	WFBE_C_GAMEPLAY_VOTE_TIME = if (WF_Debug) then {8} else {40};
 
 //--- Modules.
-	if (isNil "WFBE_C_MODULE_BIS_BAF") then {WFBE_C_MODULE_BIS_BAF = 1}; //--- Enable BAF content.
 	if (isNil "WFBE_C_MODULE_BIS_PMC") then {WFBE_C_MODULE_BIS_PMC = 1}; //--- Enable PMC content.
 	if (isNil "WFBE_C_MODULE_WFBE_EASA") then {WFBE_C_MODULE_WFBE_EASA = 1}; //--- Enable the Exchangeable Armament System for Aircraft.
 	if (isNil "WFBE_C_MODULE_WFBE_FLARES") then {WFBE_C_MODULE_WFBE_FLARES = 1}; //--- Enable the countermeasure system (0: Disabled, 1: Enabled with upgrade, 2: Enabled).

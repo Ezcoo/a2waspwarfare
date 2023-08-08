@@ -179,12 +179,6 @@ class WFBE_C_ECONOMY_FUNDS_START_EAST {
 		default = 0;
 	};
 	#ifndef VANILLA
-		class WFBE_C_MODULE_BIS_BAF {
-			title = "$STR_WF_PARAMETER_BAF";
-			values[] = {0,1};
-			texts[] = {"$STR_WF_Disabled","$STR_WF_Enabled"};
-			default = 1;
-		};
 		class WFBE_C_MODULE_BIS_PMC {
 			title = "$STR_WF_PARAMETER_PMC";
 			values[] = {0,1};
