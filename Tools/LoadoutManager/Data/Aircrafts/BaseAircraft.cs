@@ -1,3 +1,5 @@
+using System.Runtime.Serialization;
+
 public abstract class BaseAircraft : InterfaceAircraft
 {
     public AircraftType AircraftType { get => aircraftType; set => aircraftType = value; }
@@ -428,8 +430,8 @@ public abstract class BaseAircraft : InterfaceAircraft
 
     public void GenerateCommonBalanceInitForTheAircraft()
     {
-        Dictionary<WeaponType, List<AmmunitionType>> weaponsAndMagazinesToAdd = new();
-        Dictionary<WeaponType, List<AmmunitionType>> weaponsAndMagazinesToRemove = new();
+        Dictionary<string, List<AmmunitionType>> weaponsAndMagazinesToAdd = new();
+        Dictionary<string, List<AmmunitionType>> weaponsAndMagazinesToRemove = new();
 
         PopulateWeaponsAndMagazines(defaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToAdd);
         PopulateWeaponsAndMagazines(vanillaGameDefaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToRemove);
@@ -446,10 +448,10 @@ public abstract class BaseAircraft : InterfaceAircraft
     }
 
     private void PopulateWeaponsAndMagazines(
-        Dictionary<AmmunitionType, int> ammunitionTypesWithCount,
-        Dictionary<WeaponType, List<AmmunitionType>> weaponsAndMagazines)
+        Dictionary<AmmunitionType, int> _ammunitionTypesWithCount,
+        Dictionary<string, List<AmmunitionType>> _weaponsAndMagazines)
     {
-        foreach (var ammo in ammunitionTypesWithCount)
+        foreach (var ammo in _ammunitionTypesWithCount)
         {
             var ammoMapping = (InterfaceAmmunition)EnumExtensions.GetInstance(ammo.Key.ToString());
             var weaponMapping = (InterfaceWeapon)EnumExtensions.GetInstance(ammoMapping.weaponDefinition.WeaponType.ToString());
@@ -460,18 +462,20 @@ public abstract class BaseAircraft : InterfaceAircraft
                 magazines.AddRange(ammoMapping.AmmunitionTypes);
             }
 
-            if (weaponsAndMagazines.ContainsKey(weaponMapping.WeaponType))
+            string weaponTypeString = EnumExtensions.GetEnumMemberAttrValue(weaponMapping.WeaponType);
+
+            if (_weaponsAndMagazines.ContainsKey(weaponTypeString))
             {
-                weaponsAndMagazines[weaponMapping.WeaponType].AddRange(magazines);
+                _weaponsAndMagazines[weaponTypeString].AddRange(magazines);
             }
             else
             {
-                weaponsAndMagazines[weaponMapping.WeaponType] = magazines;
+                _weaponsAndMagazines[weaponTypeString] = magazines;
             }
         }
     }
 
-    private List<AmmunitionType> GetAllMagazines(Dictionary<WeaponType, List<AmmunitionType>> weaponsAndMagazines)
+    private List<AmmunitionType> GetAllMagazines(Dictionary<string, List<AmmunitionType>> weaponsAndMagazines)
     {
         List<AmmunitionType> allMagazines = new List<AmmunitionType>();
         foreach (var magazines in weaponsAndMagazines.Values)
@@ -481,7 +485,7 @@ public abstract class BaseAircraft : InterfaceAircraft
         return allMagazines;
     }
 
-    private string GenerateSQFCodeInner(List<AmmunitionType> magazines, IEnumerable<WeaponType> weapons, string action)
+    private string GenerateSQFCodeInner(List<AmmunitionType> magazines, IEnumerable<string> weapons, string action)
     {
         string magazineAction = action == "add" ? "addMagazine" : "removeMagazine";
         string weaponAction = action == "add" ? "addWeapon" : "removeWeapon";
