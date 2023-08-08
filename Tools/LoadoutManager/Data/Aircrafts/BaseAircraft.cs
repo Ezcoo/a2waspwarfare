@@ -437,6 +437,7 @@ public abstract class BaseAircraft : InterfaceAircraft
         //    return;
         //}
 
+        foreach (var ammo in defaultLoadout.AmmunitionTypesWithCount)
         {
             List<AmmunitionType> magazines = new();
 
@@ -462,7 +463,7 @@ public abstract class BaseAircraft : InterfaceAircraft
             }
         }
 
-        List<string> allMagazines = new List<string>();
+        List<AmmunitionType> allMagazines = new List<AmmunitionType>();
         foreach (var kvp in weaponsAndMagazines)
         {
             allMagazines.AddRange(kvp.Value);
