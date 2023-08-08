@@ -4,5 +4,6 @@
     {
         WeaponType = WeaponType.GSHGUNPOD;
         costPerWeaponLauncher = 1000;
+        doNotAddWeapon = true;
     }
 }

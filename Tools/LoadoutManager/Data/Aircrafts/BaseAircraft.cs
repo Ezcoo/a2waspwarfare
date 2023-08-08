@@ -296,9 +296,12 @@ public abstract class BaseAircraft : InterfaceAircraft
                 continue;
             }
 
-            newLoadoutRow.weaponTypesArray += "'";
-            newLoadoutRow.weaponTypesArray += EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.WeaponType);
-            newLoadoutRow.weaponTypesArray += "',";
+            if (!weaponDefinition.doNotAddWeapon)
+            {
+                newLoadoutRow.weaponTypesArray += "'";
+                newLoadoutRow.weaponTypesArray += EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.WeaponType);
+                newLoadoutRow.weaponTypesArray += "',";
+            }            
 
             newLoadoutRow.weaponsInfo += ammunitionType.ammoDisplayName + " (" + weaponAmount + ") | ";
 
