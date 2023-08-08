@@ -80,7 +80,7 @@ _u = _u		+ ['Mi24_V'];
 _u = _u		+ ['Ka52'];
 _u = _u		+ ['Ka52Black'];
 _u = _u		+ ['Su25_Ins'];
-_u = _u		+ ['SU25_TK_EP1'];
+_u = _u		+ ['Su25_TK_EP1'];
 _u = _u		+ ['Su39'];
 _u = _u 	+ ['Su34'];
 
@@ -89,7 +89,7 @@ if (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Cli
 
 _u = [];
 _u = _u		+ ['Su25_Ins'];
-_u = _u		+ ['SU25_TK_EP1'];
+_u = _u		+ ['Su25_TK_EP1'];
 _u = _u		+ ['Su39'];
 _u = _u 	+ ['Su34'];
 
