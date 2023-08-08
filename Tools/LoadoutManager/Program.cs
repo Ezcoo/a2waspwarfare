@@ -6,7 +6,7 @@ class Program
     static void Main()
     {
         GenerateTheEasaFile();
-        StopProgramFromExiting();
+        WaitForExitCommand();
     }
 
     private static void GenerateStartOfTheEasaFile()
@@ -71,11 +71,13 @@ class Program
         Console.WriteLine("missionNamespace setVariable ['WFBE_EASA_Default',_easaDefault];");
     }
 
-    private static void StopProgramFromExiting()
+    private static void WaitForExitCommand()
     {
-        while (true)
+        string userInput;
+        do
         {
-            Thread.Sleep(1333333337);
-        }
+            //Console.WriteLine("Type 'exit' to close the program...");
+            userInput = Console.ReadLine();
+        } while (userInput?.ToLower() != "exit");
     }
 }
