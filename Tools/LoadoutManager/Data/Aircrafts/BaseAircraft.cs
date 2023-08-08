@@ -489,15 +489,4 @@ public abstract class BaseAircraft : InterfaceAircraft
         return $"    _this {magazineAction} \"{string.Join($"\";\n    _this {magazineAction} \"", magazines)}\";\n" +
                $"    _this {weaponAction} \"{string.Join($"\";\n    _this {weaponAction} \"", weapons)}\";\n";
     }
-
-    //private string GenerateSQFCode(List<AmmunitionType> magazines, IEnumerable<WeaponType> weapons, string action)
-    //{
-    //    string magazineAction = action == "add" ? "addMagazine" : "removeMagazine";
-    //    string weaponAction = action == "add" ? "addWeapon" : "removeWeapon";
-
-    //    return $"case \"{aircraftType}\": {{\n" +
-    //           $"    _this {magazineAction} \"{string.Join($"\";\n    _this {magazineAction} \"", magazines)}\";\n" +
-    //           $"    _this {weaponAction} \"{string.Join($"\";\n    _this {weaponAction} \"", weapons)}\";\n" +
-    //           "};";
-    //}
 }
