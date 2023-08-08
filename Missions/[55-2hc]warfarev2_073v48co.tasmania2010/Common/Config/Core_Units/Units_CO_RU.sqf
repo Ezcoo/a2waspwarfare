@@ -111,9 +111,10 @@ if (_restriction_air == 0 ||_restriction_air == 1) then {
 if (_restriction_air == 0) then {
 	_u = _u		+ ['An2_TK_EP1'];
 	_u = _u		+ ['L39_TK_EP1'];
-	_u = _u		+ ['Su34'];
-	_u = _u		+ ['Su39'];
+	_u = _u		+ ['Su25_Ins'];
 	_u = _u		+ ['Su25_TK_EP1'];
+    _u = _u		+ ['Su39'];
+	_u = _u		+ ['Su34'];
 };
 
 missionNamespace setVariable [Format ["WFBE_%1AIRCRAFTUNITS", _side], _u];
@@ -123,9 +124,10 @@ _u = [];
 if (_restriction_air == 0) then {
 	_u = _u		+ ['An2_TK_EP1'];
 	_u = _u		+ ['L39_TK_EP1'];
-	_u = _u		+ ['Su34'];
-	_u = _u		+ ['Su39'];
+	_u = _u		+ ['Su25_Ins'];
 	_u = _u		+ ['Su25_TK_EP1'];
+    _u = _u		+ ['Su39'];
+	_u = _u		+ ['Su34'];
 };
 
 missionNamespace setVariable [Format ["WFBE_%1AIRPORTUNITS", _side], _u];
