@@ -199,12 +199,6 @@ public abstract class BaseAircraft : InterfaceAircraft
     {
         LoadoutRow newLoadoutRow = new LoadoutRow();
 
-
-        if (aircraftType == AircraftType.SU39 && _input.ContainsKey(AmmunitionType.TWELVEROUNDSVIKHR) && _generateWithPriceAndWeaponsInfo)
-        {
-
-        }
-
         if (CalculateWeaponsCount(_input) != pylonAmount && !addToDefaultLoadoutPrice)
         {
             return newLoadoutRow;
