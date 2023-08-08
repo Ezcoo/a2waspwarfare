@@ -6,6 +6,7 @@ class Program
     static void Main()
     {
         GenerateTheEasaFile();
+        StopProgramFromExiting();
     }
 
     private static void GenerateStartOfTheEasaFile()
@@ -70,4 +71,11 @@ class Program
         Console.WriteLine("missionNamespace setVariable ['WFBE_EASA_Default',_easaDefault];");
     }
 
+    private static void StopProgramFromExiting()
+    {
+        while (true)
+        {
+            Thread.Sleep(1333333337);
+        }
+    }
 }
