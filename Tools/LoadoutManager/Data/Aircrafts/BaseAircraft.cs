@@ -431,12 +431,23 @@ public abstract class BaseAircraft : InterfaceAircraft
 
     public void GenerateCommonBalanceInitForTheAircraft()
     {
+        // Use trycatch
+        bool error = false;
+
         Dictionary<string, List<string>> weaponsAndMagazinesToAdd = new();
         Dictionary<string, List<string>> weaponsAndMagazinesToRemove = new();
 
         // Populate weapons and magazines
-        PopulateWeaponsAndMagazines(defaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToAdd);
-        PopulateWeaponsAndMagazines(vanillaGameDefaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToRemove);
+        error = PopulateWeaponsAndMagazines(defaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToAdd);
+        error = PopulateWeaponsAndMagazines(vanillaGameDefaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToRemove);
+        // Use trycatch
+
+        if (error)
+        {
+            Console.WriteLine("Error!!! " + nameof(weaponsAndMagazinesToAdd) + " or " + nameof(weaponsAndMagazinesToRemove) + 
+                " was null! Plane not configured right?");
+            return;
+        }
 
         // Magazines and weapons to add
         List<string> magazinesToAdd = GetAllMagazines(weaponsAndMagazinesToAdd)
@@ -470,14 +481,14 @@ public abstract class BaseAircraft : InterfaceAircraft
         Console.WriteLine(finalSQFCode);
     }
 
-    private void PopulateWeaponsAndMagazines(
+    private bool PopulateWeaponsAndMagazines(
         Dictionary<AmmunitionType, int> _ammunitionTypesWithCount,
         Dictionary<string, List<string>> _weaponsAndMagazines)
     {
         if (_ammunitionTypesWithCount == null)
         {
-            Console.WriteLine("Error!!!" + nameof(_ammunitionTypesWithCount) + " was null! Plane not configured right?");
-            return;
+            Console.WriteLine("Error!!! " + nameof(_ammunitionTypesWithCount) + " was null! Plane not configured right?");
+            return true;
         }
 
         foreach (var ammo in _ammunitionTypesWithCount)
@@ -502,6 +513,7 @@ public abstract class BaseAircraft : InterfaceAircraft
                 _weaponsAndMagazines[weaponTypeString] = magazines;
             }
         }
+        return false;
     }
 
     private List<string> GetAllMagazines(Dictionary<string, List<string>> _weaponsAndMagazines)
