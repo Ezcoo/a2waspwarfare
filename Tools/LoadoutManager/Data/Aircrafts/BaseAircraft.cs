@@ -10,7 +10,9 @@ public abstract class BaseAircraft : InterfaceAircraft
     public int pylonAmount { get; set; }
     public Dictionary<AmmunitionType, int> allowedAmmunitionTypesWithTheirLimitationAmount { get; set; }
     public Loadout vanillaGameDefaultLoadout { get; set; }
+    public Loadout vanillaGameDefaultLoadoutOnTurret { get; set; }
     public Loadout defaultLoadout { get; set; }
+    public Loadout defaultLoadoutOnTurret { get; set; }
     public string inGameDisplayName { get; set; }
     public int inGameAircraftFactoryLevel { get; set; }
     public bool addToDefaultLoadoutPrice { get; set; }
@@ -20,8 +22,14 @@ public abstract class BaseAircraft : InterfaceAircraft
 
     protected BaseAircraft()
     {
-        defaultLoadout = new Loadout();
         vanillaGameDefaultLoadout = new Loadout();
+        vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new();
+        vanillaGameDefaultLoadoutOnTurret = new Loadout();
+        vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new();
+        defaultLoadout = new Loadout();
+        defaultLoadout.AmmunitionTypesWithCount = new();
+        defaultLoadoutOnTurret = new Loadout();
+        defaultLoadoutOnTurret.AmmunitionTypesWithCount = new();
     }
 
     public void GenerateLoadoutsForTheAircraft()
@@ -430,7 +438,7 @@ public abstract class BaseAircraft : InterfaceAircraft
         }
     }
 
-    public void GenerateCommonBalanceInitForTheAircraft()
+    public string GenerateCommonBalanceInitForTheAircraft(Loadout _vanillaLoadout, Loadout _defaultLoadout, string _turret = "")
     {
         // Use trycatch
         bool error = false;
@@ -444,7 +452,7 @@ public abstract class BaseAircraft : InterfaceAircraft
 
         // Populate weapons and magazines
         //error = PopulateWeaponsAndMagazines(defaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToAdd);
-        error = PopulateWeaponsAndMagazines(vanillaGameDefaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToRemove);
+        error = PopulateWeaponsAndMagazines(_vanillaLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToRemove);
         // Use trycatch
 
         if (error)
@@ -452,15 +460,15 @@ public abstract class BaseAircraft : InterfaceAircraft
             //Console.WriteLine("Error!!! " + nameof(weaponsAndMagazinesToAdd) + " or " + nameof(weaponsAndMagazinesToRemove) +
             Console.WriteLine("Error!!! " + nameof(weaponsAndMagazinesToRemove) +
                 " was null! Plane " + aircraftType + " not configured right? aborted: " + nameof(GenerateCommonBalanceInitForTheAircraft));
-            return;
+            return "[ERROR]";
         }
 
-        var commonKeys = CompareDictionaries(vanillaGameDefaultLoadout.AmmunitionTypesWithCount, defaultLoadout.AmmunitionTypesWithCount);
+        var commonKeys = CompareDictionaries(_vanillaLoadout.AmmunitionTypesWithCount, _defaultLoadout.AmmunitionTypesWithCount);
 
         List<WeaponType> allowedWeapons = new List<WeaponType>();
         List<WeaponType> vanillaWeapons = new List<WeaponType>();
 
-        foreach (var item in defaultLoadout.AmmunitionTypesWithCount)
+        foreach (var item in _defaultLoadout.AmmunitionTypesWithCount)
         {
             var ammunitionType = (InterfaceAmmunition)EnumExtensions.GetInstance(item.Key.ToString());
             var weaponDefinition = (InterfaceWeapon)ammunitionType.weaponDefinition;
@@ -468,7 +476,7 @@ public abstract class BaseAircraft : InterfaceAircraft
             allowedWeapons.Add(weaponDefinition.WeaponType);
         }
 
-        foreach (var item in vanillaGameDefaultLoadout.AmmunitionTypesWithCount)
+        foreach (var item in _vanillaLoadout.AmmunitionTypesWithCount)
         {
             var ammunitionType = (InterfaceAmmunition)EnumExtensions.GetInstance(item.Key.ToString());
             var weaponDefinition = (InterfaceWeapon)ammunitionType.weaponDefinition;
@@ -519,8 +527,8 @@ public abstract class BaseAircraft : InterfaceAircraft
         }
 
         // Populate weapons and magazines
-        error = PopulateWeaponsAndMagazines(defaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToAdd);
-        error = PopulateWeaponsAndMagazines(vanillaGameDefaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToRemove);
+        error = PopulateWeaponsAndMagazines(_defaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToAdd);
+        error = PopulateWeaponsAndMagazines(_vanillaLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToRemove);
         // Use trycatch
 
         if (error)
@@ -528,12 +536,12 @@ public abstract class BaseAircraft : InterfaceAircraft
             //Console.WriteLine("Error!!! " + nameof(weaponsAndMagazinesToAdd) + " or " + nameof(weaponsAndMagazinesToRemove) +
             Console.WriteLine("Error!!! " + nameof(weaponsAndMagazinesToRemove) +
                 " was null! Plane " + aircraftType + " not configured right? aborted: " + nameof(GenerateCommonBalanceInitForTheAircraft));
-            return;
+            return "[ERROR]";
         }
 
         // Magazines and weapons to add
         List<string> magazinesToAdd = GetAllMagazines(weaponsAndMagazinesToAdd)
-            .Where(mag => !vanillaGameDefaultLoadout.AmmunitionTypesWithCount.Keys
+            .Where(mag => !_vanillaLoadout.AmmunitionTypesWithCount.Keys
                 .Select(a => EnumExtensions.GetEnumMemberAttrValue(a))
                 .Contains(mag))
             .Distinct()  // Ensure unique magazines
@@ -541,7 +549,7 @@ public abstract class BaseAircraft : InterfaceAircraft
 
         // Magazines and weapons to remove
         List<string> magazinesToRemove = GetAllMagazines(weaponsAndMagazinesToRemove)
-            .Where(mag => !defaultLoadout.AmmunitionTypesWithCount.Keys
+            .Where(mag => !_defaultLoadout.AmmunitionTypesWithCount.Keys
                 .Select(a => EnumExtensions.GetEnumMemberAttrValue(a))
                 .Contains(mag))
             .Distinct()  // Ensure unique magazines
@@ -560,23 +568,13 @@ public abstract class BaseAircraft : InterfaceAircraft
         weaponsToRemove.AddRange(extraWeaponsToRemove);
         weaponsToAdd.AddRange(extraWeaponsToAdd);
 
-        //foreach (var item in magazinesToAdd)
-        //{
-        //    Console.WriteLine(item);
-        //}
 
-        //foreach (var item in weaponsToAdd)
-        //{
-        //    Console.WriteLine(item);
-        //}
-
-
-        string addSQFCode = GenerateSQFCodeInner(magazinesToAdd, weaponsToAdd, "add");
-        string removeSQFCode = GenerateSQFCodeInner(magazinesToRemove, weaponsToRemove, "remove");
+        string addSQFCode = GenerateSQFCodeInner(magazinesToAdd, weaponsToAdd, "add", _turret);
+        string removeSQFCode = GenerateSQFCodeInner(magazinesToRemove, weaponsToRemove, "remove", _turret);
 
         string finalSQFCode = $"case \"{aircraftType}\": {{\n" + addSQFCode + removeSQFCode + "};";
 
-        Console.WriteLine(finalSQFCode);
+        return finalSQFCode;
     }
 
     private bool PopulateWeaponsAndMagazines(
@@ -619,10 +617,10 @@ public abstract class BaseAircraft : InterfaceAircraft
         return _weaponsAndMagazines.Values.SelectMany(m => m).ToList();
     }
 
-    private string GenerateSQFCodeInner(List<string> _magazines, IEnumerable<string> _weapons, string _action)
+    private string GenerateSQFCodeInner(List<string> _magazines, IEnumerable<string> _weapons, string _action, string _turret)
     {
-        string magazineAction = _action == "add" ? "addMagazine" : "removeMagazine";
-        string weaponAction = _action == "add" ? "addWeapon" : "removeWeapon";
+        string magazineAction = _action == "add" ? "add" + _turret + "Magazine" : "remove" + _turret + "Magazine";
+        string weaponAction = _action == "add" ? "add" + _turret + "Weapon" : "remove" + _turret + "Weapon";
 
         StringBuilder sqfCode = new StringBuilder();
 

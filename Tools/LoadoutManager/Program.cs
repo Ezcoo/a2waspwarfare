@@ -11,17 +11,29 @@ class Program
     }
 
 
+    static List<string> testingStrings = new List<string>
+    {
+        "F35B",
+        "SU34",
+    };
+
     private static void GenerateCommonBalanceInitSQF()
     {
-        // Iterate through every aircraft (implement this later)
-        //foreach (AircraftType aircraftType in Enum.GetValues(typeof(AircraftType)))
-        //{
+        foreach (var item in testingStrings)
+        {
+            var _interfaceAircraft = (InterfaceAircraft)EnumExtensions.GetInstance(item);
+            string finalSQFCode = _interfaceAircraft.GenerateCommonBalanceInitForTheAircraft(_interfaceAircraft.vanillaGameDefaultLoadout, _interfaceAircraft.defaultLoadout);
 
-        var _interfaceAircraft = (InterfaceAircraft)EnumExtensions.GetInstance("F35B");
-        _interfaceAircraft.GenerateCommonBalanceInitForTheAircraft();
-        var _interfaceAircraftWithTurret = (InterfaceAircraft)EnumExtensions.GetInstance("SU34");
-        _interfaceAircraftWithTurret.GenerateCommonBalanceInitForTheAircraft();
-        //}
+            if (_interfaceAircraft.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount.Keys.Count > 0 ||
+                _interfaceAircraft.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount.Keys.Count > 0)
+            {
+                finalTurretSQFCode = 
+                    _interfaceAircraft.GenerateCommonBalanceInitForTheAircraft(_interfaceAircraft.vanillaGameDefaultLoadoutOnTurret, _interfaceAircraft.defaultLoadoutOnTurret, "Turret");
+                Console.WriteLine(finalTurretSQFCode);
+            }
+
+            Console.WriteLine(finalSQFCode);
+        }
     }
 
     /// <summary>
