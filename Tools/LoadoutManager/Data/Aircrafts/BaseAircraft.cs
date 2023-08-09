@@ -449,6 +449,33 @@ public abstract class BaseAircraft : InterfaceAircraft
             return;
         }
 
+
+        var commonKeys = CompareDictionaries(vanillaGameDefaultLoadout.AmmunitionTypesWithCount, defaultLoadout.AmmunitionTypesWithCount);
+        List<string> magazinesToAddExtra = new List<string>();
+
+        foreach (var commonKey in commonKeys)
+        {
+            Console.WriteLine($"{commonKey}");
+            //var ammunitionType = (InterfaceAmmunition)EnumExtensions.GetInstance(commonKey.ToString());
+            //var weaponDefinition = (InterfaceWeapon)ammunitionType.weaponDefinition;
+
+            //List<string> ammunitionTypeStrings = new List<string>();
+            //foreach (var ammunitionTypeTwo in ammunitionType.AmmunitionTypes)
+            //{
+            //    string ammunitionTypeString = EnumExtensions.GetEnumMemberAttrValue(ammunitionTypeTwo);
+
+            //    magazinesToAddExtra.Add(ammunitionTypeString);
+            //}
+
+
+            //if ()
+        }
+
+        foreach (var commonKey in magazinesToAddExtra)
+        {
+            Console.WriteLine(commonKey);
+        }
+
         // Magazines and weapons to add
         List<string> magazinesToAdd = GetAllMagazines(weaponsAndMagazinesToAdd)
             .Where(mag => !vanillaGameDefaultLoadout.AmmunitionTypesWithCount.Keys
@@ -474,6 +501,13 @@ public abstract class BaseAircraft : InterfaceAircraft
             .Where(weapon => magazinesToRemove.Any(mag => weaponsAndMagazinesToRemove[weapon].Contains(mag)))
             .Distinct()  // Ensure unique weapons
             .ToList();
+
+        foreach (var item in magazinesToAdd)
+        {
+            Console.WriteLine(item);
+        }
+
+
 
 
         string addSQFCode = GenerateSQFCodeInner(magazinesToAdd, weaponsToAdd, "add");
@@ -542,5 +576,37 @@ public abstract class BaseAircraft : InterfaceAircraft
         }
 
         return sqfCode.ToString();
+    }
+
+    private List<string> CompareDictionaries(
+        Dictionary<AmmunitionType, int> _firstDictionary,
+        Dictionary<AmmunitionType, int> _secondDictionary)
+    {
+        List<string> firstDictionaryAsListOfString = ConvertDictionaryAmmunutionTypeIntToListString(_firstDictionary);
+        List<string> secondDictionaryAsListOfString = ConvertDictionaryAmmunutionTypeIntToListString(_secondDictionary);
+
+        return firstDictionaryAsListOfString.Intersect(secondDictionaryAsListOfString).ToList();
+    }
+
+
+    private List<string> ConvertDictionaryAmmunutionTypeIntToListString(Dictionary<AmmunitionType, int> _input)
+    {
+        List<string> ammunitionTypeStrings = new List<string>();
+
+        foreach (var ammunitionType in _input)
+        {
+            var ammunitionTypeInterface = (InterfaceAmmunition)EnumExtensions.GetInstance(ammunitionType.Key.ToString());
+            var weaponDefinition = (InterfaceWeapon)ammunitionTypeInterface.weaponDefinition;
+            var weaponDefinitionType = weaponDefinition.WeaponType; // this
+
+            foreach (var item in ammunitionTypeInterface.AmmunitionTypes)
+            {
+                string ammunitionTypeString = EnumExtensions.GetEnumMemberAttrValue(item);
+
+                ammunitionTypeStrings.Add(ammunitionTypeString);
+            } 
+        }
+
+        return ammunitionTypeStrings;
     }
 }
