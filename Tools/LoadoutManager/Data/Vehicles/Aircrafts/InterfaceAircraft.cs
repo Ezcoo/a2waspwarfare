@@ -7,5 +7,5 @@ public interface InterfaceAircraft
     public bool addToDefaultLoadoutPrice { get; set; }
     public Dictionary<AmmunitionType, float> ammunitionTypeCostFloatModifier { get; set; }
 
-    public void GenerateLoadoutsForTheAircraft();
+    public string GenerateLoadoutsForTheAircraft();
 }

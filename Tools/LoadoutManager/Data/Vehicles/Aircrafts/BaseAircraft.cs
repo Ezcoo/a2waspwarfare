@@ -19,14 +19,18 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         defaultLoadoutOnTurret.AmmunitionTypesWithCount = new();
     }
 
-    public void GenerateLoadoutsForTheAircraft()
+    public string GenerateLoadoutsForTheAircraft()
     {
-        Console.WriteLine(GenerateCommentForTheSqfCode());
-        Console.WriteLine("_easaVehi = _easaVehi + ['" + EnumExtensions.GetEnumMemberAttrValue(VehicleType) + "'];");
-        GenerateDefaultLoadout();
-        GenerateCombinationLoadouts();
-        Console.WriteLine("]");
-        Console.WriteLine("];");
+        string generatedLoadouts = string.Empty;
+
+        generatedLoadouts += GenerateCommentForTheSqfCode();
+        generatedLoadouts += "\n_easaVehi = _easaVehi + ['" + EnumExtensions.GetEnumMemberAttrValue(VehicleType) + "'];\n";
+        generatedLoadouts += GenerateDefaultLoadout();
+        generatedLoadouts += GenerateCombinationLoadouts();
+        generatedLoadouts += "]";
+        generatedLoadouts += "];";
+
+        return generatedLoadouts;
     }
 
     private string GenerateCommentForTheSqfCode()
@@ -34,15 +38,21 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         return "// " + inGameDisplayName + " [AF" + InGameFactoryLevel + "] - " + pylonAmount + " pylons";
     }
 
-    private void GenerateCombinationLoadouts()
+    private string GenerateCombinationLoadouts()
     {
-        Console.WriteLine("_easaLoadout = _easaLoadout + [\n[");
+        string generatedCombinationLoadouts = string.Empty;
+
+        generatedCombinationLoadouts += "_easaLoadout = _easaLoadout + [\n[\n";
         var combinations = GenerateCombinations(allowedAmmunitionTypesWithTheirLimitationAmount.Keys.ToArray(), pylonAmount / 2);
-        PrintSortedCombinations(combinations);
+        generatedCombinationLoadouts += GenerateSortedCombinations(combinations);
+
+        return generatedCombinationLoadouts;
     }
 
-    private void PrintSortedCombinations(List<List<AmmunitionType>> _combinations)
+    private string GenerateSortedCombinations(List<List<AmmunitionType>> _combinations)
     {
+        string sortedCombinations = string.Empty;
+
         var finalPricesSortedByPrice = GetSortedCombinationsByPrice(_combinations);
 
         int index = 0;
@@ -53,9 +63,11 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
             {
                 finalString = finalString.TrimEnd(',');
             }
-            Console.WriteLine(finalString);
+            sortedCombinations += "\n" + finalString;
             index++;
         }
+
+        return sortedCombinations;
     }
 
     private Dictionary<string, int> GetSortedCombinationsByPrice(List<List<AmmunitionType>> _combinations)
@@ -95,13 +107,14 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
 
     private string GenerateDefaultLoadout()
     {
-        Console.WriteLine("_easaDefault = _easaDefault + ");
         var ammunitionArray = GenerateLoadoutRow(defaultLoadout.AmmunitionTypesWithCount, false);
         if (ammunitionArray.Item1 == "")
         {
             return "";
         }
-        Console.WriteLine(ammunitionArray.Item1 + ";");
+        ammunitionArray.Item1 += "\n_easaDefault = _easaDefault + ";
+
+        ammunitionArray.Item1 += ammunitionArray.Item1 + ";";
         return ammunitionArray.Item1;
     }
 

@@ -61,7 +61,6 @@ public abstract class BaseVehicle : InterfaceVehicle
 
         if (error)
         {
-            //Console.WriteLine("Error!!! " + nameof(weaponsAndMagazinesToAdd) + " or " + nameof(weaponsAndMagazinesToRemove) +
             Console.WriteLine("Error!!! " + nameof(weaponsAndMagazinesToRemove) +
                 " was null! Plane " + vehicleType + " not configured right? aborted: " + nameof(GenerateCommonBalanceInitForTheVehicle));
             return "[ERROR]";
@@ -118,11 +117,9 @@ public abstract class BaseVehicle : InterfaceVehicle
                                         if (vanillaWeaponDefinition.WeaponType == weaponDefinition.WeaponType)
                                         {
                                             extraWeaponsToRemove.Add(EnumExtensions.GetEnumMemberAttrValue(vanillaWeapon));
-                                            //Console.WriteLine("Removing: " + EnumExtensions.GetEnumMemberAttrValue(vanillaWeapon));
                                         }
                                     }
                                 }
-                                //Console.WriteLine($"{commonKey} | {weaponDefinition.WeaponType}");
                             }
                         }
                     }
@@ -137,7 +134,6 @@ public abstract class BaseVehicle : InterfaceVehicle
 
         if (error)
         {
-            //Console.WriteLine("Error!!! " + nameof(weaponsAndMagazinesToAdd) + " or " + nameof(weaponsAndMagazinesToRemove) +
             Console.WriteLine("Error!!! " + nameof(weaponsAndMagazinesToRemove) +
                 " was null! Plane " + vehicleType + " not configured right? aborted: " + nameof(GenerateCommonBalanceInitForTheVehicle));
             return "[ERROR]";
