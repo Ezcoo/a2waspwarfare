@@ -498,26 +498,26 @@ public abstract class BaseAircraft : InterfaceAircraft
         }
     }
 
-    private List<string> GetAllMagazines(Dictionary<string, List<string>> weaponsAndMagazines)
+    private List<string> GetAllMagazines(Dictionary<string, List<string>> _weaponsAndMagazines)
     {
-        return weaponsAndMagazines.Values.SelectMany(m => m).ToList();
+        return _weaponsAndMagazines.Values.SelectMany(m => m).ToList();
     }
 
-    private string GenerateSQFCodeInner(List<string> magazines, IEnumerable<string> weapons, string action)
+    private string GenerateSQFCodeInner(List<string> _magazines, IEnumerable<string> _weapons, string _action)
     {
-        string magazineAction = action == "add" ? "addMagazine" : "removeMagazine";
-        string weaponAction = action == "add" ? "addWeapon" : "removeWeapon";
+        string magazineAction = _action == "add" ? "addMagazine" : "removeMagazine";
+        string weaponAction = _action == "add" ? "addWeapon" : "removeWeapon";
 
         StringBuilder sqfCode = new StringBuilder();
 
-        if (magazines.Any())
+        if (_magazines.Any())
         {
-            sqfCode.AppendLine($"    _this {magazineAction} \"{string.Join($"\";\n    _this {magazineAction} \"", magazines)}\";");
+            sqfCode.AppendLine($"    _this {magazineAction} \"{string.Join($"\";\n    _this {magazineAction} \"", _magazines)}\";");
         }
 
-        if (weapons.Any())
+        if (_weapons.Any())
         {
-            sqfCode.AppendLine($"    _this {weaponAction} \"{string.Join($"\";\n    _this {weaponAction} \"", weapons)}\";");
+            sqfCode.AppendLine($"    _this {weaponAction} \"{string.Join($"\";\n    _this {weaponAction} \"", _weapons)}\";");
         }
 
         return sqfCode.ToString();
