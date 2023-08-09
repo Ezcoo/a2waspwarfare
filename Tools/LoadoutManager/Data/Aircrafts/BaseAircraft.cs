@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -438,7 +439,8 @@ public abstract class BaseAircraft : InterfaceAircraft
         Dictionary<string, List<string>> weaponsAndMagazinesToRemove = new();
 
         List<string> extraWeaponsToAdd = new();
-        List<string> extraMagazinesToAdd = new();
+        List<string> extraWeaponsToRemove = new();
+        //List<string> extraMagazinesToAdd = new();
 
         // Populate weapons and magazines
         //error = PopulateWeaponsAndMagazines(defaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToAdd);
@@ -456,6 +458,7 @@ public abstract class BaseAircraft : InterfaceAircraft
         var commonKeys = CompareDictionaries(vanillaGameDefaultLoadout.AmmunitionTypesWithCount, defaultLoadout.AmmunitionTypesWithCount);
 
         List<WeaponType> allowedWeapons = new List<WeaponType>();
+        List<WeaponType> vanillaWeapons = new List<WeaponType>();
 
         foreach (var item in defaultLoadout.AmmunitionTypesWithCount)
         {
@@ -463,6 +466,14 @@ public abstract class BaseAircraft : InterfaceAircraft
             var weaponDefinition = (InterfaceWeapon)ammunitionType.weaponDefinition;
 
             allowedWeapons.Add(weaponDefinition.WeaponType);
+        }
+
+        foreach (var item in vanillaGameDefaultLoadout.AmmunitionTypesWithCount)
+        {
+            var ammunitionType = (InterfaceAmmunition)EnumExtensions.GetInstance(item.Key.ToString());
+            var weaponDefinition = (InterfaceWeapon)ammunitionType.weaponDefinition;
+
+            vanillaWeapons.Add(weaponDefinition.WeaponType);
         }
 
         foreach (var commonKey in commonKeys)
@@ -476,22 +487,39 @@ public abstract class BaseAircraft : InterfaceAircraft
                 {
                     var ammoTypesString = EnumExtensions.GetEnumMemberAttrValue(ammoTypes);
 
-                    if (ammoTypesString == commonKey &&
-                        allowedWeapons.Contains(weaponDefinition.WeaponType))
+                    if (ammoTypesString == commonKey)
                     {
-                        extraMagazinesToAdd.Add(ammoTypesString);
+                        if (allowedWeapons.Contains(weaponDefinition.WeaponType))
+                        {
+                            if (!extraWeaponsToAdd.Contains(weaponDefinitionString))
+                            {
+                                extraWeaponsToAdd.Add(weaponDefinitionString);
 
-                        if (!extraWeaponsToAdd.Contains(weaponDefinitionString))
+                                foreach (var vanillaWeapon in vanillaWeapons)
+                                {
+                                    var allVanillaAmmunitionTypes = (InterfaceAmmunition)EnumExtensions.GetInstance(item.ToString());
 
-                        extraWeaponsToAdd.Add(weaponDefinitionString);
-                        Console.WriteLine($"{commonKey} | {weaponDefinition.WeaponType}");
+                                    foreach (var vanillaAmmunitionType in allVanillaAmmunitionTypes.AmmunitionTypes)
+                                    {
+                                        var vanillaWeaponDefinition = (InterfaceWeapon)ammunitionType.weaponDefinition;
+
+                                        if (vanillaWeaponDefinition.WeaponType == weaponDefinition.WeaponType)
+                                        {
+                                            extraWeaponsToRemove.Add(EnumExtensions.GetEnumMemberAttrValue(vanillaWeapon));
+                                            //Console.WriteLine("Removing: " + EnumExtensions.GetEnumMemberAttrValue(vanillaWeapon));
+                                        }
+                                    }
+                                }
+                                //Console.WriteLine($"{commonKey} | {weaponDefinition.WeaponType}");
+                            }
+                        }
                     }
                 }
             }
         }
 
         // Populate weapons and magazines
-        //error = PopulateWeaponsAndMagazines(defaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToAdd);
+        error = PopulateWeaponsAndMagazines(defaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToAdd);
         error = PopulateWeaponsAndMagazines(vanillaGameDefaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToRemove);
         // Use trycatch
 
@@ -529,7 +557,7 @@ public abstract class BaseAircraft : InterfaceAircraft
             .Distinct()  // Ensure unique weapons
             .ToList();
 
-        magazinesToAdd.AddRange(extraMagazinesToAdd);
+        weaponsToRemove.AddRange(extraWeaponsToRemove);
         weaponsToAdd.AddRange(extraWeaponsToAdd);
 
         //foreach (var item in magazinesToAdd)

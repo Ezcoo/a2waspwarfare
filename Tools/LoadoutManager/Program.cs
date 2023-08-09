@@ -18,8 +18,8 @@ class Program
         //{
 
         var _interfaceAircraft = (InterfaceAircraft)EnumExtensions.GetInstance("F35B");
-        var _interfaceAircraftWithTurret = (InterfaceAircraft)EnumExtensions.GetInstance("SU34");
         _interfaceAircraft.GenerateCommonBalanceInitForTheAircraft();
+        var _interfaceAircraftWithTurret = (InterfaceAircraft)EnumExtensions.GetInstance("SU34");
         _interfaceAircraftWithTurret.GenerateCommonBalanceInitForTheAircraft();
         //}
     }
