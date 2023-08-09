@@ -572,9 +572,7 @@ public abstract class BaseAircraft : InterfaceAircraft
         string addSQFCode = GenerateSQFCodeInner(magazinesToAdd, weaponsToAdd, "add", _turret);
         string removeSQFCode = GenerateSQFCodeInner(magazinesToRemove, weaponsToRemove, "remove", _turret);
 
-        string finalSQFCode = $"case \"{aircraftType}\": {{\n" + addSQFCode + removeSQFCode + "};";
-
-        return finalSQFCode;
+        return addSQFCode + removeSQFCode;
     }
 
     private bool PopulateWeaponsAndMagazines(

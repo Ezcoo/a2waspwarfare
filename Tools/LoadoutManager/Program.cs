@@ -23,16 +23,15 @@ class Program
         {
             var _interfaceAircraft = (InterfaceAircraft)EnumExtensions.GetInstance(item);
             string finalSQFCode = _interfaceAircraft.GenerateCommonBalanceInitForTheAircraft(_interfaceAircraft.vanillaGameDefaultLoadout, _interfaceAircraft.defaultLoadout);
-
             if (_interfaceAircraft.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount.Keys.Count > 0 ||
                 _interfaceAircraft.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount.Keys.Count > 0)
             {
-                finalTurretSQFCode = 
+                string finalTurretSQFCode = 
                     _interfaceAircraft.GenerateCommonBalanceInitForTheAircraft(_interfaceAircraft.vanillaGameDefaultLoadoutOnTurret, _interfaceAircraft.defaultLoadoutOnTurret, "Turret");
-                Console.WriteLine(finalTurretSQFCode);
+                finalSQFCode += finalTurretSQFCode;
             }
 
-            Console.WriteLine(finalSQFCode);
+            Console.WriteLine($"case \"{_interfaceAircraft.AircraftType}\": {{\n" + finalSQFCode + "};");
         }
     }
 
