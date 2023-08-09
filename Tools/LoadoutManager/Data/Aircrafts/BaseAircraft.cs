@@ -437,8 +437,8 @@ public abstract class BaseAircraft : InterfaceAircraft
         Dictionary<string, List<string>> weaponsAndMagazinesToAdd = new();
         Dictionary<string, List<string>> weaponsAndMagazinesToRemove = new();
 
-        List<string> weaponsToAdd = new();
-        List<string> magazinesToAdd = new();
+        List<string> extraWeaponsToAdd = new();
+        List<string> extraMagazinesToAdd = new();
 
         // Populate weapons and magazines
         //error = PopulateWeaponsAndMagazines(defaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToAdd);
@@ -453,32 +453,41 @@ public abstract class BaseAircraft : InterfaceAircraft
             return;
         }
 
-
         var commonKeys = CompareDictionaries(vanillaGameDefaultLoadout.AmmunitionTypesWithCount, defaultLoadout.AmmunitionTypesWithCount);
+
+        List<WeaponType> allowedWeapons = new List<WeaponType>();
+
+        foreach (var item in defaultLoadout.AmmunitionTypesWithCount)
+        {
+            var ammunitionType = (InterfaceAmmunition)EnumExtensions.GetInstance(item.Key.ToString());
+            var weaponDefinition = (InterfaceWeapon)ammunitionType.weaponDefinition;
+
+            allowedWeapons.Add(weaponDefinition.WeaponType);
+        }
 
         foreach (var commonKey in commonKeys)
         {
-            Console.WriteLine($"{commonKey}");
-            var ammunitionType = (InterfaceAmmunition)EnumExtensions.GetInstance(commonKey.ToString());
-            var weaponDefinition = (InterfaceWeapon)ammunitionType.weaponDefinition;
-
-            weaponsToAdd.Add(
-                EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.WeaponType));
-
-            foreach (var item in ammunitionType.AmmunitionTypes)
+            foreach (AmmunitionType item in Enum.GetValues(typeof(AmmunitionType)))
             {
-                magazinesToAdd.Add(EnumExtensions.GetEnumMemberAttrValue(item));
+                var ammunitionType = (InterfaceAmmunition)EnumExtensions.GetInstance(item.ToString());
+                var weaponDefinition = (InterfaceWeapon)ammunitionType.weaponDefinition;
+                var weaponDefinitionString = EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.WeaponType);
+                foreach (var ammoTypes in ammunitionType.AmmunitionTypes)
+                {
+                    var ammoTypesString = EnumExtensions.GetEnumMemberAttrValue(ammoTypes);
+
+                    if (ammoTypesString == commonKey &&
+                        allowedWeapons.Contains(weaponDefinition.WeaponType))
+                    {
+                        extraMagazinesToAdd.Add(ammoTypesString);
+
+                        if (!extraWeaponsToAdd.Contains(weaponDefinitionString))
+
+                        extraWeaponsToAdd.Add(weaponDefinitionString);
+                        Console.WriteLine($"{commonKey} | {weaponDefinition.WeaponType}");
+                    }
+                }
             }
-
-            //List<string> ammunitionTypeStrings = new List<string>();
-            //foreach (var ammunitionTypeTwo in ammunitionType.AmmunitionTypes)
-            //{
-            //    string ammunitionTypeString = EnumExtensions.GetEnumMemberAttrValue(ammunitionTypeTwo);
-
-            //    magazinesToAddExtra.Add(ammunitionTypeString);
-            //}
-
-
         }
 
         // Populate weapons and magazines
@@ -495,7 +504,7 @@ public abstract class BaseAircraft : InterfaceAircraft
         }
 
         // Magazines and weapons to add
-        magazinesToAdd = GetAllMagazines(weaponsAndMagazinesToAdd)
+        List<string> magazinesToAdd = GetAllMagazines(weaponsAndMagazinesToAdd)
             .Where(mag => !vanillaGameDefaultLoadout.AmmunitionTypesWithCount.Keys
                 .Select(a => EnumExtensions.GetEnumMemberAttrValue(a))
                 .Contains(mag))
@@ -510,7 +519,7 @@ public abstract class BaseAircraft : InterfaceAircraft
             .Distinct()  // Ensure unique magazines
             .ToList();
 
-        weaponsToAdd = weaponsAndMagazinesToAdd.Keys
+        List<string> weaponsToAdd = weaponsAndMagazinesToAdd.Keys
             .Where(weapon => magazinesToAdd.Any(mag => weaponsAndMagazinesToAdd[weapon].Contains(mag)))
             .Distinct()  // Ensure unique weapons
             .ToList();
@@ -520,15 +529,18 @@ public abstract class BaseAircraft : InterfaceAircraft
             .Distinct()  // Ensure unique weapons
             .ToList();
 
-        foreach (var item in magazinesToAdd)
-        {
-            Console.WriteLine(item);
-        }
+        magazinesToAdd.AddRange(extraMagazinesToAdd);
+        weaponsToAdd.AddRange(extraWeaponsToAdd);
 
-        foreach (var item in magazinesToAdd)
-        {
-            Console.WriteLine(item);
-        }
+        //foreach (var item in magazinesToAdd)
+        //{
+        //    Console.WriteLine(item);
+        //}
+
+        //foreach (var item in weaponsToAdd)
+        //{
+        //    Console.WriteLine(item);
+        //}
 
 
         string addSQFCode = GenerateSQFCodeInner(magazinesToAdd, weaponsToAdd, "add");
