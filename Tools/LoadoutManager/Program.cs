@@ -5,11 +5,11 @@ class Program
 {
     static void Main()
     {
-        //GenerateTheEasaFile();
+        GenerateTheEasaFile();
+        Console.WriteLine("\n\n");
         GenerateCommonBalanceInitSQF();
-        //WaitForExitCommand();
+        WaitForExitCommand();
     }
-
 
     static List<string> testingStrings = new List<string>
     {
@@ -21,17 +21,8 @@ class Program
     {
         foreach (var item in testingStrings)
         {
-            var _interfaceAircraft = (InterfaceAircraft)EnumExtensions.GetInstance(item);
-            string finalSQFCode = _interfaceAircraft.GenerateCommonBalanceInitForTheAircraft(_interfaceAircraft.vanillaGameDefaultLoadout, _interfaceAircraft.defaultLoadout);
-            if (_interfaceAircraft.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount.Keys.Count > 0 ||
-                _interfaceAircraft.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount.Keys.Count > 0)
-            {
-                string finalTurretSQFCode = 
-                    _interfaceAircraft.GenerateCommonBalanceInitForTheAircraft(_interfaceAircraft.vanillaGameDefaultLoadoutOnTurret, _interfaceAircraft.defaultLoadoutOnTurret, "Turret");
-                finalSQFCode += finalTurretSQFCode;
-            }
-
-            Console.WriteLine($"case \"{_interfaceAircraft.AircraftType}\": {{\n" + finalSQFCode + "};");
+            var _interfaceVehicle = (InterfaceVehicle)EnumExtensions.GetInstance(item);
+            _interfaceVehicle.StartGeneratingCommonBalanceInitForTheVehicle();
         }
     }
 
@@ -47,8 +38,6 @@ class Program
             userInput = Console.ReadLine();
         } while (userInput?.ToLower() != "exit");
     }
-
-
 
     /// <summary>
     /// MOVE TO OWN CLASS
@@ -77,7 +66,7 @@ class Program
 
     private static void GenerateAllAircraftLoadouts()
     {
-        foreach (AircraftType aircraftType in Enum.GetValues(typeof(AircraftType)))
+        foreach (VehicleType aircraftType in Enum.GetValues(typeof(VehicleType)))
         {
             var _interfaceAircraft = (InterfaceAircraft)EnumExtensions.GetInstance(aircraftType.ToString());
             _interfaceAircraft.GenerateLoadoutsForTheAircraft();
