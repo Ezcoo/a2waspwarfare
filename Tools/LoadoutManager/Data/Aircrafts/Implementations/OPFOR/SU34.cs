@@ -5,10 +5,14 @@
         AircraftType = AircraftType.SU34;
         pylonAmount = 10;
 
+        base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+                { AmmunitionType.VANILLA_FOURTYROUNDS8, 2},
+            };
+
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.TWOROUNDR73, 4},
-                { AmmunitionType.SIXROUNDCH29, 2},
+                //{ AmmunitionType.FOURTYROUNDS8, 2},
             };
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>

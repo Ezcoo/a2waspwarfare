@@ -444,8 +444,8 @@ public abstract class BaseAircraft : InterfaceAircraft
 
         if (error)
         {
-            Console.WriteLine("Error!!! " + nameof(weaponsAndMagazinesToAdd) + " or " + nameof(weaponsAndMagazinesToRemove) + 
-                " was null! Plane not configured right?");
+            Console.WriteLine("Error!!! " + nameof(weaponsAndMagazinesToAdd) + " or " + nameof(weaponsAndMagazinesToRemove) +
+                " was null! Plane " + aircraftType + " not configured right? aborted: " + nameof(GenerateCommonBalanceInitForTheAircraft));
             return;
         }
 
@@ -487,7 +487,7 @@ public abstract class BaseAircraft : InterfaceAircraft
     {
         if (_ammunitionTypesWithCount == null)
         {
-            Console.WriteLine("Error!!! " + nameof(_ammunitionTypesWithCount) + " was null! Plane not configured right?");
+            Console.WriteLine("Error!!! " + nameof(_ammunitionTypesWithCount) + " was null! Plane " + aircraftType + " not configured right?");
             return true;
         }
 

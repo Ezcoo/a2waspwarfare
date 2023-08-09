@@ -13,6 +13,8 @@ public enum WeaponType
 
     [EnumMember(Value = "S8Launcher")]
     S8LAUNCHER,
+    [EnumMember(Value = "80mmLauncher")]
+    VANILLA_S8LAUNCHER,
 
     [EnumMember(Value = "57mmLauncher")]
     S5LAUNCHER,
@@ -23,7 +25,7 @@ public enum WeaponType
     [EnumMember(Value = "BombLauncherF35")]
     GBU12BOMBLAUNCHER,
     [EnumMember(Value = "BombLauncherA10")]
-    GBU12BOMBLAUNCHER_A10,
+    GBU12BOMBLAUNCHER_A10,//vanilla
 
     [EnumMember(Value = "Igla_twice")]
     IGLALAUNCHER,
