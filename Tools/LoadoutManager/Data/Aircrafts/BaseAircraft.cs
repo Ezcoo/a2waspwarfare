@@ -437,27 +437,38 @@ public abstract class BaseAircraft : InterfaceAircraft
         Dictionary<string, List<string>> weaponsAndMagazinesToAdd = new();
         Dictionary<string, List<string>> weaponsAndMagazinesToRemove = new();
 
+        List<string> weaponsToAdd = new();
+        List<string> magazinesToAdd = new();
+
         // Populate weapons and magazines
-        error = PopulateWeaponsAndMagazines(defaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToAdd);
+        //error = PopulateWeaponsAndMagazines(defaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToAdd);
         error = PopulateWeaponsAndMagazines(vanillaGameDefaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToRemove);
         // Use trycatch
 
         if (error)
         {
-            Console.WriteLine("Error!!! " + nameof(weaponsAndMagazinesToAdd) + " or " + nameof(weaponsAndMagazinesToRemove) +
+            //Console.WriteLine("Error!!! " + nameof(weaponsAndMagazinesToAdd) + " or " + nameof(weaponsAndMagazinesToRemove) +
+            Console.WriteLine("Error!!! " + nameof(weaponsAndMagazinesToRemove) +
                 " was null! Plane " + aircraftType + " not configured right? aborted: " + nameof(GenerateCommonBalanceInitForTheAircraft));
             return;
         }
 
 
         var commonKeys = CompareDictionaries(vanillaGameDefaultLoadout.AmmunitionTypesWithCount, defaultLoadout.AmmunitionTypesWithCount);
-        List<string> magazinesToAddExtra = new List<string>();
 
         foreach (var commonKey in commonKeys)
         {
             Console.WriteLine($"{commonKey}");
-            //var ammunitionType = (InterfaceAmmunition)EnumExtensions.GetInstance(commonKey.ToString());
-            //var weaponDefinition = (InterfaceWeapon)ammunitionType.weaponDefinition;
+            var ammunitionType = (InterfaceAmmunition)EnumExtensions.GetInstance(commonKey.ToString());
+            var weaponDefinition = (InterfaceWeapon)ammunitionType.weaponDefinition;
+
+            weaponsToAdd.Add(
+                EnumExtensions.GetEnumMemberAttrValue(weaponDefinition.WeaponType));
+
+            foreach (var item in ammunitionType.AmmunitionTypes)
+            {
+                magazinesToAdd.Add(EnumExtensions.GetEnumMemberAttrValue(item));
+            }
 
             //List<string> ammunitionTypeStrings = new List<string>();
             //foreach (var ammunitionTypeTwo in ammunitionType.AmmunitionTypes)
@@ -468,16 +479,23 @@ public abstract class BaseAircraft : InterfaceAircraft
             //}
 
 
-            //if ()
         }
 
-        foreach (var commonKey in magazinesToAddExtra)
+        // Populate weapons and magazines
+        //error = PopulateWeaponsAndMagazines(defaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToAdd);
+        error = PopulateWeaponsAndMagazines(vanillaGameDefaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToRemove);
+        // Use trycatch
+
+        if (error)
         {
-            Console.WriteLine(commonKey);
+            //Console.WriteLine("Error!!! " + nameof(weaponsAndMagazinesToAdd) + " or " + nameof(weaponsAndMagazinesToRemove) +
+            Console.WriteLine("Error!!! " + nameof(weaponsAndMagazinesToRemove) +
+                " was null! Plane " + aircraftType + " not configured right? aborted: " + nameof(GenerateCommonBalanceInitForTheAircraft));
+            return;
         }
 
         // Magazines and weapons to add
-        List<string> magazinesToAdd = GetAllMagazines(weaponsAndMagazinesToAdd)
+        magazinesToAdd = GetAllMagazines(weaponsAndMagazinesToAdd)
             .Where(mag => !vanillaGameDefaultLoadout.AmmunitionTypesWithCount.Keys
                 .Select(a => EnumExtensions.GetEnumMemberAttrValue(a))
                 .Contains(mag))
@@ -492,7 +510,7 @@ public abstract class BaseAircraft : InterfaceAircraft
             .Distinct()  // Ensure unique magazines
             .ToList();
 
-        List<string> weaponsToAdd = weaponsAndMagazinesToAdd.Keys
+        weaponsToAdd = weaponsAndMagazinesToAdd.Keys
             .Where(weapon => magazinesToAdd.Any(mag => weaponsAndMagazinesToAdd[weapon].Contains(mag)))
             .Distinct()  // Ensure unique weapons
             .ToList();
@@ -507,7 +525,10 @@ public abstract class BaseAircraft : InterfaceAircraft
             Console.WriteLine(item);
         }
 
-
+        foreach (var item in magazinesToAdd)
+        {
+            Console.WriteLine(item);
+        }
 
 
         string addSQFCode = GenerateSQFCodeInner(magazinesToAdd, weaponsToAdd, "add");
@@ -582,31 +603,32 @@ public abstract class BaseAircraft : InterfaceAircraft
         Dictionary<AmmunitionType, int> _firstDictionary,
         Dictionary<AmmunitionType, int> _secondDictionary)
     {
-        List<string> firstDictionaryAsListOfString = ConvertDictionaryAmmunutionTypeIntToListString(_firstDictionary);
-        List<string> secondDictionaryAsListOfString = ConvertDictionaryAmmunutionTypeIntToListString(_secondDictionary);
+        var firstDictMapping = ConvertDictionaryAmmunutionTypeIntToDictionary(_firstDictionary);
+        var secondDictMapping = ConvertDictionaryAmmunutionTypeIntToDictionary(_secondDictionary);
 
-        return firstDictionaryAsListOfString.Intersect(secondDictionaryAsListOfString).ToList();
+        return firstDictMapping
+            .Where(kv1 => secondDictMapping.ContainsKey(kv1.Key) && secondDictMapping[kv1.Key] != kv1.Value) // Check if weapon types are different
+            .Select(kv1 => kv1.Key)
+            .ToList();
     }
 
 
-    private List<string> ConvertDictionaryAmmunutionTypeIntToListString(Dictionary<AmmunitionType, int> _input)
+    private Dictionary<string, WeaponType> ConvertDictionaryAmmunutionTypeIntToDictionary(Dictionary<AmmunitionType, int> _input)
     {
-        List<string> ammunitionTypeStrings = new List<string>();
+        Dictionary<string, WeaponType> ammunitionTypeToWeaponType = new Dictionary<string, WeaponType>();
 
         foreach (var ammunitionType in _input)
         {
             var ammunitionTypeInterface = (InterfaceAmmunition)EnumExtensions.GetInstance(ammunitionType.Key.ToString());
             var weaponDefinition = (InterfaceWeapon)ammunitionTypeInterface.weaponDefinition;
-            var weaponDefinitionType = weaponDefinition.WeaponType; // this
 
             foreach (var item in ammunitionTypeInterface.AmmunitionTypes)
             {
                 string ammunitionTypeString = EnumExtensions.GetEnumMemberAttrValue(item);
-
-                ammunitionTypeStrings.Add(ammunitionTypeString);
-            } 
+                ammunitionTypeToWeaponType[ammunitionTypeString] = weaponDefinition.WeaponType;
+            }
         }
 
-        return ammunitionTypeStrings;
+        return ammunitionTypeToWeaponType;
     }
 }
