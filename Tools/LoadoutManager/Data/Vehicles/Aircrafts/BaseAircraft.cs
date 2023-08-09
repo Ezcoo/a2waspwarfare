@@ -24,11 +24,11 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         string generatedLoadouts = string.Empty;
 
         generatedLoadouts += GenerateCommentForTheSqfCode();
-        generatedLoadouts += "\n_easaVehi = _easaVehi + ['" + EnumExtensions.GetEnumMemberAttrValue(VehicleType) + "'];\n";
+        generatedLoadouts += "\n_easaVehi = _easaVehi + ['" + EnumExtensions.GetEnumMemberAttrValue(VehicleType) + "'];";
         generatedLoadouts += GenerateDefaultLoadout();
         generatedLoadouts += GenerateCombinationLoadouts();
-        generatedLoadouts += "]";
-        generatedLoadouts += "];";
+        generatedLoadouts += "\n]";
+        generatedLoadouts += "\n];";
 
         return generatedLoadouts;
     }
@@ -42,7 +42,7 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
     {
         string generatedCombinationLoadouts = string.Empty;
 
-        generatedCombinationLoadouts += "_easaLoadout = _easaLoadout + [\n[\n";
+        generatedCombinationLoadouts += "\n_easaLoadout = _easaLoadout + [\n[";
         var combinations = GenerateCombinations(allowedAmmunitionTypesWithTheirLimitationAmount.Keys.ToArray(), pylonAmount / 2);
         generatedCombinationLoadouts += GenerateSortedCombinations(combinations);
 
@@ -112,9 +112,8 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         {
             return "";
         }
-        ammunitionArray.Item1 += "\n_easaDefault = _easaDefault + ";
 
-        ammunitionArray.Item1 += ammunitionArray.Item1 + ";";
+        ammunitionArray.Item1 = "\n_easaDefault = _easaDefault + " + ammunitionArray.Item1 + ";";
         return ammunitionArray.Item1;
     }
 

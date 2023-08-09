@@ -50,7 +50,7 @@ class Program
         startOfTheEasaFile += "EASA_Equip = Compile preprocessFileLineNumbers 'Client\\Module\\EASA\\EASA_Equip.sqf';";
         startOfTheEasaFile += "EASA_RemoveLoadout = Compile preprocessFileLineNumbers 'Client\\Module\\EASA\\EASA_RemoveLoadout.sqf';";
         startOfTheEasaFile += "\n";
-        startOfTheEasaFile += "\n\n_easaDefault = [];";
+        startOfTheEasaFile += "\n_easaDefault = [];";
         startOfTheEasaFile += "\n_easaLoadout = [];";
         startOfTheEasaFile += "\n_easaVehi = [];";
         startOfTheEasaFile += "\n\n";
