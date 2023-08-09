@@ -465,13 +465,16 @@ public abstract class BaseAircraft : InterfaceAircraft
             .Distinct()  // Ensure unique magazines
             .ToList();
 
-        IEnumerable<string> weaponsToAdd = weaponsAndMagazinesToAdd.Keys
+        List<string> weaponsToAdd = weaponsAndMagazinesToAdd.Keys
             .Where(weapon => magazinesToAdd.Any(mag => weaponsAndMagazinesToAdd[weapon].Contains(mag)))
-            .Distinct();  // Ensure unique weapons
+            .Distinct()  // Ensure unique weapons
+            .ToList();
 
-        IEnumerable<string> weaponsToRemove = weaponsAndMagazinesToRemove.Keys
+        List<string> weaponsToRemove = weaponsAndMagazinesToRemove.Keys
             .Where(weapon => magazinesToRemove.Any(mag => weaponsAndMagazinesToRemove[weapon].Contains(mag)))
-            .Distinct();  // Ensure unique weapons
+            .Distinct()  // Ensure unique weapons
+            .ToList();
+
 
         string addSQFCode = GenerateSQFCodeInner(magazinesToAdd, weaponsToAdd, "add");
         string removeSQFCode = GenerateSQFCodeInner(magazinesToRemove, weaponsToRemove, "remove");
