@@ -474,6 +474,12 @@ public abstract class BaseAircraft : InterfaceAircraft
         Dictionary<AmmunitionType, int> _ammunitionTypesWithCount,
         Dictionary<string, List<string>> _weaponsAndMagazines)
     {
+        if (_ammunitionTypesWithCount == null)
+        {
+            Console.WriteLine("Error!!!" + nameof(_ammunitionTypesWithCount) + " was null! Plane not configured right?");
+            return;
+        }
+
         foreach (var ammo in _ammunitionTypesWithCount)
         {
             var ammoMapping = (InterfaceAmmunition)EnumExtensions.GetInstance(ammo.Key.ToString());
