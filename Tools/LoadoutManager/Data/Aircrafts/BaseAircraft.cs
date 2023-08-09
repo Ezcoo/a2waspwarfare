@@ -428,6 +428,7 @@ public abstract class BaseAircraft : InterfaceAircraft
             }
         }
     }
+
     public void GenerateCommonBalanceInitForTheAircraft()
     {
         Dictionary<string, List<string>> weaponsAndMagazinesToAdd = new();
