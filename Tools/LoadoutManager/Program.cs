@@ -82,6 +82,10 @@ class Program
             return;
         }
 
+        string result = baseAircraft.GenerateLoadoutsForTheAircraft();
+
+        if (result == "") { return; }
+
         aircraftEasaLoadoutsFile += "\n" + baseAircraft.GenerateLoadoutsForTheAircraft() + "\n";
     }
 

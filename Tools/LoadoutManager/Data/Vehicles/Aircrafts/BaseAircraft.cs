@@ -13,10 +13,16 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
     {
         string generatedLoadouts = string.Empty;
 
+        string generatedLoadout = GenerateCombinationLoadouts();
+        if (generatedLoadout == "")
+        {
+            return "";
+        }
+
         generatedLoadouts += GenerateCommentForTheSqfCode();
         generatedLoadouts += "\n_easaVehi = _easaVehi + ['" + EnumExtensions.GetEnumMemberAttrValue(VehicleType) + "'];";
         generatedLoadouts += GenerateDefaultLoadout();
-        generatedLoadouts += GenerateCombinationLoadouts();
+        generatedLoadouts += generatedLoadout;
         generatedLoadouts += "\n]";
         generatedLoadouts += "\n];";
 
@@ -31,6 +37,11 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
     private string GenerateCombinationLoadouts()
     {
         string generatedCombinationLoadouts = string.Empty;
+
+        if(allowedAmmunitionTypesWithTheirLimitationAmount == null || allowedAmmunitionTypesWithTheirLimitationAmount.Count < 1)
+        {
+            return "";
+        }
 
         generatedCombinationLoadouts += "\n_easaLoadout = _easaLoadout + [\n[";
         var combinations = GenerateCombinations(allowedAmmunitionTypesWithTheirLimitationAmount.Keys.ToArray(), pylonAmount / 2);
