@@ -19,6 +19,7 @@
 
         inGameDisplayName = "AV8B (LGB)";
         inGameFactoryLevel = 4;
+        producedFromFactoryType = FactoryType.AIRCRAFTFACTORY;
 
         addToDefaultLoadoutPrice = true;
     }

@@ -43,5 +43,6 @@
 
         inGameDisplayName = "Su-25A";
         inGameFactoryLevel = 3;
+        producedFromFactoryType = FactoryType.AIRCRAFTFACTORY;
     }
 }

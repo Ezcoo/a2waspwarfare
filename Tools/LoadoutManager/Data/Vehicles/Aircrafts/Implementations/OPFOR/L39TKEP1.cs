@@ -22,5 +22,6 @@
 
         inGameDisplayName = "L-39";
         inGameFactoryLevel = 3;
+        producedFromFactoryType = FactoryType.AIRCRAFTFACTORY;
     }
 }

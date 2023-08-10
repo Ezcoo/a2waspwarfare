@@ -20,7 +20,8 @@
 
         inGameDisplayName = "Mi-24P";
         inGameFactoryLevel = 3;
-            
+        producedFromFactoryType = FactoryType.AIRCRAFTFACTORY;
+
         addToDefaultLoadoutPrice = true;
     }
 }

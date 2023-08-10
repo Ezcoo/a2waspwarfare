@@ -29,5 +29,6 @@
 
         inGameDisplayName = "F-35B";
         inGameFactoryLevel = 5;
+        producedFromFactoryType = FactoryType.AIRCRAFTFACTORY;
     }
 }

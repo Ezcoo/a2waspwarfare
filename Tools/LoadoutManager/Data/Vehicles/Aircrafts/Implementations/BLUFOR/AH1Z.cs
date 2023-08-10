@@ -18,7 +18,8 @@
 
         inGameDisplayName = "AH-1Z";
         inGameFactoryLevel = 5;
-            
+        producedFromFactoryType = FactoryType.AIRCRAFTFACTORY;
+
         addToDefaultLoadoutPrice = true;
     }
 }

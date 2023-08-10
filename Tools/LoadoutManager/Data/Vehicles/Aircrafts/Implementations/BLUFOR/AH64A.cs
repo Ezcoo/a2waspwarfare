@@ -17,7 +17,8 @@
 
         inGameDisplayName = "AH-64A";
         inGameFactoryLevel = 3;
-            
+        producedFromFactoryType = FactoryType.AIRCRAFTFACTORY;
+
         addToDefaultLoadoutPrice = true;
     }
 }

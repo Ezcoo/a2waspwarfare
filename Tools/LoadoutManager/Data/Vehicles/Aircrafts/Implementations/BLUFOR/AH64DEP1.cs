@@ -18,7 +18,8 @@
 
         inGameDisplayName = "AH-64D (Longbow)";
         inGameFactoryLevel = 4;
-            
+        producedFromFactoryType = FactoryType.AIRCRAFTFACTORY;
+
         addToDefaultLoadoutPrice = true;
     }
 }

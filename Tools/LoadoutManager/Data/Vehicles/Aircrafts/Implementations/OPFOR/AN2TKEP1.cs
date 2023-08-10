@@ -19,5 +19,6 @@
 
         inGameDisplayName = "An-2";
         inGameFactoryLevel = 1;
+        producedFromFactoryType = FactoryType.AIRCRAFTFACTORY;
     }
 }

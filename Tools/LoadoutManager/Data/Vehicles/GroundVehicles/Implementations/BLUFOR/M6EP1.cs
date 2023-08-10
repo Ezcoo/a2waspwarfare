@@ -45,5 +45,6 @@
 
         inGameDisplayName = "M6 Linebacker";
         inGameFactoryLevel = 4;
+        producedFromFactoryType = FactoryType.HEAVYFACTORY;
     }
 }

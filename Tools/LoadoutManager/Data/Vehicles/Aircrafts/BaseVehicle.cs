@@ -7,6 +7,7 @@ public abstract class BaseVehicle : InterfaceVehicle
     public VehicleType VehicleType { get => vehicleType; set => vehicleType = value; }
     string InterfaceVehicle.InGameDisplayName { get => inGameDisplayName ; set => inGameDisplayName = value; }
     public int InGameFactoryLevel { get => inGameFactoryLevel; set => inGameFactoryLevel = value; }
+    public FactoryType ProducedFromFactoryType { get => producedFromFactoryType; set => producedFromFactoryType = value; }
 
     protected VehicleType vehicleType { get; set; }
     protected Loadout defaultLoadout { get; set; }
@@ -15,7 +16,7 @@ public abstract class BaseVehicle : InterfaceVehicle
     protected Loadout vanillaGameDefaultLoadoutOnTurret { get; set; }
     protected int turretPos { get; set; }
     protected int inGameFactoryLevel { get; set; }
-    // Add vehicle factory type
+    protected FactoryType producedFromFactoryType { get; set; }
     protected string inGameDisplayName { get; set; }
 
     // Add price etc here for more advanced SQF generation

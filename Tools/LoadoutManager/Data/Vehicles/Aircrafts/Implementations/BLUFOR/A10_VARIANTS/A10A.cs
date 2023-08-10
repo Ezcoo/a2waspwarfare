@@ -20,5 +20,6 @@
 
         inGameDisplayName = "A-10A";
         inGameFactoryLevel = 3;
+        producedFromFactoryType = FactoryType.AIRCRAFTFACTORY;
     }
 }

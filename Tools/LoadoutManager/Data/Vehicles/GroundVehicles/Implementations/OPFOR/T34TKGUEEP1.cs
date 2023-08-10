@@ -44,5 +44,6 @@
 
         inGameDisplayName = "T-34";
         inGameFactoryLevel = 1;
+        producedFromFactoryType = FactoryType.HEAVYFACTORY;
     }
 }

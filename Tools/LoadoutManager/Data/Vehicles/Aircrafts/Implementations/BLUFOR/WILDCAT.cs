@@ -21,7 +21,8 @@
 
         inGameDisplayName = "Wildcat AH11";
         inGameFactoryLevel = 3;
-            
+
         addToDefaultLoadoutPrice = true;
+        producedFromFactoryType = FactoryType.AIRCRAFTFACTORY;
     }
 }

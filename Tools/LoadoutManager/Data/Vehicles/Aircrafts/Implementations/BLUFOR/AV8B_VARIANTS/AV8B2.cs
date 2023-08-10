@@ -23,5 +23,6 @@
 
         inGameDisplayName = "AV8B";
         inGameFactoryLevel = 5;
+        producedFromFactoryType = FactoryType.AIRCRAFTFACTORY;
     }
 }

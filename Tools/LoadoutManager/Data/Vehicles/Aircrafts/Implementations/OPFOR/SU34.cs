@@ -38,5 +38,6 @@
         };
         inGameDisplayName = "Su-34";
         inGameFactoryLevel = 5;
+        producedFromFactoryType = FactoryType.AIRCRAFTFACTORY;
     }
 }

@@ -18,7 +18,8 @@
 
         inGameDisplayName = "Mi-24V (CZ)";
         inGameFactoryLevel = 3;
-            
+
         addToDefaultLoadoutPrice = true;
+        producedFromFactoryType = FactoryType.AIRCRAFTFACTORY;
     }
 }

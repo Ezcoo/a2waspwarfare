@@ -18,7 +18,8 @@
 
         inGameDisplayName = "Ka-52";
         inGameFactoryLevel = 4;
-            
+        producedFromFactoryType = FactoryType.AIRCRAFTFACTORY;
+
         addToDefaultLoadoutPrice = true;
     }
 }
