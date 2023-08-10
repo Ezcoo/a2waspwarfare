@@ -74,10 +74,18 @@ class Program
     {
         string aircraftLoadouts = string.Empty;
 
-        foreach (VehicleType aircraftType in Enum.GetValues(typeof(VehicleType)))
+        foreach (VehicleType vehicleType in Enum.GetValues(typeof(VehicleType)))
         {
-            var _interfaceAircraft = (InterfaceAircraft)EnumExtensions.GetInstance(aircraftType.ToString());
-            aircraftLoadouts += "\n" + _interfaceAircraft.GenerateLoadoutsForTheAircraft() + "\n";
+            var interfaceVehicle = (InterfaceVehicle)EnumExtensions.GetInstance(vehicleType.ToString());
+            var baseAircraft = interfaceVehicle as BaseAircraft;
+
+            // Skip non-aircraft for easa
+            if (baseAircraft == null)
+            {
+                continue;
+            }
+
+            aircraftLoadouts += "\n" + baseAircraft.GenerateLoadoutsForTheAircraft() + "\n";
         }
 
         return aircraftLoadouts;
