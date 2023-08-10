@@ -323,39 +323,6 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         newLoadoutRow.weaponsInfo = newLoadoutRow.weaponsInfo.TrimEnd('|');
         newLoadoutRow.weaponsInfo = newLoadoutRow.weaponsInfo.TrimEnd(' ');
 
-        // Detect the default loadout for su34 etc
-        if (!newLoadoutRow.isDefaultLoadout)
-        {
-            string defaultLoadoutWeaponsInfo = string.Empty;
-            foreach (var kvp in defaultLoadout.AmmunitionTypesWithCount)
-            {
-                int finalKvpValue = kvp.Value;
-
-                var ammunitionType = (InterfaceAmmunition)EnumExtensions.GetInstance(kvp.Key.ToString());
-
-                if (ammunitionType.AmmunitionTypes[0] == AmmunitionType.FOURROUNDCH29)
-                {
-                    finalKvpValue = 4;
-                }
-
-                if (ammunitionType.AmmunitionTypes[0] == AmmunitionType.SIXROUNDCH29)
-                {
-                    finalKvpValue = 6;
-                }
-
-                defaultLoadoutWeaponsInfo += ammunitionType.ammoDisplayName + " (" + finalKvpValue + ") | ";
-            }
-            defaultLoadoutWeaponsInfo = defaultLoadoutWeaponsInfo.TrimEnd(' ');
-            defaultLoadoutWeaponsInfo = defaultLoadoutWeaponsInfo.TrimEnd('|');
-            defaultLoadoutWeaponsInfo = defaultLoadoutWeaponsInfo.TrimEnd(' ');
-
-            if (_generateWithPriceAndWeaponsInfo && (defaultLoadoutWeaponsInfo == newLoadoutRow.weaponsInfo))
-            {
-                newLoadoutRow.weaponsInfo = newLoadoutRow.weaponsInfo.Insert(0, "DEFAULT | ");
-                newLoadoutRow.isDefaultLoadout = true;
-            }
-        }
-
         return newLoadoutRow;
     }
 
