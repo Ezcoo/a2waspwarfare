@@ -14,21 +14,6 @@ class Program
         WaitForExitCommand();
     }
 
-    //static List<string> testingStrings = new List<string>
-    //{
-    //    "F35B",
-    //    "SU34",
-    //};
-
-    //private static void GenerateCommonBalanceInitSQF()
-    //{
-    //    foreach (var item in testingStrings)
-    //    {
-    //        var _interfaceVehicle = (InterfaceVehicle)EnumExtensions.GetInstance(item);
-    //        _interfaceVehicle.StartGeneratingCommonBalanceInitForTheVehicle();
-    //    }
-    //}
-
     /// <summary>
     /// MOVE TO OWN CLASS
     /// </summary>
