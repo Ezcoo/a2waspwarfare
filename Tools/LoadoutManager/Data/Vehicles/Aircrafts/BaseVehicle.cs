@@ -56,7 +56,7 @@ public abstract class BaseVehicle : InterfaceVehicle
 
         // Populate weapons and magazines
         //error = PopulateWeaponsAndMagazines(defaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToAdd);
-        error = PopulateWeaponsAndMagazines(_vanillaLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToRemove);
+        //error = PopulateWeaponsAndMagazines(_vanillaLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToRemove);
         // Use trycatch
 
         if (error)
@@ -169,11 +169,35 @@ public abstract class BaseVehicle : InterfaceVehicle
         weaponsToAdd.AddRange(extraWeaponsToAdd);
 
 
-        string addSQFCode = GenerateSQFCodeInner(magazinesToAdd, weaponsToAdd, "add", _turret);
-        string removeSQFCode = GenerateSQFCodeInner(magazinesToRemove, weaponsToRemove, "remove", _turret);
+        Dictionary<string, int> magazinesToAddv2 = ConvertToMagazineDictionary(weaponsAndMagazinesToAdd);
+        Dictionary<string, int> magazinesToRemovev2 = ConvertToMagazineDictionary(weaponsAndMagazinesToRemove);
+
+        string addSQFCode = GenerateSQFCodeInner(magazinesToAddv2, weaponsToAdd, "add", _turret);
+        string removeSQFCode = GenerateSQFCodeInner(magazinesToRemovev2, weaponsToRemove, "remove", _turret);
 
         return addSQFCode + removeSQFCode;
     }
+
+    private Dictionary<string, int> ConvertToMagazineDictionary(Dictionary<string, List<string>> weaponsAndMagazines)
+    {
+        Dictionary<string, int> result = new Dictionary<string, int>();
+        foreach (var weaponMagazines in weaponsAndMagazines)
+        {
+            foreach (var magazine in weaponMagazines.Value)
+            {
+                if (result.ContainsKey(magazine))
+                {
+                    result[magazine]++;
+                }
+                else
+                {
+                    result[magazine] = 1;
+                }
+            }
+        }
+        return result;
+    }
+
 
     private bool PopulateWeaponsAndMagazines(
         Dictionary<AmmunitionType, int> _ammunitionTypesWithCount,
@@ -215,7 +239,7 @@ public abstract class BaseVehicle : InterfaceVehicle
         return _weaponsAndMagazines.Values.SelectMany(m => m).ToList();
     }
 
-    private string GenerateSQFCodeInner(List<string> _magazines, IEnumerable<string> _weapons, string _action, string _turret)
+    private string GenerateSQFCodeInner(Dictionary<string, int> _magazines, IEnumerable<string> _weapons, string _action, string _turret)
     {
         string magazineAction = _action == "add" ? "add" + _turret + "Magazine" : "remove" + _turret + "Magazine";
         string weaponAction = _action == "add" ? "add" + _turret + "Weapon" : "remove" + _turret + "Weapon";
@@ -224,12 +248,23 @@ public abstract class BaseVehicle : InterfaceVehicle
 
         if (_magazines.Any())
         {
-            sqfCode.AppendLine($"    _this {magazineAction} \"{string.Join($"\";\n    _this {magazineAction} \"", _magazines)}\";");
+            foreach (var mags in _magazines)
+            {
+                for (int i = 0; i < mags.Value/2; i++)
+                {
+                    sqfCode.AppendLine($"    _this {magazineAction} \"{string.Join($"\";\n    _this {magazineAction} \"", mags.Key)}\";");
+                }
+            }
         }
 
         if (_weapons.Any())
         {
             sqfCode.AppendLine($"    _this {weaponAction} \"{string.Join($"\";\n    _this {weaponAction} \"", _weapons)}\";");
+        }
+
+        if (_action == "remove")
+        {
+
         }
 
         return sqfCode.ToString();
