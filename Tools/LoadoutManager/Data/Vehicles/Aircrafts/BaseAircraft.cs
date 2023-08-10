@@ -105,7 +105,18 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
 
     private string GenerateDefaultLoadout()
     {
-        var ammunitionArray = GenerateLoadoutRow(defaultLoadout.AmmunitionTypesWithCount, false);
+        (string, int) ammunitionArray;
+
+        // Calculate for turret (like for aircrafts, the Su34)
+        if (vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount.Count > 0)
+        {
+            ammunitionArray = GenerateLoadoutRow(defaultLoadoutOnTurret.AmmunitionTypesWithCount, false);
+        }
+        else
+        {
+            ammunitionArray = GenerateLoadoutRow(defaultLoadout.AmmunitionTypesWithCount, false);
+        }
+
         if (ammunitionArray.Item1 == "")
         {
             return "";
