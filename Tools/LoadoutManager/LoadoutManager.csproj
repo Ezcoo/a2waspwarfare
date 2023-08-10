@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Vehicles\GroundVehicles\Implementations\OPFOR\" />
     <Folder Include="Data\Weapons\Implementations\AirToAirWeapons\Stinger\ForVanillaLoadouts\" />
     <Folder Include="Data\Weapons\Implementations\AirToGroundWeapons\Bombs\LaserGuidedBombs\GBU12\ForDefaultLoadouts\" />
   </ItemGroup>
