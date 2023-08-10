@@ -13,7 +13,7 @@
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.SIXTYROUNDCMFLAREMAGAZINE, 2},
-                { AmmunitionType.FIVEHUNDREDROUNDTWINVICKERS, 2},
+                { AmmunitionType.FIVEHUNDREDROUNDTWINVICKERS, 4},
                 { AmmunitionType.FOURROUNDFAB250, 2},
             };
 
