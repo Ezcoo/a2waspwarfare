@@ -2,7 +2,7 @@
 {
     public KA52BLACK()
     {
-        VehicleType = VehicleType.KA52;
+        VehicleType = VehicleType.KA52BLACK;
         pylonAmount = 2;
 
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
