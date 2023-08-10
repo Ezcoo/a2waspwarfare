@@ -72,4 +72,7 @@ public enum VehicleType
 
     [EnumMember(Value = "T34_TK_EP1")]
     T34TKEP1,
+
+    [EnumMember(Value = "T34_TK_GUE_EP1")]
+    T34TKGUEEP1,
 }
