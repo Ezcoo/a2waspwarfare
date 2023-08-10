@@ -97,4 +97,9 @@ public enum AmmunitionType
 
     [EnumMember(Value = "60Rnd_CMFlareMagazine")]
     SIXTYROUNDCMFLAREMAGAZINE,
+
+    [EnumMember(Value = "10Rnd_85mmAP")]
+    TENROUND85MMAPZIS,
+    [EnumMember(Value = "60Rnd_762x54_DT")]
+    SIXTYROUND762X54DT,
 }

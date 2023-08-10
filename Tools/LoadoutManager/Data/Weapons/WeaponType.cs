@@ -85,5 +85,11 @@ public enum WeaponType
 
     // FLARES
     [EnumMember(Value = "CMFlareLauncher")]
-    CMFLARELAUCNHER,
+    CMFLARELAUNCHER,
+
+    [EnumMember(Value = "DT_veh")]
+    DTMACHINEGUN,
+
+    [EnumMember(Value = "ZiS_S_53")]
+    ZISS53,
 }
