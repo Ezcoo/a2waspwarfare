@@ -169,8 +169,16 @@ public abstract class BaseVehicle : InterfaceVehicle
             .Distinct()  // Ensure unique weapons
             .ToList();
 
-        weaponsToRemove.AddRange(extraWeaponsToRemove);
         weaponsToAdd.AddRange(extraWeaponsToAdd);
+        
+        // Remove duplicate entries from the weapons to remove
+        foreach (var weapon in extraWeaponsToRemove)
+        {
+            if (!weaponsToRemove.Contains(weapon))
+            {
+                weaponsToRemove.Add(weapon);
+            }
+        }
 
         Dictionary<string, int> magazinesToAddv2 = ConvertToMagazineDictionary(weaponsAndMagazinesToAdd);
         Dictionary<string, int> magazinesToRemovev2 = ConvertToMagazineDictionary(weaponsAndMagazinesToRemove);
