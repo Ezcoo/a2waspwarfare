@@ -4,10 +4,8 @@
     {
         AmmunitionTypes = new List<AmmunitionType>() { AmmunitionType.FOURROUNDR73 };
         amountPerPylon = 2;
-        weaponDefinition = (InterfaceWeapon)EnumExtensions.GetInstance(WeaponType.R73_WEAPON.ToString()) as BaseWeapon;
+        weaponDefinition = (InterfaceWeapon)EnumExtensions.GetInstance(WeaponType.R73_WEAPON_4.ToString()) as BaseWeapon;
         ammoDisplayName = "R-73";
         costPerPylon = 2322;
-
-        canNotBeUsedAsLoadoutOption = true;
     }
 }

@@ -19,11 +19,12 @@
         base.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.SIXROUNDCH29, 2},
-                { AmmunitionType.TWOROUNDR73, 4},
+                { AmmunitionType.FOURROUNDR73, 2},
             };
         base.defaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.FOURTYROUNDS8, 2},
+                { AmmunitionType.SIXROUNDCH29, 2},
+                { AmmunitionType.TWOROUNDR73, 4},
             };
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
