@@ -40,6 +40,9 @@ public enum AmmunitionType
     [EnumMember(Value = "4Rnd_GBU12")]
     FOURROUNDGBU12, //vanilla
 
+    [EnumMember(Value = "6Rnd_GBU12_AV8B")]
+    VANILLA_SIXROUNDGBU12, //vanilla
+
     [EnumMember(Value = "2Rnd_Igla")]
     TWOROUNDIGLA,
 
