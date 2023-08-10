@@ -5,6 +5,27 @@
         VehicleType = VehicleType.SU25T;
         pylonAmount = 8;
 
+        //weapons[] = {
+        //    "GSh301",
+        //    "AirBombLauncher",
+        //    "R73Launcher_2",
+        //    "S8Launcher",
+        //    "CMFlareLauncher"
+        //};
+        //magazines[] = {
+        //    "180Rnd_30mm_GSh301",
+        //    "4Rnd_FAB_250",
+        //    "2Rnd_R73",
+        //    "80Rnd_S8T",
+        //    "120Rnd_CMFlare_Chaff_Magazine"
+        //};
+
+        base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+                { AmmunitionType.FOURROUNDFAB250, 2},
+                { AmmunitionType.TWOROUNDR73, 2},
+                { AmmunitionType.VANILLA_EIGHTYROUNDS8, 2},
+            };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.FOURROUNDATAKA, 4},
