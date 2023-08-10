@@ -9,11 +9,11 @@ public abstract class BaseVehicle : InterfaceVehicle
     public int InGameFactoryLevel { get => inGameFactoryLevel; set => inGameFactoryLevel = value; }
 
     protected VehicleType vehicleType { get; set; }
-
     protected Loadout defaultLoadout { get; set; }
     protected Loadout defaultLoadoutOnTurret { get; set; }
     protected Loadout vanillaGameDefaultLoadout { get; set; }
     protected Loadout vanillaGameDefaultLoadoutOnTurret { get; set; }
+    protected int turretPos { get; set; }
     protected int inGameFactoryLevel { get; set; }
     // Add vehicle factory type
     protected string inGameDisplayName { get; set; }
@@ -254,25 +254,38 @@ public abstract class BaseVehicle : InterfaceVehicle
         {
             foreach (var mags in _magazines)
             {
-                for (int i = 0; i < mags.Value/2; i++)
+                for (int i = 0; i < mags.Value / 2; i++)
                 {
-                    sqfCode.AppendLine($"    _this {magazineAction} \"{string.Join($"\";\n    _this {magazineAction} \"", mags.Key)}\";");
+                    if (string.IsNullOrEmpty(_turret))
+                    {
+                        sqfCode.AppendLine($"    _this {magazineAction} \"{mags.Key}\";");
+                    }
+                    else
+                    {
+                        sqfCode.AppendLine($"    _this {magazineAction} [\"{mags.Key}\", [{turretPos}]];");
+                    }
                 }
             }
         }
 
         if (_weapons.Any())
         {
-            sqfCode.AppendLine($"    _this {weaponAction} \"{string.Join($"\";\n    _this {weaponAction} \"", _weapons)}\";");
-        }
-
-        if (_action == "remove")
-        {
-
+            foreach (var weapon in _weapons)
+            {
+                if (string.IsNullOrEmpty(_turret))
+                {
+                    sqfCode.AppendLine($"    _this {weaponAction} \"{weapon}\";");
+                }
+                else
+                {
+                    sqfCode.AppendLine($"    _this {weaponAction} [\"{weapon}\", [{turretPos}]];");
+                }
+            }
         }
 
         return sqfCode.ToString();
     }
+
 
     private List<string> CompareDictionaries(
         Dictionary<AmmunitionType, int> _firstDictionary,
