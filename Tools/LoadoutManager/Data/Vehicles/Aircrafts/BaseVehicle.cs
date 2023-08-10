@@ -52,11 +52,7 @@ public abstract class BaseVehicle : InterfaceVehicle
 
         List<string> extraWeaponsToAdd = new();
         List<string> extraWeaponsToRemove = new();
-        //List<string> extraMagazinesToAdd = new();
 
-        // Populate weapons and magazines
-        //error = PopulateWeaponsAndMagazines(defaultLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToAdd);
-        //error = PopulateWeaponsAndMagazines(_vanillaLoadout.AmmunitionTypesWithCount, weaponsAndMagazinesToRemove);
         // Use trycatch
 
         if (error)
