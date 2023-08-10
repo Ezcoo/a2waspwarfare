@@ -20,11 +20,11 @@
         //    "120Rnd_CMFlare_Chaff_Magazine"
         //};
 
+
         base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.FOURROUNDFAB250, 2},
-                { AmmunitionType.TWOROUNDR73, 2},
-                { AmmunitionType.VANILLA_EIGHTYROUNDS8, 2},
+                { AmmunitionType.THREEHUNDREDROUNDGAU12, 2},
+                { AmmunitionType.VANILLA_SIXROUNDGBU12, 2},
             };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {

@@ -69,6 +69,8 @@ public enum WeaponType
 
     [EnumMember(Value = "TOWLauncherSingle")]
     TOWLAUNCHERSINGLE,
+    [EnumMember(Value = "TOWLauncher")]
+    TOWLAUNCHER2RND,
 
     [EnumMember(Value = "SpikeLauncher_ACR")]
     SPIKELAUNCHER,
@@ -94,4 +96,9 @@ public enum WeaponType
 
     [EnumMember(Value = "ZiS_S_53")]
     ZISS53,
+
+    [EnumMember(Value = "M242BC")]
+    M242BC,
+    [EnumMember(Value = "M242")]
+    M242,
 }

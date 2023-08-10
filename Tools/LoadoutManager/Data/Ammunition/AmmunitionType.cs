@@ -81,6 +81,8 @@ public enum AmmunitionType
 
     [EnumMember(Value = "6Rnd_TOW2")]
     SIXROUNDTOWTWO,
+    [EnumMember(Value = "2Rnd_TOW2")]
+    TWOROUNDTOWTWO,
 
     [EnumMember(Value = "2Rnd_Spike_ACR")]
     TWOROUNDSPIKE,
@@ -107,4 +109,13 @@ public enum AmmunitionType
     TENROUND85MMAPZIS,
     [EnumMember(Value = "60Rnd_762x54_DT")]
     SIXTYROUND762X54DT,
+
+    [EnumMember(Value = "210Rnd_25mm_M242_HEI")]
+    TWOHUNDREDTENROUND25MMM242HEI,
+    [EnumMember(Value = "210Rnd_25mm_M242_APDS")]
+    TWOHUNDREDTENROUND25MMM242APDS,
+    [EnumMember(Value = "210Rnd_25mm_M242_HEI")]
+    TWOHUNDREDTENROUND25MMM242HEI_BC,
+    [EnumMember(Value = "210Rnd_25mm_M242_APDS")]
+    TWOHUNDREDTENROUND25MMM242APDS_BC,
 }
