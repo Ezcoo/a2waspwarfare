@@ -79,4 +79,11 @@ public enum WeaponType
 
     [EnumMember(Value = "9M311Laucher")]
     VANILLA_TUNGUSKALAUNCHER,
+
+    [EnumMember(Value = "TwinVickers")]
+    TWINVICKERS,
+
+    // FLARES
+    [EnumMember(Value = "CMFlareLauncher")]
+    CMFLARELAUCNHER,
 }

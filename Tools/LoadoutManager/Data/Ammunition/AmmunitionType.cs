@@ -91,4 +91,10 @@ public enum AmmunitionType
 
     [EnumMember(Value = "8Rnd_9M311")]
     VANILLA_EIGHTROUNDTUNGUSKA,
+
+    [EnumMember(Value = "500Rnd_TwinVickers")]
+    FIVEHUNDREDROUNDTWINVICKERS,
+
+    [EnumMember(Value = "60Rnd_CMFlareMagazine")]
+    SIXTYROUNDCMFLAREMAGAZINE,
 }
