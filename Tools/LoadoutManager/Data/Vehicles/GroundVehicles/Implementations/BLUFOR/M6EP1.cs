@@ -7,13 +7,13 @@
         //weapons[] = {
         //            "M242BC",
         //            "M240BC_veh",
-        //            "StingerLaucher_4x"
+        //            "StingerLaucher_4x" removed
         //        };
         //magazines[] = {
         //            "1200Rnd_762x51_M240",
-        //            "4Rnd_Stinger",
-        //            "4Rnd_Stinger",
-        //            "4Rnd_Stinger",
+        //            "4Rnd_Stinger", removed
+        //            "4Rnd_Stinger", removed
+        //            "4Rnd_Stinger", removed
         //            "210Rnd_25mm_M242_APDS",
         //            "210Rnd_25mm_M242_HEI",
         //            "210Rnd_25mm_M242_APDS",
