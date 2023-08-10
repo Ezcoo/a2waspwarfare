@@ -9,8 +9,6 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
     public bool addToDefaultLoadoutPrice { get; set; }
     public Dictionary<AmmunitionType, float> ammunitionTypeCostFloatModifier { get; set; }
 
-    // Add price etc here for more advanced SQF generation
-
     protected BaseAircraft()
     {
         defaultLoadout = new Loadout();
