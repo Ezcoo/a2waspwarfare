@@ -164,9 +164,17 @@ public abstract class BaseVehicle : InterfaceVehicle
         weaponsToRemove.AddRange(extraWeaponsToRemove);
         weaponsToAdd.AddRange(extraWeaponsToAdd);
 
-
         Dictionary<string, int> magazinesToAddv2 = ConvertToMagazineDictionary(weaponsAndMagazinesToAdd);
         Dictionary<string, int> magazinesToRemovev2 = ConvertToMagazineDictionary(weaponsAndMagazinesToRemove);
+
+        foreach (var key in magazinesToAddv2.Keys.ToList()) // Using ToList() to avoid collection modification error
+        {
+            if (magazinesToRemovev2.ContainsKey(key) && magazinesToRemovev2[key] == magazinesToAddv2[key])
+            {
+                magazinesToAddv2.Remove(key);
+                magazinesToRemovev2.Remove(key);
+            }
+        }
 
         string addSQFCode = GenerateSQFCodeInner(magazinesToAddv2, weaponsToAdd, "add", _turret);
         string removeSQFCode = GenerateSQFCodeInner(magazinesToRemovev2, weaponsToRemove, "remove", _turret);
