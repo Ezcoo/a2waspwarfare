@@ -23,8 +23,9 @@
 
         base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.THREEHUNDREDROUNDGAU12, 2},
-                { AmmunitionType.VANILLA_SIXROUNDGBU12, 2},
+                { AmmunitionType.FOURROUNDFAB250, 2},
+                { AmmunitionType.TWOROUNDR73, 2},
+                { AmmunitionType.VANILLA_EIGHTYROUNDS8, 2},
             };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
