@@ -63,4 +63,7 @@ public enum VehicleType
 
     [EnumMember(Value = "Ka52Black")]
     KA52BLACK,
+
+    [EnumMember(Value = "M6_EP1")]
+    M6EP1,
 }

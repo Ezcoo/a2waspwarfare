@@ -22,6 +22,10 @@ public abstract class BaseVehicle : InterfaceVehicle
 
     protected BaseVehicle()
     {
+        defaultLoadout = new Loadout();
+        defaultLoadout.AmmunitionTypesWithCount = new();
+        defaultLoadoutOnTurret = new Loadout();
+        defaultLoadoutOnTurret.AmmunitionTypesWithCount = new();
         vanillaGameDefaultLoadout = new Loadout();
         vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new();
         vanillaGameDefaultLoadoutOnTurret = new Loadout();

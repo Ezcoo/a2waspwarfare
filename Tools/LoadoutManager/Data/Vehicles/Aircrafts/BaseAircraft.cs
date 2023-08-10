@@ -9,14 +9,6 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
     public bool addToDefaultLoadoutPrice { get; set; }
     public Dictionary<AmmunitionType, float> ammunitionTypeCostFloatModifier { get; set; }
 
-    protected BaseAircraft()
-    {
-        defaultLoadout = new Loadout();
-        defaultLoadout.AmmunitionTypesWithCount = new();
-        defaultLoadoutOnTurret = new Loadout();
-        defaultLoadoutOnTurret.AmmunitionTypesWithCount = new();
-    }
-
     public string GenerateLoadoutsForTheAircraft()
     {
         string generatedLoadouts = string.Empty;
