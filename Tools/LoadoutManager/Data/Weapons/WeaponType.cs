@@ -59,6 +59,8 @@ public enum WeaponType
 
     [EnumMember(Value = "StingerLauncher_twice")]
     STINGERLAUNCHER,
+    [EnumMember(Value = "StingerLaucher_4x")]
+    VANILLA_STINGERLAUNCHER_4X,
 
     [EnumMember(Value = "GSh301")]
     GSHGUNPOD,
@@ -74,4 +76,7 @@ public enum WeaponType
 
     [EnumMember(Value = "CRV7_HEPD")]
     CRV7HEPD,
+
+    [EnumMember(Value = "9M311Laucher")]
+    VANILLA_TUNGUSKALAUNCHER,
 }

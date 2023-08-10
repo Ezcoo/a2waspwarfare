@@ -65,6 +65,9 @@ public enum AmmunitionType
     [EnumMember(Value = "2Rnd_Stinger")]
     TWOROUNDSTINGER,
 
+    [EnumMember(Value = "4Rnd_Stinger")]
+    VANILLA_FOURROUNDSTINGER,
+
     [EnumMember(Value = "12Rnd_Vikhr_KA50")]
     TWELVEROUNDSVIKHR,
 
@@ -85,4 +88,7 @@ public enum AmmunitionType
 
     [EnumMember(Value = "6Rnd_CRV7_HEPD")]
     SIXROUNDCRV7HEPD,
+
+    [EnumMember(Value = "8Rnd_9M311")]
+    VANILLA_EIGHTROUNDTUNGUSKA,
 }

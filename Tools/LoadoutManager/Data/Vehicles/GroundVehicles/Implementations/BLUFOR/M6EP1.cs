@@ -4,14 +4,30 @@
     {
         VehicleType = VehicleType.M6EP1;
 
-        // Pilot seat
+        //weapons[] = {
+        //            "M242BC",
+        //            "M240BC_veh",
+        //            "StingerLaucher_4x"
+        //        };
+        //magazines[] = {
+        //            "1200Rnd_762x51_M240",
+        //            "4Rnd_Stinger",
+        //            "4Rnd_Stinger",
+        //            "4Rnd_Stinger",
+        //            "210Rnd_25mm_M242_APDS",
+        //            "210Rnd_25mm_M242_HEI",
+        //            "210Rnd_25mm_M242_APDS",
+        //            "210Rnd_25mm_M242_HEI"
+        //        };
+
+        // Driver seat
         base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.VANILLA_FOURTYROUNDS8, 2},
+                { AmmunitionType.VANILLA_FOURROUNDSTINGER, 6},
             };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.FOURTYROUNDS8, 2},
+                { AmmunitionType.VANILLA_EIGHTROUNDTUNGUSKA, 2},
             };
 
         //// Turret
