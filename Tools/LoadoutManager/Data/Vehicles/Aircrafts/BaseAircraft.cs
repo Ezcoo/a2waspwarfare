@@ -29,9 +29,9 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         return generatedLoadouts;
     }
 
-    private string GenerateCommentForTheSqfCode()
+    protected override string GenerateCommentForTheSqfCode()
     {
-        return "// " + inGameDisplayName + " [" + EnumExtensions.GetEnumMemberAttrValue(producedFromFactoryType) 
+        return "// " + inGameDisplayName + " [" + EnumExtensions.GetEnumMemberAttrValue(producedFromFactoryType)
             + InGameFactoryLevel + "] - " + pylonAmount + " pylons";
     }
 

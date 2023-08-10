@@ -1,4 +1,4 @@
-﻿public class M6EP1 : BaseVehicle
+﻿public class M6EP1 : BaseGroundVehicle
 {
     public M6EP1()
     {

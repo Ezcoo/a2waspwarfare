@@ -1,4 +1,4 @@
-﻿public class T34TKEP1 : BaseVehicle
+﻿public class T34TKEP1 : BaseGroundVehicle
 {
     public T34TKEP1()
     {

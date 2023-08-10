@@ -33,9 +33,12 @@ public abstract class BaseVehicle : InterfaceVehicle
         vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new();
     }
 
+    protected abstract string GenerateCommentForTheSqfCode();
+
     public string StartGeneratingCommonBalanceInitForTheVehicle()
     {
         string finalSQFCode = GenerateCommonBalanceInitForTheVehicle(vanillaGameDefaultLoadout, defaultLoadout);
+
         if (defaultLoadoutOnTurret.AmmunitionTypesWithCount.Keys.Count > 0 ||
             vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount.Keys.Count > 0)
         {
@@ -44,7 +47,7 @@ public abstract class BaseVehicle : InterfaceVehicle
             finalSQFCode += finalTurretSQFCode;
         }
 
-        return $"case \"{EnumExtensions.GetEnumMemberAttrValue(VehicleType)}\": {{\n" + finalSQFCode + "};";
+        return $"{GenerateCommentForTheSqfCode()}\ncase \"{EnumExtensions.GetEnumMemberAttrValue(VehicleType)}\": {{\n" + finalSQFCode + "};";
     }
 
     public string GenerateCommonBalanceInitForTheVehicle(Loadout _vanillaLoadout, Loadout _defaultLoadout, string _turret = "")
