@@ -3,28 +3,31 @@ using System.Collections.Generic;
 
 class Program
 {
+    static string aircraftEasaLoadoutsFile = string.Empty;
+    static string commonBalanceInitFile = string.Empty;
+
     static void Main()
     {
-        Console.WriteLine(GenerateTheEasaFile());
-        Console.WriteLine("\n\n");
-        GenerateCommonBalanceInitSQF();
+        GenerateCommonBalanceInitAndTheEasaFile();
+
+        //GenerateCommonBalanceInitSQF();
         WaitForExitCommand();
     }
 
-    static List<string> testingStrings = new List<string>
-    {
-        "F35B",
-        "SU34",
-    };
+    //static List<string> testingStrings = new List<string>
+    //{
+    //    "F35B",
+    //    "SU34",
+    //};
 
-    private static void GenerateCommonBalanceInitSQF()
-    {
-        foreach (var item in testingStrings)
-        {
-            var _interfaceVehicle = (InterfaceVehicle)EnumExtensions.GetInstance(item);
-            _interfaceVehicle.StartGeneratingCommonBalanceInitForTheVehicle();
-        }
-    }
+    //private static void GenerateCommonBalanceInitSQF()
+    //{
+    //    foreach (var item in testingStrings)
+    //    {
+    //        var _interfaceVehicle = (InterfaceVehicle)EnumExtensions.GetInstance(item);
+    //        _interfaceVehicle.StartGeneratingCommonBalanceInitForTheVehicle();
+    //    }
+    //}
 
     /// <summary>
     /// MOVE TO OWN CLASS
@@ -44,7 +47,6 @@ class Program
     private static string GenerateStartOfTheEasaFile()
     {
         string startOfTheEasaFile = string.Empty;
-
         startOfTheEasaFile += "Private [\"_ammo\",\"_easaDefault\",\"_easaLoadout\",\"_easaVehi\",\"_is_AAMissile\",\"_loadout\",\"_loadout_line\",\"_vehicle\"];";
         startOfTheEasaFile += "\n";
         startOfTheEasaFile += "EASA_Equip = Compile preprocessFileLineNumbers 'Client\\Module\\EASA\\EASA_Equip.sqf';";
@@ -59,36 +61,43 @@ class Program
     }
 
 
-    private static string GenerateTheEasaFile()
+    private static void GenerateCommonBalanceInitAndTheEasaFile()
     {
         string easaFileString = string.Empty;
-
-        easaFileString += GenerateStartOfTheEasaFile();
-        easaFileString += "\n" + GenerateAllAircraftLoadouts();
-        easaFileString += GenerateEndOfTheEasaFile();
-
-        return easaFileString;
-    }
-
-    private static string GenerateAllAircraftLoadouts()
-    {
-        string aircraftLoadouts = string.Empty;
+        string commonBalanceFileString = string.Empty;
 
         foreach (VehicleType vehicleType in Enum.GetValues(typeof(VehicleType)))
         {
-            var interfaceVehicle = (InterfaceVehicle)EnumExtensions.GetInstance(vehicleType.ToString());
-            var baseAircraft = interfaceVehicle as BaseAircraft;
-
-            // Skip non-aircraft for easa
-            if (baseAircraft == null)
-            {
-                continue;
-            }
-
-            aircraftLoadouts += "\n" + baseAircraft.GenerateLoadoutsForTheAircraft() + "\n";
+            GenerateAircraftSpecificLoadouts(vehicleType);
         }
 
-        return aircraftLoadouts;
+        easaFileString += GenerateStartOfTheEasaFile();
+        easaFileString += "\n" + aircraftEasaLoadoutsFile;
+        easaFileString += GenerateEndOfTheEasaFile();
+
+        commonBalanceFileString += "switch (typeOf _this) do\n{\n";
+        commonBalanceFileString += commonBalanceInitFile;
+        commonBalanceFileString += "};";
+
+        Console.WriteLine(easaFileString);
+        Console.WriteLine("\n\n");
+        Console.WriteLine(commonBalanceFileString);
+    }
+
+    private static void GenerateAircraftSpecificLoadouts(VehicleType _vehicleType)
+    {
+        var interfaceVehicle = (InterfaceVehicle)EnumExtensions.GetInstance(_vehicleType.ToString());
+        commonBalanceInitFile += interfaceVehicle.StartGeneratingCommonBalanceInitForTheVehicle() + "\n\n";
+
+        var baseAircraft = interfaceVehicle as BaseAircraft;
+
+        // Skip non-aircraft for easa
+        if (baseAircraft == null)
+        {
+            return;
+        }
+
+        aircraftEasaLoadoutsFile += "\n" + baseAircraft.GenerateLoadoutsForTheAircraft() + "\n";
     }
 
     private static string GenerateEndOfTheEasaFile()

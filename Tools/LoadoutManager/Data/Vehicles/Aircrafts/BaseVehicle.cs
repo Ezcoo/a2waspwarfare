@@ -32,7 +32,7 @@ public abstract class BaseVehicle : InterfaceVehicle
         vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new();
     }
 
-    public void StartGeneratingCommonBalanceInitForTheVehicle()
+    public string StartGeneratingCommonBalanceInitForTheVehicle()
     {
         string finalSQFCode = GenerateCommonBalanceInitForTheVehicle(vanillaGameDefaultLoadout, defaultLoadout);
         if (defaultLoadoutOnTurret.AmmunitionTypesWithCount.Keys.Count > 0 ||
@@ -43,7 +43,7 @@ public abstract class BaseVehicle : InterfaceVehicle
             finalSQFCode += finalTurretSQFCode;
         }
 
-        Console.WriteLine($"case \"{VehicleType}\": {{\n" + finalSQFCode + "};");
+        return $"case \"{VehicleType}\": {{\n" + finalSQFCode + "};";
     }
 
     public string GenerateCommonBalanceInitForTheVehicle(Loadout _vanillaLoadout, Loadout _defaultLoadout, string _turret = "")

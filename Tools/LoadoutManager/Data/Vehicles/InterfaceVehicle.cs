@@ -6,6 +6,6 @@ public interface InterfaceVehicle
     public string InGameDisplayName { get; set; }
     public int InGameFactoryLevel { get; set; }
 
-    public void StartGeneratingCommonBalanceInitForTheVehicle();
+    public string StartGeneratingCommonBalanceInitForTheVehicle();
     public string GenerateCommonBalanceInitForTheVehicle(Loadout _vanillaLoadout, Loadout _defaultLoadout, string _turret = "");
 }
