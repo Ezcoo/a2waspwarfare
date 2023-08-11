@@ -10,20 +10,19 @@ class Program
     {
         GenerateCommonBalanceInitAndTheEasaFile();
 
-        //GenerateCommonBalanceInitSQF();
-        WaitForExitCommand();
+        WaitForCommand("exit");
     }
 
     /// <summary>
     /// MOVE TO OWN CLASS
     /// </summary>
-    private static void WaitForExitCommand()
+    private static void WaitForCommand(string _command)
     {
         string userInput;
         do
         {
             userInput = Console.ReadLine();
-        } while (userInput?.ToLower() != "exit");
+        } while (userInput?.ToLower() != _command);
     }
 
     /// <summary>
@@ -60,12 +59,15 @@ class Program
         easaFileString += "\n" + aircraftEasaLoadoutsFile;
         easaFileString += GenerateEndOfTheEasaFile();
 
+
+
         commonBalanceFileString += "switch (typeOf _this) do\n{\n";
         commonBalanceFileString += commonBalanceInitFile;
         commonBalanceFileString += "};";
 
         Console.WriteLine(easaFileString);
-        Console.WriteLine("\n\n");
+        WaitForCommand("d");
+        Console.Clear();
         Console.WriteLine(commonBalanceFileString);
     }
 
