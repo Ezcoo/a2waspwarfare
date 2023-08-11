@@ -5,11 +5,17 @@
         VehicleType = VehicleType.L159ACR;
         pylonAmount = 6;
 
+
+        base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+                { AmmunitionType.VANILLA_FOURROUNDMAVERICK, 2},
+                { AmmunitionType.TWOROUNDSIDEWINDER_AH1Z, 2},
+            };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.TWOROUNDSIDEWINDER_AH1Z, 2},
                 { AmmunitionType.TWOROUNDMAVERICK, 2},
                 { AmmunitionType.THIRTYEIGHTROUNDHYDRA, 2},
+                { AmmunitionType.TWOROUNDSIDEWINDER_AH1Z, 2},
             };
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>

@@ -54,6 +54,8 @@ public enum AmmunitionType
 
     [EnumMember(Value = "2Rnd_Maverick_A10")]
     TWOROUNDMAVERICK,
+    [EnumMember(Value = "4Rnd_Maverick_L159")]
+    VANILLA_FOURROUNDMAVERICK,
 
     [EnumMember(Value = "6Rnd_Mk82")]
     SIXROUNDMK82,
