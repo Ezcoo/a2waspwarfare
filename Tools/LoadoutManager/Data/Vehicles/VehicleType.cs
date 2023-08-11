@@ -58,6 +58,9 @@ public enum VehicleType
     [EnumMember(Value = "Mi24_P")]
     MI24P,
 
+    [EnumMember(Value = "Mi24_D_TK_EP1")]
+    MI24DTKEP1,
+
     [EnumMember(Value = "Ka52")]
     KA52,
 

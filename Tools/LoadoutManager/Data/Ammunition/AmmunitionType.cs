@@ -29,6 +29,8 @@ public enum AmmunitionType
     [EnumMember(Value = "80Rnd_S8T")]
     VANILLA_EIGHTYROUNDS8,
 
+    [EnumMember(Value = "128Rnd_57mm")]
+    VANILLA_ONEHUNDREDTWENTYEIGHTFOURROUNDS5,
     [EnumMember(Value = "64Rnd_57mm")]
     SIXTYFOURROUNDS5,
 
