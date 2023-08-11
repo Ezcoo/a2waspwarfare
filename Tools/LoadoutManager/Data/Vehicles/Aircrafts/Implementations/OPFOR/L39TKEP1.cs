@@ -5,10 +5,25 @@
         VehicleType = VehicleType.L39TKEP1;
         pylonAmount = 4;
 
+        //weapons[] = {
+        //    "GSh23L_L39",
+        //    "57mmLauncher"
+        //};
+        //magazines[] = {
+        //    "150Rnd_23mm_GSh23L",
+        //    "64Rnd_57mm"
+        //};
+
+        base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+                //{ AmmunitionType.SIXTYROUNDCMFLAREMAGAZINE, 2},
+                { AmmunitionType.SIXTYFOURROUNDS5, 2},
+            };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.TWOROUNDR73, 2},
                 { AmmunitionType.SIXTYFOURROUNDS5, 2},
+                { AmmunitionType.SIXTYROUNDCMFLAREMAGAZINE, 2},
             };
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
