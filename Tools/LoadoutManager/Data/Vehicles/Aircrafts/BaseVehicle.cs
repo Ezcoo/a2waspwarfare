@@ -18,7 +18,7 @@ public abstract class BaseVehicle : InterfaceVehicle
     protected int inGameFactoryLevel { get; set; }
     protected FactoryType producedFromFactoryType { get; set; }
     protected string inGameDisplayName { get; set; }
-    private Dictionary<WeaponType, int> weaponToRemoveUntilHeavyLevelOnATank { get; set; }
+    protected Dictionary<WeaponType, int> weaponToRemoveUntilHeavyLevelOnATank { get; set; }
 
     // Add price etc here for more advanced SQF generation
 
@@ -56,6 +56,7 @@ public abstract class BaseVehicle : InterfaceVehicle
         return $"{GenerateCommentForTheSqfCode()}\ncase \"{EnumExtensions.GetEnumMemberAttrValue(VehicleType)}\": {{\n" + finalSQFCode + "};";
     }
 
+    // Currently only supports one weapon per vehicle, and only heavy factory
     private string GenerateSQFCodeForWeaponRemoval()
     {
         StringBuilder sb = new StringBuilder();
