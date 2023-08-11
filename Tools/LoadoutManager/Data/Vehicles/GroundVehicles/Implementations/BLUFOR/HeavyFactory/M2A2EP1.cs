@@ -26,13 +26,13 @@
         base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.TWOROUNDTOWTWO, 10},
-                { AmmunitionType.TWOHUNDREDTENROUND25MMM242HEI_BC, 10},
-                { AmmunitionType.TWOHUNDREDTENROUND25MMM242APDS_BC, 10},
+                { AmmunitionType.TWOHUNDREDTENROUND25MMM242HEI_BC, 2},
+                { AmmunitionType.TWOHUNDREDTENROUND25MMM242APDS_BC, 2},
             };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.TWOHUNDREDTENROUND25MMM242HEI, 10},
-                { AmmunitionType.TWOHUNDREDTENROUND25MMM242APDS, 10},
+                { AmmunitionType.TWOHUNDREDTENROUND25MMM242HEI, 0},
+                { AmmunitionType.TWOHUNDREDTENROUND25MMM242APDS, 0},
             };
 
         inGameDisplayName = "M2A2 Bradley";
