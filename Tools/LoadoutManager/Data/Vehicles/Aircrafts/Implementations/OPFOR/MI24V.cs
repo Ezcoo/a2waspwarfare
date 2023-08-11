@@ -24,6 +24,15 @@
                 { AmmunitionType.FOURTYROUNDS8, 4},
             };
 
+        base.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+            };
+        base.defaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+                { AmmunitionType.ONETHOUSANDFOURHUNDREDSEVENTY127X108YAKBROUNDS, 2},
+            };
+        turretPos = -1;
+
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {
             { AmmunitionType.TWOROUNDIGLA, 2 },

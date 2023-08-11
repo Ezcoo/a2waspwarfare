@@ -129,13 +129,6 @@ switch (typeOf _this) do
         _this addMagazine "2Rnd_R73";
     };
 
-    case "Mi24_V": {
-        _this removeWeapon "AT6Launcher";
-        _this addMagazine "4Rnd_AT9_Mi24P";
-        _this addweapon "AT9Launcher";
-        _this addWeaponTurret ["YakB", [-1]];
-    };
-
     case "MLRS": {
         _this addMagazine "12Rnd_MLRS";
         _this addMagazine "12Rnd_MLRS";
@@ -247,15 +240,23 @@ switch (typeOf _this) do
         _this addMagazineTurret ["6RND_105mm_APDS", [0]];
     };
 
-    case "Mi24_D_TK_EP1": {
-        _this removeMagazine "128Rnd_57mm";
-        _this addMagazine "64Rnd_57mm";
-    };
+
 
     case "Mi24_P": {
         _this addMagazineTurret ["750Rnd_30mm_GSh301", [-1]];
         _this addMagazineTurret ["750Rnd_30mm_GSh301", [-1]];
     };
+        case "Mi24_V": {
+            _this removeWeapon "AT6Launcher";
+            _this addMagazine "4Rnd_AT9_Mi24P";
+            _this addweapon "AT9Launcher";
+            _this addWeaponTurret ["YakB", [-1]];
+        };
+
+        case "Mi24_D_TK_EP1": {
+            _this removeMagazine "128Rnd_57mm";
+            _this addMagazine "64Rnd_57mm";
+        };
 
     case "Ka52": {
         _this removeWeaponTurret ["VikhrLauncher", [-1]];

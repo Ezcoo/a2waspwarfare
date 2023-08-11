@@ -120,4 +120,7 @@ public enum WeaponType
 
     [EnumMember(Value = "M68")]
     M68,
+
+    [EnumMember(Value = "YakB")]
+    YAKB,
 }

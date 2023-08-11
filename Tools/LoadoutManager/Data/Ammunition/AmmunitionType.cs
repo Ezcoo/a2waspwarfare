@@ -137,4 +137,7 @@ public enum AmmunitionType
 
     [EnumMember(Value = "750Rnd_30mm_GSh301")]
     SEVENHUNDREDFIFTY30MMGSH301ROUNDS,
+
+    [EnumMember(Value = "1470Rnd_127x108_YakB")]
+    ONETHOUSANDFOURHUNDREDSEVENTY127X108YAKBROUNDS,
 }
