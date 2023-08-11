@@ -42,7 +42,7 @@
             };
         turretPos = 1;
 
-        inGameDisplayName = "T-34";
+        inGameDisplayName = "T-34 (Guerilla)";
         inGameFactoryLevel = 1;
         producedFromFactoryType = FactoryType.HEAVYFACTORY;
     }

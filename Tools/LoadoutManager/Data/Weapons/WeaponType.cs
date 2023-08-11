@@ -101,4 +101,7 @@ public enum WeaponType
     M242BC,
     [EnumMember(Value = "M242")]
     M242,
+
+    [EnumMember(Value = "MLRS")]
+    MLRSLAUNCHER,
 }

@@ -118,4 +118,7 @@ public enum AmmunitionType
     TWOHUNDREDTENROUND25MMM242HEI_BC,
     [EnumMember(Value = "210Rnd_25mm_M242_APDS")]
     TWOHUNDREDTENROUND25MMM242APDS_BC,
+
+    [EnumMember(Value = "12Rnd_MLRS")]
+    TWELVEROUNDMLRS,
 }
