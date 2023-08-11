@@ -5,10 +5,29 @@
         VehicleType = VehicleType.AH1Z;
         pylonAmount = 4;
 
-        base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+        //weapons[] = {
+        //            "M197",
+        //            "HellfireLauncher",
+        //            "SidewinderLaucher_AH1Z"
+        //        };
+        //magazines[] = {
+        //            "750Rnd_M197_AH1",
+        //            "8Rnd_Hellfire",
+        //            "2Rnd_Sidewinder_AH1Z"
+        //        };
+
+
+        base.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.EIGHTROUNDHELLFIRE, 4},
+                { AmmunitionType.EIGHTROUNDHELLFIRE, 0},
+                { AmmunitionType.TWOROUNDSIDEWINDER_AH1Z, 2},
             };
+        base.defaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+                { AmmunitionType.EIGHTROUNDHELLFIRE, 2},
+                { AmmunitionType.TWOROUNDSIDEWINDER_AH1Z, 0},
+            };
+        turretPos = 0;
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {
