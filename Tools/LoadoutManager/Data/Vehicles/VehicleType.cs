@@ -89,4 +89,9 @@ public enum VehicleType
 
     [EnumMember(Value = "AH6J_EP1")]
     AH6JEP1,
+
+    [EnumMember(Value = "BMP2_INS")]
+    BMP2INS,
+    [EnumMember(Value = "BMP2_TK_EP1")]
+    BMP2TKEP1,
 }
