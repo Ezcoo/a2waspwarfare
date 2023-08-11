@@ -125,4 +125,10 @@ public enum AmmunitionType
 
     [EnumMember(Value = "12Rnd_MLRS")]
     TWELVEROUNDMLRS,
+
+    [EnumMember(Value = "12Rnd_CRV7")]
+    WARNING_GAME_CRASH_DO_NOT_USE_IN_LOADOUTS_TWELVEROUNDCRV7PG,
+
+    [EnumMember(Value = "1200Rnd_20mm_M621")]
+    ONETHOUSANDTWOHUNDREDROUND20MMM261,
 }
