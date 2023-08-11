@@ -131,4 +131,7 @@ public enum AmmunitionType
 
     [EnumMember(Value = "1200Rnd_20mm_M621")]
     ONETHOUSANDTWOHUNDREDROUND20MMM261,
+
+    [EnumMember(Value = "6RND_105mm_APDS")]
+    SIXROUND105MMAPDS,
 }

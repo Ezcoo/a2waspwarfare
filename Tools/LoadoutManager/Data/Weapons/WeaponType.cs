@@ -117,4 +117,7 @@ public enum WeaponType
 
     [EnumMember(Value = "M621")]
     M621,
+
+    [EnumMember(Value = "M68")]
+    M68,
 }

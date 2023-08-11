@@ -94,4 +94,7 @@ public enum VehicleType
     BMP2INS,
     [EnumMember(Value = "BMP2_TK_EP1")]
     BMP2TKEP1,
+
+    [EnumMember(Value = "M1128_MGS_EP1")]
+    M1128MGSEP1,
 }
