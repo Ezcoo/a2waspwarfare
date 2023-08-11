@@ -201,6 +201,14 @@ public abstract class BaseVehicle : InterfaceVehicle
             }
         }
 
+        // Remove common elements from both lists
+        var commonWeapons = weaponsToRemove.Intersect(weaponsToAdd).ToList();
+        foreach (var commonWeapon in commonWeapons)
+        {
+            weaponsToRemove.Remove(commonWeapon);
+            weaponsToAdd.Remove(commonWeapon);
+        }
+
         Dictionary<string, int> magazinesToAddv2 = ConvertToMagazineDictionary(weaponsAndMagazinesToAdd);
         Dictionary<string, int> magazinesToRemovev2 = ConvertToMagazineDictionary(weaponsAndMagazinesToRemove);
 
