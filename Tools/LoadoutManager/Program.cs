@@ -95,7 +95,6 @@ class Program
     {
         string endOfTheEasaFile = string.Empty;
 
-        endOfTheEasaFile += "//--- Now we check for AA-based loadouts.";
         endOfTheEasaFile += "for '_i' from 0 to count(_easaVehi)-1 do {";
         endOfTheEasaFile += "\t_loadout = _easaLoadout select _i;";
         endOfTheEasaFile += "\t";
@@ -103,12 +102,10 @@ class Program
         endOfTheEasaFile += "\t\t_loadout_line = _loadout select _j;";
         endOfTheEasaFile += "\t\t_is_AAMissile = false;";
         endOfTheEasaFile += "\t\t";
-        endOfTheEasaFile += "\t\t//--- Browse each EASA magazines and check the ammunition kind.";
         endOfTheEasaFile += "\t\t{";
-        endOfTheEasaFile += "\t\t\t_ammo = getText(configFile >> \"CfgMagazines\" >> _x >> \"ammo\"); //--- We grab the ammo used by the magazine.";
+        endOfTheEasaFile += "\t\t\t_ammo = getText(configFile >> \"CfgMagazines\" >> _x >> \"ammo\");";
         endOfTheEasaFile += "\t\t\t";
         endOfTheEasaFile += "\t\t\tif (_ammo != \"\") then {";
-        endOfTheEasaFile += "\t\t\t\t//--- We check if the ammo is air-lock based and that in inherits from the missile class.";
         endOfTheEasaFile += "\t\t\t\tif (getNumber(configFile >> \"CfgAmmo\" >> _ammo >> \"airLock\") == 1 && configName(inheritsFrom(configFile >> \"CfgAmmo\" >> _ammo)) == \"MissileBase\") exitWith {_is_AAMissile = true};";
         endOfTheEasaFile += "\t\t\t};";
         endOfTheEasaFile += "\t\t} forEach ((_loadout_line select 2) select 1);";
