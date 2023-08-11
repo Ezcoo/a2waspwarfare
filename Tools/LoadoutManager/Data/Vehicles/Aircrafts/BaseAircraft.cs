@@ -108,7 +108,7 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
 
     private string GenerateDefaultLoadout()
     {
-        (string, int) ammunitionArray;
+        (string, int) ammunitionArray = ("", 0);
 
         // Calculate for turret (like for aircrafts, the Su34)
         if (defaultLoadoutOnTurret.AmmunitionTypesWithCount.Count > 0)
@@ -145,6 +145,18 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         bool _generateWithPriceAndWeaponsInfo = true)
     {
         string finalRowOutput = string.Empty;
+
+        // Remove flares magazines
+        if (!_generateWithPriceAndWeaponsInfo && _input.ContainsKey(AmmunitionType.SIXTYROUNDCMFLAREMAGAZINE))
+        {
+            foreach (var item in _input.Keys)
+            {
+                if (item ==AmmunitionType.SIXTYROUNDCMFLAREMAGAZINE)
+                {
+                    _input.Remove(item);
+                }
+            }
+        }
 
         var calculatedLoadoutRow = CalculateLoadoutRow(_input, _generateWithPriceAndWeaponsInfo);
 
