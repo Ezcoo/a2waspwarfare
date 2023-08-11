@@ -13,15 +13,14 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
     {
         string generatedLoadouts = string.Empty;
 
+        generatedLoadouts += GenerateCommentForTheSqfCode();
+        generatedLoadouts += "\n_easaVehi = _easaVehi + ['" + EnumExtensions.GetEnumMemberAttrValue(VehicleType) + "'];";
+        generatedLoadouts += GenerateDefaultLoadout();
         string generatedLoadout = GenerateCombinationLoadouts();
         if (generatedLoadout == "")
         {
             return "";
         }
-
-        generatedLoadouts += GenerateCommentForTheSqfCode();
-        generatedLoadouts += "\n_easaVehi = _easaVehi + ['" + EnumExtensions.GetEnumMemberAttrValue(VehicleType) + "'];";
-        generatedLoadouts += GenerateDefaultLoadout();
         generatedLoadouts += generatedLoadout;
         generatedLoadouts += "\n]";
         generatedLoadouts += "\n];";
