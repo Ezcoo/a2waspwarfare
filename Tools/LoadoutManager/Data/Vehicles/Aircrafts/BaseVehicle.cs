@@ -282,8 +282,8 @@ public abstract class BaseVehicle : InterfaceVehicle
 
     private string GenerateSQFCodeInner(Dictionary<string, int> _magazines, IEnumerable<string> _weapons, string _action, string _turret)
     {
-        string magazineAction = _action == "add" ? "add" + _turret + "Magazine" : "remove" + _turret + "Magazine";
-        string weaponAction = _action == "add" ? "add" + _turret + "Weapon" : "remove" + _turret + "Weapon";
+        string magazineAction = _action == "add" ? "add" + "Magazine" + _turret : "remove" + "Magazine" + _turret;
+        string weaponAction = _action == "add" ? "add" + "Weapon" + _turret : "remove" + "Weapon" + _turret;
 
         StringBuilder sqfCode = new StringBuilder();
 
