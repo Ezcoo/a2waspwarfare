@@ -142,4 +142,7 @@ public enum AmmunitionType
 
     [EnumMember(Value = "1470Rnd_127x108_YakB")]
     ONETHOUSANDFOURHUNDREDSEVENTY127X108YAKBROUNDS,
+
+    [EnumMember(Value = "5Rnd_AT5_BRDM2")]
+    FIVEAT5BRDM2ROUND,
 }

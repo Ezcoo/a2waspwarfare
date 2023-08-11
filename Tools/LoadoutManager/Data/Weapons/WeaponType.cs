@@ -110,6 +110,8 @@ public enum WeaponType
     MLRSLAUNCHER,
 
     [EnumMember(Value = "AT5LauncherSingle")]
+    KONKURSLAUNCHERSINGLE,
+    [EnumMember(Value = "AT5Launcher")]
     KONKURSLAUNCHER,
 
     [EnumMember(Value = "CRV7_PG")]

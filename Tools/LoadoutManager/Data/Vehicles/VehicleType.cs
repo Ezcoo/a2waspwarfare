@@ -100,4 +100,7 @@ public enum VehicleType
 
     [EnumMember(Value = "M1128_MGS_EP1")]
     M1128MGSEP1,
+
+    [EnumMember(Value = "BRDM2_ATGM_INS")]
+    BRDM2ATGMINS,
 }

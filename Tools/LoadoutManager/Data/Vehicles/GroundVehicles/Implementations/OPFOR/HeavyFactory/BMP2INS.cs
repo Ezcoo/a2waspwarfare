@@ -8,7 +8,7 @@
         producedFromFactoryType = FactoryType.HEAVYFACTORY;
         weaponToRemoveUntilHeavyLevelOnATank = new Dictionary<WeaponType, int>
         {
-            {WeaponType.KONKURSLAUNCHER, 2},
+            {WeaponType.KONKURSLAUNCHERSINGLE, 2},
         };
     }
 }
