@@ -63,7 +63,8 @@ public abstract class BaseVehicle : InterfaceVehicle
 
         sb.AppendLine($"_current_heavy_level = ((side player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_HEAVY;");
         sb.AppendLine($"if (_current_heavy_level < {weaponToRemoveUntilHeavyLevelOnATank.First().Value}) then {{");
-        sb.AppendLine($"    _this removeWeapon \"{weaponToRemoveUntilHeavyLevelOnATank.First().Key}\";");
+        sb.AppendLine($"    _this removeWeapon \"{EnumExtensions.GetEnumMemberAttrValue(
+            weaponToRemoveUntilHeavyLevelOnATank.First().Key)}\";");
         sb.AppendLine("};");
 
         return sb.ToString();
