@@ -5,6 +5,19 @@
         VehicleType = VehicleType.MI24P;
         pylonAmount = 2;
 
+        //weapons[] = {
+        //    "S8Launcher",
+        //    "CMFlareLauncher"
+        //};
+        //magazines[] = {
+        //    "80Rnd_80mm",
+        //    "120Rnd_CMFlareMagazine"
+        //};
+
+        base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+                { AmmunitionType.VANILLA_EIGHTYROUNDS8, 2},
+            };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.FOURROUNDATAKA, 2},
