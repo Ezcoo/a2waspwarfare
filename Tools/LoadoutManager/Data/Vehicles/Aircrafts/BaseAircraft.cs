@@ -190,15 +190,6 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         return (finalRowOutput, calculatedLoadoutRow.totalPrice);
     }
 
-    private void CheckDefaultLoadout(
-        Dictionary<AmmunitionType, int> _input, LoadoutRow _newLoadoutRow, bool _generateWithPriceAndWeaponsInfo)
-    {
-        if (_input.SequenceEqual(defaultLoadout.AmmunitionTypesWithCount) && _generateWithPriceAndWeaponsInfo)
-        {
-            _newLoadoutRow.isDefaultLoadout = true;
-        }
-    }
-
     private bool CheckDisregardedLoadout(Dictionary<AmmunitionType, int> _input,
         bool _generateWithPriceAndWeaponsInfo)
     {
@@ -239,16 +230,9 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
             return newLoadoutRow;
         }
 
-        CheckDefaultLoadout(_input, newLoadoutRow, _generateWithPriceAndWeaponsInfo);
-
         if (CheckDisregardedLoadout(_input, _generateWithPriceAndWeaponsInfo))
         {
             return new LoadoutRow();
-        }
-
-        if (newLoadoutRow.isDefaultLoadout)
-        {
-            newLoadoutRow.weaponsInfo += "DEFAULT | ";
         }
 
         bool doneAddingSpecialAmounts = false;

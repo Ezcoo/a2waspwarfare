@@ -4,5 +4,4 @@ public class LoadoutRow
     public string weaponTypesArray = string.Empty;
     public List<string> ammunitionList = new();
     public string weaponsInfo = string.Empty;
-    public bool isDefaultLoadout = false;
 }
