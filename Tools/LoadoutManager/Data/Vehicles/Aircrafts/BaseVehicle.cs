@@ -18,6 +18,7 @@ public abstract class BaseVehicle : InterfaceVehicle
     protected int inGameFactoryLevel { get; set; }
     protected FactoryType producedFromFactoryType { get; set; }
     protected string inGameDisplayName { get; set; }
+    private Dictionary<WeaponType, int> weaponToRemoveUntilHeavyLevelOnATank { get; set; }
 
     // Add price etc here for more advanced SQF generation
 
@@ -47,8 +48,26 @@ public abstract class BaseVehicle : InterfaceVehicle
             finalSQFCode += finalTurretSQFCode;
         }
 
+        if (weaponToRemoveUntilHeavyLevelOnATank != null && weaponToRemoveUntilHeavyLevelOnATank.Count > 0)
+        {
+            finalSQFCode += GenerateSQFCodeForWeaponRemoval();
+        }
+
         return $"{GenerateCommentForTheSqfCode()}\ncase \"{EnumExtensions.GetEnumMemberAttrValue(VehicleType)}\": {{\n" + finalSQFCode + "};";
     }
+
+    private string GenerateSQFCodeForWeaponRemoval()
+    {
+        StringBuilder sb = new StringBuilder();
+
+        sb.AppendLine($"_current_heavy_level = ((side player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_HEAVY;");
+        sb.AppendLine($"if (_current_heavy_level < {weaponToRemoveUntilHeavyLevelOnATank.First().Value}) then {{");
+        sb.AppendLine($"    _this removeWeapon \"{weaponToRemoveUntilHeavyLevelOnATank.First().Key}\";");
+        sb.AppendLine("};");
+
+        return sb.ToString();
+    }
+
 
     public string GenerateCommonBalanceInitForTheVehicle(Loadout _vanillaLoadout, Loadout _defaultLoadout, string _turret = "")
     {
