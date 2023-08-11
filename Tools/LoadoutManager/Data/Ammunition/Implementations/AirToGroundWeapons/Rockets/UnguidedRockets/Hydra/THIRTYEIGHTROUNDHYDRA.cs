@@ -1,4 +1,5 @@
-﻿public class THIRTYEIGHTROUNDHYDRA : BaseAmmunition
+﻿
+public class THIRTYEIGHTROUNDHYDRA : BaseAmmunition
 {
     public THIRTYEIGHTROUNDHYDRA()
     {

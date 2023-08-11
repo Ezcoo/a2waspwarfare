@@ -52,6 +52,8 @@ public enum WeaponType
 
     [EnumMember(Value = "FFARLauncher")]
     HYDRALAUNCHER,
+    [EnumMember(Value = "FFARLauncher_14")]
+    HYDRALAUNCHER_14ROUNDS,
 
     [EnumMember(Value = "HellfireLauncher")]
     HELLFIRELAUNCHER,

@@ -60,6 +60,8 @@ public enum AmmunitionType
 
     [EnumMember(Value = "38Rnd_FFAR")]
     THIRTYEIGHTROUNDHYDRA,
+    [EnumMember(Value = "14Rnd_FFAR")]
+    FOURTEENROUNDHYDRA,
 
     [EnumMember(Value = "8Rnd_Hellfire")]
     EIGHTROUNDHELLFIRE,

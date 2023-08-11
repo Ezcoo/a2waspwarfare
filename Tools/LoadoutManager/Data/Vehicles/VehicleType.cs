@@ -86,4 +86,7 @@ public enum VehicleType
     MLRS,
     [EnumMember(Value = "MLRS_DES_EP1")]
     MLRSDESEP1,
+
+    [EnumMember(Value = "AH6J_EP1")]
+    AH6JEP1,
 }
