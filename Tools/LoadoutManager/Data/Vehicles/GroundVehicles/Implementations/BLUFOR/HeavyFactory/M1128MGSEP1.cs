@@ -13,7 +13,7 @@
             {
                 { AmmunitionType.SIXROUND105MMAPDS, 2},
             };
-        //turretPos = 0;
+        turretPos = 0;
 
         inGameDisplayName = "Stryker MGS";
         inGameFactoryLevel = 4;
