@@ -6,6 +6,26 @@
         pylonAmount = 2;
 
         //weapons[] = {
+        //            "YakB",
+        //            "AT6Launcher"
+        //        };
+        //magazines[] = {
+        //            "1470Rnd_127x108_YakB",
+        //            "4Rnd_AT6_Mi24V"
+        //        };
+
+        base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+                { AmmunitionType.VANILLA_EIGHTYROUNDS8, 2},
+                { AmmunitionType.FOURAT6SHTURMLAUNCHER, 2},
+            };
+        base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+                { AmmunitionType.FOURROUNDATAKA, 4},
+                { AmmunitionType.FOURTYROUNDS8, 4},
+            };
+
+        //weapons[] = {
         //    "S8Launcher",
         //    "CMFlareLauncher"
         //};
@@ -14,24 +34,14 @@
         //    "120Rnd_CMFlareMagazine"
         //};
 
-        base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
-            {
-                { AmmunitionType.VANILLA_EIGHTYROUNDS8, 2},
-            };
-        base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
-            {
-                { AmmunitionType.FOURROUNDATAKA, 4},
-                { AmmunitionType.FOURTYROUNDS8, 4},
-            };
-
-        base.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
-            {
-            };
-        base.defaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
-            {
-                { AmmunitionType.ONETHOUSANDFOURHUNDREDSEVENTY127X108YAKBROUNDS, 2},
-            };
-        turretPos = -1;
+        //base.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+        //    {
+        //    };
+        //base.defaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+        //    {
+        //        { AmmunitionType.ONETHOUSANDFOURHUNDREDSEVENTY127X108YAKBROUNDS, 2},
+        //    };
+        //turretPos = -1;
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {

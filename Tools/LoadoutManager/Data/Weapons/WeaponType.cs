@@ -125,4 +125,7 @@ public enum WeaponType
 
     [EnumMember(Value = "YakB")]
     YAKB,
+
+    [EnumMember(Value = "AT6Launcher")]
+    SHTURMLAUNCHER,
 }

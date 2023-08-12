@@ -147,4 +147,7 @@ public enum AmmunitionType
 
     [EnumMember(Value = "5Rnd_AT5_BRDM2")]
     FIVEAT5BRDM2ROUND,
+
+    [EnumMember(Value = "4Rnd_AT6_Mi24V")]
+    FOURAT6SHTURMLAUNCHER,
 }
