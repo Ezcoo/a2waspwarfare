@@ -19,6 +19,7 @@
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.LASERBATTERIES, 2},
+                { AmmunitionType.TWOROUNDSPIKE, 4},
             };
 
         //weapons[] = {
@@ -39,10 +40,9 @@
             };
         base.defaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.TWOROUNDSPIKE, 4},
                 { AmmunitionType.TWOHUNDREDROUNDCTWSHE, 2},
                 { AmmunitionType.TWOHUNDREDROUNDCTWSSABOT, 2},
-                { AmmunitionType.SIXROUNDCRV7HEPD, 4},
+                { AmmunitionType.SIXROUNDCRV7HEPD, 2},
             };
 
         turretPos = -1;
