@@ -17,11 +17,11 @@
         base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.FOURROUNDATAKA, 4},
+                { AmmunitionType.TWOROUNDFAB250, 2},
             };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.FOURROUNDATAKA, 2},
-                { AmmunitionType.TWOROUNDFAB250, 2},
             };
 
         //weapons[] = {
@@ -39,7 +39,6 @@
             {
                 { AmmunitionType.SEVENHUNDREDFIFTY30MMGSH301ROUNDS, 0},
                 { AmmunitionType.VANILLA_FOURTYROUNDS8WITH80MMLAUNCHER, 2},
-                { AmmunitionType.TWOROUNDFAB250, 2},
             };
         base.defaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
