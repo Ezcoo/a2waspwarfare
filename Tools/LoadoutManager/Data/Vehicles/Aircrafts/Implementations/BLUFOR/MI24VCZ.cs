@@ -3,20 +3,20 @@
     public MI24VCZ()
     {
         VehicleType = VehicleType.MI24VCZ;
-        pylonAmount = 6;
+        pylonAmount = 4;
 
         base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.FOURROUNDATAKA, 4},
+                { AmmunitionType.EIGHTROUNDATAKA, 2},
             };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.FOURROUNDATAKA, 4},
+                { AmmunitionType.EIGHTROUNDATAKA, 2},
             };
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {
-            { AmmunitionType.FOURROUNDATAKA, 4},
+            { AmmunitionType.EIGHTROUNDATAKA, 2 },
             { AmmunitionType.TWOROUNDSTINGER, 2 },
         };
 
