@@ -153,6 +153,7 @@ case "BAF_Apache_AH1_D": {
 // AH-1Z [AF5] - 4 pylons
 case "AH1Z": {
     _this removeMagazine "2Rnd_Sidewinder_AH1Z";
+    _this removeWeapon "SidewinderLaucher_AH1Z";
     _this addMagazine "8Rnd_Hellfire";
 };
 
