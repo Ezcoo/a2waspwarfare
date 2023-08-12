@@ -16,18 +16,20 @@
         //    "120Rnd_CMFlareMagazine"
         //};
 
-        base.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+        base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.WARNING_GAME_CRASH_DO_NOT_USE_IN_LOADOUTS_TWELVEROUNDCRV7PG, 2},
                 { AmmunitionType.ONETHOUSANDTWOHUNDREDROUND20MMM261, 2},
             };
-        base.defaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+        base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.TWOROUNDSPIKE, 4},
                 { AmmunitionType.TWOHUNDREDROUNDCTWSHE, 2},
                 { AmmunitionType.TWOHUNDREDROUNDCTWSSABOT, 2},
                 { AmmunitionType.SIXROUNDCRV7HEPD, 4},
             };
+
+        turretPos = -1;
 
         //weapons[] = {
         //            "Laserdesignator_mounted"
