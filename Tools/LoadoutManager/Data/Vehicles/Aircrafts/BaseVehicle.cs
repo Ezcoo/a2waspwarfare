@@ -224,7 +224,7 @@ public abstract class BaseVehicle : InterfaceVehicle
         string addSQFCode = GenerateSQFCodeInner(magazinesToAddv2, weaponsToAdd, "add", _turret);
         string removeSQFCode = GenerateSQFCodeInner(magazinesToRemovev2, weaponsToRemove, "remove", _turret);
 
-        return addSQFCode + removeSQFCode;
+        return removeSQFCode + addSQFCode;
     }
 
     private Dictionary<string, int> ConvertToMagazineDictionary(Dictionary<string, List<string>> weaponsAndMagazines)
