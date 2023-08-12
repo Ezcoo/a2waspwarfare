@@ -116,9 +116,9 @@ case "AV8B": {
 
 // AV8B [AF5] - 8 pylons
 case "AV8B2": {
-    _this removeMagazine "6Rnd_GBU12_AV8B";
+    _this removeMagazine "14Rnd_FFAR";
     _this removeMagazine "6Rnd_Mk82";
-    _this removeWeapon "BombLauncher";
+    _this removeWeapon "FFARLauncher_14";
     _this removeWeapon "Mk82BombLauncher_6";
     _this addMagazine "2Rnd_Maverick_A10";
     _this addMagazine "2Rnd_Maverick_A10";
@@ -148,25 +148,27 @@ case "BAF_Apache_AH1_D": {
 
 // AH-1Z [AF5] - 4 pylons
 case "AH1Z": {
+    _this removeMagazine "8Rnd_Hellfire";
     _this removeMagazine "2Rnd_Sidewinder_AH1Z";
     _this removeWeapon "SidewinderLaucher_AH1Z";
+    _this addMagazine "8Rnd_Hellfire";
     _this addMagazine "8Rnd_Hellfire";
 };
 
 // Wildcat AH11 [AF3] - 4 pylons
 case "AW159_Lynx_BAF": {
-    _this removeMagazine "12Rnd_CRV7";
-    _this removeMagazine "1200Rnd_20mm_M621";
-    _this removeWeapon "CRV7_PG";
-    _this addMagazine "2Rnd_Spike_ACR";
-    _this addMagazine "2Rnd_Spike_ACR";
-    _this addMagazine "200Rnd_40mmHE_FV510";
-    _this addMagazine "200Rnd_40mmSABOT_FV510";
-    _this addMagazine "6Rnd_CRV7_HEPD";
-    _this addMagazine "6Rnd_CRV7_HEPD";
-    _this addWeapon "SpikeLauncher_ACR";
-    _this addWeapon "CTWS";
-    _this addWeapon "CRV7_HEPD";
+    _this removeMagazineTurret ["12Rnd_CRV7", [0]];
+    _this removeMagazineTurret ["1200Rnd_20mm_M621", [0]];
+    _this removeWeaponTurret ["CRV7_PG", [0]];
+    _this addMagazineTurret ["2Rnd_Spike_ACR", [0]];
+    _this addMagazineTurret ["2Rnd_Spike_ACR", [0]];
+    _this addMagazineTurret ["200Rnd_40mmHE_FV510", [0]];
+    _this addMagazineTurret ["200Rnd_40mmSABOT_FV510", [0]];
+    _this addMagazineTurret ["6Rnd_CRV7_HEPD", [0]];
+    _this addMagazineTurret ["6Rnd_CRV7_HEPD", [0]];
+    _this addWeaponTurret ["SpikeLauncher_ACR", [0]];
+    _this addWeaponTurret ["CTWS", [0]];
+    _this addWeaponTurret ["CRV7_HEPD", [0]];
 };
 
 // Mi-24V [AF3] - 6 pylons
@@ -182,14 +184,11 @@ case "Mi24_V": {
 case "Mi24_P": {
     _this removeMagazine "4Rnd_AT9_Mi24P";
     _this removeMagazine "4Rnd_AT9_Mi24P";
+    _this removeMagazine "2Rnd_FAB_250";
+    _this removeWeapon "AirBombLauncher";
     _this addMagazine "4Rnd_AT9_Mi24P";
-    _this removeMagazineTurret ["2Rnd_FAB_250", [0]];
-    _this removeMagazineTurret ["80Rnd_S8T", [0]];
-    _this removeWeaponTurret ["80mmLauncher", [0]];
-    _this addMagazineTurret ["750Rnd_30mm_GSh301", [0]];
-    _this addMagazineTurret ["750Rnd_30mm_GSh301", [0]];
-    _this addMagazineTurret ["40Rnd_S8T", [0]];
-    _this addWeaponTurret ["S8Launcher", [0]];
+    _this addMagazineTurret ["750Rnd_30mm_GSh301", [-1]];
+    _this addMagazineTurret ["750Rnd_30mm_GSh301", [-1]];
 };
 
 // Mi-24D [AF3] - 2 pylons
