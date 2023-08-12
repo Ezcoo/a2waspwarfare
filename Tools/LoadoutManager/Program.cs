@@ -59,8 +59,6 @@ class Program
         easaFileString += "\n" + aircraftEasaLoadoutsFile;
         easaFileString += GenerateEndOfTheEasaFile();
 
-
-
         commonBalanceFileString += "switch (typeOf _this) do\n{\n";
         commonBalanceFileString += commonBalanceInitFile;
         commonBalanceFileString += "};";

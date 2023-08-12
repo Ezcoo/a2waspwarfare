@@ -151,7 +151,7 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         {
             foreach (var item in _input.Keys)
             {
-                if (item ==AmmunitionType.SIXTYROUNDCMFLAREMAGAZINE)
+                if (item == AmmunitionType.SIXTYROUNDCMFLAREMAGAZINE)
                 {
                     _input.Remove(item);
                 }
