@@ -16,13 +16,11 @@
 
         base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.VANILLA_EIGHTYROUNDS8, 2},
                 { AmmunitionType.FOURAT6SHTURMLAUNCHER, 2},
             };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.FOURROUNDATAKA, 4},
-                { AmmunitionType.FOURTYROUNDS8, 4},
             };
 
         //weapons[] = {
@@ -36,10 +34,11 @@
 
         //base.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
         //    {
+        //        { AmmunitionType.VANILLA_EIGHTYROUNDS8, 2},
         //    };
         //base.defaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
         //    {
-        //        { AmmunitionType.ONETHOUSANDFOURHUNDREDSEVENTY127X108YAKBROUNDS, 2},
+        //        { AmmunitionType.FOURTYROUNDS8, 4},
         //    };
         //turretPos = -1;
 
