@@ -62,12 +62,8 @@ case "L39_TK_EP1": {
 
 // F-35B [AF5] - 6 pylons
 case "F35B": {
-    _this removeMagazine "2Rnd_Sidewinder_F35";
-    _this removeWeapon "SidewinderLaucher_F35";
     _this addMagazine "2Rnd_Maverick_A10";
-    _this addMagazine "300Rnd_25mm_GAU12";
     _this addWeapon "MaverickLauncher";
-    _this addWeapon "GAU12";
 };
 
 // L-159 [AF3] - 6 pylons
@@ -121,16 +117,16 @@ case "AV8B": {
 // AV8B [AF5] - 8 pylons
 case "AV8B2": {
     _this removeMagazine "6Rnd_GBU12_AV8B";
+    _this removeMagazine "6Rnd_Mk82";
     _this removeWeapon "BombLauncher";
-    _this addMagazine "2Rnd_Sidewinder_AH1Z";
+    _this removeWeapon "Mk82BombLauncher_6";
     _this addMagazine "2Rnd_Maverick_A10";
     _this addMagazine "2Rnd_Maverick_A10";
     _this addMagazine "2Rnd_Maverick_A10";
-    _this addWeapon "SidewinderLaucher_AH1Z";
     _this addWeapon "MaverickLauncher";
 };
 
-// Mi-24V (CZ) [AF3] - 6 pylons
+// Mi-24V (CZ) [AF3] - 4 pylons
 case "Mi24_D_CZ_ACR": {
 };
 

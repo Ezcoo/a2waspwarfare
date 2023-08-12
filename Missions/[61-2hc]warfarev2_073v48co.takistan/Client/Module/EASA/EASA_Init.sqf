@@ -318,7 +318,7 @@ _easaLoadout = _easaLoadout + [
 
 // F-35B [AF5] - 6 pylons
 _easaVehi = _easaVehi + ['F35B'];
-_easaDefault = _easaDefault + [[['BombLauncherF35','MaverickLauncher','GAU12'],['2Rnd_GBU12','2Rnd_Maverick_A10','300Rnd_25mm_GAU12']]];
+_easaDefault = _easaDefault + [[['BombLauncherF35','SidewinderLaucher_F35','MaverickLauncher'],['2Rnd_GBU12','2Rnd_Sidewinder_F35','2Rnd_Maverick_A10']]];
 _easaLoadout = _easaLoadout + [
 [
 [4600,'AGM-65 (6)',[['MaverickLauncher'],['2Rnd_Maverick_A10','2Rnd_Maverick_A10','2Rnd_Maverick_A10']]],
@@ -458,7 +458,7 @@ _easaLoadout = _easaLoadout + [
 
 // AV8B (LGB) [AF4] - 8 pylons
 _easaVehi = _easaVehi + ['AV8B'];
-_easaDefault = _easaDefault + [[['GAU12','BombLauncherF35'],['300Rnd_25mm_GAU12','2Rnd_GBU12','2Rnd_GBU12','2Rnd_GBU12']]];
+_easaDefault = _easaDefault + [[['BombLauncherF35'],['2Rnd_GBU12','2Rnd_GBU12','2Rnd_GBU12']]];
 _easaLoadout = _easaLoadout + [
 [
 [3000,'GBU-12 (6) | Hydra (38)',[['BombLauncherF35','FFARLauncher'],['2Rnd_GBU12','2Rnd_GBU12','2Rnd_GBU12','38Rnd_FFAR']]],
@@ -554,12 +554,12 @@ _easaLoadout = _easaLoadout + [
 ]
 ];
 
-// Mi-24V (CZ) [AF3] - 6 pylons
+// Mi-24V (CZ) [AF3] - 4 pylons
 _easaVehi = _easaVehi + ['Mi24_D_CZ_ACR'];
-_easaDefault = _easaDefault + [[['AT9Launcher'],['4Rnd_AT9_Mi24P','4Rnd_AT9_Mi24P']]];
+_easaDefault = _easaDefault + [[['AT9Launcher'],['8Rnd_AT9_Mi24V']]];
 _easaLoadout = _easaLoadout + [
 [
-[6800,'Ataka-V (8) | Stinger (2)',[['AT9Launcher','StingerLauncher_twice'],['4Rnd_AT9_Mi24P','4Rnd_AT9_Mi24P','2Rnd_Stinger']]]
+[6800,'Ataka-V (8) | Stinger (2)',[['AT9Launcher','StingerLauncher_twice'],['8Rnd_AT9_Mi24V','2Rnd_Stinger']]]
 ]
 ];
 
@@ -592,7 +592,7 @@ _easaLoadout = _easaLoadout + [
 
 // AH-1Z [AF5] - 4 pylons
 _easaVehi = _easaVehi + ['AH1Z'];
-_easaDefault = _easaDefault + [[['HellfireLauncher','SidewinderLaucher_AH1Z'],['8Rnd_Hellfire']]];
+_easaDefault = _easaDefault + [[['HellfireLauncher'],['8Rnd_Hellfire']]];
 _easaLoadout = _easaLoadout + [
 [
 [1000,'AGM-114 (16)',[['HellfireLauncher'],['8Rnd_Hellfire','8Rnd_Hellfire']]],
