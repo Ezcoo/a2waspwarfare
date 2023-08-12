@@ -132,14 +132,9 @@ case "AV8B2": {
 
 // Mi-24V (CZ) [AF3] - 6 pylons
 case "Mi24_D_CZ_ACR": {
-    _this addMagazine "4Rnd_AT9_Mi24P";
-    _this addMagazine "4Rnd_AT9_Mi24P";
-    _this addMagazine "40Rnd_S8T";
-    _this addWeapon "AT9Launcher";
-    _this addWeapon "S8Launcher";
 };
 
-// AH-64D (TOW) [AF3] - 4 pylons
+// AH-64A [AF3] - 4 pylons
 case "AH64D": {
     _this addMagazine "6Rnd_TOW2";
     _this addWeapon "TOWLauncherSingle";
@@ -149,14 +144,10 @@ case "AH64D": {
 
 // AH-64D (Hellfire) [AF4] - 4 pylons
 case "AH64D_EP1": {
-    _this addMagazine "8Rnd_Hellfire";
-    _this addWeapon "HellfireLauncher";
 };
 
 // Apache AH1 [AF4] - 4 pylons
 case "BAF_Apache_AH1_D": {
-    _this addMagazine "8Rnd_Hellfire";
-    _this addWeapon "HellfireLauncher";
 };
 
 // AH-1Z [AF5] - 4 pylons
@@ -198,9 +189,9 @@ case "Mi24_P": {
     _this addWeapon "S8Launcher";
     _this removeMagazine "80Rnd_S8T";
     _this removeWeapon "80mmLauncher";
-    _this addMagazineTurret ["4Rnd_AT9_Mi24P", [-1]];
-    _this removeMagazineTurret ["4Rnd_AT9_Mi24P", [-1]];
-    _this removeMagazineTurret ["4Rnd_AT9_Mi24P", [-1]];
+    _this addMagazineTurret ["4Rnd_AT9_Mi24P", [0]];
+    _this removeMagazineTurret ["4Rnd_AT9_Mi24P", [0]];
+    _this removeMagazineTurret ["4Rnd_AT9_Mi24P", [0]];
 };
 
 // Mi-24D [AF3] - 2 pylons

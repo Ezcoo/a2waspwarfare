@@ -556,14 +556,14 @@ _easaLoadout = _easaLoadout + [
 
 // Mi-24V (CZ) [AF3] - 6 pylons
 _easaVehi = _easaVehi + ['Mi24_D_CZ_ACR'];
-_easaDefault = _easaDefault + [[['AT9Launcher','S8Launcher'],['4Rnd_AT9_Mi24P','4Rnd_AT9_Mi24P','40Rnd_S8T']]];
+_easaDefault = _easaDefault + [[['AT9Launcher'],['4Rnd_AT9_Mi24P','4Rnd_AT9_Mi24P']]];
 _easaLoadout = _easaLoadout + [
 [
 [6800,'Ataka-V (8) | Stinger (2)',[['AT9Launcher','StingerLauncher_twice'],['4Rnd_AT9_Mi24P','4Rnd_AT9_Mi24P','2Rnd_Stinger']]]
 ]
 ];
 
-// AH-64D (TOW) [AF3] - 4 pylons
+// AH-64A [AF3] - 4 pylons
 _easaVehi = _easaVehi + ['AH64D'];
 _easaDefault = _easaDefault + [[['TOWLauncherSingle'],['6Rnd_TOW2']]];
 _easaLoadout = _easaLoadout + [
@@ -648,6 +648,8 @@ _easaLoadout = _easaLoadout + [
 [9000,'Vikhr (12) | R-73 (2)',[['VikhrLauncher','R73Launcher_2'],['12Rnd_Vikhr_KA50','2Rnd_R73']]]
 ]
 ];
-for '_i' from 0 to count(_easaVehi)-1 do {      _loadout = _easaLoadout select _i;              for '_j' from 0 to count(_loadout)-1 do {            _loadout_line = _loadout select _j;             _is_AAMissile = false;                          {                   _ammo = getText(configFile >> "CfgMagazines" >> _x >> "ammo");                                           if (_ammo != "") then {
-        if (getNumber(configFile >> "CfgAmmo" >> _ammo >> "airLock") == 1 && configName(inheritsFrom(configFile >> "CfgAmmo" >> _ammo)) == "MissileBase") exitWith {_is_AAMissile = true};                   };              } forEach ((_loadout_line select 2) select 1);                               _loadout_line set [3, if (_is_AAMissile) then {true} else {false}];     };};
+for '_i' from 0 to count(_easaVehi)-1 do {      _loadout = _easaLoadout select _i;              for '_j' from 0 to count(_loadout)-1 do {               _loadout_line = _loadout select _j;             _is_AAMissile = false;
+{                       _ammo = getText(configFile >> "CfgMagazines" >> _x >> "ammo");
+if (_ammo != "") then {                         if (getNumber(configFile >> "CfgAmmo" >> _ammo >> "airLock") == 1 && configName(inheritsFrom(configFile >> "CfgAmmo" >> _ammo)) == "MissileBase") exitWith {_is_AAMissile = true};
+};              } forEach ((_loadout_line select 2) select 1);                          _loadout_line set [3, if (_is_AAMissile) then {true} else {false}];     };};
 missionNamespace setVariable ['WFBE_EASA_Vehicles',_easaVehi];missionNamespace setVariable ['WFBE_EASA_Loadouts',_easaLoadout];missionNamespace setVariable ['WFBE_EASA_Default',_easaDefault];
