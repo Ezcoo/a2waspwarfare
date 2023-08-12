@@ -103,7 +103,7 @@ _easaLoadout = _easaLoadout + [
 
 // Su-25A [AF3] - 6 pylons
 _easaVehi = _easaVehi + ['Su25_Ins'];
-_easaDefault = _easaDefault + [[[],[]]];
+_easaDefault = _easaDefault + [[['AirBombLauncher','57mmLauncher'],['4Rnd_FAB_250','2Rnd_FAB_250','4Rnd_FAB_250','2Rnd_FAB_250','64Rnd_57mm']]];
 _easaLoadout = _easaLoadout + [
 [
 [2800,'FAB-250 (18)',[['AirBombLauncher'],['4Rnd_FAB_250','2Rnd_FAB_250','4Rnd_FAB_250','2Rnd_FAB_250','4Rnd_FAB_250','2Rnd_FAB_250']]],
@@ -554,21 +554,21 @@ _easaLoadout = _easaLoadout + [
 ]
 ];
 
-// Mi-24V (CZ) [AF3] - 2 pylons
+// Mi-24V (CZ) [AF3] - 6 pylons
 _easaVehi = _easaVehi + ['Mi24_D_CZ_ACR'];
 _easaDefault = _easaDefault + [[['AT9Launcher','S8Launcher'],['4Rnd_AT9_Mi24P','4Rnd_AT9_Mi24P','40Rnd_S8T']]];
 _easaLoadout = _easaLoadout + [
 [
-[5800,'Stinger (2)',[['StingerLauncher_twice'],['2Rnd_Stinger']]]
+[6800,'Ataka-V (8) | Stinger (2)',[['AT9Launcher','StingerLauncher_twice'],['4Rnd_AT9_Mi24P','4Rnd_AT9_Mi24P','2Rnd_Stinger']]]
 ]
 ];
 
-// AH-64A [AF3] - 2 pylons
+// AH-64A [AF3] - 4 pylons
 _easaVehi = _easaVehi + ['AH64D'];
 _easaDefault = _easaDefault + [[['TOWLauncherSingle'],['6Rnd_TOW2']]];
 _easaLoadout = _easaLoadout + [
 [
-[5800,'Stinger (2)',[['StingerLauncher_twice'],['2Rnd_Stinger']]]
+[6800,'TOW-2 (6) | Stinger (2)',[['TOWLauncherSingle','StingerLauncher_twice'],['6Rnd_TOW2','2Rnd_Stinger']]]
 ]
 ];
 
@@ -611,44 +611,43 @@ _easaLoadout = _easaLoadout + [
 ]
 ];
 
-// Mi-24V [AF3] - 2 pylons
+// Mi-24V [AF3] - 6 pylons
 _easaVehi = _easaVehi + ['Mi24_V'];
 _easaDefault = _easaDefault + [[['AT9Launcher'],['4Rnd_AT9_Mi24P','4Rnd_AT9_Mi24P']]];
 _easaLoadout = _easaLoadout + [
 [
-[5800,'Igla-V (2)',[['Igla_twice'],['2Rnd_Igla']]]
+[6800,'Ataka-V (8) | Igla-V (2)',[['AT9Launcher','Igla_twice'],['4Rnd_AT9_Mi24P','4Rnd_AT9_Mi24P','2Rnd_Igla']]]
 ]
 ];
 
-// Mi-24P [AF3] - 2 pylons
+// Mi-24P [AF3] - 4 pylons
 _easaVehi = _easaVehi + ['Mi24_P'];
 _easaDefault = _easaDefault + [[['AirBombLauncher','AT9Launcher'],['2Rnd_FAB_250','4Rnd_AT9_Mi24P']]];
 _easaLoadout = _easaLoadout + [
 [
-[1600,'FAB-250 (6)',[['AirBombLauncher'],['4Rnd_FAB_250','2Rnd_FAB_250']]],
-[5800,'Igla-V (2)',[['Igla_twice'],['2Rnd_Igla']]]
+[2600,'Ataka-V (4) | FAB-250 (6)',[['AT9Launcher','AirBombLauncher'],['4Rnd_AT9_Mi24P','4Rnd_FAB_250','2Rnd_FAB_250']]],
+[6800,'Ataka-V (4) | Igla-V (2)',[['AT9Launcher','Igla_twice'],['4Rnd_AT9_Mi24P','2Rnd_Igla']]],
+[7400,'FAB-250 (6) | Igla-V (2)',[['AirBombLauncher','Igla_twice'],['4Rnd_FAB_250','2Rnd_FAB_250','2Rnd_Igla']]]
 ]
 ];
 
-// Ka-52 [AF4] - 2 pylons
+// Ka-52 [AF4] - 8 pylons
 _easaVehi = _easaVehi + ['Ka52'];
 _easaDefault = _easaDefault + [[['AT9Launcher'],['4Rnd_AT9_Mi24P','4Rnd_AT9_Mi24P','4Rnd_AT9_Mi24P']]];
 _easaLoadout = _easaLoadout + [
 [
-[5800,'Igla-V (2)',[['Igla_twice'],['2Rnd_Igla']]]
+[6800,'Ataka-V (12) | Igla-V (2)',[['AT9Launcher','Igla_twice'],['4Rnd_AT9_Mi24P','4Rnd_AT9_Mi24P','4Rnd_AT9_Mi24P','2Rnd_Igla']]]
 ]
 ];
 
-// Ka-52 (Black) [AF5] - 2 pylons
+// Ka-52 (Black) [AF5] - 4 pylons
 _easaVehi = _easaVehi + ['Ka52Black'];
 _easaDefault = _easaDefault + [[['VikhrLauncher'],['12Rnd_Vikhr_KA50']]];
 _easaLoadout = _easaLoadout + [
 [
-[8000,'R-73 (2)',[['R73Launcher_2'],['2Rnd_R73']]]
+[9000,'Vikhr (12) | R-73 (2)',[['VikhrLauncher','R73Launcher_2'],['12Rnd_Vikhr_KA50','2Rnd_R73']]]
 ]
 ];
-for '_i' from 0 to count(_easaVehi)-1 do {      _loadout = _easaLoadout select _i;              for '_j' from 0 to count(_loadout)-1 do {               _loadout_line = _loadout select _j;             _is_AAMissile = false;
-{                       _ammo = getText(configFile >> "CfgMagazines" >> _x >> "ammo");
-if (_ammo != "") then {                         if (getNumber(configFile >> "CfgAmmo" >> _ammo >> "airLock") == 1 && configName(inheritsFrom(configFile >> "CfgAmmo" >> _ammo)) == "MissileBase") exitWith {_is_AAMissile = true};
-};              } forEach ((_loadout_line select 2) select 1);                          _loadout_line set [3, if (_is_AAMissile) then {true} else {false}];     };};
+for '_i' from 0 to count(_easaVehi)-1 do {      _loadout = _easaLoadout select _i;              for '_j' from 0 to count(_loadout)-1 do {            _loadout_line = _loadout select _j;             _is_AAMissile = false;                          {                   _ammo = getText(configFile >> "CfgMagazines" >> _x >> "ammo");                                           if (_ammo != "") then {
+        if (getNumber(configFile >> "CfgAmmo" >> _ammo >> "airLock") == 1 && configName(inheritsFrom(configFile >> "CfgAmmo" >> _ammo)) == "MissileBase") exitWith {_is_AAMissile = true};                   };              } forEach ((_loadout_line select 2) select 1);                               _loadout_line set [3, if (_is_AAMissile) then {true} else {false}];     };};
 missionNamespace setVariable ['WFBE_EASA_Vehicles',_easaVehi];missionNamespace setVariable ['WFBE_EASA_Loadouts',_easaLoadout];missionNamespace setVariable ['WFBE_EASA_Default',_easaDefault];

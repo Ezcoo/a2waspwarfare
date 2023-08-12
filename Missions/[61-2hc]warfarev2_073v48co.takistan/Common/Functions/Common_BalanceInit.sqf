@@ -13,7 +13,8 @@ case "Su34": {
 case "Su25_Ins": {
     _this addMagazine "4Rnd_FAB_250";
     _this addMagazine "4Rnd_FAB_250";
-    _this addMagazine "4Rnd_FAB_250";
+    _this addMagazine "2Rnd_FAB_250";
+    _this addMagazine "2Rnd_FAB_250";
     _this addMagazine "64Rnd_57mm";
     _this addWeapon "57mmLauncher";
     _this removeMagazine "4Rnd_FAB_250";
@@ -48,7 +49,7 @@ case "Su39": {
     _this removeMagazine "4Rnd_Ch29";
     _this removeWeapon "AirBombLauncher";
     _this removeWeapon "80mmLauncher";
-    _this removeWeapon "Ch29Launcher_Su34";
+    _this removeWeapon "Ch29Launcher";
 };
 
 // L-39 [AF3] - 4 pylons
@@ -129,7 +130,7 @@ case "AV8B2": {
     _this removeWeapon "BombLauncher";
 };
 
-// Mi-24V (CZ) [AF3] - 2 pylons
+// Mi-24V (CZ) [AF3] - 6 pylons
 case "Mi24_D_CZ_ACR": {
     _this addMagazine "4Rnd_AT9_Mi24P";
     _this addMagazine "4Rnd_AT9_Mi24P";
@@ -138,7 +139,7 @@ case "Mi24_D_CZ_ACR": {
     _this addWeapon "S8Launcher";
 };
 
-// AH-64A [AF3] - 2 pylons
+// AH-64A [AF3] - 4 pylons
 case "AH64D": {
     _this addMagazine "6Rnd_TOW2";
     _this addWeapon "TOWLauncherSingle";
@@ -180,7 +181,7 @@ case "AW159_Lynx_BAF": {
     _this removeWeapon "CRV7_PG";
 };
 
-// Mi-24V [AF3] - 2 pylons
+// Mi-24V [AF3] - 6 pylons
 case "Mi24_V": {
     _this addMagazine "4Rnd_AT9_Mi24P";
     _this addMagazine "4Rnd_AT9_Mi24P";
@@ -189,7 +190,7 @@ case "Mi24_V": {
     _this removeWeapon "AT6Launcher";
 };
 
-// Mi-24P [AF3] - 2 pylons
+// Mi-24P [AF3] - 4 pylons
 case "Mi24_P": {
     _this addMagazine "750Rnd_30mm_GSh301";
     _this addMagazine "750Rnd_30mm_GSh301";
@@ -208,7 +209,7 @@ case "Mi24_D_TK_EP1": {
     _this removeMagazineTurret ["128Rnd_57mm", [-1]];
 };
 
-// Ka-52 [AF4] - 2 pylons
+// Ka-52 [AF4] - 8 pylons
 case "Ka52": {
     _this addMagazine "4Rnd_AT9_Mi24P";
     _this addMagazine "4Rnd_AT9_Mi24P";
@@ -218,7 +219,7 @@ case "Ka52": {
     _this removeWeapon "VikhrLauncher";
 };
 
-// Ka-52 (Black) [AF5] - 2 pylons
+// Ka-52 (Black) [AF5] - 4 pylons
 case "Ka52Black": {
 };
 
