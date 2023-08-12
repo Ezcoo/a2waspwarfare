@@ -111,7 +111,7 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         (string, int) ammunitionArray = ("", 0);
 
         // Calculate for turret (like for aircrafts, the Su34)
-        if (defaultLoadoutOnTurret.AmmunitionTypesWithCount.Count > 0 && vehicleType != VehicleType.WILDCAT) // Convert this to list if needed later on
+        if (defaultLoadoutOnTurret.AmmunitionTypesWithCount.Count > 0 && (vehicleType != VehicleType.WILDCAT || vehicleType != VehicleType.MI24P)) // Convert this to list if needed later on
         {
             ammunitionArray = GenerateLoadoutRow(defaultLoadoutOnTurret.AmmunitionTypesWithCount, false);
         }
