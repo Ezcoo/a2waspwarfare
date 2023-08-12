@@ -5,6 +5,15 @@
         VehicleType = VehicleType.AH64A;
         pylonAmount = 2;
 
+        base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+                { AmmunitionType.EIGHTROUNDHELLFIRE, 2},
+            };
+        base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+                { AmmunitionType.SIXROUNDTOWTWO, 2},
+            };
+
         //weapons[] = {
         //            "M230",
         //            "SidewinderLaucher_AH64" ????
@@ -13,21 +22,6 @@
         //            "1200Rnd_30x113mm_M789_HEDP",
         //            "8Rnd_Sidewinder_AH64" ????
         //        };
-
-        base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
-            {
-                //{ AmmunitionType.SIXROUNDTOWTWO, 2},
-            };
-
-        base.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
-            {
-                { AmmunitionType.EIGHTROUNDHELLFIRE, 2},
-            };
-        base.defaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
-            {
-                { AmmunitionType.SIXROUNDTOWTWO, 2},
-            };
-        turretPos = 0;
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {
