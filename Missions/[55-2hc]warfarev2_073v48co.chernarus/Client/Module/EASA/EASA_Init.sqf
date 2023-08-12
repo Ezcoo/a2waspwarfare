@@ -605,8 +605,8 @@ _easaVehi = _easaVehi + ['AW159_Lynx_BAF'];
 _easaDefault = _easaDefault + [[['SpikeLauncher_ACR','CTWS','CRV7_HEPD'],['2Rnd_Spike_ACR','2Rnd_Spike_ACR','200Rnd_40mmHE_FV510','200Rnd_40mmSABOT_FV510','6Rnd_CRV7_HEPD','6Rnd_CRV7_HEPD']]];
 _easaLoadout = _easaLoadout + [
 [
-[5000,'Spike (4)',[['SpikeLauncher_ACR'],['2Rnd_Spike_ACR','2Rnd_Spike_ACR']]],
-[8800,'Spike (2) | Stinger (2)',[['SpikeLauncher_ACR','StingerLauncher_twice'],['2Rnd_Spike_ACR','2Rnd_Stinger']]],
+[1000,'Spike (4)',[['SpikeLauncher_ACR'],['2Rnd_Spike_ACR','2Rnd_Spike_ACR']]],
+[4800,'Spike (2) | Stinger (2)',[['SpikeLauncher_ACR','StingerLauncher_twice'],['2Rnd_Spike_ACR','2Rnd_Stinger']]],
 [10600,'Stinger (4)',[['StingerLauncher_twice'],['2Rnd_Stinger','2Rnd_Stinger']]]
 ]
 ];
@@ -622,7 +622,7 @@ _easaLoadout = _easaLoadout + [
 
 // Mi-24P [AF3] - 4 pylons
 _easaVehi = _easaVehi + ['Mi24_P'];
-_easaDefault = _easaDefault + [[['AirBombLauncher','AT9Launcher'],['2Rnd_FAB_250','4Rnd_AT9_Mi24P']]];
+_easaDefault = _easaDefault + [[['AirBombLauncher','S8Launcher'],['750Rnd_30mm_GSh301','750Rnd_30mm_GSh301','40Rnd_S8T']]];
 _easaLoadout = _easaLoadout + [
 [
 [2600,'Ataka-V (4) | FAB-250 (6)',[['AT9Launcher','AirBombLauncher'],['4Rnd_AT9_Mi24P','4Rnd_FAB_250','2Rnd_FAB_250']]],

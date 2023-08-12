@@ -158,15 +158,18 @@ case "AH1Z": {
 
 // Wildcat AH11 [AF3] - 4 pylons
 case "AW159_Lynx_BAF": {
-    _this removeMagazineTurret ["2Rnd_Spike_ACR", [0]];
-    _this removeMagazineTurret ["2Rnd_Spike_ACR", [0]];
-    _this removeMagazineTurret ["200Rnd_40mmHE_FV510", [0]];
-    _this removeMagazineTurret ["200Rnd_40mmSABOT_FV510", [0]];
-    _this removeMagazineTurret ["6Rnd_CRV7_HEPD", [0]];
-    _this removeMagazineTurret ["6Rnd_CRV7_HEPD", [0]];
-    _this removeWeaponTurret ["SpikeLauncher_ACR", [0]];
-    _this removeWeaponTurret ["CTWS", [0]];
-    _this removeWeaponTurret ["CRV7_HEPD", [0]];
+    _this removeMagazine "12Rnd_CRV7";
+    _this removeMagazine "1200Rnd_20mm_M621";
+    _this removeWeapon "CRV7_PG";
+    _this addMagazine "2Rnd_Spike_ACR";
+    _this addMagazine "2Rnd_Spike_ACR";
+    _this addMagazine "200Rnd_40mmHE_FV510";
+    _this addMagazine "200Rnd_40mmSABOT_FV510";
+    _this addMagazine "6Rnd_CRV7_HEPD";
+    _this addMagazine "6Rnd_CRV7_HEPD";
+    _this addWeapon "SpikeLauncher_ACR";
+    _this addWeapon "CTWS";
+    _this addWeapon "CRV7_HEPD";
 };
 
 // Mi-24V [AF3] - 6 pylons
@@ -180,15 +183,16 @@ case "Mi24_V": {
 
 // Mi-24P [AF3] - 4 pylons
 case "Mi24_P": {
-    _this removeMagazine "80Rnd_S8T";
-    _this removeWeapon "80mmLauncher";
-    _this addMagazine "750Rnd_30mm_GSh301";
-    _this addMagazine "750Rnd_30mm_GSh301";
-    _this addMagazine "40Rnd_S8T";
-    _this addWeapon "S8Launcher";
-    _this removeMagazineTurret ["4Rnd_AT9_Mi24P", [0]];
-    _this removeMagazineTurret ["4Rnd_AT9_Mi24P", [0]];
-    _this addMagazineTurret ["4Rnd_AT9_Mi24P", [0]];
+    _this removeMagazine "4Rnd_AT9_Mi24P";
+    _this removeMagazine "4Rnd_AT9_Mi24P";
+    _this addMagazine "4Rnd_AT9_Mi24P";
+    _this removeMagazineTurret ["2Rnd_FAB_250", [0]];
+    _this removeMagazineTurret ["80Rnd_S8T", [0]];
+    _this removeWeaponTurret ["80mmLauncher", [0]];
+    _this addMagazineTurret ["750Rnd_30mm_GSh301", [0]];
+    _this addMagazineTurret ["750Rnd_30mm_GSh301", [0]];
+    _this addMagazineTurret ["40Rnd_S8T", [0]];
+    _this addWeaponTurret ["S8Launcher", [0]];
 };
 
 // Mi-24D [AF3] - 2 pylons
