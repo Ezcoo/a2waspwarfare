@@ -5,6 +5,7 @@
         VehicleType = VehicleType.MI24P;
         pylonAmount = 4;
 
+        // Seems to be wrong...
         //weapons[] = {
         //            "HeliBombLauncher",
         //            "AT9Launcher"
@@ -17,7 +18,6 @@
         base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.FOURROUNDATAKA, 4},
-                { AmmunitionType.TWOROUNDFAB250_HELIBOMBLAUNCHER, 2},
             };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
@@ -38,6 +38,7 @@
 
         base.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
+                { AmmunitionType.TWOROUNDFAB250_HELIBOMBLAUNCHER, 2},
                 { AmmunitionType.SEVENHUNDREDFIFTY30MMGSH301ROUNDS, 0},
                 { AmmunitionType.VANILLA_FOURTYROUNDS8WITH80MMLAUNCHER, 2},
             };
