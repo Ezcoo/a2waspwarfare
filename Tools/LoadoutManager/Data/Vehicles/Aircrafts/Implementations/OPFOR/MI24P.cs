@@ -6,27 +6,6 @@
         pylonAmount = 2;
 
         //weapons[] = {
-        //            "HeliBombLauncher",
-        //            "AT9Launcher"
-        //        };
-        //magazines[] = {
-        //            "2Rnd_FAB_250",
-        //            "4Rnd_AT9_Mi24P"
-        //        };
-
-
-        base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
-            {
-                { AmmunitionType.TWOROUNDFAB250, 2},
-                { AmmunitionType.FOURROUNDATAKA, 4},
-            };
-        base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
-            {
-                { AmmunitionType.TWOROUNDFAB250, 2},
-                { AmmunitionType.FOURROUNDATAKA, 2},
-            };
-
-        //weapons[] = {
         //    "GSh302",
         //    "80mmLauncher",
         //    "CMFlareLauncher"
@@ -37,15 +16,36 @@
         //    "120Rnd_CMFlareMagazine"
         //};
 
-        base.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+        base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.SEVENHUNDREDFIFTY30MMGSH301ROUNDS, 0},
                 { AmmunitionType.VANILLA_EIGHTYROUNDS8, 2},
             };
-        base.defaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+        base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.SEVENHUNDREDFIFTY30MMGSH301ROUNDS, 4},
                 { AmmunitionType.FOURTYROUNDS8, 2},
+            };
+
+        //weapons[] = {
+        //            "HeliBombLauncher",
+        //            "AT9Launcher"
+        //        };
+        //magazines[] = {
+        //            "2Rnd_FAB_250",
+        //            "4Rnd_AT9_Mi24P"
+        //        };
+
+
+        base.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+                { AmmunitionType.TWOROUNDFAB250, 2},
+                { AmmunitionType.FOURROUNDATAKA, 4},
+            };
+        base.defaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+                { AmmunitionType.TWOROUNDFAB250, 2},
+                { AmmunitionType.FOURROUNDATAKA, 2},
             };
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
