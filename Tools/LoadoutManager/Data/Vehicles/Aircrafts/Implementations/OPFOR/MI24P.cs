@@ -6,32 +6,46 @@
         pylonAmount = 2;
 
         //weapons[] = {
-        //    "S8Launcher",
-        //    "CMFlareLauncher"
-        //};
+        //            "HeliBombLauncher",
+        //            "AT9Launcher"
+        //        };
         //magazines[] = {
-        //    "80Rnd_80mm",
-        //    "120Rnd_CMFlareMagazine"
-        //};
+        //            "2Rnd_FAB_250",
+        //            "4Rnd_AT9_Mi24P"
+        //        };
+
 
         base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.VANILLA_EIGHTYROUNDS8, 2},
+                { AmmunitionType.TWOROUNDFAB250, 2},
+                { AmmunitionType.FOURROUNDATAKA, 4},
             };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.FOURROUNDATAKA, 2},
-                { AmmunitionType.FOURTYROUNDS8, 2},
                 { AmmunitionType.TWOROUNDFAB250, 2},
+                { AmmunitionType.FOURROUNDATAKA, 2},
             };
+
+        //weapons[] = {
+        //    "GSh302",
+        //    "80mmLauncher",
+        //    "CMFlareLauncher"
+        //};
+        //magazines[] = {
+        //    "750Rnd_30mm_GSh301",
+        //    "40Rnd_80mm",
+        //    "120Rnd_CMFlareMagazine"
+        //};
 
         base.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.SEVENHUNDREDFIFTY30MMGSH301ROUNDS, 0},
+                { AmmunitionType.VANILLA_EIGHTYROUNDS8, 2},
             };
         base.defaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.SEVENHUNDREDFIFTY30MMGSH301ROUNDS, 4},
+                { AmmunitionType.FOURTYROUNDS8, 2},
             };
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
