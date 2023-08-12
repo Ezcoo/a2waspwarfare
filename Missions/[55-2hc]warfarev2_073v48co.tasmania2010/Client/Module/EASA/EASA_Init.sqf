@@ -613,7 +613,7 @@ _easaLoadout = _easaLoadout + [
 
 // Mi-24V [AF3] - 2 pylons
 _easaVehi = _easaVehi + ['Mi24_V'];
-_easaDefault = _easaDefault + [[['YakB'],['1470Rnd_127x108_YakB']]];
+_easaDefault = _easaDefault + [[['AT9Launcher'],['4Rnd_AT9_Mi24P','4Rnd_AT9_Mi24P']]];
 _easaLoadout = _easaLoadout + [
 [
 [5800,'Igla-V (2)',[['Igla_twice'],['2Rnd_Igla']]]
@@ -622,7 +622,7 @@ _easaLoadout = _easaLoadout + [
 
 // Mi-24P [AF3] - 2 pylons
 _easaVehi = _easaVehi + ['Mi24_P'];
-_easaDefault = _easaDefault + [[[],['750Rnd_30mm_GSh301','750Rnd_30mm_GSh301']]];
+_easaDefault = _easaDefault + [[['AirBombLauncher','AT9Launcher'],['2Rnd_FAB_250','4Rnd_AT9_Mi24P']]];
 _easaLoadout = _easaLoadout + [
 [
 [1600,'FAB-250 (6)',[['AirBombLauncher'],['4Rnd_FAB_250','2Rnd_FAB_250']]],
@@ -641,7 +641,7 @@ _easaLoadout = _easaLoadout + [
 
 // Ka-52 (Black) [AF5] - 2 pylons
 _easaVehi = _easaVehi + ['Ka52Black'];
-_easaDefault = _easaDefault + [[['S8Launcher','VikhrLauncher'],['40Rnd_S8T','12Rnd_Vikhr_KA50']]];
+_easaDefault = _easaDefault + [[['VikhrLauncher'],['12Rnd_Vikhr_KA50']]];
 _easaLoadout = _easaLoadout + [
 [
 [8000,'R-73 (2)',[['R73Launcher_2'],['2Rnd_R73']]]
