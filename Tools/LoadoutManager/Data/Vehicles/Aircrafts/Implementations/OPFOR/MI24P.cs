@@ -22,6 +22,7 @@
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.FOURROUNDATAKA, 2},
+                { AmmunitionType.TWOROUNDFAB250_HELIBOMBLAUNCHER, 2},
             };
 
         //weapons[] = {
