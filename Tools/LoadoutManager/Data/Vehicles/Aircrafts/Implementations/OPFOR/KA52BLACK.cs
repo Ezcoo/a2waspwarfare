@@ -5,9 +5,14 @@
         VehicleType = VehicleType.KA52BLACK;
         pylonAmount = 2;
 
+        base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+                //{ AmmunitionType.FOURTYROUNDS8, 2},
+                { AmmunitionType.TWELVEROUNDSVIKHR, 2},
+            };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.FOURTYROUNDS8, 2},
+                //d{ AmmunitionType.FOURTYROUNDS8, 2},
                 { AmmunitionType.TWELVEROUNDSVIKHR, 2},
             };
 
