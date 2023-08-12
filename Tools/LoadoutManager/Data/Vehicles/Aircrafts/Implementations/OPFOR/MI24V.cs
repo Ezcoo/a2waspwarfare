@@ -3,7 +3,7 @@
     public MI24V()
     {
         VehicleType = VehicleType.MI24V;
-        pylonAmount = 2;
+        pylonAmount = 6;
 
         //weapons[] = {
         //            "YakB",
@@ -44,6 +44,7 @@
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {
+            { AmmunitionType.FOURROUNDATAKA, 4},
             { AmmunitionType.TWOROUNDIGLA, 2 },
         };
 
