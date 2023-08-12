@@ -2,54 +2,54 @@ switch (typeOf _this) do
 {
 // Su-34 [AF5] - 10 pylons
 case "Su34": {
+    _this removeMagazine "4Rnd_R73";
+    _this removeWeapon "R73Launcher";
     _this addMagazine "2Rnd_R73";
     _this addMagazine "2Rnd_R73";
     _this addWeapon "R73Launcher_2";
-    _this removeMagazine "4Rnd_R73";
-    _this removeWeapon "R73Launcher";
 };
 
 // Su-25A [AF3] - 6 pylons
 case "Su25_Ins": {
+    _this removeMagazine "4Rnd_FAB_250";
+    _this removeMagazine "2Rnd_R73";
+    _this removeMagazine "80Rnd_S8T";
+    _this removeWeapon "R73Launcher_2";
+    _this removeWeapon "S8Launcher";
     _this addMagazine "4Rnd_FAB_250";
     _this addMagazine "4Rnd_FAB_250";
     _this addMagazine "2Rnd_FAB_250";
     _this addMagazine "2Rnd_FAB_250";
     _this addMagazine "64Rnd_57mm";
     _this addWeapon "57mmLauncher";
-    _this removeMagazine "4Rnd_FAB_250";
-    _this removeMagazine "2Rnd_R73";
-    _this removeMagazine "80Rnd_S8T";
-    _this removeWeapon "R73Launcher_2";
-    _this removeWeapon "S8Launcher";
 };
 
 // Su-25T [AF4] - 8 pylons
 case "Su25_TK_EP1": {
+    _this removeMagazine "4Rnd_FAB_250";
+    _this removeMagazine "80Rnd_S8T";
+    _this removeWeapon "AirBombLauncher";
+    _this removeWeapon "80mmLauncher";
     _this addMagazine "4Rnd_AT9_Mi24P";
     _this addMagazine "4Rnd_AT9_Mi24P";
     _this addMagazine "40Rnd_S8T";
     _this addWeapon "AT9Launcher";
     _this addWeapon "S8Launcher";
-    _this removeMagazine "4Rnd_FAB_250";
-    _this removeMagazine "80Rnd_S8T";
-    _this removeWeapon "AirBombLauncher";
-    _this removeWeapon "80mmLauncher";
 };
 
 // Su-39 [AF5] - 10 pylons
 case "Su39": {
-    _this addMagazine "12Rnd_Vikhr_KA50";
-    _this addMagazine "40Rnd_S8T";
-    _this addMagazine "40Rnd_S8T";
-    _this addWeapon "VikhrLauncher";
-    _this addWeapon "S8Launcher";
     _this removeMagazine "4Rnd_FAB_250";
     _this removeMagazine "80Rnd_S8T";
     _this removeMagazine "4Rnd_Ch29";
     _this removeWeapon "AirBombLauncher";
     _this removeWeapon "80mmLauncher";
     _this removeWeapon "Ch29Launcher";
+    _this addMagazine "12Rnd_Vikhr_KA50";
+    _this addMagazine "40Rnd_S8T";
+    _this addMagazine "40Rnd_S8T";
+    _this addWeapon "VikhrLauncher";
+    _this addWeapon "S8Launcher";
 };
 
 // L-39 [AF3] - 4 pylons
@@ -62,30 +62,26 @@ case "L39_TK_EP1": {
 
 // F-35B [AF5] - 6 pylons
 case "F35B": {
+    _this removeMagazine "2Rnd_Sidewinder_F35";
+    _this removeWeapon "SidewinderLaucher_F35";
     _this addMagazine "2Rnd_Maverick_A10";
     _this addMagazine "300Rnd_25mm_GAU12";
     _this addWeapon "MaverickLauncher";
     _this addWeapon "GAU12";
-    _this removeMagazine "2Rnd_Sidewinder_F35";
-    _this removeWeapon "SidewinderLaucher_F35";
 };
 
 // L-159 [AF3] - 6 pylons
 case "L159_ACR": {
+    _this removeMagazine "4Rnd_Maverick_L159";
+    _this removeWeapon "MaverickLauncher_ACR";
     _this addMagazine "2Rnd_Maverick_A10";
     _this addMagazine "38Rnd_FFAR";
     _this addWeapon "MaverickLauncher";
     _this addWeapon "FFARLauncher";
-    _this removeMagazine "4Rnd_Maverick_L159";
-    _this removeWeapon "MaverickLauncher_ACR";
 };
 
 // A-10A [AF3] - 4 pylons
 case "A10": {
-    _this addMagazine "38Rnd_FFAR";
-    _this addMagazine "6Rnd_Mk82";
-    _this addWeapon "FFARLauncher";
-    _this addWeapon "Mk82BombLauncher_6";
     _this removeMagazine "14Rnd_FFAR";
     _this removeMagazine "4Rnd_GBU12";
     _this removeMagazine "2Rnd_Sidewinder_AH1Z";
@@ -94,40 +90,44 @@ case "A10": {
     _this removeWeapon "BombLauncherA10";
     _this removeWeapon "SidewinderLaucher_AH1Z";
     _this removeWeapon "MaverickLauncher";
-};
-
-// A-10C [AF4] - 8 pylons
-case "A10_US_EP1": {
     _this addMagazine "38Rnd_FFAR";
     _this addMagazine "6Rnd_Mk82";
     _this addWeapon "FFARLauncher";
     _this addWeapon "Mk82BombLauncher_6";
+};
+
+// A-10C [AF4] - 8 pylons
+case "A10_US_EP1": {
     _this removeMagazine "14Rnd_FFAR";
     _this removeMagazine "4Rnd_GBU12";
     _this removeWeapon "FFARLauncher_14";
     _this removeWeapon "BombLauncherA10";
+    _this addMagazine "38Rnd_FFAR";
+    _this addMagazine "6Rnd_Mk82";
+    _this addWeapon "FFARLauncher";
+    _this addWeapon "Mk82BombLauncher_6";
 };
 
 // AV8B (LGB) [AF4] - 8 pylons
 case "AV8B": {
+    _this removeMagazine "6Rnd_GBU12_AV8B";
+    _this removeWeapon "BombLauncher";
     _this addMagazine "2Rnd_GBU12";
     _this addMagazine "2Rnd_GBU12";
     _this addMagazine "2Rnd_GBU12";
     _this addWeapon "BombLauncherF35";
-    _this removeMagazine "6Rnd_GBU12_AV8B";
-    _this removeWeapon "BombLauncher";
 };
 
 // AV8B [AF5] - 8 pylons
 case "AV8B2": {
+    _this removeMagazine "6Rnd_GBU12_AV8B";
+    _this removeWeapon "BombLauncher";
     _this addMagazine "2Rnd_Sidewinder_AH1Z";
     _this addMagazine "2Rnd_Maverick_A10";
     _this addMagazine "2Rnd_Maverick_A10";
     _this addMagazine "2Rnd_Maverick_A10";
     _this addWeapon "SidewinderLaucher_AH1Z";
     _this addWeapon "MaverickLauncher";
-    _this removeMagazine "6Rnd_GBU12_AV8B";
-    _this removeWeapon "BombLauncher";
 };
 
 // Mi-24V (CZ) [AF3] - 6 pylons
@@ -136,10 +136,10 @@ case "Mi24_D_CZ_ACR": {
 
 // AH-64A [AF3] - 4 pylons
 case "AH64D": {
-    _this addMagazine "6Rnd_TOW2";
-    _this addWeapon "TOWLauncherSingle";
     _this removeMagazine "8Rnd_Hellfire";
     _this removeWeapon "HellfireLauncher";
+    _this addMagazine "6Rnd_TOW2";
+    _this addWeapon "TOWLauncherSingle";
 };
 
 // AH-64D (Hellfire) [AF4] - 4 pylons
@@ -152,12 +152,15 @@ case "BAF_Apache_AH1_D": {
 
 // AH-1Z [AF5] - 4 pylons
 case "AH1Z": {
-    _this addMagazine "8Rnd_Hellfire";
     _this removeMagazine "2Rnd_Sidewinder_AH1Z";
+    _this addMagazine "8Rnd_Hellfire";
 };
 
 // Wildcat AH11 [AF3] - 4 pylons
 case "AW159_Lynx_BAF": {
+    _this removeMagazine "12Rnd_CRV7";
+    _this removeMagazine "1200Rnd_20mm_M621";
+    _this removeWeapon "CRV7_PG";
     _this addMagazine "2Rnd_Spike_ACR";
     _this addMagazine "2Rnd_Spike_ACR";
     _this addMagazine "200Rnd_40mmHE_FV510";
@@ -167,47 +170,44 @@ case "AW159_Lynx_BAF": {
     _this addWeapon "SpikeLauncher_ACR";
     _this addWeapon "CTWS";
     _this addWeapon "CRV7_HEPD";
-    _this removeMagazine "12Rnd_CRV7";
-    _this removeMagazine "1200Rnd_20mm_M621";
-    _this removeWeapon "CRV7_PG";
 };
 
 // Mi-24V [AF3] - 6 pylons
 case "Mi24_V": {
+    _this removeMagazine "4Rnd_AT6_Mi24V";
+    _this removeWeapon "AT6Launcher";
     _this addMagazine "4Rnd_AT9_Mi24P";
     _this addMagazine "4Rnd_AT9_Mi24P";
     _this addWeapon "AT9Launcher";
-    _this removeMagazine "4Rnd_AT6_Mi24V";
-    _this removeWeapon "AT6Launcher";
 };
 
 // Mi-24P [AF3] - 4 pylons
 case "Mi24_P": {
+    _this removeMagazine "80Rnd_S8T";
+    _this removeWeapon "80mmLauncher";
     _this addMagazine "750Rnd_30mm_GSh301";
     _this addMagazine "750Rnd_30mm_GSh301";
     _this addMagazine "40Rnd_S8T";
     _this addWeapon "S8Launcher";
-    _this removeMagazine "80Rnd_S8T";
-    _this removeWeapon "80mmLauncher";
+    _this removeMagazineTurret ["4Rnd_AT9_Mi24P", [0]];
+    _this removeMagazineTurret ["4Rnd_AT9_Mi24P", [0]];
     _this addMagazineTurret ["4Rnd_AT9_Mi24P", [0]];
-    _this removeMagazineTurret ["4Rnd_AT9_Mi24P", [0]];
-    _this removeMagazineTurret ["4Rnd_AT9_Mi24P", [0]];
 };
 
 // Mi-24D [AF3] - 2 pylons
 case "Mi24_D_TK_EP1": {
-    _this addMagazineTurret ["64Rnd_57mm", [-1]];
     _this removeMagazineTurret ["128Rnd_57mm", [-1]];
+    _this addMagazineTurret ["64Rnd_57mm", [-1]];
 };
 
 // Ka-52 [AF4] - 8 pylons
 case "Ka52": {
+    _this removeMagazine "12Rnd_Vikhr_KA50";
+    _this removeWeapon "VikhrLauncher";
     _this addMagazine "4Rnd_AT9_Mi24P";
     _this addMagazine "4Rnd_AT9_Mi24P";
     _this addMagazine "4Rnd_AT9_Mi24P";
     _this addWeapon "AT9Launcher";
-    _this removeMagazine "12Rnd_Vikhr_KA50";
-    _this removeWeapon "VikhrLauncher";
 };
 
 // Ka-52 (Black) [AF5] - 4 pylons
@@ -216,12 +216,12 @@ case "Ka52Black": {
 
 // M6 Linebacker [HF4]
 case "M6_EP1": {
-    _this addMagazine "8Rnd_9M311";
-    _this addWeapon "9M311Laucher";
     _this removeMagazine "4Rnd_Stinger";
     _this removeMagazine "4Rnd_Stinger";
     _this removeMagazine "4Rnd_Stinger";
     _this removeWeapon "StingerLaucher_4x";
+    _this addMagazine "8Rnd_9M311";
+    _this addWeapon "9M311Laucher";
 };
 
 // An-2 [AF1] - 10 pylons
@@ -271,7 +271,6 @@ case "T34_TK_GUE_EP1": {
 
 // M2A2 Bradley [HF1]
 case "M2A2_EP1": {
-    _this addWeapon "M242";
     _this removeMagazine "2Rnd_TOW2";
     _this removeMagazine "2Rnd_TOW2";
     _this removeMagazine "2Rnd_TOW2";
@@ -281,6 +280,7 @@ case "M2A2_EP1": {
     _this removeMagazine "210Rnd_25mm_M242_APDS";
     _this removeWeapon "TOWLauncher";
     _this removeWeapon "M242BC";
+    _this addWeapon "M242";
 };
 
 // UH1Y [AF2] - 0 pylons
@@ -331,11 +331,11 @@ case "M1128_MGS_EP1": {
 
 // BRDM (Igla) [LF4]
 case "BRDM2_ATGM_INS": {
+    _this removeMagazineTurret ["5Rnd_AT5_BRDM2", [0]];
+    _this removeWeaponTurret ["AT5Launcher", [0]];
     _this addMagazineTurret ["2Rnd_Igla", [0]];
     _this addMagazineTurret ["2Rnd_Igla", [0]];
     _this addWeaponTurret ["Igla_twice", [0]];
-    _this removeMagazineTurret ["5Rnd_AT5_BRDM2", [0]];
-    _this removeWeaponTurret ["AT5Launcher", [0]];
 };
 
 };
