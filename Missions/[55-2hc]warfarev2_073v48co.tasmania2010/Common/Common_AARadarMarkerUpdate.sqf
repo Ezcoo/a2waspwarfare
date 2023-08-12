@@ -69,8 +69,16 @@ while {alive _object && !(isNull _object)} do {
                     _aircraftName = "AH-64D (Hellfire)";
                 };
 
+                if (_typeOfObject == "Su25_Ins") then {
+                    _aircraftName = "Su-25A";
+                };
+
                 if (_typeOfObject == "Su25_TK_EP1") then {
                     _aircraftName = "Su-25T";
+                };
+
+                if (_typeOfObject == "Su39") then {
+                    _aircraftName = "Su-39";
                 };
 
                 _updateFrequency = 1;
