@@ -45,7 +45,7 @@
                 { AmmunitionType.SIXROUNDCRV7HEPD, 4},
             };
 
-        turretPos = 0;
+        turretPos = -1;
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {
