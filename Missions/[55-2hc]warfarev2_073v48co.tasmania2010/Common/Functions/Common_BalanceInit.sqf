@@ -139,7 +139,7 @@ case "Mi24_D_CZ_ACR": {
     _this addWeapon "S8Launcher";
 };
 
-// AH-64A [AF3] - 4 pylons
+// AH-64D (TOW) [AF3] - 4 pylons
 case "AH64D": {
     _this addMagazine "6Rnd_TOW2";
     _this addWeapon "TOWLauncherSingle";

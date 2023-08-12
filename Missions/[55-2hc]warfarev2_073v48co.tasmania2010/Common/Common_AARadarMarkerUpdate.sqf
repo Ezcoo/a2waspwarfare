@@ -62,7 +62,7 @@ while {alive _object && !(isNull _object)} do {
                 };
 
                 if (_typeOfObject == "AH64D") then {
-                    _aircraftName = "AH-64A";
+                    _aircraftName = "AH-64D (TOW)";
                 };
 
                 if (_typeOfObject == "AH64D_EP1") then {
