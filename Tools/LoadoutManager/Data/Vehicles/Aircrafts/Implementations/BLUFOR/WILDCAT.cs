@@ -23,7 +23,7 @@
 
         //weapons[] = {
         //    "CRV7_PG",
-        //    "M621",
+        //    "M621", // actually, it is BAF_M621?
         //    "CMFlareLauncher"
         //};
         //magazines[] = {

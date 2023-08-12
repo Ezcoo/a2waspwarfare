@@ -121,7 +121,7 @@ public enum WeaponType
     [EnumMember(Value = "CRV7_PG")]
     WARNING_GAME_CRASH_DO_NOT_USE_IN_LOADOUTS_CRV7PG,
 
-    [EnumMember(Value = "M621")]
+    [EnumMember(Value = "BAF_M621")]
     M621,
 
     [EnumMember(Value = "M68")]
