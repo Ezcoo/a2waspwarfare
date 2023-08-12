@@ -110,18 +110,15 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
     {
         (string, int) ammunitionArray = ("", 0);
 
-        // Calculate for turret (like for aircrafts, the Su34)
-        if (defaultLoadoutOnTurret.AmmunitionTypesWithCount.Count > 0 && vehicleType != VehicleType.WILDCAT) // Convert this to list if needed later on
-        {
-            ammunitionArray = GenerateLoadoutRow(defaultLoadoutOnTurret.AmmunitionTypesWithCount, false);
-        }
-        else
+        if (vehicleType == VehicleType.WILDCAT || vehicleType == VehicleType.MI24P)
         {
             ammunitionArray = GenerateLoadoutRow(defaultLoadout.AmmunitionTypesWithCount, false);
+            ammunitionArray.Item1 = "\n_easaDefault = _easaDefault + " + ammunitionArray.Item1 + ";";
+            return ammunitionArray.Item1;
         }
 
-        //refactor this later
-        if (defaultLoadoutOnTurret.AmmunitionTypesWithCount.Count > 0 && vehicleType != VehicleType.MI24P) // Convert this to list if needed later on
+        // Calculate for turret (like for aircrafts, the Su34)
+        if (defaultLoadoutOnTurret.AmmunitionTypesWithCount.Count > 0 && vehicleType != VehicleType.WILDCAT) // Convert this to list if needed later on
         {
             ammunitionArray = GenerateLoadoutRow(defaultLoadoutOnTurret.AmmunitionTypesWithCount, false);
         }
