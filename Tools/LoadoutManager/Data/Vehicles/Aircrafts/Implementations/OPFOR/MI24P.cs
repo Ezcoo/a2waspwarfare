@@ -36,16 +36,17 @@
         //            "4Rnd_AT9_Mi24P"
         //        };
 
-
         base.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.TWOROUNDFAB250, 2},
                 { AmmunitionType.FOURROUNDATAKA, 4},
+
             };
         base.defaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.TWOROUNDFAB250, 2},
                 { AmmunitionType.FOURROUNDATAKA, 2},
+
             };
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
@@ -58,7 +59,7 @@
         inGameDisplayName = "Mi-24P";
         inGameFactoryLevel = 3;
         producedFromFactoryType = FactoryType.AIRCRAFTFACTORY;
-        turretPos = -1;
+        turretPos = 0;
 
         addToDefaultLoadoutPrice = true;
     }
