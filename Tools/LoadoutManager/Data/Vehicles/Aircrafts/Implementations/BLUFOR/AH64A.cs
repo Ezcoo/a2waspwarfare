@@ -3,7 +3,7 @@
     public AH64A()
     {
         VehicleType = VehicleType.AH64A;
-        pylonAmount = 2;
+        pylonAmount = 4;
 
         base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
@@ -25,6 +25,7 @@
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {
+            { AmmunitionType.SIXROUNDTOWTWO, 2},
             { AmmunitionType.TWOROUNDSTINGER, 2 },
         };
 
