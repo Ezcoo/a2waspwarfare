@@ -468,7 +468,7 @@ _easaLoadout = _easaLoadout + [
 
 // AV8B [AF5] - 8 pylons
 _easaVehi = _easaVehi + ['AV8B2'];
-_easaDefault = _easaDefault + [[[],[]]];
+_easaDefault = _easaDefault + [[['SidewinderLaucher_AH1Z','MaverickLauncher'],['2Rnd_Sidewinder_AH1Z','2Rnd_Maverick_A10','2Rnd_Maverick_A10','2Rnd_Maverick_A10']]];
 _easaLoadout = _easaLoadout + [
 [
 [3400,'MK-82 (24)',[['Mk82BombLauncher_6'],['6Rnd_Mk82','6Rnd_Mk82','6Rnd_Mk82','6Rnd_Mk82']]],
