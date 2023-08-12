@@ -160,7 +160,7 @@ case "AW159_Lynx_BAF": {
     _this removeMagazineTurret ["12Rnd_CRV7", [-1]];
     _this removeMagazineTurret ["1200Rnd_20mm_M621", [-1]];
     _this removeWeaponTurret ["CRV7_PG", [-1]];
-    _this removeWeaponTurret ["M621", [-1]];
+    _this removeWeaponTurret ["BAF_M621", [-1]];
     _this addMagazineTurret ["2Rnd_Spike_ACR", [-1]];
     _this addMagazineTurret ["2Rnd_Spike_ACR", [-1]];
     _this addMagazineTurret ["200Rnd_40mmHE_FV510", [-1]];
@@ -186,6 +186,10 @@ case "Mi24_P": {
     _this removeMagazine "4Rnd_AT9_Mi24P";
     _this removeMagazine "4Rnd_AT9_Mi24P";
     _this addMagazine "4Rnd_AT9_Mi24P";
+    _this addMagazine "2Rnd_FAB_250";
+    _this addWeapon "HeliBombLauncher";
+    _this removeMagazineTurret ["2Rnd_FAB_250", [-1]];
+    _this removeWeaponTurret ["HeliBombLauncher", [-1]];
     _this addMagazineTurret ["750Rnd_30mm_GSh301", [-1]];
     _this addMagazineTurret ["750Rnd_30mm_GSh301", [-1]];
 };
