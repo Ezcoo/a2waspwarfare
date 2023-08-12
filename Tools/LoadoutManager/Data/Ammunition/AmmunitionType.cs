@@ -14,6 +14,8 @@ public enum AmmunitionType
     FOURROUNDFAB250,
     [EnumMember(Value = "2Rnd_FAB_250")]
     TWOROUNDFAB250,
+    [EnumMember(Value = "2Rnd_FAB_250")]
+    TWOROUNDFAB250_HELIBOMBLAUNCHER,
 
     [EnumMember(Value = "ERROR_UNDEFINED_VARIANTS")]
     BASECH29,
