@@ -120,6 +120,16 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
             ammunitionArray = GenerateLoadoutRow(defaultLoadout.AmmunitionTypesWithCount, false);
         }
 
+        //refactor this later
+        if (defaultLoadoutOnTurret.AmmunitionTypesWithCount.Count > 0 && vehicleType != VehicleType.MI24P) // Convert this to list if needed later on
+        {
+            ammunitionArray = GenerateLoadoutRow(defaultLoadoutOnTurret.AmmunitionTypesWithCount, false);
+        }
+        else
+        {
+            ammunitionArray = GenerateLoadoutRow(defaultLoadout.AmmunitionTypesWithCount, false);
+        }
+
         if (ammunitionArray.Item1 == "")
         {
             return "";
