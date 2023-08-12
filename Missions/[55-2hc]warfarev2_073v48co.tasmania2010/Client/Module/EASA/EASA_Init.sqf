@@ -572,7 +572,7 @@ _easaLoadout = _easaLoadout + [
 ]
 ];
 
-// AH-64D (Longbow) [AF4] - 4 pylons
+// AH-64D (Hellfire) [AF4] - 4 pylons
 _easaVehi = _easaVehi + ['AH64D_EP1'];
 _easaDefault = _easaDefault + [[['HellfireLauncher'],['8Rnd_Hellfire']]];
 _easaLoadout = _easaLoadout + [

@@ -66,7 +66,7 @@ while {alive _object && !(isNull _object)} do {
                 };
 
                 if (_typeOfObject == "AH64D_EP1") then {
-                    _aircraftName = "AH-64D (Longbow)";
+                    _aircraftName = "AH-64D (Hellfire)";
                 };
 
                 if (_typeOfObject == "Su25_TK_EP1") then {

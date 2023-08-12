@@ -147,7 +147,7 @@ case "AH64D": {
     _this removeWeapon "HellfireLauncher";
 };
 
-// AH-64D (Longbow) [AF4] - 4 pylons
+// AH-64D (Hellfire) [AF4] - 4 pylons
 case "AH64D_EP1": {
     _this addMagazine "8Rnd_Hellfire";
     _this addWeapon "HellfireLauncher";

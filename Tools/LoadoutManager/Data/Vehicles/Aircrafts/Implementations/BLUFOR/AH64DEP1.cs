@@ -20,7 +20,7 @@
             { AmmunitionType.TWOROUNDSTINGER, 2 },
         };
 
-        inGameDisplayName = "AH-64D (Longbow)";
+        inGameDisplayName = "AH-64D (Hellfire)";
         inGameFactoryLevel = 4;
         producedFromFactoryType = FactoryType.AIRCRAFTFACTORY;
 
