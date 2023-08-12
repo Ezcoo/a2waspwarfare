@@ -19,19 +19,19 @@
 
         base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.EIGHTROUNDHELLFIRE, 0},
+                { AmmunitionType.EIGHTROUNDHELLFIRE, 2},
                 { AmmunitionType.TWOROUNDSIDEWINDER_AH1Z, 2},
             };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.EIGHTROUNDHELLFIRE, 2},
+                { AmmunitionType.EIGHTROUNDHELLFIRE, 8},
             };
         turretPos = 0;
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {
-            { AmmunitionType.TWOROUNDSIDEWINDER, 2 },
-            { AmmunitionType.EIGHTROUNDHELLFIRE, 4},
+            { AmmunitionType.TWOROUNDSIDEWINDER_AH1Z, 2 },
+            { AmmunitionType.EIGHTROUNDHELLFIRE, 4 },
         };
 
         inGameDisplayName = "AH-1Z";
