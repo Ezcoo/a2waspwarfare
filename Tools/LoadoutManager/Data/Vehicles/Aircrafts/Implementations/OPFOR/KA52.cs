@@ -5,6 +5,17 @@
         VehicleType = VehicleType.KA52;
         pylonAmount = 2;
 
+
+        base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+                { AmmunitionType.TWELVEROUNDSVIKHR, 2},
+            };
+        base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+                { AmmunitionType.FOURROUNDATAKA, 6},
+            };
+
+
         //weapons[] = {
         //    "80mmLauncher",
         //    "CMFlareLauncher"
@@ -13,15 +24,6 @@
         //    "40Rnd_80mm",
         //    "120Rnd_CMFlare_Chaff_Magazine"
         //};
-
-        base.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
-            {
-                { AmmunitionType.TWELVEROUNDSVIKHR, 2},
-            };
-        base.defaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
-            {
-                { AmmunitionType.FOURROUNDATAKA, 5},
-            };
 
         turretPos = -1;
 
