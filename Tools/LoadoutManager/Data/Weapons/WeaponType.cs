@@ -130,4 +130,7 @@ public enum WeaponType
 
     [EnumMember(Value = "AT6Launcher")]
     SHTURMLAUNCHER,
+
+    [EnumMember(Value = "Laserdesignator_mounted")]
+    LASERDESIGNATOR,
 }

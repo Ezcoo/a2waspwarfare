@@ -6,6 +6,22 @@
         pylonAmount = 4;
 
         //weapons[] = {
+        //            "Laserdesignator_mounted"
+        //        };
+        //magazines[] = {
+        //            "Laserbatteries"
+        //        };
+
+        base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+                { AmmunitionType.LASERBATTERIES, 2},
+            };
+        base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+                { AmmunitionType.LASERBATTERIES, 2},
+            };
+
+        //weapons[] = {
         //    "CRV7_PG",
         //    "M621",
         //    "CMFlareLauncher"
@@ -16,12 +32,12 @@
         //    "120Rnd_CMFlareMagazine"
         //};
 
-        base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+        base.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.WARNING_GAME_CRASH_DO_NOT_USE_IN_LOADOUTS_TWELVEROUNDCRV7PG, 2},
                 { AmmunitionType.ONETHOUSANDTWOHUNDREDROUND20MMM261, 2},
             };
-        base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+        base.defaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.TWOROUNDSPIKE, 4},
                 { AmmunitionType.TWOHUNDREDROUNDCTWSHE, 2},
@@ -29,14 +45,7 @@
                 { AmmunitionType.SIXROUNDCRV7HEPD, 4},
             };
 
-        turretPos = -1;
-
-        //weapons[] = {
-        //            "Laserdesignator_mounted"
-        //        };
-        //magazines[] = {
-        //            "Laserbatteries"
-        //        };
+        turretPos = 0;
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {

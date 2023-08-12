@@ -154,4 +154,7 @@ public enum AmmunitionType
 
     [EnumMember(Value = "4Rnd_AT6_Mi24V")]
     FOURAT6SHTURMLAUNCHER,
+
+    [EnumMember(Value = "Laserbatteries")]
+    LASERBATTERIES,
 }
