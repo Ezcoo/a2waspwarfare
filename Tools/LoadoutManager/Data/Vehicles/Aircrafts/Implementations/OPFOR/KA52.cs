@@ -3,7 +3,7 @@
     public KA52()
     {
         VehicleType = VehicleType.KA52;
-        pylonAmount = 2;
+        pylonAmount = 8;
 
 
         base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
@@ -29,6 +29,7 @@
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {
+            { AmmunitionType.FOURROUNDATAKA, 6},
             { AmmunitionType.TWOROUNDIGLA, 2 },
         };
 
