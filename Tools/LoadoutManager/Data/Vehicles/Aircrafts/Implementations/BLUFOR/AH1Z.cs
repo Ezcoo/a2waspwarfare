@@ -25,7 +25,6 @@
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.EIGHTROUNDHELLFIRE, 2},
-                { AmmunitionType.TWOROUNDSIDEWINDER_AH1Z, 0},
             };
         turretPos = 0;
 
