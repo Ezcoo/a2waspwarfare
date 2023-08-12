@@ -21,7 +21,7 @@
                 { AmmunitionType.WARNING_GAME_CRASH_DO_NOT_USE_IN_LOADOUTS_TWELVEROUNDCRV7PG, 2},
                 { AmmunitionType.ONETHOUSANDTWOHUNDREDROUND20MMM261, 2},
             };
-        base.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+        base.defaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.TWOROUNDSPIKE, 4},
                 { AmmunitionType.TWOHUNDREDROUNDCTWSHE, 2},
