@@ -5,6 +5,10 @@
         VehicleType = VehicleType.APACHEAH1;
         pylonAmount = 4;
 
+        base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+            {
+                { AmmunitionType.EIGHTROUNDHELLFIRE, 2},
+            };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.EIGHTROUNDHELLFIRE, 2},
