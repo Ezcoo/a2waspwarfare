@@ -17,12 +17,12 @@
         //        };
 
 
-        base.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+        base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.EIGHTROUNDHELLFIRE, 0},
                 { AmmunitionType.TWOROUNDSIDEWINDER_AH1Z, 2},
             };
-        base.defaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+        base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.EIGHTROUNDHELLFIRE, 2},
                 { AmmunitionType.TWOROUNDSIDEWINDER_AH1Z, 0},
