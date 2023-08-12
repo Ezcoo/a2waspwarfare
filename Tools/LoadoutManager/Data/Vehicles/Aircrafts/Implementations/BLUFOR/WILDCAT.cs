@@ -14,11 +14,11 @@
 
         base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.LASERBATTERIES, 2},
+                //{ AmmunitionType.LASERBATTERIES, 2},
             };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.LASERBATTERIES, 2},
+                //{ AmmunitionType.LASERBATTERIES, 2},
                 { AmmunitionType.TWOROUNDSPIKE, 4},
             };
 
