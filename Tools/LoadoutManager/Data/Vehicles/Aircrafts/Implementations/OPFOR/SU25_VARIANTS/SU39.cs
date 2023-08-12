@@ -26,7 +26,7 @@
                 { AmmunitionType.FOURROUNDFAB250, 2},
                 { AmmunitionType.TWOROUNDR73, 2},
                 { AmmunitionType.VANILLA_EIGHTYROUNDS8, 2},
-                { AmmunitionType.FOURROUNDCH29, 2},
+                { AmmunitionType.VANILLA_FOURROUNDCH29, 2},
             };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {

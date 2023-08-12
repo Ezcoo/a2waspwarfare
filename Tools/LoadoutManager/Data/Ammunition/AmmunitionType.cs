@@ -19,6 +19,8 @@ public enum AmmunitionType
     BASECH29,
     [EnumMember(Value = "4Rnd_Ch29")]
     FOURROUNDCH29,
+    [EnumMember(Value = "4Rnd_Ch29")]
+    VANILLA_FOURROUNDCH29,
     [EnumMember(Value = "6Rnd_Ch29")]
     SIXROUNDCH29,
 
