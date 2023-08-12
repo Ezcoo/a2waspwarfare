@@ -24,6 +24,8 @@
             {
                 { AmmunitionType.THREEHUNDREDROUNDGAU12, 2},
                 { AmmunitionType.VANILLA_SIXROUNDGBU12, 2},
+                { AmmunitionType.SIXROUNDMK82, 2},
+                { AmmunitionType.TWOROUNDSIDEWINDER_AH1Z, 2},
             };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
