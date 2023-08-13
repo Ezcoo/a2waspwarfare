@@ -94,8 +94,8 @@ _u = _u		+ ['2S6M_Tunguska'];
 missionNamespace setVariable [Format ["WFBE_%1HEAVYUNITS", _side], _u];
 if (local player) then {['HEAVY', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
-_u 			= ['Mi17_Ins'];
-_u = _u		+ ['UH1H_TK_EP1'];
+_u 			= ['UH1H_TK_EP1'];
+_u = _u		+ ['Mi17_Ins'];
 _u = _u		+ ['Mi17_medevac_RU'];
 _u = _u		+ ['Mi17_rockets_RU'];
 _u = _u		+ ['Mi24_D_TK_EP1'];
