@@ -16,7 +16,7 @@
             {
                 { AmmunitionType.TWOROUNDGBU12, 2},
                 { AmmunitionType.TWOROUNDSIDEWINDER, 2},
-                { AmmunitionType.TWOROUNDMAVERICK, 2},
+                { AmmunitionType.TWOROUNDSPIKE, 2},
                 //{ AmmunitionType.THREEHUNDREDROUNDGAU12, 2},
             };
 
@@ -24,7 +24,7 @@
         {
             { AmmunitionType.TWOROUNDGBU12, 0 },
             { AmmunitionType.TWOROUNDSIDEWINDER, 0 },
-            { AmmunitionType.TWOROUNDMAVERICK, 0 },
+            { AmmunitionType.TWOROUNDSPIKE, 0 },
         };
 
         inGameDisplayName = "F-35B";
