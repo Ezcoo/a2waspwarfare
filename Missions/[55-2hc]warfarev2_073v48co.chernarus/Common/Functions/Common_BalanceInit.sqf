@@ -130,7 +130,7 @@ case "AV8B2": {
 case "Mi24_D_CZ_ACR": {
 };
 
-// AH-64A [AF3] - 4 pylons
+// AH-64D (TOW) [AF3] - 4 pylons
 case "AH64D": {
     _this removeMagazine "8Rnd_Hellfire";
     _this removeWeapon "HellfireLauncher";

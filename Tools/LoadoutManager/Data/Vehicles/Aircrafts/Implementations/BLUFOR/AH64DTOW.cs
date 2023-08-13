@@ -1,8 +1,8 @@
-﻿public class AH64A : BaseHelicopter
+﻿public class AH64DTOW : BaseHelicopter
 {
-    public AH64A()
+    public AH64DTOW()
     {
-        VehicleType = VehicleType.AH64A;
+        VehicleType = VehicleType.AH64DTOW;
         pylonAmount = 4;
 
         base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
@@ -29,7 +29,7 @@
             { AmmunitionType.TWOROUNDSTINGER, 2 },
         };
 
-        inGameDisplayName = "AH-64A";
+        inGameDisplayName = "AH-64D (TOW)";
         inGameFactoryLevel = 3;
         producedFromFactoryType = FactoryType.AIRCRAFTFACTORY;
 
