@@ -53,6 +53,7 @@ if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u
 _u = _u		+ ['M113Ambul_TK_EP1'];
 _u = _u		+ ['BRDM2_TK_EP1'];
 _u = _u		+ ['BRDM2_ATGM_TK_EP1'];
+_u = _u		+ ['BRDM2_ATGM_INS'];
 _u = _u		+ ['BTR60_TK_EP1'];
 _u = _u		+ ['Ural_ZU23_TK_EP1'];
 _u = _u		+ ['GRAD_TK_EP1'];
