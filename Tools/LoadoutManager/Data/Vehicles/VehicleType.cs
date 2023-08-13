@@ -38,7 +38,7 @@ public enum VehicleType
     MI24VCZ,
 
     [EnumMember(Value = "AH64D")]
-    AH64A,
+    AH64DTOW,
 
     [EnumMember(Value = "AH64D_EP1")]
     AH64DEP1,
