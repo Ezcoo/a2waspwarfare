@@ -62,17 +62,17 @@ case "L39_TK_EP1": {
 
 // F-35B [AF5] - 6 pylons
 case "F35B": {
-    _this addMagazine "2Rnd_Spike_ACR";
-    _this addWeapon "SpikeLauncher_ACR";
+    _this addMagazine "2Rnd_Maverick_A10";
+    _this addWeapon "MaverickLauncher";
 };
 
 // L-159 [AF3] - 6 pylons
 case "L159_ACR": {
     _this removeMagazine "4Rnd_Maverick_L159";
     _this removeWeapon "MaverickLauncher_ACR";
-    _this addMagazine "2Rnd_Spike_ACR";
+    _this addMagazine "2Rnd_Maverick_A10";
     _this addMagazine "38Rnd_FFAR";
-    _this addWeapon "SpikeLauncher_ACR";
+    _this addWeapon "MaverickLauncher";
     _this addWeapon "FFARLauncher";
 };
 
@@ -96,14 +96,10 @@ case "A10": {
 case "A10_US_EP1": {
     _this removeMagazine "14Rnd_FFAR";
     _this removeMagazine "4Rnd_GBU12";
-    _this removeMagazine "2Rnd_Maverick_A10";
     _this removeWeapon "FFARLauncher_14";
     _this removeWeapon "BombLauncherA10";
-    _this removeWeapon "MaverickLauncher";
-    _this addMagazine "2Rnd_Spike_ACR";
     _this addMagazine "38Rnd_FFAR";
     _this addMagazine "6Rnd_Mk82";
-    _this addWeapon "SpikeLauncher_ACR";
     _this addWeapon "FFARLauncher";
     _this addWeapon "Mk82BombLauncher_6";
 };
@@ -124,10 +120,10 @@ case "AV8B2": {
     _this removeMagazine "6Rnd_Mk82";
     _this removeWeapon "FFARLauncher_14";
     _this removeWeapon "Mk82BombLauncher_6";
-    _this addMagazine "2Rnd_Spike_ACR";
-    _this addMagazine "2Rnd_Spike_ACR";
-    _this addMagazine "2Rnd_Spike_ACR";
-    _this addWeapon "SpikeLauncher_ACR";
+    _this addMagazine "2Rnd_Maverick_A10";
+    _this addMagazine "2Rnd_Maverick_A10";
+    _this addMagazine "2Rnd_Maverick_A10";
+    _this addWeapon "MaverickLauncher";
 };
 
 // Mi-24V (CZ) [AF3] - 4 pylons

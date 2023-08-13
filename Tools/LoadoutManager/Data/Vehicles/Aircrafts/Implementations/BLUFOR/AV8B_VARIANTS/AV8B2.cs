@@ -31,7 +31,7 @@
             {
                 //{ AmmunitionType.THREEHUNDREDROUNDGAU12, 2},
                 { AmmunitionType.TWOROUNDSIDEWINDER_AH1Z, 2},
-                { AmmunitionType.TWOROUNDSPIKE, 6},
+                { AmmunitionType.TWOROUNDMAVERICK, 6},
             };
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
@@ -39,7 +39,7 @@
             { AmmunitionType.TWOROUNDGBU12, 0 },
             { AmmunitionType.THIRTYEIGHTROUNDHYDRA, 0 },
             { AmmunitionType.TWOROUNDSIDEWINDER_AH1Z, 4 },
-            { AmmunitionType.TWOROUNDSPIKE, 0},
+            { AmmunitionType.TWOROUNDMAVERICK, 0},
             { AmmunitionType.EIGHTROUNDHELLFIRE, 2},
             { AmmunitionType.SIXROUNDMK82, 0},
         };

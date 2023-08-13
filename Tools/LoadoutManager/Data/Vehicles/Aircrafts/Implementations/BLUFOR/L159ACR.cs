@@ -13,7 +13,7 @@
             };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.TWOROUNDSPIKE, 2},
+                { AmmunitionType.TWOROUNDMAVERICK, 2},
                 { AmmunitionType.THIRTYEIGHTROUNDHYDRA, 2},
                 { AmmunitionType.TWOROUNDSIDEWINDER_AH1Z, 2},
             };
@@ -21,7 +21,7 @@
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {
             { AmmunitionType.TWOROUNDSIDEWINDER_AH1Z, 4 },
-            { AmmunitionType.TWOROUNDSPIKE, 0 },
+            { AmmunitionType.TWOROUNDMAVERICK, 0 },
             { AmmunitionType.THIRTYEIGHTROUNDHYDRA, 0 },
             { AmmunitionType.SIXROUNDMK82, 0 },
             { AmmunitionType.EIGHTROUNDHELLFIRE, 2 },
