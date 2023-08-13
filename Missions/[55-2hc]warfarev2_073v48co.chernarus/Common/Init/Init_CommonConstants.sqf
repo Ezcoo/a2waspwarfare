@@ -158,7 +158,6 @@ with missionNamespace do {
 	WFBE_C_GAMEPLAY_VOTE_TIME = if (WF_Debug) then {8} else {40};
 
 //--- Modules.
-	if (isNil "WFBE_C_MODULE_BIS_BAF") then {WFBE_C_MODULE_BIS_BAF = 1}; //--- Enable BAF content.
 	if (isNil "WFBE_C_MODULE_BIS_PMC") then {WFBE_C_MODULE_BIS_PMC = 1}; //--- Enable PMC content.
 	if (isNil "WFBE_C_MODULE_WFBE_EASA") then {WFBE_C_MODULE_WFBE_EASA = 1}; //--- Enable the Exchangeable Armament System for Aircraft.
 	if (isNil "WFBE_C_MODULE_WFBE_FLARES") then {WFBE_C_MODULE_WFBE_FLARES = 1}; //--- Enable the countermeasure system (0: Disabled, 1: Enabled with upgrade, 2: Enabled).
@@ -274,9 +273,7 @@ if (WF_A2_Vanilla) then {
 	if (isNil "WFBE_C_UNITS_CLEAN_TIMEOUT") then {WFBE_C_UNITS_CLEAN_TIMEOUT = 60}; //--- Lifespan of a dead body.
 	if (isNil "WFBE_C_UNITS_EMPTY_TIMEOUT") then {WFBE_C_UNITS_EMPTY_TIMEOUT = 1200}; //--- Lifespan of an empty vehicle.
 		WFBE_C_UNITS_BODIES_TIMEOUT = 60;
-	if (isNil "WFBE_C_UNITS_KAMOV_DISABLED") then {WFBE_C_UNITS_KAMOV_DISABLED = 0}; //--- Enable Kamov.
 	if (isNil "WFBE_C_UNITS_PRICING") then {WFBE_C_UNITS_PRICING = 0}; //--- Price Focus. (0: Default, 1: Infantry, 2: Tanks, 3: Air).
-	if (isNil "WFBE_C_UNITS_RESTRICT_AIR") then {WFBE_C_UNITS_RESTRICT_AIR = 0}; //--- Advanced Aircraft restriction.
 	if (isNil "WFBE_C_UNITS_TOWN_PURCHASE") then {WFBE_C_UNITS_TOWN_PURCHASE = 1}; //--- Allow AIs to be bought from depots.
 	if (isNil "WFBE_C_UNITS_TRACK_INFANTRY") then {WFBE_C_UNITS_TRACK_INFANTRY = 1}; //--- Track units on map (infantry).
 	if (isNil "WFBE_C_UNITS_TRACK_LEADERS") then {WFBE_C_UNITS_TRACK_LEADERS = 1}; //--- Track playable Team Leaders on map (infantry).

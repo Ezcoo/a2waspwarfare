@@ -1,7 +1,6 @@
-Private ['_restriction_air','_side','_u'];
+Private ['_side','_u'];
 
 _side = _this;
-_restriction_air = missionNamespace getVariable "WFBE_C_UNITS_RESTRICT_AIR";
 
 _u 			= ['RU_Soldier'];
 _u = _u		+ ['RU_Soldier2'];
@@ -53,6 +52,7 @@ if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u
 _u = _u		+ ['GAZ_Vodnik_MedEvac'];
 _u = _u		+ ['BRDM2_INS'];
 _u = _u		+ ['BRDM2_ATGM_INS'];
+_u = _u		+ ['BRDM2_ATGM_TK_EP1'];
 _u = _u		+ ['GAZ_Vodnik'];
 _u = _u		+ ['GAZ_Vodnik_HMG'];
 _u = _u		+ ['Ural_ZU23_INS'];
@@ -74,30 +74,24 @@ if (local player) then {['HEAVY', _side, _u] Call Compile preProcessFile 'Client
 
 _u 			= ['Mi17_Ins'];
 _u = _u		+ ['Mi17_medevac_RU'];
-if (_restriction_air == 0 ||_restriction_air == 1) then {
-	_u = _u		+ ['Mi17_rockets_RU'];
-	_u = _u		+ ['Mi24_V'];
-	_u = _u		+ ['Mi24_P'];
-	if ((missionNamespace getVariable "WFBE_C_UNITS_KAMOV_DISABLED") == 0) then {
-		_u = _u		+ ['Ka52'];
-		_u = _u		+ ['Ka52Black'];
-	};
-};
-if (_restriction_air == 0) then {
-	_u = _u		+ ['Su34'];
-	_u = _u		+ ['Su25_Ins'];
-	_u = _u		+ ['Su39'];
-};
+_u = _u		+ ['Mi17_rockets_RU'];
+_u = _u		+ ['Mi24_P'];
+_u = _u		+ ['Mi24_V'];
+_u = _u		+ ['Ka52'];
+_u = _u		+ ['Ka52Black'];
+_u = _u		+ ['Su25_Ins'];
+_u = _u		+ ['Su25_TK_EP1'];
+_u = _u		+ ['Su39'];
+_u = _u 	+ ['Su34'];
 
 missionNamespace setVariable [Format ["WFBE_%1AIRCRAFTUNITS", _side], _u];
 if (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
 _u = [];
-if (_restriction_air == 0) then {
-	_u = _u 	+ ['Su34'];
-	_u = _u		+ ['Su25_Ins'];
-	_u = _u		+ ['Su39'];
-};
+_u = _u		+ ['Su25_Ins'];
+_u = _u		+ ['Su25_TK_EP1'];
+_u = _u		+ ['Su39'];
+_u = _u 	+ ['Su34'];
 
 missionNamespace setVariable [Format ["WFBE_%1AIRPORTUNITS", _side], _u];
 if (local player) then {['AIRPORT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};

@@ -1759,13 +1759,6 @@
                 <Russian>Запрет: Покупка оружия в лагерях</Russian>
                 <Italian>Restrizioni: Equipaggiamento Campi</Italian>
             </Key>
-            <Key ID="STR_WF_PARAMETER_Kamov">
-                <English>RESTRICTION: Kamov</English>
-                <French>RÉSTRICTION: Kamov</French>
-                <German>HANDICAP: Kamov (KA-52) verbieten</German>
-                <Russian>Запрет: КА-52</Russian>
-                <Italian>Restrizione: Kamov</Italian>
-            </Key>
             <Key ID="STR_WF_PARAMETER_TeamBalance">
                 <English>RESTRICTION: Team balance</English>
                 <French>RÉSTRICTION: Team balance</French>
@@ -2596,20 +2589,6 @@
                 <German>Respawn mit Standardausrüstung</German>
                 <Russian>Cнаряжения по умолчанию</Russian>
                 <Italian>Equipaggiamento Default</Italian>
-            </Key>
-            <Key ID="STR_WF_PARAMETER_Restriction_Air_H">
-                <English>Helicopters</English>
-                <French>Hélicoptères</French>
-                <German>Nur Hubschrauber</German>
-                <Russian>Вертолеты</Russian>
-                <Italian>Helicopters</Italian>
-            </Key>
-            <Key ID="STR_WF_PARAMETER_Restriction_Air_HTransport">
-                <English>Transport Helicopters</English>
-                <French>Hélicoptères de Transport</French>
-                <German>Nur Transporthubschrauber</German>
-                <Russian>Транспортные вертолеты</Russian>
-                <Italian>Transport Helicopters</Italian>
             </Key>
             <Key ID="STR_WF_PARAMETER_Side_East"><!--shared W-->
                 <English>East</English>

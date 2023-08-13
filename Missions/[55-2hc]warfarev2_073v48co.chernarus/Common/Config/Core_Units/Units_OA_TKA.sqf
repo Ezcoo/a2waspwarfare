@@ -1,7 +1,6 @@
-Private ['_restriction_air','_side','_tiMode','_u'];
+Private ['_side','_tiMode','_u'];
 
 _side = _this;
-_restriction_air = missionNamespace getVariable "WFBE_C_UNITS_RESTRICT_AIR";
 _tiMode = missionNamespace getVariable "WFBE_C_GAMEPLAY_THERMAL_IMAGING";
 _tiMode = if (_tiMode == 1 || _tiMode == 3) then {true} else {false};
 
@@ -69,26 +68,20 @@ _u = _u		+ ['T72_TK_EP1'];
 missionNamespace setVariable [Format ["WFBE_%1HEAVYUNITS", _side], _u];
 if (local player) then {['HEAVY', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
-_u 			= ['Mi17_TK_EP1'];
-_u = _u		+ ['UH1H_TK_EP1'];
-if (_restriction_air == 0 ||_restriction_air == 1) then {
-	_u = _u		+ ['Mi24_D_TK_EP1'];
-};
-if (_restriction_air == 0) then {
-	_u = _u		+ ['An2_TK_EP1'];
-	_u = _u		+ ['L39_TK_EP1'];
-	_u = _u		+ ['Su25_TK_EP1'];
-};
+_u 			= ['UH1H_TK_EP1'];
+_u = _u		+ ['Mi17_TK_EP1'];
+_u = _u		+ ['Mi24_D_TK_EP1'];
+_u = _u		+ ['An2_TK_EP1'];
+_u = _u		+ ['L39_TK_EP1'];
+_u = _u		+ ['Su25_TK_EP1'];
 
 missionNamespace setVariable [Format ["WFBE_%1AIRCRAFTUNITS", _side], _u];
 if (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
 _u = [];
-if (_restriction_air == 0) then {
-	_u = _u		+ ['An2_TK_EP1'];
-	_u = _u		+ ['L39_TK_EP1'];
-	_u = _u		+ ['Su25_TK_EP1'];
-};
+_u = _u		+ ['An2_TK_EP1'];
+_u = _u		+ ['L39_TK_EP1'];
+_u = _u		+ ['Su25_TK_EP1'];
 
 missionNamespace setVariable [Format ["WFBE_%1AIRPORTUNITS", _side], _u];
 if (local player) then {['AIRPORT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};

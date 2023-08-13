@@ -1,7 +1,6 @@
-Private ['_restriction_air','_side','_u'];
+Private ['_side','_u'];
 
 _side = _this;
-_restriction_air = missionNamespace getVariable "WFBE_C_UNITS_RESTRICT_AIR";
 
 _u			= ['Ins_Soldier_1'];
 _u = _u		+ ['Ins_Soldier_2'];
@@ -50,20 +49,14 @@ if (local player) then {['HEAVY', _side, _u] Call Compile preProcessFile 'Client
 
 _u			= ['Mi17_Ins'];
 _u = _u		+ ['Mi17_medevac_Ins'];
-if (_restriction_air == 0 ||_restriction_air == 1) then {
-	_u = _u		+ ['Mi24_V'];
-};
-if (_restriction_air == 0) then {
-	_u = _u		+ ['Su25_Ins'];
-};
+_u = _u		+ ['Mi24_V'];
+_u = _u		+ ['Su25_Ins'];
 
 missionNamespace setVariable [Format ["WFBE_%1AIRCRAFTUNITS", _side], _u];
 if (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
 _u = [];
-if (_restriction_air == 0) then {
-	_u = _u		+ ['Su25_Ins'];
-};
+_u = _u		+ ['Su25_Ins'];
 
 missionNamespace setVariable [Format ["WFBE_%1AIRPORTUNITS", _side], _u];
 if (local player) then {['AIRPORT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};

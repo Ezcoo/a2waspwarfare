@@ -48,7 +48,39 @@ while {alive _object && !(isNull _object)} do {
 
             // Get the aircraft name (AAR2)
             if (_aarUpgradeLevel > 1) then {
-                _aircraftName = [typeOf _object, 'displayName'] Call GetConfigInfo;
+                Private ["_typeOfObject"];
+                _typeOfObject = typeOf _object;
+
+                _aircraftName = [_typeOfObject, 'displayName'] Call GetConfigInfo;
+
+                if (_typeOfObject == "A10") then {
+                    _aircraftName = "A-10A";
+                };
+
+                if (_typeOfObject == "A10_US_EP1") then {
+                    _aircraftName = "A-10C";
+                };
+
+                if (_typeOfObject == "AH64D") then {
+                    _aircraftName = "AH-64D (TOW)";
+                };
+
+                if (_typeOfObject == "AH64D_EP1") then {
+                    _aircraftName = "AH-64D (Hellfire)";
+                };
+
+                if (_typeOfObject == "Su25_Ins") then {
+                    _aircraftName = "Su-25A";
+                };
+
+                if (_typeOfObject == "Su25_TK_EP1") then {
+                    _aircraftName = "Su-25T";
+                };
+
+                if (_typeOfObject == "Su39") then {
+                    _aircraftName = "Su-39";
+                };
+
                 _updateFrequency = 1;
             };
 

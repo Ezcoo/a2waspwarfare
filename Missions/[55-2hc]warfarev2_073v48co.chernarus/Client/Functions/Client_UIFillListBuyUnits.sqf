@@ -1,4 +1,4 @@
-Private ['_addin','_c','_currentUpgrades','_filler','_filter','_i','_listBox','_listNames','_u','_value'];
+Private ['_description','_addin','_c','_currentUpgrades','_filler','_filter','_i','_listBox','_listNames','_u','_value'];
 _listNames = _this select 0;
 _filler = _this select 1;
 _listBox = _this select 2;
@@ -27,20 +27,21 @@ lnbClear _listBox;
 	if (_filter != "nil") then {
 		if ((_c select QUERYUNITFACTION) != _filter) then {_addin = false};
 	};
-	
+
 	_addit = false;
 		if(_filler == 'Depot') then
 		{
-		    _UpBar = ((sideJoined) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_BARRACKS; 
+		    _UpBar = ((sideJoined) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_BARRACKS;
 			if ((_x in ['Ins_Soldier_MG', "TK_Soldier_MG_EP1", 'USMC_Soldier_MG', 'US_Soldier_MG_EP1']) && _UpBar>=1)then{_addit  = true;};
 			if ((_x in ['RU_Soldier_AT', "TK_Soldier_AT_EP1", 'USMC_Soldier_LAT']) && _UpBar>=1)then{_addit = true;};
 			if ((_x in ['TK_Soldier_Engineer_EP1', 'BAF_Soldier_EN_W']) && _UpBar>=1)then{_addit = true;};
 			if ((_x in ['RU_Soldier_AA','USMC_Soldier_AA']) && _UpBar>=3)then{_addit = true;};
 		};
-	
+
+    _description = _c select QUERYUNITLABEL;
 
 	if (((_c select QUERYUNITUPGRADE) <= (_currentUpgrades select _value) && _addin) || (_addit&&_addin)) then {
-		lnbAddRow [_listBox,['$'+str (_c select QUERYUNITPRICE),(_c select QUERYUNITLABEL)]];
+		lnbAddRow [_listBox,['$'+str (_c select QUERYUNITPRICE),_description]];
 		lnbSetData [_listBox,[_i,0],_filler];
 		lnbSetValue [_listBox,[_i,0],_u];
 		

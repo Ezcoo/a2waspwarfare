@@ -179,12 +179,6 @@ class Params {
 		default = 0;
 	};
 	#ifndef VANILLA
-		class WFBE_C_MODULE_BIS_BAF {
-			title = "$STR_WF_PARAMETER_BAF";
-			values[] = {0,1};
-			texts[] = {"$STR_WF_Disabled","$STR_WF_Enabled"};
-			default = 1;
-		};
 		class WFBE_C_MODULE_BIS_PMC {
 			title = "$STR_WF_PARAMETER_PMC";
 			values[] = {0,1};
@@ -391,20 +385,6 @@ class Params {
 		texts[] = {"50m","100m","150m","200m","250m","300m","350m","400m","450m","500m","550m","600m","650m","700m","750m","800m","850m","900m","950m","1000m","1500m","2000m","2500m","3000m","3500m","4000m"};
 		default = 400;
 	};
-	class WFBE_C_UNITS_RESTRICT_AIR {
-		title = "$STR_WF_PARAMETER_AdvancedAir";
-		values[] = {0,1,2};
-		texts[] = {"$STR_WF_Disabled","$STR_WF_PARAMETER_Restriction_Air_H","$STR_WF_PARAMETER_Restriction_Air_HTransport"};
-		default = 0;
-	};
-	#ifndef ARROWHEAD
-		class WFBE_C_UNITS_KAMOV_DISABLED {
-			title = "$STR_WF_PARAMETER_Kamov";
-			values[] = {0,1};
-			texts[] = {"$STR_WF_Disabled","$STR_WF_Enabled"};
-			default = 0;
-		};
-	#endif
 	class WFBE_C_TOWNS_AMOUNT {
 		title = "$STR_WF_PARAMETER_TownsAmount";
 		values[] = {0,1,2,3,4,5,6,7};

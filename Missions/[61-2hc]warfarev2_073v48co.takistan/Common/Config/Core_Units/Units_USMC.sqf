@@ -1,7 +1,6 @@
-Private ['_restriction_air','_side','_u'];
+Private ['_side','_u'];
 
 _side = _this;
-_restriction_air = missionNamespace getVariable "WFBE_C_UNITS_RESTRICT_AIR";
 
 _u 			= ['USMC_Soldier'];
 _u = _u		+ ['USMC_Soldier2'];
@@ -73,34 +72,33 @@ missionNamespace setVariable [Format ["WFBE_%1HEAVYUNITS", _side], _u];
 if (local player) then {['HEAVY', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
 _u			= ['MH60S'];
-if (_restriction_air == 0 ||_restriction_air == 1) then {
-	_u = _u		+ ['UH1Y'];
-	_u = _u		+ ['AH1Z'];
-	_u = _u		+ ['AH64D'];
-};
-if (_restriction_air == 0) then {
-	_u = _u		+ ['MV22'];
-	_u = _u		+ ['C130J'];
-	_u = _u		+ ['F35B'];
-	_u = _u		+ ['L159_ACR'];
-	_u = _u		+ ['AV8B'];
-	_u = _u		+ ['AV8B2'];
-	_u = _u		+ ['A10'];
-};
+_u = _u		+ ['MV22'];
+_u = _u		+ ['C130J'];
+_u = _u		+ ['UH1Y'];
+_u = _u		+ ['Mi24_D_CZ_ACR'];
+_u = _u		+ ['AH64D'];
+_u = _u		+ ['AH1Z'];
+_u = _u		+ ['L159_ACR'];
+_u = _u		+ ['A10'];
+_u = _u		+ ['A10_US_EP1'];
+_u = _u		+ ['AV8B'];
+_u = _u		+ ['AV8B2'];
+_u = _u		+ ['F35B'];
 
 missionNamespace setVariable [Format ["WFBE_%1AIRCRAFTUNITS", _side], _u];
 if (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
 _u = [];
-if (_restriction_air == 0) then {
-	_u = _u 	+ ['MV22'];
-	_u = _u		+ ['C130J'];
-	_u = _u		+ ['F35B'];
-	_u = _u		+ ['L159_ACR'];
-	_u = _u		+ ['AV8B'];
-	_u = _u		+ ['AV8B2'];
-	_u = _u		+ ['A10'];
-};
+
+_u = _u 	+ ['MV22'];
+_u = _u		+ ['C130J'];
+_u = _u		+ ['L159_ACR'];
+_u = _u		+ ['A10'];
+_u = _u		+ ['A10_US_EP1'];
+_u = _u		+ ['AV8B'];
+_u = _u		+ ['AV8B2'];
+_u = _u		+ ['F35B'];
+
 
 missionNamespace setVariable [Format ["WFBE_%1AIRPORTUNITS", _side], _u];
 if (local player) then {['AIRPORT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
