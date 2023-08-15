@@ -563,7 +563,7 @@ _easaLoadout = _easaLoadout + [
 ]
 ];
 
-// AH-64A [AF3] - 4 pylons
+// AH-64D (TOW) [AF3] - 4 pylons
 _easaVehi = _easaVehi + ['AH64D'];
 _easaDefault = _easaDefault + [[['TOWLauncherSingle'],['6Rnd_TOW2']]];
 _easaLoadout = _easaLoadout + [
