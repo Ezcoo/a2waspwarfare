@@ -1,15 +1,15 @@
 class CfgWeapons
 {
-    class SidewinderLauncher;
-    class SidewinderLaucher_F35 : SidewinderLauncher
+    class SidewinderLaucher;
+    class SidewinderLaucher_F35 : SidewinderLaucher
     {
         magazineReloadTime = 1;
     };
-    class SidewinderLaucher_AH1Z : SidewinderLauncher
+    class SidewinderLaucher_AH1Z : SidewinderLaucher
     {
         magazineReloadTime = 1;
     };
-    class SidewinderLaucher_AH64 : SidewinderLauncher
+    class SidewinderLaucher_AH64 : SidewinderLaucher
     {
         magazineReloadTime = 1;
     };
