@@ -103,7 +103,7 @@ _c = _c + ['UralSalvage_TK_EP1'];
 _i = _i + [['','',750,17,-2,1,1,0,'Takistani Army',[]]];
 
 _c = _c + ['UralReammo_TK_EP1'];
-_i = _i + [['','',2750,18,-2,1,1,0,'Takistani Army',[]]];
+_i = _i + [['','',1750,18,-2,1,1,0,'Takistani Army',[]]];
 
 _c = _c + ['UralRefuel_TK_EP1'];
 _i = _i + [['','',500,19,-2,1,1,0,'Takistani Army',[]]];
