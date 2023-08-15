@@ -79,7 +79,7 @@ _c = _c + ['KamazRepair'];
 _i = _i + [['','',2500,21,-2,2,1,0,'Russians',[]]];
 
 _c = _c + ['WarfareReammoTruck_RU'];
-_i = _i + [['','',2750,21,-2,1,1,0,'Russians',[]]];
+_i = _i + [['','',1750,21,-2,1,1,0,'Russians',[]]];
 
 _c = _c + ['KamazRefuel'];
 _i = _i + [['','',500,21,-2,1,1,0,'Russians',[]]];
