@@ -18,7 +18,7 @@ while {alive player && dialog} do {
 	ctrlSetText [22005,Format[localize 'STR_WF_MAIN_Uptime',_uptime select 0,_uptime select 1,_uptime select 2, _uptime select 3]];
 */
 	sleep 0.1;
-	if (side player != sideJoined) exitWith {closeDialog 0};
+	if (side group player != sideJoined) exitWith {closeDialog 0};
 	if (!dialog) exitWith {};
 	
 	//--- Back Button.

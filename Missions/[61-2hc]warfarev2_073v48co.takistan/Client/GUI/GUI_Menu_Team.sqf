@@ -56,7 +56,7 @@ lbSetCurSel[13018,currentFX];
 while {alive player && dialog} do {
 	sleep 0.05;
 	
-	if (Side player != sideJoined) exitWith {closeDialog 0};
+	if (side group player != sideJoined) exitWith {closeDialog 0};
 	if (!dialog) exitWith {};
 	
 	_curSel = lbCurSel 13008;

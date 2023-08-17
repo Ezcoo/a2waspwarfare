@@ -27,7 +27,7 @@ while {true} do {
 	sleep 0.1;
 	
 	_cameraSwap = false;
-	if (Side player != sideJoined || !dialog) exitWith {};
+	if (side group player != sideJoined || !dialog) exitWith {};
 
 	//--- Map click.
 	if (mouseButtonUp == 0) then {

@@ -318,7 +318,7 @@ switch (true) do {
 	WFBE_C_VICTORY_THREEWAY_LOCATION_SWAP = 300; //--- When the defender loose depending on victory conditions, startup locations become available for respawn with a rotation (to prevent spawn camping).
 
 //--- Overall mission coloration.
-if (side player == west) then{
+if (side group player == west) then{
 missionNamespace setVariable ["WFBE_C_WEST_COLOR", "ColorGreen"];
 missionNamespace setVariable ["WFBE_C_EAST_COLOR", "ColorRed"];
 missionNamespace setVariable ["WFBE_C_GUER_COLOR", "ColorBlue"];

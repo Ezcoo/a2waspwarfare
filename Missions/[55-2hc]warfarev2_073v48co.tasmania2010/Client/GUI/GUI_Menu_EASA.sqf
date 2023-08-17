@@ -31,7 +31,7 @@ if (((lnbSize _listBox) select 0) > 0) then {lnbSetCurSelRow [_listBox,0]} else 
 while {alive player && dialog} do {
 	sleep 0.1;
 	
-	if (side player != sideJoined) exitWith {closeDialog 0};
+	if (side group player != sideJoined) exitWith {closeDialog 0};
 	if !(dialog) exitWith {};
 	
 	//--- Command AI.

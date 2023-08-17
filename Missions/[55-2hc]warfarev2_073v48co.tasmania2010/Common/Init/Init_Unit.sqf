@@ -46,7 +46,7 @@ if(!isNil 'Zeta_Lifter')then{
 };
 if (_unit_kind in (missionNamespace getVariable "WFBE_REPAIRTRUCKS")) then { //--- Repair Trucks.
 	//--- Build action.
-	_unit addAction [localize 'STR_WF_BuildMenu_Repair','Client\Action\Action_BuildRepair.sqf', [], 99, false, true, '', Format['side player == side _target && alive _target && player distance _target <= %1', missionNamespace getVariable 'WFBE_C_UNITS_REPAIR_TRUCK_RANGE']];
+	_unit addAction [localize 'STR_WF_BuildMenu_Repair','Client\Action\Action_BuildRepair.sqf', [], 99, false, true, '', Format['side group player == side _target && alive _target && player distance _target <= %1', missionNamespace getVariable 'WFBE_C_UNITS_REPAIR_TRUCK_RANGE']];
 
 	if ((missionNamespace getVariable "WFBE_C_CAMPS_CREATE") > 0) then { //--- Repair camps.
 		_unit addAction [localize 'STR_WF_Repair_Camp','Client\Action\Action_RepairCamp.sqf', [], 97, false, true, '', 'alive _target'];
