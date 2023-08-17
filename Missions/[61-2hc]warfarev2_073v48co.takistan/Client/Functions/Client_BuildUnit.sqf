@@ -34,12 +34,18 @@ if (_index != -1) then {
 	
 if (_factoryType in ["Light"]) then {
 	//--- Place Wheeled vehicles on Pads if avaiable.
-	Private ["_pad_man","_pads","_free","_dir","_no","_selpad"];	
-	_pad_man = "HeliH";	
+	Private ["_pad_man","_pads","_free","_dir","_no","_selpad","_filteredPads"];
+	_pad_man = "HeliH";
 	_pads = _building nearObjects [_pad_man, 250];
 
 	// Filter out unwanted objects from _pads based on their names (because they inherit from HeliH)
-    _pads = _pads select {typeOf _x != "HeliHCivil" && typeOf _x != "HeliHRescue"};
+    _filteredPads = [];
+    {
+        if (typeOf _x != "HeliHCivil" && typeOf _x != "HeliHRescue") then {
+            _filteredPads pushBack _x;
+        };
+    } forEach _pads;
+    _pads = _filteredPads;
 
 	_free = [];
 	_dir = 0;	
