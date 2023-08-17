@@ -37,6 +37,10 @@ if (_factoryType in ["Light"]) then {
 	Private ["_pad_man","_pads","_free","_dir","_no","_selpad"];	
 	_pad_man = "HeliH";	
 	_pads = _building nearObjects [_pad_man, 250];
+
+	// Filter out unwanted objects from _pads based on their names (because they inherit from HeliH)
+    _pads = _pads select {name _x != "HeliHCivil" && name _x != "HeliHRescue"};
+
 	_free = [];
 	_dir = 0;	
 	if (count _pads > 0) then {
