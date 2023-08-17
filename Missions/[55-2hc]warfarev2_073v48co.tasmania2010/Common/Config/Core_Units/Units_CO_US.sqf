@@ -113,6 +113,7 @@ _u = _u		+ ['BAF_ATV_W'];
 _u = _u		+ ['BAF_Offroad_W'];
 _u = _u		+ ['BAF_Jackal2_GMG_W'];
 _u = _u		+ ['BAF_Jackal2_L2A1_W'];
+
 missionNamespace setVariable [Format ["WFBE_%1LIGHTUNITS", _side], _u];
 if (local player) then {['LIGHT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
