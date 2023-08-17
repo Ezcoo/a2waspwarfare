@@ -65,6 +65,6 @@ if (alive (_camp getVariable 'wfbe_camp_bunker')) exitWith {
 //--- Repair order is sent to the server.
 ["RequestSpecial", ["repair-camp", _camp, WFBE_Client_SideID]] Call WFBE_CO_FNC_SendToServer;
 
-sleep 4;
+//sleep 4;
 
 hint (localize "STR_WF_Repair_Camp_IsRepaired");
