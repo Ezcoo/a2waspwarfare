@@ -13,8 +13,8 @@ _k = _k + ["Squad"];
 _u		= ["TK_GUE_Warlord_EP1"];
 _u = _u + ["TK_GUE_Soldier_3_EP1"];
 _u = _u + ["TK_GUE_Soldier_AR_EP1"];
+_u = _u + ["TK_GUE_Soldier_AR_EP1"];
 _u = _u + ["TK_GUE_Soldier_MG_EP1"];
-_u = _u + ["TK_GUE_Soldier_HAT_EP1"];
 
 _l = _l + [_u];
 
