@@ -194,8 +194,8 @@ switch (_type) do {
 				case "M_47_AT_EP1" :{_dam=_this select 2; _p=23; _result=(_dam/100)*(100-_p);};
 				case "R_MEEWS_HEAT" :{_dam=_this select 2; _p=23; _result=(_dam/100)*(100-_p);};
 				case "M_AT13_AT" :{_dam=_this select 2; _p=23; _result=(_dam/100)*(100-_p);};
-				case "M_TOW_AT" :{_dam=_this select 2; _p=23; _result=(_dam/100)*(100-_p);};
-				case "M_TOW2_AT" :{_dam=_this select 2; _p=23; _result=(_dam/100)*(100-_p);};
+				case "M_TOW_AT" :{_dam=_this select 2; _p=33; _result=(_dam/100)*(100-_p);};
+				case "M_TOW2_AT" :{_dam=_this select 2; _p=33; _result=(_dam/100)*(100-_p);};
 				case "Sh_85_AP" :{_dam=_this select 2; _p=23; _result=(_dam/100)*(100-_p);};
 				case "Sh_100_HEAT" :{_dam=_this select 2; _p=35; _result=(_dam/100)*(100-_p);};
 					case "B_20mm_AA" :{_dam=_this select 2; _p=12; _result=(_dam/100)*(100-_p);};
