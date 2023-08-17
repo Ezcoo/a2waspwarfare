@@ -42,7 +42,7 @@ if (_factoryType in ["Light"]) then {
     _filteredPads = [];
     {
         if (typeOf _x != "HeliHCivil" && typeOf _x != "HeliHRescue") then {
-            _filteredPads pushBack _x;
+            _filteredPads set [count _filteredPads, _x];
         };
     } forEach _pads;
     _pads = _filteredPads;
