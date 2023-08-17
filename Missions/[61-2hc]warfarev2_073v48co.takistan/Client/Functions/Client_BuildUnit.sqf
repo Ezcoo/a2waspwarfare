@@ -39,7 +39,7 @@ if (_factoryType in ["Light"]) then {
 	_pads = _building nearObjects [_pad_man, 250];
 
 	// Filter out unwanted objects from _pads based on their names (because they inherit from HeliH)
-    _pads = _pads select {name _x != "HeliHCivil" && name _x != "HeliHRescue"};
+    _pads = _pads select {typeOf _x != "HeliHCivil" && typeOf _x != "HeliHRescue"};
 
 	_free = [];
 	_dir = 0;	
