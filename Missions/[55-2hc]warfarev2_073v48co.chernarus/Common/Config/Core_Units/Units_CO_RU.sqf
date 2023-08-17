@@ -1,4 +1,4 @@
-Private ['_side','_u'];
+Private ['_side','_tiMode','_u'];
 
 _side = _this;
 _tiMode = missionNamespace getVariable "WFBE_C_GAMEPLAY_THERMAL_IMAGING";
