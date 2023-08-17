@@ -20,11 +20,9 @@ _description = "";
 _currentUnit = missionNamespace getVariable _unit;
 _waitTime = _currentUnit select QUERYUNITTIME;
 _description = _currentUnit select QUERYUNITLABEL;
+	
+_spawnpaddir=2;
 
-// Change the names of the vehicles, override the _currentUnitLabel
-if (_unit == "A10") then {
-    _description = "A-10A";
-};
 
 _type = typeOf _building;
 _index = (missionNamespace getVariable Format ["WFBE_%1STRUCTURENAMES",sideJoinedText]) find _type;
@@ -32,8 +30,97 @@ if (_index != -1) then {
 	_distance = (missionNamespace getVariable Format ["WFBE_%1STRUCTUREDISTANCES",sideJoinedText]) select _index;
 	_direction = (missionNamespace getVariable Format ["WFBE_%1STRUCTUREDIRECTIONS",sideJoinedText]) select _index;
 	_factoryType = (missionNamespace getVariable Format ["WFBE_%1STRUCTURES",sideJoinedText]) select _index;
-	_position = [getPos _building,_distance,getDir _building + _direction] Call GetPositionFrom;
-	_longest = missionNamespace getVariable Format ["WFBE_LONGEST%1BUILDTIME",_factoryType];
+
+	
+if (_factoryType in ["Light"]) then {
+	//--- Place Wheeled vehicles on Pads if avaiable.
+	Private ["_pad_man","_pads","_free","_dir","_no","_selpad"];	
+	_pad_man = "HeliH";	
+	_pads = _building nearObjects [_pad_man, 250];
+	_free = [];
+	_dir = 0;	
+	if (count _pads > 0) then {
+		for "_i" from 0 to (count _pads - 1) do {
+			_no = getpos (_pads select _i) nearEntities [["Man","Car","Motorcycle","Tank","Ship","Air","StaticWeapon"], 0.5];			
+			_dir = getDir (_pads select _i);
+			if( count _no ==0) then {_free = _free + [[getpos (_pads select _i), _dir]];};
+		};
+	};
+	if (count _free > 0) then {
+		_selpad =_free  call BIS_fnc_selectRandom;		
+		_position = [_selpad select 0 select 0,_selpad select 0 select 1,_selpad select 1];
+		_position set [2, .5];		
+		_spawnpaddir=5;//dirswitch to prevent overwrite dir later
+		_direction=_selpad select 1;
+		
+	}else{
+	_position = _building modelToWorld [(sin _direction * _distance), (cos _direction * _distance), 0];
+	_position set [2, .5];};
+}else{//---------------------------------------------------------check for heavy
+
+	
+if (_factoryType in ["Heavy"]) then {
+	//--- Place Wheeled vehicles on Pads if avaiable.
+	Private ["_pad_man","_pads","_free","_dir","_no","_selpad"];	
+	_pad_man = "HeliHRescue";	
+	_pads = _building nearObjects [_pad_man, 250];
+	_free = [];
+	_dir = 0;	
+	if (count _pads > 0) then {
+		for "_i" from 0 to (count _pads - 1) do {
+			_no = getpos (_pads select _i) nearEntities [["Man","Car","Motorcycle","Tank","Ship","Air","StaticWeapon"], 0.5];			
+			_dir = getDir (_pads select _i);
+			if( count _no ==0) then {_free = _free + [[getpos (_pads select _i), _dir]];};
+		};
+	};
+	if (count _free > 0) then {
+		_selpad =_free  call BIS_fnc_selectRandom;		
+		_position = [_selpad select 0 select 0,_selpad select 0 select 1,_selpad select 1];
+		_position set [2, .5];		
+		_spawnpaddir=5;//dirswitch to prevent overwrite dir later
+		_direction=_selpad select 1;
+		
+	}else{
+	_position = _building modelToWorld [(sin _direction * _distance), (cos _direction * _distance), 0];
+	_position set [2, .5];};
+}else{//--------------------------------------------------------check for air
+
+	
+if (_factoryType in ["Aircraft"]) then {
+	//--- Place Wheeled vehicles on Pads if avaiable.
+	Private ["_pad_man","_pads","_free","_dir","_no","_selpad"];	
+	_pad_man = "HeliHCivil";	
+	_pads = _building nearObjects [_pad_man, 250];
+	_free = [];
+	_dir = 0;	
+	if (count _pads > 0) then {
+		for "_i" from 0 to (count _pads - 1) do {
+			_no = getpos (_pads select _i) nearEntities [["Man","Car","Motorcycle","Tank","Ship","Air","StaticWeapon"], 0.5];			
+			_dir = getDir (_pads select _i);
+			if( count _no ==0) then {_free = _free + [[getpos (_pads select _i), _dir]];};
+		};
+	};
+	if (count _free > 0) then {
+		_selpad =_free  call BIS_fnc_selectRandom;		
+		_position = [_selpad select 0 select 0,_selpad select 0 select 1,_selpad select 1];
+		_position set [2, .5];		
+		_spawnpaddir=5;//dirswitch to prevent overwrite dir later
+		_direction=_selpad select 1;
+		
+	}else{
+	_position = _building modelToWorld [(sin _direction * _distance), (cos _direction * _distance), 0];
+	_position set [2, .5];};
+}else{//-------------------------------------------its barracks,found only 3 marker in a2 for now
+
+_position = [getPos _building,_distance,getDir _building + _direction] Call GetPositionFrom;
+_longest = missionNamespace getVariable Format ["WFBE_LONGEST%1BUILDTIME",_factoryType];
+
+
+};};};
+	
+
+	
+	
 } else {
 	if (_type == WFBE_Logic_Depot) then {
 		_distance = missionNamespace getVariable "WFBE_C_DEPOT_BUY_DISTANCE";
@@ -123,8 +210,11 @@ if (_isMan) then {
 	_locked = _vehi select 4;
 
 	_factoryPosition = getPos _building;
+	
+	
+	if (_spawnpaddir==2) then {//there is no spawnpad
 	_direction = -((((_position select 1) - (_factoryPosition select 1)) atan2 ((_position select 0) - (_factoryPosition select 0))) - 90);//--- model to world that later on.
-
+	};
 	_vehicle = [_unit, _position, sideID, _direction, _locked] Call WFBE_CO_FNC_CreateVehicle;
 	clientTeam reveal _vehicle;
 
