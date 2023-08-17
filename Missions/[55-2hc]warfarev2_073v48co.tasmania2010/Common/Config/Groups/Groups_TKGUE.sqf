@@ -29,7 +29,7 @@ _l = _l + [_u];
 
 _k = _k + ["Team"];
 _u		= ["TK_GUE_Soldier_Warlord_EP1"];
-_u = _u + ["TK_GUE_Soldier_AT_EP1"];
+_u = _u + ["TK_GUE_Soldier_AR_EP1"];
 _u = _u + ["TK_GUE_Bonesetter_EP1"];
 _u = _u + ["TK_GUE_Soldier_5_EP1"];
 _u = _u + ["TK_GUE_Soldier_4_EP1"];
