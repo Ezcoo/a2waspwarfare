@@ -307,7 +307,7 @@ case "AH6J_EP1": {
 
 // BMP-2 [HF1]
 case "BMP2_INS": {
-_current_heavy_level = ((side player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_HEAVY;
+_current_heavy_level = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_HEAVY;
 if (_current_heavy_level < 2) then {
     _this removeWeapon "AT5LauncherSingle";
 };
@@ -315,7 +315,7 @@ if (_current_heavy_level < 2) then {
 
 // BMP-2 [HF1]
 case "BMP2_TK_EP1": {
-_current_heavy_level = ((side player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_HEAVY;
+_current_heavy_level = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_HEAVY;
 if (_current_heavy_level < 2) then {
     _this removeWeapon "AT5LauncherSingle";
 };

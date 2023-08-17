@@ -2,7 +2,7 @@ Private ['_HQRadio','_base','_buildings','_condition','_get','_idbl','_isDeploye
 
 ["INITIALIZATION", Format ["Init_Client.sqf: Client initialization begins at [%1]", time]] Call WFBE_CO_FNC_LogContent;
 
-sideJoined = side player;
+sideJoined = side group player;
 sideJoinedText = str sideJoined;
 //--- WF3 Compatible.
 WFBE_Client_SideJoined = sideJoined;

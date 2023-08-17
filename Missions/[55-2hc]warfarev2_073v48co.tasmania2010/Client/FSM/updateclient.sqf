@@ -48,7 +48,7 @@ while {!gameOver} do {
 
 				playSound ["playerSelectedAsCommander", true];
 
-				["INFORMATION", Format ["Player %1 has become a new commander in %2 team).", name player, side player]] Call WFBE_CO_FNC_LogContent;
+				["INFORMATION", Format ["Player %1 has become a new commander in %2 team).", name player, side group player]] Call WFBE_CO_FNC_LogContent;
 			} else {
 				if (!isNil "HQAction") then {player removeAction HQAction};
 				if (count (hcAllGroups player) > 0) then {HCRemoveAllGroups player};

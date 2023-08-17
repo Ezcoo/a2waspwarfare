@@ -117,7 +117,7 @@ if (count _effective > 0) then {lbSetCurSel[20002,0]};
 while {true} do {
 	sleep 0.1;
 	
-	if (Side player != sideJoined) exitWith {closeDialog 0};
+	if (side group player != sideJoined) exitWith {closeDialog 0};
 	if (!dialog) exitWith {};
 	_curSel = lbCurSel(20002);
 
