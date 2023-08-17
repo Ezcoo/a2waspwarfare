@@ -44,8 +44,9 @@ _l = _l + [_u];
 
 
 _k = _k + ["Team_AT"];
-_u =  ["TK_GUE_Soldier_AR_EP1"];
+_u =  ["TK_GUE_Soldier_AT_EP1"];
 _u = _u + ["TK_GUE_Soldier_HAT_EP1"];
+_u = _u + ["TK_GUE_Soldier_AT_EP1"];
 _u = _u + ["TK_GUE_Soldier_AT_EP1"];
 
 _l = _l + [_u];
