@@ -34,101 +34,87 @@ if (_index != -1) then {
 	
 if (_factoryType in ["Light"]) then {
 	//--- Place Wheeled vehicles on Pads if avaiable.
-	Private ["_pad_man","_pads","_free","_dir","_no","_selpad","_filteredPads"];
-	_pad_man = "HeliH";
-	_pads = _building nearObjects [_pad_man, 250];
+	Private ["_pads","_free","_dir","_no","_selpad"];
 
-	// Filter out unwanted objects from _pads based on their names (because they inherit from HeliH)
-    _filteredPads = [];
-    {
-        if (typeOf _x != "HeliHCivil" && typeOf _x != "HeliHRescue") then {
-            _filteredPads set [count _filteredPads, _x];
-        };
-    } forEach _pads;
-    _pads = _filteredPads;
-
+	_pads = _building nearObjects ["HeliH", 250];
 	_free = [];
-	_dir = 0;	
+	_dir = 0;
 	if (count _pads > 0) then {
 		for "_i" from 0 to (count _pads - 1) do {
-			_no = getpos (_pads select _i) nearEntities [["Man","Car","Motorcycle","Tank","Ship","Air","StaticWeapon"], 0.5];			
 			_dir = getDir (_pads select _i);
-			if( count _no ==0) then {_free = _free + [[getpos (_pads select _i), _dir]];};
+			_free = _free + [[getpos (_pads select _i), _dir]];
 		};
 	};
 	if (count _free > 0) then {
-		_selpad =_free  call BIS_fnc_selectRandom;		
+		_selpad =_free  call BIS_fnc_selectRandom;
 		_position = [_selpad select 0 select 0,_selpad select 0 select 1,_selpad select 1];
-		_position set [2, .5];		
+		_position set [2, .5];
 		_spawnpaddir=5;//dirswitch to prevent overwrite dir later
 		_direction=_selpad select 1;
-		
+
 	}else{
 	_position = _building modelToWorld [(sin _direction * _distance), (cos _direction * _distance), 0];
 	_position set [2, .5];};
+
 }else{//---------------------------------------------------------check for heavy
 
-	
+
 if (_factoryType in ["Heavy"]) then {
 	//--- Place Wheeled vehicles on Pads if avaiable.
-	Private ["_pad_man","_pads","_free","_dir","_no","_selpad"];	
-	_pad_man = "HeliHRescue";	
-	_pads = _building nearObjects [_pad_man, 250];
+	Private ["_pads","_free","_dir","_no","_selpad"];
+	_pads = _building nearObjects ["HeliHRescue", 250];
 	_free = [];
-	_dir = 0;	
+	_dir = 0;
 	if (count _pads > 0) then {
 		for "_i" from 0 to (count _pads - 1) do {
-			_no = getpos (_pads select _i) nearEntities [["Man","Car","Motorcycle","Tank","Ship","Air","StaticWeapon"], 0.5];			
 			_dir = getDir (_pads select _i);
-			if( count _no ==0) then {_free = _free + [[getpos (_pads select _i), _dir]];};
+			_free = _free + [[getpos (_pads select _i), _dir]];
 		};
 	};
 	if (count _free > 0) then {
-		_selpad =_free  call BIS_fnc_selectRandom;		
+		_selpad =_free  call BIS_fnc_selectRandom;
 		_position = [_selpad select 0 select 0,_selpad select 0 select 1,_selpad select 1];
-		_position set [2, .5];		
+		_position set [2, .5];
 		_spawnpaddir=5;//dirswitch to prevent overwrite dir later
 		_direction=_selpad select 1;
-		
+
 	}else{
 	_position = _building modelToWorld [(sin _direction * _distance), (cos _direction * _distance), 0];
 	_position set [2, .5];};
+
 }else{//--------------------------------------------------------check for air
 
-	
+
 if (_factoryType in ["Aircraft"]) then {
 	//--- Place Wheeled vehicles on Pads if avaiable.
-	Private ["_pad_man","_pads","_free","_dir","_no","_selpad"];	
-	_pad_man = "HeliHCivil";	
-	_pads = _building nearObjects [_pad_man, 250];
+	Private ["_pads","_free","_dir","_no","_selpad"];
+	_pads = _building nearObjects ["HeliHCivil", 250];
 	_free = [];
-	_dir = 0;	
+	_dir = 0;
 	if (count _pads > 0) then {
 		for "_i" from 0 to (count _pads - 1) do {
-			_no = getpos (_pads select _i) nearEntities [["Man","Car","Motorcycle","Tank","Ship","Air","StaticWeapon"], 0.5];			
 			_dir = getDir (_pads select _i);
-			if( count _no ==0) then {_free = _free + [[getpos (_pads select _i), _dir]];};
+			_free = _free + [[getpos (_pads select _i), _dir]];
 		};
 	};
 	if (count _free > 0) then {
-		_selpad =_free  call BIS_fnc_selectRandom;		
+		_selpad =_free  call BIS_fnc_selectRandom;
 		_position = [_selpad select 0 select 0,_selpad select 0 select 1,_selpad select 1];
-		_position set [2, .5];		
+		_position set [2, .5];
 		_spawnpaddir=5;//dirswitch to prevent overwrite dir later
 		_direction=_selpad select 1;
-		
+
 	}else{
 	_position = _building modelToWorld [(sin _direction * _distance), (cos _direction * _distance), 0];
 	_position set [2, .5];};
+
 }else{//-------------------------------------------its barracks,found only 3 marker in a2 for now
 
 _position = [getPos _building,_distance,getDir _building + _direction] Call GetPositionFrom;
-_longest = missionNamespace getVariable Format ["WFBE_LONGEST%1BUILDTIME",_factoryType];
-
 
 };};};
-	
 
+_longest = missionNamespace getVariable Format ["WFBE_LONGEST%1BUILDTIME",_factoryType];
 	
 	
 } else {
