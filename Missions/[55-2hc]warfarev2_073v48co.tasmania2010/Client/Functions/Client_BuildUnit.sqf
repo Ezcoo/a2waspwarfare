@@ -21,11 +21,6 @@ _currentUnit = missionNamespace getVariable _unit;
 _waitTime = _currentUnit select QUERYUNITTIME;
 _description = _currentUnit select QUERYUNITLABEL;
 
-// Change the names of the vehicles, override the _currentUnitLabel
-if (_unit == "A10") then {
-    _description = "A-10A";
-};
-
 _type = typeOf _building;
 _index = (missionNamespace getVariable Format ["WFBE_%1STRUCTURENAMES",sideJoinedText]) find _type;
 if (_index != -1) then {

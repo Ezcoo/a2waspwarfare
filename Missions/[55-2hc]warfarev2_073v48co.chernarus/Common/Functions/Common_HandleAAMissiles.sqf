@@ -23,7 +23,7 @@ _i = 0;
 if (!(_am in _msl)) exitWith{};
 
 Switch (true) do {
-    case (_am isKindOf "M_9M311_AA") : 		{_rtp =["Building"];_sltd = 920;_acc = 1.2;_agl = 0.015;_i = 0.1;_prd= 0.3;};
+    case (_am isKindOf "M_9M311_AA") : 		{_rtp =["Building"];_sltd = 920;_acc = 1.2;_agl = 0.115;_i = 0.1;_prd= 0.3;};
     case (_am isKindOf "M_Sidewinder_AA") : {_rtp =["Building"];_sltd = 850;_acc = 1;_agl = 0.0095;_i = 0.1;_prd= 0.5;};
     case (_am isKindOf "M_R73_AA") :        {_rtp =["Building"];_sltd = 865;_acc = 0.9;_agl = 0.0095;_i = 0.1;_prd= 0.5;};
     case (_am isKindOf "M_Maverick_AT") :        {_rtp =["Building"];_sltd = 865;_acc = 0.9;_agl = 0.0095;_i = 0.1;_prd= 0.5;};
@@ -55,11 +55,20 @@ if(isNull _trg || _u aimedAtTarget [_trg] == 0 || {_trgtp isKindOf _x} count _rt
 
                         _vl = velocity _rkt;
                         _vlnr = _vl distance [0,0,0];
-                        _vlnrd = [(_vl select 0)/_vlnr,(_vl select 1)/_vlnr,(_vl select 2)/_vlnr];
+                        if (_vlnr != 0) then {
+                            _vlnrd = [(_vl select 0)/_vlnr,(_vl select 1)/_vlnr,(_vl select 2)/_vlnr];
+                        } else {
+                            _vlnrd = [0,0,0];
+                        };
 
                         _vcnr =_trgp distance (getPosASL _rkt);
                         _vc =[(_trgp select 0)-((getPosASL _rkt) select 0),(_trgp select 1)-((getPosASL _rkt) select 1),(_trgp select 2)-((getPosASL _rkt) select 2)];
-                        _vcnrd = [((_vc select 0)/_vcnr),((_vc select 1)/_vcnr),((_vc select 2)/_vcnr)];
+                        if (_vcnr != 0) then {
+                            _vcnrd = [((_vc select 0)/_vcnr),((_vc select 1)/_vcnr),((_vc select 2)/_vcnr)];
+                        } else {
+                            _vcnrd = [0,0,0];
+                        };
+
                         _t = _trvldis/_spd;
                         _spd = _sltd - (_sltd-_sspd) * exp( (-1)*_acc*(_t));
 

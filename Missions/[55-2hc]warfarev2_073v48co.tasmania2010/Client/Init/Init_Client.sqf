@@ -2,7 +2,7 @@ Private ['_HQRadio','_base','_buildings','_condition','_get','_idbl','_isDeploye
 
 ["INITIALIZATION", Format ["Init_Client.sqf: Client initialization begins at [%1]", time]] Call WFBE_CO_FNC_LogContent;
 
-sideJoined = side player;
+sideJoined = side group player;
 sideJoinedText = str sideJoined;
 //--- WF3 Compatible.
 WFBE_Client_SideJoined = sideJoined;
@@ -175,10 +175,17 @@ playerType = typeOf player;
 playerDead = false;
 paramBoundariesRunning = false;
 
+// View distance timer stuff
+timerInstanceCount = 0;
+newViewDistance = 0;
+
 disableserialization;
+
 keyPressed = compile preprocessFile "Common\Functions\Common_DisableTablock.sqf";
+keyPressedForAdjustingViewDistance = compile preprocessFile "Common\Functions\Common_AdjustViewDistance.sqf";
 _display = findDisplay 46;
 _display displayAddEventHandler ["KeyDown","_this call keyPressed"];
+_display displayAddEventHandler ["KeyDown","_this call keyPressedForAdjustingViewDistance"];
 
 (vehicle player) addEventHandler ["Fired",{_this Spawn HandleAT}];
 execVM "WASP\global_marking_monitor.sqf";
@@ -606,7 +613,7 @@ sleep 3;
 
 /* Client death handler. */
 WFBE_PLAYERKEH = player addEventHandler ['Killed', {[_this select 0,_this select 1] Spawn WFBE_CL_FNC_OnKilled; [_this select 0,_this select 1, sideID] Spawn WFBE_CO_FNC_OnUnitKilled}];
-hint parseText "<t color='#ffff00'>v15082023<br/>The Air Balancing Patch<br/>Full changelog available in our Discord!<br/><br/>Be sure to join it:<br/>discord.me/warfare<br/>or<br/>https://discord.gg/gRhPHUuWpy<br/><br/>IMPORTANT!!! Download our new modpack to fix the Sidewinder reload time:<br/> bit.ly/mkswfmods<br/>Also, download @a2waspTerrainsv7 for this Sunday's Tasmania test event:<br/>https://bit.ly/mkswfeventmods<br/><br/>New players, check the Guides section for the #tips-and-tricks channel and read the #commanding-guide. More guides coming soon(tm). If you have any questions, don't hesitate to ask in the side chat preferably, or on our discord! <br/><br/>Veterans! Check the #game-status channel before joining the game, and balance the game accordingly (count other veterans per team and see the bot's message for the current score status of the match)!<br/><br/>As always, thanks to our contributors for helping me to develop the mission:<br/>An-2 is a good plane<br/>Quad<br/>0=1<br/>Cleinstein<br/>Jupiter<br/>Marty<br/><br/>Remember to check our discord every 1-2 weeks or so for new suggestions that we're voting on the #vote-suggestions channel (will @everyone ping for this). It will help us to prioritise things for development that the community wants! Thanks again, and have fun on the server! :)</t>";
+hint parseText "<t color='#ffff00'>v18082023<br/>The Air Balancing Patch<br/>Full changelog available in our Discord!<br/><br/>Be sure to join it:<br/>discord.me/warfare<br/>or<br/>https://discord.gg/gRhPHUuWpy<br/><br/>IMPORTANT!!! Download our new modpack to fix the Sidewinder reload time:<br/> bit.ly/mkswfmods<br/>Also, download @a2waspTerrainsv7 for this Sunday's Tasmania test event:<br/>https://bit.ly/mkswfeventmods<br/><br/>New players, check the Guides section for the #tips-and-tricks channel and read the #commanding-guide. More guides coming soon(tm). If you have any questions, don't hesitate to ask in the side chat preferably, or on our discord! <br/><br/>Veterans! Check the #game-status channel before joining the game, and balance the game accordingly (count other veterans per team and see the bot's message for the current score status of the match)!<br/><br/>As always, thanks to our contributors for helping me to develop the mission:<br/>An-2 is a good plane<br/>Quad<br/>0=1<br/>Cleinstein<br/>Jupiter<br/>Marty<br/><br/>Remember to check our discord every 1-2 weeks or so for new suggestions that we're voting on the #vote-suggestions channel (will @everyone ping for this). It will help us to prioritise things for development that the community wants! Thanks again, and have fun on the server! :)</t>";
 //--- Valhalla init.
 [] Spawn {
 	[] Call Compile preprocessFile "Client\Module\Valhalla\Init_Valhalla.sqf";

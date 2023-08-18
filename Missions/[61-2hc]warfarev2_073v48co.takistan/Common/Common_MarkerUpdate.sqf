@@ -17,7 +17,7 @@ _side = _this select 11;
 _deathMarkerSize = [1,1];
 if (count _this > 12) then {_deathMarkerSize = _this select 12};
 
-if (_side != side player || isNull _tracked || !(alive _tracked)) exitWith {};
+if (_side != side group player || isNull _tracked || !(alive _tracked)) exitWith {};
 if (_deletePrevious) then {deleteMarkerLocal _markerName};
 
 createMarkerLocal [_markerName,getPos _tracked];

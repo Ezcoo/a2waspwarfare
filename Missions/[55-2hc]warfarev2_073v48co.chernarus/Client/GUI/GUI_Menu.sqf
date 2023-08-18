@@ -9,7 +9,7 @@ MenuAction = -1;
 WFBE_ForceUpdate = true;
 
 while {alive player && dialog} do {
-	//if (side player != sideJoined) exitWith {closeDialog 0};
+	//if (side group player != sideJoined) exitWith {closeDialog 0};
 	if (!dialog) exitWith {};
 
 	//--- Build Units.

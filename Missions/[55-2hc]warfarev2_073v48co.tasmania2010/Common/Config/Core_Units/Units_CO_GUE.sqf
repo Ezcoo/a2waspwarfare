@@ -109,10 +109,8 @@ _u = _u		+ ['UH1H_TK_GUE_EP1'];
 		_u = _u		+ ['Ka60_GL_PMC'];
 	};
 
-
 _u = _u		+ ['An2_1_TK_CIV_EP1'];
 _u = _u		+ ['An2_2_TK_CIV_EP1'];
-
 
 missionNamespace setVariable [Format ["WFBE_%1AIRCRAFTUNITS", _side], _u];
 if (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};

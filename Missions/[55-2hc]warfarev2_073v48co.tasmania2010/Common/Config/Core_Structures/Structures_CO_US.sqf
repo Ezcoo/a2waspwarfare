@@ -140,11 +140,17 @@ _n = _n		+ [if (WF_Camo) then {"Land_fort_rampart"} else {"Land_fort_rampart_EP1
 _n = _n		+ [if (WF_Camo) then {"Land_fort_artillery_nest"} else {"Land_fort_artillery_nest_EP1"}];
 _n = _n		+ ["Hhedgehog_concreteBig"];
 _n = _n		+ ["Hedgehog_EP1"];
+
+//_____________SPAWNMARKER____________
+_n = _n		+ ["HeliH"];
+_n = _n		+ ["HeliHRescue"];
+_n = _n		+ ["HeliHCivil"];
+
+
 _n = _n		+ [if (WF_Camo) then {"Land_CamoNet_NATO"} else {"Land_CamoNet_NATO_EP1"}];
 _n = _n		+ [if (WF_Camo) then {"Land_CamoNetVar_NATO"} else {"Land_CamoNetVar_NATO_EP1"}];
 _n = _n		+ [if (WF_Camo) then {"Land_CamoNetB_NATO"} else {"Land_CamoNetB_NATO_EP1"}];
 _n = _n		+ ["Sign_Danger"];
-_n = _n		+ ["HeliH"];
 _n = _n		+ ["Fort_RazorWire"];
 //_n = _n		+ ["Land_Ind_IlluminantTower"];
 _n = _n		+ ["Concrete_Wall_EP1"];

@@ -13,23 +13,23 @@ _k = _k + ["Squad"];
 _u		= ["TK_GUE_Warlord_EP1"];
 _u = _u + ["TK_GUE_Soldier_3_EP1"];
 _u = _u + ["TK_GUE_Soldier_AR_EP1"];
+_u = _u + ["TK_GUE_Soldier_AR_EP1"];
 _u = _u + ["TK_GUE_Soldier_MG_EP1"];
-_u = _u + ["TK_GUE_Soldier_HAT_EP1"];
 
 _l = _l + [_u];
 
 _k = _k + ["Squad_Advanced"];
 _u		= ["TK_GUE_Soldier_EP1"];
 _u = _u + ["TK_GUE_Soldier_4_EP1"];
-_u = _u + ["TK_GUE_Soldier_HAT_EP1"];
-_u = _u + ["TK_GUE_Soldier_AT_EP1"];
+_u = _u + ["TK_GUE_Soldier_4_EP1"];
+_u = _u + ["TK_GUE_Soldier_MG_EP1"];
 _u = _u + ["TK_GUE_Soldier_AR_EP1"];
 
 _l = _l + [_u];
 
 _k = _k + ["Team"];
 _u		= ["TK_GUE_Soldier_Warlord_EP1"];
-_u = _u + ["TK_GUE_Soldier_AT_EP1"];
+_u = _u + ["TK_GUE_Soldier_AR_EP1"];
 _u = _u + ["TK_GUE_Bonesetter_EP1"];
 _u = _u + ["TK_GUE_Soldier_5_EP1"];
 _u = _u + ["TK_GUE_Soldier_4_EP1"];
@@ -37,15 +37,16 @@ _u = _u + ["TK_GUE_Soldier_4_EP1"];
 _l = _l + [_u];
 
 _k = _k + ["Team_MG"];
-_u =      ["TK_GUE_Soldier_AR_EP1"];
+_u =      ["TK_GUE_Soldier_MG_EP1"];
 _u = _u + ["TK_GUE_Soldier_MG_EP1"];
 
 _l = _l + [_u];
 
 
 _k = _k + ["Team_AT"];
-_u =  ["TK_GUE_Soldier_AR_EP1"];
+_u =  ["TK_GUE_Soldier_AT_EP1"];
 _u = _u + ["TK_GUE_Soldier_HAT_EP1"];
+_u = _u + ["TK_GUE_Soldier_AT_EP1"];
 _u = _u + ["TK_GUE_Soldier_AT_EP1"];
 
 _l = _l + [_u];
@@ -58,6 +59,7 @@ _l = _l + [_u];
 
 _k = _k + ["Team_Sniper"];
 _u		= ["TK_GUE_Soldier_Sniper_EP1"];
+_u = _u + ["TK_GUE_Soldier_Sniper_EP1"];
 
 _l = _l + [_u];
 

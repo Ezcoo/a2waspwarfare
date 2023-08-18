@@ -141,11 +141,17 @@ _n = _n		+ ["Land_fort_rampart"];
 _n = _n		+ ["Land_fort_artillery_nest"];
 _n = _n		+ ["Hhedgehog_concreteBig"];
 _n = _n		+ ["Hedgehog"];
+
+//_____________SPAWNMARKER____________
+_n = _n		+ ["HeliH"];
+_n = _n		+ ["HeliHRescue"];
+_n = _n		+ ["HeliHCivil"];
+
+
 _n = _n		+ ["Land_CamoNet_EAST"];
 _n = _n		+ ["Land_CamoNetVar_EAST"];
 _n = _n		+ ["Land_CamoNetB_EAST"];
 _n = _n		+ ["Sign_Danger"];
-_n = _n		+ ["HeliH"];
 _n = _n		+ ["Fort_RazorWire"];
 _n = _n		+ ["Land_Ind_IlluminantTower"];
 _n = _n		+ ["Land_Campfire"];

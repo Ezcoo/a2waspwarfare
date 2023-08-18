@@ -37,7 +37,7 @@ while {true} do {
 
 			_lineLabel ctrlShow true;
 
-			if (side player == WEST) then {
+			if (side group player == WEST) then {
 			_lineLabel CtrlSetBackgroundColor [0,0.4,1,1]} else {_lineLabel CtrlSetBackgroundColor [1,0.2,0,1]};
 
 			_textLabel1 ctrlSetText "Health:";
@@ -131,7 +131,7 @@ while {true} do {
             };
 
 			//MONEY
-			_logik = (side player) Call WFBE_CO_FNC_GetSideLogic;
+			_logik = (side group player) Call WFBE_CO_FNC_GetSideLogic;
 
 			_textControl3 = (["currentCutDisplay"] call BIS_FNC_GUIget) DisplayCtrl 1355;
 			_textControl3 ctrlShow true;

@@ -35,7 +35,7 @@ if !(alive ((sideJoined) Call WFBE_CO_FNC_GetSideHQ)) then {
 }; */
 
 while {alive player && dialog} do {	
-	if (side player != sideJoined) exitWith {closeDialog 0};
+	if (side group player != sideJoined) exitWith {closeDialog 0};
 	if !(dialog) exitWith {};
 	
 	_funds = Call GetPlayerFunds;

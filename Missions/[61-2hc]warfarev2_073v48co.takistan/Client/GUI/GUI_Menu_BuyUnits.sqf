@@ -72,7 +72,7 @@ _IDCS = _IDCS - [_currentIDC];
 while {alive player && dialog} do {
 	//--- Nothing in range? exit!.
 	if (!barracksInRange && !lightInRange && !heavyInRange && !aircraftInRange && !hangarInRange && !depotInRange) exitWith {closeDialog 0};
-	if (side player != sideJoined || !dialog) exitWith {closeDialog 0};
+	if (side group player != sideJoined || !dialog) exitWith {closeDialog 0};
 	
 	//--- Purchase.
 	if (MenuAction == 1) then {

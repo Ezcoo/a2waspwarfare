@@ -31,7 +31,7 @@ lnbClear _listBox;
 	_addit = false;
 		if(_filler == 'Depot') then
 		{
-		    _UpBar = ((sideJoined) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_BARRACKS; 
+		    _UpBar = ((sideJoined) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_BARRACKS;
 			if ((_x in ['Ins_Soldier_MG', "TK_Soldier_MG_EP1", 'USMC_Soldier_MG', 'US_Soldier_MG_EP1']) && _UpBar>=1)then{_addit  = true;};
 			if ((_x in ['RU_Soldier_AT', "TK_Soldier_AT_EP1", 'USMC_Soldier_LAT']) && _UpBar>=1)then{_addit = true;};
 			if ((_x in ['TK_Soldier_Engineer_EP1', 'BAF_Soldier_EN_W']) && _UpBar>=1)then{_addit = true;};

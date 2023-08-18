@@ -72,7 +72,7 @@ _IDCS = _IDCS - [_currentIDC];
 while {alive player && dialog} do {
 	//--- Nothing in range? exit!.
 	if (!barracksInRange && !lightInRange && !heavyInRange && !aircraftInRange && !hangarInRange && !depotInRange) exitWith {closeDialog 0};
-	if (side player != sideJoined || !dialog) exitWith {closeDialog 0};
+	if (side group player != sideJoined || !dialog) exitWith {closeDialog 0};
 	
 	//--- Purchase.
 	if (MenuAction == 1) then {
@@ -120,7 +120,7 @@ while {alive player && dialog} do {
 						if (!isNull(commanderTeam)) then {
 			  if (commanderTeam == group player) then {
               _realSize = _realSize + 10;
-
+			  
               };
 			};
 				if (_isInfantry) then {if ((unitQueu + _size + 1) > _realSize) then {_skip = true;hint parseText(Format [localize 'STR_WF_INFO_MaxGroup',_realSize])}};

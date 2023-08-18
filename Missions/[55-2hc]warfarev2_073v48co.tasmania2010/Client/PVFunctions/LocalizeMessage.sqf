@@ -32,7 +32,7 @@ switch (_localize) do {
         }
         else
         {
-            if ((side player) == _structure_side) then
+            if ((side group player) == _structure_side) then
             {
                 _txt = format [localize "STR_WF_HeadHunterReceiveBountyFriendly", _killer_name, _bounty, ([_structure_kind, "displayName"] call GetConfigInfo)];
             }
@@ -68,7 +68,7 @@ switch (_localize) do {
         _structure_kind = _this select 1;
         _structure_side = _this select 2;
 
-        if ((side player) == _structure_side) then
+        if ((side group player) == _structure_side) then
         {
             _txt = format [localize "STR_WF_BuildingKilledByErrorFriendly", ([_structure_kind, "displayName"] call GetConfigInfo)];
         }

@@ -43,7 +43,7 @@ while {alive player && dialog} do {
 			};
 		} forEach WFBE_Client_Teams;
 
-		["RequestNewCommander", [side player, _voted_commander]] Call WFBE_CO_FNC_SendToServer;
+		["RequestNewCommander", [side group player, _voted_commander]] Call WFBE_CO_FNC_SendToServer;
 		voted = true;
 		closeDialog 0;
 	};

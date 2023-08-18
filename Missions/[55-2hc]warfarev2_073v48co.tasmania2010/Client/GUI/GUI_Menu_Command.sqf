@@ -105,7 +105,7 @@ lbAdd[14025,"Default"];
 } forEach _structures;
 
 while {alive player && dialog} do {
-	if (side player != sideJoined) exitWith {activeAnimMarker = false;closeDialog 0};
+	if (side group player != sideJoined) exitWith {activeAnimMarker = false;closeDialog 0};
 	if (!dialog) exitWith {activeAnimMarker = false};
 
 	if (MenuAction == 601) then {if (_mode != 0) then {_updateTab = true};_mode = 0};//--- Team properties.
