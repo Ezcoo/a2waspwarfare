@@ -37,6 +37,16 @@ if (_factoryType in ["Light"]) then {
 	Private ["_pads","_free","_dir","_no","_selpad"];
 
 	_pads = _building nearObjects ["HeliH", 250];
+
+	// Filter out unwanted objects from _pads based on their names (because they inherit from HeliH)
+    _filteredPads = [];
+    {
+        if (typeOf _x != "HeliHCivil" && typeOf _x != "HeliHRescue") then {
+            _filteredPads set [count _filteredPads, _x];
+        };
+    } forEach _pads;
+    _pads = _filteredPads;
+
 	_free = [];
 	_dir = 0;
 	if (count _pads > 0) then {
