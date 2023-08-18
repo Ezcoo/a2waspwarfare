@@ -2,7 +2,7 @@ private ["_u","_wpn","_rkt","_am","_sspd","_msl","_acc","_sltd"];
 
 _u = _this select 0;
 _wpn = currentWeapon _u;
-_am = _this select 4;
+_am = _this select 1;
 _rkt = nearestObject [_u,_am];
 _sspd=0;
 _sltd = 900;

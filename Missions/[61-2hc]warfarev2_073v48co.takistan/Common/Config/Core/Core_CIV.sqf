@@ -112,8 +112,18 @@ _i = _i + [['','',95,0,0,0,'Fortification',0,'Civilians',[]]];
 _c = _c + ['Hedgehog'];
 _i = _i + [['','',5,0,0,0,'Fortification',0,'Civilians',[]]];
 
+//__________SPAWNMARKER NOW____________________
+
 _c = _c + ['HeliH'];
-_i = _i + [['','',15,0,0,0,'Strategic',0,'Civilians',[]]];
+_i = _i + [['LF SPAWNPOINT','',15,0,0,0,'Strategic',0,'Civilians',[]]];
+
+_c = _c + ['HeliHRescue'];
+_i = _i + [['HF SPAWNPOINT','',15,0,0,0,'Strategic',0,'Civilians',[]]];
+
+_c = _c + ['HeliHCivil'];
+_i = _i + [['AF SPAWNPOINT','',15,0,0,0,'Strategic',0,'Civilians',[]]];
+
+//______________________________________________
 
 _c = _c + ['MASH'];
 _i = _i + [['','',30,0,0,0,'Strategic',0,'Civilians',[]]];

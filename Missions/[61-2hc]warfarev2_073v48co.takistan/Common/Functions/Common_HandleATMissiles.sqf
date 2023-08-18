@@ -2,7 +2,7 @@ private ["_u","_wpn","_rkt","_am","_sspd","_msl","_acc","_sltd"];
 
 _u = _this select 0;
 _wpn = currentWeapon _u;
-_am = _this select 4;
+_am = _this select 1;
 _rkt = nearestObject [_u,_am];
 _sspd=0;
 _sltd = 900;
@@ -16,7 +16,7 @@ if (!(_am in _msl)) exitWith{};
 Switch (true) do {
 	case (_am isKindOf "M_AT10_AT") : {_sltd = 860;_acc = 0.6;};
 	case (_am isKindOf "M_AT11_AT") : {_sltd = 900;_acc = 0.5;};
-	    	};
+};
 
 _fp = getPosASL _rkt;
 _sspd = (velocity _rkt) distance [0,0,0];
