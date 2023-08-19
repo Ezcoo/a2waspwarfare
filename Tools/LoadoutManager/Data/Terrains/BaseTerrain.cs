@@ -8,26 +8,11 @@
 
     public bool isModdedTerrain { get; set; }
 
-    public void WriteToFile(string _content, string _targetScriptPath)
+    public void WriteToFile(DirectoryInfo _dir, string _content, string _targetScriptPath)
     {
-        // Get the current executing directory
-        string currentDirectory = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-
-        // Navigate up until you find 'a2waspwarfare'
-        DirectoryInfo dir = new DirectoryInfo(currentDirectory);
-        while (dir.Name != "a2waspwarfare" && dir.Parent != null)
-        {
-            dir = dir.Parent;
-        }
-
-        if (dir.Name != "a2waspwarfare")
-        {
-            throw new Exception("Could not find the 'a2waspwarfare' directory.");
-        }
-
         // Append the relative path of the file
         string targetFile = Path.Combine(
-            dir.FullName, DetermineMissionPathIfItsModdedOrNot() +
+            _dir.FullName, DetermineMissionPathIfItsModdedOrNot() +
             @"\[" + DetermineMissionTypeIfItsForestOrDesert() + "-2hc]warfarev2_073v48co." +
             EnumExtensions.GetEnumMemberAttrValue(terrainName) + @"\" + _targetScriptPath);
 
