@@ -125,8 +125,8 @@ _position = [getPos _building,_distance,getDir _building + _direction] Call GetP
 };};};
 
 _longest = missionNamespace getVariable Format ["WFBE_LONGEST%1BUILDTIME",_factoryType];
-
-
+	
+	
 } else {
 	if (_type == WFBE_Logic_Depot) then {
 		_distance = missionNamespace getVariable "WFBE_C_DEPOT_BUY_DISTANCE";
@@ -216,8 +216,8 @@ if (_isMan) then {
 	_locked = _vehi select 4;
 
 	_factoryPosition = getPos _building;
-
-
+	
+	
 	if (_spawnpaddir==2) then {//there is no spawnpad
 	_direction = -((((_position select 1) - (_factoryPosition select 1)) atan2 ((_position select 0) - (_factoryPosition select 0))) - 90);//--- model to world that later on.
 	};
@@ -291,7 +291,7 @@ if(typeOf _vehicle in ['F35B','AV8B','AV8B2','A10','A10_US_EP1','Su25_TK_EP1','S
 	_vehicle addeventhandler ['Fired',{_this spawn HandleBombs;_this spawn HandleAAMissiles}];
 };
 
-if(typeOf _vehicle in ['AH1Z','BAF_Apache_AH1_D','AH64D_EP1','AH64D','Ka52Black','Ka52','Mi24_P','L39_TK_EP1','2S6M_Tunguska','M6_EP1']) then {
+if(typeOf _vehicle in ['2S6M_Tunguska','M6_EP1']) then {
 	_vehicle addeventhandler ['Fired',{_this spawn HandleAAMissiles;}];
 };
 
