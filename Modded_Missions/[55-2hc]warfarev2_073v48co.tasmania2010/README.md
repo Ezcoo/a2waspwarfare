@@ -4,12 +4,12 @@ Here You will find resources for cherno map
 ```
 ## Bundling of missions
 ```
-1) Create a mission folder f.e. "[55-2hc]warfarev2_073v47co.tasmania"
+1) Create a mission folder f.e. "[55-2hc]warfarev2_073v47co.chernarus"
 2) Create "Master" folder;
 3) clone master branch in "Master" folder.  
 4) Create a fodler for mission related resource. F.e. call it "cherno"
 5) clone mission related resources from cherno branch
-6) Put all files from "Master" and "cherno" folders in "[55-2hc]warfarev2_073v47co.tasmania"
+6) Put all files from "Master" and "cherno" folders in "[55-2hc]warfarev2_073v47co.chernarus"
 ```
 ## GIT WORKFLOW EXAMPLE: Basic Git clone, modify, commit, and push.
 ```
