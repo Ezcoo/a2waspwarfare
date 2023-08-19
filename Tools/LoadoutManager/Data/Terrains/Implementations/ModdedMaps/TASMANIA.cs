@@ -4,5 +4,6 @@
     {
         TerrainName = TerrainName.TASMANIA;
         TerrainType = TerrainType.FOREST;
+        isModdedTerrain = true;
     }
 }

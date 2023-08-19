@@ -8,7 +8,7 @@ class Program
 
     static void Main()
     {
-        GenerateCommonBalanceInitAndTheEasaFile();
+        GenerateCommonBalanceInitAndTheEasaFileForEachTerrain();
 
         //WaitForCommand("exit");
     }
@@ -45,7 +45,7 @@ class Program
     }
 
 
-    private static void GenerateCommonBalanceInitAndTheEasaFile()
+    private static void GenerateCommonBalanceInitAndTheEasaFileForEachTerrain()
     {
         string easaFileString = string.Empty;
         string commonBalanceFileString = string.Empty;
@@ -63,36 +63,21 @@ class Program
         commonBalanceFileString += commonBalanceInitFile;
         commonBalanceFileString += "};";
 
-        Console.WriteLine(easaFileString);
-        WriteToFile(easaFileString, "chernarus", @"Client\Module\EASA\EASA_Init.sqf");
-        Console.WriteLine(commonBalanceFileString);
-        WriteToFile(commonBalanceFileString, "chernarus", @"\Common\Functions\Common_BalanceInit.sqf");
-    }
-
-    public static void WriteToFile(string _content, string _targetTerrain, string _targetScriptPath)
-    {
-        // Get the current executing directory
-        string currentDirectory = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-
-        // Navigate up until you find 'a2waspwarfare'
-        DirectoryInfo dir = new DirectoryInfo(currentDirectory);
-        while (dir.Name != "a2waspwarfare" && dir.Parent != null)
+        foreach (var terrainName in Enum.GetValues(typeof(TerrainName)))
         {
-            dir = dir.Parent;
+            var terrainInstance = (InterfaceTerrain)EnumExtensions.GetInstance(terrainName.ToString());
+
+            
+            Console.WriteLine("-------" + terrainName + "---------");
+
+            Console.WriteLine(easaFileString);
+            terrainInstance.WriteToFile(easaFileString, @"Client\Module\EASA\EASA_Init.sqf");
+            Console.WriteLine(commonBalanceFileString);
+            terrainInstance.WriteToFile(commonBalanceFileString, @"\Common\Functions\Common_BalanceInit.sqf");
+
+            Console.WriteLine("------- end of " + terrainName + "---------");
         }
-
-        if (dir.Name != "a2waspwarfare")
-        {
-            throw new Exception("Could not find the 'a2waspwarfare' directory.");
-        }
-
-        // Append the relative path of the file
-        string targetFile = Path.Combine(dir.FullName, @"Missions\[55-2hc]warfarev2_073v48co." + _targetTerrain + @"\" + _targetScriptPath);
-
-        // Write to the file
-        File.WriteAllText(targetFile, _content);
     }
-
 
     private static void GenerateAircraftSpecificLoadouts(VehicleType _vehicleType)
     {
