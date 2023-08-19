@@ -21,7 +21,7 @@ class Mission
 	class Intel
 	{
 		briefingName="[55] Warfare V48 Taviana 1.11";
-		briefingDescription="Map by -Martin-. Scripting by Benny and Awesome&WASP + Net_2, Miksuu";
+		briefingDescription="Map by -Martin-. Scripting by Benny and Awesome&WASP + Miksuu";
 		resistanceWest=0;
 		startWeather=0;
 		startFog=0.050000001;

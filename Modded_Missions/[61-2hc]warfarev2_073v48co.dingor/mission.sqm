@@ -31,7 +31,7 @@ class Mission
 	class Intel
 	{
 		briefingName="[61] Warfare V48 Dingor 1.0";
-		briefingDescription="Map by IceBreakr. Scripting by Benny and Awesome&WASP + Net_2, Miksuu";
+		briefingDescription="Map by IceBreakr. Scripting by Benny and Awesome&WASP + Miksuu";
 		resistanceWest=0;
 		startWeather=0;
 		forecastWeather=0;

@@ -21,7 +21,7 @@ class Mission
 	class Intel
 	{
 		briefingName="[55] Warfare V48 Everon 1.01";
-		briefingDescription="Map ported by Sgt.Ace . Scripting by Benny and Awesome&WASP + Net_2, Miksuu";
+		briefingDescription="Map ported by Sgt.Ace . Scripting by Benny and Awesome&WASP + Miksuu";
 		resistanceWest=0;
 		startWeather=0;
 		forecastWeather=0;
