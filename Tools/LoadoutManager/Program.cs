@@ -8,9 +8,9 @@ class Program
 
     static void Main()
     {
-        GenerateCommonBalanceInitAndTheEasaFile();
+        GenerateCommonBalanceInitAndTheEasaFileForEachTerrain();
 
-        WaitForCommand("exit");
+        //WaitForCommand("exit");
     }
 
     /// <summary>
@@ -44,9 +44,23 @@ class Program
         return startOfTheEasaFile;
     }
 
-
-    private static void GenerateCommonBalanceInitAndTheEasaFile()
+    private static void GenerateCommonBalanceInitAndTheEasaFileForEachTerrain()
     {
+        // Get the current executing directory
+        string currentDirectory = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+
+        // Navigate up until you find 'a2waspwarfare'
+        DirectoryInfo dir = new DirectoryInfo(currentDirectory);
+        while (dir.Name != "a2waspwarfare" && dir.Parent != null)
+        {
+            dir = dir.Parent;
+        }
+
+        if (dir.Name != "a2waspwarfare")
+        {
+            throw new Exception("Could not find the 'a2waspwarfare' directory.");
+        }
+
         string easaFileString = string.Empty;
         string commonBalanceFileString = string.Empty;
 
@@ -63,11 +77,106 @@ class Program
         commonBalanceFileString += commonBalanceInitFile;
         commonBalanceFileString += "};";
 
-        Console.WriteLine(easaFileString);
-        WaitForCommand("d");
-        Console.Clear();
-        Console.WriteLine(commonBalanceFileString);
+        // Write Easa and common_balance Init to non modded maps, so they can be copied over later
+        foreach (var terrainName in Enum.GetValues(typeof(TerrainName)))
+        {
+            var terrainInstance = (InterfaceTerrain)EnumExtensions.GetInstance(terrainName.ToString());
+
+            Console.WriteLine("-------" + terrainName + "---------");
+
+            Console.WriteLine(easaFileString);
+            terrainInstance.WriteToFile(dir, easaFileString, @"Client\Module\EASA\EASA_Init.sqf");
+            Console.WriteLine(commonBalanceFileString);
+            terrainInstance.WriteToFile(dir, commonBalanceFileString, @"\Common\Functions\Common_BalanceInit.sqf");
+
+            Console.WriteLine("------- end of " + terrainName + "---------");
+        }
+
+        // Now that the files are good to go, loop through modded terrains and copy the changes (excluding mission.sqm, version file)
+        foreach (var terrainName in Enum.GetValues(typeof(TerrainName)))
+        {
+            var terrainInstance = (InterfaceTerrain)EnumExtensions.GetInstance(terrainName.ToString());
+
+            // Skips non modded maps
+            if (!terrainInstance.isModdedTerrain)
+            {
+                continue;
+            }
+
+            // Determine the source directory based on the terrain type of the current modded map
+            string sourceTerrainName = terrainInstance.TerrainType == TerrainType.FOREST ? "chernarus" : "takistan";
+            string sourceTerrainPlayerCount = terrainInstance.TerrainType == TerrainType.FOREST ? "55" : "61";
+            string sourceDirectory = Path.Combine(dir.FullName, @"Missions\[" + sourceTerrainPlayerCount + "-2hc]warfarev2_073v48co." + sourceTerrainName);
+
+            // Determine the destination directory for the current modded map
+            string destinationDirectory = Path.Combine(dir.FullName, @"Modded_Missions\[" + sourceTerrainPlayerCount + "-2hc]warfarev2_073v48co." + EnumExtensions.GetEnumMemberAttrValue(terrainName));
+
+            // Copy the files
+            CopyFilesFromSourceToDestination(sourceDirectory, destinationDirectory);
+        }
     }
+
+    private static void CopyFilesFromSourceToDestination(string _source, string _destination)
+    {
+        // Ensure the destination directory exists
+        Directory.CreateDirectory(_destination);
+
+        // Copy files from source to destination
+        foreach (var file in Directory.GetFiles(_source))
+        {
+            string fileName = Path.GetFileName(file);
+
+            if (fileName.EndsWith("mission.sqm", StringComparison.OrdinalIgnoreCase) ||
+                fileName.EndsWith("version.sqf", StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
+            string destFile = Path.Combine(_destination, fileName);
+            File.Copy(file, destFile, true);  // true to overwrite existing files
+        }
+
+        // Recursively copy subdirectories
+        foreach (var directory in Directory.GetDirectories(_source))
+        {
+            string dirName = Path.GetFileName(directory);
+            if (dirName == null) continue;
+
+            string destDir = Path.Combine(_destination, dirName);
+            CopyFilesFromSourceToDestination(directory, destDir);
+        }
+
+        // Delete extra files in destination that are not in source
+        foreach (var destFile in Directory.GetFiles(_destination))
+        {
+            string fileName = Path.GetFileName(destFile);
+
+            if (fileName.EndsWith("mission.sqm") || fileName.EndsWith("version.sqf"))
+            {
+                continue;
+            }
+
+            string correspondingSourceFile = Path.Combine(_source, fileName);
+            if (!File.Exists(correspondingSourceFile))
+            {
+                File.Delete(destFile);
+            }
+        }
+
+        // Delete extra directories in destination that are not in source
+        foreach (var destDir in Directory.GetDirectories(_destination))
+        {
+            string dirName = Path.GetFileName(destDir);
+            if (dirName == null) continue;
+
+            string correspondingSourceDir = Path.Combine(_source, dirName);
+            if (!Directory.Exists(correspondingSourceDir))
+            {
+                Directory.Delete(destDir, true);  // true to remove all files and subdirectories
+            }
+        }
+    }
+
 
     private static void GenerateAircraftSpecificLoadouts(VehicleType _vehicleType)
     {
