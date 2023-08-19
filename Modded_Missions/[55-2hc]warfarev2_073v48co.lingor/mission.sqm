@@ -2619,7 +2619,7 @@ class Mission
 					position[]={5737.4673,9.2842484,827.39612};
 					id=176;
 					side="WEST";
-					vehicle="USMC_Soldier_Medic";
+					vehicle="FR_Corpsman";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -2641,7 +2641,7 @@ class Mission
 					position[]={5737.4722,9.4175949,828.2594};
 					id=177;
 					side="WEST";
-					vehicle="USMC_Soldier_Medic";
+					vehicle="FR_Corpsman";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -2663,7 +2663,7 @@ class Mission
 					position[]={5737.5415,9.1260204,826.32483};
 					id=178;
 					side="WEST";
-					vehicle="USMC_Soldier_Medic";
+					vehicle="FR_Corpsman";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -2685,7 +2685,7 @@ class Mission
 					position[]={5737.6821,9.0235023,825.57581};
 					id=179;
 					side="WEST";
-					vehicle="USMC_Soldier_Medic";
+					vehicle="FR_Corpsman";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -2817,7 +2817,7 @@ class Mission
 					position[]={619.55707,14.725369,2661.1067};
 					id=185;
 					side="EAST";
-					vehicle="Ins_Soldier_Sapper";
+					vehicle="Ins_Soldier_CO";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -2839,7 +2839,7 @@ class Mission
 					position[]={619.48505,14.725369,2663.0376};
 					id=186;
 					side="EAST";
-					vehicle="Ins_Soldier_Sapper";
+					vehicle="Ins_Soldier_CO";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -2883,7 +2883,7 @@ class Mission
 					position[]={617.36884,14.725369,2663.6055};
 					id=188;
 					side="EAST";
-					vehicle="RU_Soldier_Medic";
+					vehicle="RUS_Soldier_Medic";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -2905,7 +2905,7 @@ class Mission
 					position[]={617.16656,14.725369,2666.6982};
 					id=189;
 					side="EAST";
-					vehicle="RU_Soldier_Medic";
+					vehicle="RUS_Soldier_Medic";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -2927,7 +2927,7 @@ class Mission
 					position[]={617.35565,14.725369,2662.6833};
 					id=190;
 					side="EAST";
-					vehicle="RU_Soldier_Medic";
+					vehicle="RUS_Soldier_Medic";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3053,7 +3053,7 @@ class Mission
 					position[]={5737.6929,8.886879,824.68225};
 					id=196;
 					side="WEST";
-					vehicle="USMC_Soldier_Medic";
+					vehicle="FR_Corpsman";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3141,7 +3141,7 @@ class Mission
 					position[]={617.07977,14.725369,2665.7244};
 					id=200;
 					side="EAST";
-					vehicle="RU_Soldier_Medic";
+					vehicle="RUS_Soldier_Medic";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3163,7 +3163,7 @@ class Mission
 					position[]={617.18915,14.725369,2664.6655};
 					id=201;
 					side="EAST";
-					vehicle="RU_Soldier_Medic";
+					vehicle="RUS_Soldier_Medic";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3207,7 +3207,7 @@ class Mission
 					position[]={619.32428,14.725369,2664.7917};
 					id=203;
 					side="EAST";
-					vehicle="Ins_Soldier_Sapper";
+					vehicle="Ins_Soldier_CO";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3250,7 +3250,7 @@ class Mission
 					position[]={619.40802,14.725369,2663.9585};
 					id=205;
 					side="EAST";
-					vehicle="Ins_Soldier_Sapper";
+					vehicle="Ins_Soldier_CO";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3316,7 +3316,7 @@ class Mission
 					position[]={619.46417,14.725369,2662.1431};
 					id=208;
 					side="EAST";
-					vehicle="Ins_Soldier_Sapper";
+					vehicle="Ins_Soldier_CO";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3382,7 +3382,7 @@ class Mission
 					position[]={619.31427,14.725369,2666.5652};
 					id=211;
 					side="EAST";
-					vehicle="Ins_Soldier_Sapper";
+					vehicle="Ins_Soldier_CO";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3404,7 +3404,7 @@ class Mission
 					position[]={619.44025,14.725369,2665.6863};
 					id=212;
 					side="EAST";
-					vehicle="Ins_Soldier_Sapper";
+					vehicle="Ins_Soldier_CO";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3521,7 +3521,7 @@ class Mission
 					position[]={5737.6675,8.7695923,823.93518};
 					id=218;
 					side="WEST";
-					vehicle="USMC_Soldier_Medic";
+					vehicle="FR_Corpsman";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -3543,7 +3543,7 @@ class Mission
 					position[]={617.29755,14.725369,2660.7927};
 					id=219;
 					side="EAST";
-					vehicle="RU_Soldier_Medic";
+					vehicle="RUS_Soldier_Medic";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";

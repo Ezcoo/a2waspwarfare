@@ -187,7 +187,7 @@ class Mission
 					position[]={2995.2263,19.832258,8526.376};
 					id=6;
 					side="WEST";
-					vehicle="US_Soldier_Engineer_EP1";
+					vehicle="US_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -209,7 +209,7 @@ class Mission
 					position[]={2995.3406,20.062225,8524.8086};
 					id=7;
 					side="WEST";
-					vehicle="US_Soldier_Engineer_EP1";
+					vehicle="US_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -231,7 +231,7 @@ class Mission
 					position[]={2995.4075,20.174734,8523.5605};
 					id=8;
 					side="WEST";
-					vehicle="BAF_Soldier_EN_DDPM";
+					vehicle="US_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -253,7 +253,7 @@ class Mission
 					position[]={2995.3562,20.282068,8522.1309};
 					id=9;
 					side="WEST";
-					vehicle="BAF_Soldier_EN_DDPM";
+					vehicle="US_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -495,7 +495,7 @@ class Mission
 					position[]={5676.0806,2.8274915,856.05481};
 					id=20;
 					side="EAST";
-					vehicle="TK_Soldier_Engineer_EP1";
+					vehicle="TK_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -517,7 +517,7 @@ class Mission
 					position[]={5676.2397,3.0088565,854.13684};
 					id=21;
 					side="EAST";
-					vehicle="TK_Soldier_Engineer_EP1";
+					vehicle="TK_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -665,7 +665,7 @@ class Mission
 					position[]={2995.3665,20.371031,8520.998};
 					id=28;
 					side="WEST";
-					vehicle="US_Soldier_Engineer_EP1";
+					vehicle="US_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -687,7 +687,7 @@ class Mission
 					position[]={2995.4417,20.454496,8519.5977};
 					id=29;
 					side="WEST";
-					vehicle="BAF_Soldier_EN_DDPM";
+					vehicle="US_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -753,7 +753,7 @@ class Mission
 					position[]={5676.1274,2.6449308,857.96594};
 					id=32;
 					side="EAST";
-					vehicle="TK_Soldier_Engineer_EP1";
+					vehicle="TK_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -775,7 +775,7 @@ class Mission
 					position[]={5676.2397,2.4756491,859.73145};
 					id=33;
 					side="EAST";
-					vehicle="TK_Soldier_Engineer_EP1";
+					vehicle="TK_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -885,7 +885,7 @@ class Mission
 					position[]={2995.4998,20.459,8518.2744};
 					id=38;
 					side="WEST";
-					vehicle="US_Soldier_Engineer_EP1";
+					vehicle="US_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -951,7 +951,7 @@ class Mission
 					position[]={5676.2559,2.4599473,861.36975};
 					id=41;
 					side="EAST";
-					vehicle="TK_Soldier_Engineer_EP1";
+					vehicle="TK_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -1039,7 +1039,7 @@ class Mission
 					position[]={5676.4131,2.472043,863.21265};
 					id=45;
 					side="EAST";
-					vehicle="TK_Soldier_Engineer_EP1";
+					vehicle="TK_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
@@ -1061,7 +1061,7 @@ class Mission
 					position[]={5676.4072,2.4192123,865.60693};
 					id=46;
 					side="EAST";
-					vehicle="TK_Soldier_Engineer_EP1";
+					vehicle="TK_Soldier_Officer_EP1";
 					player="PLAY CDG";
 					leader=1;
 					rank="LIEUTENANT";
