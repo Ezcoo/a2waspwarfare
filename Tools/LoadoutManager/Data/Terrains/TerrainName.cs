@@ -10,4 +10,7 @@ public enum TerrainName
 
     [EnumMember(Value = "tasmania2010")]
     TASMANIA,
+
+    [EnumMember(Value = "dingor")]
+    DINGOR,
 }
