@@ -16,6 +16,13 @@
             @"\[" + DetermineMissionTypeIfItsForestOrDesert() + "-2hc]warfarev2_073v48co." +
             EnumExtensions.GetEnumMemberAttrValue(terrainName) + @"\" + _targetScriptPath);
 
+        // Ensure the directory exists
+        string directoryName = Path.GetDirectoryName(targetFile);
+        if (!Directory.Exists(directoryName))
+        {
+            Directory.CreateDirectory(directoryName);
+        }
+
         // Write to the file
         File.WriteAllText(targetFile, _content);
     }
