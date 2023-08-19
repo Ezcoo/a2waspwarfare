@@ -10,7 +10,7 @@ class Program
     {
         GenerateCommonBalanceInitAndTheEasaFile();
 
-        WaitForCommand("exit");
+        //WaitForCommand("exit");
     }
 
     /// <summary>
@@ -64,10 +64,35 @@ class Program
         commonBalanceFileString += "};";
 
         Console.WriteLine(easaFileString);
-        WaitForCommand("d");
-        Console.Clear();
+        //WaitForCommand("d");
         Console.WriteLine(commonBalanceFileString);
+        WriteToFile(commonBalanceFileString, "chernarus", "Common_BalanceInit.sqf");
     }
+
+    public static void WriteToFile(string _content, string _targetTerrain, string _targetScript)
+    {
+        // Get the current executing directory
+        string currentDirectory = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+
+        // Navigate up until you find 'a2waspwarfare'
+        DirectoryInfo dir = new DirectoryInfo(currentDirectory);
+        while (dir.Name != "a2waspwarfare" && dir.Parent != null)
+        {
+            dir = dir.Parent;
+        }
+
+        if (dir.Name != "a2waspwarfare")
+        {
+            throw new Exception("Could not find the 'a2waspwarfare' directory.");
+        }
+
+        // Append the relative path of the file
+        string targetFile = Path.Combine(dir.FullName, @"Missions\[55-2hc]warfarev2_073v48co." + _targetTerrain + @"\Common\Functions\" + _targetScript);
+
+        // Write to the file
+        File.WriteAllText(targetFile, _content);
+    }
+
 
     private static void GenerateAircraftSpecificLoadouts(VehicleType _vehicleType)
     {
