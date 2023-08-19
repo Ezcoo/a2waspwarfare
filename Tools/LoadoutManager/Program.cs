@@ -64,12 +64,12 @@ class Program
         commonBalanceFileString += "};";
 
         Console.WriteLine(easaFileString);
-        //WaitForCommand("d");
+        WriteToFile(easaFileString, "chernarus", @"Client\Module\EASA\EASA_Init.sqf");
         Console.WriteLine(commonBalanceFileString);
-        WriteToFile(commonBalanceFileString, "chernarus", "Common_BalanceInit.sqf");
+        WriteToFile(commonBalanceFileString, "chernarus", @"\Common\Functions\Common_BalanceInit.sqf");
     }
 
-    public static void WriteToFile(string _content, string _targetTerrain, string _targetScript)
+    public static void WriteToFile(string _content, string _targetTerrain, string _targetScriptPath)
     {
         // Get the current executing directory
         string currentDirectory = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
@@ -87,7 +87,7 @@ class Program
         }
 
         // Append the relative path of the file
-        string targetFile = Path.Combine(dir.FullName, @"Missions\[55-2hc]warfarev2_073v48co." + _targetTerrain + @"\Common\Functions\" + _targetScript);
+        string targetFile = Path.Combine(dir.FullName, @"Missions\[55-2hc]warfarev2_073v48co." + _targetTerrain + @"\" + _targetScriptPath);
 
         // Write to the file
         File.WriteAllText(targetFile, _content);
