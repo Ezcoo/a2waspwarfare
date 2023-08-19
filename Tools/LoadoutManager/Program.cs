@@ -149,7 +149,8 @@ class Program
             string fileName = Path.GetFileName(file);
 
             if (fileName.EndsWith("mission.sqm", StringComparison.OrdinalIgnoreCase) ||
-                fileName.EndsWith("version.sqf", StringComparison.OrdinalIgnoreCase))
+                (fileName.EndsWith("version.sqf", StringComparison.OrdinalIgnoreCase) &&
+                !fileName.EndsWith("Init_Version.sqf", StringComparison.OrdinalIgnoreCase)))
             {
                 continue;
             }
@@ -173,7 +174,9 @@ class Program
         {
             string fileName = Path.GetFileName(destFile);
 
-            if (fileName.EndsWith("mission.sqm") || fileName.EndsWith("version.sqf"))
+            if (fileName.EndsWith("mission.sqm") ||
+                (fileName.EndsWith("version.sqf", StringComparison.OrdinalIgnoreCase) &&
+                !fileName.EndsWith("Init_Version.sqf", StringComparison.OrdinalIgnoreCase)))
             {
                 continue;
             }
