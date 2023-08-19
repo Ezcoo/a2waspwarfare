@@ -1,0 +1,34 @@
+class CfgSounds
+{
+sounds[] = {};
+class inbound {
+		name = "inbound";
+		sound[] = {"\sounds\inbound.ogg",10,1};
+		titles[] = {};
+	};
+
+class Bipod_ON {
+		name = "Bipod_ON";
+		sound[] = {"\sounds\Bipod_ON.ogg",10,1};
+		titles[] = {};
+	};
+
+class playerSelectedAsCommander {
+		name = "playerSelectedAsCommander";
+		sound[] = {"\sounds\playerSelectedAsCommander.ogg",10,1};
+		titles[] = {};
+	};
+
+class icbmLaunch {
+		name = "icbmLaunch";
+		sound[] = {"\sounds\icbmLaunch.ogg",10,1};
+		titles[] = {};
+	};
+
+class inboundMissileGround {
+		name = "inboundMissileGround";
+		sound[] = {"\sounds\inboundMissileGround.ogg",10,1};
+		titles[] = {};
+	};
+
+};
