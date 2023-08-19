@@ -83,12 +83,6 @@ class Program
         {
             var terrainInstance = (InterfaceTerrain)EnumExtensions.GetInstance(terrainName.ToString());
 
-            // Skips modded maps
-            if (terrainInstance.isModdedTerrain)
-            {
-                continue;
-            }
-
             Console.WriteLine("-------" + terrainName + "---------");
 
             Console.WriteLine(easaFileString);
