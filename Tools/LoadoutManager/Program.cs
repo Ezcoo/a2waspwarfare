@@ -113,6 +113,28 @@ class Program
 
             // Copy the files
             CopyFilesFromSourceToDestination(sourceDirectory, destinationDirectory);
+
+            string filePathForDeletingGuerillaBarracks = destinationDirectory + @"\Server\Init\Init_Server.sqf";
+
+            if (File.Exists(filePathForDeletingGuerillaBarracks))
+            {
+                string content = File.ReadAllText(filePathForDeletingGuerillaBarracks);
+
+                if (content.Contains("_barrack_amount = 2;"))
+                {
+                    content = content.Replace("_barrack_amount = 2;", "_barrack_amount = 0;");
+                    File.WriteAllText(filePathForDeletingGuerillaBarracks, content);
+                    Console.WriteLine("File updated successfully!");
+                }
+                else
+                {
+                    Console.WriteLine("The specified content was not found in the file.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("File not found!");
+            }
         }
     }
 
