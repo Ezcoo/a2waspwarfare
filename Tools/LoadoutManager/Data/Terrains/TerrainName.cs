@@ -13,4 +13,19 @@ public enum TerrainName
 
     [EnumMember(Value = "dingor")]
     DINGOR,
+
+    [EnumMember(Value = "eden")]
+    EVERON,
+
+    [EnumMember(Value = "lingor")]
+    LINGOR,
+
+    [EnumMember(Value = "smd_sahrani_a2")]
+    SAHRANI,
+
+    [EnumMember(Value = "tavi")]
+    TAVIANA,
+
+    [EnumMember(Value = "isladuala")]
+    ISLADUALA,
 }
