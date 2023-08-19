@@ -126,17 +126,37 @@ class Program
     private static void CopyFilesFromSourceToDestination(string _source, string _destination)
     {
         // Get the list of files to copy
-        var files = Directory.GetFiles(_source).Where(file =>
+        var sourceFiles = Directory.GetFiles(_source).Where(file =>
             !file.EndsWith("mission.sqm", StringComparison.OrdinalIgnoreCase) &&
             !file.EndsWith("version.sqf", StringComparison.OrdinalIgnoreCase)).ToList();
 
-        foreach (var file in files)
+        var destinationFiles = Directory.GetFiles(_destination);
+
+        // Copy files from source to destination
+        foreach (var file in sourceFiles)
         {
             string fileName = Path.GetFileName(file);
             string destFile = Path.Combine(_destination, fileName);
             File.Copy(file, destFile, true);  // true to overwrite existing files
         }
+
+        // Delete extra files in destination that are not in source
+        foreach (var destFile in destinationFiles)
+        {
+            string fileName = Path.GetFileName(destFile);
+            if (fileName.EndsWith("mission.sqm") || fileName.EndsWith("version.sqf"))
+            {
+                continue;
+            }
+
+            string correspondingSourceFile = Path.Combine(_source, fileName);
+            if (!sourceFiles.Contains(correspondingSourceFile))
+            {
+                File.Delete(destFile);
+            }
+        }
     }
+
 
     private static void GenerateAircraftSpecificLoadouts(VehicleType _vehicleType)
     {
