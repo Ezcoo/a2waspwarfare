@@ -110,7 +110,7 @@ class Program
             string sourceDirectory = Path.Combine(dir.FullName, @"Missions\[" + sourceTerrainPlayerCount + "-2hc]warfarev2_073v48co." + sourceTerrainName);
 
             // Determine the destination directory for the current modded map
-            string destinationDirectory = Path.Combine(dir.FullName, @"Modded_Missions\[55-2hc]warfarev2_073v48co." + EnumExtensions.GetEnumMemberAttrValue(terrainName));
+            string destinationDirectory = Path.Combine(dir.FullName, @"Modded_Missions\[" + sourceTerrainPlayerCount + "-2hc]warfarev2_073v48co." + EnumExtensions.GetEnumMemberAttrValue(terrainName));
 
             // Copy the files
             CopyFilesFromSourceToDestination(sourceDirectory, destinationDirectory);
