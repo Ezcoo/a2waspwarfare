@@ -27,7 +27,7 @@ _c = _c + ['BAF_Soldier_AT_MTP'];
 _i = _i + [['','',360,6,-1,2,0,1,'British',[]]];
 
 _c = _c + ['BAF_Soldier_HAT_MTP'];
-_i = _i + [['','',1050,6,-1,2,0,1,'British',[]]];
+_i = _i + [['','',1050,6,-1,3,0,1,'British',[]]];
 
 _c = _c + ['BAF_Soldier_AR_MTP'];
 _i = _i + [['','',210,5,-1,2,0,1,'British',[]]];
