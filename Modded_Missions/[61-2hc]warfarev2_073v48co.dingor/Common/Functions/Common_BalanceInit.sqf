@@ -186,9 +186,13 @@ case "Mi24_P": {
     _this removeMagazine "4Rnd_AT9_Mi24P";
     _this addMagazine "4Rnd_AT9_Mi24P";
     _this removeMagazineTurret ["2Rnd_FAB_250", [-1]];
+    _this removeMagazineTurret ["80Rnd_S8T", [-1]];
     _this removeWeaponTurret ["HeliBombLauncher", [-1]];
+    _this removeWeaponTurret ["80mmLauncher", [-1]];
     _this addMagazineTurret ["750Rnd_30mm_GSh301", [-1]];
     _this addMagazineTurret ["750Rnd_30mm_GSh301", [-1]];
+    _this addMagazineTurret ["64Rnd_57mm", [-1]];
+    _this addWeaponTurret ["57mmLauncher", [-1]];
 };
 
 // Mi-24D [AF3] - 2 pylons
