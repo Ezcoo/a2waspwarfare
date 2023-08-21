@@ -611,12 +611,12 @@ _easaLoadout = _easaLoadout + [
 ]
 ];
 
-// Mi-24V [AF3] - 6 pylons
+// Mi-24V [AF3] - 4 pylons
 _easaVehi = _easaVehi + ['Mi24_V'];
-_easaDefault = _easaDefault + [[['AT9Launcher'],['4Rnd_AT9_Mi24P','4Rnd_AT9_Mi24P']]];
+_easaDefault = _easaDefault + [[['AT9Launcher'],['4Rnd_AT9_Mi24P']]];
 _easaLoadout = _easaLoadout + [
 [
-[6800,'Ataka-V (8) | Igla-V (2)',[['AT9Launcher','Igla_twice'],['4Rnd_AT9_Mi24P','4Rnd_AT9_Mi24P','2Rnd_Igla']]]
+[6800,'Ataka-V (4) | Igla-V (2)',[['AT9Launcher','Igla_twice'],['4Rnd_AT9_Mi24P','2Rnd_Igla']]]
 ]
 ];
 

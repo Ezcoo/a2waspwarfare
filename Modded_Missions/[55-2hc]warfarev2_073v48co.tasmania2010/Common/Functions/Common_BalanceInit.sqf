@@ -171,11 +171,10 @@ case "AW159_Lynx_BAF": {
     _this addWeaponTurret ["CRV7_HEPD", [-1]];
 };
 
-// Mi-24V [AF3] - 6 pylons
+// Mi-24V [AF3] - 4 pylons
 case "Mi24_V": {
     _this removeMagazine "4Rnd_AT6_Mi24V";
     _this removeWeapon "AT6Launcher";
-    _this addMagazine "4Rnd_AT9_Mi24P";
     _this addMagazine "4Rnd_AT9_Mi24P";
     _this addWeapon "AT9Launcher";
 };
