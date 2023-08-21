@@ -27,7 +27,7 @@ _c = _c + ['TK_Soldier_AAT_EP1'];
 _i = _i + [['','',270,5,-1,1,0,1,'Takistani Army',[]]];
 
 _c = _c + ['TK_Soldier_HAT_EP1'];
-_i = _i + [['','',1050,7,-1,3,0,1,'Takistani Army',[]]];
+_i = _i + [['','',1050,7,-1,2,0,1,'Takistani Army',[]]];
 
 _c = _c + ['TK_Soldier_AA_EP1'];
 _i = _i + [['','',425,6,-1,1,0,1,'Takistani Army',[]]];
