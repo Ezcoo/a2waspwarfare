@@ -27,7 +27,7 @@ _c = _c + ['BAF_Soldier_AT_W'];
 _i = _i + [['','',360,6,-1,3,0,1,'British (Woodland)',[]]];
 
 _c = _c + ['BAF_Soldier_HAT_W'];
-_i = _i + [['','',1050,6,-1,3,0,1,'British (Woodland)',[]]];
+_i = _i + [['','',1050,6,-1,2,0,1,'British (Woodland)',[]]];
 
 _c = _c + ['BAF_Soldier_AR_W'];
 _i = _i + [['','',210,5,-1,2,0,1,'British (Woodland)',[]]];
