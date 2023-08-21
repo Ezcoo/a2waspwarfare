@@ -45,7 +45,7 @@
         base.defaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.SEVENHUNDREDFIFTY30MMGSH301ROUNDS, 4},
-                { AmmunitionType.VANILLA_FOURTYROUNDS8WITH80MMLAUNCHER, 2},
+                { AmmunitionType.SIXTYFOURROUNDS5, 2},
             };
         turretPos = -1;
 
@@ -59,7 +59,6 @@
         inGameDisplayName = "Mi-24P";
         inGameFactoryLevel = 3;
         producedFromFactoryType = FactoryType.AIRCRAFTFACTORY;
-
 
         addToDefaultLoadoutPrice = true;
     }

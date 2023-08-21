@@ -171,11 +171,10 @@ case "AW159_Lynx_BAF": {
     _this addWeaponTurret ["CRV7_HEPD", [-1]];
 };
 
-// Mi-24V [AF3] - 6 pylons
+// Mi-24V [AF3] - 4 pylons
 case "Mi24_V": {
     _this removeMagazine "4Rnd_AT6_Mi24V";
     _this removeWeapon "AT6Launcher";
-    _this addMagazine "4Rnd_AT9_Mi24P";
     _this addMagazine "4Rnd_AT9_Mi24P";
     _this addWeapon "AT9Launcher";
 };
@@ -186,9 +185,13 @@ case "Mi24_P": {
     _this removeMagazine "4Rnd_AT9_Mi24P";
     _this addMagazine "4Rnd_AT9_Mi24P";
     _this removeMagazineTurret ["2Rnd_FAB_250", [-1]];
+    _this removeMagazineTurret ["80Rnd_S8T", [-1]];
     _this removeWeaponTurret ["HeliBombLauncher", [-1]];
+    _this removeWeaponTurret ["80mmLauncher", [-1]];
     _this addMagazineTurret ["750Rnd_30mm_GSh301", [-1]];
     _this addMagazineTurret ["750Rnd_30mm_GSh301", [-1]];
+    _this addMagazineTurret ["64Rnd_57mm", [-1]];
+    _this addWeaponTurret ["57mmLauncher", [-1]];
 };
 
 // Mi-24D [AF3] - 2 pylons
