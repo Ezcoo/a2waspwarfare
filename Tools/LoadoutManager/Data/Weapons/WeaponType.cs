@@ -135,4 +135,7 @@ public enum WeaponType
 
     [EnumMember(Value = "Laserdesignator_mounted")]
     LASERDESIGNATOR,
+
+    [EnumMember(Value = "ATKMK44_ACR")]
+    ATK44,
 }
