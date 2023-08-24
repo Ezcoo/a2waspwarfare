@@ -70,7 +70,7 @@ _c = _c + ['Dingo_GL_Wdl_ACR'];
 _i = _i + [['','',1050,21,-2,2,1,0,'Czech',[]]];
 
 _c = _c + ['Pandur2_ACR'];
-_i = _i + [['','',3500,25,[true,false,2,0],4,1,0,'Czech',[]]];
+_i = _i + [['','',3500,25,[true,false,2,0],3,1,0,'Czech',[]]];
 
 /* Air Vehicles */
 _c = _c + ['Mi171Sh_CZ_EP1'];
