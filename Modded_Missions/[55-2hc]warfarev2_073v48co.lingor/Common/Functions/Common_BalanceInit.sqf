@@ -338,4 +338,25 @@ case "BRDM2_ATGM_INS": {
     _this addWeaponTurret ["Igla_twice", [0]];
 };
 
+// BTR-90 [LF3]
+case "BTR90": {
+_current_heavy_level = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_LIGHT;
+if (_current_heavy_level < 4) then {
+    _this removeWeapon "AT5LauncherSingle";
+};
+};
+
+// Pandur [LF3]
+case "Pandur2_ACR": {
+    _this removeMagazineTurret ["140Rnd_30mm_ATKMK44_HE_ACR", [0]];
+    _this removeMagazineTurret ["60Rnd_30mm_ATKMK44_AP_ACR", [0]];
+    _this removeWeaponTurret ["ATKMK44_ACR", [0]];
+    _this addMagazineTurret ["200Rnd_40mmHE_FV510", [0]];
+    _this addWeaponTurret ["CTWS", [0]];
+_current_heavy_level = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_LIGHT;
+if (_current_heavy_level < 4) then {
+    _this removeWeapon "SpikeLauncher_ACR";
+};
+};
+
 };
