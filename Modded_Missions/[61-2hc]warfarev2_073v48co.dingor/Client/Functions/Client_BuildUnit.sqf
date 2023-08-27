@@ -287,7 +287,7 @@ if ((typeOf _vehicle ) in ['MLRS','GRAD','GRAD_CDF','MLRS_DES_EP1','M1129_MC_EP1
 	_vehicle setVariable ["restricted",false];_vehicle addEventHandler ["GetIn",{_this Spawn HandleArty}]
 };
 
-if(typeOf _vehicle in ['F35B','AV8B','AV8B2','A10','A10_US_EP1','Su25_TK_EP1','Su34','Su39','An2_TK_EP1','L159_ACR','L39_TK_EP1']) then {
+if(typeOf _vehicle in ['F35B','AV8B','AV8B2','A10','A10_US_EP1','Su25_TK_EP1','Su34','Su39','An2_TK_EP1','L159_ACR','L39_TK_EP1','Su25_Ins']) then {
 	_vehicle addeventhandler ['Fired',{_this spawn HandleBombs;_this spawn HandleAAMissiles}];
 };
 
@@ -297,6 +297,10 @@ if(typeOf _vehicle in ['2S6M_Tunguska','M6_EP1']) then {
 
 if(typeOf _vehicle in ['T90','BMP3']) then {
 	_vehicle addeventhandler ['Fired',{_this spawn HandleATReload;}];
+};
+
+if(typeOf _vehicle in ['Pandur2_ACR']) then {
+	_vehicle addeventhandler ['Fired',{_this spawn HandleCommanderReload;}];
 };
 
 if ({(typeOf _vehicle) isKindOf _x} count ["LAV25_Base","M2A2_Base","BMP2_Base","BTR90_Base" ] != 0) then {_vehicle addeventhandler ["fired",{_this spawn HandleReload;}];};
@@ -328,7 +332,25 @@ if ((typeOf _vehicle) isKindOf "Tank" || (typeOf _vehicle) isKindOf "Car") then 
 
 	//--- Crew Management.
 	_crew = missionNamespace getVariable Format ["WFBE_%1SOLDIER",sideJoinedText];
-	if (_unit isKindOf "Tank") then {_crew = missionNamespace getVariable Format ["WFBE_%1CREW",sideJoinedText]};
+	
+	// Marty : All crew members in tanks are replaced by engineers of their side. 
+	// Russian side do not have engineer class so we use takistan class engineer for russian.
+	//if (_unit isKindOf "Tank") then {_crew = missionNamespace getVariable Format ["WFBE_%1CREW",sideJoinedText]};
+	if (_unit isKindOf "Tank") then {
+		if (sideJoinedText == "WEST")then 
+		{
+			// WEST side (american)
+			_crew = "US_Soldier_Engineer_EP1" ;
+			//player sideChat Format ["US_Soldier_Engineer_EP1 for %1",sideJoinedText];
+		}
+		else 
+		{
+			// EAST side (russian)
+			_crew = "TK_Soldier_Engineer_EP1" ;
+			//player sideChat Format ["TK_Soldier_Engineer_EP1 for %1",sideJoinedText];
+		};
+	};
+	
 	if (_unit isKindOf "Air") then {
 		_crew = missionNamespace getVariable Format ["WFBE_%1PILOT",sideJoinedText];
 	};

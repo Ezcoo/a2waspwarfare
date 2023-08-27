@@ -100,6 +100,9 @@ if (_unitType isKindOf "Man") then {
     if(typeOf _vehicle in ['2S6M_Tunguska','M6_EP1']) then {_vehicle addeventhandler ['Fired',{_this spawn HandleAAMissiles;}];};
 	if ({(typeOf _vehicle) isKindOf _x} count ["LAV25_Base","M2A2_Base","BMP2_Base","BTR90_Base"] != 0) then {_vehicle addeventhandler ["fired",{_this spawn HandleReload;}]};
 	if(typeOf _vehicle in ['T90','BMP3']) then {_vehicle addeventhandler ['Fired',{_this spawn HandleATReload;}];};
+	if(typeOf _vehicle in ['Pandur2_ACR']) then {
+    	_vehicle addeventhandler ['Fired',{_this spawn HandleCommanderReload;}];
+    };
 
 // IRS MODULE
 if ((typeOf _vehicle) isKindOf "Tank" || (typeOf _vehicle) isKindOf "Car") then {

@@ -70,7 +70,7 @@ _c = _c + ['Dingo_GL_DST_ACR'];
 _i = _i + [['','',1050,21,-2,2,1,0,'Czech',[]]];
 
 _c = _c + ['Pandur2_ACR'];
-_i = _i + [['','',3500,25,[true,false,2,0],4,1,0,'Czech',[]]];
+_i = _i + [['','',2650,25,[true,false,2,0],3,1,0,'Czech',[]]];
 
 /* Air Vehicles */
 _c = _c + ['Mi171Sh_CZ_EP1'];
@@ -80,7 +80,7 @@ _c = _c + ['Mi171Sh_rockets_CZ_EP1'];
 _i = _i + [['','',26500,40,-2,3,3,0,'Czech',[]]];
 
 _c = _c + ['Mi24_D_CZ_ACR'];
-_i = _i + [['','',42620,45,-2,4,3,0,'Czech',[]]];
+_i = _i + [['','',39620,45,-2,4,3,0,'Czech',[]]];
 
 for '_z' from 0 to (count _c)-1 do {
 	if (isClass (configFile >> 'CfgVehicles' >> (_c select _z))) then {

@@ -1,4 +1,6 @@
+using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -18,7 +20,8 @@ public abstract class BaseVehicle : InterfaceVehicle
     protected int inGameFactoryLevel { get; set; }
     protected FactoryType producedFromFactoryType { get; set; }
     protected string inGameDisplayName { get; set; }
-    protected Dictionary<WeaponType, int> weaponToRemoveUntilHeavyLevelOnATank { get; set; }
+    protected Dictionary<WeaponType, int> weaponsToRemoveUntilFactoryLevelOnAVehicle { get; set; }
+    protected Dictionary<WeaponType, int> weaponsOnTheTurretToRemoveUntilFactoryLevelOnAVehicle { get; set; }
 
     // Add price etc here for more advanced SQF generation
 
@@ -48,28 +51,66 @@ public abstract class BaseVehicle : InterfaceVehicle
             finalSQFCode += finalTurretSQFCode;
         }
 
-        if (weaponToRemoveUntilHeavyLevelOnATank != null && weaponToRemoveUntilHeavyLevelOnATank.Count > 0)
+        // Remove weapons on non turret
+        if (weaponsToRemoveUntilFactoryLevelOnAVehicle != null &&
+            weaponsToRemoveUntilFactoryLevelOnAVehicle.Count > 0)
         {
             finalSQFCode += GenerateSQFCodeForWeaponRemoval();
+        }
+
+        // Remove weapons on the turret
+        if (weaponsOnTheTurretToRemoveUntilFactoryLevelOnAVehicle != null &&
+            weaponsOnTheTurretToRemoveUntilFactoryLevelOnAVehicle.Count > 0)
+        {
+            finalSQFCode += GenerateSQFCodeForWeaponRemovalOnTheTurret();
         }
 
         return $"{GenerateCommentForTheSqfCode()}\ncase \"{EnumExtensions.GetEnumMemberAttrValue(VehicleType)}\": {{\n" + finalSQFCode + "};";
     }
 
-    // Currently only supports one weapon per vehicle, and only heavy factory
     private string GenerateSQFCodeForWeaponRemoval()
     {
         StringBuilder sb = new StringBuilder();
 
-        sb.AppendLine($"_current_heavy_level = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_HEAVY;");
-        sb.AppendLine($"if (_current_heavy_level < {weaponToRemoveUntilHeavyLevelOnATank.First().Value}) then {{");
+        // Temp solution
+        string facLevelVariable = "_currentFactoryLevel";
+        string facTypeVariable = "WFBE_UP_HEAVY";
+        if (producedFromFactoryType == FactoryType.LIGHTFACTORY)
+        {
+            facTypeVariable = "WFBE_UP_LIGHT";
+        }
+
+        //     _this removeWeaponTurret ["ATKMK44_ACR", [0]];
+        sb.AppendLine($"{facLevelVariable} = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select {facTypeVariable}; ");
+        sb.AppendLine($"if ({facLevelVariable} < {weaponsToRemoveUntilFactoryLevelOnAVehicle.First().Value}) then {{");
         sb.AppendLine($"    _this removeWeapon \"{EnumExtensions.GetEnumMemberAttrValue(
-            weaponToRemoveUntilHeavyLevelOnATank.First().Key)}\";");
+            weaponsToRemoveUntilFactoryLevelOnAVehicle.First().Key)}\";");
         sb.AppendLine("};");
 
         return sb.ToString();
     }
 
+    private string GenerateSQFCodeForWeaponRemovalOnTheTurret()
+    {
+        StringBuilder sb = new StringBuilder();
+
+        // Temp solution
+        string facLevelVariable = "_currentFactoryLevel";
+        string facTypeVariable = "WFBE_UP_HEAVY";
+        if (producedFromFactoryType == FactoryType.LIGHTFACTORY)
+        {
+            facTypeVariable = "WFBE_UP_LIGHT";
+        }
+
+        //     _this removeWeaponTurret ["ATKMK44_ACR", [0]];
+        sb.AppendLine($"{facLevelVariable} = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select {facTypeVariable}; ");
+        sb.AppendLine($"if ({facLevelVariable} < {weaponsOnTheTurretToRemoveUntilFactoryLevelOnAVehicle.First().Value}) then {{");
+        sb.AppendLine($"    _this removeWeaponTurret [\"{EnumExtensions.GetEnumMemberAttrValue(
+            weaponsOnTheTurretToRemoveUntilFactoryLevelOnAVehicle.First().Key)}\", [{turretPos}]];");
+        sb.AppendLine("};");
+
+        return sb.ToString();
+    }
 
     public string GenerateCommonBalanceInitForTheVehicle(Loadout _vanillaLoadout, Loadout _defaultLoadout, string _turret = "")
     {

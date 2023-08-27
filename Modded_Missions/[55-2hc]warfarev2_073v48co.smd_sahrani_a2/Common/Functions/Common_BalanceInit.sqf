@@ -1,3 +1,5 @@
+Private["_currentFactoryLevel"];
+
 switch (typeOf _this) do
 {
 // Su-34 [AF5] - 10 pylons
@@ -310,16 +312,16 @@ case "AH6J_EP1": {
 
 // BMP-2 [HF1]
 case "BMP2_INS": {
-_current_heavy_level = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_HEAVY;
-if (_current_heavy_level < 2) then {
+_currentFactoryLevel = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_HEAVY; 
+if (_currentFactoryLevel < 2) then {
     _this removeWeapon "AT5LauncherSingle";
 };
 };
 
 // BMP-2 [HF1]
 case "BMP2_TK_EP1": {
-_current_heavy_level = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_HEAVY;
-if (_current_heavy_level < 2) then {
+_currentFactoryLevel = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_HEAVY; 
+if (_currentFactoryLevel < 2) then {
     _this removeWeapon "AT5LauncherSingle";
 };
 };
@@ -336,6 +338,28 @@ case "BRDM2_ATGM_INS": {
     _this addMagazineTurret ["2Rnd_Igla", [0]];
     _this addMagazineTurret ["2Rnd_Igla", [0]];
     _this addWeaponTurret ["Igla_twice", [0]];
+};
+
+// BTR-90 [LF3]
+case "BTR90": {
+_currentFactoryLevel = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_LIGHT; 
+if (_currentFactoryLevel < 4) then {
+    _this removeWeapon "AT5LauncherSingle";
+};
+};
+
+// Pandur [LF3]
+case "Pandur2_ACR": {
+    _this removeMagazineTurret ["140Rnd_30mm_ATKMK44_HE_ACR", [0]];
+    _this removeMagazineTurret ["60Rnd_30mm_ATKMK44_AP_ACR", [0]];
+    _this removeWeaponTurret ["ATKMK44_ACR", [0]];
+    _this addMagazineTurret ["210Rnd_25mm_M242_APDS", [0]];
+    _this addMagazineTurret ["210Rnd_25mm_M242_HEI", [0]];
+    _this addWeaponTurret ["M242", [0]];
+_currentFactoryLevel = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_LIGHT; 
+if (_currentFactoryLevel < 4) then {
+    _this removeWeaponTurret ["SpikeLauncher_ACR", [0]];
+};
 };
 
 };

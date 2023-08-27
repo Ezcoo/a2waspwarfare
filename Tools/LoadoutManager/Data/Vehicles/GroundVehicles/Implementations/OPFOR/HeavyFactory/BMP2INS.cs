@@ -6,7 +6,7 @@
         inGameDisplayName = "BMP-2";
         inGameFactoryLevel = 1;
         producedFromFactoryType = FactoryType.HEAVYFACTORY;
-        weaponToRemoveUntilHeavyLevelOnATank = new Dictionary<WeaponType, int>
+        weaponsToRemoveUntilFactoryLevelOnAVehicle = new Dictionary<WeaponType, int>
         {
             {WeaponType.KONKURSLAUNCHERSINGLE, 2},
         };

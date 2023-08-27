@@ -4,6 +4,7 @@ Private ['_count'];
 
 // --- additional handlers
 HandleRocketTraccer = Compile preprocessFileLineNumbers "Common\Functions\Common_HandleRocketTracer.sqf";
+HandleCommanderReload = Compile preprocessFileLineNumbers "Common\Functions\Common_HandleCommanderReload.sqf";
 HandleReload = Compile preprocessFileLineNumbers "Common\Functions\Common_HandleReload.sqf";
 HandleATReload = Compile preprocessFileLineNumbers "Common\Functions\Common_HandleATReload.sqf";
 HandleBombs = Compile preprocessFileLineNumbers "Common\Functions\Common_HandleBombs.sqf";
