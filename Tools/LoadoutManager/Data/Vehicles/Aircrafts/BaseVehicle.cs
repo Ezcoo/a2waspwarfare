@@ -18,7 +18,7 @@ public abstract class BaseVehicle : InterfaceVehicle
     protected int inGameFactoryLevel { get; set; }
     protected FactoryType producedFromFactoryType { get; set; }
     protected string inGameDisplayName { get; set; }
-    protected Dictionary<WeaponType, int> weaponToRemoveUntilHeavyLevelOnATank { get; set; }
+    protected Dictionary<WeaponType, int> weaponsToRemoveUntilHeavyLevelOnATank { get; set; }
 
     // Add price etc here for more advanced SQF generation
 
@@ -48,7 +48,7 @@ public abstract class BaseVehicle : InterfaceVehicle
             finalSQFCode += finalTurretSQFCode;
         }
 
-        if (weaponToRemoveUntilHeavyLevelOnATank != null && weaponToRemoveUntilHeavyLevelOnATank.Count > 0)
+        if (weaponsToRemoveUntilHeavyLevelOnATank != null && weaponsToRemoveUntilHeavyLevelOnATank.Count > 0)
         {
             finalSQFCode += GenerateSQFCodeForWeaponRemoval();
         }
@@ -67,9 +67,9 @@ public abstract class BaseVehicle : InterfaceVehicle
             facTypeVariable = "_currentLfLevel";
         }
 
-        sb.AppendLine($"if ({facTypeVariable} < {weaponToRemoveUntilHeavyLevelOnATank.First().Value}) then {{");
+        sb.AppendLine($"if ({facTypeVariable} < {weaponsToRemoveUntilHeavyLevelOnATank.First().Value}) then {{");
         sb.AppendLine($"    _this removeWeapon \"{EnumExtensions.GetEnumMemberAttrValue(
-            weaponToRemoveUntilHeavyLevelOnATank.First().Key)}\";");
+            weaponsToRemoveUntilHeavyLevelOnATank.First().Key)}\";");
         sb.AppendLine("};");
 
         return sb.ToString();
