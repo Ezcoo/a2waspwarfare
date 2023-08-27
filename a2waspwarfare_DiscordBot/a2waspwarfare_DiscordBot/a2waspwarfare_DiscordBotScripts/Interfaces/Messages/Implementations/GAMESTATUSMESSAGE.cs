@@ -44,7 +44,7 @@ public class GAMESTATUSMESSAGE : BaseMessage
     // Add array here of custom maps later
     private void ChangeMessageColorDependingOnTheCurrentWorldName()
     {
-        if (GameData.Instance.GetWorldNameAsCapitalFirstLetter() == "Chernarus")
+        if (GameData.Instance.GetInterfaceTerrainFromWorldName().TerrainType == TerrainType.FOREST)
         {
             thisInterfaceMessage.MessageEmbedColor = Color.DarkGreen;
             return;

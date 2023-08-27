@@ -52,15 +52,15 @@ public class GameDataUpdateEvent : ScheduledEvent
     private void SetTheBotStatus()
     {
         var client = BotReference.GetClientRef();
-        string worldName = GameData.Instance.GetWorldNameAsCapitalFirstLetter();
+        var terrainInstance = GameData.Instance.GetInterfaceTerrainFromWorldName();
 
         client.SetGameAsync(GameData.Instance.GetGameMapAndPlayerCount());
 
-        if (worldName == "Chernarus")
+        if (terrainInstance.TerrainType == TerrainType.FOREST)
         {
             client.SetStatusAsync(status: Discord.UserStatus.Online);
         }
-        else if (worldName == "Takistan")
+        else if (terrainInstance.TerrainType == TerrainType.DESERT)
         {
             client.SetStatusAsync(status: Discord.UserStatus.AFK);
         }
