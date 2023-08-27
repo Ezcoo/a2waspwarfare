@@ -14,8 +14,6 @@ public class PANDUR : BaseGroundVehicle
             {
                 { AmmunitionType.TWOHUNDREDTENROUND25MMM242APDS, 2},
                 { AmmunitionType.TWOHUNDREDTENROUND25MMM242HEI, 2},
-                //{ AmmunitionType.TWOHUNDREDROUNDCTWSSABOT, 2},
-
             };
 
         turretPos = 0;
