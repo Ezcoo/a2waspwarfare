@@ -6,7 +6,40 @@ _lastCommanderTeam = commanderTeam;
 _changeCommander = false;
 _timer = 0;
 
+//Marty : AFK time inactivity in seconds (10 min = 600 s)
+//_inactivityTimeout = 10; 
+_inactivityTimeout = 600;
 while {!gameOver} do {
+	//Marty : check the inactivity (Away From Keyboard, AFK) and kick the player after too long time elapsed
+	// calculate the elapsed time from last action of the player 
+    _currentTime = time ;
+	_lastActionTime = player getVariable ["lastActionTime", time];
+	_elapsedTime = _currentTime - _lastActionTime ;
+	//player sideChat format ["Elapsed Time: %1 seconds", _elapsedTime];
+
+    // Check if the player has been inactive for more than the specified duration, if so he's ejected from the mission.
+    if (_elapsedTime > _inactivityTimeout) then {
+        
+        hint "you are terminated for AFKing";// Afficher un message de déconnexion
+		//_name = name player ;
+		//player sideChat format ["_name: %1", _name];
+		//serverCommand format ["#kick %1",_name];
+		//failMission "END1";
+		
+		endMission "END1"; //not good. The player stays in the slot. Must be kicked using servercommand.
+    };
+	
+	// Verify if the player moved since the last check position
+	_currentPosition 	= getPos player;
+	_lastPosition 		= player getVariable ["lastPosition", getPos player] ;
+      
+	if (str(_currentPosition) != str(_lastPosition)) then {            	 
+         player setVariable ["lastActionTime", time]; // If the player moved, it saves the current time
+
+    };
+	player setVariable ["lastPosition", position player]; // Saving the last position of the player with the current one.
+	//Marty 
+
 	commanderTeam = (sideJoined) Call WFBE_CO_FNC_GetCommanderTeam;
 	if (IsNull commanderTeam && !IsNull _lastCommanderTeam) then {_changeCommander = true};
 	if (!IsNull commanderTeam && IsNull _lastCommanderTeam) then {_changeCommander = true};
