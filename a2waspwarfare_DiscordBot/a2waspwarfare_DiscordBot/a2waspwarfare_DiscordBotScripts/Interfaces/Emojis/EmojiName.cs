@@ -6,14 +6,14 @@ using System.Runtime.Serialization;
 public enum EmojiName
 {
     [EnumMember(Value = "<:blufor_icon:1079531790873673819>")]
-    BLUFORICON = 0,
+    BLUFORICON,
 
     [EnumMember(Value = "<:opfor_icon:1079531788319330304>")]
-    OPFORICON = 1,
+    OPFORICON,
 
     [EnumMember(Value = "<:evergreen_tree:>")]
-    EVERGREENTREE = 2,
+    EVERGREENTREE,
 
     [EnumMember(Value = "<:desert:>")]
-    DESERT = 3,
+    DESERT,
 }
