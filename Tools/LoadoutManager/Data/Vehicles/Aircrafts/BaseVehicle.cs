@@ -1,4 +1,6 @@
+using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Runtime.Serialization;
 using System.Text;
 
@@ -90,14 +92,16 @@ public abstract class BaseVehicle : InterfaceVehicle
         StringBuilder sb = new StringBuilder();
 
         // Temp solution
-        string facTypeVariable = "_currentHfLevel";
+        string facLevelVariable = "_currentFactoryLevel";
+        string facTypeVariable = "WFBE_UP_HEAVY";
         if (producedFromFactoryType == FactoryType.LIGHTFACTORY)
         {
-            facTypeVariable = "_currentLfLevel";
+            facTypeVariable = "WFBE_UP_LIGHT";
         }
 
         //     _this removeWeaponTurret ["ATKMK44_ACR", [0]];
-        sb.AppendLine($"if ({facTypeVariable} < {weaponsOnTheTurretToRemoveUntilFactoryLevelOnAVehicle.First().Value}) then {{");
+        sb.AppendLine($"{facLevelVariable} = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select {facTypeVariable}; ");
+        sb.AppendLine($"if ({facLevelVariable} < {weaponsOnTheTurretToRemoveUntilFactoryLevelOnAVehicle.First().Value}) then {{");
         sb.AppendLine($"    _this removeWeaponTurret [\"{EnumExtensions.GetEnumMemberAttrValue(
             weaponsOnTheTurretToRemoveUntilFactoryLevelOnAVehicle.First().Key)}\", [{turretPos}]];");
         sb.AppendLine("};");
