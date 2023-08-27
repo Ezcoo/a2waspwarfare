@@ -61,14 +61,13 @@ public abstract class BaseVehicle : InterfaceVehicle
         StringBuilder sb = new StringBuilder();
 
         // Temp solution
-        string facType = "WFBE_UP_HEAVY";
+        string facTypeVariable = "_currentHfLevel";
         if (producedFromFactoryType == FactoryType.LIGHTFACTORY)
         {
-            facType = "WFBE_UP_LIGHT";
+            facTypeVariable = "_currentLfLevel";
         }
 
-        sb.AppendLine($"_current_heavy_level = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select " + facType + ";");
-        sb.AppendLine($"if (_current_heavy_level < {weaponToRemoveUntilHeavyLevelOnATank.First().Value}) then {{");
+        sb.AppendLine($"if ({facTypeVariable} < {weaponToRemoveUntilHeavyLevelOnATank.First().Value}) then {{");
         sb.AppendLine($"    _this removeWeapon \"{EnumExtensions.GetEnumMemberAttrValue(
             weaponToRemoveUntilHeavyLevelOnATank.First().Key)}\";");
         sb.AppendLine("};");
