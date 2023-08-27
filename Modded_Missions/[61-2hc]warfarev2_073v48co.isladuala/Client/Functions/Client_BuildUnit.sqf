@@ -328,7 +328,25 @@ if ((typeOf _vehicle) isKindOf "Tank" || (typeOf _vehicle) isKindOf "Car") then 
 
 	//--- Crew Management.
 	_crew = missionNamespace getVariable Format ["WFBE_%1SOLDIER",sideJoinedText];
-	if (_unit isKindOf "Tank") then {_crew = missionNamespace getVariable Format ["WFBE_%1CREW",sideJoinedText]};
+	
+	// Marty : All crew members in tanks are replaced by engineers of their side. 
+	// Russian side do not have engineer class so we use takistan class engineer for russian.
+	//if (_unit isKindOf "Tank") then {_crew = missionNamespace getVariable Format ["WFBE_%1CREW",sideJoinedText]};
+	if (_unit isKindOf "Tank") then {
+		if (sideJoinedText == "WEST")then 
+		{
+			// WEST side (american)
+			_crew = "US_Soldier_Engineer_EP1" ;
+			//player sideChat Format ["US_Soldier_Engineer_EP1 for %1",sideJoinedText];
+		}
+		else 
+		{
+			// EAST side (russian)
+			_crew = "TK_Soldier_Engineer_EP1" ;
+			//player sideChat Format ["TK_Soldier_Engineer_EP1 for %1",sideJoinedText];
+		};
+	};
+	
 	if (_unit isKindOf "Air") then {
 		_crew = missionNamespace getVariable Format ["WFBE_%1PILOT",sideJoinedText];
 	};
