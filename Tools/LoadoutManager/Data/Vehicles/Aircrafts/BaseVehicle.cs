@@ -18,8 +18,8 @@ public abstract class BaseVehicle : InterfaceVehicle
     protected int inGameFactoryLevel { get; set; }
     protected FactoryType producedFromFactoryType { get; set; }
     protected string inGameDisplayName { get; set; }
-    protected Dictionary<WeaponType, int> weaponsToRemoveUntilHeavyLevelOnATank { get; set; }
-    protected Dictionary<WeaponType, int> weaponsOnTheTurretToRemoveUntilHeavyLevelOnATank { get; set; }
+    protected Dictionary<WeaponType, int> weaponsToRemoveUntilFactoryLevelOnAVehicle { get; set; }
+    protected Dictionary<WeaponType, int> weaponsOnTheTurretToRemoveUntilFactoryLevelOnAVehicle { get; set; }
 
     // Add price etc here for more advanced SQF generation
 
@@ -50,15 +50,15 @@ public abstract class BaseVehicle : InterfaceVehicle
         }
 
         // Remove weapons on non turret
-        if (weaponsToRemoveUntilHeavyLevelOnATank != null &&
-            weaponsToRemoveUntilHeavyLevelOnATank.Count > 0)
+        if (weaponsToRemoveUntilFactoryLevelOnAVehicle != null &&
+            weaponsToRemoveUntilFactoryLevelOnAVehicle.Count > 0)
         {
             finalSQFCode += GenerateSQFCodeForWeaponRemoval();
         }
 
         // Remove weapons on the turret
-        if (weaponsOnTheTurretToRemoveUntilHeavyLevelOnATank != null &&
-            weaponsOnTheTurretToRemoveUntilHeavyLevelOnATank.Count > 0)
+        if (weaponsOnTheTurretToRemoveUntilFactoryLevelOnAVehicle != null &&
+            weaponsOnTheTurretToRemoveUntilFactoryLevelOnAVehicle.Count > 0)
         {
             finalSQFCode += GenerateSQFCodeForWeaponRemovalOnTheTurret();
         }
@@ -77,9 +77,9 @@ public abstract class BaseVehicle : InterfaceVehicle
             facTypeVariable = "_currentLfLevel";
         }
 
-        sb.AppendLine($"if ({facTypeVariable} < {weaponsToRemoveUntilHeavyLevelOnATank.First().Value}) then {{");
+        sb.AppendLine($"if ({facTypeVariable} < {weaponsToRemoveUntilFactoryLevelOnAVehicle.First().Value}) then {{");
         sb.AppendLine($"    _this removeWeapon \"{EnumExtensions.GetEnumMemberAttrValue(
-            weaponsToRemoveUntilHeavyLevelOnATank.First().Key)}\";");
+            weaponsToRemoveUntilFactoryLevelOnAVehicle.First().Key)}\";");
         sb.AppendLine("};");
 
         return sb.ToString();
@@ -97,9 +97,9 @@ public abstract class BaseVehicle : InterfaceVehicle
         }
 
         //     _this removeWeaponTurret ["ATKMK44_ACR", [0]];
-        sb.AppendLine($"if ({facTypeVariable} < {weaponsOnTheTurretToRemoveUntilHeavyLevelOnATank.First().Value}) then {{");
+        sb.AppendLine($"if ({facTypeVariable} < {weaponsOnTheTurretToRemoveUntilFactoryLevelOnAVehicle.First().Value}) then {{");
         sb.AppendLine($"    _this removeWeaponTurret [\"{EnumExtensions.GetEnumMemberAttrValue(
-            weaponsOnTheTurretToRemoveUntilHeavyLevelOnATank.First().Key)}\", [{turretPos}]];");
+            weaponsOnTheTurretToRemoveUntilFactoryLevelOnAVehicle.First().Key)}\", [{turretPos}]];");
         sb.AppendLine("};");
 
         return sb.ToString();
