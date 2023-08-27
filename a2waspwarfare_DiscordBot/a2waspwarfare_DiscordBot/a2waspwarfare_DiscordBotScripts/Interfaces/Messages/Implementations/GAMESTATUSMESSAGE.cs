@@ -29,7 +29,7 @@ public class GAMESTATUSMESSAGE : BaseMessage
 
     public override Task<string> GenerateMessage(ulong _leagueCategoryId = 0)
     {
-        thisInterfaceMessage.MessageEmbedTitle = GameData.Instance.GetGameMapAndPlayerCount();
+        thisInterfaceMessage.MessageEmbedTitle = GameData.Instance.GetGameMapAndPlayerCountWithEmoji();
         thisInterfaceMessage.MessageDescription = GameData.Instance.GenerateGameStatusMessage();
         ChangeMessageColorDependingOnTheCurrentWorldName();
 

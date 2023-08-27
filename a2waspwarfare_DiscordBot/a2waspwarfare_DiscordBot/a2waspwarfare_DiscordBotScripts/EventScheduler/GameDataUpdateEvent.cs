@@ -48,7 +48,8 @@ public class GameDataUpdateEvent : ScheduledEvent
         }
     }
 
-    // Changes the bot status message to: "Playing: Chernarus[35/55]" for example, and the status to online/away depending on the map
+    // Changes the bot status message to: "Playing: Chernarus[35/55]" for example,
+    // and the status to online/away depending on the terrain type
     private void SetTheBotStatus()
     {
         var client = BotReference.GetClientRef();

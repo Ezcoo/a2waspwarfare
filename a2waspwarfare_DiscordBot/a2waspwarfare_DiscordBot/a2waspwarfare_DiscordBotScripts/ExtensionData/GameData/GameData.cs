@@ -33,13 +33,28 @@ public class GameData
 
     [DataMember] private string[] exportedArgs = new string[4];
 
+    public string GetGameMapAndPlayerCountWithEmoji()
+    {
+        var terrainInstance = GetInterfaceTerrainFromWorldName();
+        string playerCount = GameData.Instance.exportedArgs[4];
+        string maxPlayerCount = terrainInstance.DetermineMissionTypeIfItsForestOrDesertAndGetThePlayerCount();
+
+        string terrainEmoji = EnumExtensions.GetEnumMemberAttrValue(EmojiName.EVERGREENTREE);
+
+        if (terrainInstance.TerrainType == TerrainType.DESERT)
+        {
+            terrainEmoji = EnumExtensions.GetEnumMemberAttrValue(EmojiName.DESERT);
+        }
+
+        return terrainEmoji + " [" + playerCount + "/" + maxPlayerCount + "] " + terrainInstance.TerrainDisplayName;
+    }
+
     public string GetGameMapAndPlayerCount()
     {
         var terrainInstance = GetInterfaceTerrainFromWorldName();
         string playerCount = GameData.Instance.exportedArgs[4];
         string maxPlayerCount = terrainInstance.DetermineMissionTypeIfItsForestOrDesertAndGetThePlayerCount();
 
-        // worldName as the title (add player count here)
         return "[" + playerCount + "/" + maxPlayerCount + "] " + terrainInstance.TerrainDisplayName;
     }
 
