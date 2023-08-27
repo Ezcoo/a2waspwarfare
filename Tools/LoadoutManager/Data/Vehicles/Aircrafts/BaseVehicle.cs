@@ -56,12 +56,18 @@ public abstract class BaseVehicle : InterfaceVehicle
         return $"{GenerateCommentForTheSqfCode()}\ncase \"{EnumExtensions.GetEnumMemberAttrValue(VehicleType)}\": {{\n" + finalSQFCode + "};";
     }
 
-    // Currently only supports one weapon per vehicle, and only heavy factory
     private string GenerateSQFCodeForWeaponRemoval()
     {
         StringBuilder sb = new StringBuilder();
 
-        sb.AppendLine($"_current_heavy_level = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_HEAVY;");
+        // Temp solution
+        string facType = "WFBE_UP_HEAVY";
+        if (producedFromFactoryType == FactoryType.LIGHTFACTORY)
+        {
+            facType = "WFBE_UP_LIGHT";
+        }
+
+        sb.AppendLine($"_current_heavy_level = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select " + facType + ";");
         sb.AppendLine($"if (_current_heavy_level < {weaponToRemoveUntilHeavyLevelOnATank.First().Value}) then {{");
         sb.AppendLine($"    _this removeWeapon \"{EnumExtensions.GetEnumMemberAttrValue(
             weaponToRemoveUntilHeavyLevelOnATank.First().Key)}\";");

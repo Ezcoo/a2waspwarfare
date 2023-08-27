@@ -103,4 +103,10 @@ public enum VehicleType
 
     [EnumMember(Value = "BRDM2_ATGM_INS")]
     BRDM2ATGMINS,
+
+    [EnumMember(Value = "BTR90")]
+    BTR90,
+
+    [EnumMember(Value = "Pandur2_ACR")]
+    PANDUR,
 }

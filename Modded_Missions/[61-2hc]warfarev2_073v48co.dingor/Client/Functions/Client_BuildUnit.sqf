@@ -299,6 +299,10 @@ if(typeOf _vehicle in ['T90','BMP3']) then {
 	_vehicle addeventhandler ['Fired',{_this spawn HandleATReload;}];
 };
 
+if(typeOf _vehicle in ['Pandur2_ACR']) then {
+	_vehicle addeventhandler ['Fired',{_this spawn HandleCommanderReload;}];
+};
+
 if ({(typeOf _vehicle) isKindOf _x} count ["LAV25_Base","M2A2_Base","BMP2_Base","BTR90_Base" ] != 0) then {_vehicle addeventhandler ["fired",{_this spawn HandleReload;}];};
 
 if({(_vehicle isKindOf _x)} count ["Tank","Wheeled_APC"] !=0) then {_vehicle addeventhandler ['Engine',{_this execVM "Client\Module\Engines\Engine.sqf"}];
