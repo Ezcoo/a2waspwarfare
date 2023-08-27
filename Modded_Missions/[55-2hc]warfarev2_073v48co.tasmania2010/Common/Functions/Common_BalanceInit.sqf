@@ -1,11 +1,7 @@
+Private["_currentFactoryLevel"];
+
 switch (typeOf _this) do
 {
-Private["_sideUpgrades", "_currentLfLevel", "_currentHfLevel"];
-
-_sideUpgrades = (side group player) Call WFBE_CO_FNC_GetSideUpgrades;
-_currentLfLevel = _sideUpgrades select WFBE_UP_LIGHT;
-_currentHfLevel = _sideUpgrades select WFBE_UP_HEAVY;
-
 // Su-34 [AF5] - 10 pylons
 case "Su34": {
     _this removeMagazine "4Rnd_R73";
@@ -357,7 +353,8 @@ case "Pandur2_ACR": {
     _this addMagazineTurret ["210Rnd_25mm_M242_APDS", [0]];
     _this addMagazineTurret ["210Rnd_25mm_M242_HEI", [0]];
     _this addWeaponTurret ["M242", [0]];
-if (_currentLfLevel < 4) then {
+_currentFactoryLevel = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_LIGHT; 
+if (_currentFactoryLevel < 4) then {
     _this removeWeaponTurret ["SpikeLauncher_ACR", [0]];
 };
 };
