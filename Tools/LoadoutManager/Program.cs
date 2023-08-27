@@ -73,6 +73,12 @@ class Program
         easaFileString += "\n" + aircraftEasaLoadoutsFile;
         easaFileString += GenerateEndOfTheEasaFile();
 
+
+        commonBalanceFileString += @"Private[""_sideUpgrades"", ""_currentLfLevel"", ""_currentHfLevel""];" + "\n\n";
+        commonBalanceFileString += "_sideUpgrades = (side group player) Call WFBE_CO_FNC_GetSideUpgrades;" + "\n";
+        commonBalanceFileString += "_currentLfLevel = _sideUpgrades select WFBE_UP_LIGHT;" + "\n";
+        commonBalanceFileString += "_currentHfLevel = _sideUpgrades select WFBE_UP_HEAVY;" + "\n";
+        commonBalanceFileString += "\n";
         commonBalanceFileString += "switch (typeOf _this) do\n{\n";
         commonBalanceFileString += commonBalanceInitFile;
         commonBalanceFileString += "};";

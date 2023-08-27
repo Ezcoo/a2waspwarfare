@@ -18,7 +18,8 @@ public abstract class BaseVehicle : InterfaceVehicle
     protected int inGameFactoryLevel { get; set; }
     protected FactoryType producedFromFactoryType { get; set; }
     protected string inGameDisplayName { get; set; }
-    protected Dictionary<WeaponType, int> weaponToRemoveUntilHeavyLevelOnATank { get; set; }
+    protected Dictionary<WeaponType, int> weaponsToRemoveUntilHeavyLevelOnATank { get; set; }
+    protected Dictionary<WeaponType, int> weaponsOnTheTurretToRemoveUntilHeavyLevelOnATank { get; set; }
 
     // Add price etc here for more advanced SQF generation
 
@@ -48,9 +49,18 @@ public abstract class BaseVehicle : InterfaceVehicle
             finalSQFCode += finalTurretSQFCode;
         }
 
-        if (weaponToRemoveUntilHeavyLevelOnATank != null && weaponToRemoveUntilHeavyLevelOnATank.Count > 0)
+        // Remove weapons on non turret
+        if (weaponsToRemoveUntilHeavyLevelOnATank != null &&
+            weaponsToRemoveUntilHeavyLevelOnATank.Count > 0)
         {
             finalSQFCode += GenerateSQFCodeForWeaponRemoval();
+        }
+
+        // Remove weapons on the turret
+        if (weaponsOnTheTurretToRemoveUntilHeavyLevelOnATank != null &&
+            weaponsOnTheTurretToRemoveUntilHeavyLevelOnATank.Count > 0)
+        {
+            finalSQFCode += GenerateSQFCodeForWeaponRemovalOnTheTurret();
         }
 
         return $"{GenerateCommentForTheSqfCode()}\ncase \"{EnumExtensions.GetEnumMemberAttrValue(VehicleType)}\": {{\n" + finalSQFCode + "};";
@@ -61,21 +71,39 @@ public abstract class BaseVehicle : InterfaceVehicle
         StringBuilder sb = new StringBuilder();
 
         // Temp solution
-        string facType = "WFBE_UP_HEAVY";
+        string facTypeVariable = "_currentHfLevel";
         if (producedFromFactoryType == FactoryType.LIGHTFACTORY)
         {
-            facType = "WFBE_UP_LIGHT";
+            facTypeVariable = "_currentLfLevel";
         }
 
-        sb.AppendLine($"_current_heavy_level = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select " + facType + ";");
-        sb.AppendLine($"if (_current_heavy_level < {weaponToRemoveUntilHeavyLevelOnATank.First().Value}) then {{");
+        sb.AppendLine($"if ({facTypeVariable} < {weaponsToRemoveUntilHeavyLevelOnATank.First().Value}) then {{");
         sb.AppendLine($"    _this removeWeapon \"{EnumExtensions.GetEnumMemberAttrValue(
-            weaponToRemoveUntilHeavyLevelOnATank.First().Key)}\";");
+            weaponsToRemoveUntilHeavyLevelOnATank.First().Key)}\";");
         sb.AppendLine("};");
 
         return sb.ToString();
     }
 
+    private string GenerateSQFCodeForWeaponRemovalOnTheTurret()
+    {
+        StringBuilder sb = new StringBuilder();
+
+        // Temp solution
+        string facTypeVariable = "_currentHfLevel";
+        if (producedFromFactoryType == FactoryType.LIGHTFACTORY)
+        {
+            facTypeVariable = "_currentLfLevel";
+        }
+
+        //     _this removeWeaponTurret ["ATKMK44_ACR", [0]];
+        sb.AppendLine($"if ({facTypeVariable} < {weaponsOnTheTurretToRemoveUntilHeavyLevelOnATank.First().Value}) then {{");
+        sb.AppendLine($"    _this removeWeaponTurret [\"{EnumExtensions.GetEnumMemberAttrValue(
+            weaponsOnTheTurretToRemoveUntilHeavyLevelOnATank.First().Key)}\", [{turretPos}]];");
+        sb.AppendLine("};");
+
+        return sb.ToString();
+    }
 
     public string GenerateCommonBalanceInitForTheVehicle(Loadout _vanillaLoadout, Loadout _defaultLoadout, string _turret = "")
     {

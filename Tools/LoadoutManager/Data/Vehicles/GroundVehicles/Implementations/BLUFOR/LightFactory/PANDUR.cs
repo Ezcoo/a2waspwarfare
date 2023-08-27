@@ -14,14 +14,19 @@ public class PANDUR : BaseGroundVehicle
             {
                 { AmmunitionType.TWOHUNDREDTENROUND25MMM242APDS, 2},
                 { AmmunitionType.TWOHUNDREDTENROUND25MMM242HEI, 2},
-                //{ AmmunitionType.TWOHUNDREDROUNDCTWSSABOT, 2},
-
             };
 
         turretPos = 0;
         inGameFactoryLevel = 3;
         producedFromFactoryType = FactoryType.LIGHTFACTORY;
-        weaponToRemoveUntilHeavyLevelOnATank = new Dictionary<WeaponType, int>
+
+        //weaponsToRemoveUntilHeavyLevelOnATank = new Dictionary<WeaponType, int>
+        //{
+        //    {WeaponType.SPIKELAUNCHER, 4},
+        //};
+
+        // Moved to turret
+        weaponsOnTheTurretToRemoveUntilHeavyLevelOnATank = new Dictionary<WeaponType, int>
         {
             {WeaponType.SPIKELAUNCHER, 4},
         };
