@@ -312,14 +312,16 @@ case "AH6J_EP1": {
 
 // BMP-2 [HF1]
 case "BMP2_INS": {
-if (_currentHfLevel < 2) then {
+_currentFactoryLevel = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_HEAVY; 
+if (_currentFactoryLevel < 2) then {
     _this removeWeapon "AT5LauncherSingle";
 };
 };
 
 // BMP-2 [HF1]
 case "BMP2_TK_EP1": {
-if (_currentHfLevel < 2) then {
+_currentFactoryLevel = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_HEAVY; 
+if (_currentFactoryLevel < 2) then {
     _this removeWeapon "AT5LauncherSingle";
 };
 };
@@ -340,7 +342,8 @@ case "BRDM2_ATGM_INS": {
 
 // BTR-90 [LF3]
 case "BTR90": {
-if (_currentLfLevel < 4) then {
+_currentFactoryLevel = ((side group player) Call WFBE_CO_FNC_GetSideUpgrades) select WFBE_UP_LIGHT; 
+if (_currentFactoryLevel < 4) then {
     _this removeWeapon "AT5LauncherSingle";
 };
 };
