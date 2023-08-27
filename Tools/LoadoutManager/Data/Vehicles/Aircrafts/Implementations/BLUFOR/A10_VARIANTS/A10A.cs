@@ -40,6 +40,7 @@
             { AmmunitionType.THIRTYEIGHTROUNDHYDRA, 0 },
             { AmmunitionType.SIXROUNDMK82, 0 },
             { AmmunitionType.TWOROUNDSTINGER, 2 },
+            { AmmunitionType.TWOROUNDMAVERICK, 2 },
         };
 
         inGameDisplayName = "A-10A";
