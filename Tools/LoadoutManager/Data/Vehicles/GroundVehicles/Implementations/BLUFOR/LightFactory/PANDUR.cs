@@ -26,7 +26,7 @@ public class PANDUR : BaseGroundVehicle
         //};
 
         // Moved to turret
-        weaponsOnTheTurretToRemoveUntilHeavyLevelOnATank = new Dictionary<WeaponType, int>
+        weaponsOnTheTurretToRemoveUntilFactoryLevelOnAVehicle = new Dictionary<WeaponType, int>
         {
             {WeaponType.SPIKELAUNCHER, 4},
         };
