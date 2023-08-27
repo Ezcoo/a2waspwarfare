@@ -358,7 +358,7 @@ case "Pandur2_ACR": {
     _this addMagazineTurret ["210Rnd_25mm_M242_HEI", [0]];
     _this addWeaponTurret ["M242", [0]];
 if (_currentLfLevel < 4) then {
-    _this removeWeapon "SpikeLauncher_ACR";
+    _this removeWeaponTurret ["SpikeLauncher_ACR", [0]];
 };
 };
 
