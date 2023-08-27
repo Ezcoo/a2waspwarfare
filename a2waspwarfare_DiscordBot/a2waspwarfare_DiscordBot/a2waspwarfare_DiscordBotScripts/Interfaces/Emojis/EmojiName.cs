@@ -10,4 +10,10 @@ public enum EmojiName
 
     [EnumMember(Value = "<:opfor_icon:1079531788319330304>")]
     OPFORICON = 1,
+
+    [EnumMember(Value = "<:evergreen_tree:>")]
+    EVERGREENTREE = 2,
+
+    [EnumMember(Value = "<:desert:>")]
+    DESERT = 3,
 }
