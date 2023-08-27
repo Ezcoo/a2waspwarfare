@@ -38,6 +38,7 @@
             { AmmunitionType.TWOROUNDIGLA, 2 },
             { AmmunitionType.SIXTYFOURROUNDS5, 0 },
             { AmmunitionType.THREEHUNDREDSIXTYGSH301ROUNDS, 2 },
+            { AmmunitionType.FOURROUNDATAKA, 2 },
         };
 
         inGameDisplayName = "Su-25A";
