@@ -1,6 +1,8 @@
 ﻿using Discord.Rest;
+using Discord.WebSocket;
 using System.Collections.Concurrent;
 using System.Runtime.Serialization;
+using System.Threading.Channels;
 
 [DataContract]
 public class GameDataUpdateEvent : ScheduledEvent
@@ -28,18 +30,37 @@ public class GameDataUpdateEvent : ScheduledEvent
         }
     }
 
-    public override void CheckTheScheduledEventStatus()
+    public async override void CheckTheScheduledEventStatus()
     {
         try
         {
             GameDataDeSerialization.DeSerializeGameDataFromExtension();
 
-            Database.Instance.Categories.FindInterfaceCategoryByCategoryName(
+            var interfaceChannel = Database.Instance.Categories.FindInterfaceCategoryByCategoryName(
                 CategoryType.GAMESTATUSCATEGORY).FindInterfaceChannelWithNameInTheCategory(
-                    ChannelType.GAMESTATUSCHANNEL).FindInterfaceMessageWithNameInTheChannel(
+                    ChannelType.GAMESTATUSCHANNEL);
+
+            interfaceChannel.FindInterfaceMessageWithNameInTheChannel(
                         MessageName.GAMESTATUSMESSAGE).GenerateAndModifyTheMessage();
 
             SetTheBotStatus();
+
+            var newChannelName = GameData.Instance.GetGameMapAndPlayerCountWithEmojiForChannelName();
+            interfaceChannel.ChannelName = newChannelName;
+
+            var guild = BotReference.GetGuildRef();
+
+            // Find the channel by its ID
+            var channel = guild.GetChannel(interfaceChannel.ChannelId);
+
+            // Check if the channel exists
+            if (channel == null)
+            {
+                return;
+            }
+
+            // Modify the channel name
+            await channel.ModifyAsync(properties => properties.Name = newChannelName);
         }
         catch (Exception ex)
         {
@@ -55,7 +76,7 @@ public class GameDataUpdateEvent : ScheduledEvent
         var client = BotReference.GetClientRef();
         var terrainInstance = GameData.Instance.GetInterfaceTerrainFromWorldName();
 
-        client.SetGameAsync(GameData.Instance.GetGameMapAndPlayerCount());
+        client.SetGameAsync(GameData.Instance.GetGameMapAndPlayerCountWithEmoji());
 
         if (terrainInstance.TerrainType == TerrainType.FOREST)
         {

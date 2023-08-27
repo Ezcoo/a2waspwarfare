@@ -49,14 +49,30 @@ public class GameData
         return terrainEmoji + " [" + playerCount + "/" + maxPlayerCount + "] " + terrainInstance.TerrainDisplayName;
     }
 
-    public string GetGameMapAndPlayerCount()
+    public string GetGameMapAndPlayerCountWithEmojiForChannelName()
     {
         var terrainInstance = GetInterfaceTerrainFromWorldName();
         string playerCount = GameData.Instance.exportedArgs[4];
         string maxPlayerCount = terrainInstance.DetermineMissionTypeIfItsForestOrDesertAndGetThePlayerCount();
 
-        return "[" + playerCount + "/" + maxPlayerCount + "] " + terrainInstance.TerrainDisplayName;
+        string terrainEmoji = EnumExtensions.GetEnumMemberAttrValue(EmojiName.EVERGREENTREE);
+
+        if (terrainInstance.TerrainType == TerrainType.DESERT)
+        {
+            terrainEmoji = EnumExtensions.GetEnumMemberAttrValue(EmojiName.DESERT);
+        }
+
+        return terrainEmoji + "  " + playerCount + "︱" + maxPlayerCount + "  " + terrainInstance.TerrainDisplayName;
     }
+
+    //public string GetGameMapAndPlayerCount()
+    //{
+    //    var terrainInstance = GetInterfaceTerrainFromWorldName();
+    //    string playerCount = GameData.Instance.exportedArgs[4];
+    //    string maxPlayerCount = terrainInstance.DetermineMissionTypeIfItsForestOrDesertAndGetThePlayerCount();
+
+    //    return "[" + playerCount + "/" + maxPlayerCount + "] " + terrainInstance.TerrainDisplayName;
+    //}
 
     public InterfaceTerrain GetInterfaceTerrainFromWorldName()
     {
