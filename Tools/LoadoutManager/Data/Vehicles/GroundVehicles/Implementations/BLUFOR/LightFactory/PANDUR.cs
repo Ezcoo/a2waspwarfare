@@ -12,7 +12,8 @@ public class PANDUR : BaseGroundVehicle
             };
         base.defaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.TWOHUNDREDROUNDCTWSHE, 2},
+                { AmmunitionType.TWOHUNDREDTENROUND25MMM242APDS, 2},
+                { AmmunitionType.TWOHUNDREDTENROUND25MMM242HEI, 2},
                 //{ AmmunitionType.TWOHUNDREDROUNDCTWSSABOT, 2},
 
             };
