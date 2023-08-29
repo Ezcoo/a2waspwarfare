@@ -1,5 +1,8 @@
 Private["_currentFactoryLevel"];
 
+// After adding Pandur and BTR-90 to this script, it's necessary to exit on the server to prevent an occassional freeze
+if (isServer) exitWith {};
+
 switch (typeOf _this) do
 {
 // Su-34 [AF5] - 10 pylons
