@@ -74,6 +74,8 @@ class Program
         easaFileString += GenerateEndOfTheEasaFile();
 
         commonBalanceFileString += @"Private[""_currentFactoryLevel""];" + "\n\n";
+        commonBalanceFileString += "// After adding Pandur and BTR-90 to this script, it's necessary to exit on the server to prevent an occassional freeze\n";
+        commonBalanceFileString += "if (isServer) exitWith {};\n\n";
         commonBalanceFileString += "switch (typeOf _this) do\n{\n";
         commonBalanceFileString += commonBalanceInitFile;
         commonBalanceFileString += "};";
