@@ -41,9 +41,9 @@ public class ProgramRuntime
                 // ONLY FOR TESTING, DELETES ALL CHANNELS AND CATEGORIES
                 // !!!
 
-                await SetupProgramListenersAndSchedulers();
-
                 await GameDataDeSerialization.DeSerializeGameDataFromExtension();
+
+                await SetupProgramListenersAndSchedulers();
 
                 new GameDataUpdateEvent(eventManager.ClassScheduledEvents);
             }

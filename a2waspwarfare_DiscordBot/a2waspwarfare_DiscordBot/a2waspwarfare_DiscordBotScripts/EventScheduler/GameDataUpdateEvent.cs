@@ -34,7 +34,7 @@ public class GameDataUpdateEvent : ScheduledEvent
     {
         try
         {
-            GameDataDeSerialization.DeSerializeGameDataFromExtension();
+            await GameDataDeSerialization.DeSerializeGameDataFromExtension();
 
             var interfaceChannel = Database.Instance.Categories.FindInterfaceCategoryByCategoryName(
                 CategoryType.GAMESTATUSCATEGORY).FindInterfaceChannelWithNameInTheCategory(
