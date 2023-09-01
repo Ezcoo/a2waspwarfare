@@ -29,7 +29,7 @@ public class GAMESTATUSMESSAGE : BaseMessage
 
     public override Task<string> GenerateMessage(ulong _leagueCategoryId = 0)
     {
-        thisInterfaceMessage.MessageEmbedTitle = GameData.Instance.GetGameMapAndPlayerCount();
+        thisInterfaceMessage.MessageEmbedTitle = GameData.Instance.GetGameMapAndPlayerCountWithEmoji();
         thisInterfaceMessage.MessageDescription = GameData.Instance.GenerateGameStatusMessage();
         ChangeMessageColorDependingOnTheCurrentWorldName();
 
@@ -44,7 +44,7 @@ public class GAMESTATUSMESSAGE : BaseMessage
     // Add array here of custom maps later
     private void ChangeMessageColorDependingOnTheCurrentWorldName()
     {
-        if (GameData.Instance.GetWorldNameAsCapitalFirstLetter() == "Chernarus")
+        if (GameData.Instance.GetInterfaceTerrainFromWorldName().TerrainType == TerrainType.FOREST)
         {
             thisInterfaceMessage.MessageEmbedColor = Color.DarkGreen;
             return;
