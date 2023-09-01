@@ -2,30 +2,30 @@
 
 public enum TerrainName
 {
-    [EnumMember(Value = "chernarus")]
+    [EnumMember(Value = "Chernarus")]
     CHERNARUS,
 
-    [EnumMember(Value = "takistan")]
+    [EnumMember(Value = "Takistan")]
     TAKISTAN,
 
-    [EnumMember(Value = "tasmania2010")]
-    TASMANIA,
+    [EnumMember(Value = "Tasmania")]
+    TASMANIA2010,
 
-    [EnumMember(Value = "dingor")]
+    [EnumMember(Value = "Dingor")]
     DINGOR,
 
-    [EnumMember(Value = "eden")]
-    EVERON,
+    [EnumMember(Value = "Everon")]
+    EDEN,
 
-    [EnumMember(Value = "lingor")]
+    [EnumMember(Value = "Lingor")]
     LINGOR,
 
-    [EnumMember(Value = "smd_sahrani_a2")]
-    SAHRANI,
+    [EnumMember(Value = "Sahrani")]
+    SMD_SAHRANI_A2,
 
-    [EnumMember(Value = "tavi")]
-    TAVIANA,
+    [EnumMember(Value = "Taviana")]
+    TAVI,
 
-    [EnumMember(Value = "isladuala")]
+    [EnumMember(Value = "Isla Duala")]
     ISLADUALA,
 }

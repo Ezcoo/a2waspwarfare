@@ -1,11 +1,9 @@
 ﻿public abstract class BaseTerrain : InterfaceTerrain
 {
     public TerrainName TerrainName { get => terrainName; set => terrainName = value; }
-    public string TerrainDisplayName { get => terrainDisplayName; set => terrainDisplayName = value; }
     public TerrainType TerrainType { get => terrainType; set => terrainType = value; }
 
     private TerrainName terrainName { get; set; }
-    private string terrainDisplayName { get; set; }
     private TerrainType terrainType { get; set; }
 
     public bool isModdedTerrain { get; set; }

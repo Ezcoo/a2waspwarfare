@@ -46,7 +46,8 @@ public class GameData
             terrainEmoji = EnumExtensions.GetEnumMemberAttrValue(EmojiName.DESERT);
         }
 
-        return terrainEmoji + " [" + playerCount + "/" + maxPlayerCount + "] " + terrainInstance.TerrainDisplayName;
+        return terrainEmoji + " [" + playerCount + "/" + maxPlayerCount + "] " + 
+            EnumExtensions.GetEnumMemberAttrValue(terrainInstance.TerrainName);
     }
 
     public string GetGameMapAndPlayerCountWithEmojiForChannelName()
@@ -62,7 +63,8 @@ public class GameData
             terrainEmoji = EnumExtensions.GetEnumMemberAttrValue(EmojiName.DESERT);
         }
 
-        return terrainEmoji + "  " + playerCount + "︱" + maxPlayerCount + "  " + terrainInstance.TerrainDisplayName;
+        return terrainEmoji + "  " + playerCount + "︱" + maxPlayerCount + "  " +
+            EnumExtensions.GetEnumMemberAttrValue(terrainInstance.TerrainName);
     }
 
     //public string GetGameMapAndPlayerCount()
