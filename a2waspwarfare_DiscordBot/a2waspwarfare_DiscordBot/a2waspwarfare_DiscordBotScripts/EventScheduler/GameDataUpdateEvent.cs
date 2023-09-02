@@ -12,7 +12,7 @@ public class GameDataUpdateEvent : ScheduledEvent
     public GameDataUpdateEvent(
         ConcurrentBag<ScheduledEvent> _scheduledEvents)
     {
-        SetupScheduledEvent(133333333333337, _scheduledEvents, 60);
+        SetupScheduledEvent(133333333333337, _scheduledEvents, 90);
 
         Log.WriteLine("Done creating event: " + nameof(GameDataUpdateEvent));
     }
