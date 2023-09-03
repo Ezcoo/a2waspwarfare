@@ -1,4 +1,13 @@
-﻿public abstract class BaseTerrain : InterfaceTerrain
+﻿// The BaseTerrain class serves as the foundation for managing different types of terrains in the game.
+// It implements the InterfaceTerrain to ensure certain properties and methods are present in derived classes.
+// The class provides functionality for:
+// - Determining mission paths and types based on whether the terrain is modded or not.
+// - Writing specific content to terrain files.
+// - Updating existing files, particularly for modded terrains.
+// - Handling the source and destination directories for file operations.
+// It utilizes helper methods for these operations, making it a comprehensive solution for terrain management.
+
+public abstract class BaseTerrain : InterfaceTerrain
 {
     // Properties that specifies the name/type of the terrain.
     public TerrainName TerrainName { get => terrainName; set => terrainName = value; }
@@ -143,5 +152,4 @@
             Console.WriteLine("File not found!");
         }
     }
-
 }
