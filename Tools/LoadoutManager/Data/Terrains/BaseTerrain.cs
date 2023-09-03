@@ -68,56 +68,80 @@
         return TerrainType == TerrainType.FOREST ? "55" : "61";
     }
 
+    // Method to update files for modded terrains
     private void UpdateFilesForModdedTerrain(DirectoryInfo _dir)
     {
+        // Exit the method if the terrain is not modded
         if (!isModdedTerrain)
         {
             return;
         }
 
+        // Determine the source and destination directories for file operations
         string sourceDirectory = DetermineSourceDirectory(_dir);
         string destinationDirectory = DetermineDestinationDirectory(_dir);
 
+        // Copy files from the source to the destination directory
         FileManager.CopyFilesFromSourceToDestination(sourceDirectory, destinationDirectory);
+
+        // Update the Guerilla Barracks file in the destination directory
         UpdateGuerillaBarracksFile(destinationDirectory);
     }
 
+    // Method to determine the source directory path based on terrain type and mission type
     private string DetermineSourceDirectory(DirectoryInfo _dir)
     {
+        // Determine the name of the source terrain based on the terrain type
         string sourceTerrainName = TerrainType == TerrainType.FOREST ? "chernarus" : "takistan";
+
+        // Determine the player count for the mission based on the terrain type
         string sourceTerrainPlayerCount = DetermineMissionTypeIfItsForestOrDesert();
+
+        // Construct and return the full source directory path
         return Path.Combine(_dir.FullName, @"Missions\[" + sourceTerrainPlayerCount + "-2hc]warfarev2_073v48co." + sourceTerrainName);
     }
 
+    // Method to determine the destination directory based on mission type and terrain name
     private string DetermineDestinationDirectory(DirectoryInfo _dir)
     {
+        // Determine the player count for the mission based on the terrain type
         string sourceTerrainPlayerCount = DetermineMissionTypeIfItsForestOrDesert();
+
+        // Construct and return the full destination directory path
         return Path.Combine(_dir.FullName, @"Modded_Missions\[" + sourceTerrainPlayerCount +
             "-2hc]warfarev2_073v48co." + EnumExtensions.GetEnumMemberAttrValue(TerrainName));
     }
 
+    // Method to update the Guerilla Barracks file at a specific destination directory
     private static void UpdateGuerillaBarracksFile(string _destinationDirectory)
     {
+        // Construct the full path of the file that needs to be updated
         string filePathForDeletingGuerillaBarracks = _destinationDirectory + @"\Server\Init\Init_Server.sqf";
 
+        // Check if the file exists
         if (File.Exists(filePathForDeletingGuerillaBarracks))
         {
+            // Read the content of the file
             string content = File.ReadAllText(filePathForDeletingGuerillaBarracks);
 
+            // Check if the file contains the specific string to be replaced
             if (content.Contains("_barrack_amount = 2;"))
             {
+                // Replace the string and update the file
                 content = content.Replace("_barrack_amount = 2;", "_barrack_amount = 0;");
                 File.WriteAllText(filePathForDeletingGuerillaBarracks, content);
-                //Console.WriteLine("File updated successfully!");
             }
             else
             {
+                // Log a message if the specific content was not found
                 Console.WriteLine("The specified content was not found in the file.");
             }
         }
         else
         {
+            // Log a message if the file was not found
             Console.WriteLine("File not found!");
         }
     }
+
 }
