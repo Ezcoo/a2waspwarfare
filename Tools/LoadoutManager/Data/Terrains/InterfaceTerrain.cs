@@ -4,4 +4,5 @@
     public TerrainType TerrainType { get; set; }
     public bool isModdedTerrain { get; set; }
     public void WriteToFile(DirectoryInfo _dir, string _content, string _targetScriptPath);
+    public void UpdateFilesForModdedTerrain(DirectoryInfo _dir);
 }

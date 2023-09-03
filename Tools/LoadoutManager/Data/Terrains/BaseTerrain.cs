@@ -39,11 +39,59 @@
 
     private string DetermineMissionTypeIfItsForestOrDesert()
     {
-        if (TerrainType == TerrainType.FOREST)
+        return TerrainType == TerrainType.FOREST ? "55" : "61";
+    }
+
+    public void UpdateFilesForModdedTerrain(DirectoryInfo _dir)
+    {
+        if (!isModdedTerrain)
         {
-            return "55";
+            return;
         }
 
-        return "61";
+        string sourceDirectory = DetermineSourceDirectory(_dir);
+        string destinationDirectory = DetermineDestinationDirectory(_dir);
+
+        FileManager.CopyFilesFromSourceToDestination(sourceDirectory, destinationDirectory);
+        UpdateGuerillaBarracksFile(destinationDirectory);
+    }
+
+    private string DetermineSourceDirectory(DirectoryInfo _dir)
+    {
+        string sourceTerrainName = TerrainType == TerrainType.FOREST ? "chernarus" : "takistan";
+        string sourceTerrainPlayerCount = DetermineMissionTypeIfItsForestOrDesert();
+        return Path.Combine(_dir.FullName, @"Missions\[" + sourceTerrainPlayerCount + "-2hc]warfarev2_073v48co." + sourceTerrainName);
+    }
+
+    private string DetermineDestinationDirectory(DirectoryInfo _dir)
+    {
+        string sourceTerrainPlayerCount = DetermineMissionTypeIfItsForestOrDesert();
+        return Path.Combine(_dir.FullName, @"Modded_Missions\[" + sourceTerrainPlayerCount +
+            "-2hc]warfarev2_073v48co." + EnumExtensions.GetEnumMemberAttrValue(TerrainName));
+    }
+
+    private static void UpdateGuerillaBarracksFile(string _destinationDirectory)
+    {
+        string filePathForDeletingGuerillaBarracks = _destinationDirectory + @"\Server\Init\Init_Server.sqf";
+
+        if (File.Exists(filePathForDeletingGuerillaBarracks))
+        {
+            string content = File.ReadAllText(filePathForDeletingGuerillaBarracks);
+
+            if (content.Contains("_barrack_amount = 2;"))
+            {
+                content = content.Replace("_barrack_amount = 2;", "_barrack_amount = 0;");
+                File.WriteAllText(filePathForDeletingGuerillaBarracks, content);
+                Console.WriteLine("File updated successfully!");
+            }
+            else
+            {
+                Console.WriteLine("The specified content was not found in the file.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("File not found!");
+        }
     }
 }

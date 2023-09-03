@@ -140,54 +140,7 @@ public class SqfFileGenerator
         {
             var terrainInstance = (InterfaceTerrain)EnumExtensions.GetInstance(terrainName.ToString());
 
-            if (!terrainInstance.isModdedTerrain)
-            {
-                continue;
-            }
-
-            string sourceDirectory = DetermineSourceDirectory(_dir, terrainInstance);
-            string destinationDirectory = DetermineDestinationDirectory(_dir, terrainInstance);
-
-            FileManager.CopyFilesFromSourceToDestination(sourceDirectory, destinationDirectory);
-            UpdateGuerillaBarracksFile(destinationDirectory);
-        }
-    }
-
-    private static string DetermineSourceDirectory(DirectoryInfo _dir, InterfaceTerrain _terrainInstance)
-    {
-        string sourceTerrainName = _terrainInstance.TerrainType == TerrainType.FOREST ? "chernarus" : "takistan";
-        string sourceTerrainPlayerCount = _terrainInstance.TerrainType == TerrainType.FOREST ? "55" : "61";
-        return Path.Combine(_dir.FullName, @"Missions\[" + sourceTerrainPlayerCount + "-2hc]warfarev2_073v48co." + sourceTerrainName);
-    }
-
-    private static string DetermineDestinationDirectory(DirectoryInfo _dir, InterfaceTerrain _terrainInstance)
-    {
-        string sourceTerrainPlayerCount = _terrainInstance.TerrainType == TerrainType.FOREST ? "55" : "61";
-        return Path.Combine(_dir.FullName, @"Modded_Missions\[" + sourceTerrainPlayerCount + "-2hc]warfarev2_073v48co." + EnumExtensions.GetEnumMemberAttrValue(_terrainInstance.TerrainName));
-    }
-
-    private static void UpdateGuerillaBarracksFile(string destinationDirectory)
-    {
-        string filePathForDeletingGuerillaBarracks = destinationDirectory + @"\Server\Init\Init_Server.sqf";
-
-        if (File.Exists(filePathForDeletingGuerillaBarracks))
-        {
-            string content = File.ReadAllText(filePathForDeletingGuerillaBarracks);
-
-            if (content.Contains("_barrack_amount = 2;"))
-            {
-                content = content.Replace("_barrack_amount = 2;", "_barrack_amount = 0;");
-                File.WriteAllText(filePathForDeletingGuerillaBarracks, content);
-                Console.WriteLine("File updated successfully!");
-            }
-            else
-            {
-                Console.WriteLine("The specified content was not found in the file.");
-            }
-        }
-        else
-        {
-            Console.WriteLine("File not found!");
+            terrainInstance.UpdateFilesForModdedTerrain(_dir);
         }
     }
 }
