@@ -85,4 +85,23 @@ public class FileManager
             }
         }
     }
+
+    // Ensures that the program is being ran in the correct directory, throws error if this is not the case.
+    public static DirectoryInfo FindA2WaspWarfareDirectory()
+    {
+        string currentDirectory = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+        DirectoryInfo dir = new DirectoryInfo(currentDirectory);
+
+        while (dir.Name != "a2waspwarfare" && dir.Parent != null)
+        {
+            dir = dir.Parent;
+        }
+
+        if (dir.Name != "a2waspwarfare")
+        {
+            throw new Exception("Could not find the 'a2waspwarfare' directory.");
+        }
+
+        return dir;
+    }
 }

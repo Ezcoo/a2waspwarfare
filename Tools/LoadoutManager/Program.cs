@@ -11,30 +11,23 @@ class Program
         GenerateCommonBalanceInitAndTheEasaFileForEachTerrain();
     }
 
-    /// <summary>
-    /// MOVE TO OWN CLASS
-    /// </summary>
-
-
     private static void GenerateCommonBalanceInitAndTheEasaFileForEachTerrain()
     {
-        // Get the current executing directory
-        string currentDirectory = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-
-        // Navigate up until you find 'a2waspwarfare'
-        DirectoryInfo dir = new DirectoryInfo(currentDirectory);
-        while (dir.Name != "a2waspwarfare" && dir.Parent != null)
-        {
-            dir = dir.Parent;
-        }
-
-        if (dir.Name != "a2waspwarfare")
-        {
-            throw new Exception("Could not find the 'a2waspwarfare' directory.");
-        }
+        DirectoryInfo dir;
 
         string easaFileString = string.Empty;
         string commonBalanceFileString = string.Empty;
+
+        try
+        {
+            dir = FileManager.FindA2WaspWarfareDirectory();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return;
+        }
+
 
         foreach (VehicleType vehicleType in Enum.GetValues(typeof(VehicleType)))
         {
