@@ -9,20 +9,6 @@ class Program
     static void Main()
     {
         GenerateCommonBalanceInitAndTheEasaFileForEachTerrain();
-
-        //WaitForCommand("exit");
-    }
-
-    /// <summary>
-    /// MOVE TO OWN CLASS
-    /// </summary>
-    private static void WaitForCommand(string _command)
-    {
-        string userInput;
-        do
-        {
-            userInput = Console.ReadLine();
-        } while (userInput?.ToLower() != _command);
     }
 
     /// <summary>
