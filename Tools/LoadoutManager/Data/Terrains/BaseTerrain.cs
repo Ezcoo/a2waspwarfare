@@ -8,7 +8,6 @@
 
     public bool isModdedTerrain { get; set; }
 
-
     public void WriteAndUpdateTerrainFiles(DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
     {
         UpdateFilesForModdedTerrain(_dir);
