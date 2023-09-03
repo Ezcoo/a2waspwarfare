@@ -54,8 +54,16 @@ public class EasaFileGenerator
 
     public static void GenerateCommonBalanceInitAndTheEasaFileForEachTerrain()
     {
-        DirectoryInfo dir = GetA2WaspWarfareDirectory();
-        if (dir == null) return;
+        DirectoryInfo dir = FileManager.FindA2WaspWarfareDirectory();
+        try
+        {
+            FileManager.FindA2WaspWarfareDirectory();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return;
+        }
 
         GenerateLoadoutsForAllVehicleTypes();
         string easaFileString = GenerateEasaFileString();
@@ -63,19 +71,6 @@ public class EasaFileGenerator
 
         WriteToFilesForTerrains(dir, easaFileString, commonBalanceFileString);
         UpdateFilesForModdedTerrains(dir);
-    }
-
-    private static DirectoryInfo GetA2WaspWarfareDirectory()
-    {
-        try
-        {
-            return FileManager.FindA2WaspWarfareDirectory();
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-            return null;
-        }
     }
 
     private static void GenerateLoadoutsForAllVehicleTypes()
