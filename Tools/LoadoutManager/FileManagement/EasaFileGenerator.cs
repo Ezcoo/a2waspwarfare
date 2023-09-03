@@ -48,4 +48,151 @@ public class EasaFileGenerator
 
         return endOfTheEasaFile;
     }
+
+    private static string aircraftEasaLoadoutsFile;
+    private static string commonBalanceInitFile;
+
+    public static void GenerateCommonBalanceInitAndTheEasaFileForEachTerrain()
+    {
+        DirectoryInfo dir = GetA2WaspWarfareDirectory();
+        if (dir == null) return;
+
+        GenerateLoadoutsForAllVehicleTypes();
+        string easaFileString = GenerateEasaFileString();
+        string commonBalanceFileString = GenerateCommonBalanceFileString();
+
+        WriteToFilesForTerrains(dir, easaFileString, commonBalanceFileString);
+        UpdateFilesForModdedTerrains(dir);
+    }
+
+    private static DirectoryInfo GetA2WaspWarfareDirectory()
+    {
+        try
+        {
+            return FileManager.FindA2WaspWarfareDirectory();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+            return null;
+        }
+    }
+
+    private static void GenerateLoadoutsForAllVehicleTypes()
+    {
+        foreach (VehicleType vehicleType in Enum.GetValues(typeof(VehicleType)))
+        {
+            GenerateAircraftSpecificLoadouts(vehicleType);
+        }
+    }
+
+    private static string GenerateEasaFileString()
+    {
+        string easaFileString = EasaFileGenerator.GenerateStartOfTheEasaFile();
+        easaFileString += "\n" + aircraftEasaLoadoutsFile;
+        easaFileString += EasaFileGenerator.GenerateEndOfTheEasaFile();
+        return easaFileString;
+    }
+
+    private static string GenerateCommonBalanceFileString()
+    {
+        string commonBalanceFileString = @"Private[""_currentFactoryLevel""];" + "\n\n";
+        commonBalanceFileString += "// After adding Pandur and BTR-90 to this script, it's necessary to exit on the server to prevent an occassional freeze\n";
+        commonBalanceFileString += "if (isServer) exitWith {};\n\n";
+        commonBalanceFileString += "switch (typeOf _this) do\n{\n";
+        commonBalanceFileString += commonBalanceInitFile;
+        commonBalanceFileString += "};";
+        return commonBalanceFileString;
+    }
+
+    private static void GenerateAircraftSpecificLoadouts(VehicleType _vehicleType)
+    {
+        var interfaceVehicle = (InterfaceVehicle)EnumExtensions.GetInstance(_vehicleType.ToString());
+        commonBalanceInitFile += interfaceVehicle.StartGeneratingCommonBalanceInitForTheVehicle() + "\n\n";
+
+        var baseAircraft = interfaceVehicle as BaseAircraft;
+
+        // Skip non-aircraft for easa
+        if (baseAircraft == null)
+        {
+            return;
+        }
+
+        string result = baseAircraft.GenerateLoadoutsForTheAircraft();
+
+        if (result == "") { return; }
+
+        aircraftEasaLoadoutsFile += "\n" + result + "\n";
+    }
+
+    private static void WriteToFilesForTerrains(DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
+    {
+        foreach (var terrainName in Enum.GetValues(typeof(TerrainName)))
+        {
+            var terrainInstance = (InterfaceTerrain)EnumExtensions.GetInstance(terrainName.ToString());
+            Console.WriteLine("-------" + terrainName + "---------");
+            Console.WriteLine(_easaFileString);
+            terrainInstance.WriteToFile(_dir, _easaFileString, @"Client\Module\EASA\EASA_Init.sqf");
+            Console.WriteLine(_commonBalanceFileString);
+            terrainInstance.WriteToFile(_dir, _commonBalanceFileString, @"\Common\Functions\Common_BalanceInit.sqf");
+            Console.WriteLine("------- end of " + terrainName + "---------");
+        }
+    }
+
+    private static void UpdateFilesForModdedTerrains(DirectoryInfo _dir)
+    {
+        foreach (var terrainName in Enum.GetValues(typeof(TerrainName)))
+        {
+            var terrainInstance = (InterfaceTerrain)EnumExtensions.GetInstance(terrainName.ToString());
+
+            if (!terrainInstance.isModdedTerrain)
+            {
+                continue;
+            }
+
+            string sourceDirectory = DetermineSourceDirectory(_dir, terrainInstance);
+            string destinationDirectory = DetermineDestinationDirectory(_dir, terrainInstance);
+
+            FileManager.CopyFilesFromSourceToDestination(sourceDirectory, destinationDirectory);
+            UpdateGuerillaBarracksFile(destinationDirectory);
+        }
+    }
+
+    private static string DetermineSourceDirectory(DirectoryInfo _dir, InterfaceTerrain _terrainInstance)
+    {
+        string sourceTerrainName = _terrainInstance.TerrainType == TerrainType.FOREST ? "chernarus" : "takistan";
+        string sourceTerrainPlayerCount = _terrainInstance.TerrainType == TerrainType.FOREST ? "55" : "61";
+        return Path.Combine(_dir.FullName, @"Missions\[" + sourceTerrainPlayerCount + "-2hc]warfarev2_073v48co." + sourceTerrainName);
+    }
+
+    private static string DetermineDestinationDirectory(DirectoryInfo _dir, InterfaceTerrain _terrainInstance)
+    {
+        string sourceTerrainPlayerCount = _terrainInstance.TerrainType == TerrainType.FOREST ? "55" : "61";
+        return Path.Combine(_dir.FullName, @"Modded_Missions\[" + sourceTerrainPlayerCount + "-2hc]warfarev2_073v48co." + EnumExtensions.GetEnumMemberAttrValue(_terrainInstance.TerrainName));
+    }
+
+    private static void UpdateGuerillaBarracksFile(string destinationDirectory)
+    {
+        string filePathForDeletingGuerillaBarracks = destinationDirectory + @"\Server\Init\Init_Server.sqf";
+
+        if (File.Exists(filePathForDeletingGuerillaBarracks))
+        {
+            string content = File.ReadAllText(filePathForDeletingGuerillaBarracks);
+
+            if (content.Contains("_barrack_amount = 2;"))
+            {
+                content = content.Replace("_barrack_amount = 2;", "_barrack_amount = 0;");
+                File.WriteAllText(filePathForDeletingGuerillaBarracks, content);
+                Console.WriteLine("File updated successfully!");
+            }
+            else
+            {
+                Console.WriteLine("The specified content was not found in the file.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("File not found!");
+        }
+    }
 }
