@@ -11,10 +11,9 @@
 
     public void WriteAndUpdateTerrainFiles(DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
     {
-        Console.WriteLine("------- running" + terrainName + " ---------");
         UpdateFilesForModdedTerrain(_dir);
         WriteToTerrainFiles(_dir, _easaFileString, _commonBalanceFileString);
-        Console.WriteLine("------- end of " + terrainName + " ---------");
+        Console.WriteLine("-------" + terrainName + " DONE! ---------");
     }
 
     private void WriteToTerrainFiles(DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
@@ -103,7 +102,7 @@
             {
                 content = content.Replace("_barrack_amount = 2;", "_barrack_amount = 0;");
                 File.WriteAllText(filePathForDeletingGuerillaBarracks, content);
-                Console.WriteLine("File updated successfully!");
+                //Console.WriteLine("File updated successfully!");
             }
             else
             {
