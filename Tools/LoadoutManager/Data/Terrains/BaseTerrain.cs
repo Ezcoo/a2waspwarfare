@@ -1,13 +1,15 @@
 ﻿public abstract class BaseTerrain : InterfaceTerrain
 {
+    // Properties that specifies the name/type of the terrain.
     public TerrainName TerrainName { get => terrainName; set => terrainName = value; }
     public TerrainType TerrainType { get => terrainType; set => terrainType = value; }
-
     private TerrainName terrainName { get; set; }
     private TerrainType terrainType { get; set; }
 
+    // Boolean flag to check if the terrain is modded.
     public bool isModdedTerrain { get; set; }
 
+    // Method that writes and updates the terrain files.
     public void WriteAndUpdateTerrainFiles(DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
     {
         UpdateFilesForModdedTerrain(_dir);
@@ -15,34 +17,40 @@
         Console.WriteLine("-------" + terrainName + " DONE! ---------");
     }
 
+    // Method to write specific content to terrain files based on conditions
     private void WriteToTerrainFiles(DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
     {
+        // Check if the terrain is not modded
         if (!isModdedTerrain)
         {
+            // Log the content to the console for debugging
             Console.WriteLine(_easaFileString);
             Console.WriteLine(_commonBalanceFileString);
         }
 
+        // Write the content to the specified files
         WriteToFile(_dir, _easaFileString, @"Client\Module\EASA\EASA_Init.sqf");
         WriteToFile(_dir, _commonBalanceFileString, @"\Common\Functions\Common_BalanceInit.sqf");
     }
 
+    // Method to write content to a file at a specific path
     private void WriteToFile(DirectoryInfo _dir, string _content, string _targetScriptPath)
     {
-        // Append the relative path of the file
+        // Concatenate the directory and file path
         string targetFile = Path.Combine(
-            _dir.FullName, DetermineMissionPathIfItsModdedOrNot() + 
+            _dir.FullName, DetermineMissionPathIfItsModdedOrNot() +
             @"\[" + DetermineMissionTypeIfItsForestOrDesert() + "-2hc]warfarev2_073v48co." +
             EnumExtensions.GetEnumMemberAttrValue(terrainName) + @"\" + _targetScriptPath);
 
-        // Ensure the directory exists
+        // Make sure the directory exists
         string directoryName = Path.GetDirectoryName(targetFile);
         if (!Directory.Exists(directoryName))
         {
+            // Create the directory if it doesn't exist
             Directory.CreateDirectory(directoryName);
         }
 
-        // Write to the file
+        // Write the content to the target file
         File.WriteAllText(targetFile, _content);
     }
 
