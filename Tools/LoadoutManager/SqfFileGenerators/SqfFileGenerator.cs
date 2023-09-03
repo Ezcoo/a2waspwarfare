@@ -1,11 +1,17 @@
-using System;
-using System.IO;
-
+// This class, SqfFileGenerator, serves as a utility for generating files compliant with both 
+// EASA regulations and common balance configurations. It provides methods for generating the 
+// beginning and ending segments of EASA files, as well as methods for handling loadouts for 
+// various vehicle types. In addition, it includes methods for writing these configurations 
+// to files onto different terrains.
 public class SqfFileGenerator
 {
+    // aircraftEasaLoadoutsFile stores the text for the respective EASA loadouts or initialization files.
     private static string aircraftEasaLoadoutsFile;
+    // commonBalanceInitFile stores the text for the respective EASA loadouts or initialization files.
     private static string commonBalanceInitFile;
 
+    // GenerateStartOfTheEasaFile creates the initial part of the SQF file.
+    // It returns a string that forms the starting block of the SQF file.
     public static string GenerateStartOfTheEasaFile()
     {
         string startOfTheEasaFile = string.Empty;
@@ -22,6 +28,9 @@ public class SqfFileGenerator
         return startOfTheEasaFile;
     }
 
+    // GenerateEndOfTheEasaFile creates the concluding part of the SQF file.
+    // It generates the logic for handling EASA vehicle loadouts and configurations.
+    // The method returns a string that forms the concluding block of the SQF file.
     public static string GenerateEndOfTheEasaFile()
     {
         string endOfTheEasaFile = string.Empty;
@@ -52,6 +61,9 @@ public class SqfFileGenerator
         return endOfTheEasaFile;
     }
 
+    // GenerateCommonBalanceInitAndTheEasaFileForEachTerrain initializes and writes EASA and common balance files for each terrain.
+    // The method first locates the A2 Wasp Warfare directory and then proceeds to generate loadouts and file strings.
+    // The generated strings are then written to files specific to different terrains.
     public static void GenerateCommonBalanceInitAndTheEasaFileForEachTerrain()
     {
         DirectoryInfo dir = FileManager.FindA2WaspWarfareDirectory();
@@ -72,6 +84,8 @@ public class SqfFileGenerator
         WriteAndUpdateToFilesForTerrains(dir, easaFileString, commonBalanceFileString);
     }
 
+    // GenerateLoadoutsForAllVehicleTypes iterates through all vehicle types defined in the VehicleType enum.
+    // It calls the GenerateAircraftSpecificLoadouts method for each vehicle type to generate specific loadouts.
     private static void GenerateLoadoutsForAllVehicleTypes()
     {
         foreach (VehicleType vehicleType in Enum.GetValues(typeof(VehicleType)))
@@ -80,6 +94,7 @@ public class SqfFileGenerator
         }
     }
 
+    // GenerateEasaFileString() stores the path for the respective EASA loadouts or initialization files.
     private static string GenerateEasaFileString()
     {
         string easaFileString = SqfFileGenerator.GenerateStartOfTheEasaFile();
@@ -88,6 +103,7 @@ public class SqfFileGenerator
         return easaFileString;
     }
 
+    // GenerateCommonBalanceFileString() stores the path for the respective EASA loadouts or initialization files.
     private static string GenerateCommonBalanceFileString()
     {
         string commonBalanceFileString = @"Private[""_currentFactoryLevel""];" + "\n\n";
@@ -99,6 +115,9 @@ public class SqfFileGenerator
         return commonBalanceFileString;
     }
 
+    // GenerateAircraftSpecificLoadouts takes a VehicleType enum as an argument and generates specific loadouts for aircraft.
+    // It appends the generated loadouts to the 'aircraftEasaLoadoutsFile' and 'commonBalanceInitFile'.
+    // The method returns early if the vehicle type is not an aircraft or if the generated result is empty.
     private static void GenerateAircraftSpecificLoadouts(VehicleType _vehicleType)
     {
         var interfaceVehicle = (InterfaceVehicle)EnumExtensions.GetInstance(_vehicleType.ToString());
@@ -119,8 +138,9 @@ public class SqfFileGenerator
         aircraftEasaLoadoutsFile += "\n" + result + "\n";
     }
 
-    private static void WriteAndUpdateToFilesForTerrains
-        (DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
+    // WriteAndUpdateToFilesForTerrains takes in a DirectoryInfo object and two strings for EASA and common balance files.
+    // It iterates through all defined terrains and writes or updates the respective files.
+    private static void WriteAndUpdateToFilesForTerrains(DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
     {
         foreach (var terrainName in Enum.GetValues(typeof(TerrainName)))
         {
