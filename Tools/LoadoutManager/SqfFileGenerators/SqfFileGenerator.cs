@@ -125,14 +125,7 @@ public class SqfFileGenerator
         foreach (var terrainName in Enum.GetValues(typeof(TerrainName)))
         {
             var terrainInstance = (InterfaceTerrain)EnumExtensions.GetInstance(terrainName.ToString());
-            Console.WriteLine("------- running" + terrainName + " ---------");
-            Console.WriteLine(_easaFileString);
-            terrainInstance.WriteToFile(_dir, _easaFileString, @"Client\Module\EASA\EASA_Init.sqf");
-            Console.WriteLine(_commonBalanceFileString);
-            terrainInstance.WriteToFile(_dir, _commonBalanceFileString, @"\Common\Functions\Common_BalanceInit.sqf");
-
-            terrainInstance.UpdateFilesForModdedTerrain(_dir);
-            Console.WriteLine("------- end of " + terrainName + " ---------");
+            terrainInstance.WriteAndUpdateTerrainFiles(_dir, _easaFileString, _commonBalanceFileString);
         }
     }
 }

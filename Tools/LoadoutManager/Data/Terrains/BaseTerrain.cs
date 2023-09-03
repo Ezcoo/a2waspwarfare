@@ -8,11 +8,32 @@
 
     public bool isModdedTerrain { get; set; }
 
-    public void WriteToFile(DirectoryInfo _dir, string _content, string _targetScriptPath)
+
+    public void WriteAndUpdateTerrainFiles(DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
+    {
+        Console.WriteLine("------- running" + terrainName + " ---------");
+        UpdateFilesForModdedTerrain(_dir);
+        WriteToTerrainFiles(_dir, _easaFileString, _commonBalanceFileString);
+        Console.WriteLine("------- end of " + terrainName + " ---------");
+    }
+
+    private void WriteToTerrainFiles(DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
+    {
+        if (!isModdedTerrain)
+        {
+            Console.WriteLine(_easaFileString);
+            Console.WriteLine(_commonBalanceFileString);
+        }
+
+        WriteToFile(_dir, _easaFileString, @"Client\Module\EASA\EASA_Init.sqf");
+        WriteToFile(_dir, _commonBalanceFileString, @"\Common\Functions\Common_BalanceInit.sqf");
+    }
+
+    private void WriteToFile(DirectoryInfo _dir, string _content, string _targetScriptPath)
     {
         // Append the relative path of the file
         string targetFile = Path.Combine(
-            _dir.FullName, DetermineMissionPathIfItsModdedOrNot() +
+            _dir.FullName, DetermineMissionPathIfItsModdedOrNot() + 
             @"\[" + DetermineMissionTypeIfItsForestOrDesert() + "-2hc]warfarev2_073v48co." +
             EnumExtensions.GetEnumMemberAttrValue(terrainName) + @"\" + _targetScriptPath);
 
@@ -42,7 +63,7 @@
         return TerrainType == TerrainType.FOREST ? "55" : "61";
     }
 
-    public void UpdateFilesForModdedTerrain(DirectoryInfo _dir)
+    private void UpdateFilesForModdedTerrain(DirectoryInfo _dir)
     {
         if (!isModdedTerrain)
         {
