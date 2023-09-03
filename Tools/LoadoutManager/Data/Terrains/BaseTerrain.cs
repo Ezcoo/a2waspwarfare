@@ -54,18 +54,17 @@
         File.WriteAllText(targetFile, _content);
     }
 
+    // Method to determine the mission path based on whether the terrain is modded or not
     private string DetermineMissionPathIfItsModdedOrNot()
     {
-        if (isModdedTerrain)
-        {
-            return "Modded_Missions";
-        }
-
-        return "Missions";
+        // Return "Modded_Missions" if the terrain is modded, otherwise return "Missions"
+        return isModdedTerrain ? "Modded_Missions" : "Missions";
     }
 
+    // Method to determine the mission type based on the terrain type (Forest or Desert)
     private string DetermineMissionTypeIfItsForestOrDesert()
     {
+        // Return "55" if the terrain type is FOREST, otherwise return "61"
         return TerrainType == TerrainType.FOREST ? "55" : "61";
     }
 
