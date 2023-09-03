@@ -1,8 +1,11 @@
 using System;
 using System.IO;
 
-public class EasaFileGenerator
+public class SqfFileGenerator
 {
+    private static string aircraftEasaLoadoutsFile;
+    private static string commonBalanceInitFile;
+
     public static string GenerateStartOfTheEasaFile()
     {
         string startOfTheEasaFile = string.Empty;
@@ -49,9 +52,6 @@ public class EasaFileGenerator
         return endOfTheEasaFile;
     }
 
-    private static string aircraftEasaLoadoutsFile;
-    private static string commonBalanceInitFile;
-
     public static void GenerateCommonBalanceInitAndTheEasaFileForEachTerrain()
     {
         DirectoryInfo dir = FileManager.FindA2WaspWarfareDirectory();
@@ -83,9 +83,9 @@ public class EasaFileGenerator
 
     private static string GenerateEasaFileString()
     {
-        string easaFileString = EasaFileGenerator.GenerateStartOfTheEasaFile();
+        string easaFileString = SqfFileGenerator.GenerateStartOfTheEasaFile();
         easaFileString += "\n" + aircraftEasaLoadoutsFile;
-        easaFileString += EasaFileGenerator.GenerateEndOfTheEasaFile();
+        easaFileString += SqfFileGenerator.GenerateEndOfTheEasaFile();
         return easaFileString;
     }
 

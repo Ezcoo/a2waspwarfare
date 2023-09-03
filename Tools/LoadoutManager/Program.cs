@@ -5,6 +5,6 @@ class Program
 {
     static void Main()
     {
-        EasaFileGenerator.GenerateCommonBalanceInitAndTheEasaFileForEachTerrain();
+        SqfFileGenerator.GenerateCommonBalanceInitAndTheEasaFileForEachTerrain();
     }
 }
