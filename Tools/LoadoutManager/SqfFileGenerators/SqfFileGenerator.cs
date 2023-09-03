@@ -69,8 +69,7 @@ public class SqfFileGenerator
         string easaFileString = GenerateEasaFileString();
         string commonBalanceFileString = GenerateCommonBalanceFileString();
 
-        WriteToFilesForTerrains(dir, easaFileString, commonBalanceFileString);
-        UpdateFilesForModdedTerrains(dir);
+        WriteAndUpdateToFilesForTerrains(dir, easaFileString, commonBalanceFileString);
     }
 
     private static void GenerateLoadoutsForAllVehicleTypes()
@@ -120,26 +119,20 @@ public class SqfFileGenerator
         aircraftEasaLoadoutsFile += "\n" + result + "\n";
     }
 
-    private static void WriteToFilesForTerrains(DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
+    private static void WriteAndUpdateToFilesForTerrains
+        (DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
     {
         foreach (var terrainName in Enum.GetValues(typeof(TerrainName)))
         {
             var terrainInstance = (InterfaceTerrain)EnumExtensions.GetInstance(terrainName.ToString());
-            Console.WriteLine("-------" + terrainName + "---------");
+            Console.WriteLine("------- running" + terrainName + " ---------");
             Console.WriteLine(_easaFileString);
             terrainInstance.WriteToFile(_dir, _easaFileString, @"Client\Module\EASA\EASA_Init.sqf");
             Console.WriteLine(_commonBalanceFileString);
             terrainInstance.WriteToFile(_dir, _commonBalanceFileString, @"\Common\Functions\Common_BalanceInit.sqf");
-            Console.WriteLine("------- end of " + terrainName + "---------");
-        }
-    }
 
-    private static void UpdateFilesForModdedTerrains(DirectoryInfo _dir)
-    {
-        foreach (var terrainName in Enum.GetValues(typeof(TerrainName)))
-        {
-            var terrainInstance = (InterfaceTerrain)EnumExtensions.GetInstance(terrainName.ToString());
             terrainInstance.UpdateFilesForModdedTerrain(_dir);
+            Console.WriteLine("------- end of " + terrainName + " ---------");
         }
     }
 }
