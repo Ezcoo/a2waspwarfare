@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <Folder Include="Data\Ammunition\Implementations\AirToGroundWeapons\Rockets\GuidedRockets\Maverick\ForVanillaLoadouts\" />
+    <Folder Include="SqfFileGenerators\" />
     <Folder Include="Data\Weapons\Implementations\AirToAirWeapons\Stinger\ForVanillaLoadouts\" />
     <Folder Include="Data\Weapons\Implementations\AirToGroundWeapons\Rockets\GuidedRockets\Maverick\ForVanillaLoadouts\" />
   </ItemGroup>
