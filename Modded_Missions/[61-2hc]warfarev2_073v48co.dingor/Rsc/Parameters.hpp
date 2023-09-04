@@ -1,6 +1,12 @@
 /* Parameters */
 
 class Params {
+	class WFBE_C_AFK_TIME {
+		title = "$STR_WF_PARAMETER_AFK_Time";
+		values[] = {1,5,10,15,20,30};
+		texts[] = {"5", "10", "15", "20", "30"};
+		default = 10;
+	};
 	class WFBE_C_AI_DELEGATION {
 		title = "$STR_WF_PARAMETER_AI_Delegation";
 		values[] = {0,1,2};
