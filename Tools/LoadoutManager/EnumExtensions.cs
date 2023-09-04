@@ -30,16 +30,6 @@ public static class EnumExtensions
             return "null";
         }
 
-        var type = _enumVal.GetType();
-        if (type == typeof(string))
-        {
-            // You can handle this case separately if needed.
-        }
-        else
-        {
-            // You can log or handle the type information differently if needed.
-        }
-
         var memInfo = _enumVal.GetType().GetMember(enumValString);
         var attr = memInfo[0].GetCustomAttributes(false).OfType<EnumMemberAttribute>().FirstOrDefault();
 
