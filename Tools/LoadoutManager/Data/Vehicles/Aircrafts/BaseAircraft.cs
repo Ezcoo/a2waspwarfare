@@ -214,8 +214,7 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
 
     // Checks whether a given loadout should be disregarded based on certain conditions, such as exceeding the allowed amount of a particular ammunition type.
     private bool CheckDisregardedLoadout(
-        Dictionary<AmmunitionType, int> _input,
-        bool _generateWithPriceAndWeaponsInfo)
+        Dictionary<AmmunitionType, int> _input, bool _generateWithPriceAndWeaponsInfo)
     {
         bool disregardLoadout = false;
         var ammoToSearch = AmmunitionType.BASECH29;
