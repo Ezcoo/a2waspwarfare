@@ -1,8 +1,11 @@
-using System;
-using System.IO;
-
+// The FileManager class serves as a comprehensive utility for managing files and directories.
+// It provides methods to copy files and directories from a source to a destination while ensuring the destination directory exists.
+// It also has methods for recursively copying subdirectories and for cleaning up extra files and directories at the destination.
 public class FileManager
+
 {
+    // Orchestrates the process of copying files and directories from the source to the destination.
+    // Ensures the destination directory exists, copies the files, and cleans up any extra files and directories.
     public static void CopyFilesFromSourceToDestination(string _source, string _destination)
     {
         EnsureDirectoryExists(_destination);
@@ -12,11 +15,13 @@ public class FileManager
         DeleteExtraDirectories(_source, _destination);
     }
 
+    // Ensures that the directory exists at the specified path. Creates the directory if it doesn't exist.
     private static void EnsureDirectoryExists(string _directoryPath)
     {
         Directory.CreateDirectory(_directoryPath);
     }
 
+    // Copies each file from the source directory to the destination directory. Overwrites existing files.
     private static void CopyFiles(string _source, string _destination)
     {
         foreach (var file in Directory.GetFiles(_source))
@@ -33,6 +38,8 @@ public class FileManager
         }
     }
 
+    // Determines whether the given file should be skipped based on its name. Skips files with specific extensions
+    // or naming conventions (the ones that are unique to each of the terrains)
     private static bool ShouldSkipFile(string _fileName)
     {
         return _fileName.EndsWith("mission.sqm", StringComparison.OrdinalIgnoreCase) ||
@@ -40,6 +47,7 @@ public class FileManager
                 !_fileName.EndsWith("Init_Version.sqf", StringComparison.OrdinalIgnoreCase));
     }
 
+    // Recursively copies all subdirectories from the source to the destination using the main orchestrator method.
     private static void RecursivelyCopySubdirectories(string _source, string _destination)
     {
         foreach (var directory in Directory.GetDirectories(_source))
@@ -52,6 +60,7 @@ public class FileManager
         }
     }
 
+    // Deletes extra files in the destination directory that do not exist in the source directory, skipping files based on naming conventions.
     private static void DeleteExtraFiles(string _source, string _destination)
     {
         foreach (var destFile in Directory.GetFiles(_destination))
@@ -71,6 +80,7 @@ public class FileManager
         }
     }
 
+    // Deletes extra directories in the destination that do not have corresponding directories in the source.
     private static void DeleteExtraDirectories(string _source, string _destination)
     {
         foreach (var destDir in Directory.GetDirectories(_destination))
