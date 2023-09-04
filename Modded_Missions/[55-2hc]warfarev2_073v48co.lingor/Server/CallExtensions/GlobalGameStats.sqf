@@ -3,12 +3,12 @@ _cSharpClassName = "GLOBALGAMESTATS";
 _currentMap = worldName;
 
 while {true} do {
-    ["INFORMATION", Format ["Running with old vars %1: %2 | %3 | %4 | %5 | %6",_cSharpClassName,_scoreSideWest,_scoreSideEast,_currentMap,_uptime,_playerCount]] Call WFBE_CO_FNC_LogContent;
-
     _scoreSideWest = scoreSide west;
     _scoreSideEast = scoreSide east;
     _uptime = round(time);
     _playerCount = 0;
+
+    ["INFORMATION", Format ["Running with old vars %1: %2 | %3 | %4 | %5 | %6",_cSharpClassName,_scoreSideWest,_scoreSideEast,_currentMap,_uptime,_playerCount]] Call WFBE_CO_FNC_LogContent;
 
     // Count the actual players, skip bots that are in the deadspawns
     {
