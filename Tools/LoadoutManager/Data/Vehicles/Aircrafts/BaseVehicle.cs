@@ -7,7 +7,6 @@ using System.Text;
 // The class also provides methods for generating SQF (Slate Query Format) code snippets for initializing and balancing vehicle attributes in the game.
 public abstract class BaseVehicle : InterfaceVehicle
 {
-{
     // Represents the name of the vehicle (e.g., Su25, L-39, T-90).
     public VehicleType VehicleType { get => vehicleType; set => vehicleType = value; }
 
