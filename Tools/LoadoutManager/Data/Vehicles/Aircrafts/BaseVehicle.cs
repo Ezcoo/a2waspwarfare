@@ -1,28 +1,57 @@
-using System.Drawing;
-using System.Linq;
-using System.Numerics;
-using System.Runtime.Serialization;
+using System;
 using System.Text;
 
+// The BaseVehicle class is an abstract base that encapsulates the core functionalities and attributes applicable to all vehicle types in the game.
+// It implements the InterfaceVehicle interface to standardize common properties like vehicle type, in-game display name, factory level, and production factory type.
+// Additionally, it holds data structures for managing various weapon configurations and loadouts, including conditional weapon removal based on factory levels.
+// The class also provides methods for generating SQF (Slate Query Format) code snippets for initializing and balancing vehicle attributes in the game.
 public abstract class BaseVehicle : InterfaceVehicle
 {
+{
+    // Represents the name of the vehicle (e.g., Su25, L-39, T-90).
     public VehicleType VehicleType { get => vehicleType; set => vehicleType = value; }
-    string InterfaceVehicle.InGameDisplayName { get => inGameDisplayName ; set => inGameDisplayName = value; }
+
+    // Specifies the display name of the vehicle as it appears in-game.
+    string InterfaceVehicle.InGameDisplayName { get => inGameDisplayName; set => inGameDisplayName = value; }
+
+    // Specifies the factory level required for this vehicle in the game.
     public int InGameFactoryLevel { get => inGameFactoryLevel; set => inGameFactoryLevel = value; }
+
+    // Indicates the type of factory where this vehicle is produced.
     public FactoryType ProducedFromFactoryType { get => producedFromFactoryType; set => producedFromFactoryType = value; }
 
+    // Protected member holding the actual type of the vehicle.
     protected VehicleType vehicleType { get; set; }
-    protected Loadout defaultLoadout { get; set; }
-    protected Loadout defaultLoadoutOnTurret { get; set; }
-    protected Loadout vanillaGameDefaultLoadout { get; set; }
-    protected Loadout vanillaGameDefaultLoadoutOnTurret { get; set; }
-    protected int turretPos { get; set; }
-    protected int inGameFactoryLevel { get; set; }
-    protected FactoryType producedFromFactoryType { get; set; }
-    protected string inGameDisplayName { get; set; }
-    protected Dictionary<WeaponType, int> weaponsToRemoveUntilFactoryLevelOnAVehicle { get; set; }
-    protected Dictionary<WeaponType, int> weaponsOnTheTurretToRemoveUntilFactoryLevelOnAVehicle { get; set; }
 
+    // Default loadout configuration for the vehicle.
+    protected Loadout defaultLoadout { get; set; }
+
+    // Default loadout configuration specifically for the turret on the vehicle.
+    protected Loadout defaultLoadoutOnTurret { get; set; }
+
+    // Default loadout configuration from the vanilla game.
+    protected Loadout vanillaGameDefaultLoadout { get; set; }
+
+    // Default loadout configuration for the turret from the vanilla game.
+    protected Loadout vanillaGameDefaultLoadoutOnTurret { get; set; }
+
+    // Position index for the turret on the vehicle.
+    protected int turretPos { get; set; }
+
+    // Protected member holding the factory level required for this vehicle.
+    protected int inGameFactoryLevel { get; set; }
+
+    // Protected member indicating the type of factory where this vehicle is produced.
+    protected FactoryType producedFromFactoryType { get; set; }
+
+    // Protected member for the in-game display name of the vehicle.
+    protected string inGameDisplayName { get; set; }
+
+    // Mapping of weapon types to the factory levels at which they should be removed from the vehicle.
+    protected Dictionary<WeaponType, int> weaponsToRemoveUntilFactoryLevelOnAVehicle { get; set; }
+
+    // Mapping of weapon types for the turret to the factory levels at which they should be removed from the vehicle.
+    protected Dictionary<WeaponType, int> weaponsOnTheTurretToRemoveUntilFactoryLevelOnAVehicle { get; set; }
     // Add price etc here for more advanced SQF generation
 
     protected BaseVehicle()
@@ -39,6 +68,10 @@ public abstract class BaseVehicle : InterfaceVehicle
 
     protected abstract string GenerateCommentForTheSqfCode();
 
+    // Initiates the generation of SQF code for balancing the vehicle's weapons and loadouts.
+    // This method takes into account both the default and turret-specific loadouts,
+    // as well as any weapons that need to be removed based on factory level.
+    // Returns: A string containing the generated SQF code for the vehicle balance initialization.
     public string StartGeneratingCommonBalanceInitForTheVehicle()
     {
         string finalSQFCode = GenerateCommonBalanceInitForTheVehicle(vanillaGameDefaultLoadout, defaultLoadout);
@@ -68,6 +101,9 @@ public abstract class BaseVehicle : InterfaceVehicle
         return $"{GenerateCommentForTheSqfCode()}\ncase \"{EnumExtensions.GetEnumMemberAttrValue(VehicleType)}\": {{\n" + finalSQFCode + "};";
     }
 
+    // Generates SQF code to remove weapons from the vehicle based on the factory level and type.
+    // The method uses the 'weaponsToRemoveUntilFactoryLevelOnAVehicle' dictionary to determine which weapons to remove.
+    // Returns: A string containing the generated SQF code for weapon removal.
     private string GenerateSQFCodeForWeaponRemoval()
     {
         StringBuilder sb = new StringBuilder();
@@ -90,6 +126,9 @@ public abstract class BaseVehicle : InterfaceVehicle
         return sb.ToString();
     }
 
+    // Generates SQF (Arma 2 scripting language) code to remove weapons from the turret based on factory level.
+    // The method checks the current factory level for the player's faction and compares it against a predefined level.
+    // If the factory level is less than the required level, the weapon on the turret is removed.
     private string GenerateSQFCodeForWeaponRemovalOnTheTurret()
     {
         StringBuilder sb = new StringBuilder();
@@ -112,6 +151,15 @@ public abstract class BaseVehicle : InterfaceVehicle
         return sb.ToString();
     }
 
+    // Generates Arma 2 SQF (Scripting language) code for initializing the balance of a vehicle's loadout.
+    // This method compares the default and vanilla loadouts to produce SQF code that performs 
+    // the necessary additions and removals of weapons and magazines.
+    // Parameters:
+    // _vanillaLoadout: The vanilla game's default loadout for the vehicle.
+    // _defaultLoadout: The customized loadout that will be set for the vehicle.
+    // _turret: Optional parameter, specifies if the turret is being configured.
+    // Returns: 
+    // A string containing SQF code for initializing the loadout balance.
     public string GenerateCommonBalanceInitForTheVehicle(Loadout _vanillaLoadout, Loadout _defaultLoadout, string _turret = "")
     {
         // Use trycatch
@@ -124,7 +172,6 @@ public abstract class BaseVehicle : InterfaceVehicle
         List<string> extraWeaponsToRemove = new();
 
         // Use trycatch
-
         if (error)
         {
             Console.WriteLine("Error!!! " + nameof(weaponsAndMagazinesToRemove) +
@@ -268,6 +315,11 @@ public abstract class BaseVehicle : InterfaceVehicle
         return removeSQFCode + addSQFCode;
     }
 
+    // Converts a dictionary mapping weapons to magazines into a dictionary mapping magazines to their counts.
+    // Parameters:
+    // weaponsAndMagazines: A dictionary mapping weapon types to their associated magazines.
+    // Returns:
+    // A dictionary where keys are magazine types and values are the counts of each magazine type.
     private Dictionary<string, int> ConvertToMagazineDictionary(Dictionary<string, List<string>> weaponsAndMagazines)
     {
         Dictionary<string, int> result = new Dictionary<string, int>();
@@ -288,7 +340,12 @@ public abstract class BaseVehicle : InterfaceVehicle
         return result;
     }
 
-
+    // Populates a dictionary with weapons and their associated magazines based on a given ammunition count.
+    // Parameters:
+    // _ammunitionTypesWithCount: A dictionary mapping ammunition types to their counts.
+    // _weaponsAndMagazines: A dictionary to populate with weapon types and their associated magazines.
+    // Returns:
+    // A boolean indicating if an error occurred (true if error, false otherwise).
     private bool PopulateWeaponsAndMagazines(
         Dictionary<AmmunitionType, int> _ammunitionTypesWithCount,
         Dictionary<string, List<string>> _weaponsAndMagazines)
@@ -324,11 +381,24 @@ public abstract class BaseVehicle : InterfaceVehicle
         return false;
     }
 
+    // Collects all the magazines from a dictionary that maps weapons to magazines.
+    // Parameters:
+    // _weaponsAndMagazines: A dictionary mapping weapon types to their associated magazines.
+    // Returns:
+    // A list containing all unique magazines from the dictionary.
     private List<string> GetAllMagazines(Dictionary<string, List<string>> _weaponsAndMagazines)
     {
         return _weaponsAndMagazines.Values.SelectMany(m => m).ToList();
     }
 
+    // Generates the SQF code snippet for adding or removing magazines and weapons.
+    // Parameters:
+    // _magazines: A dictionary mapping magazine types to their counts.
+    // _weapons: A list of weapons.
+    // _action: The action to be performed, either "add" or "remove".
+    // _turret: Optional parameter to specify if the operation is for a turret.
+    // Returns:
+    // A string containing the generated SQF code snippet.
     private string GenerateSQFCodeInner(Dictionary<string, int> _magazines, IEnumerable<string> _weapons, string _action, string _turret)
     {
         string magazineAction = _action == "add" ? "add" + "Magazine" + _turret : "remove" + "Magazine" + _turret;
@@ -372,7 +442,12 @@ public abstract class BaseVehicle : InterfaceVehicle
         return sqfCode.ToString();
     }
 
-
+    // Compares two dictionaries mapping ammunition types to their counts and finds the different keys.
+    // Parameters:
+    // _firstDictionary: The first dictionary to compare.
+    // _secondDictionary: The second dictionary to compare.
+    // Returns:
+    // A list of keys that are different between the two dictionaries.
     private List<string> CompareDictionaries(
         Dictionary<AmmunitionType, int> _firstDictionary,
         Dictionary<AmmunitionType, int> _secondDictionary)
@@ -386,7 +461,11 @@ public abstract class BaseVehicle : InterfaceVehicle
             .ToList();
     }
 
-
+    // Converts a dictionary mapping ammunition types to counts into another dictionary mapping ammunition type strings to weapon types.
+    // Parameters:
+    // _input: The input dictionary mapping ammunition types to their counts.
+    // Returns:
+    // A dictionary mapping ammunition type strings to their associated weapon types.
     private Dictionary<string, WeaponType> ConvertDictionaryAmmunutionTypeIntToDictionary(Dictionary<AmmunitionType, int> _input)
     {
         Dictionary<string, WeaponType> ammunitionTypeToWeaponType = new Dictionary<string, WeaponType>();
