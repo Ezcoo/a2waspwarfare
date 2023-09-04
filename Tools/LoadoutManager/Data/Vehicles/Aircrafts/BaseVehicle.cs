@@ -179,7 +179,7 @@ public abstract class BaseVehicle : InterfaceVehicle
             return "[ERROR]";
         }
 
-        var commonKeys = CompareDictionaries(_vanillaLoadout.AmmunitionTypesWithCount, _defaultLoadout.AmmunitionTypesWithCount);
+        var commonKeys = CompareAmmunitionDictionaries(_vanillaLoadout.AmmunitionTypesWithCount, _defaultLoadout.AmmunitionTypesWithCount);
 
         List<WeaponType> allowedWeapons = new List<WeaponType>();
         List<WeaponType> vanillaWeapons = new List<WeaponType>();
@@ -448,7 +448,7 @@ public abstract class BaseVehicle : InterfaceVehicle
     // _secondDictionary: The second dictionary to compare.
     // Returns:
     // A list of keys that are different between the two dictionaries.
-    private List<string> CompareDictionaries(
+    private List<string> CompareAmmunitionDictionaries(
         Dictionary<AmmunitionType, int> _firstDictionary,
         Dictionary<AmmunitionType, int> _secondDictionary)
     {
