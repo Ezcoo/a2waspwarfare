@@ -6,6 +6,9 @@ _lastCommanderTeam = commanderTeam;
 _changeCommander = false;
 _timer = 0;
 
+//Marty : Test ICBM message scrip
+execVM "Client\ICMB_Message.sqf"; 
+
 while {!gameOver} do {
 	commanderTeam = (sideJoined) Call WFBE_CO_FNC_GetCommanderTeam;
 	if (IsNull commanderTeam && !IsNull _lastCommanderTeam) then {_changeCommander = true};
