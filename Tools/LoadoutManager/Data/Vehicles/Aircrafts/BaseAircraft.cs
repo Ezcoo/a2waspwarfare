@@ -1,14 +1,21 @@
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-
+// The BaseAircraft class serves as the foundational abstraction for all types of aircraft in the application.
+// It inherits from the BaseVehicle class and implements the InterfaceAircraft, encapsulating common behaviors,
+// properties, and methods shared across different aircraft types. This includes functionalities for generating
+// loadouts, calculating weapon counts, and managing ammunition types, among others.
 public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
 {
+    // Number of pylons available on the aircraft.
     public int pylonAmount { get; set; }
+
+    // Dictionary mapping allowed ammunition types to their maximum allowed amounts.
     public Dictionary<AmmunitionType, int> allowedAmmunitionTypesWithTheirLimitationAmount { get; set; }
+
     public bool addToDefaultLoadoutPrice { get; set; }
+
+    // Dictionary mapping ammunition types to their cost modifiers.
     public Dictionary<AmmunitionType, float> ammunitionTypeCostFloatModifier { get; set; }
 
+    // Generates a string representing the loadouts for this aircraft.
     public string GenerateLoadoutsForTheAircraft()
     {
         string generatedLoadouts = string.Empty;
@@ -28,12 +35,14 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         return generatedLoadouts;
     }
 
+    // Generates a comment for the Sqf code representing this aircraft's loadout, including details like display name and factory type.
     protected override string GenerateCommentForTheSqfCode()
     {
         return "// " + inGameDisplayName + " [" + EnumExtensions.GetEnumMemberAttrValue(producedFromFactoryType)
             + InGameFactoryLevel + "] - " + pylonAmount + " pylons";
     }
 
+    // Generates combinations of allowed ammunition types for this aircraft's pylons.
     private string GenerateCombinationLoadouts()
     {
         string generatedCombinationLoadouts = string.Empty;
@@ -50,6 +59,7 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         return generatedCombinationLoadouts;
     }
 
+    // Sorts combinations of ammunition types by total cost and returns them as a formatted string.
     private string GenerateSortedCombinations(List<List<AmmunitionType>> _combinations)
     {
         string sortedCombinations = string.Empty;
@@ -71,6 +81,7 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         return sortedCombinations;
     }
 
+    // Sorts given combinations of ammunition types by their total cost.
     private Dictionary<string, int> GetSortedCombinationsByPrice(List<List<AmmunitionType>> _combinations)
     {
         Dictionary<string, int> unsortedListByPrice = new Dictionary<string, int>();
@@ -85,6 +96,7 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         return unsortedListByPrice.OrderBy(pair => pair.Value).ToDictionary(pair => pair.Key, pair => pair.Value);
     }
 
+    // Generates a loadout and its cost for a given combination of ammunition types.
     private (string, int) GenerateLoadoutForCombination(List<AmmunitionType> _combination)
     {
         (string, int) loadout = ("", 0);
@@ -106,6 +118,7 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         return loadout;
     }
 
+    // Generates a default loadout for the aircraft based on its type and specific configurations.
     private string GenerateDefaultLoadout()
     {
         (string, int) ammunitionArray = ("", 0);
@@ -136,6 +149,7 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         return ammunitionArray.Item1;
     }
 
+    // Calculates the total price for a given ammunition type, applying a cost modifier if available.
     private int CalculateLoadoutTotalPrice(AmmunitionType _ammunitionType, int _priceWithoutModifier)
     {
         if (ammunitionTypeCostFloatModifier == null ||
@@ -147,9 +161,10 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         return _priceWithoutModifier * (int)ammunitionTypeCostFloatModifier[_ammunitionType];
     }
 
+    // Generates a row string that represents a loadout based on the given dictionary of ammunition types and counts.
+    // Optionally includes price and weapons information in the output.
     private (string, int) GenerateLoadoutRow(
-        Dictionary<AmmunitionType, int> _input,
-        bool _generateWithPriceAndWeaponsInfo = true)
+        Dictionary<AmmunitionType, int> _input, bool _generateWithPriceAndWeaponsInfo = true)
     {
         string finalRowOutput = string.Empty;
 
@@ -197,7 +212,9 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         return (finalRowOutput, calculatedLoadoutRow.totalPrice);
     }
 
-    private bool CheckDisregardedLoadout(Dictionary<AmmunitionType, int> _input,
+    // Checks whether a given loadout should be disregarded based on certain conditions, such as exceeding the allowed amount of a particular ammunition type.
+    private bool CheckDisregardedLoadout(
+        Dictionary<AmmunitionType, int> _input,
         bool _generateWithPriceAndWeaponsInfo)
     {
         bool disregardLoadout = false;
@@ -225,7 +242,9 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         return disregardLoadout;
     }
 
-
+    // Calculates the details of a loadout row based on the given dictionary of ammunition types and counts.
+    // Takes into account various conditions such as disregarded loadouts, special amounts of ammunition, and optional inclusion of price and weapon information.
+    // Returns a LoadoutRow object containing all the calculated details.
     private LoadoutRow CalculateLoadoutRow(
         Dictionary<AmmunitionType, int> _input,
         bool _generateWithPriceAndWeaponsInfo = true) // For non-default loadouts, show the information on the easa screen
@@ -341,6 +360,8 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         return newLoadoutRow;
     }
 
+    // Calculates the total count of weapons based on a given dictionary of ammunition types and their counts.
+    // Adjusts the count based on specific types of ammunition.
     private int CalculateWeaponsCount(Dictionary<AmmunitionType, int> _input)
     {
         int countOfWeapons = 0;
@@ -373,7 +394,7 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         return countOfWeapons;
     }
 
-
+    // Generates all possible combinations of ammunition types based on an array of ammunition types and a given size (r).
     private List<List<AmmunitionType>> GenerateCombinations(AmmunitionType[] _inputArray, int _r)
     {
         List<List<AmmunitionType>> result = new List<List<AmmunitionType>>();
@@ -384,6 +405,8 @@ public abstract class BaseAircraft : BaseVehicle, InterfaceAircraft
         return result;
     }
 
+    // Utility method that recursively generates combinations of ammunition types.
+    // Called by GenerateCombinations and adds combinations to the result list.
     private void GenerateCombinationsUtil(
         AmmunitionType[] _inputArray, int _r, int _start, List<AmmunitionType> _combination, List<List<AmmunitionType>> _result)
     {
