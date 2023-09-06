@@ -6,8 +6,8 @@ _lastCommanderTeam = commanderTeam;
 _changeCommander = false;
 _timer = 0;
 
-//Marty : Test ICBM message scrip
-execVM "Client\ICMB_Message.sqf"; 
+//call MessageICBM ; //Marty : Test ICBM message script
+
 
 while {!gameOver} do {
 	commanderTeam = (sideJoined) Call WFBE_CO_FNC_GetCommanderTeam;
