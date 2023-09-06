@@ -21,11 +21,11 @@ public class GameDataUpdateEvent : ScheduledEvent
     {
         try
         {
-            Log.WriteLine("This event should not be executed!", LogLevel.CRITICAL);
+            Log.WriteLine("This event should not be executed!", LogLevel.ERROR);
         }
         catch (Exception ex)
         {
-            Log.WriteLine(ex.Message, LogLevel.CRITICAL);
+            Log.WriteLine(ex.Message, LogLevel.ERROR);
             return;
         }
     }
@@ -64,7 +64,7 @@ public class GameDataUpdateEvent : ScheduledEvent
         }
         catch (Exception ex)
         {
-            Log.WriteLine(ex.Message, LogLevel.CRITICAL);
+            Log.WriteLine(ex.Message, LogLevel.ERROR);
             return;
         }
     }
