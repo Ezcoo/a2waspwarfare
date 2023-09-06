@@ -78,9 +78,9 @@ public class ProgramRuntime
 
     private async Task SetupEventScheduler()
     {
-        await Database.Instance.EventScheduler.CheckCurrentTimeAndExecuteScheduledEvents(true);
+        await DiscordBotDatabase.Instance.EventScheduler.CheckCurrentTimeAndExecuteScheduledEvents(true);
 
-        Thread secondThread = new Thread(Database.Instance.EventScheduler.EventSchedulerLoop);
+        Thread secondThread = new Thread(DiscordBotDatabase.Instance.EventScheduler.EventSchedulerLoop);
         secondThread.Start();
     }
 
