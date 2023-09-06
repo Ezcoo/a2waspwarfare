@@ -27,7 +27,7 @@ public class RAWMESSAGEINPUT : BaseMessage
     {
         if (thisInterfaceMessage.MessageDescription == null)
         {
-            Log.WriteLine("MessageDescription was null!", LogLevel.CRITICAL);
+            Log.WriteLine("MessageDescription was null!", LogLevel.ERROR);
             return Task.FromResult("MessageDescription was null!");
         }
 
