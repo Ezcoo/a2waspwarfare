@@ -246,18 +246,18 @@
                 <Italian>You were deducted from $%1 due to your gear</Italian>
             </Key>
             <Key ID="STR_WF_CHAT_ICBM_Launch_BY_OUR_TEAM">
-                <English>ALERT! Our team has launched an intercontinental ballistic missile (ICBM) towards the targeted area on the map. The impact will occur in %1 minutes.</English>
-                <French>ALERTE ! Notre équipe a lancé un missile intercontinental (ICBM) en direction de la zone ciblée sur la carte. L'impact surviendra dans %1 minutes.</French>
-                <German>ACHTUNG! Unser Team hat eine Interkontinentalrakete (ICBM) in Richtung des auf der Karte markierten Ziels abgefeuert. Die Auswirkungen werden in %1 Minuten eintreten.</German>
-                <Russian>ВНИМАНИЕ! Наша команда запустила межконтинентальную баллистическую ракету (МБР) в направлении цели на карте. Удар произойдет через %1 минут.</Russian>
-                <Italian>ALLARME! La nostra squadra ha lanciato un missile balistico intercontinentale (ICBM) verso l'area designata sulla mappa. L'impatto avverrà tra %1 minuti.</Italian>
+                <English>Attention! We launched a nuclear strike. Exit the area marked on the map at your earliest convenience. Countdown %1 minutes.</English>
+                <French>Attention ! Nous avons lancé une frappe nucléaire. Quittez la zone marquée sur la carte dès que possible. Compte à rebours %1 minutes.</French>
+                <German>Achtung! Wir haben einen Atomangriff gestartet. Verlassen Sie umgehend den auf der Karte markierten Bereich. Countdown %1 Minuten.</German>
+                <Russian>Внимание! Мы запустили ядерный удар. Покиньте область, отмеченную на карте, при первой возможности. Обратный отсчет %1 минут.</Russian>
+                <Italian>Attenzione! Abbiamo lanciato uno sciopero nucleare. Esci dall'area contrassegnata sulla mappa al più presto. Conto alla rovescia %1 minuti.</Italian>
             </Key>
             <Key ID="STR_WF_CHAT_ICBM_Launch_BY_ENEMY_TEAM">
-                <English>RED ALERT! An intercontinental ballistic missile (ICBM) has been deployed by enemy forces and is heading toward its target. The impact will occur in %1 minutes in an unknown area. Be prepared to act quickly!</English>
-                <French>ALERTE ROUGE ! Un missile intercontinental (ICBM) a été déployé par les forces enemies et se dirige vers sa cible. L'impact surviendra dans %1 minutes sur une zone indéterminée. Soyez prêts à agir rapidement !</French>
-                <German>ROTALARM! Ein Interkontinentalrakete (ICBM) wurde von feindlichen Truppen eingesetzt und steuert auf sein Ziel zu. Der Einschlag wird in %1 Minuten in einem nicht genannten Gebiet erfolgen. Seien Sie bereit, schnell zu handeln!</German>
-                <Russian>КРАСНАЯ ТРЕВОГА! Вражескими силами была развернута межконтинентальная баллистическая ракета (МБР), и она направляется к цели. Удар произойдет через %1 минут в неопределенной зоне. Будьте готовы действовать быстро!</Russian>
-                <Italian>ALLARME ROSSO! Un missile balistico intercontinentale (ICBM) è stato lanciato dalle forze nemiche ed è diretto verso il suo obiettivo. L'impatto avverrà tra %1 minuti in una zona non specificata. Siate pronti ad agire prontamente!</Italian>
+                <English>Warning! Enemy nuclear strike approaching. Impact coordinates are unknown. Countdown %1 minutes.</English>
+                <French>Attention ! Frappe nucléaire ennemie en approche. Les coordonnées de l'impact sont inconnues. Compte à rebours %1 minutes.</French>
+                <German>Achtung! Feindlicher Atomangriff im Anmarsch. Aufschlagskoordinaten sind unbekannt. Countdown %1 Minuten.</German>
+                <Russian>Внимание! Приближается атомный удар противника. Координаты удара неизвестны. Обратный отсчет %1 минут.</Russian>
+                <Italian>Attenzione! Si avvicina un attacco nucleare nemico. Le coordinate dell'impatto sono sconosciute. Conto alla rovescia %1 minuti.</Italian>
             </Key>
             <Key ID="STR_WF_CHAT_ICBM_Launch">
                 <English>WARNING! An Intercontinental ballistic missile launch has been detected! Five minutes to impact!</English>

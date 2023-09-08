@@ -1,4 +1,4 @@
-private["_lastCommanderTeam","_changeCommander","_timer"];
+private ["_lastCommanderTeam","_changeCommander","_timer"];
 
 commanderTeam = (sideJoined) Call WFBE_CO_FNC_GetCommanderTeam;
 
@@ -6,10 +6,12 @@ _lastCommanderTeam = commanderTeam;
 _changeCommander = false;
 _timer = 0;
 
-//call MessageICBM ; //Marty : Test ICBM message script
-
+// Marty : ICBM Event Handler
+OnEventHandler_ICBM_Launch = Compile preprocessFileLineNumbers "Client\Module\Nuke\OnEventHandler_ICBM_Launch.sqf";
+"ICBM_launched" addPublicVariableEventHandler {_this call OnEventHandler_ICBM_Launch};
 
 while {!gameOver} do {
+
 	commanderTeam = (sideJoined) Call WFBE_CO_FNC_GetCommanderTeam;
 	if (IsNull commanderTeam && !IsNull _lastCommanderTeam) then {_changeCommander = true};
 	if (!IsNull commanderTeam && IsNull _lastCommanderTeam) then {_changeCommander = true};
