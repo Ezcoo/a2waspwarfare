@@ -14,7 +14,7 @@ public class ProgramRuntime
         // Do not use the logging system before this !!!
 
         // Load the data from the file
-        await SerializationManager.DeSerializeDB();
+        SerializationManager.DeSerializeDatabases();
 
         // Set up client and return it
         client = BotReference.SetClientRefAndReturnIt();
@@ -78,9 +78,9 @@ public class ProgramRuntime
 
     private async Task SetupEventScheduler()
     {
-        await DiscordBotDatabase.Instance.EventScheduler.CheckCurrentTimeAndExecuteScheduledEvents(true);
+        await Database.GetInstance<DiscordBotDatabase>().EventScheduler.CheckCurrentTimeAndExecuteScheduledEvents(true);
 
-        Thread secondThread = new Thread(DiscordBotDatabase.Instance.EventScheduler.EventSchedulerLoop);
+        Thread secondThread = new Thread(Database.GetInstance<DiscordBotDatabase>().EventScheduler.EventSchedulerLoop);
         secondThread.Start();
     }
 

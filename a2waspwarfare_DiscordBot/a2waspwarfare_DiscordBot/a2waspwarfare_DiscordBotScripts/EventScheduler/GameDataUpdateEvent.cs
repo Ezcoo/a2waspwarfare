@@ -36,7 +36,7 @@ public class GameDataUpdateEvent : ScheduledEvent
         {
             await GameDataDeSerialization.DeSerializeGameDataFromExtension();
 
-            var interfaceChannel = DiscordBotDatabase.Instance.Categories.FindInterfaceCategoryByCategoryName(
+            var interfaceChannel = Database.GetInstance<DiscordBotDatabase>().Categories.FindInterfaceCategoryByCategoryName(
                 CategoryType.GAMESTATUSCATEGORY).FindInterfaceChannelWithNameInTheCategory(
                     ChannelType.GAMESTATUSCHANNEL);
 
