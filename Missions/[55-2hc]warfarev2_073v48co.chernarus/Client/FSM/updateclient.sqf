@@ -1,4 +1,4 @@
-private ["_lastCommanderTeam","_changeCommander","_timer"];
+private["_lastCommanderTeam","_changeCommander","_timer"];
 
 commanderTeam = (sideJoined) Call WFBE_CO_FNC_GetCommanderTeam;
 
