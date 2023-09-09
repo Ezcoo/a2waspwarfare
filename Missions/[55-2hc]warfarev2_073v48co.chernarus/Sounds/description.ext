@@ -31,4 +31,46 @@ class inboundMissileGround {
 		titles[] = {};
 	};
 
+class ICBM_message_to_enemy_players
+	{
+		name	= "ICBM_message_to_enemy_players";
+		sound[]	= {"\Sounds\warning_Enemy_ICBM_v2.ogg", db - 100, 1.0};
+		titles[] = {};
+	};
+
+class ICBM_message_to_friendly_players
+	{
+		name	= "ICBM_message_to_friendly_players";
+		sound[]	= {"\Sounds\warning_Friendly_ICBM_v2.ogg", db - 100, 1.0};
+		titles[] = {};
+	};
+
+};
+
+// Marty : CfgRadio useless at this point considering i am using CfgSounds to play sounds with command playsound.
+// marty : It is used in script by sideRadio command in order to send customized sound to teams
+// ATTENTION : When modifying the description.txt (or even the stringtable.xml), I noticed I had to restart arma2OA entirely, not only the mission, in order to have the changes take into account 
+class CfgRadio
+{
+	sounds[] = {};
+	class ICBM_message_to_enemy_players
+	{
+		// display name
+		name	= "";
+
+		// filename, volume, pitch
+		sound[]	= { "\Sounds\warning_Enemy_ICBM_v1.ogg", db - 100, 1.0 };
+
+		// radio caption
+		//title	= "Booooom";
+		//title = "$STR_WF_CHAT_ICBM_Launch_BY_ENEMY_TEAM";
+		title ="";
+	};
+	class ICBM_message_to_friendly_players
+	{
+		name	= "";
+		sound[]	= { "\Sounds\warning_Friendly_ICBM_v1.ogg", db - 100, 1.0 };
+		//title	= "$STR_WF_CHAT_ICBM_Launch_BY_OUR_TEAM";
+		title = "";
+	};
 };

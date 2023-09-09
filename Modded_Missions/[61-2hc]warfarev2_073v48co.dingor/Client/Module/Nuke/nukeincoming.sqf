@@ -3,19 +3,13 @@ Private ['_cruise','_dropPosition','_dropPosX','_dropPosY','_dropPosZ','_misFlar
 _target = _this select 0;
 _nukeMarker = _this select 1;
 
-[nil, "LocalizeMessage", ['TacticalLaunch']] Call WFBE_CO_FNC_SendToClients;
-if (isMultiplayer) then {(localize "STR_WF_CHAT_ICBM_Launch") Call CommandChatMessage};
+// Marty : 
+_time_before_ICBM_impact = missionNamespace getVariable "WFBE_ICBM_TIME_TO_IMPACT";
+sleep (_time_before_ICBM_impact * 60) ;
 
-// Plays the sound on the client
-playSound ["icbmLaunch",true];
-
-// Sends the sound to played on the other clients
-[nil, "IcbmNotify", []] Call WFBE_CO_FNC_SendToClients;
-
-sleep 300;
-
-_path = "\ca\air2\cruisemissile\"; //";
-_pathS = _path + "data\scripts\"; //";
+// Nuke effects :
+_path = "\ca\air2\cruisemissile\"; 
+_pathS = _path + "data\scripts\"; 
 
 _dropPosition = getpos _target;
 _type = if (WF_A2_Vanilla || WF_A2_CombinedOps) then {'Chukar'} else {'Chukar_EP1'};
@@ -56,5 +50,6 @@ sleep 5;
 if (WF_A2_Vanilla || WF_A2_CombinedOps) then {deleteVehicle _misFlare};
 deleteVehicle _cruise;
 
-sleep 50;
-deleteMarkerLocal _nukeMarker;
+//sleep 50;
+//deleteMarkerLocal _nukeMarker; 
+

@@ -245,6 +245,20 @@
                 <Russian>У вас изъято $%1 за ваше снаряжение</Russian>
                 <Italian>You were deducted from $%1 due to your gear</Italian>
             </Key>
+            <Key ID="STR_WF_CHAT_ICBM_Launch_BY_OUR_TEAM">
+                <English>Attention! We launched a nuclear strike. Exit the area marked on the map at your earliest convenience. Countdown %1 minutes.</English>
+                <French>Attention ! Nous avons lancé une frappe nucléaire. Quittez la zone marquée sur la carte dès que possible. Compte à rebours %1 minutes.</French>
+                <German>Achtung! Wir haben einen Atomangriff gestartet. Verlassen Sie umgehend den auf der Karte markierten Bereich. Countdown %1 Minuten.</German>
+                <Russian>Внимание! Мы запустили ядерный удар. Покиньте область, отмеченную на карте, при первой возможности. Обратный отсчет %1 минут.</Russian>
+                <Italian>Attenzione! Abbiamo lanciato uno sciopero nucleare. Esci dall'area contrassegnata sulla mappa al più presto. Conto alla rovescia %1 minuti.</Italian>
+            </Key>
+            <Key ID="STR_WF_CHAT_ICBM_Launch_BY_ENEMY_TEAM">
+                <English>Warning! Enemy nuclear strike approaching. Impact coordinates are unknown. Countdown %1 minutes.</English>
+                <French>Attention ! Frappe nucléaire ennemie en approche. Les coordonnées de l'impact sont inconnues. Compte à rebours %1 minutes.</French>
+                <German>Achtung! Feindlicher Atomangriff im Anmarsch. Aufschlagskoordinaten sind unbekannt. Countdown %1 Minuten.</German>
+                <Russian>Внимание! Приближается атомный удар противника. Координаты удара неизвестны. Обратный отсчет %1 минут.</Russian>
+                <Italian>Attenzione! Si avvicina un attacco nucleare nemico. Le coordinate dell'impatto sono sconosciute. Conto alla rovescia %1 minuti.</Italian>
+            </Key>
             <Key ID="STR_WF_CHAT_ICBM_Launch">
                 <English>WARNING! An Intercontinental ballistic missile launch has been detected! Five minutes to impact!</English>
                 <French>ATTENTION! Le lancement d'un Missile balistique intercontinental a été detecté! Cinq minutes pour avoir un impact!</French>
@@ -1680,6 +1694,13 @@
                 <German>MODUL: Nuklearwaffen (ICBM)</German>
                 <Russian>Модуль: МБР</Russian>
                 <Italian>Modulo: Missile Nucleare</Italian>
+            </Key>
+            <Key ID="STR_WF_PARAMETER_ICBM_IMPACT_TIME" >
+                <English>ICBM: Time before ICBM impact</English>
+                <French>ICBM: Temps avant impact de l'ICBM</French>
+                <German>ICBM: Zeit bis zum Einschlag der ICBM</German>
+                <Russian>МБР: Время до удара межконтинентальной баллистической ракеты</Russian>
+                <Italian>ICBM: Tempo prima dell'impatto dell'ICBM</Italian>
             </Key>
             <Key ID="STR_WF_PARAMETER_IRS" >
                 <English>MODULE: IR Smoke</English>

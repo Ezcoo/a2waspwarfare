@@ -425,14 +425,32 @@ while {alive player && dialog} do {
 			if !(scriptDone _textAnimHandler) then {terminate _textAnimHandler};
 			[17022] Call SetControlFadeAnimStop;
 			MenuAction = -1;
-			-_currentFee Call ChangePlayerFunds;
+			_currentFee Call ChangePlayerFunds;
 			_callPos = _map PosScreenToWorld[mouseX,mouseY];
-			_obj = "HeliHEmpty" createVehicle _callPos;
+			_obj = "HeliHEmpty" createVehicle _callPos; 
+			
+			//--- Marty : Creating the ICBM marker on map for the commander who give the order:
+			_ICBM_position = position _obj ;			
+			_ICBM_side = playerSide ;
+			_ICBM_infos_Array = [_ICBM_position,_ICBM_side];
+			
+			missionNamespace setVariable ["ICBM_launched", _ICBM_infos_Array];
+			publicVariable "ICBM_launched"; //We employ the publicVariable for "ICBM_launched" within the missionNamespace to initiate an event for the addPublicVariableEventHandler, which will be utilized to generate an identical marker for all team sides.
+			call ICBM_FriendySide_Message ;
+
 			_nukeMarker = createMarkerLocal ["icbmstrike", position _obj];
 			_nukeMarker setMarkerTypeLocal "mil_warning";
 			_nukeMarker setMarkerTextLocal "ICBM";
-			_nukeMarker setMarkerColorLocal "ColorRed";
+			_nukeMarker setMarkerColorLocal "ColorRed";			
+
+			// Initiate the launch
 			[_obj,_nukeMarker] Spawn NukeIncoming;
+			
+			//remove marker after nuke
+			_time_before_ICBM_impact = missionNamespace getVariable "WFBE_ICBM_TIME_TO_IMPACT"; // time in minuntes.
+			_time_before_ICBM_impact = _time_before_ICBM_impact * 60 ; 							// time in seconds.
+			[_nukeMarker,_time_before_ICBM_impact] call WFBE_CL_FNC_Delete_LocalMarker ;
+			
 		};
 		//--- Vehicle Paradrop.
 		if (MenuAction == 9) then {
