@@ -425,7 +425,7 @@ while {alive player && dialog} do {
 			if !(scriptDone _textAnimHandler) then {terminate _textAnimHandler};
 			[17022] Call SetControlFadeAnimStop;
 			MenuAction = -1;
-			_currentFee Call ChangePlayerFunds;
+			-_currentFee Call ChangePlayerFunds;
 			_callPos = _map PosScreenToWorld[mouseX,mouseY];
 			_obj = "HeliHEmpty" createVehicle _callPos; 
 			
