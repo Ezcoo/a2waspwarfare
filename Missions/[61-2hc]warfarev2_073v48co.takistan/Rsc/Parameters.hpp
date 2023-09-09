@@ -1,6 +1,12 @@
 /* Parameters */
 
 class Params {
+	class WFBE_ICBM_TIME_TO_IMPACT {
+		title = "$STR_WF_PARAMETER_ICBM_IMPACT_TIME";
+		values[] = {1,5,10,15,20};
+		texts[] = {"1 minute", "5 minutes", "10 minutes", "15 minutes", "20 minutes"};
+		default = 5;
+	};
 	class WFBE_C_AI_DELEGATION {
 		title = "$STR_WF_PARAMETER_AI_Delegation";
 		values[] = {0,1,2};

@@ -447,7 +447,8 @@ while {alive player && dialog} do {
 			[_obj,_nukeMarker] Spawn NukeIncoming;
 			
 			//remove marker after nuke
-			_time_before_ICBM_impact = missionNamespace getVariable "WFBE_ICBM_TIME_TO_IMPACT";
+			_time_before_ICBM_impact = missionNamespace getVariable "WFBE_ICBM_TIME_TO_IMPACT"; // time in minuntes.
+			_time_before_ICBM_impact = _time_before_ICBM_impact * 60 ; 							// time in seconds.
 			[_nukeMarker,_time_before_ICBM_impact] call WFBE_CL_FNC_Delete_LocalMarker ;
 			
 		};
