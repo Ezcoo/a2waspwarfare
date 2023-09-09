@@ -33,4 +33,9 @@ public class GAMESTATUSCHANNEL : BaseChannel
                 new OverwritePermissions(viewChannel: PermValue.Allow)),
         };
     }
+
+    public override Task<bool> HandleChannelSpecificGenerationBehaviour()
+    {
+        return Task.FromResult(false);
+    }
 }

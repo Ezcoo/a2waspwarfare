@@ -10,7 +10,49 @@ _timer = 0;
 OnEventHandler_ICBM_Launch = Compile preprocessFileLineNumbers "Client\Module\Nuke\OnEventHandler_ICBM_Launch.sqf";
 "ICBM_launched" addPublicVariableEventHandler {_this call OnEventHandler_ICBM_Launch};
 
+_inactivityTimeout = missionNamespace getVariable "WFBE_C_AFK_TIME";
+_inactivityTimeout = _inactivityTimeout * 60; // Convert the given time from minutes to seconds.
+
 while {!gameOver} do {
+
+	//Marty : check the inactivity (AFK, Away From Keyboard) and kick the player after too long time elapsed
+	// calculate the elapsed time from last action of the player 
+	_currentTime = time ;
+	_lastActionTime = player getVariable ["lastActionTime", time];
+	_elapsedTime = _currentTime - _lastActionTime ;
+	_countDownKick =round(_inactivityTimeout - _elapsedTime);
+	//player sideChat format ["Elapsed Time: %1 seconds", _elapsedTime]; // Display the inacticity time of the player for testing purpose	
+
+    if (_countDownKick < 30) then {
+		hint format["You are AFK. If you dont move you will be kicked in %1", _countDownKick];
+	};
+
+	// Check if the player has been inactive for more than the specified duration, if so he's ejected from the mission.
+    if (_elapsedTime > _inactivityTimeout) then {
+        
+		// Creation of a publicVariable named "kickAFK" that will be detected by BattleEye (customized filter) and will kick the client (=the player) that is using the kickAFK variable.
+		// BattleEye is used with publicVariable in order to kick player because the serverCommand has been deactivated by Bohemia since the arma2OA updated for security reason. But Weirdly they didnt mention it clearly.
+		// DON'T FORGET TO CREATE THE TEXT FILE FOR BATTLEYE. This text file must be located in the BattlEye folder where the server.cfg of the mission is. This file is called publicVariable.txt and contain the instruction : 5 "kickAFK" 
+		_namePlayer = name player ;
+		["KICK", format["%1 Kicked for AFKing", _namePlayer]] Call WFBE_CO_FNC_LogContent;
+
+		kickAFK = format["%1 Kicked for AFKing", _namePlayer];
+		publicVariable "kickAFK";
+	
+		//endMission "END1"; //not good. The player stays in the slot. Must be kicked using BattlEye Filter.
+
+    };
+	
+	// Verify if the player moved since the last check position
+	_currentPosition 	= getPos player;
+	_lastPosition 		= player getVariable ["lastPosition", getPos player] ;
+      
+	if (str(_currentPosition) != str(_lastPosition)) then {            	 
+         player setVariable ["lastActionTime", time]; // If the player moved, it saves the current time into lastActionTime variable.
+    };
+
+	player setVariable ["lastPosition", position player]; // Saving the last position of the player with the current one.
+	// Marty. 
 
 	commanderTeam = (sideJoined) Call WFBE_CO_FNC_GetCommanderTeam;
 	if (IsNull commanderTeam && !IsNull _lastCommanderTeam) then {_changeCommander = true};
