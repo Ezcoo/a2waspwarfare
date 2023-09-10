@@ -449,7 +449,7 @@ while {alive player && dialog} do {
 			//remove marker after nuke
 			_time_before_ICBM_impact = missionNamespace getVariable "WFBE_ICBM_TIME_TO_IMPACT"; // time in minutes.
 			_time_before_ICBM_impact = _time_before_ICBM_impact * 60 ;							// time in seconds
-			[_nukeMarker,_time_before_ICBM_impact] call WFBE_CL_FNC_Delete_LocalMarker ;					
+			[_nukeMarker,_time_before_ICBM_impact] call WFBE_CL_FNC_Delete_Marker ;					
 		};
 		//--- Vehicle Paradrop.
 		if (MenuAction == 9) then {

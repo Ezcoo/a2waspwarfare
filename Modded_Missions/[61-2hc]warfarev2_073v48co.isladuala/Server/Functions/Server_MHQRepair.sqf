@@ -51,6 +51,11 @@ _logik setVariable ['wfbe_hq_repair_count', (_logik getVariable "wfbe_hq_repair_
 [leader _commanderTeam, "SetMHQLock", _MHQ] Call WFBE_CO_FNC_SendToClient;	
 [_side,"Mobilized", ["Base", _MHQ]] Spawn SideMessage;
 deleteVehicle _hq;	
+
+// Remove mark HQ wreck on map :
+_marker_name = "HQ_WRECK_" + str(_side) ;
+[_marker_name, 0]call WFBE_CL_FNC_Delete_Marker;	
+
 		
 
 ["INFORMATION", Format ["Server_MHQRepair.sqf: [%1] MHQ has been repaired.", _sideText]] Call WFBE_CO_FNC_LogContent;

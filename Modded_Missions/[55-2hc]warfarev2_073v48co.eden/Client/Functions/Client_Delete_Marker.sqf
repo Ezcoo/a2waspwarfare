@@ -9,17 +9,18 @@
 		
 */
 
-private ["_nukeMarker", "_deleteTime"];
+private ["_marker_name", "_deleteTime"];
 
-_nukeMarker = _this select 0;
+_marker_name = _this select 0;
 _deleteTime = _this select 1;
 
-[_nukeMarker,_deleteTime]spawn 
+[_marker_name,_deleteTime]spawn 
 {
-	_nukeMarker = _this select 0;
+	_marker_name = _this select 0;
 	_deleteTime = _this select 1;
 	
 	sleep _deleteTime;
 	
-	deleteMarkerLocal _nukeMarker;
+	//deleteMarkerLocal _marker_name;
+	deleteMarker _marker_name;
 };		
