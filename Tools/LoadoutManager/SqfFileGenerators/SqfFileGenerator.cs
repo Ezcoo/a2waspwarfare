@@ -97,9 +97,9 @@ public class SqfFileGenerator
     // GenerateEasaFileString() stores the path for the respective EASA loadouts or initialization files.
     private static string GenerateEasaFileString()
     {
-        string easaFileString = SqfFileGenerator.GenerateStartOfTheEasaFile();
+        string easaFileString = GenerateStartOfTheEasaFile();
         easaFileString += "\n" + aircraftEasaLoadoutsFile;
-        easaFileString += SqfFileGenerator.GenerateEndOfTheEasaFile();
+        easaFileString += GenerateEndOfTheEasaFile();
         return easaFileString;
     }
 
