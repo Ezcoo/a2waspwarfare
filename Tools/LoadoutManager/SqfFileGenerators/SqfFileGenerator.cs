@@ -7,7 +7,7 @@ public class SqfFileGenerator
 {
     // aircraftEasaLoadoutsFile stores the text for the respective EASA loadouts or initialization files.
     private static string aircraftEasaLoadoutsFile = string.Empty;
-    // commonBalanceInitFile stores the text for the respective EASA loadouts or initialization files.
+    // commonBalanceInitFile stores the text for the respective Common_BalanceInit loadouts or initialization files.
     private static string commonBalanceInitFile = string.Empty;
 
     // GenerateStartOfTheEasaFile creates the initial part of the SQF file.
@@ -97,9 +97,9 @@ public class SqfFileGenerator
     // GenerateEasaFileString() stores the path for the respective EASA loadouts or initialization files.
     private static string GenerateEasaFileString()
     {
-        string easaFileString = SqfFileGenerator.GenerateStartOfTheEasaFile();
+        string easaFileString = GenerateStartOfTheEasaFile();
         easaFileString += "\n" + aircraftEasaLoadoutsFile;
-        easaFileString += SqfFileGenerator.GenerateEndOfTheEasaFile();
+        easaFileString += GenerateEndOfTheEasaFile();
         return easaFileString;
     }
 
