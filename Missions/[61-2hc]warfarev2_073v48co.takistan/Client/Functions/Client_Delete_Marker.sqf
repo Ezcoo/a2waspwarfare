@@ -21,6 +21,7 @@ _deleteTime = _this select 1;
 	
 	sleep _deleteTime;
 	
-	deleteMarkerLocal _marker_name;
+	//deleteMarkerLocal _marker_name;
+	deleteMarker _marker_name;
 	
 };		

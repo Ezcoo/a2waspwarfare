@@ -72,9 +72,6 @@ _markerText 		= "HQ WRECK must be repaired";
 _markerColor 		= "ColorRed";
 _markerSide			= _side;
 
-systemChat format ["1. str(_side) = %1", str(_side)];
-systemChat format ["2. _marker_name = %1", _marker_name];
-
 [_marker_name, _marker_position, _markerType, _markerText, _markerColor, _markerSide] call WF_createMarker ;
 
 
