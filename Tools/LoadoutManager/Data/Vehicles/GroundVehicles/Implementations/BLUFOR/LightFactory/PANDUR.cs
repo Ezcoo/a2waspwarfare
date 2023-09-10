@@ -20,12 +20,6 @@ public class PANDUR : BaseGroundVehicle
         inGameFactoryLevel = 3;
         producedFromFactoryType = FactoryType.LIGHTFACTORY;
 
-        //weaponsToRemoveUntilHeavyLevelOnATank = new Dictionary<WeaponType, int>
-        //{
-        //    {WeaponType.SPIKELAUNCHER, 4},
-        //};
-
-        // Moved to turret
         weaponsOnTheTurretToRemoveUntilFactoryLevelOnAVehicle = new Dictionary<WeaponType, int>
         {
             {WeaponType.SPIKELAUNCHER, 4},
