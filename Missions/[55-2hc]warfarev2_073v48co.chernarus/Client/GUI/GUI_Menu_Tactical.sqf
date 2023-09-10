@@ -430,19 +430,20 @@ while {alive player && dialog} do {
 			_obj = "HeliHEmpty" createVehicle _callPos; 
 			
 			//--- Marty : Creating the ICBM marker on map for the commander who give the order:
+			/*
 			_ICBM_position = position _obj ;			
 			_ICBM_side = playerSide ;
 			_ICBM_infos_Array = [_ICBM_position,_ICBM_side];
-			
+			*/
 			missionNamespace setVariable ["ICBM_launched", _ICBM_infos_Array];
 			publicVariable "ICBM_launched"; //We employ the publicVariable for "ICBM_launched" within the missionNamespace to initiate an event for the addPublicVariableEventHandler, which will be utilized to generate an identical marker for all team sides.
 			call ICBM_FriendySide_Message ;
-
+			/*
 			_nukeMarker = createMarkerLocal ["icbmstrike", position _obj];
 			_nukeMarker setMarkerTypeLocal "mil_warning";
 			_nukeMarker setMarkerTextLocal "ICBM";
 			_nukeMarker setMarkerColorLocal "ColorRed";			
-
+			*/
 			// Initiate the launch
 			[_obj,_nukeMarker] Spawn NukeIncoming;
 			
