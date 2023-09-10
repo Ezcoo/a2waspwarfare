@@ -5,7 +5,7 @@ public class PANDUR : BaseGroundVehicle
         VehicleType = VehicleType.PANDUR;
         inGameDisplayName = "Pandur";
 
-         base.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
+        base.vanillaGameDefaultLoadoutOnTurret.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.ATK44HE, 2},
                 { AmmunitionType.ATK44AP, 2},
@@ -20,12 +20,6 @@ public class PANDUR : BaseGroundVehicle
         inGameFactoryLevel = 3;
         producedFromFactoryType = FactoryType.LIGHTFACTORY;
 
-        //weaponsToRemoveUntilHeavyLevelOnATank = new Dictionary<WeaponType, int>
-        //{
-        //    {WeaponType.SPIKELAUNCHER, 4},
-        //};
-
-        // Moved to turret
         weaponsOnTheTurretToRemoveUntilFactoryLevelOnAVehicle = new Dictionary<WeaponType, int>
         {
             {WeaponType.SPIKELAUNCHER, 4},
