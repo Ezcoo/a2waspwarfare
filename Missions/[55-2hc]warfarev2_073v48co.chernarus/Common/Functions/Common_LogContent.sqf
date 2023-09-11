@@ -6,8 +6,6 @@
 		- {Log Level}.
 */
 	
-//if !(isNil "WF_content") then 
-//{
 #ifdef WF_LOG_CONTENT
 	Private ["_logContent","_logLevel","_logType"];
 
@@ -17,4 +15,4 @@
 
 	if (_logLevel >= WFBE_LogLevel) then {diag_log Format["[WFBE (%1)] [frameno:%2 | ticktime:%3 | fps:%4] %5",_logType, diag_frameno, diag_tickTime, diag_fps, _logContent]};
 #endif
-//};
+
