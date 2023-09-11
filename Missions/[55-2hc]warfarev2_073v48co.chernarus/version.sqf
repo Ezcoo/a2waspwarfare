@@ -6,6 +6,9 @@
 /* DEBUG */
 //#define WF_DEBUG 1
 
+/* LOG_CONTENT activation */
+#define WF_LOG_CONTENT 1 // Marty - IMPORTANT : COMMENT this line if you DONT want to activate logs in rpt file. Changing only its value wont have any effect.
+
 /* Gameplay: Change the overall camo */
 #define WF_CAMO 1
 

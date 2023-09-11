@@ -3,6 +3,16 @@
 //--- Define which 'part' of the game to run.
 #include "version.sqf"
 
+//WF_LOG_CONTENT
+WF_content = false;
+
+#ifdef WF_LOG_CONTENT
+	WF_content = true;
+	#define LOG_CONTENT_STATE "ACTIVATED"
+#else 
+	#define LOG_CONTENT_STATE "NOT ACTIVATED"
+#endif
+
 CBA_display_ingame_warnings = false;
 publicVariable "CBA_display_ingame_warnings";
 //--- Mission is starting.
@@ -10,6 +20,7 @@ for '_i' from 0 to 3 do {diag_log "################################"};
 diag_log format ["## Island Name: [%1]", worldName];
 diag_log format ["## Mission Name: [%1]", WF_MISSIONNAME];
 diag_log format ["## Max players Defined: [%1]", WF_MAXPLAYERS];
+diag_log format ["## LOG CONTENT : [%1]", LOG_CONTENT_STATE];
 for '_i' from 0 to 3 do {diag_log "################################"};
 
 townModeSet = false;
@@ -93,7 +104,6 @@ WF_Camo = false;
 	WF_Camo = true;
 #endif
 
-
 if (isMultiplayer) then {Call Compile preprocessFileLineNumbers "Common\Init\Init_Parameters.sqf"}; //--- In MP, we get the parameters.
 
 Call Compile preprocessFileLineNumbers "Common\Init\Init_CommonConstants.sqf"; //--- Set the constants and the parameters, skip the params if they're already defined.
@@ -109,7 +119,6 @@ if (WF_Debug) then { //--- Debug.
 	missionNamespace setVariable ["WFBE_C_ECONOMY_FUNDS_START_EAST", 999999];
 	missionNamespace setVariable ["WFBE_C_ECONOMY_FUNDS_START_WEST", 999999];
 	missionNamespace setVariable ["WFBE_C_MODULE_WFBE_EASA", 1];
-
 };
 
 //--- Disable headless client if it is not supported.
