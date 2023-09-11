@@ -1,3 +1,5 @@
+private ["_enemy_side"];
+
 disableSerialization;
 
 _display = _this select 0;
@@ -430,27 +432,36 @@ while {alive player && dialog} do {
 			_obj = "HeliHEmpty" createVehicle _callPos; 
 			
 			//--- Marty : Creating the ICBM marker on map for the commander who give the order:
-			/*
-			_ICBM_position = position _obj ;			
-			_ICBM_side = playerSide ;
-			_ICBM_infos_Array = [_ICBM_position,_ICBM_side];
-			*/
-			missionNamespace setVariable ["ICBM_launched", _ICBM_infos_Array];
-			publicVariable "ICBM_launched"; //We employ the publicVariable for "ICBM_launched" within the missionNamespace to initiate an event for the addPublicVariableEventHandler, which will be utilized to generate an identical marker for all team sides.
-			call ICBM_FriendySide_Message ;
-			/*
-			_nukeMarker = createMarkerLocal ["icbmstrike", position _obj];
-			_nukeMarker setMarkerTypeLocal "mil_warning";
-			_nukeMarker setMarkerTextLocal "ICBM";
-			_nukeMarker setMarkerColorLocal "ColorRed";			
-			*/
+			// Marty : Marking HQ wreck on map 
+			_ICBM_marker_name 		= "HQ_WRECK_" + str(time) ;
+			_ICBM_markerPosition 	= position _obj ;
+			_ICBM_markerType 		= "mil_warning";
+			_ICBM_markerText 		= "ICBM by commander";
+			_ICBM_markerColor 		= "ColorRed";
+			_ICBM_markerSide		= playerSide;
+
+			[_ICBM_marker_name, _ICBM_markerPosition, _ICBM_markerType, _ICBM_markerText, _ICBM_markerColor, _ICBM_markerSide] call WF_createMarker ;
+
+			// Marty : Messages text and audio to be sent : 
+			if (playerSide == east) then 
+			{
+				_enemy_side = west;
+			}else 
+			{
+				_enemy_side = east;
+			};
+
+			[playerSide]  call ICBM_FriendySide_Message ;	// Text and audio to be sent to the friendly side. 
+			[_enemy_side] call ICBM_EnemySide_Message ;		// Text and audio to be sent to the enemy side. 
+
 			// Initiate the launch
-			[_obj,_nukeMarker] Spawn NukeIncoming;
+			[_obj,_ICBM_marker_name] Spawn NukeIncoming;
 			
-			//remove marker after nuke
+			//remove ICBM marker after countdown elapsed
 			_time_before_ICBM_impact = missionNamespace getVariable "WFBE_ICBM_TIME_TO_IMPACT"; // time in minutes.
-			_time_before_ICBM_impact = _time_before_ICBM_impact * 60 ;							// time in seconds
-			[_nukeMarker,_time_before_ICBM_impact] call WFBE_CL_FNC_Delete_Marker ;					
+			_time_before_ICBM_impact = _time_before_ICBM_impact * 60 ;							// time in seconds.
+			[_ICBM_marker_name,_time_before_ICBM_impact] call WFBE_CL_FNC_Delete_Marker ;			// delete the marker. 
+				
 		};
 		//--- Vehicle Paradrop.
 		if (MenuAction == 9) then {
