@@ -4,10 +4,7 @@
 #include "version.sqf"
 
 //WF_LOG_CONTENT
-WF_content = false;
-
 #ifdef WF_LOG_CONTENT
-	WF_content = true;
 	#define LOG_CONTENT_STATE "ACTIVATED"
 #else 
 	#define LOG_CONTENT_STATE "NOT ACTIVATED"
