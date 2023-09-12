@@ -3,6 +3,13 @@
 //--- Define which 'part' of the game to run.
 #include "version.sqf"
 
+//WF_LOG_CONTENT
+#ifdef WF_LOG_CONTENT
+	#define LOG_CONTENT_STATE "ACTIVATED"
+#else 
+	#define LOG_CONTENT_STATE "NOT ACTIVATED"
+#endif
+
 CBA_display_ingame_warnings = false;
 publicVariable "CBA_display_ingame_warnings";
 //--- Mission is starting.
@@ -10,6 +17,7 @@ for '_i' from 0 to 3 do {diag_log "################################"};
 diag_log format ["## Island Name: [%1]", worldName];
 diag_log format ["## Mission Name: [%1]", WF_MISSIONNAME];
 diag_log format ["## Max players Defined: [%1]", WF_MAXPLAYERS];
+diag_log format ["## LOG CONTENT : [%1]", LOG_CONTENT_STATE];
 for '_i' from 0 to 3 do {diag_log "################################"};
 
 townModeSet = false;

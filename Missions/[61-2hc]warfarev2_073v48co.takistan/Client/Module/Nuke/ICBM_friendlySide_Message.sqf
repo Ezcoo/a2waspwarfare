@@ -1,23 +1,18 @@
 /* 
 	Author: Marty
-	Name: ICBM_Message.sqf
+	Name: ICBM_friendlySide_Message.sqf
 	Parameters:
-	  0 - none
+	  0 - _side : 	side object - side who must receive the message. Can be east or west
 	Description:
 	    Play a text and audio message destined to the players who launched the ICBM order = friendly side.
 */
+_side = _this select 0 ;
 
-private ["_time_before_ICBM_impact", "_text_message_to_friendly_side"];
+_time_before_ICBM_impact 			= missionNamespace getVariable "WFBE_ICBM_TIME_TO_IMPACT";
+_friendly_Message_Text 				= localize "STR_WF_CHAT_ICBM_Launch_BY_OUR_TEAM";
+_friendly_Message_Text 				= format[_friendly_Message_Text, _time_before_ICBM_impact];
+_friendly_Message_SoundName			= "ICBM_message_to_friendly_players";
+_friendly_side_who_receive_message	= _side ;
 
-["FUNCTION CALLED", "ICBM_friendlySide_Message.sqf"] Call WFBE_CO_FNC_LogContent;
-
-// Prepare and send the text message for the friendly team (the team who launch the nuke)
-_time_before_ICBM_impact = missionNamespace getVariable "WFBE_ICBM_TIME_TO_IMPACT";
-
-_text_message_to_friendly_side = localize "STR_WF_CHAT_ICBM_Launch_BY_OUR_TEAM";
-_text_message_to_friendly_side = format[_text_message_to_friendly_side, _time_before_ICBM_impact];
-
-systemChat _text_message_to_friendly_side; // Send text
-
-// Send sound to the friendly team (the team who launch the nuke)
-playSound "ICBM_message_to_friendly_players";
+// We use the magic function WF_sendMessage to broadcast text and audio to the corresponding side :
+[_friendly_Message_Text, _friendly_Message_SoundName, _friendly_side_who_receive_message ] call WF_sendMessage ;
