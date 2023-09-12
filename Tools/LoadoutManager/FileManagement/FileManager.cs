@@ -70,6 +70,7 @@ public class FileManager
             bool shouldSkipDirectory = blacklistedDirectories.Any(blacklist => directoryName.EndsWith(blacklist));
 
             // Check if directoryName ends with any string in blacklistedDirectories
+            // Only when copying to takistan
             if (blacklistedDirectories.Any(blacklist => directoryName.EndsWith(blacklist)) && _destination.EndsWith("co.Takistan"))
             {
                 continue; // Exit the method if the directory is blacklisted
