@@ -146,7 +146,7 @@ Usefull Fast Commands From Construction Menu:<br />
 ",
 //--------------------WarFare Info
 "<br />
-<t size='1.2' color='#2394ef' align='center'>Warfare WASP-AWESOME EDITION | v48 | - CO - Chernarus</t><br />
+<t size='1.2' color='#2394ef' align='center'>Warfare WASP-AWESOME EDITION | v48 | - CO - Mission</t><br />
 <t align='center'>
 <br />
 <br />
@@ -154,7 +154,7 @@ Usefull Fast Commands From Construction Menu:<br />
 <img size='8' image='Textures\logo1.paa'/>
 <br/>
 <br/>
--The Chernarus is currently at version 48
+-The Mission is currently at version 48
 <br/>
 <br/>
 -This is not the original version of Benny!
