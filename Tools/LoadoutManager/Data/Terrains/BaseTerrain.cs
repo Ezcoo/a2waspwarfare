@@ -127,6 +127,7 @@ public abstract class BaseTerrain : InterfaceTerrain
             "_barrack_amount = 2;", "_barrack_amount = 0;");
     }
 
+    // Replaces the gui menu help mission name according to the current Terrain name
     private void ReplaceGUIMenuHelp(string _destinationDirectory)
     {
         ReplaceContentOnASpecificFile(_destinationDirectory, @"\Client\GUI\GUI_Menu_Help.sqf",
@@ -179,7 +180,7 @@ public abstract class BaseTerrain : InterfaceTerrain
             "-2hc]warfarev2_073v48co." + EnumExtensions.GetEnumMemberAttrValue(TerrainName));
     }
 
-    // Method to update the Guerilla Barracks file at a specific destination directory
+    // Method to update a specific file's content (such as init_server on modded maps for disabling guerilla barracks)
     private static void ReplaceContentOnASpecificFile(string _destinationDirectory, string _missionFileToEdit,
         string _contentToSearchFor, string _contentToReplaceWith)
     {
