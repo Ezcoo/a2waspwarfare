@@ -60,18 +60,18 @@ public class FileManager
     {
         List<string> blacklistedDirectories = new List<string>
         {
-            "Textures"
+            "Textures",
+            @"Server\Config"
         };
 
         foreach (var directory in Directory.GetDirectories(_source))
         {
             string directoryName = Path.GetFileName(directory);
-
-            bool shouldSkipDirectory = blacklistedDirectories.Any(blacklist => directoryName.EndsWith(blacklist));
+            bool shouldSkipDirectory = blacklistedDirectories.Any(blacklist => directory.EndsWith(blacklist));
 
             // Check if directoryName ends with any string in blacklistedDirectories
             // Only when copying to takistan
-            if (blacklistedDirectories.Any(blacklist => directoryName.EndsWith(blacklist)) && _destination.EndsWith("co.Takistan"))
+            if (shouldSkipDirectory && _destination.Contains("co.Takistan"))
             {
                 continue; // Exit the method if the directory is blacklisted
             }
