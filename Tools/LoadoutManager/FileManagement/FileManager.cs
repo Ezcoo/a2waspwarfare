@@ -114,4 +114,37 @@ public class FileManager
 
         return dir;
     }
+
+    // This method traverses a directory and lists all the file paths.
+    // It takes in a directory path and an optional file type.
+    // If a file type is specified, it will only list files of that type.
+    public static List<string> ListFilesInDirectory(string _directoryPath, string _fileType = "")
+    {
+        // Initialize the list to store file paths
+        List<string> _filePaths = new List<string>();
+
+        // Check if the directory exists
+        if (!Directory.Exists(_directoryPath))
+        {
+            Console.WriteLine("The specified directory does not exist.");
+            return _filePaths; // Return an empty list
+        }
+
+        // Traverse the directory and add file paths to the list
+        foreach (string _filePath in Directory.EnumerateFiles(
+            _directoryPath, "*", SearchOption.AllDirectories))
+        {
+            // If a file type is specified, filter the files
+            if (!string.IsNullOrEmpty(_fileType) &&
+                !Path.GetExtension(_filePath).Equals(_fileType, StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
+            _filePaths.Add(_filePath);
+        }
+
+        // Return the list of file paths
+        return _filePaths;
+    }
 }
