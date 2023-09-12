@@ -47,6 +47,7 @@ public class FileManager
                // Convert to list to not to convert from Cherno to takistan, use as parameter to add to the list above
                _fileName.EndsWith("Init_Server.sqf", StringComparison.OrdinalIgnoreCase) ||
                _fileName.EndsWith("texHeaders.bin", StringComparison.OrdinalIgnoreCase) ||
+               _fileName.EndsWith("StartVeh.sqf", StringComparison.OrdinalIgnoreCase) ||
                _fileName.EndsWith("loadScreen.jpg", StringComparison.OrdinalIgnoreCase)
                )&&
 
