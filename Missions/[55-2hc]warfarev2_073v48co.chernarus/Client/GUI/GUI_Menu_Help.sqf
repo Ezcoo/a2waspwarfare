@@ -146,7 +146,7 @@ Usefull Fast Commands From Construction Menu:<br />
 ",
 //--------------------WarFare Info
 "<br />
-<t size='1.2' color='#2394ef' align='center'>Warfare WASP-AWESOME EDITION | v48 | - CO - Mission</t><br />
+<t size='1.2' color='#2394ef' align='center'>Warfare WASP-AWESOME EDITION | v48 | - CO - Chernarus</t><br />
 <t align='center'>
 <br />
 <br />
