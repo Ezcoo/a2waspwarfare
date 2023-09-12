@@ -56,6 +56,4 @@ deleteVehicle _hq;
 _marker_name = "HQ_WRECK_" + str(_side) ;
 [_marker_name, 0]call WFBE_CL_FNC_Delete_Marker;	
 
-		
-
 ["INFORMATION", Format ["Server_MHQRepair.sqf: [%1] MHQ has been repaired.", _sideText]] Call WFBE_CO_FNC_LogContent;
