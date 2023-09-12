@@ -2,7 +2,7 @@
 {
     public TASMANIA()
     {
-        TerrainName = TerrainName.TASMANIA;
+        TerrainName = TerrainName.TASMANIA2010;
         TerrainType = TerrainType.FOREST;
         isModdedTerrain = true;
     }

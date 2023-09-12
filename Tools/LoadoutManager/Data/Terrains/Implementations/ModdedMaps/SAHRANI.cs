@@ -2,7 +2,7 @@
 {
     public SAHRANI()
     {
-        TerrainName = TerrainName.SAHRANI;
+        TerrainName = TerrainName.SMD_SAHRANI_A2;
         TerrainType = TerrainType.FOREST;
         isModdedTerrain = true;
     }

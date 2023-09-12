@@ -2,7 +2,7 @@
 {
     public TAVIANA()
     {
-        TerrainName = TerrainName.TAVIANA;
+        TerrainName = TerrainName.TAVI;
         TerrainType = TerrainType.FOREST;
         isModdedTerrain = true;
     }

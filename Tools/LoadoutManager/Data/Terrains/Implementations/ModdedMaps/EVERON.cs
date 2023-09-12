@@ -2,7 +2,7 @@
 {
     public EVERON()
     {
-        TerrainName = TerrainName.EVERON;
+        TerrainName = TerrainName.EDEN;
         TerrainType = TerrainType.FOREST;
         isModdedTerrain = true;
     }
