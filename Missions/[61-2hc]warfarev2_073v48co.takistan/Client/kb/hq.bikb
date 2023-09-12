@@ -32,20 +32,7 @@ class Sentences
   
   
   class HQ {text = $STR_DN_WARFARE_HQ_BASE_UNFOLDED; speech[] = {HQ};	class Arguments {};};
-  /*
-    
-	class 20MinutesLeft {text = "$20MinutesLeft"; speech[] = {20MinutesLeft};	class Arguments {};};  
-  class 5MinutesLeft {text = "$5MinutesLeft"; speech[] = {5MinutesLeft};	class Arguments {};};
   
-  
-   class Captured 
-    {
-    text = $STRwftowncaptured; 
-    speech[] = {%1, Captured};	
-    class Arguments {class 1 {type = "simple";};};
-    };
-   
-  */
   class CapturedNear 
   {
     text = "%1 captured near %2";
@@ -164,8 +151,6 @@ class Sentences
     SENTENCE_KEY(UnderAttack,STRisunderattack)
     SENTENCE_KEY(VotingForNewCommander,STRwfvoteforcommanderinprogress)
 
-
-    //((( TESTING SENTENCES ONLY   (normally used ONLY as parameters to other sentences)    
     SENTENCE(AntiAirRadar)
     SENTENCE(ArtilleryBattery)
     SENTENCE(ArtilleryRadar)
@@ -179,10 +164,8 @@ class Sentences
     SENTENCE(Resources)
     SENTENCE(ServicePoint)
     SENTENCE(Strongpoint)
-    //SENTENCE(Strongpoint_alt)
     SENTENCE(Supplies)
     SENTENCE(UAVTerminal)    
-    //))) END of testing sentences 
 };
 class Arguments{};
 class Special{};
