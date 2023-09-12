@@ -145,6 +145,10 @@ public class SqfFileGenerator
         foreach (var terrainName in Enum.GetValues(typeof(TerrainName)))
         {
             var terrainInstance = (InterfaceTerrain)EnumExtensions.GetInstance(terrainName.ToString());
+
+            // Temp for development of the cherno-taki copypaste tools, remove when complete
+            if (terrainInstance.isModdedTerrain) continue;
+
             Console.WriteLine();
             terrainInstance.WriteAndUpdateTerrainFiles(_dir, _easaFileString, _commonBalanceFileString);
         }
