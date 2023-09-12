@@ -196,6 +196,7 @@ Changelog (47): <br/>
 - Fixed Selling factories gives 100% supplys back <br/>
 - Max suppluy limit is 50000 <br/>
 - Fixed mine bug <br/>
+- Added camos for btr60 and opf t34 <br/>
 - Removed tanks from start vehicles <br/>
 - Decreased damage for structures by shilka and tunga <br/>
 <br/>
