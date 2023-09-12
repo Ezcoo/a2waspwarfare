@@ -159,7 +159,7 @@ public abstract class BaseTerrain : InterfaceTerrain
         }
     }
 
-    public void GenerateAndWriteVersionSqf(string _sqfFilePath)
+    public void GenerateAndWriteVersionSqf(string _sqfVersionFilePath)
     {
         int debug = 1;
         int camo = DetermineIfTheMissionHasCamoOn();
@@ -180,6 +180,6 @@ public abstract class BaseTerrain : InterfaceTerrain
             ";
 
         // Write the SQF code to the specified file
-        File.WriteAllText(_sqfFilePath, versionSqfCode);
+        File.WriteAllText(_sqfVersionFilePath, versionSqfCode);
     }
 }
