@@ -22,6 +22,7 @@ public abstract class BaseTerrain : InterfaceTerrain
     public void WriteAndUpdateTerrainFiles(DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
     {
         WriteToTerrainFiles(_dir, _easaFileString, _commonBalanceFileString);
+        string destinationDirectory = DetermineDestinationDirectory(_dir);
 
         if (terrainName == TerrainName.TAKISTAN)
         {
@@ -29,8 +30,10 @@ public abstract class BaseTerrain : InterfaceTerrain
         }
         else if (terrainName == TerrainName.TAKISTAN && terrainName != TerrainName.CHERNARUS)
         {
-            UpdateFilesForAndModdedTerrain(_dir);
+            UpdateFilesForAndModdedTerrain(_dir, destinationDirectory);
         }
+
+        ReplaceGUIMenuHelp(destinationDirectory);
 
         Console.WriteLine("-------" + terrainName + " DONE! ---------");
     }
@@ -105,7 +108,7 @@ public abstract class BaseTerrain : InterfaceTerrain
     }
 
     // Method to update files for modded terrains
-    private void UpdateFilesForAndModdedTerrain(DirectoryInfo _dir)
+    private void UpdateFilesForAndModdedTerrain(DirectoryInfo _dir, string _destinationDirectory)
     {
         // temp
         if (isModdedTerrain)
@@ -115,14 +118,21 @@ public abstract class BaseTerrain : InterfaceTerrain
 
         // Determine the source and destination directories for file operations
         string sourceDirectory = DetermineSourceDirectory(_dir);
-        string destinationDirectory = DetermineDestinationDirectory(_dir);
 
         // Copy files from the source to the destination directory
-        FileManager.CopyFilesFromSourceToDestination(sourceDirectory, destinationDirectory);
+        FileManager.CopyFilesFromSourceToDestination(sourceDirectory, _destinationDirectory);
 
         // Update the Guerilla Barracks file in the destination directory
-        ReplaceContentOnASpecificFile(destinationDirectory, @"\Server\Init\Init_Server.sqf",
+        ReplaceContentOnASpecificFile(_destinationDirectory, @"\Server\Init\Init_Server.sqf",
             "_barrack_amount = 2;", "_barrack_amount = 0;");
+    }
+
+    private void ReplaceGUIMenuHelp(string _destinationDirectory)
+    {
+        ReplaceContentOnASpecificFile(_destinationDirectory, @"\Client\GUI\GUI_Menu_Help.sqf",
+            "<t size='1.2' color='#2394ef' align='center'>Warfare WASP-AWESOME EDITION | v48 | - CO - Mission</t><br />",
+            $"<t size='1.2' color='#2394ef' align='center'>Warfare WASP-AWESOME EDITION | v48 | - CO -" +
+            $" {EnumExtensions.GetEnumMemberAttrValue(terrainName)}</t><br />");
     }
 
     // Method to determine the takistan directory
@@ -197,7 +207,6 @@ public abstract class BaseTerrain : InterfaceTerrain
         // Replace the string and update the file
         content = content.Replace(_contentToSearchFor, _contentToReplaceWith);
         File.WriteAllText(finalPathToEdit, content);
-
     }
 
     // Generates and returns the SQF code for a specific terrain. This method is built upon 
