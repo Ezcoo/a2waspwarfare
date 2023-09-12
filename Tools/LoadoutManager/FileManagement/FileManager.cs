@@ -77,8 +77,8 @@ public class FileManager
 
             if (directoryName == null) continue;
 
-            string destDir = Path.Combine(_destination, directoryName);
-            CopyFilesFromSourceToDestination(directory, destDir);
+            string destinationDirectory = Path.Combine(_destination, directoryName);
+            CopyFilesFromSourceToDestination(directory, destinationDirectory);
         }
     }
 
