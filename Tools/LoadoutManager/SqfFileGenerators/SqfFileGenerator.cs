@@ -1,5 +1,5 @@
 // This class, SqfFileGenerator, serves as a utility for generating files compliant with both 
-// EASA regulations and common balance configurations. It provides methods for generating the 
+// EASA loadout and common balance configurations. It provides methods for generating the 
 // beginning and ending segments of EASA files, as well as methods for handling loadouts for 
 // various vehicle types. In addition, it includes methods for writing these configurations 
 // to files onto different terrains.
