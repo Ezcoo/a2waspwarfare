@@ -121,7 +121,8 @@ public abstract class BaseTerrain : InterfaceTerrain
         FileManager.CopyFilesFromSourceToDestination(sourceDirectory, destinationDirectory);
 
         // Update the Guerilla Barracks file in the destination directory
-        UpdateGuerillaBarracksFile(destinationDirectory);
+        ReplaceContentOnASpecificFile(destinationDirectory, @"\Server\Init\Init_Server.sqf",
+            "_barrack_amount = 2;", "_barrack_amount = 0;");
     }
 
     // Method to determine the takistan directory
@@ -169,35 +170,34 @@ public abstract class BaseTerrain : InterfaceTerrain
     }
 
     // Method to update the Guerilla Barracks file at a specific destination directory
-    private static void UpdateGuerillaBarracksFile(string _destinationDirectory)
+    private static void ReplaceContentOnASpecificFile(string _destinationDirectory, string _missionFileToEdit,
+        string _contentToSearchFor, string _contentToReplaceWith)
     {
         // Construct the full path of the file that needs to be updated
-        string filePathForDeletingGuerillaBarracks = _destinationDirectory + @"\Server\Init\Init_Server.sqf";
+        string finalPathToEdit = _destinationDirectory + _missionFileToEdit;
 
         // Check if the file exists
-        if (File.Exists(filePathForDeletingGuerillaBarracks))
-        {
-            // Read the content of the file
-            string content = File.ReadAllText(filePathForDeletingGuerillaBarracks);
-
-            // Check if the file contains the specific string to be replaced
-            if (content.Contains("_barrack_amount = 2;"))
-            {
-                // Replace the string and update the file
-                content = content.Replace("_barrack_amount = 2;", "_barrack_amount = 0;");
-                File.WriteAllText(filePathForDeletingGuerillaBarracks, content);
-            }
-            else
-            {
-                // Log a message if the specific content was not found
-                Console.WriteLine("The specified content was not found in the file.");
-            }
-        }
-        else
+        if (!File.Exists(finalPathToEdit))
         {
             // Log a message if the file was not found
             Console.WriteLine("File not found!");
         }
+
+        // Read the content of the file
+        string content = File.ReadAllText(finalPathToEdit);
+
+        // Check if the file contains the specific string to be replaced
+        if (!content.Contains(_contentToSearchFor))
+        {
+            // Log a message if the specific content was not found
+            Console.WriteLine("The specified content was not found in the file.");
+            return;
+        }
+
+        // Replace the string and update the file
+        content = content.Replace(_contentToSearchFor, _contentToReplaceWith);
+        File.WriteAllText(finalPathToEdit, content);
+
     }
 
     // Generates and returns the SQF code for a specific terrain. This method is built upon 
