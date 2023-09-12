@@ -45,10 +45,11 @@ public class FileManager
         return (_fileName.EndsWith("mission.sqm", StringComparison.OrdinalIgnoreCase) ||
                _fileName.EndsWith("version.sqf", StringComparison.OrdinalIgnoreCase) ||
                // Convert to list to not to convert from Cherno to takistan, use as parameter to add to the list above
-               _fileName.EndsWith("Init_Server.sqf", StringComparison.OrdinalIgnoreCase) &&
+               _fileName.EndsWith("Init_Server.sqf", StringComparison.OrdinalIgnoreCase)
+               )&&
 
 
-               !_fileName.EndsWith("Init_Version.sqf", StringComparison.OrdinalIgnoreCase)); // because there's version.sqf
+               !_fileName.EndsWith("Init_Version.sqf", StringComparison.OrdinalIgnoreCase); // because there's version.sqf
     }
 
     // Recursively copies all subdirectories from the source to the destination using the main orchestrator method.
