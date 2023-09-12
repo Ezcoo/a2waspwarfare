@@ -86,7 +86,9 @@ public class SqfFileGenerator
         string easaFileString = GenerateEasaFileString();
         string commonBalanceFileString = GenerateCommonBalanceFileString();
 
-        WriteAndUpdateToFilesForTerrains(dir, easaFileString, commonBalanceFileString);
+        WriteAndUpdateToFilesForATerrain(dir, easaFileString, commonBalanceFileString, TerrainName.CHERNARUS);
+
+        //WriteAndUpdateToFilesForTerrains(dir, easaFileString, commonBalanceFileString);
     }
 
     // GenerateLoadoutsForAllVehicleTypes iterates through all vehicle types defined in the VehicleType enum.
@@ -144,8 +146,21 @@ public class SqfFileGenerator
         aircraftEasaLoadoutsFile += "\n" + result + "\n";
     }
 
+
+    // WriteAndUpdateToFilesForATerrain takes in a DirectoryInfo object and two strings for EASA and common balance files.
+    // It takes a defined terrain (Chernarus) and writes or updates the respective files of that terrain
+    private static void WriteAndUpdateToFilesForATerrain(
+        DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString, TerrainName _terrainName)
+    {
+        var terrainInstance = (InterfaceTerrain)EnumExtensions.GetInstance(_terrainName.ToString());
+
+        Console.WriteLine();
+        terrainInstance.WriteAndUpdateTerrainFiles(_dir, _easaFileString, _commonBalanceFileString);
+    }
+
     // WriteAndUpdateToFilesForTerrains takes in a DirectoryInfo object and two strings for EASA and common balance files.
     // It iterates through all defined terrains and writes or updates the respective files.
+    // Might be obsolete after the refactoring to only write to one terrain, the copy to the other and then to modded maps
     private static void WriteAndUpdateToFilesForTerrains(
         DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
     {
