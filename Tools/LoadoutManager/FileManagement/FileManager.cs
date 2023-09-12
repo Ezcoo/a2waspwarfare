@@ -58,12 +58,26 @@ public class FileManager
     // Recursively copies all subdirectories from the source to the destination using the main orchestrator method.
     private static void RecursivelyCopySubdirectories(string _source, string _destination)
     {
+        List<string> blacklistedDirectories = new List<string>
+        {
+            "Textures"
+        };
+
         foreach (var directory in Directory.GetDirectories(_source))
         {
-            string dirName = Path.GetFileName(directory);
-            if (dirName == null) continue;
+            string directoryName = Path.GetFileName(directory);
 
-            string destDir = Path.Combine(_destination, dirName);
+            bool shouldSkipDirectory = blacklistedDirectories.Any(blacklist => directoryName.EndsWith(blacklist));
+
+            // Check if directoryName ends with any string in blacklistedDirectories
+            if (blacklistedDirectories.Any(blacklist => directoryName.EndsWith(blacklist)) && _destination.EndsWith("co.Takistan"))
+            {
+                continue; // Exit the method if the directory is blacklisted
+            }
+
+            if (directoryName == null) continue;
+
+            string destDir = Path.Combine(_destination, directoryName);
             CopyFilesFromSourceToDestination(directory, destDir);
         }
     }
