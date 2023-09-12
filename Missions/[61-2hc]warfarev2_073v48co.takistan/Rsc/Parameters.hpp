@@ -133,7 +133,7 @@ class Params {
 		texts[] = {"1 Minute","1 Minute 15 Seconds","1 Minute 30 Seconds","1 Minute 45 Seconds","2 Minutes","2 Minutes 30 Seconds","3 Minutes","4 Minutes","5 Minutes","6 Minutes","7 Minutes","8 Minutes","9 Minutes","10 Minutes"};
 		default = 60;
 	};
-class WFBE_C_ECONOMY_FUNDS_START_EAST {
+	class WFBE_C_ECONOMY_FUNDS_START_EAST {
 		title = "$STR_WF_PARAMETER_Funds_East";
 		values[] = {800,1600,2400,3200,4000,4800,6400,8000,12800,25600,51200,102400,204800,409600,819200};
 		texts[] = {"$ 800","$ 1600","$ 2400","$ 3200","$ 4000","$ 4800","$ 6400","$ 8000","$ 12800","$ 25600","$ 51200","$ 102400","$ 204800","$ 409600","$ 819200"};
