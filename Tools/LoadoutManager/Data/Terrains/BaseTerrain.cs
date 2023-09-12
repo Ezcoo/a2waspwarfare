@@ -21,21 +21,30 @@ public abstract class BaseTerrain : InterfaceTerrain
     // Method that writes and updates the terrain files.
     public void WriteAndUpdateTerrainFiles(DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
     {
-        UpdateFilesForModdedTerrain(_dir);
         WriteToTerrainFiles(_dir, _easaFileString, _commonBalanceFileString);
+
+        if (terrainName == TerrainName.TAKISTAN)
+        {
+            UpdateFilesForTakistan(_dir);
+        }
+        else if (terrainName == TerrainName.TAKISTAN && terrainName != TerrainName.CHERNARUS)
+        {
+            UpdateFilesForAndModdedTerrain(_dir);
+        }
+
         Console.WriteLine("-------" + terrainName + " DONE! ---------");
     }
 
     // Method to write specific content to terrain files based on conditions
     private void WriteToTerrainFiles(DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
     {
-        // Check if the terrain is not modded
-        if (!isModdedTerrain)
-        {
-            // Log the content to the console for debugging
-            Console.WriteLine(_easaFileString);
-            Console.WriteLine(_commonBalanceFileString);
-        }
+        //// Check if the terrain is not modded
+        //if (!isModdedTerrain)
+        //{
+        //    // Log the content to the console for debugging
+        //    Console.WriteLine(_easaFileString);
+        //    Console.WriteLine(_commonBalanceFileString);
+        //}
 
         // Write the content to the specified files
         WriteToFile(_dir, _easaFileString, @"Client\Module\EASA\EASA_Init.sqf");
@@ -84,11 +93,22 @@ public abstract class BaseTerrain : InterfaceTerrain
         return TerrainType == TerrainType.FOREST ? 1 : 0;
     }
 
-    // Method to update files for modded terrains
-    private void UpdateFilesForModdedTerrain(DirectoryInfo _dir)
+    // Method to update files for Takistan
+    private void UpdateFilesForTakistan(DirectoryInfo _dir)
     {
-        // Exit the method if the terrain is not modded
-        if (!isModdedTerrain)
+        // Determine the source and destination directories for file operations
+        string sourceDirectory = DetermineChernarusDirectory(_dir);
+        string destinationDirectory = DetermineDestinationDirectory(_dir);
+
+        // Copy files from the source to the destination directory
+        FileManager.CopyFilesFromSourceToDestination(sourceDirectory, destinationDirectory);
+    }
+
+    // Method to update files for modded terrains
+    private void UpdateFilesForAndModdedTerrain(DirectoryInfo _dir)
+    {
+        // temp
+        if (isModdedTerrain)
         {
             return;
         }
@@ -102,6 +122,19 @@ public abstract class BaseTerrain : InterfaceTerrain
 
         // Update the Guerilla Barracks file in the destination directory
         UpdateGuerillaBarracksFile(destinationDirectory);
+    }
+
+    // Method to determine the takistan directory
+    private string DetermineChernarusDirectory(DirectoryInfo _dir)
+    {
+        // Determine the name of the source terrain based on the terrain type
+        string sourceTerrainName = "chernarus";
+
+        // Determine the player count for the mission based on the terrain type
+        string sourceTerrainPlayerCount = "55";
+
+        // Construct and return the full source directory path
+        return Path.Combine(_dir.FullName, @"Missions\[" + sourceTerrainPlayerCount + "-2hc]warfarev2_073v48co." + sourceTerrainName);
     }
 
     // Method to determine the source directory path based on terrain type and mission type
@@ -123,8 +156,15 @@ public abstract class BaseTerrain : InterfaceTerrain
         // Determine the player count for the mission based on the terrain type
         string sourceTerrainPlayerCount = DetermineMissionTypeIfItsForestOrDesert();
 
+        string directoryOfMissions = "Modded_Missions";
+
+        if (!isModdedTerrain)
+        {
+            directoryOfMissions = "Missions";
+        }
+
         // Construct and return the full destination directory path
-        return Path.Combine(_dir.FullName, @"Modded_Missions\[" + sourceTerrainPlayerCount +
+        return Path.Combine(_dir.FullName, directoryOfMissions + @"\[" + sourceTerrainPlayerCount +
             "-2hc]warfarev2_073v48co." + EnumExtensions.GetEnumMemberAttrValue(TerrainName));
     }
 

@@ -87,6 +87,7 @@ public class SqfFileGenerator
         string commonBalanceFileString = GenerateCommonBalanceFileString();
 
         WriteAndUpdateToFilesForATerrain(dir, easaFileString, commonBalanceFileString, TerrainName.CHERNARUS);
+        WriteAndUpdateToFilesForATerrain(dir, easaFileString, commonBalanceFileString, TerrainName.TAKISTAN);
 
         //WriteAndUpdateToFilesForTerrains(dir, easaFileString, commonBalanceFileString);
     }
@@ -161,18 +162,18 @@ public class SqfFileGenerator
     // WriteAndUpdateToFilesForTerrains takes in a DirectoryInfo object and two strings for EASA and common balance files.
     // It iterates through all defined terrains and writes or updates the respective files.
     // Might be obsolete after the refactoring to only write to one terrain, the copy to the other and then to modded maps
-    private static void WriteAndUpdateToFilesForTerrains(
-        DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
-    {
-        foreach (var terrainName in Enum.GetValues(typeof(TerrainName)))
-        {
-            var terrainInstance = (InterfaceTerrain)EnumExtensions.GetInstance(terrainName.ToString());
+    //private static void WriteAndUpdateToFilesForTerrains(
+    //    DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
+    //{
+    //    foreach (var terrainName in Enum.GetValues(typeof(TerrainName)))
+    //    {
+    //        var terrainInstance = (InterfaceTerrain)EnumExtensions.GetInstance(terrainName.ToString());
 
-            // Temp for development of the cherno-taki copypaste tools, remove when complete
-            if (terrainInstance.isModdedTerrain) continue;
+    //        // Temp for development of the cherno-taki copypaste tools, remove when complete
+    //        if (terrainInstance.isModdedTerrain) continue;
 
-            Console.WriteLine();
-            terrainInstance.WriteAndUpdateTerrainFiles(_dir, _easaFileString, _commonBalanceFileString);
-        }
-    }
+    //        Console.WriteLine();
+    //        terrainInstance.WriteAndUpdateTerrainFiles(_dir, _easaFileString, _commonBalanceFileString);
+    //    }
+    //}
 }
