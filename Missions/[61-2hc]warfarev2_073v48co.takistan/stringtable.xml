@@ -1203,7 +1203,7 @@
             </Key>
 
             <!--PARAMETER Strings - ALL DONE-->
-            <!--AI-->
+            <!--AFK time-->
             <Key ID="STR_WF_PARAMETER_AFK_Time" >
                 <English>AFK: Maximum player idle time in minutes.</English>
                 <French>AFK: Durée max d'inactivité d'un joueur en minutes</French>
@@ -1211,6 +1211,7 @@
                 <Russian>AFK: Максимальное время бездействия игрока в минутах.</Russian>
                 <Italian>AFK: Tempo massimo di inattività del giocatore in minuti.</Italian>
             </Key>
+            <!--AI-->
             <Key ID="STR_WF_PARAMETER_AI_Delegation" >
                 <English>AI: Client-side Delegation</English>
                 <French>IA: Délégation Cliente</French>
