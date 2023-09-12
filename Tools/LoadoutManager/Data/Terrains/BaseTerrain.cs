@@ -40,6 +40,7 @@ public abstract class BaseTerrain : InterfaceTerrain
         // Write the content to the specified files
         WriteToFile(_dir, _easaFileString, @"Client\Module\EASA\EASA_Init.sqf");
         WriteToFile(_dir, _commonBalanceFileString, @"\Common\Functions\Common_BalanceInit.sqf");
+        WriteToFile(_dir, GenerateAndWriteVersionSqf(), @"\version.sqf");
     }
 
     // Method to write content to a file at a specific path
@@ -159,12 +160,12 @@ public abstract class BaseTerrain : InterfaceTerrain
         }
     }
 
-    public void GenerateAndWriteVersionSqf(string _sqfVersionFilePath)
+    public string GenerateAndWriteVersionSqf()
     {
         int debug = 1;
         int camo = DetermineIfTheMissionHasCamoOn();
         string maxPlayers = DetermineMissionTypeIfItsForestOrDesert();
-        string missionName = @"[" + DetermineMissionTypeIfItsForestOrDesert() + @"] Warfare V48 " + EnumExtensions.GetEnumMemberAttrValue(terrainName.ToString());
+        string missionName = @"[" + DetermineMissionTypeIfItsForestOrDesert() + @"] Warfare V48 " + EnumExtensions.GetEnumMemberAttrValue(terrainName);
         int logContent = 1;
 
         // Define the SQF code specific to Chernarus terrain
@@ -179,7 +180,6 @@ public abstract class BaseTerrain : InterfaceTerrain
             #define WF_LOG_CONTENT {logContent}
             ";
 
-        // Write the SQF code to the specified file
-        File.WriteAllText(_sqfVersionFilePath, versionSqfCode);
+        return versionSqfCode;
     }
 }
