@@ -13,14 +13,39 @@ if (_index == -1) exitWith {["WARNING", Format ["Common_FireArtillery.sqf: No ar
 if (isNull _gunner) exitWith {["WARNING", Format ["Common_FireArtillery.sqf: Artillery [%1] gunner is null.", _artillery]] Call WFBE_CO_FNC_LogContent};
 if (isPlayer _gunner) exitWith {["WARNING", Format ["Common_FireArtillery.sqf: Artillery [%1] gunner is a player", _artillery]] Call WFBE_CO_FNC_LogContent};
 
-_minRange = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_RANGES_MIN",_side]) select _index;
-_maxRange = round(((missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_RANGES_MAX",_side]) select _index) / (missionNamespace getVariable "WFBE_C_ARTILLERY"));
-_weapon = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_WEAPONS",_side]) select _index;
-_ammo = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_AMMOS",_side]) select _index;
-_velocity = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_VELOCITIES",_side]) select _index;
+_minRange 	= (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_RANGES_MIN",_side]) select _index;
+_maxRange 	= round(((missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_RANGES_MAX",_side]) select _index) / (missionNamespace getVariable "WFBE_C_ARTILLERY"));
+_weapon 	= (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_WEAPONS",_side]) select _index;
+_ammo 		= (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_AMMOS",_side]) select _index;
+_velocity 	= (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_VELOCITIES",_side]) select _index;
 _dispersion = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_DISPERSIONS",_side]) select _index;
+_reloadTime = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_TIME_RELOAD",_side]) select _index;
+_burst 		= (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_BURST",_side]) select _index;
 
-[_artillery] Call ARTY_Prep; //--- Prepare the artillery unit to the fire mission submission.
+//Marty : add artillery marker on map with the player name who call it
+_marker_name 	= format["ARTY_%1", diag_tickTime];
+_markerPosition = _destination;
+_markerType		= "Warning";
+_markerText 	= format[" ARTY called by %1", name player];
+_markerColor	= "ColorRed";
+_markerSide		= playerSide;
+
+[_marker_name, _markerPosition, _markerType, _markerText, _markerColor, _markerSide] call WF_createMarker ;
+[_marker_name, 80] call WFBE_CL_FNC_Delete_Marker ; // marker is removed after some time in seconds. Predifined time prevent weird exitwith condition in the arty script that could make the marker never removed!
+
+//Send audio + text message to the team side to warn them
+_playerName 	= name player;
+_text_message 	= localize "STR_WF_INFO_Arty_called_message";
+_text_message 	= format[_text_message, str(_playerName)];
+//_audio_message 	= "ARTY_message_to_friendly_players";
+_audio_message 	= "ARTY_message_to_friendly_players_v2";
+
+
+[_text_message, _audio_message, _side ] call WF_sendMessage ;
+//Marty.
+
+//--- Prepare the artillery unit to the fire mission submission.
+[_artillery] Call ARTY_Prep; 
 
 //--- Artillery Calculations.
 _position = getPos _artillery;
@@ -47,9 +72,6 @@ if !(alive _artillery) exitWith {
 	if (alive _gunner) then {{_gunner enableAI _x} forEach ['MOVE','TARGET','AUTOTARGET']};
 };
 
-_reloadTime = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_TIME_RELOAD",_side]) select _index;
-_burst = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_BURST",_side]) select _index;
-
 for '_i' from 1 to _burst do {
 	sleep (_reloadTime+random 3);
 	if (!alive _gunner || !alive _artillery) exitWith {};
@@ -69,3 +91,4 @@ if (alive (_gunner)) then {{_gunner enableAI _x} forEach ['MOVE','TARGET','AUTOT
 sleep 5;
 
 _artillery setVariable ["restricted",false];
+

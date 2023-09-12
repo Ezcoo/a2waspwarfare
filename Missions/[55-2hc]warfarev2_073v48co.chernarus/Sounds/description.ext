@@ -45,6 +45,18 @@ class ICBM_message_to_friendly_players
 		titles[] = {};
 	};
 
+class ARTY_message_to_friendly_players
+	{
+		name	= "ARTY_message_to_friendly_players";
+		sound[]	= {"\Sounds\warning_Friendy_ARTY_v1.ogg", db - 100, 1.0};
+		titles[] = {};
+	};
+class ARTY_message_to_friendly_players_v2
+	{
+		name	= "ARTY_message_to_friendly_players_v2";
+		sound[]	= {"\Sounds\warning_Friendy_ARTY_v2.ogg", db - 100, 1.0};
+		titles[] = {};
+	};
 };
 
 // Marty : CfgRadio useless at this point considering i am using CfgSounds to play sounds with command playsound.

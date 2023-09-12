@@ -5,6 +5,7 @@
 	  0 - _side : 	side object - side who must receive the message. Can be east or west
 	Description:
 	    Play a text and audio message destined to the players who launched the ICBM order = friendly side.
+		IMPORTANT : BE AWARE THAT YOU HAVE TO RESTART ARMA2OA TO TAKE SOUND INTO ACCOUNT IF YOU ADD A NEW SOUND (thats what i experienced is not related to the function but to bohemian) 
 */
 _side = _this select 0 ;
 
