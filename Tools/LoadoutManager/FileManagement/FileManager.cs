@@ -64,7 +64,8 @@ public class FileManager
         List<string> blacklistedDirectories = new List<string>
         {
             "Textures",
-            @"Server\Config"
+            @"Server\Config",
+            @"Core_Artillery",
         };
 
         foreach (var directory in Directory.GetDirectories(_source))
