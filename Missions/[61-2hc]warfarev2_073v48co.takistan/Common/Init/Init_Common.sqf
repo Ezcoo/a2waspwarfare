@@ -199,7 +199,7 @@ _team_east = "";
 switch (true) do {
 	case WF_A2_CombinedOps: {
 		/* Model Core */
-		if !(WF_Camo) then {
+		if !(IS_chernarus_map_dependent) then {
 			Call Compile preprocessFileLineNumbers 'Common\Config\Core_Models\CombinedOps.sqf';
 		} else {
 			Call Compile preprocessFileLineNumbers 'Common\Config\Core_Models\CombinedOps_W.sqf';
@@ -239,8 +239,8 @@ switch (true) do {
 		Call Compile preprocessFileLineNumbers 'Common\Config\Core\Core_USMC.sqf';
 
 		/* Call in the teams template - Combined Operations */
-		_team_west = if (WF_Camo) then {'US_Camo'} else {'US'};
-		_team_east = if (WF_Camo) then {'RU'} else {'TKA'};
+		_team_west = if (IS_chernarus_map_dependent) then {'US_Camo'} else {'US'};
+		_team_east = if (IS_chernarus_map_dependent) then {'RU'} else {'TKA'};
 	};
 };
 

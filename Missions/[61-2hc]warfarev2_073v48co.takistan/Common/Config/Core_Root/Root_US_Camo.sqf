@@ -1,4 +1,4 @@
-/* This config file is used with WF_Camo, required CO */
+/* This config file is used with IS_chernarus_map_dependent, required CO */
 Private ["_side"];
 
 _side = "WEST";
