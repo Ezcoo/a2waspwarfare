@@ -66,6 +66,7 @@ public class FileManager
             "Textures",
             @"Server\Config",
             @"Core_Artillery",
+            @"Core_Units",
         };
 
         foreach (var directory in Directory.GetDirectories(_source))
