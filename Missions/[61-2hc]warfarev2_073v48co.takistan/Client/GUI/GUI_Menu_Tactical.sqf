@@ -320,6 +320,7 @@ while {alive player && dialog} do {
 			_marker setMarkerPosLocal artyPos;
 			_area setMarkerPosLocal artyPos;
 			_requestRangedList = true;
+
 		};
 		//--- Paratroops.
 		if (MenuAction == 3) then {
@@ -503,7 +504,8 @@ while {alive player && dialog} do {
 		_units = [Group player,false,lbCurSel(17008),sideJoinedText] Call GetTeamArtillery;
 		if (Count _units > 0) then {
 			fireMissionTime = time;
-			[GetMarkerPos "artilleryMarker",lbCurSel(17008)] Spawn RequestFireMission;
+			[GetMarkerPos "artilleryMarker",lbCurSel(17008), _fireTime] Spawn RequestFireMission;
+			
 		} else {
 			hint (localize "STR_WF_INFO_NoArty");
 		};			
