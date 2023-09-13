@@ -101,6 +101,11 @@ WF_Camo = false;
 	WF_Camo = true;
 #endif
 
+IS_chernarus_map_dependent = false;
+#ifdef IS_CHERNARUS_MAP_DEPENDENT
+	IS_chernarus_map_dependent = true; // if the map content depend on chernarus feature then global variable boolean is true.
+#endif
+
 if (isMultiplayer) then {Call Compile preprocessFileLineNumbers "Common\Init\Init_Parameters.sqf"}; //--- In MP, we get the parameters.
 
 Call Compile preprocessFileLineNumbers "Common\Init\Init_CommonConstants.sqf"; //--- Set the constants and the parameters, skip the params if they're already defined.
@@ -170,3 +175,25 @@ if (isHeadLessClient) then {
 //// Wasp part
 WASP_procInitComm=Compile PreprocessFile "WASP\common\procInitComm.sqf";
 if(local player)then{ExecVM "WASP\Init_Client.sqf"};
+
+/* Marty : Creation of global variable than can be used everywhere to determine the faction on the map. */
+// If the map running is chernarus then east faction must be russian and NOT takistanish (useful to customize audio sounds and so on). West faction is always american whatever the map :
+IS_Takistan_Faction_On_This_Map = false;
+IS_Russian_Faction_On_This_Map  = false;
+IS_American_Faction_on_this_map = false; 
+
+// If map is chernarus dependent :
+if (IS_chernarus_map_dependent) then 
+{
+	IS_Russian_Faction_On_This_Map = true  ;
+	IS_Takistan_Faction_On_This_Map = false;
+	IS_American_Faction_on_this_map = true ; // for west side it is always american faction on every maps.
+};
+
+// If map is takistant dependent (= not chernarus dependant) :
+if !(IS_chernarus_map_dependent) then  
+{
+	IS_Russian_Faction_On_This_Map  = false;
+	IS_Takistan_Faction_On_This_Map = true ;
+	IS_American_Faction_on_this_map = true ; // for west side it is always american faction on every maps.
+};

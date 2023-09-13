@@ -7,7 +7,10 @@
 //#define WF_DEBUG 1
 
 /* LOG_CONTENT activation */
-//#define WF_LOG_CONTENT 1 // Marty - IMPORTANT : COMMENT this line if you DONT want to activate logs in rpt file. Changing only its value wont have any effect.
+//#define WF_LOG_CONTENT 1 		// Marty - IMPORTANT : COMMENT this line if you DONT want to activate logs in rpt file. Changing only its value wont have any effect.
+
+/* Current map */
+#define IS_CHERNARUS_MAP_DEPENDENT // Marty - MUST NOT BE COMMENTED IF the map depend on chernarus content. MUST BE COMMENT IF the map depend on takistan content. 
 
 /* Gameplay: Change the overall camo */
 #define WF_CAMO 1
