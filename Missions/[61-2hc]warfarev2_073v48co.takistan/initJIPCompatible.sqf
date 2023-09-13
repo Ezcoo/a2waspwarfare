@@ -96,11 +96,6 @@ WF_Debug = false;
 	WF_Debug = true;
 #endif
 
-WF_Camo = false;
-#ifdef WF_CAMO
-	WF_Camo = true;
-#endif
-
 IS_chernarus_map_dependent = false;
 #ifdef IS_CHERNARUS_MAP_DEPENDENT
 	IS_chernarus_map_dependent = true; // if the map content depend on chernarus feature then global variable boolean is true.
