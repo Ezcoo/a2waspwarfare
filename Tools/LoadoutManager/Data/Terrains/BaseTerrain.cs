@@ -213,6 +213,8 @@ public abstract class BaseTerrain : InterfaceTerrain
 
     // Generates and returns the SQF code for a specific terrain. This method is built upon 
     // the base functionalities defined in BaseTerrain.cs.
+    // Marty - IMPORTANT : COMMENT the WF_LOG_CONTENT line if you DONT want to activate logs in rpt file. Changing only its value wont have any effect.
+    // Marty - IS_CHERNARUS_MAP_DEPENDENT MUST NOT BE COMMENTED IF the map depend on chernarus content. MUST BE COMMENT IF the map depend on takistan content. 
     public string GenerateAndWriteVersionSqf()
     {
         // Set debug mode (1 for enabled, 0 for disabled)
