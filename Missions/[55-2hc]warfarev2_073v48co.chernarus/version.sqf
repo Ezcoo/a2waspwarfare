@@ -1,3 +1,4 @@
+#define IS_CHERNARUS_MAP_DEPENDENT // Marty - MUST NOT BE COMMENTED IF the map depend on chernarus content. MUST BE COMMENT IF the map depend on takistan content. 
 #define WF_DEBUG 1
 #define WF_CAMO 1
 #define COMBINEDOPS 1

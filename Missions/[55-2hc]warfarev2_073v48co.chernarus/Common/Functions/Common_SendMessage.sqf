@@ -8,6 +8,7 @@
 	
 	Description: This function is meant to broadcast an audio and text message to all clients, by triggering the SEND_MESSAGE EH on every client.
 	This message will be only visible and heard for a specific side (west or east).
+	IMPORTANT NOTE : You need to restart arma2ao when you add a new class in the stringrable file. Same with audio in the description.ext. This is not related to this function but its a bohemian limitation.
 	    
 */
 
