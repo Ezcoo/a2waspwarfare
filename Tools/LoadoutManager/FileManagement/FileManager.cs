@@ -67,6 +67,7 @@ public class FileManager
             @"Server\Config",
             @"Core_Artillery",
             @"Core_Units",
+            @"Core_Structures",
         };
 
         foreach (var directory in Directory.GetDirectories(_source))
