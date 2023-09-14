@@ -121,26 +121,6 @@ public abstract class BaseTerrain : InterfaceTerrain
         FileManager.CopyFilesFromSourceToDestination(sourceDirectory, destinationDirectory);
     }
 
-    //// Method to update files for modded terrains
-    //private void UpdateFilesForAndModdedTerrain(DirectoryInfo _dir, string _destinationDirectory)
-    //{
-    //    // temp
-    //    if (isModdedTerrain)
-    //    {
-    //        return;
-    //    }
-
-    //    // Determine the source and destination directories for file operations
-    //    string sourceDirectory = DetermineSourceDirectory();
-
-    //    // Copy files from the source to the destination directory
-    //    FileManager.CopyFilesFromSourceToDestination(sourceDirectory, _destinationDirectory);
-
-    //    // Update the Guerilla Barracks file in the destination directory
-    //    ReplaceContentOnASpecificFile(_destinationDirectory, @"\Server\Init\Init_Server.sqf",
-    //        "_barrack_amount = 2;", "_barrack_amount = 0;");
-    //}
-
     // Replaces the gui menu help mission name according to the current Terrain name
     private void ReplaceGUIMenuHelp(string _destinationDirectory)
     {
