@@ -31,3 +31,5 @@ Tools/LoadoutManager/.vs/LoadoutManager/DesignTimeBuild/
 Tools/LoadoutManager/.vs/
 
 Tools/LoadoutManager/obj/
+
+Tools/LoadoutManager/bin/Release/net7.0/
