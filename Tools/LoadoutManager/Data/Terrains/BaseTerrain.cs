@@ -79,6 +79,12 @@ public abstract class BaseTerrain : InterfaceTerrain
         return isModdedTerrain ? "Modded_Missions" : "Missions";
     }
 
+    // Method to determine where to get the source files from
+    private string DetermineMissionSourcePathForModdedTerrains()
+    {
+        return TerrainType == TerrainType.FOREST ? "chernarus" : "takistan";
+    }
+
     // Method to determine the mission type based on the terrain type (Forest or Desert)
     private string DetermineMissionTypeIfItsForestOrDesert()
     {
@@ -108,7 +114,7 @@ public abstract class BaseTerrain : InterfaceTerrain
     private void UpdateFilesForModdedTerrains()
     {
         // Determine the source and destination directories for file operations
-        string sourceDirectory = DetermineSourceDirectory();
+        string sourceDirectory = DetermineSourceDirectoryForModdedTerrains();
         string destinationDirectory = DetermineDestinationDirectory();
 
         // Copy files from the source to the destination directory
@@ -158,13 +164,15 @@ public abstract class BaseTerrain : InterfaceTerrain
     }
 
     // Method to determine the source directory path based on terrain type and mission type
-    private string DetermineSourceDirectory()
+    private string DetermineSourceDirectoryForModdedTerrains()
     {
         // Determine the player count for the mission based on the terrain type
         string sourceTerrainPlayerCount = DetermineMissionTypeIfItsForestOrDesert();
 
+        string sourceDirectory = DetermineMissionSourcePathForModdedTerrains();
+
         // Construct and return the full source directory path
-        return Path.Combine(FileManager.FindA2WaspWarfareDirectory().FullName, @"Missions\[" + sourceTerrainPlayerCount + "-2hc]warfarev2_073v48co." + inGameMapName);
+        return Path.Combine(FileManager.FindA2WaspWarfareDirectory().FullName, @"Missions\[" + sourceTerrainPlayerCount + "-2hc]warfarev2_073v48co." + sourceDirectory());
     }
 
     // Method to determine the destination directory based on mission type and terrain name
