@@ -76,7 +76,7 @@ public class SqfFileGenerator
         string commonBalanceFileString = GenerateCommonBalanceFileString();
 
         // First go through vanilla maps (copied to mod maps later)
-        //WriteAndUpdateToFilesForATerrain(easaFileString, commonBalanceFileString, TerrainName.CHERNARUS);
+        WriteAndUpdateToFilesForATerrain(easaFileString, commonBalanceFileString, TerrainName.CHERNARUS);
         WriteAndUpdateToFilesForATerrain(easaFileString, commonBalanceFileString, TerrainName.TAKISTAN);
 
 
