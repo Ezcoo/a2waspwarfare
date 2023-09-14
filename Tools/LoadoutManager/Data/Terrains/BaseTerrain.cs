@@ -216,34 +216,46 @@ public abstract class BaseTerrain : InterfaceTerrain
 
     // Generates and returns the SQF code for a specific terrain. This method is built upon 
     // the base functionalities defined in BaseTerrain.cs.
+    // Generate the mission name by combining various parameters including the terrain name
+    // Determine if the mission has camo enabled based on base terrain configurations
     // Marty - IMPORTANT : COMMENT the WF_LOG_CONTENT line if you DONT want to activate logs in rpt file. Changing only its value wont have any effect.
     // Marty - IS_CHERNARUS_MAP_DEPENDENT MUST NOT BE COMMENTED IF the map depend on chernarus content. MUST BE COMMENT IF the map depend on takistan content. 
+    // Generate the version-specific SQF code using string interpolation
     public string GenerateAndWriteVersionSqf()
     {
-        // Set debug mode (1 for enabled, 0 for disabled)
-        int debug = 1;
-
-        // Determine if the mission has camo enabled based on base terrain configurations
+        string wfDebug = GenerateWFDebug();
+        string wfLogContent = GenerateWFLogContent();
         string terrainTypeCommentPrefix = DetermineIfTheMissionIsTakistanTypeAndReturnCommentStringIfThatIsTheCase();
-
-        // Determine the max number of players based on the mission type (Forest or Desert)
         string maxPlayers = DetermineMissionTypeIfItsForestOrDesert();
-
-        // Generate the mission name by combining various parameters including the terrain name
         string missionName = $@"[{maxPlayers}] Warfare V48 {EnumExtensions.GetEnumMemberAttrValue(terrainName)}";
 
-        // Set log content mode (1 for enabled, 0 for disabled)
-        int logContent = 1;
-
-        // Generate the version-specific SQF code using string interpolation
-        return
-$@"#define WF_DEBUG 1
-#define WF_LOG_CONTENT 1
+        return $@"{wfDebug}
+{wfLogContent}
 {terrainTypeCommentPrefix}#define IS_CHERNARUS_MAP_DEPENDENT
 #define WF_MAXPLAYERS {maxPlayers}
 #define WF_MISSIONNAME ""{missionName}""
 #define COMBINEDOPS 1
 #define WF_RESPAWNDELAY 2
 #define WF_LOADSCREEN {loadScreenEvalString}";
+    }
+
+    // Generates the WF_DEBUG line based on build configuration
+    private string GenerateWFDebug()
+    {
+#if DEBUG
+        return "#define WF_DEBUG 1";
+#else
+            return "// #define WF_DEBUG 1";
+#endif
+    }
+
+    // Generates the WF_LOG_CONTENT line based on build configuration
+    private string GenerateWFLogContent()
+    {
+#if DEBUG
+        return "#define WF_LOG_CONTENT 1";
+#else
+            return "// #define WF_LOG_CONTENT 1";
+#endif
     }
 }
