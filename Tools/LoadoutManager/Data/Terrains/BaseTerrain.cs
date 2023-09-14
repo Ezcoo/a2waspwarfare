@@ -50,10 +50,7 @@ public abstract class BaseTerrain : InterfaceTerrain
     private void WriteToFile(string _destinationDirection, string _content, string _targetScriptPath)
     {
         // Concatenate the directory and file path
-        string targetFile = Path.Combine(
-            _destinationDirection, DetermineMissionPathIfItsModdedOrNot() +
-            @"\[" + DetermineMissionTypeIfItsForestOrDesert() + "-2hc]warfarev2_073v48co." +
-            EnumExtensions.GetEnumMemberAttrValue(terrainName) + @"\" + _targetScriptPath);
+        string targetFile = _destinationDirection + _targetScriptPath;
 
         // Make sure the directory exists
         string directoryName = Path.GetDirectoryName(targetFile);
