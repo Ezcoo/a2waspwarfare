@@ -77,7 +77,7 @@ public class FileManager
 
             // Check if directoryName ends with any string in blacklistedDirectories
             // Only when copying to takistan
-            if (shouldSkipDirectory && _destination.Contains("co.Takistan"))
+            if (shouldSkipDirectory && _destination.Contains("co.takistan"))
             {
                 continue; // Exit the method if the directory is blacklisted
             }
