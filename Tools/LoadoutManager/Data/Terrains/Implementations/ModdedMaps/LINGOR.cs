@@ -5,5 +5,6 @@
         TerrainName = TerrainName.LINGOR;
         TerrainType = TerrainType.FOREST;
         isModdedTerrain = true;
+        inGameMapName = "lingor";
     }
 }

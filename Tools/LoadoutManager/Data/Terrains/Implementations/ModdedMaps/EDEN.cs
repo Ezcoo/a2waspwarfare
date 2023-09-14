@@ -1,9 +1,10 @@
-﻿public class EVERON : BaseTerrain
+﻿public class EDEN : BaseTerrain
 {
-    public EVERON()
+    public EDEN()
     {
         TerrainName = TerrainName.EDEN;
         TerrainType = TerrainType.FOREST;
         isModdedTerrain = true;
+        inGameMapName = "eden";
     }
 }

@@ -1,9 +1,10 @@
-﻿public class TAVIANA : BaseTerrain
+﻿public class TAVI : BaseTerrain
 {
-    public TAVIANA()
+    public TAVI()
     {
         TerrainName = TerrainName.TAVI;
         TerrainType = TerrainType.FOREST;
         isModdedTerrain = true;
+        inGameMapName = "tavi";
     }
 }

@@ -79,7 +79,8 @@ public class SqfFileGenerator
         WriteAndUpdateToFilesForATerrain(easaFileString, commonBalanceFileString, TerrainName.CHERNARUS);
         WriteAndUpdateToFilesForATerrain(easaFileString, commonBalanceFileString, TerrainName.TAKISTAN);
 
-        //WriteAndUpdateToFilesForModdedTerrains(dir, easaFileString, commonBalanceFileString);
+
+        //WriteAndUpdateToFilesForModdedTerrains(easaFileString, commonBalanceFileString);
     }
 
     // GenerateLoadoutsForAllVehicleTypes iterates through all vehicle types defined in the VehicleType enum.
@@ -149,21 +150,18 @@ public class SqfFileGenerator
         terrainInstance.WriteAndUpdateTerrainFiles(_easaFileString, _commonBalanceFileString);
     }
 
-    // WriteAndUpdateToFilesForTerrains takes in a DirectoryInfo object and two strings for EASA and common balance files.
-    // It iterates through all defined terrains and writes or updates the respective files.
-    // Might be obsolete after the refactoring to only write to one terrain, the copy to the other and then to modded maps
-    //private static void WriteAndUpdateToFilesForTerrains(
-    //    DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
-    //{
-    //    foreach (var terrainName in Enum.GetValues(typeof(TerrainName)))
-    //    {
-    //        var terrainInstance = (InterfaceTerrain)EnumExtensions.GetInstance(terrainName.ToString());
+    //WriteAndUpdateToFilesForTerrains takes in a DirectoryInfo object and two strings for EASA and common balance files.
+    //It iterates through all defined terrains and writes or updates the respective files.
+    private static void WriteAndUpdateToFilesForModdedTerrains(
+        string _easaFileString, string _commonBalanceFileString)
+    {
+        foreach (var terrainName in Enum.GetValues(typeof(TerrainName)))
+        {
+            var terrainInstance = (InterfaceTerrain)EnumExtensions.GetInstance(terrainName.ToString());
+            if (!terrainInstance.isModdedTerrain) continue;
 
-    //        // Temp for development of the cherno-taki copypaste tools, remove when complete
-    //        if (terrainInstance.isModdedTerrain) continue;
-
-    //        Console.WriteLine();
-    //        terrainInstance.WriteAndUpdateTerrainFiles(_dir, _easaFileString, _commonBalanceFileString);
-    //    }
-    //}
+            Console.WriteLine();
+            terrainInstance.WriteAndUpdateTerrainFiles(_easaFileString, _commonBalanceFileString);
+        }
+    }
 }
