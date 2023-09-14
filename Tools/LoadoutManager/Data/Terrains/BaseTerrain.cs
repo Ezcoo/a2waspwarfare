@@ -24,16 +24,12 @@ public abstract class BaseTerrain : InterfaceTerrain
     // Method that writes and updates the terrain files.
     public void WriteAndUpdateTerrainFiles(DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
     {
-        WriteToTerrainFiles(_dir, _easaFileString, _commonBalanceFileString);
+        WriteSpecificFilesToTheTerrains(_dir, _easaFileString, _commonBalanceFileString);
         string destinationDirectory = DetermineDestinationDirectory(_dir);
 
         if (terrainName == TerrainName.TAKISTAN)
         {
             UpdateFilesForTakistan(_dir);
-        }
-        else if (terrainName == TerrainName.TAKISTAN && terrainName != TerrainName.CHERNARUS)
-        {
-            UpdateFilesForAndModdedTerrain(_dir, destinationDirectory);
         }
 
         ReplaceGUIMenuHelp(destinationDirectory);
@@ -42,16 +38,8 @@ public abstract class BaseTerrain : InterfaceTerrain
     }
 
     // Method to write specific content to terrain files based on conditions
-    private void WriteToTerrainFiles(DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
+    private void WriteSpecificFilesToTheTerrains(DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString)
     {
-        //// Check if the terrain is not modded
-        //if (!isModdedTerrain)
-        //{
-        //    // Log the content to the console for debugging
-        //    Console.WriteLine(_easaFileString);
-        //    Console.WriteLine(_commonBalanceFileString);
-        //}
-
         // Write the content to the specified files
         WriteToFile(_dir, _easaFileString, @"Client\Module\EASA\EASA_Init.sqf");
         WriteToFile(_dir, _commonBalanceFileString, @"\Common\Functions\Common_BalanceInit.sqf");
@@ -59,11 +47,11 @@ public abstract class BaseTerrain : InterfaceTerrain
     }
 
     // Method to write content to a file at a specific path
-    private void WriteToFile(DirectoryInfo _dir, string _content, string _targetScriptPath)
+    private void WriteToFile(string _destinationDirectory, string _content, string _targetScriptPath)
     {
         // Concatenate the directory and file path
         string targetFile = Path.Combine(
-            _dir.FullName, DetermineMissionPathIfItsModdedOrNot() +
+            _destinationDirectory, DetermineMissionPathIfItsModdedOrNot() +
             @"\[" + DetermineMissionTypeIfItsForestOrDesert() + "-2hc]warfarev2_073v48co." +
             EnumExtensions.GetEnumMemberAttrValue(terrainName) + @"\" + _targetScriptPath);
 

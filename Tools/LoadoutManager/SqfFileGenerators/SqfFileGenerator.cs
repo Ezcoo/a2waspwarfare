@@ -86,10 +86,11 @@ public class SqfFileGenerator
         string easaFileString = GenerateEasaFileString();
         string commonBalanceFileString = GenerateCommonBalanceFileString();
 
+        // First go through vanilla maps (copied to mod maps later)
         WriteAndUpdateToFilesForATerrain(dir, easaFileString, commonBalanceFileString, TerrainName.CHERNARUS);
         WriteAndUpdateToFilesForATerrain(dir, easaFileString, commonBalanceFileString, TerrainName.TAKISTAN);
 
-        //WriteAndUpdateToFilesForTerrains(dir, easaFileString, commonBalanceFileString);
+        //WriteAndUpdateToFilesForModdedTerrains(dir, easaFileString, commonBalanceFileString);
     }
 
     // GenerateLoadoutsForAllVehicleTypes iterates through all vehicle types defined in the VehicleType enum.
