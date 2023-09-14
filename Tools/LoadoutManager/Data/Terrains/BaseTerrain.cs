@@ -40,7 +40,7 @@ public abstract class BaseTerrain : InterfaceTerrain
     private void WriteSpecificFilesToTheTerrains(string _destinationDirection, string _easaFileString, string _commonBalanceFileString)
     {
         // Write the content to the specified files
-        WriteToFile(_destinationDirection, _easaFileString, @"Client\Module\EASA\EASA_Init.sqf");
+        WriteToFile(_destinationDirection, _easaFileString, @"\Client\Module\EASA\EASA_Init.sqf");
         WriteToFile(_destinationDirection, _commonBalanceFileString, @"\Common\Functions\Common_BalanceInit.sqf");
         WriteToFile(_destinationDirection, GenerateAndWriteVersionSqf(), @"\version.sqf");
         ReplaceGUIMenuHelp(_destinationDirection);
