@@ -350,7 +350,7 @@ if ((typeOf _vehicle) isKindOf "Tank" || (typeOf _vehicle) isKindOf "Car") then 
 			//player sideChat Format ["TK_Soldier_Engineer_EP1 for %1",sideJoinedText];
 		};
 	};
-	
+
 	if (_unit isKindOf "Air") then {
 		_crew = missionNamespace getVariable Format ["WFBE_%1PILOT",sideJoinedText];
 	};

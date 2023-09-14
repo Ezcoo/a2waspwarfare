@@ -27,41 +27,41 @@ while {!gameOver} do {
 		//////
 		if(_supply  < _suppluy_max_limit) then {
 
-		_income = if (_is != 3) then {_supply} else {round(_supply * _incomeCoef)};
+			_income = if (_is != 3) then {_supply} else {round(_supply * _incomeCoef)};
 
-		switch (_is) do {
-			case 2: {_income = round(_income / 2)};
-			case 3: {
-				_income_player = round(_income * (((100 - (_logik getVariable "wfbe_commander_percent"))/100)/(_logik getVariable "wfbe_teams_count")));
-				_income_commander = round((_income * ((_logik getVariable "wfbe_commander_percent")/100)) / _divisor) + _income_player;
-			};
-			case 4: {
-				_income_player = round(_income * 1.5 * (100 - (_logik getVariable "wfbe_commander_percent"))/100);
-				_income_commander = round((_income * 1.5 - _income_player)*(_logik getVariable "wfbe_teams_count")) + _income_player;
-			};
-		};
-
-		if (_income > 0) then {
-			if (_currency_system == 0) then {[_x, _supply] Call ChangeSideSupply};
-
-			_comTeam = (_x) Call WFBE_CO_FNC_GetCommanderTeam;
-			if (isNull _comTeam) then {_comTeam = grpNull};
-
-			{
-				if !(isNil '_x') then {
-					_paycheck = 0;
-					switch (_is) do {
-						case 3: {_paycheck = if (_comTeam != _x) then {_income_player} else {_income_commander}};
-						case 4: {_paycheck = if (_comTeam != _x) then {_income_player} else {_income_commander}};
-						default {if !(isPlayer (leader _x)) then {_paycheck = _income}};
-					};
-
-					if (_paycheck != 0) then {[_x, _paycheck] Call WFBE_CO_FNC_ChangeTeamFunds};
+			switch (_is) do {
+				case 2: {_income = round(_income / 2)};
+				case 3: {
+					_income_player = round(_income * (((100 - (_logik getVariable "wfbe_commander_percent"))/100)/(_logik getVariable "wfbe_teams_count")));
+					_income_commander = round((_income * ((_logik getVariable "wfbe_commander_percent")/100)) / _divisor) + _income_player;
 				};
-			} forEach (_logik getVariable "wfbe_teams");
+				case 4: {
+					_income_player = round(_income * 1.5 * (100 - (_logik getVariable "wfbe_commander_percent"))/100);
+					_income_commander = round((_income * 1.5 - _income_player)*(_logik getVariable "wfbe_teams_count")) + _income_player;
+				};
+			};
 
-			if (isNull(_x Call WFBE_CO_FNC_GetCommanderTeam) && _commander_enabled) then {[_x, _income] Call ChangeAICommanderFunds};
-		};
+			if (_income > 0) then {
+				if (_currency_system == 0) then {[_x, _supply] Call ChangeSideSupply};
+
+				_comTeam = (_x) Call WFBE_CO_FNC_GetCommanderTeam;
+				if (isNull _comTeam) then {_comTeam = grpNull};
+
+				{
+					if !(isNil '_x') then {
+						_paycheck = 0;
+						switch (_is) do {
+							case 3: {_paycheck = if (_comTeam != _x) then {_income_player} else {_income_commander}};
+							case 4: {_paycheck = if (_comTeam != _x) then {_income_player} else {_income_commander}};
+							default {if !(isPlayer (leader _x)) then {_paycheck = _income}};
+						};
+
+						if (_paycheck != 0) then {[_x, _paycheck] Call WFBE_CO_FNC_ChangeTeamFunds};
+					};
+				} forEach (_logik getVariable "wfbe_teams");
+
+				if (isNull(_x Call WFBE_CO_FNC_GetCommanderTeam) && _commander_enabled) then {[_x, _income] Call ChangeAICommanderFunds};
+			};
 
 		};
 

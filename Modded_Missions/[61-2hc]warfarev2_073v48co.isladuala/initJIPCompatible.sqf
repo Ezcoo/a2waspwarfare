@@ -3,6 +3,13 @@
 //--- Define which 'part' of the game to run.
 #include "version.sqf"
 
+//WF_LOG_CONTENT
+#ifdef WF_LOG_CONTENT
+	#define LOG_CONTENT_STATE "ACTIVATED"
+#else 
+	#define LOG_CONTENT_STATE "NOT ACTIVATED"
+#endif
+
 CBA_display_ingame_warnings = false;
 publicVariable "CBA_display_ingame_warnings";
 //--- Mission is starting.
@@ -10,6 +17,7 @@ for '_i' from 0 to 3 do {diag_log "################################"};
 diag_log format ["## Island Name: [%1]", worldName];
 diag_log format ["## Mission Name: [%1]", WF_MISSIONNAME];
 diag_log format ["## Max players Defined: [%1]", WF_MAXPLAYERS];
+diag_log format ["## LOG CONTENT : [%1]", LOG_CONTENT_STATE];
 for '_i' from 0 to 3 do {diag_log "################################"};
 
 townModeSet = false;
@@ -88,11 +96,10 @@ WF_Debug = false;
 	WF_Debug = true;
 #endif
 
-WF_Camo = false;
-#ifdef WF_CAMO
-	WF_Camo = true;
+IS_chernarus_map_dependent = false;
+#ifdef IS_CHERNARUS_MAP_DEPENDENT
+	IS_chernarus_map_dependent = true; // if the map content depend on chernarus feature then global variable boolean is true.
 #endif
-
 
 if (isMultiplayer) then {Call Compile preprocessFileLineNumbers "Common\Init\Init_Parameters.sqf"}; //--- In MP, we get the parameters.
 
@@ -109,7 +116,6 @@ if (WF_Debug) then { //--- Debug.
 	missionNamespace setVariable ["WFBE_C_ECONOMY_FUNDS_START_EAST", 999999];
 	missionNamespace setVariable ["WFBE_C_ECONOMY_FUNDS_START_WEST", 999999];
 	missionNamespace setVariable ["WFBE_C_MODULE_WFBE_EASA", 1];
-
 };
 
 //--- Disable headless client if it is not supported.
@@ -164,3 +170,25 @@ if (isHeadLessClient) then {
 //// Wasp part
 WASP_procInitComm=Compile PreprocessFile "WASP\common\procInitComm.sqf";
 if(local player)then{ExecVM "WASP\Init_Client.sqf"};
+
+/* Marty : Creation of global variable than can be used everywhere to determine the faction on the map. */
+// If the map running is chernarus then east faction must be russian and NOT takistanish (useful to customize audio sounds and so on). West faction is always american whatever the map :
+IS_Takistan_Faction_On_This_Map = false;
+IS_Russian_Faction_On_This_Map  = false;
+IS_American_Faction_on_this_map = false; 
+
+// If map is chernarus dependent :
+if (IS_chernarus_map_dependent) then 
+{
+	IS_Russian_Faction_On_This_Map = true  ;
+	IS_Takistan_Faction_On_This_Map = false;
+	IS_American_Faction_on_this_map = true ; // for west side it is always american faction on every maps.
+};
+
+// If map is takistant dependent (= not chernarus dependant) :
+if !(IS_chernarus_map_dependent) then  
+{
+	IS_Russian_Faction_On_This_Map  = false;
+	IS_Takistan_Faction_On_This_Map = true ;
+	IS_American_Faction_on_this_map = true ; // for west side it is always american faction on every maps.
+};

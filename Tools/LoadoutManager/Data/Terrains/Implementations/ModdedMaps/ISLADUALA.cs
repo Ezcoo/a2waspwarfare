@@ -5,5 +5,6 @@
         TerrainName = TerrainName.ISLADUALA;
         TerrainType = TerrainType.DESERT;
         isModdedTerrain = true;
+        inGameMapName = "isladuala";
     }
 }

@@ -3,7 +3,6 @@ _cSharpClassName = "GLOBALGAMESTATS";
 _currentMap = worldName;
 
 while {true} do {
-    
     _scoreSideWest = scoreSide west;
     _scoreSideEast = scoreSide east;
     _uptime = round(time);

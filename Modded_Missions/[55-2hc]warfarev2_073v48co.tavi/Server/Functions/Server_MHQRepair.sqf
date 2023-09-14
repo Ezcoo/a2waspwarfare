@@ -24,7 +24,12 @@ _logik setVariable ['wfbe_hq_repairing',true, true];
 
 
 _MHQ = [missionNamespace getVariable Format["WFBE_%1MHQNAME", _sideText], _position, _sideID, _direction, true, false] Call WFBE_CO_FNC_CreateVehicle;
-
+if (_side == west && !(IS_chernarus_map_dependent)) then {
+	_MHQ setVehicleInit "this setObjectTexture [0,""Textures\lavbody_coD.paa""]";
+	_MHQ setVehicleInit "this setObjectTexture [1,""Textures\lavbody2_coD.paa""]";
+	_MHQ setVehicleInit "this setObjectTexture [2,""Textures\lav_hq_coD.paa""]";
+	processinitcommands;
+	};
 _MHQ setVariable ["WFBE_Taxi_Prohib", true];
 _MHQ setVariable ["wfbe_trashed", false];
 _MHQ setVariable ["wfbe_side", _side];

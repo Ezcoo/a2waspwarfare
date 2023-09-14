@@ -35,14 +35,14 @@ if !(_spawnInside) then {_unit setPos ([getPos _spawn,10,20] Call GetRandomPosit
 //--- Loadout.
 if (!isNil {_unit getVariable "wfbe_custom_gear"} && !WFBE_RespawnDefaultGear && _allowCustom) then {
 	_mode = missionNamespace getVariable "WFBE_C_RESPAWN_PENALTY";
-
+	
 	if (_mode in [0,2,3,4,5]) then {
 		//--- Calculate the price/funds.
 		_skip = false;
 		_gear_cost = _unit getVariable "wfbe_custom_gear_cost";
 		if (_mode != 0) then {
 			_price = 0;
-
+			
 			//--- Get the mode pricing.
 			switch (_mode) do {
 				case 2: {_price = _gear_cost};
@@ -50,25 +50,25 @@ if (!isNil {_unit getVariable "wfbe_custom_gear"} && !WFBE_RespawnDefaultGear &&
 				case 4: {_price = round(_gear_cost/4)};
 				case 5: {_price = _gear_cost};
 			};
-
+			
 			//--- Are we charging only on mobile respawn?
 			_charge = true;
 			if (_mode == 5) then {
 				_buildings = (sideJoined) Call WFBE_CO_FNC_GetSideStructures;
 				if (_spawn in _buildings || _spawn == ((sideJoined) Call WFBE_CO_FNC_GetSideHQ)) then {_charge = false};
 			};
-
+			
 			//--- Charge if possible.
 			_funds = Call GetPlayerFunds;
 			if (_funds >= _price && _charge) then {
 				-(_price) Call ChangePlayerFunds;
 				(Format[localize 'STR_WF_CHAT_Gear_RespawnCharge',_price]) Call GroupChatMessage;
 			};
-
+			
 			//--- Check that the player has enough funds.
 			if (_funds < _price) then {_skip = true};
 		};
-
+		
 		//--- Use the respawn loadout.
 		if !(_skip) then {
 			_get = _unit getVariable "wfbe_custom_gear";
@@ -96,7 +96,7 @@ case "SpecOps": {_default = missionNamespace getVariable Format["WFBE_%1_Default
 
 case "Medic": {_default = missionNamespace getVariable Format["WFBE_%1_DefaultGearMedic", WFBE_Client_SideJoinedText]};
 };
-
+	
 	//_default = missionNamespace getVariable Format["WFBE_%1_DefaultGear", WFBE_Client_SideJoinedText];
 	if (count _default <= 3) then {
 		[_unit, _default select 0, _default select 1, _default select 2] Call WFBE_CO_FNC_EquipUnit;

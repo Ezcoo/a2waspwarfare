@@ -212,7 +212,7 @@ while {true} do {
                 [_veh,_nearSupport select _curSel,_typeRepair,_spType] Spawn SupportRepair;
 			};
 		};
-
+		
 		//--- Refuel.
 		if (MenuAction == 3) then {
 			MenuAction = -1;
@@ -221,7 +221,7 @@ while {true} do {
 			//--- Spawn a Refuel thread.
 			[_veh,_nearSupport select _curSel,_typeRepair,_spType] Spawn SupportRefuel;
 		};
-
+		
 		//--- Heal.
 		if (MenuAction == 5) then {
 			MenuAction = -1;

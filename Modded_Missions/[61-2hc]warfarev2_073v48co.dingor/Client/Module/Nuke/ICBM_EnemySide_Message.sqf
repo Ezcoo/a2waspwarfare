@@ -2,23 +2,16 @@
 	Author: Marty
 	Name: ICBM_Message.sqf
 	Parameters:
-	  0 - none
+	  0 - _side : 	side object - side who must receive the message. Can be east or west
 	Description:
 	    Play a text and audio message destined to the players who will get nuked = enemy side.
 */
+_side = _this select 0 ;
 
-private ["_time_before_ICBM_impact", "_text_message_to_enemy_players"];
+_time_before_ICBM_impact 			= missionNamespace getVariable "WFBE_ICBM_TIME_TO_IMPACT";
+_enemy_Message_Text 				= localize "STR_WF_CHAT_ICBM_Launch_BY_ENEMY_TEAM";
+_enemy_Message_Text 				= format[_enemy_Message_Text, _time_before_ICBM_impact];
+_enemy_Message_SoundName			= "ICBM_message_to_enemy_players";
 
-["FUNCTION CALLED", "ICBM_EnemySide_Message.sqf"] Call WFBE_CO_FNC_LogContent;
-
-// Prepare and send the text message for the enemy team (the team who will be fried by nuke)
-_time_before_ICBM_impact = missionNamespace getVariable "WFBE_ICBM_TIME_TO_IMPACT";
-
-_text_message_to_enemy_players = localize "STR_WF_CHAT_ICBM_Launch_BY_ENEMY_TEAM";
-_text_message_to_enemy_players = format[_text_message_to_enemy_players, _time_before_ICBM_impact];
-
-systemChat _text_message_to_enemy_players; // Send text
-
-// Send sound to the enemy team (the team who will be fried by nuke)
-playSound "ICBM_message_to_enemy_players"; //playSound is executed only on the client who call it
-
+// We use the magic function WF_sendMessage to broadcast text and audio to the corresponding side :
+[_enemy_Message_Text, _enemy_Message_SoundName, _side ] call WF_sendMessage ;

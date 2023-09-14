@@ -76,7 +76,7 @@ if (isNil '_get') exitWith {
 		UID | Cash | Side | Current Side | flag of first connect on a session
 		The JIP system store the main informations about a client, the UID is used to track the player all along the session.
 	*/
-	missionNamespace setVariable [format["WFBE_JIP_USER%1",_uid], [_uid, 0, _sideJoined, _sideJoined,0]];
+	missionNamespace setVariable [format["WFBE_JIP_USER%1",_uid], [_uid, 0, _sideJoined, _sideJoined, 0]];
 
 	_team setVariable ["wfbe_funds", missionNamespace getVariable format ["WFBE_C_ECONOMY_FUNDS_START_%1", _sideJoined], true];
 	["INFORMATION", Format ["Server_PlayerConnected.sqf: Team [%1] Leader [%2] JIP Information have been stored for the first time.", _team, _uid]] Call WFBE_CO_FNC_LogContent;

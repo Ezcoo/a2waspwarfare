@@ -68,6 +68,7 @@ missionNamespace setVariable [Format ["WFBE_%1HEAVYUNITS", _side], _u];
 if (local player) then {['HEAVY', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
 _u 			= ['UH1H_TK_GUE_EP1'];
+
 	if ((missionNamespace getVariable "WFBE_C_MODULE_BIS_PMC") > 0) then {
 		_u = _u		+ ['Ka60_PMC'];
 		_u = _u		+ ['Ka60_GL_PMC'];

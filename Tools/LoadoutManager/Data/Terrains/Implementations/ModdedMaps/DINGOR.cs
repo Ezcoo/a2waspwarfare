@@ -5,5 +5,6 @@
         TerrainName = TerrainName.DINGOR;
         TerrainType = TerrainType.DESERT;
         isModdedTerrain = true;
+        inGameMapName = "dingor";
     }
 }

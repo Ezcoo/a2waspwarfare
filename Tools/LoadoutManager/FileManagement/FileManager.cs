@@ -34,7 +34,18 @@ public class FileManager
             }
 
             string destFile = Path.Combine(_destination, fileName);
-            File.Copy(file, destFile, true);
+            try
+            {
+                using (FileStream sourceStream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.Read))
+                using (FileStream destStream = new FileStream(destFile, FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+                    sourceStream.CopyTo(destStream);
+                }
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine($"Error copying file: {ex.Message}");
+            }
         }
     }
 
@@ -42,21 +53,50 @@ public class FileManager
     // or naming conventions (the ones that are unique to each of the terrains)
     private static bool ShouldSkipFile(string _fileName)
     {
-        return _fileName.EndsWith("mission.sqm", StringComparison.OrdinalIgnoreCase) ||
-               (_fileName.EndsWith("version.sqf", StringComparison.OrdinalIgnoreCase) &&
-                !_fileName.EndsWith("Init_Version.sqf", StringComparison.OrdinalIgnoreCase));
+        return (_fileName.EndsWith("mission.sqm", StringComparison.OrdinalIgnoreCase) ||
+               _fileName.EndsWith("version.sqf", StringComparison.OrdinalIgnoreCase) ||
+               // Convert to list to not to convert from Cherno to takistan,
+               // use as parameter to add to the list above
+               _fileName.EndsWith("GUI_Menu_Help.sqf", StringComparison.OrdinalIgnoreCase) ||
+               _fileName.EndsWith("Init_Server.sqf", StringComparison.OrdinalIgnoreCase) ||
+               _fileName.EndsWith("texHeaders.bin", StringComparison.OrdinalIgnoreCase) ||
+               _fileName.EndsWith("StartVeh.sqf", StringComparison.OrdinalIgnoreCase) ||
+               _fileName.EndsWith("Parameters.hpp", StringComparison.OrdinalIgnoreCase) ||
+               _fileName.EndsWith("loadScreen.jpg", StringComparison.OrdinalIgnoreCase)
+               )&&
+
+
+               !_fileName.EndsWith("Init_Version.sqf", StringComparison.OrdinalIgnoreCase); // because there's version.sqf
     }
 
     // Recursively copies all subdirectories from the source to the destination using the main orchestrator method.
     private static void RecursivelyCopySubdirectories(string _source, string _destination)
     {
+        List<string> blacklistedDirectories = new List<string>
+        {
+            "Textures",
+            @"Server\Config",
+            @"Core_Artillery",
+            @"Core_Units",
+            @"Core_Structures",
+        };
+
         foreach (var directory in Directory.GetDirectories(_source))
         {
-            string dirName = Path.GetFileName(directory);
-            if (dirName == null) continue;
+            string directoryName = Path.GetFileName(directory);
+            bool shouldSkipDirectory = blacklistedDirectories.Any(blacklist => directory.EndsWith(blacklist));
 
-            string destDir = Path.Combine(_destination, dirName);
-            CopyFilesFromSourceToDestination(directory, destDir);
+            // Check if directoryName ends with any string in blacklistedDirectories
+            // Only when copying to takistan
+            if (shouldSkipDirectory && _destination.Contains("co.takistan"))
+            {
+                continue; // Exit the method if the directory is blacklisted
+            }
+
+            if (directoryName == null) continue;
+
+            string destinationDirectory = Path.Combine(_destination, directoryName);
+            CopyFilesFromSourceToDestination(directory, destinationDirectory);
         }
     }
 
@@ -113,5 +153,38 @@ public class FileManager
         }
 
         return dir;
+    }
+
+    // This method traverses a directory and lists all the file paths.
+    // It takes in a directory path and an optional file type.
+    // If a file type is specified, it will only list files of that type.
+    public static List<string> ListFilesInDirectory(string _directoryPath, string _fileType = "")
+    {
+        // Initialize the list to store file paths
+        List<string> _filePaths = new List<string>();
+
+        // Check if the directory exists
+        if (!Directory.Exists(_directoryPath))
+        {
+            Console.WriteLine("The specified directory does not exist.");
+            return _filePaths; // Return an empty list
+        }
+
+        // Traverse the directory and add file paths to the list
+        foreach (string _filePath in Directory.EnumerateFiles(
+            _directoryPath, "*", SearchOption.AllDirectories))
+        {
+            // If a file type is specified, filter the files
+            if (!string.IsNullOrEmpty(_fileType) &&
+                !Path.GetExtension(_filePath).Equals(_fileType, StringComparison.OrdinalIgnoreCase))
+            {
+                continue;
+            }
+
+            _filePaths.Add(_filePath);
+        }
+
+        // Return the list of file paths
+        return _filePaths;
     }
 }

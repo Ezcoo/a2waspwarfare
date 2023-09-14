@@ -4,5 +4,6 @@
     {
         TerrainName = TerrainName.TAKISTAN;
         TerrainType = TerrainType.DESERT;
+        inGameMapName = "takistan";
     }
 }

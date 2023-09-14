@@ -47,7 +47,7 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_COSTS", _side], [
 	[[2500,0],[3500,0],[6000,0]], //--- Artillery Ammo
 	[[3000,0]], //--- IR Smoke
 	[[7500,0]], //--- Aircraft AA Missiles
-    [[5000,0],[12500,0]] //--- Anti Air Radar
+	[[5000,0],[12500,0]] //--- Anti Air Radar
 ]];
 
 missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LEVELS", _side], [

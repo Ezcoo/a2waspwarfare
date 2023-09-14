@@ -5,13 +5,13 @@ _side = _this;
 /* Root Definition */
 _MHQ = "BRDM2_HQ_Gue";
 _HQ = "BRDM2_HQ_Gue_unfolded";
-_BAR = if (WF_Camo) then {"Gue_WarfareBBarracks"} else {"TK_GUE_WarfareBBarracks_EP1"};
-_LVF = if (WF_Camo) then {"Gue_WarfareBLightFactory"} else {"TK_GUE_WarfareBLightFactory_EP1"};
-_CC = if (WF_Camo) then {"Gue_WarfareBUAVterminal"} else {"TK_GUE_WarfareBUAVterminal_EP1"};
-_HEAVY = if (WF_Camo) then {"Gue_WarfareBHeavyFactory"} else {"TK_GUE_WarfareBHeavyFactory_EP1"};
-_AIR = if (WF_Camo) then {"Gue_WarfareBAircraftFactory"} else {"TK_GUE_WarfareBAircraftFactory_EP1"};
-_SP = if (WF_Camo) then {"Gue_WarfareBVehicleServicePoint"} else {"TK_GUE_WarfareBVehicleServicePoint_EP1"};
-_AAR = if (WF_Camo) then {"Gue_WarfareBAntiAirRadar"} else {"TK_GUE_WarfareBAntiAirRadar_EP1"};
+_BAR = if (IS_chernarus_map_dependent) then {"Gue_WarfareBBarracks"} else {"TK_GUE_WarfareBBarracks_EP1"};
+_LVF = if (IS_chernarus_map_dependent) then {"Gue_WarfareBLightFactory"} else {"TK_GUE_WarfareBLightFactory_EP1"};
+_CC = if (IS_chernarus_map_dependent) then {"Gue_WarfareBUAVterminal"} else {"TK_GUE_WarfareBUAVterminal_EP1"};
+_HEAVY = if (IS_chernarus_map_dependent) then {"Gue_WarfareBHeavyFactory"} else {"TK_GUE_WarfareBHeavyFactory_EP1"};
+_AIR = if (IS_chernarus_map_dependent) then {"Gue_WarfareBAircraftFactory"} else {"TK_GUE_WarfareBAircraftFactory_EP1"};
+_SP = if (IS_chernarus_map_dependent) then {"Gue_WarfareBVehicleServicePoint"} else {"TK_GUE_WarfareBVehicleServicePoint_EP1"};
+_AAR = if (IS_chernarus_map_dependent) then {"Gue_WarfareBAntiAirRadar"} else {"TK_GUE_WarfareBAntiAirRadar_EP1"};
 
 /* Mash used after being deployed */
 missionNamespace setVariable [Format["WFBE_%1FARP", _side], 'Land_A_tent'];

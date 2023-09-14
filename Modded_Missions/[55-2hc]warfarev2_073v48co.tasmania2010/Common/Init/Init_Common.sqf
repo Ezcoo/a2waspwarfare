@@ -145,6 +145,9 @@ WFBE_CO_FNC_WaypointPatrolTown = Compile preprocessFileLineNumbers "Common\Funct
 WFBE_CO_FNC_WaypointSimple = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointSimple.sqf";
 WFBE_CO_FNC_WaypointsAdd = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointsAdd.sqf";
 WFBE_CO_FNC_WaypointsRemove = Compile preprocessFileLineNumbers "Common\Functions\Common_WaypointsRemove.sqf";
+WF_createMarker = compile preprocessFileLineNumbers "Common\Functions\Common_CreateMarker.sqf";
+WFBE_CL_FNC_Delete_Marker = compile preprocessFileLineNumbers "Client\Functions\Client_Delete_Marker.sqf";
+WF_sendMessage = compile preprocessFileLineNumbers "Common\Functions\Common_SendMessage.sqf";
 
 ["INITIALIZATION", "Init_Common.sqf: Functions are initialized."] Call WFBE_CO_FNC_LogContent;
 
@@ -199,7 +202,7 @@ _team_east = "";
 switch (true) do {
 	case WF_A2_CombinedOps: {
 		/* Model Core */
-		if !(WF_Camo) then {
+		if !(IS_chernarus_map_dependent) then {
 			Call Compile preprocessFileLineNumbers 'Common\Config\Core_Models\CombinedOps.sqf';
 		} else {
 			Call Compile preprocessFileLineNumbers 'Common\Config\Core_Models\CombinedOps_W.sqf';
@@ -239,8 +242,8 @@ switch (true) do {
 		Call Compile preprocessFileLineNumbers 'Common\Config\Core\Core_USMC.sqf';
 
 		/* Call in the teams template - Combined Operations */
-		_team_west = if (WF_Camo) then {'US_Camo'} else {'US'};
-		_team_east = if (WF_Camo) then {'RU'} else {'TKA'};
+		_team_west = if (IS_chernarus_map_dependent) then {'US_Camo'} else {'US'};
+		_team_east = if (IS_chernarus_map_dependent) then {'RU'} else {'TKA'};
 	};
 };
 

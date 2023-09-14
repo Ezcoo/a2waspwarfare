@@ -200,7 +200,7 @@ _l = _l + [_u];
 _k = _k + ["Motorized_3"];
 _u =      ["BTR60_TK_EP1"];
 _u = _u + ["BRDM2_TK_EP1"];
-_u = _u + ["HMMWV_TOW_DES_EP1"];
+_u = _u + ["UAZ_SPG9_INS"];
 _l = _l + [_u];
 
 _k = _k + ["Motorized_4"];
