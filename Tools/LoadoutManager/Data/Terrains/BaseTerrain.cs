@@ -163,7 +163,7 @@ public abstract class BaseTerrain : InterfaceTerrain
 
         // Construct and return the full destination directory path
         return Path.Combine(projectDirectory.FullName, directoryOfMissions + @"\[" + sourceTerrainPlayerCount +
-            "-2hc]warfarev2_073v48co." + EnumExtensions.GetEnumMemberAttrValue(TerrainName));
+            "-2hc]warfarev2_073v48co." + inGameMapName);
     }
 
     // Method to update a specific file's content (such as init_server on modded maps for disabling guerilla barracks)
