@@ -7,8 +7,10 @@ public class SqfFileGenerator
 {
     // aircraftEasaLoadoutsFile stores the text for the respective EASA loadouts or initialization files.
     private static string aircraftEasaLoadoutsFile = string.Empty;
+    private static string aircraftEasaLoadoutsFileForModdedMaps = string.Empty;
     // commonBalanceInitFile stores the text for the respective Common_BalanceInit loadouts or initialization files.
     private static string commonBalanceInitFile = string.Empty;
+    private static string commonBalanceInitFileForModdedMaps = string.Empty;
 
     // GenerateStartOfTheEasaFile creates the initial part of the SQF file.
     // It returns a string that forms the starting block of the SQF file.
@@ -72,14 +74,16 @@ public class SqfFileGenerator
     public static void GenerateCommonBalanceInitAndTheEasaFileForEachTerrain()
     {
         GenerateLoadoutsForAllVehicleTypes();
-        string easaFileString = GenerateEasaFileString();
-        string commonBalanceFileString = GenerateCommonBalanceFileString();
+        var easaFileStrings = GenerateEasaFileString();
+        var commonBalanceFileStrings = GenerateCommonBalanceFileString();
+
 
         // First go through vanilla maps (copied to mod maps later)
-        WriteAndUpdateToFilesForATerrain(easaFileString, commonBalanceFileString, TerrainName.CHERNARUS);
-        WriteAndUpdateToFilesForATerrain(easaFileString, commonBalanceFileString, TerrainName.TAKISTAN);
+        WriteAndUpdateToFilesForATerrain(easaFileStrings.vanilla, commonBalanceFileStrings.vanilla, TerrainName.CHERNARUS);
+        WriteAndUpdateToFilesForATerrain(easaFileStrings.vanilla, commonBalanceFileStrings.vanilla, TerrainName.TAKISTAN);
 
-        WriteAndUpdateToFilesForModdedTerrains(easaFileString, commonBalanceFileString);
+        // replace with modded
+        WriteAndUpdateToFilesForModdedTerrains(easaFileStrings.vanilla, commonBalanceFileStrings.vanilla);
     }
 
     // GenerateLoadoutsForAllVehicleTypes iterates through all vehicle types defined in the VehicleType enum.
@@ -93,25 +97,43 @@ public class SqfFileGenerator
     }
 
     // GenerateEasaFileString() stores the path for the respective EASA loadouts or initialization files.
-    private static string GenerateEasaFileString()
+    private static MapFileProperties GenerateEasaFileString()
     {
+        MapFileProperties properties = new MapFileProperties();
+
         string easaFileString = GenerateStartOfTheEasaFile();
         easaFileString += "\n" + aircraftEasaLoadoutsFile;
+
+        properties.modded = easaFileString;
+        properties.modded += aircraftEasaLoadoutsFileForModdedMaps;
+
         easaFileString += GenerateEndOfTheEasaFile();
-        return easaFileString;
+        properties.modded += GenerateEndOfTheEasaFile();
+
+        properties.vanilla = easaFileString;
+        return properties;
     }
 
     // GenerateCommonBalanceFileString() stores the path for the respective EASA loadouts or initialization files.
-    private static string GenerateCommonBalanceFileString()
+    private static MapFileProperties GenerateCommonBalanceFileString()
     {
+        MapFileProperties properties = new MapFileProperties();
+
         string commonBalanceFileString = @"Private[""_currentFactoryLevel""];" + "\n\n";
         commonBalanceFileString += "// After adding Pandur and BTR-90 to this script," +
             " it's necessary to exit on the server to prevent an occassional freeze\n";
         commonBalanceFileString += "if (isServer) exitWith {};\n\n";
         commonBalanceFileString += "switch (typeOf _this) do\n{\n";
         commonBalanceFileString += commonBalanceInitFile;
+
+        properties.modded = commonBalanceFileString;
+        properties.modded += commonBalanceInitFileForModdedMaps;
+
         commonBalanceFileString += "};";
-        return commonBalanceFileString;
+        properties.modded += "};";
+
+        properties.vanilla = commonBalanceFileString;
+        return properties;
     }
 
     // GenerateAircraftSpecificLoadouts takes a VehicleType enum as an argument and generates specific loadouts for aircraft.
