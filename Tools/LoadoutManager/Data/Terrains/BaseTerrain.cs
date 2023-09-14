@@ -243,16 +243,19 @@ public abstract class BaseTerrain : InterfaceTerrain
     private string GenerateWFDebug()
     {
 #if DEBUG
-        return "#define WF_DEBUG 1";
+            return "#define WF_DEBUG 1";
+#elif SERVER_DEBUG
+        return "// #define WF_DEBUG 1";
 #else
             return "// #define WF_DEBUG 1";
 #endif
     }
-
     // Generates the WF_LOG_CONTENT line based on build configuration
     private string GenerateWFLogContent()
     {
 #if DEBUG
+            return "#define WF_LOG_CONTENT 1";
+#elif SERVER_DEBUG
         return "#define WF_LOG_CONTENT 1";
 #else
             return "// #define WF_LOG_CONTENT 1";
