@@ -18,6 +18,9 @@ public abstract class BaseTerrain : InterfaceTerrain
     // Boolean flag to check if the terrain is modded.
     public bool isModdedTerrain { get; set; }
 
+    // The directory the game sees, added here after refactoring the EnumMember for discord bot usage
+    public string inGameMapName { get; set; }
+
     // Moved this here for better copypasteability to GPT
     private string loadScreenEvalString = @"__EVAL([""ca\Missions_e\campaign\missions\CE7B_PhoenixOp.Takistan\img\loading08_phoenixop_co.paa"",""ca\Missions_e\campaign\missions\CE7A_FinishingTouch.Takistan\img\loading08_finishingtouch_co.paa"",""ca\Missions_e\campaign\missions\CE6_EyeOfTheHurricane.Zargabad\img\loading07_co.paa"",""ca\Missions_e\campaign\missions\CE5B_FromHell.Takistan\img\loading06_fromhell_co.paa"",""ca\Missions_e\campaign\missions\CE5A_Sandstorm.Takistan\img\loading06_sandstorm_co.paa"",""ca\Missions_e\campaign\missions\CE4_OpenSeason.Takistan\img\loading05_co.paa"",""ca\Missions_e\campaign\missions\CE3_ColtanBlues.Takistan\img\loading04_co.paa"",""ca\Missions_e\campaign\missions\CE2_Pathfinder.Takistan\img\loading03_co.paa"",""ca\Missions_e\campaign\missions\CE1_GoodMorningTStan.Takistan\img\loading02_goodmorning_co.paa"",""ca\Missions_e\campaign\missions\CE0_Backstab.Zargabad\img\loading01_co.paa"",""ca\Missions_e\scenarios\SPE1_Jackal.Takistan\loading_jackal_co.paa"",""ca\Missions_e\scenarios\SPE1_Vehicles_US.Takistan\loading_showus_co.paa"",""ca\Missions_e\scenarios\SPE1_Vehicles_TKG.Zargabad\loading_showgue_co.paa"",""ca\Missions_e\scenarios\SPE1_Vehicles_TKA.Zargabad\loading_showtk_co.paa"",""ca\Missions_e\scenarios\SPE1_Vehicles_Civilian.Zargabad\loading_showciv_co.paa"",""ca\Missions_e\scenarios\SPE1_Vehicles_Allies.Takistan\loading_shownato_co.paa"",""ca\Missions_e\scenarios\SPE1_SteelPanthers.Takistan\loading_steelpanthers_co.paa"",""ca\Missions_e\scenarios\SPE1_OneShotOneKill.Takistan\loading_oneshotonekill_co.paa"",""ca\Missions_e\scenarios\SPE1_Littlebird.Takistan\loading_littlebird_co.paa"",""ca\Missions_e\scenarios\SPE1_LaserShow.Takistan\loading_lasershow_co.paa"",""ca\Missions_e\scenarios\SPE1_HikeInTheHills.Takistan\loading_hikeinthehills_co.paa"",""ca\Missions_e\scenarios\SPE1_DeathFromAbove.Takistan\loading_deathfromabove_co.paa"",""ca\Missions_e\scenarios\SPE1_Benchmark1.Takistan\loading_benchmark_co.paa"",""ca\Missions_e\MPScenarios\MPE1_Dogfighters.Takistan\loading_mpdogfight_co.paa"",""ca\Missions_e\MPScenarios\MPE_MountainWarfare.Takistan\loading_mpwarfare_co.paa"",""ca\Missions_e\MPScenarios\MPE_SectorControl.Zargabad\img\loading_mpsectorcontrol_co.paa""] select round random 25)";
 
@@ -96,25 +99,25 @@ public abstract class BaseTerrain : InterfaceTerrain
         FileManager.CopyFilesFromSourceToDestination(sourceDirectory, destinationDirectory);
     }
 
-    // Method to update files for modded terrains
-    private void UpdateFilesForAndModdedTerrain(DirectoryInfo _dir, string _destinationDirectory)
-    {
-        // temp
-        if (isModdedTerrain)
-        {
-            return;
-        }
+    //// Method to update files for modded terrains
+    //private void UpdateFilesForAndModdedTerrain(DirectoryInfo _dir, string _destinationDirectory)
+    //{
+    //    // temp
+    //    if (isModdedTerrain)
+    //    {
+    //        return;
+    //    }
 
-        // Determine the source and destination directories for file operations
-        string sourceDirectory = DetermineSourceDirectory();
+    //    // Determine the source and destination directories for file operations
+    //    string sourceDirectory = DetermineSourceDirectory();
 
-        // Copy files from the source to the destination directory
-        FileManager.CopyFilesFromSourceToDestination(sourceDirectory, _destinationDirectory);
+    //    // Copy files from the source to the destination directory
+    //    FileManager.CopyFilesFromSourceToDestination(sourceDirectory, _destinationDirectory);
 
-        // Update the Guerilla Barracks file in the destination directory
-        ReplaceContentOnASpecificFile(_destinationDirectory, @"\Server\Init\Init_Server.sqf",
-            "_barrack_amount = 2;", "_barrack_amount = 0;");
-    }
+    //    // Update the Guerilla Barracks file in the destination directory
+    //    ReplaceContentOnASpecificFile(_destinationDirectory, @"\Server\Init\Init_Server.sqf",
+    //        "_barrack_amount = 2;", "_barrack_amount = 0;");
+    //}
 
     // Replaces the gui menu help mission name according to the current Terrain name
     private void ReplaceGUIMenuHelp(string _destinationDirectory)
@@ -141,14 +144,11 @@ public abstract class BaseTerrain : InterfaceTerrain
     // Method to determine the source directory path based on terrain type and mission type
     private string DetermineSourceDirectory()
     {
-        // Determine the name of the source terrain based on the terrain type
-        string sourceTerrainName = TerrainType == TerrainType.FOREST ? "chernarus" : "takistan";
-
         // Determine the player count for the mission based on the terrain type
         string sourceTerrainPlayerCount = DetermineMissionTypeIfItsForestOrDesert();
 
         // Construct and return the full source directory path
-        return Path.Combine(FileManager.FindA2WaspWarfareDirectory().FullName, @"Missions\[" + sourceTerrainPlayerCount + "-2hc]warfarev2_073v48co." + sourceTerrainName);
+        return Path.Combine(FileManager.FindA2WaspWarfareDirectory().FullName, @"Missions\[" + sourceTerrainPlayerCount + "-2hc]warfarev2_073v48co." + inGameMapName);
     }
 
     // Method to determine the destination directory based on mission type and terrain name

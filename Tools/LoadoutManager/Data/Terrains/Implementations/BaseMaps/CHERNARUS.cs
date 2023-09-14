@@ -4,5 +4,6 @@
     {
         TerrainName = TerrainName.CHERNARUS;
         TerrainType = TerrainType.FOREST;
+        inGameMapName = "chernarus";
     }
 }

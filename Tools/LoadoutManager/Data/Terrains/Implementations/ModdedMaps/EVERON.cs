@@ -5,5 +5,6 @@
         TerrainName = TerrainName.EDEN;
         TerrainType = TerrainType.FOREST;
         isModdedTerrain = true;
+        inGameMapName = "eden";
     }
 }
