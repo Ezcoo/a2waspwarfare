@@ -1,4 +1,4 @@
-// The BaseTerrain class serves as the foundation for managing different types of terrains in the game.
+﻿// The BaseTerrain class serves as the foundation for managing different types of terrains in the game.
 // It implements the InterfaceTerrain to ensure certain properties and methods are present in derived classes.
 // The class provides functionality for:
 // - Determining mission paths and types based on whether the terrain is modded or not.
@@ -34,6 +34,11 @@ public abstract class BaseTerrain : InterfaceTerrain
         if (terrainName == TerrainName.TAKISTAN)
         {
             UpdateFilesForTakistan();
+        }
+
+        if (isModdedTerrain)
+        {
+            UpdateFilesForModdedTerrains();
         }
 
         Console.WriteLine("-------" + terrainName + " DONE! ---------");
@@ -88,11 +93,22 @@ public abstract class BaseTerrain : InterfaceTerrain
         return TerrainType == TerrainType.DESERT ? "//" : "";
     }
 
-    // Method to update files for Takistan
+    // Method to update all the files for Takistan, and the modded maps
     private void UpdateFilesForTakistan()
     {
         // Determine the source and destination directories for file operations
         string sourceDirectory = DetermineChernarusDirectory();
+        string destinationDirectory = DetermineDestinationDirectory();
+
+        // Copy files from the source to the destination directory
+        FileManager.CopyFilesFromSourceToDestination(sourceDirectory, destinationDirectory);
+    }
+
+    // Method to update all the files for the modded terrains
+    private void UpdateFilesForModdedTerrains()
+    {
+        // Determine the source and destination directories for file operations
+        string sourceDirectory = DetermineSourceDirectory();
         string destinationDirectory = DetermineDestinationDirectory();
 
         // Copy files from the source to the destination directory
@@ -128,7 +144,7 @@ public abstract class BaseTerrain : InterfaceTerrain
             $" {EnumExtensions.GetEnumMemberAttrValue(terrainName)}</t><br />");
     }
 
-    // Method to determine the takistan directory
+    // Method to determine the Chernarus directory, for Takistan
     private string DetermineChernarusDirectory()
     {
         // Determine the name of the source terrain based on the terrain type
