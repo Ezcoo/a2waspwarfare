@@ -9,12 +9,10 @@ _timer = 0;
 // Marty : SEND_MESSAGE Event Handler 
 onEventHandler_SEND_MESSAGE = compile preprocessFileLineNumbers "Client\Functions\Client_onEventHandler_SEND_MESSAGE.sqf";
 "SEND_MESSAGE" addPublicVariableEventHandler {_this call onEventHandler_SEND_MESSAGE};
-WF_sendMessage = compile preprocessFileLineNumbers "Common\Functions\Common_SendMessage.sqf";
 
 // Marty : MARKER_CREATION Event Handler 
 onEventHandler_MARKER_CREATION = compile preprocessFileLineNumbers "Client\Functions\Client_onEventHandler_MARKER_CREATION.sqf";
 "MARKER_CREATION" addPublicVariableEventHandler {_this call onEventHandler_MARKER_CREATION};
-WF_createMarker = compile preprocessFileLineNumbers "Common\Functions\Common_CreateMarker.sqf";
 
 // Marty : ICBM Event Handler
 OnEventHandler_ICBM_Launch = Compile preprocessFileLineNumbers "Client\Module\Nuke\OnEventHandler_ICBM_Launch.sqf";
