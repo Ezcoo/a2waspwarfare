@@ -34,7 +34,18 @@ public class FileManager
             }
 
             string destFile = Path.Combine(_destination, fileName);
-            File.Copy(file, destFile, true);
+            try
+            {
+                using (FileStream sourceStream = new FileStream(file, FileMode.Open, FileAccess.Read, FileShare.Read))
+                using (FileStream destStream = new FileStream(destFile, FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+                    sourceStream.CopyTo(destStream);
+                }
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine($"Error copying file: {ex.Message}");
+            }
         }
     }
 
