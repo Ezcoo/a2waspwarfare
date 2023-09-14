@@ -71,24 +71,13 @@ public class SqfFileGenerator
     // The generated strings are then written to files specific to different terrains.
     public static void GenerateCommonBalanceInitAndTheEasaFileForEachTerrain()
     {
-        DirectoryInfo dir = FileManager.FindA2WaspWarfareDirectory();
-        try
-        {
-            FileManager.FindA2WaspWarfareDirectory();
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.Message);
-            return;
-        }
-
         GenerateLoadoutsForAllVehicleTypes();
         string easaFileString = GenerateEasaFileString();
         string commonBalanceFileString = GenerateCommonBalanceFileString();
 
         // First go through vanilla maps (copied to mod maps later)
-        WriteAndUpdateToFilesForATerrain(dir, easaFileString, commonBalanceFileString, TerrainName.CHERNARUS);
-        WriteAndUpdateToFilesForATerrain(dir, easaFileString, commonBalanceFileString, TerrainName.TAKISTAN);
+        WriteAndUpdateToFilesForATerrain(easaFileString, commonBalanceFileString, TerrainName.CHERNARUS);
+        WriteAndUpdateToFilesForATerrain(easaFileString, commonBalanceFileString, TerrainName.TAKISTAN);
 
         //WriteAndUpdateToFilesForModdedTerrains(dir, easaFileString, commonBalanceFileString);
     }
@@ -152,12 +141,12 @@ public class SqfFileGenerator
     // WriteAndUpdateToFilesForATerrain takes in a DirectoryInfo object and two strings for EASA and common balance files.
     // It takes a defined terrain (Chernarus) and writes or updates the respective files of that terrain
     private static void WriteAndUpdateToFilesForATerrain(
-        DirectoryInfo _dir, string _easaFileString, string _commonBalanceFileString, TerrainName _terrainName)
+        string _easaFileString, string _commonBalanceFileString, TerrainName _terrainName)
     {
         var terrainInstance = (InterfaceTerrain)EnumExtensions.GetInstance(_terrainName.ToString());
 
         Console.WriteLine();
-        terrainInstance.WriteAndUpdateTerrainFiles(_dir, _easaFileString, _commonBalanceFileString);
+        terrainInstance.WriteAndUpdateTerrainFiles(_easaFileString, _commonBalanceFileString);
     }
 
     // WriteAndUpdateToFilesForTerrains takes in a DirectoryInfo object and two strings for EASA and common balance files.
