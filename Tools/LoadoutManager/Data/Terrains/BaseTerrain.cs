@@ -159,12 +159,7 @@ public abstract class BaseTerrain : InterfaceTerrain
         // Determine the player count for the mission based on the terrain type
         string sourceTerrainPlayerCount = DetermineMissionTypeIfItsForestOrDesert();
 
-        string directoryOfMissions = "Modded_Missions";
-
-        if (!isModdedTerrain)
-        {
-            directoryOfMissions = "Missions";
-        }
+        string directoryOfMissions = DetermineMissionPathIfItsModdedOrNot();
 
         // Construct and return the full destination directory path
         return Path.Combine(projectDirectory.FullName, directoryOfMissions + @"\[" + sourceTerrainPlayerCount +
