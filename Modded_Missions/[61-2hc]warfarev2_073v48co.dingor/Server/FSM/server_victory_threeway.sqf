@@ -13,7 +13,7 @@ while {!gameOver} do {
 			_hq = (_x) Call WFBE_CO_FNC_GetSideHQ;
 			_structures = (_x) Call WFBE_CO_FNC_GetSideStructures;
 			_towns = (_x) Call GetTownsHeld;
-	
+
 			_factories = 0;
 			{
 				_factories = _factories + count([_side,missionNamespace getVariable Format ["WFBE_%1%2TYPE",_side,_x], _structures] Call GetFactories);

@@ -15,12 +15,15 @@ _c = _c + ['RUS_Soldier_GL'];
 _i = _i + [['','',270,6,-1,3,0,1,'Russians Spetsnaz',[]]];
 
 _c = _c + ['RUS_Soldier_Marksman'];
-_i = _i + [['','',290,6,-1,3,0,1,'Russians Spetsnaz',[]]];
+_i = _i + [['','',290,6,-1,2,0,1,'Russians Spetsnaz',[]]];
 
 _c = _c + ['RUS_Soldier3'];
 _i = _i + [['','',295,6,-1,3,0,1,'Russians Spetsnaz',[]]];
 
 _c = _c + ['RUS_Soldier_TL'];
+_i = _i + [['','',300,6,-1,3,0,1,'Russians Spetsnaz',[]]];
+
+_c = _c + ['RUS_Soldier_Medic'];
 _i = _i + [['','',300,6,-1,3,0,1,'Russians Spetsnaz',[]]];
 
 for '_z' from 0 to (count _c)-1 do {

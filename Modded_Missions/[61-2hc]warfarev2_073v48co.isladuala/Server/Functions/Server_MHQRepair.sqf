@@ -24,7 +24,7 @@ _logik setVariable ['wfbe_hq_repairing',true, true];
 
 
 _MHQ = [missionNamespace getVariable Format["WFBE_%1MHQNAME", _sideText], _position, _sideID, _direction, true, false] Call WFBE_CO_FNC_CreateVehicle;
-if (_side == west)then{
+if (_side == west && !(IS_chernarus_map_dependent)) then {
 	_MHQ setVehicleInit "this setObjectTexture [0,""Textures\lavbody_coD.paa""]";
 	_MHQ setVehicleInit "this setObjectTexture [1,""Textures\lavbody2_coD.paa""]";
 	_MHQ setVehicleInit "this setObjectTexture [2,""Textures\lav_hq_coD.paa""]";
@@ -55,7 +55,5 @@ deleteVehicle _hq;
 // Remove mark HQ wreck on map :
 _marker_name = "HQ_WRECK_" + str(_side) ;
 [_marker_name, 0]call WFBE_CL_FNC_Delete_Marker;	
-
-		
 
 ["INFORMATION", Format ["Server_MHQRepair.sqf: [%1] MHQ has been repaired.", _sideText]] Call WFBE_CO_FNC_LogContent;

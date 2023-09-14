@@ -796,6 +796,20 @@
                 <Russian>Информация:\n\n для вызова артиллерии у Вас должна быть хотя бы одна арт. установка.</Russian>
                 <Italian>Informazioni:\n\n Hai bisogno di almeno un unità di artiglieria per chiamare il fuoco di soppressione.</Italian>
             </Key>
+            <Key ID="STR_WF_INFO_Arty_called_message">
+                <English>%1 has initiated an artillery strike. The impact location has been marked on the map.</English>
+                <French>%1 a déclenché une frappe d'artillerie. L'emplacement de l'impact a été marqué sur la carte.</French>
+                <German>%1 hat einen Artillerieangriff ausgelöst. Die Einschlagstelle wurde auf der Karte markiert.</German>
+                <Russian>%1 инициировал артиллерийский удар. Местоположение удара отмечено на карте.</Russian>
+                <Italian>%1 ha lanciato un attacco di artiglieria. La posizione dell'impatto è stata segnata sulla mappa.</Italian>
+            </Key>
+            <Key ID="STR_WF_INFO_Arty_cool_down_over">
+                <English>Artillery cooldown has ended. You may use it again.</English>
+                <French>Le délai de refroidissement de l'artillerie est terminé. Vous pouvez la réutiliser</French>
+                <German>Die Abkühlzeit der Artillerie ist abgelaufen. Sie dürfen sie erneut verwenden.</German>
+                <Russian>Время охлаждения артиллерии завершено. Вы можете использовать её снова.</Russian>
+                <Italian>Il periodo di raffreddamento dell'artiglieria è terminato. Puoi usarlo di nuovo.</Italian>
+            </Key>
             <Key ID="STR_WF_INFO_Paratroop_Info">
                 <English>Information:\n\n An aerial unit has been called according to your order, it shall arrive here quite soon.</English>
                 <French>Information:\n\n Une unité aérienne a été assigner sur votre demande, elle sera la sous peut.</French>
@@ -1203,7 +1217,7 @@
             </Key>
 
             <!--PARAMETER Strings - ALL DONE-->
-            <!--AI-->
+            <!--AFK time-->
             <Key ID="STR_WF_PARAMETER_AFK_Time" >
                 <English>AFK: Maximum player idle time in minutes.</English>
                 <French>AFK: Durée max d'inactivité d'un joueur en minutes</French>
@@ -1211,6 +1225,7 @@
                 <Russian>AFK: Максимальное время бездействия игрока в минутах.</Russian>
                 <Italian>AFK: Tempo massimo di inattività del giocatore in minuti.</Italian>
             </Key>
+            <!--AI-->
             <Key ID="STR_WF_PARAMETER_AI_Delegation" >
                 <English>AI: Client-side Delegation</English>
                 <French>IA: Délégation Cliente</French>

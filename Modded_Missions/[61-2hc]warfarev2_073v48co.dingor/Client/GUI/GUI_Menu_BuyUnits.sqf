@@ -120,7 +120,7 @@ while {alive player && dialog} do {
 						if (!isNull(commanderTeam)) then {
 			  if (commanderTeam == group player) then {
               _realSize = _realSize + 10;
-
+			  
               };
 			};
 				if (_isInfantry) then {if ((unitQueu + _size + 1) > _realSize) then {_skip = true;hint parseText(Format [localize 'STR_WF_INFO_MaxGroup',_realSize])}};

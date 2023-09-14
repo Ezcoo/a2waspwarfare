@@ -28,13 +28,13 @@ WFBE_MenuAction = -1;
 
 while {true} do {
 	if (!alive player || !dialog) exitWith {closeDialog 0};
-	
+
 	_funds = Call WFBE_CL_FNC_GetClientFunds;
 	if (_funds_cli != _funds) then {
 		_funds_cli = _funds;
 		((uiNamespace getVariable "wfbe_display_buygear") displayCtrl 503011) ctrlSetStructuredText (parseText Format ["<t size='1.1'><t color='#42b6ff' shadow='1'>My Funds: </t><t shadow='1' color='#76F563'>$%1.</t></t>", _funds]);
 	};
-	
+
 	_tab_current = uiNamespace getVariable 'wfbe_display_buygear_tab';
 	_click_misc = uiNamespace getVariable 'wfbe_display_buygear_misc';
 	_click_pool_main = uiNamespace getVariable 'wfbe_display_buygear_pool_main';
@@ -43,7 +43,7 @@ while {true} do {
 	if (_click_misc != -1) then {uiNamespace setVariable ['wfbe_display_buygear_misc', -1]; if (_click_misc < count _gear_items && count _gear_items > 0) then {_gear_sel_weapons = _gear_sel_weapons - [_gear_items select _click_misc];_gear_items = _gear_items - [_gear_items select _click_misc]; _gear_refresh = ["items"]; _update_inventory = true;_has_inv_changed = true;}};
 	if (_click_pool_main != -1) then {uiNamespace setVariable ['wfbe_display_buygear_pool_main', -1]; _size = (_gear_mag_main) Call WFBE_CL_FNC_GetMagazinesSize; if (_click_pool_main <= _size && _size > 0) then {_gear_mag_main = [_gear_mag_main, _click_pool_main] Call WFBE_CL_FNC_RemoveMagazineGear; _gear_sel_magazines = _gear_mag_main + _gear_mag_pool; _gear_refresh = ["magazines_main"];_update_inventory = true;_has_inv_changed = true;}};
 	if (_click_pool_gun != -1) then {uiNamespace setVariable ['wfbe_display_buygear_pool_gun', -1]; _size = (_gear_mag_pool) Call WFBE_CL_FNC_GetMagazinesSize; if (_click_pool_gun <= _size && _size > 0) then {_gear_mag_pool = [_gear_mag_pool, _click_pool_gun] Call WFBE_CL_FNC_RemoveMagazineGear; _gear_sel_magazines = _gear_mag_main + _gear_mag_pool; _gear_refresh = ["magazines_hand"];_update_inventory = true;_has_inv_changed = true;}};
-	
+
 	if (WFBE_MenuAction == 1) then {WFBE_MenuAction = -1; _update_item = true};
 	if (WFBE_MenuAction == 2) then {WFBE_MenuAction = -1; if (_tab_current != 0) then {_update_magazines = true}};
 	if (WFBE_MenuAction == 3) then {WFBE_MenuAction = -1; _update_item_mag = true;};
@@ -60,20 +60,20 @@ while {true} do {
 	if (WFBE_MenuAction == 904) then {WFBE_MenuAction = -1;if (count _gear_special > 0) then {_gear_sel_weapons = _gear_sel_weapons - [_gear_special select 0];if (count _gear_special == 1) then {_gear_special = []} else {_gear_special = [_gear_special select 1]}; _gear_refresh = ["special"]; _update_inventory = true;_has_inv_changed = true;}};
 	if (WFBE_MenuAction == 905) then {WFBE_MenuAction = -1;if (count _gear_special > 1) then {_gear_sel_weapons = _gear_sel_weapons - [_gear_special select 1];_gear_special = [_gear_special select 0]; _gear_refresh = ["special"]; _update_inventory = true;_has_inv_changed = true;}};
 	if (WFBE_MenuAction == 906) then {WFBE_MenuAction = -1;_remove_backpack_item = true};
-	
+
 	//--- Update the available target list.
 	if (_update_target) then {
 		_update_target = false;
 		_target = _targets select (lbCurSel 503004);
 		//todo refresh targets on click
-		
+
 		if !(alive _target) then {
 			hint "the target is dead, refreshing";
 			_update_target = true;
 			_target = player;
 			_targets = (_target) Call WFBE_CL_FNC_UI_Gear_UpdateTarget;
 		};
-		
+
 		if (_target isKindOf "Man") then {
 			//--- todo, remove unknown content.
 			_target_weapons = [weapons _target, "weapons"] Call WFBE_CL_FNC_UI_Gear_Sanitize;
@@ -110,7 +110,7 @@ while {true} do {
 		_has_inv_changed = false;
 		_update_inventory = true;
 	};
-	
+
 	//--- Update the gear tab.
 	if (_update_tab) then {
 		_update_tab = false;
@@ -118,7 +118,7 @@ while {true} do {
 		((uiNamespace getVariable "wfbe_display_buygear") displayCtrl (_idc_tabs select _tab_current)) ctrlSetTextColor _color_tab;
 		lnbClear _lb_main;
 		lnbClear _lb_secondary;
-		
+
 		//todo - remember the previously chosen gun/mag etc
 		switch (_tab_current) do {
 			case 0: {[_lb_main, missionNamespace getVariable Format ["WFBE_%1_Template", WFBE_Client_SideJoinedText]] Call WFBE_CL_FNC_UI_Gear_FillTemplates};
@@ -128,14 +128,14 @@ while {true} do {
 			case 4: {[_lb_main, [[missionNamespace getVariable Format ["WFBE_%1_Pistols", WFBE_Client_SideJoinedText]]]] Call WFBE_CL_FNC_UI_Gear_FillList};
 			case 5: {[_lb_main, [[(missionNamespace getVariable Format ["WFBE_%1_Equipment", WFBE_Client_SideJoinedText])],[missionNamespace getVariable Format ["WFBE_%1_Magazines", WFBE_Client_SideJoinedText], "Mag_"]]] Call WFBE_CL_FNC_UI_Gear_FillList};
 		};
-		
+
 		//--- Smart Update, tbd improve per tab.
 		_ui_lnb_currow = lnbCurSelRow _lb_main;
 		if (_ui_lnb_currow != -1 && ((lnbSize _lb_main) select 0) > 0) then {
 			lnbSetCurSelRow [_lb_main, 0];
 		};
 	};
-	
+
 	//--- Update the view tab.
 	if (_update_view) then {
 		_update_view = false;
@@ -146,7 +146,7 @@ while {true} do {
 			case "vehicle": {{ctrlShow[_x, false]} forEach [503401, 503402, 503403]; for '_i' from 503501 to 503534 do {ctrlShow [_i, false]};{ctrlShow[_x, true]} forEach[_lb_cargo,503006,503007]; [_lb_cargo, _gear_vehicle_content, true] Call WFBE_CL_FNC_UI_Gear_FillCargoList; _update_vehicle = true;/*todo update target content*/};
 		};
 	};
-	
+
 	//--- Quick gear reload.
 	if (_quick_reload) then {
 		_quick_reload = false;
@@ -171,9 +171,9 @@ while {true} do {
 					_gear_backpack = _get select 2;
 					_gear_backpack_content = +(_get select 3);
 				};
-				
+
 				if (_gear_backpack != "") then { _gear_sel_weapons = _gear_sel_weapons + [_gear_backpack]};
-				
+
 				_returned = [_gear_sel_weapons, _gear_sel_magazines] Call WFBE_CL_FNC_GetParsedGear;
 				_gear_primary = _returned select 0;
 				_gear_secondary = _returned select 1;
@@ -182,25 +182,25 @@ while {true} do {
 				_gear_items = _returned select 5;
 				_gear_mag_main = _returned select 6;
 				_gear_mag_pool = _returned select 7;
-				
+
 				_has_inv_changed = true;
 				_update_inventory = true;
 				_gear_refresh = ["all"];
 			};
 		};
 	};
-	
+
 	//--- Quick gear removal.
 	if (_quick_clear) then {
 		_quick_clear = false;
 		switch (_view) do {
 			case "backpack": {_gear_refresh = ["all"];_gear_backpack_content = [[[],[]],[[],[]]]; _update_backpack = true; _has_inv_changed = true; [_lb_cargo, _gear_backpack_content, true] Call WFBE_CL_FNC_UI_Gear_FillCargoList;};
-			case "gear": {_gear_refresh = ["all"];_gear_backpack = "";_gear_sel_weapons = []; _gear_sel_magazines = []; _gear_mag_main = []; _gear_mag_pool = []; _gear_backpack_content = [[[],[]],[[],[]]]; _has_inv_changed = true};			
+			case "gear": {_gear_refresh = ["all"];_gear_backpack = "";_gear_sel_weapons = []; _gear_sel_magazines = []; _gear_mag_main = []; _gear_mag_pool = []; _gear_backpack_content = [[[],[]],[[],[]]]; _has_inv_changed = true};
 			case "vehicle": {_gear_vehicle_content = [[[],[]],[[],[]],[[],[]]]; _update_vehicle = true; _has_veh_changed = true;[_lb_cargo, _gear_vehicle_content, true] Call WFBE_CL_FNC_UI_Gear_FillCargoList;};
 		};
 		_update_inventory = true;
 	};
-	
+
 	//--- Remove an item from the backpack.
 	if (_remove_backpack_item) then {
 		_remove_backpack_item = false;
@@ -208,7 +208,7 @@ while {true} do {
 		if (_ui_lnb_currow > -1) then {
 			_item_selected = lnbData[_lb_cargo,[_ui_lnb_currow, 0]];
 			_get = missionNamespace getVariable _item_selected;
-			
+
 			switch (_view) do {
 				case "backpack": {
 					_kind = switch (true) do { case ((_get select 4) < 6): {0}; case ((_get select 4) in [100,101]): {1}; default {-1}};
@@ -225,11 +225,11 @@ while {true} do {
 					_update_vehicle = true;
 				};
 			};
-			
+
 			_update_inventory = true;
 		};
 	};
-	
+
 	//--- Add an item
 	if (_update_item) then {
 		_update_item = false;
@@ -239,7 +239,7 @@ while {true} do {
 				_item_selected = lnbData[_lb_main,[_ui_lnb_currow, 0]];
 				_get = missionNamespace getVariable _item_selected;
 				_belong = _get select 4;
-				
+
 				if !(isNil '_get') then {
 				if ((_get select 6)in ["Laserbatteries"]) then {_get set [4,100];};
 					switch (_view) do {
@@ -252,7 +252,7 @@ while {true} do {
 								case 4: {if (!(_item_selected in _gear_special) && count _gear_special < 2) then {_gear_special = _gear_special + [_item_selected]; _gear_sel_weapons = _gear_sel_weapons + [_item_selected]; _gear_refresh = ["special"];_update_inventory = true;_has_inv_changed = true;}};
 								case 5: {if !(_item_selected in _gear_items) then {_gear_items = _gear_items + [_item_selected]; _gear_sel_weapons = _gear_sel_weapons + [_item_selected]; _gear_refresh = ["items"];_update_inventory = true;_has_inv_changed = true;}};
 								case 100: {_mag_size = _get select 5; _size = (_gear_mag_pool) Call WFBE_CL_FNC_GetMagazinesSize; if (_mag_size + _size <= 8) then {_gear_mag_pool = _gear_mag_pool + [_get select 6];_gear_sel_magazines = _gear_mag_main + _gear_mag_pool; _gear_refresh = ["magazines_hand"]; _has_inv_changed = true; _update_inventory = true;}};
-								case 101: {_mag_size = _get select 5; _size = (_gear_mag_main) Call WFBE_CL_FNC_GetMagazinesSize; if (_mag_size + _size <= 12) then {_gear_mag_main = _gear_mag_main + [_get select 6];_gear_sel_magazines = _gear_mag_main + _gear_mag_pool; _gear_refresh = ["magazines_main"]; _has_inv_changed = true; _update_inventory = true;}};							
+								case 101: {_mag_size = _get select 5; _size = (_gear_mag_main) Call WFBE_CL_FNC_GetMagazinesSize; if (_mag_size + _size <= 12) then {_gear_mag_main = _gear_mag_main + [_get select 6];_gear_sel_magazines = _gear_mag_main + _gear_mag_pool; _gear_refresh = ["magazines_main"]; _has_inv_changed = true; _update_inventory = true;}};
 								case 200: {_add = true;if !(_target_cancarrybp) then {_add = false; hint "The target cannot carry a backpack!"};if (_gear_primary != "") then {if ((missionNamespace getVariable _gear_primary) select 4 == 3) then {_add = false}};if (_add) then {_gear_refresh = [];_gear_backpack_content = _get select 5;if (_gear_secondary != "") then {_gear_mag_main = [_gear_secondary, "", _gear_mag_main] Call WFBE_CL_FNC_ReplaceMagazinesGear; _gear_sel_magazines = _gear_mag_main + _gear_mag_pool; _gear_refresh = ["magazines_main"]; _gear_sel_weapons = _gear_sel_weapons - [_gear_secondary]};_gear_sel_weapons = _gear_sel_weapons - [_gear_backpack];_gear_backpack = _item_selected; _gear_sel_weapons = _gear_sel_weapons + [_gear_backpack]; _gear_refresh = _gear_refresh + ["weapons"];[_gear_backpack,_target] Call WFBE_CL_FNC_UI_Gear_UpdateView;_update_inventory = true;_has_inv_changed = true;}};
 								case 201: {_add = true;if !(_target_cancarrybp) then {_add = false; hint "The target cannot carry a backpack!"};if (_gear_primary != "") then {if ((missionNamespace getVariable _gear_primary) select 4 == 3) then {_add = false}};if (_add) then {_gear_refresh = [];_gear_backpack_content = [[[],[]],[[],[]]];if (_gear_secondary != "") then {_gear_mag_main = [_gear_secondary, "", _gear_mag_main] Call WFBE_CL_FNC_ReplaceMagazinesGear; _gear_sel_magazines = _gear_mag_main + _gear_mag_pool; _gear_refresh = ["magazines_main"]; _gear_sel_weapons = _gear_sel_weapons - [_gear_secondary]};_gear_sel_weapons = _gear_sel_weapons - [_gear_backpack];_gear_backpack = _item_selected; _gear_sel_weapons = _gear_sel_weapons + [_gear_backpack]; _gear_refresh = _gear_refresh + ["weapons"];[_gear_backpack,_target] Call WFBE_CL_FNC_UI_Gear_UpdateView;_update_inventory = true;_has_inv_changed = true;}};
 							};
@@ -297,14 +297,14 @@ while {true} do {
 				if (_view == "gear") then {
 					_item_selected = lnbValue[_lb_main,[_ui_lnb_currow, 0]];
 					_template = (missionNamespace getVariable Format ["WFBE_%1_Template", WFBE_Client_SideJoinedText]) select _item_selected;
-					
+
 					_weapons = _template select 4;
 					_magazines = _template select 5;
 					_backpack_content = _template select 6;
-					
+
 					if (count _backpack_content == 0) then {_backpack_content = [[[],[]],[[],[]]]};
 					_magazines = (_magazines) Call WFBE_CL_FNC_UI_Gear_ParseTemplateContent;
-					
+
 					_returned = [_weapons, _magazines] Call WFBE_CL_FNC_GetParsedGear;
 					_gear_primary = _returned select 0;
 					_gear_secondary = _returned select 1;
@@ -315,14 +315,14 @@ while {true} do {
 					_gear_mag_main = _returned select 6;
 					_gear_mag_pool = _returned select 7;
 					_gear_refresh = ["all"];
-					
+
 					//--- If the target is unable to carry a backpack or a tripod, we remove it from the template.
 					if !(_target_cancarrybp) then {
 						if (_gear_backpack != "") then {_gear_secondary = ""; _weapons = _weapons - [_gear_backpack]};
-						_gear_backpack = ""; 
+						_gear_backpack = "";
 						_gear_sel_backpack = [[[],[]],[[],[]]];
 					};
-					
+
 					[_gear_backpack,_target] Call WFBE_CL_FNC_UI_Gear_UpdateView;
 					_gear_sel_weapons = +_weapons;
 					_gear_sel_magazines = +_magazines;
@@ -333,7 +333,7 @@ while {true} do {
 			};
 		};
 	};
-	
+
 	//--- Add a magazine
 	if (_update_item_mag) then {
 		_update_item_mag = false;
@@ -374,7 +374,7 @@ while {true} do {
 			};
 		};
 	};
-	
+
 	//--- Update the backpack view
 	if (_update_backpack) then {
 		_update_backpack = false;
@@ -383,7 +383,7 @@ while {true} do {
 		((uiNamespace getVariable "wfbe_display_buygear") displayCtrl 503006) ctrlSetStructuredText (parseText _html);
 		((uiNamespace getVariable "wfbe_display_buygear") displayCtrl 503007) ctrlSetStructuredText (parseText Format["<img size='5' image='%1' align='right'/>",(missionNamespace getVariable _gear_backpack) select 0]);
 	};
-	
+
 	//--- Update the vehicles view
 	if (_update_vehicle) then {
 		_update_vehicle = false;
@@ -392,7 +392,7 @@ while {true} do {
 		((uiNamespace getVariable "wfbe_display_buygear") displayCtrl 503006) ctrlSetStructuredText (parseText _html);
 		((uiNamespace getVariable "wfbe_display_buygear") displayCtrl 503007) ctrlSetStructuredText (parseText Format["<img size='5' image='%1' align='right'/>",getText(configFile >> 'CfgVehicles' >> typeOf (vehicle _target) >> 'picture')]);
 	};
-	
+
 	//--- Update the magazines view
 	if (_update_magazines) then {
 		_update_magazines = false;
@@ -406,7 +406,7 @@ while {true} do {
 			};
 		};
 	};
-	
+
 	//--- Purchase
 	if (_purchase) then {
 		_purchase = false;
@@ -439,14 +439,14 @@ while {true} do {
 			hint parseText Format["<t color='#42b6ff' size='1.2' underline='1' shadow='1'>Information:</t><br /><br /><t><t color='#F56363'>Cannot</t> purchase equipment, missing $<t color='#F5D363'>%1</t>.</t>",_price - (Call WFBE_CL_FNC_GetClientFunds)];
 		};
 	};
-	
+
 	//--- Create a template
 	if (_template_create) then {
 		_template_create = false;
 		[_gear_sel_weapons, _gear_sel_magazines, _gear_backpack_content] Call WFBE_CL_FNC_UI_Gear_AddTemplate;
 		if (_tab_current == 0) then {_update_tab = true};
 	};
-	
+
 	//--- Delete a template
 	if (_template_delete) then {
 		_template_delete = false;
@@ -459,7 +459,7 @@ while {true} do {
 			hint "A template may only be removed from the template tab in the gear view.";
 		};
 	};
-	
+
 	//--- Update the target eta
 	if !(alive _target) then {
 		//--- Get a living target
@@ -468,7 +468,7 @@ while {true} do {
 		_target = player;
 		_targets = (_target) Call WFBE_CL_FNC_UI_Gear_UpdateTarget;
 	};
-	
+
 	//--- Update the gear view
 	if (_update_inventory) then {
 		//todo later, template for veh / bp
@@ -478,20 +478,20 @@ while {true} do {
 		_price = _prices select 0;
 		((uiNamespace getVariable "wfbe_display_buygear") displayCtrl 503008) ctrlSetStructuredText (parseText Format["<t size='1.1'><t color='#42b6ff' shadow='1'>Gear Cost: </t><t shadow='1' color='%1'>$%2.</t></t>",if (_price > 0) then {'#F56363'} else {'#76F563'},_price]);
 	};
-	
+
 	//--- Update the inventory
 	if (_update_display) then {
 		_update_display = false;
 		if (_view == "gear") then {[_gear_sel_weapons, _gear_sel_magazines, _gear_refresh] Call WFBE_CL_FNC_UI_Gear_DisplayInventory};
 	};
-	
+
 	//--- Go back to the main menu.
 	if (WFBE_MenuAction == 1000) exitWith {
 		WFBE_MenuAction = -1;
 		closeDialog 0;
 		createDialog "WF_Menu";
 	};
-	
+
 	sleep .01;
 };
 

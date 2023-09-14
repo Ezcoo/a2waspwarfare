@@ -13,14 +13,17 @@ if (_index == -1) exitWith {["WARNING", Format ["Common_FireArtillery.sqf: No ar
 if (isNull _gunner) exitWith {["WARNING", Format ["Common_FireArtillery.sqf: Artillery [%1] gunner is null.", _artillery]] Call WFBE_CO_FNC_LogContent};
 if (isPlayer _gunner) exitWith {["WARNING", Format ["Common_FireArtillery.sqf: Artillery [%1] gunner is a player", _artillery]] Call WFBE_CO_FNC_LogContent};
 
-_minRange = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_RANGES_MIN",_side]) select _index;
-_maxRange = round(((missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_RANGES_MAX",_side]) select _index) / (missionNamespace getVariable "WFBE_C_ARTILLERY"));
-_weapon = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_WEAPONS",_side]) select _index;
-_ammo = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_AMMOS",_side]) select _index;
-_velocity = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_VELOCITIES",_side]) select _index;
+_minRange 	= (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_RANGES_MIN",_side]) select _index;
+_maxRange 	= round(((missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_RANGES_MAX",_side]) select _index) / (missionNamespace getVariable "WFBE_C_ARTILLERY"));
+_weapon 	= (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_WEAPONS",_side]) select _index;
+_ammo 		= (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_AMMOS",_side]) select _index;
+_velocity 	= (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_VELOCITIES",_side]) select _index;
 _dispersion = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_DISPERSIONS",_side]) select _index;
+_reloadTime = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_TIME_RELOAD",_side]) select _index;
+_burst 		= (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_BURST",_side]) select _index;
 
-[_artillery] Call ARTY_Prep; //--- Prepare the artillery unit to the fire mission submission.
+//--- Prepare the artillery unit to the fire mission submission.
+[_artillery] Call ARTY_Prep; 
 
 //--- Artillery Calculations.
 _position = getPos _artillery;
@@ -47,9 +50,6 @@ if !(alive _artillery) exitWith {
 	if (alive _gunner) then {{_gunner enableAI _x} forEach ['MOVE','TARGET','AUTOTARGET']};
 };
 
-_reloadTime = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_TIME_RELOAD",_side]) select _index;
-_burst = (missionNamespace getVariable Format ["WFBE_%1_ARTILLERY_BURST",_side]) select _index;
-
 for '_i' from 1 to _burst do {
 	sleep (_reloadTime+random 3);
 	if (!alive _gunner || !alive _artillery) exitWith {};
@@ -69,3 +69,4 @@ if (alive (_gunner)) then {{_gunner enableAI _x} forEach ['MOVE','TARGET','AUTOT
 sleep 5;
 
 _artillery setVariable ["restricted",false];
+

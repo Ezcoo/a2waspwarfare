@@ -45,6 +45,25 @@ class ICBM_message_to_friendly_players
 		titles[] = {};
 	};
 
+
+class ARTY_message_to_friendly_players_v2
+	{
+		name	= "ARTY_message_to_friendly_players_v2";
+		sound[]	= {"\Sounds\warning_Friendy_ARTY_v2.ogg", db - 100, 1.0};
+		titles[] = {};
+	};
+class ARTY_message_to_friendly_russian_v1
+	{
+		name	= "ARTY_message_to_friendly_russian_v1";
+		sound[]	= {"\Sounds\ARTY_warning_Friendly_message_russian_v1.ogg", db - 100, 1.0};
+		titles[] = {};
+	};
+class ARTY_message_to_friendly_takistanish_v1
+	{
+		name	= "ARTY_message_to_friendly_takistanish_v1";
+		sound[]	= {"\Sounds\ARTY_warning_Friendly_message_arabic_v1.ogg", db - 100, 1.0};
+		titles[] = {};
+	};
 };
 
 // Marty : CfgRadio useless at this point considering i am using CfgSounds to play sounds with command playsound.

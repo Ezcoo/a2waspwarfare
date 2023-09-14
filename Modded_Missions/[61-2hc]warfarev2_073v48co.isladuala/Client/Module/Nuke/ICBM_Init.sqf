@@ -10,3 +10,5 @@ if (isServer) then {
 	NukeDammage = Compile preprocessFileLineNumbers "Client\Module\Nuke\damage.sqf";
 	NukeRadiation = Compile preprocessFileLineNumbers "Client\Module\Nuke\radzone.sqf";
 };
+
+

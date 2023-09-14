@@ -78,6 +78,12 @@ if (!_deployed) then {
 	_MHQ addEventHandler ["hit",{_this Spawn BuildingDamaged}];
 	_logik setVariable ["wfbe_hq", _MHQ, true];
 	_logik setVariable ['wfbe_hq_deployed', false, true];
+    if (_side == west && !(IS_chernarus_map_dependent)) then {
+	_MHQ setVehicleInit "this setObjectTexture [0,""Textures\lavbody_coD.paa""]";
+	_MHQ setVehicleInit "this setObjectTexture [1,""Textures\lavbody2_coD.paa""]";
+	_MHQ setVehicleInit "this setObjectTexture [2,""Textures\lav_hq_coD.paa""]";
+	processinitcommands;
+	};
 
 	[_side,"Mobilized", ["Base", _MHQ]] Spawn SideMessage;
 	_MHQ addEventHandler ['killed', {_this Spawn WFBE_SE_FNC_OnHQKilled}]; //--- Killed EH fires localy, this is the server.
