@@ -45,6 +45,7 @@ public abstract class BaseVehicle : InterfaceVehicle
 
     // Protected member for the in-game display name of the vehicle.
     protected string inGameDisplayName { get; set; }
+    protected bool moddedVehicle { get; set; }
 
     // Mapping of weapon types to the factory levels at which they should be removed from the vehicle.
     protected Dictionary<WeaponType, int> weaponsToRemoveUntilFactoryLevelOnAVehicle { get; set; }

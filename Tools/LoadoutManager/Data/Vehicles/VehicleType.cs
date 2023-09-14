@@ -109,4 +109,7 @@ public enum VehicleType
 
     [EnumMember(Value = "Pandur2_ACR")]
     PANDUR,
+
+    [EnumMember(Value = "ibrPRACS_MiG21mol")]
+    MIG21,
 }
