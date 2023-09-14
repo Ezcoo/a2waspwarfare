@@ -1,4 +1,4 @@
-﻿// The BaseTerrain class serves as the foundation for managing different types of terrains in the game.
+// The BaseTerrain class serves as the foundation for managing different types of terrains in the game.
 // It implements the InterfaceTerrain to ensure certain properties and methods are present in derived classes.
 // The class provides functionality for:
 // - Determining mission paths and types based on whether the terrain is modded or not.
@@ -225,7 +225,7 @@ public abstract class BaseTerrain : InterfaceTerrain
     private string GenerateWFDebug()
     {
 #if DEBUG
-            return "#define WF_DEBUG 1";
+        return "#define WF_DEBUG 1";
 #elif SERVER_DEBUG
         return "// #define WF_DEBUG 1";
 #else
@@ -236,7 +236,7 @@ public abstract class BaseTerrain : InterfaceTerrain
     private string GenerateWFLogContent()
     {
 #if DEBUG
-            return "#define WF_LOG_CONTENT 1";
+        return "#define WF_LOG_CONTENT 1";
 #elif SERVER_DEBUG
         return "#define WF_LOG_CONTENT 1";
 #else
