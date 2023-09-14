@@ -79,8 +79,7 @@ public class SqfFileGenerator
         WriteAndUpdateToFilesForATerrain(easaFileString, commonBalanceFileString, TerrainName.CHERNARUS);
         WriteAndUpdateToFilesForATerrain(easaFileString, commonBalanceFileString, TerrainName.TAKISTAN);
 
-
-        //WriteAndUpdateToFilesForModdedTerrains(easaFileString, commonBalanceFileString);
+        WriteAndUpdateToFilesForModdedTerrains(easaFileString, commonBalanceFileString);
     }
 
     // GenerateLoadoutsForAllVehicleTypes iterates through all vehicle types defined in the VehicleType enum.
