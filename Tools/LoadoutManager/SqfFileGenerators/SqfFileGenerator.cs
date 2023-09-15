@@ -78,7 +78,6 @@ public class SqfFileGenerator
         return code;
     }
 
-
     public static string GenerateEndOfTheCoreFile()
     {
         string endCode = "";
@@ -110,8 +109,6 @@ public class SqfFileGenerator
 
         return endCode;
     }
-
-
 
     // GenerateCommonBalanceInitAndTheEasaFileForEachTerrain initializes and writes EASA and common balance files for each terrain.
     // The method first locates the A2 Wasp Warfare directory and then proceeds to generate loadouts and file strings.
