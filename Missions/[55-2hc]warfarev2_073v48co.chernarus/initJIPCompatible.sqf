@@ -101,6 +101,11 @@ IS_chernarus_map_dependent = false;
 	IS_chernarus_map_dependent = true; // if the map content depend on chernarus feature then global variable boolean is true.
 #endif
 
+IS_mod_map_dependent = false;
+#ifdef IS_MOD_MAP_DEPENDENT
+	IS_mod_map_dependent = true; // if the map content depend on modded vehicles then global variable boolean is true.
+#endif
+
 if (isMultiplayer) then {Call Compile preprocessFileLineNumbers "Common\Init\Init_Parameters.sqf"}; //--- In MP, we get the parameters.
 
 Call Compile preprocessFileLineNumbers "Common\Init\Init_CommonConstants.sqf"; //--- Set the constants and the parameters, skip the params if they're already defined.
