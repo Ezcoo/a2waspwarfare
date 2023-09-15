@@ -19,6 +19,8 @@ public abstract class BaseVehicle : InterfaceVehicle
     // Indicates the type of factory where this vehicle is produced.
     public FactoryType ProducedFromFactoryType { get => producedFromFactoryType; set => producedFromFactoryType = value; }
 
+    bool InterfaceVehicle.ModdedVehicle { get => moddedVehicle; set => moddedVehicle = value}
+
     // Protected member holding the actual type of the vehicle.
     protected VehicleType vehicleType { get; set; }
 
