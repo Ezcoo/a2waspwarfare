@@ -3,6 +3,10 @@
 // beginning and ending segments of EASA files, as well as methods for handling loadouts for 
 // various vehicle types. In addition, it includes methods for writing these configurations 
 // to files onto different terrains.
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Xml.Linq;
+using System;
+
 public class SqfFileGenerator
 {
     // aircraftEasaLoadoutsFile stores the text for the respective EASA loadouts or initialization files.
@@ -68,6 +72,50 @@ public class SqfFileGenerator
         return endOfTheEasaFile;
     }
 
+    public static string GenerateStartOfTheCoreFile()
+    {
+        string code = "Private ['_c','_get','_i','_p','_z'];\n";
+        code += "_c = [];\n";
+        code += "_i = [];\n";
+
+        return code;
+    }
+
+
+    public static string GenerateEndOfTheCoreFile()
+    {
+        string endCode = "";
+        endCode += "    for '_z' from 0 to (count _c)-1 {\n";
+        endCode += "        if (isClass (configFile >> 'CfgVehicles' >> (_c select _z))) {\n";
+        endCode += "            missionNamespace getVariable (_c select _z);\n";
+        endCode += "            if (isNil '_get') {\n";
+        endCode += "                if ((_i select _z) select 0 == '') {(_i select _z) set [0, [_c select _z,'displayName'] Call GetConfigInfo]};\n";
+        endCode += "                if (typeName ((_i select _z) select 4) == 'SCALAR') {\n";
+        endCode += "                    if (((_i select _z) select 4) == -2) {\n";
+        endCode += "                        _ret = (_c select _z) Call Compile preprocessFile \"Common\\Functions\\Common_GetConfigVehicleCrewSlot.sqf\";\n";
+        endCode += "                        (_i select _z) set [4, _ret select 0];\n";
+        endCode += "                        (_i select _z) set [9, _ret select 1];\n";
+        endCode += "                    };\n";
+        endCode += "                };\n";
+        endCode += "                if (WF_Debug) {(_i select _z) set [3,1]};\n";
+        endCode += "                _p = if ((_c select _z) isKindOf 'Man') {'portrait'} else {'picture'};\n";
+        endCode += "                (_i select _z) set [1, [_c select _z,_p] Call GetConfigInfo];\n";
+        endCode += "                missionNamespace setVariable [_c select _z, _i select _z];\n";
+        endCode += "            } else {\n";
+        endCode += "                diag_log Format [\"[WFBE(INIT)][frameno:% 2 | ticktime:% 3] Core_USMC: Duplicated Element found '%1'\",(_c select _z),diag_frameno,diag_tickTime];\n";
+        endCode += "            };\n";
+        endCode += "        } else {\n";
+        endCode += "            diag_log Format [\"[WFBE(ERROR)][frameno:% 2 | ticktime:% 3] Core_USMC: Element '%1' is not a valid class.\",(_c select _z),diag_frameno,diag_tickTime];\n";
+        endCode += "        };\n";
+        endCode += "    };\n";
+        endCode += "    \n";
+        endCode += "    diag_log Format [\"[WFBE(INIT)][frameno:%2 | ticktime:%3] Core_USMC: Initialization(%1 Elements) - [Done]\",count _c,diag_frameno,diag_tickTime];\n";
+
+        return endCode;
+    }
+
+
+
     // GenerateCommonBalanceInitAndTheEasaFileForEachTerrain initializes and writes EASA and common balance files for each terrain.
     // The method first locates the A2 Wasp Warfare directory and then proceeds to generate loadouts and file strings.
     // The generated strings are then written to files specific to different terrains.
@@ -89,7 +137,7 @@ public class SqfFileGenerator
     // Generates file for the Core files, with vehicle name, price, construction time etc.
     private static string GenerateCoreModFileString()
     {
-        string coreModString = string.Empty;
+        string coreModString = GenerateStartOfTheCoreFile();
 
         foreach (VehicleType vehicleType in Enum.GetValues(typeof(VehicleType)))
         {
@@ -102,6 +150,8 @@ public class SqfFileGenerator
 
             coreModString += interfaceVehicle.GenerateSQFCodeForCoreFiles() + "\n\n";
         }
+
+        coreModString += GenerateEndOfTheCoreFile();
 
         return coreModString;
     }
