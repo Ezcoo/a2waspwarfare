@@ -128,7 +128,6 @@ _u = _u		+ ['BAF_Soldier_N_DDPM'];
 _u = _u		+ ['BAF_Soldier_SL_DDPM'];
 _u = _u		+ ['BAF_Soldier_TL_DDPM'];
 
-
 missionNamespace setVariable [Format ["WFBE_%1BARRACKSUNITS", _side], _u];
 if (local player) then {['BARRACKS', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
@@ -178,7 +177,6 @@ _u = _u		+ ['M6_EP1'];
 _u = _u		+ ['BAF_FV510_W'];
 _u = _u		+ ['BAF_FV510_D'];
 
-
 missionNamespace setVariable [Format ["WFBE_%1HEAVYUNITS", _side], _u];
 if (local player) then {['HEAVY', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
@@ -201,7 +199,6 @@ if (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Cli
 _u = [];
 _u = _u		+ ['C130J_US_EP1'];
 _u = _u		+ ['A10_US_EP1'];
-
 
 missionNamespace setVariable [Format ["WFBE_%1AIRPORTUNITS", _side], _u];
 if (local player) then {['AIRPORT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
