@@ -3,9 +3,6 @@
 // beginning and ending segments of EASA files, as well as methods for handling loadouts for 
 // various vehicle types. In addition, it includes methods for writing these configurations 
 // to files onto different terrains.
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using System.Xml.Linq;
-using System;
 
 public class SqfFileGenerator
 {
