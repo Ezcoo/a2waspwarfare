@@ -81,8 +81,8 @@ public class SqfFileGenerator
         WriteAndUpdateToFilesForATerrain(easaFileStrings.vanilla, commonBalanceFileStrings.vanilla, TerrainName.CHERNARUS);
         WriteAndUpdateToFilesForATerrain(easaFileStrings.vanilla, commonBalanceFileStrings.vanilla, TerrainName.TAKISTAN);
 
-        // replace with modded
-        WriteAndUpdateToFilesForModdedTerrains(easaFileStrings.vanilla, commonBalanceFileStrings.vanilla);
+        // Write to the modded maps
+        WriteAndUpdateToFilesForModdedTerrains(easaFileStrings.modded, commonBalanceFileStrings.modded);
     }
 
     // GenerateLoadoutsForAllVehicleTypes iterates through all vehicle types defined in the VehicleType enum.
