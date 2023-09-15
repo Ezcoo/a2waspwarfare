@@ -76,13 +76,14 @@ public class SqfFileGenerator
         GenerateLoadoutsForAllVehicleTypes();
         var easaFileStrings = GenerateEasaFileString();
         var commonBalanceFileStrings = GenerateCommonBalanceFileString();
+        var coreModFileStrings = ; //GenerateCommonBalanceFileString();
 
         // First go through vanilla maps (copied to mod maps later)
         WriteAndUpdateToFilesForATerrain(easaFileStrings.vanilla, commonBalanceFileStrings.vanilla, TerrainName.CHERNARUS);
         WriteAndUpdateToFilesForATerrain(easaFileStrings.vanilla, commonBalanceFileStrings.vanilla, TerrainName.TAKISTAN);
 
         // Write to the modded maps
-        WriteAndUpdateToFilesForModdedTerrains(easaFileStrings.modded, commonBalanceFileStrings.modded);
+        WriteAndUpdateToFilesForModdedTerrains(easaFileStrings.modded, commonBalanceFileStrings.modded, coreModFileStrings);
     }
 
     // GenerateLoadoutsForAllVehicleTypes iterates through all vehicle types defined in the VehicleType enum.
@@ -191,7 +192,7 @@ public class SqfFileGenerator
     //WriteAndUpdateToFilesForTerrains takes in a DirectoryInfo object and two strings for EASA and common balance files.
     //It iterates through all defined terrains and writes or updates the respective files.
     private static void WriteAndUpdateToFilesForModdedTerrains(
-        string _easaFileString, string _commonBalanceFileString)
+        string _easaFileString, string _commonBalanceFileString, string _coreModFile)
     {
         foreach (var terrainName in Enum.GetValues(typeof(TerrainName)))
         {
@@ -199,7 +200,7 @@ public class SqfFileGenerator
             if (!terrainInstance.isModdedTerrain) continue;
 
             Console.WriteLine();
-            terrainInstance.WriteAndUpdateTerrainFiles(_easaFileString, _commonBalanceFileString);
+            terrainInstance.WriteAndUpdateTerrainFiles(_easaFileString, _commonBalanceFileString, _coreModFile);
         }
     }
 }
