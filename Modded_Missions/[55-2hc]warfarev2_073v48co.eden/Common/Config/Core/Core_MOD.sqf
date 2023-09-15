@@ -2,7 +2,7 @@ Private ['_c','_get','_i','_p','_z'];
 _c = [];
 _i = [];
 _c = _c + ['ibrPRACS_MiG21mol'];
-_i = _i + [['MiG-21','',49999,50,5,-2,3,3,0,'Molatian Air Force',[]]];
+_i = _i + [['MiG-21MF Fishbed','',49999,50,-2,5,3,3,0,'Molatian Air Force',[]]];
 
 for '_z' from 0 to (count _c)-1 do {
     if (isClass (configFile >> 'CfgVehicles' >> (_c select _z))) then {

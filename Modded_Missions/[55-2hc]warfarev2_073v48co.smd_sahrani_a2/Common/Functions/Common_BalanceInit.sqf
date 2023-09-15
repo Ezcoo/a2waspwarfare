@@ -365,7 +365,7 @@ if (_currentFactoryLevel < 4) then {
 };
 };
 
-// MiG-21 [AF5] - 4 pylons
+// MiG-21MF Fishbed [AF5] - 4 pylons
 case "ibrPRACS_MiG21mol": {
     _this removeMagazine "PRACS_AA8x4";
     _this removeWeapon "PRACS_AA8_Launcher";

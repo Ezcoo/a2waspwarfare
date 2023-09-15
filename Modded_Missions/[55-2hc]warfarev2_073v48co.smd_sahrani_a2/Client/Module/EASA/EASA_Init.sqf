@@ -660,7 +660,7 @@ _easaLoadout = _easaLoadout + [
 ]
 ];
 
-// MiG-21 [AF5] - 4 pylons
+// MiG-21MF Fishbed [AF5] - 4 pylons
 _easaVehi = _easaVehi + ['ibrPRACS_MiG21mol'];
 _easaDefault = _easaDefault + [[['R73Launcher_2'],['2Rnd_R73','2Rnd_R73']]];
 _easaLoadout = _easaLoadout + [
