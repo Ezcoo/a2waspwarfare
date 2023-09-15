@@ -224,30 +224,58 @@ if (IS_mod_map_dependent) then {
 missionNamespace setVariable [Format ["WFBE_%1AIRPORTUNITS", _side], _u];
 if (local player) then {['AIRPORT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
-_u 			= ["MMT_Civ"];
-_u = _u		+ ["Old_bike_TK_CIV_EP1"];
-_u = _u		+ ["TT650_Civ"];
-_u = _u		+ ["Tractor"];
-_u = _u		+ ["Lada2_TK_CIV_EP1"];
-_u = _u		+ ["SkodaRed"];
-_u = _u		+ ["VolhaLimo_TK_CIV_EP1"];
-_u = _u		+ ["Volha_2_TK_CIV_EP1"];
-_u = _u		+ ["VWGolf"];
-_u = _u		+ ["LandRover_TK_CIV_EP1"];
-_u = _u		+ ["datsun1_civil_2_covered"];
-_u = _u		+ ["hilux1_civil_2_covered"];
-_u = _u		+ ["S1203_TK_CIV_EP1"];
-_u = _u		+ ["Ikarus_TK_CIV_EP1"];
-if ((missionNamespace getVariable "WFBE_C_UNITS_TOWN_PURCHASE") > 0) then {
-	_u = _u		+ [missionNamespace getVariable "WFBE_EASTSOLDIER"];
-	_u = _u		+ ['RU_Soldier_Medic'];
-	_u = _u		+ ['TK_Soldier_Engineer_EP1'];
-	_u = _u		+ ['RU_Soldier_LAT'];
-	_u = _u		+ ['RU_Soldier_AT'];
-    _u = _u		+ ['Ins_Soldier_MG'];
-	_u = _u		+ ['RU_Soldier_AA'];
-_u = _u		+ ["UralCivil"];
-_u = _u		+ ["V3S_Refuel_TK_GUE_EP1"];
+if (IS_chernarus_map_dependent) then {
+    _u 			= ["MMT_Civ"];
+    _u = _u		+ ["Old_bike_TK_CIV_EP1"];
+    _u = _u		+ ["TT650_Civ"];
+    _u = _u		+ ["Tractor"];
+    _u = _u		+ ["Lada2_TK_CIV_EP1"];
+    _u = _u		+ ["SkodaRed"];
+    _u = _u		+ ["VolhaLimo_TK_CIV_EP1"];
+    _u = _u		+ ["Volha_2_TK_CIV_EP1"];
+    _u = _u		+ ["VWGolf"];
+    _u = _u		+ ["LandRover_TK_CIV_EP1"];
+    _u = _u		+ ["datsun1_civil_2_covered"];
+    _u = _u		+ ["hilux1_civil_2_covered"];
+    _u = _u		+ ["S1203_TK_CIV_EP1"];
+    _u = _u		+ ["Ikarus_TK_CIV_EP1"];
+    if ((missionNamespace getVariable "WFBE_C_UNITS_TOWN_PURCHASE") > 0) then {
+    	_u = _u		+ [missionNamespace getVariable "WFBE_EASTSOLDIER"];
+    	_u = _u		+ ['RU_Soldier_Medic'];
+    	_u = _u		+ ['TK_Soldier_Engineer_EP1'];
+    	_u = _u		+ ['RU_Soldier_LAT'];
+    	_u = _u		+ ['RU_Soldier_AT'];
+        _u = _u		+ ['Ins_Soldier_MG'];
+    	_u = _u		+ ['RU_Soldier_AA'];
+    _u = _u		+ ["UralCivil"];
+    _u = _u		+ ["V3S_Refuel_TK_GUE_EP1"];
+    };
+} else {
+    _u 			= ["MMT_Civ"];
+    _u = _u		+ ["Old_bike_TK_CIV_EP1"];
+    _u = _u		+ ["TT650_Civ"];
+    _u = _u		+ ["Tractor"];
+    _u = _u		+ ["Lada2_TK_CIV_EP1"];
+    _u = _u		+ ["SkodaRed"];
+    _u = _u		+ ["VolhaLimo_TK_CIV_EP1"];
+    _u = _u		+ ["Volha_2_TK_CIV_EP1"];
+    _u = _u		+ ["VWGolf"];
+    _u = _u		+ ["datsun1_civil_2_covered"];
+    _u = _u		+ ["hilux1_civil_2_covered"];
+    _u = _u		+ ["S1203_TK_CIV_EP1"];
+    _u = _u		+ ["Ikarus_TK_CIV_EP1"];
+    _u = _u		+ ["LandRover_TK_CIV_EP1"];
+    if ((missionNamespace getVariable "WFBE_C_UNITS_TOWN_PURCHASE") > 0) then {
+    	_u = _u		+ [missionNamespace getVariable "WFBE_EASTSOLDIER"];
+    	_u = _u		+ ['TK_Soldier_Medic_EP1'];
+    	_u = _u		+ ['TK_Soldier_Engineer_EP1'];
+    	_u = _u		+ ['TK_Soldier_LAT_EP1'];
+    	_u = _u		+ ['TK_Soldier_AT_EP1'];
+    	_u = _u		+ ['TK_Soldier_MG_EP1'];
+    	_u = _u		+ ['TK_Soldier_AA_EP1'];
+    _u = _u		+ ["UralCivil"];
+    _u = _u		+ ["V3S_Refuel_TK_GUE_EP1"];
+    };
 };
 
 missionNamespace setVariable [Format ["WFBE_%1DEPOTUNITS", _side], _u];
