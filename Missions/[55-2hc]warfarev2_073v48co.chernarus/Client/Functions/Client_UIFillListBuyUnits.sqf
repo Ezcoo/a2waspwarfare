@@ -38,7 +38,11 @@ lnbClear _listBox;
 			if ((_x in ['RU_Soldier_AA','USMC_Soldier_AA']) && _UpBar>=3)then{_addit = true;};
 		};
 
-    _description = _c select QUERYUNITLABEL;
+        if !(isNil "_c") then {
+            _description = _c select QUERYUNITLABEL;
+        } else {
+            _description = "undefined";
+        };
 
 	if (((_c select QUERYUNITUPGRADE) <= (_currentUpgrades select _value) && _addin) || (_addit&&_addin)) then {
 		lnbAddRow [_listBox,['$'+str (_c select QUERYUNITPRICE),_description]];

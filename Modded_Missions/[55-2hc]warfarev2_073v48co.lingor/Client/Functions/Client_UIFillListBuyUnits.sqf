@@ -38,53 +38,51 @@ lnbClear _listBox;
 			if ((_x in ['RU_Soldier_AA','USMC_Soldier_AA']) && _UpBar>=3)then{_addit = true;};
 		};
 
-    _description = _c select QUERYUNITLABEL;
+        if !(isNil "_c") then {
+            _description = _c select QUERYUNITLABEL;
+        } else {
+            _description = "undefined";
+        };
 
 	if (((_c select QUERYUNITUPGRADE) <= (_currentUpgrades select _value) && _addin) || (_addit&&_addin)) then {
 		lnbAddRow [_listBox,['$'+str (_c select QUERYUNITPRICE),_description]];
 		lnbSetData [_listBox,[_i,0],_filler];
 		lnbSetValue [_listBox,[_i,0],_u];
-		
-		
-	 
-		
+
+
+
+
 	if(_x in (missionNamespace getVariable [format["WFBE_%1REPAIRTRUCKS", sideJoinedText], []])) then {
 		lnbSetColor [_listBox,[_i,1],[0.33, 0.33, 0.10, 1.0]]
-	};			
-		
+	};
+
 	if(_x in (missionNamespace getVariable [format["WFBE_%1AMMOTRUCKS", sideJoinedText], []])) then {
 		lnbSetColor [_listBox,[_i,1],[1.0, 0.0, 0.0, 0.6]]
-	};	
-		
-		
+	};
+
+
 	if (_UpAirlift > 0) then {
-	
+
 		if(_x in (missionNamespace getVariable [format["WFBE_%1LIFTVEHICLE", sideJoinedText], []])) then {
 			lnbSetColor [_listBox,[_i,1],[0.0, 0.26, 1.0, 1.0]]
 		};
-	};	
-		
+	};
+
 	if(_x in (missionNamespace getVariable [format["WFBE_%1AMBULANCES", sideJoinedText], []])) then {
 		lnbSetColor [_listBox,[_i,1],[1.0, 1.0, 0.0, 0.6]]
-		
-	};	
-		
-		
+
+	};
+
+
 	if(_x in (missionNamespace getVariable [format["WFBE_%1SALVAGETRUCK", sideJoinedText], []])) then {
 		lnbSetColor [_listBox,[_i,1],[0.0, 1.0, 0.0, 0.6]]
-	
-	};	
-		
-	if(_x in (missionNamespace getVariable [format["WFBE_%1ARTYVEHICLE", sideJoinedText], []])) then {
-		lnbSetColor [_listBox,[_i,1],[1.0, 0.3, 1.0, 0.4]]	
+
 	};
-		
-		
-		
-		
-		
-		
-		
+
+	if(_x in (missionNamespace getVariable [format["WFBE_%1ARTYVEHICLE", sideJoinedText], []])) then {
+		lnbSetColor [_listBox,[_i,1],[1.0, 0.3, 1.0, 0.4]]
+	};
+
 		_i = _i + 1;
 	};
 	_u = _u + 1;
