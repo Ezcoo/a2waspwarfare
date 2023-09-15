@@ -90,7 +90,6 @@ _u = _u		+ ['V3S_TK_EP1'];
 _u = _u		+ ['V3S_Open_TK_EP1'];
 _u = _u		+ ['BTR40_TK_INS_EP1'];
 _u = _u		+ ['BTR40_MG_TK_INS_EP1'];
-if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['UralSupply_TK_EP1']};
 _u = _u		+ ['KamazRepair'];
 _u = _u		+ ['WarfareReammoTruck_RU'];
 _u = _u		+ ['KamazRefuel'];
