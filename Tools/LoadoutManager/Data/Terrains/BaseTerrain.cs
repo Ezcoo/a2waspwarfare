@@ -41,6 +41,7 @@ public abstract class BaseTerrain : InterfaceTerrain
             UpdateFilesForModdedTerrains();
 
             WriteFilesToTheModdedTerrains(destinationDirectory, _coreModFile);
+            ReplaceInitCommmonSqfForCoreModInit(destinationDirectory);
         }
 
         WriteSpecificFilesToTheTerrains(destinationDirectory, _easaFileString, _commonBalanceFileString);
@@ -146,6 +147,14 @@ public abstract class BaseTerrain : InterfaceTerrain
             "<t size='1.2' color='#2394ef' align='center'>Warfare WASP-AWESOME EDITION | v48 | - CO - Mission</t><br />",
             $"<t size='1.2' color='#2394ef' align='center'>Warfare WASP-AWESOME EDITION | v48 | - CO -" +
             $" {EnumExtensions.GetEnumMemberAttrValue(terrainName)}</t><br />");
+    }
+
+    // Replaces the core /* Class Core */ Call compile for the mod maps
+    private void ReplaceInitCommmonSqfForCoreModInit(string _destinationDirectory)
+    {
+        ReplaceContentOnASpecificFile(_destinationDirectory, @"\Common\Init\Init_Common.sqf",
+            "/* Class Core */",
+            $"/* Class Core */\n Call Compile preprocessFileLineNumbers 'Common\\Config\\Core\\Core_MOD.sqf';");
     }
 
     // Method to determine the Chernarus directory, for Takistan

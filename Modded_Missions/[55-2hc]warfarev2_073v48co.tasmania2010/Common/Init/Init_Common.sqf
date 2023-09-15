@@ -219,6 +219,7 @@ switch (true) do {
 			Call Compile preprocessFileLineNumbers "Common\Config\Gear\Gear_USMC.sqf";
 		};
 		/* Class Core */
+ Call Compile preprocessFileLineNumbers 'Common\Config\Core\Core_MOD.sqf';
 		Call Compile preprocessFileLineNumbers 'Common\Config\Core\Core_ACR.sqf';
 		Call Compile preprocessFileLineNumbers 'Common\Config\Core\Core_BAF.sqf';
 		Call Compile preprocessFileLineNumbers 'Common\Config\Core\Core_BAFD.sqf';
