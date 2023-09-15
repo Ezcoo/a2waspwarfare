@@ -72,9 +72,9 @@ missionNamespace setVariable [Format ["WFBE_%1HEAVYUNITS", _side], _u];
 if (local player) then {['HEAVY', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
 _u			= ['MH60S'];
+_u = _u		+ ['UH1Y'];
 _u = _u		+ ['MV22'];
 _u = _u		+ ['C130J'];
-_u = _u		+ ['UH1Y'];
 _u = _u		+ ['Mi24_D_CZ_ACR'];
 _u = _u		+ ['AH64D'];
 _u = _u		+ ['AH1Z'];
