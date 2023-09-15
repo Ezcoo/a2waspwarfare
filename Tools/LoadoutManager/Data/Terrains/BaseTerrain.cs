@@ -113,9 +113,17 @@ public abstract class BaseTerrain : InterfaceTerrain
 
     // Method to determine the mission camo based on the terrain type (Forest or Desert)
     // Return string for commenting the camo/map definition variable for Desert maps
+    // Used for generation of the version.sqf file
     private string DetermineIfTheMissionIsTakistanTypeAndReturnCommentStringIfThatIsTheCase()
     {
         return TerrainType == TerrainType.DESERT ? "//" : "";
+    }
+
+    // Method for determine if the terrain is not modded and return a comment string if that is not the case
+    // Used for generation of the version.sqf file
+    private string DetermineIfTheTerrainIsNotModdedAndReturnCommentStringIfThatIsTheCase()
+    {
+        return isModdedTerrain == false ? "//" : "";
     }
 
     // Method to update all the files for Takistan, and the modded maps
@@ -239,12 +247,14 @@ public abstract class BaseTerrain : InterfaceTerrain
         string wfDebug = GenerateWFDebug();
         string wfLogContent = GenerateWFLogContent();
         string terrainTypeCommentPrefix = DetermineIfTheMissionIsTakistanTypeAndReturnCommentStringIfThatIsTheCase();
+        string isModMapDependant = DetermineIfTheTerrainIsNotModdedAndReturnCommentStringIfThatIsTheCase();
         string maxPlayers = DetermineMissionTypeIfItsForestOrDesert();
         string missionName = $@"[{maxPlayers}] Warfare V48 {EnumExtensions.GetEnumMemberAttrValue(terrainName)}";
 
         return $@"{wfDebug}
 {wfLogContent}
 {terrainTypeCommentPrefix}#define IS_CHERNARUS_MAP_DEPENDENT
+{isModMapDependant}#define IS_MOD_MAP_DEPENDENT
 #define WF_MAXPLAYERS {maxPlayers}
 #define WF_MISSIONNAME ""{missionName}""
 #define COMBINEDOPS 1
