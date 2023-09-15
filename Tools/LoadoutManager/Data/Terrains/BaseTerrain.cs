@@ -29,8 +29,6 @@ public abstract class BaseTerrain : InterfaceTerrain
     {
         string destinationDirectory = DetermineDestinationDirectory();
 
-        WriteSpecificFilesToTheTerrains(destinationDirectory, _easaFileString, _commonBalanceFileString);
-
         if (terrainName == TerrainName.TAKISTAN)
         {
             UpdateFilesForTakistan();
@@ -40,6 +38,8 @@ public abstract class BaseTerrain : InterfaceTerrain
         {
             UpdateFilesForModdedTerrains();
         }
+
+        WriteSpecificFilesToTheTerrains(destinationDirectory, _easaFileString, _commonBalanceFileString);
 
         Console.WriteLine("-------" + terrainName + " DONE! ---------");
     }
