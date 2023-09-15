@@ -76,7 +76,7 @@ public class SqfFileGenerator
         GenerateLoadoutsForAllVehicleTypes();
         var easaFileStrings = GenerateEasaFileString();
         var commonBalanceFileStrings = GenerateCommonBalanceFileString();
-        var coreModFileStrings = ; //GenerateCommonBalanceFileString();
+        string coreModFileStrings = GenerateCoreModFileString();
 
         // First go through vanilla maps (copied to mod maps later)
         WriteAndUpdateToFilesForATerrain(easaFileStrings.vanilla, commonBalanceFileStrings.vanilla, TerrainName.CHERNARUS);
@@ -84,6 +84,25 @@ public class SqfFileGenerator
 
         // Write to the modded maps
         WriteAndUpdateToFilesForModdedTerrains(easaFileStrings.modded, commonBalanceFileStrings.modded, coreModFileStrings);
+    }
+
+    private static string GenerateCoreModFileString()
+    {
+        string coreModString = string.Empty;
+
+        foreach (VehicleType vehicleType in Enum.GetValues(typeof(VehicleType)))
+        {
+            var interfaceVehicle = (InterfaceVehicle)EnumExtensions.GetInstance(vehicleType.ToString());
+
+            if (!interfaceVehicle.ModdedVehicle)
+            {
+                continue;
+            }
+
+            BaseVehicle
+
+            coreModString += interfaceVehicle.core
+        }
     }
 
     // GenerateLoadoutsForAllVehicleTypes iterates through all vehicle types defined in the VehicleType enum.
