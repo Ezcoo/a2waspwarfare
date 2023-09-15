@@ -100,7 +100,7 @@ public class SqfFileGenerator
                 continue;
             }
 
-            coreModString += interfaceVehicle.GenerateSQFCodeForCoreFiles() + "\n";
+            coreModString += interfaceVehicle.GenerateSQFCodeForCoreFiles() + "\n\n";
         }
 
         return coreModString;

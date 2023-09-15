@@ -51,6 +51,8 @@ public abstract class BaseVehicle : InterfaceVehicle
     // Protected member for the in-game display name of the vehicle.
     protected string inGameDisplayName { get; set; }
     protected bool moddedVehicle { get; set; }
+    protected FactionType factionType { get; set; }
+
     // Added based on SQF Code (for unknown values)
     public int ConstructionTime { get; set; }
     public int UnknownValue1 { get; set; } = -2;
@@ -88,14 +90,10 @@ public abstract class BaseVehicle : InterfaceVehicle
         int sqfUnknownValue2 = UnknownValue2;
         int sqfUnknownValue3 = UnknownValue3;
 
-        // The faction name (assuming it's derived from FactoryType)
-        string sqfFactionName = ProducedFromFactoryType.ToString();
-
         // Generate the SQF code line
         string sqfCode = $"_c = _c + ['{EnumExtensions.GetEnumMemberAttrValue(VehicleType)}'];\n";
-        sqfCode += $"_i = _i + [['{inGameDisplayName}','',{inGamePrice},{ConstructionTime},{InGameFactoryLevel},{sqfUnknownValue1},{sqfUnknownValue2},{sqfUnknownValue3},0,'{sqfFactionName}',[]]];";
-
-        Console.Write( sqfCode ); // temp
+        sqfCode += $"_i = _i + [['{inGameDisplayName}','',{inGamePrice},{ConstructionTime},{InGameFactoryLevel},{sqfUnknownValue1}," +
+            $"{sqfUnknownValue2},{sqfUnknownValue3},0,'{EnumExtensions.GetEnumMemberAttrValue(factionType)}',[]]];";
 
         return sqfCode;
     }

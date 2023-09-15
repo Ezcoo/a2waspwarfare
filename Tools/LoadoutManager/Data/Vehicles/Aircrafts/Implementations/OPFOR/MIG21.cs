@@ -33,6 +33,7 @@
         ConstructionTime = 50;
         inGameFactoryLevel = 5;
         producedFromFactoryType = FactoryType.AIRCRAFTFACTORY;
+        factionType = FactionType.MOLATIAN;
 
         moddedVehicle = true;
     }
