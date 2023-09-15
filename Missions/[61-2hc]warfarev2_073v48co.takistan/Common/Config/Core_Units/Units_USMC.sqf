@@ -60,6 +60,7 @@ _u = _u		+ ['RHIB2Turret'];
 _u = _u		+ ['LAV25'];
 _u = _u		+ ['Pandur2_ACR'];
 
+
 missionNamespace setVariable [Format ["WFBE_%1LIGHTUNITS", _side], _u];
 if (local player) then {['LIGHT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
@@ -85,11 +86,11 @@ _u = _u		+ ['AV8B'];
 _u = _u		+ ['AV8B2'];
 _u = _u		+ ['F35B'];
 
+
 missionNamespace setVariable [Format ["WFBE_%1AIRCRAFTUNITS", _side], _u];
 if (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
 _u = [];
-
 _u = _u 	+ ['MV22'];
 _u = _u		+ ['C130J'];
 _u = _u		+ ['L159_ACR'];
