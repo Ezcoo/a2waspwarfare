@@ -48,6 +48,11 @@ public abstract class BaseVehicle : InterfaceVehicle
     // Protected member for the in-game display name of the vehicle.
     protected string inGameDisplayName { get; set; }
     protected bool moddedVehicle { get; set; }
+    // Added based on SQF Code (for unknown values)
+    public int ConstructionTime { get; set; }
+    public int UnknownValue1 { get; set; } = -2;
+    public int UnknownValue2 { get; set; } = 3;
+    public int UnknownValue3 { get; set; } = 0;
 
     // Mapping of weapon types to the factory levels at which they should be removed from the vehicle.
     protected Dictionary<WeaponType, int> weaponsToRemoveUntilFactoryLevelOnAVehicle { get; set; }
@@ -69,6 +74,24 @@ public abstract class BaseVehicle : InterfaceVehicle
     }
 
     protected abstract string GenerateCommentForTheSqfCode();
+
+    // Generate SQF code for initializing a vehicle
+    public string GenerateSQFCode()
+    {
+        // Unknown values (kept as-is)
+        int sqfUnknownValue1 = UnknownValue1;
+        int sqfUnknownValue2 = UnknownValue2;
+        int sqfUnknownValue3 = UnknownValue3;
+
+        // The faction name (assuming it's derived from FactoryType)
+        string sqfFactionName = ProducedFromFactoryType.ToString();
+
+        // Generate the SQF code line
+        string sqfCode = $"_c = _c + ['{EnumExtensions.GetEnumMemberAttrValue(VehicleType)}'];\n";
+        sqfCode += $"_i = _i + [['{inGameDisplayName}','',{InGameFactoryLevel},{ConstructionTime},{sqfUnknownValue1},{sqfUnknownValue2},{sqfUnknownValue3},0,'{sqfFactionName}',[]]];";
+
+        return sqfCode;
+    }
 
     // Initiates the generation of SQF code for balancing the vehicle's weapons and loadouts.
     // This method takes into account both the default and turret-specific loadouts,
