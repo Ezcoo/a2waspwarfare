@@ -202,6 +202,10 @@ if (IS_chernarus_map_dependent) then {
     _u = _u		+ ['Su34'];
 };
 
+if (IS_mod_map_dependent) then {
+    _u = _u		+ ['ibrPRACS_MiG21mol'];
+};
+
 missionNamespace setVariable [Format ["WFBE_%1AIRCRAFTUNITS", _side], _u];
 if (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
@@ -212,6 +216,10 @@ _u = _u		+ ['Su25_Ins'];
 _u = _u		+ ['Su25_TK_EP1'];
 _u = _u		+ ['Su39'];
 _u = _u		+ ['Su34'];
+
+if (IS_mod_map_dependent) then {
+    _u = _u		+ ['ibrPRACS_MiG21mol'];
+};
 
 missionNamespace setVariable [Format ["WFBE_%1AIRPORTUNITS", _side], _u];
 if (local player) then {['AIRPORT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
