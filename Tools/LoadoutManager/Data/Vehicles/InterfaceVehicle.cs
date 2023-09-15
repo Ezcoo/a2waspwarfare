@@ -10,4 +10,5 @@ public interface InterfaceVehicle
 
     public string StartGeneratingCommonBalanceInitForTheVehicle();
     public string GenerateCommonBalanceInitForTheVehicle(Loadout _vanillaLoadout, Loadout _defaultLoadout, string _turret = "");
+    public string GenerateSQFCodeForCoreFiles();
 }

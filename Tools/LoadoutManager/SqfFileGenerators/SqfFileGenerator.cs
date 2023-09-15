@@ -86,6 +86,7 @@ public class SqfFileGenerator
         WriteAndUpdateToFilesForModdedTerrains(easaFileStrings.modded, commonBalanceFileStrings.modded, coreModFileStrings);
     }
 
+    // Generates file for the Core files, with vehicle name, price, construction time etc.
     private static string GenerateCoreModFileString()
     {
         string coreModString = string.Empty;
@@ -99,10 +100,10 @@ public class SqfFileGenerator
                 continue;
             }
 
-            BaseVehicle
-
-            coreModString += interfaceVehicle.core
+            coreModString += interfaceVehicle.GenerateSQFCodeForCoreFiles() + "\n";
         }
+
+        return coreModString;
     }
 
     // GenerateLoadoutsForAllVehicleTypes iterates through all vehicle types defined in the VehicleType enum.

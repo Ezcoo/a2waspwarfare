@@ -76,7 +76,7 @@ public abstract class BaseVehicle : InterfaceVehicle
     protected abstract string GenerateCommentForTheSqfCode();
 
     // Generate SQF code for initializing a vehicle
-    public string GenerateSQFCode()
+    public string GenerateSQFCodeForCoreFiles()
     {
         // Unknown values (kept as-is)
         int sqfUnknownValue1 = UnknownValue1;
