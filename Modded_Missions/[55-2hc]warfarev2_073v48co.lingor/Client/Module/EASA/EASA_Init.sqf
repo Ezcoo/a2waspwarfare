@@ -659,5 +659,17 @@ _easaLoadout = _easaLoadout + [
 [9000,'Vikhr (12) | R-73 (2)',[['VikhrLauncher','R73Launcher_2'],['12Rnd_Vikhr_KA50','2Rnd_R73']]]
 ]
 ];
+
+// MiG-21 [AF5] - 4 pylons
+_easaVehi = _easaVehi + ['ibrPRACS_MiG21mol'];
+_easaDefault = _easaDefault + [[['R73Launcher_2'],['2Rnd_R73','2Rnd_R73']]];
+_easaLoadout = _easaLoadout + [
+[
+[3800,'R-73 (4)',[['R73Launcher_2'],['2Rnd_R73','2Rnd_R73']]],
+[4600,'R-73 (2) | Ataka-V (4)',[['R73Launcher_2','AT9Launcher'],['2Rnd_R73','4Rnd_AT9_Mi24P']]],
+[11200,'GBU-12 (2) | Ataka-V (4)',[['BombLauncherF35','AT9Launcher'],['2Rnd_GBU12','4Rnd_AT9_Mi24P']]],
+[11400,'R-73 (2) | GBU-12 (2)',[['R73Launcher_2','BombLauncherF35'],['2Rnd_R73','2Rnd_GBU12']]]
+]
+];
 for '_i' from 0 to count(_easaVehi)-1 do {	_loadout = _easaLoadout select _i;		for '_j' from 0 to count(_loadout)-1 do {		_loadout_line = _loadout select _j;		_is_AAMissile = false;				{			_ammo = getText(configFile >> "CfgMagazines" >> _x >> "ammo");						if (_ammo != "") then {				if (getNumber(configFile >> "CfgAmmo" >> _ammo >> "airLock") == 1 && configName(inheritsFrom(configFile >> "CfgAmmo" >> _ammo)) == "MissileBase") exitWith {_is_AAMissile = true};			};		} forEach ((_loadout_line select 2) select 1);				_loadout_line set [3, if (_is_AAMissile) then {true} else {false}];	};};
 missionNamespace setVariable ['WFBE_EASA_Vehicles',_easaVehi];missionNamespace setVariable ['WFBE_EASA_Loadouts',_easaLoadout];missionNamespace setVariable ['WFBE_EASA_Default',_easaDefault];

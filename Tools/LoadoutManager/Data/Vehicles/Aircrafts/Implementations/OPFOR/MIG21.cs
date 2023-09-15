@@ -19,7 +19,9 @@
             };
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {
-            //{ AmmunitionType.TWOROUNDR73, 4},
+            { AmmunitionType.TWOROUNDR73, 4},
+            { AmmunitionType.TWOROUNDGBU12, 2},
+            { AmmunitionType.FOURROUNDATAKA, 2},
         };
 
         inGameDisplayName = "MiG-21";
