@@ -92,7 +92,7 @@ public abstract class BaseVehicle : InterfaceVehicle
 
         // Generate the SQF code line
         string sqfCode = $"_c = _c + ['{EnumExtensions.GetEnumMemberAttrValue(VehicleType)}'];\n";
-        sqfCode += $"_i = _i + [['{inGameDisplayName}','',{inGamePrice},{ConstructionTime},{InGameFactoryLevel},{sqfUnknownValue1}," +
+        sqfCode += $"_i = _i + [['{inGameDisplayName}','',{inGamePrice},{ConstructionTime},{sqfUnknownValue1},{InGameFactoryLevel}," +
             $"{sqfUnknownValue2},{sqfUnknownValue3},0,'{EnumExtensions.GetEnumMemberAttrValue(factionType)}',[]]];";
 
         return sqfCode;
