@@ -75,7 +75,10 @@ public abstract class BaseVehicle : InterfaceVehicle
 
     protected abstract string GenerateCommentForTheSqfCode();
 
-    // Generate SQF code for initializing a vehicle
+    // Generate SQF code for initializing a vehicle. Example:
+    //_c = _c + ['L159_ACR'];
+    //_i = _i + [['','',24395,40,-2,3,3,0,'USMC',[]]];
+
     public string GenerateSQFCodeForCoreFiles()
     {
         // Unknown values (kept as-is)
