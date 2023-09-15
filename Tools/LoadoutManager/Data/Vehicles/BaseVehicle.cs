@@ -192,7 +192,7 @@ public abstract class BaseVehicle : InterfaceVehicle
     // A string containing SQF code for initializing the loadout balance.
     public string GenerateCommonBalanceInitForTheVehicle(Loadout _vanillaLoadout, Loadout _defaultLoadout, string _turret = "")
     {
-        // Use trycatch
+        // Temp, use trycatch
         bool error = false;
 
         Dictionary<string, List<string>> weaponsAndMagazinesToAdd = new();
@@ -201,7 +201,7 @@ public abstract class BaseVehicle : InterfaceVehicle
         List<string> extraWeaponsToAdd = new();
         List<string> extraWeaponsToRemove = new();
 
-        // Use trycatch
+        // Temp, use trycatch
         if (error)
         {
             Console.WriteLine("Error!!! " + nameof(weaponsAndMagazinesToRemove) +
