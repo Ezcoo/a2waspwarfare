@@ -141,23 +141,36 @@ public class SqfFileGenerator
     private static void GenerateAircraftSpecificLoadouts(VehicleType _vehicleType)
     {
         var interfaceVehicle = (InterfaceVehicle)EnumExtensions.GetInstance(_vehicleType.ToString());
-        commonBalanceInitFile += interfaceVehicle.StartGeneratingCommonBalanceInitForTheVehicle() + "\n\n";
+        string commonBalanceInit = interfaceVehicle.StartGeneratingCommonBalanceInitForTheVehicle() + "\n\n";
+
+        // Decide which static variables to update based on _isModded
+        if (interfaceVehicle.ModdedVehicle)
+        {
+            commonBalanceInitFileForModdedMaps += commonBalanceInit;
+        }
+        else
+        {
+            commonBalanceInitFile += commonBalanceInit;
+        }
 
         var baseAircraft = interfaceVehicle as BaseAircraft;
+
+        string easaLoadouts = baseAircraft.GenerateLoadoutsForTheAircraft();
+        if (easaLoadouts == "") { return; }
 
         // Skip non-aircraft for easa
         if (baseAircraft == null)
         {
             return;
         }
+        else if (interfaceVehicle.ModdedVehicle)
+        {
+            aircraftEasaLoadoutsFileForModdedMaps += "\n" + easaLoadouts + "\n";
+            return;
+        }
 
-        string result = baseAircraft.GenerateLoadoutsForTheAircraft();
-
-        if (result == "") { return; }
-
-        aircraftEasaLoadoutsFile += "\n" + result + "\n";
+        aircraftEasaLoadoutsFile += "\n" + easaLoadouts + "\n";
     }
-
 
     // WriteAndUpdateToFilesForATerrain takes in a DirectoryInfo object and two strings for EASA and common balance files.
     // It takes a defined terrain (Chernarus) and writes or updates the respective files of that terrain
