@@ -367,10 +367,11 @@ if (_currentFactoryLevel < 4) then {
 
 // MiG-21 [AF5] - 4 pylons
 case "ibrPRACS_MiG21mol": {
+    _this removeMagazine "PRACS_AA8x4";
+    _this removeWeapon "PRACS_AA8_Launcher";
     _this addMagazine "2Rnd_R73";
-    _this addMagazine "60Rnd_CMFlareMagazine";
+    _this addMagazine "2Rnd_R73";
     _this addWeapon "R73Launcher_2";
-    _this addWeapon "CMFlareLauncher";
 };
 
 };

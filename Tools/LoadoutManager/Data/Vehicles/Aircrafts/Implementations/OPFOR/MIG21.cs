@@ -5,25 +5,21 @@
         VehicleType = VehicleType.MIG21;
         pylonAmount = 4;
 
-        // Add weapons from mod pack to here
+        //weapons[] = { "GSh23L", "PRACS_AA8_Launcher", "CMFlareLauncher" };
+        //magazines[] = { "520Rnd_23mm_GSh23L", "PRACS_AA8x4", "60Rnd_CMFlare_Chaff_Magazine" };
 
         // Only test for now
         base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.SIXTYFOURROUNDS5, 2},
+                { AmmunitionType.MODDED_FOURR60ROUND, 2},
             };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.TWOROUNDR73, 2},
-                { AmmunitionType.SIXTYFOURROUNDS5, 2},
-                { AmmunitionType.SIXTYROUNDCMFLAREMAGAZINE, 2},
+                { AmmunitionType.TWOROUNDR73, 4},
             };
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
         {
-            { AmmunitionType.TWOROUNDR73, 0 },
-            { AmmunitionType.SIXROUNDFAB250, 0 },
-            { AmmunitionType.SIXTYFOURROUNDS5, 0 },
-            { AmmunitionType.FOURROUNDATAKA, 0 },
+            //{ AmmunitionType.TWOROUNDR73, 4},
         };
 
         inGameDisplayName = "MiG-21";

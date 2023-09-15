@@ -138,4 +138,12 @@ public enum WeaponType
 
     [EnumMember(Value = "ATKMK44_ACR")]
     ATK44,
+
+
+    // Modded weapons
+    [EnumMember(Value = "GSh23L")]
+    MODDED_GSH23L,
+
+    [EnumMember(Value = "PRACS_AA8_Launcher")]
+    MODDED_R60LAUNCHER,
 }
