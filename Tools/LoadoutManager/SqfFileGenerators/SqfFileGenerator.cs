@@ -81,32 +81,31 @@ public class SqfFileGenerator
     public static string GenerateEndOfTheCoreFile()
     {
         string endCode = "";
-        endCode += "    for '_z' from 0 to (count _c)-1 {\n";
-        endCode += "        if (isClass (configFile >> 'CfgVehicles' >> (_c select _z))) {\n";
-        endCode += "            missionNamespace getVariable (_c select _z);\n";
-        endCode += "            if (isNil '_get') {\n";
-        endCode += "                if ((_i select _z) select 0 == '') {(_i select _z) set [0, [_c select _z,'displayName'] Call GetConfigInfo]};\n";
-        endCode += "                if (typeName ((_i select _z) select 4) == 'SCALAR') {\n";
-        endCode += "                    if (((_i select _z) select 4) == -2) {\n";
-        endCode += "                        _ret = (_c select _z) Call Compile preprocessFile \"Common\\Functions\\Common_GetConfigVehicleCrewSlot.sqf\";\n";
-        endCode += "                        (_i select _z) set [4, _ret select 0];\n";
-        endCode += "                        (_i select _z) set [9, _ret select 1];\n";
+        endCode += "for '_z' from 0 to (count _c)-1 do {\n";
+        endCode += "    if (isClass (configFile >> 'CfgVehicles' >> (_c select _z))) then {\n";
+        endCode += "        missionNamespace getVariable (_c select _z);\n";
+        endCode += "            if (isNil '_get') then {\n";
+        endCode += "                if ((_i select _z) select 0 == '') then {(_i select _z) set [0, [_c select _z,'displayName'] Call GetConfigInfo]};\n";
+        endCode += "                if (typeName((_i select _z) select 4) == 'SCALAR') then {\n";
+        endCode += "                                        if (((_i select _z) select 4) == -2) then {\n";
+        endCode += "                                    _ret = (_c select _z) Call Compile preprocessFile \"Common\\Functions\\Common_GetConfigVehicleCrewSlot.sqf\";\n";
+        endCode += "                                    (_i select _z) set[4, _ret select 0];\n";
+        endCode += "                                    (_i select _z) set[9, _ret select 1];\n";
+        endCode += "                                };\n";
+        endCode += "                            };\n";
+        endCode += "                            if (WF_Debug) then { (_i select _z) set[3, 1]};\n";
+        endCode += "                            _p = if ((_c select _z) isKindOf 'Man') then { 'portrait'} else { 'picture'};\n";
+        endCode += "                            (_i select _z) set[1, [_c select _z, _p] Call GetConfigInfo];\n";
+        endCode += "                            missionNamespace setVariable[_c select _z, _i select _z];\n";
+        endCode += "                       } else {\n";
+        endCode += "		                            diag_log Format[\"[WFBE (INIT)][frameno:%2 | ticktime:%3] Core_MOD: Duplicated Element found '%1'\", (_c select _z), diag_frameno, diag_tickTime];\n";
         endCode += "                    };\n";
-        endCode += "                };\n";
-        endCode += "                if (WF_Debug) {(_i select _z) set [3,1]};\n";
-        endCode += "                _p = if ((_c select _z) isKindOf 'Man') {'portrait'} else {'picture'};\n";
-        endCode += "                (_i select _z) set [1, [_c select _z,_p] Call GetConfigInfo];\n";
-        endCode += "                missionNamespace setVariable [_c select _z, _i select _z];\n";
-        endCode += "            } else {\n";
-        endCode += "                diag_log Format [\"[WFBE(INIT)][frameno:% 2 | ticktime:% 3] Core_USMC: Duplicated Element found '%1'\",(_c select _z),diag_frameno,diag_tickTime];\n";
-        endCode += "            };\n";
-        endCode += "        } else {\n";
-        endCode += "            diag_log Format [\"[WFBE(ERROR)][frameno:% 2 | ticktime:% 3] Core_USMC: Element '%1' is not a valid class.\",(_c select _z),diag_frameno,diag_tickTime];\n";
-        endCode += "        };\n";
-        endCode += "    };\n";
-        endCode += "    \n";
-        endCode += "    diag_log Format [\"[WFBE(INIT)][frameno:%2 | ticktime:%3] Core_USMC: Initialization(%1 Elements) - [Done]\",count _c,diag_frameno,diag_tickTime];\n";
-
+    	endCode += "                            } else\n";
+        endCode += "                   {\n";
+        endCode += "                       diag_log Format[\"[WFBE (ERROR)][frameno:%2 | ticktime:%3] Core_MOD: Element '%1' is not a valid class.\", (_c select _z),diag_frameno,diag_tickTime] ;\n";
+        endCode += "                  };\n";
+        endCode += "                        };\n";
+        endCode += "                    diag_log Format[\"[WFBE (INIT)][frameno:%2 | ticktime:%3] Core_MOD: Initialization (%1 Elements) - [Done]\", count _c, diag_frameno, diag_tickTime] ;\n";
         return endCode;
     }
 
