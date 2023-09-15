@@ -153,7 +153,12 @@ public class SqfFileGenerator
             commonBalanceInitFile += commonBalanceInit;
         }
 
+        // Skips non aircrafts
         var baseAircraft = interfaceVehicle as BaseAircraft;
+        if (baseAircraft == null)
+        {
+            return;
+        }
 
         string easaLoadouts = baseAircraft.GenerateLoadoutsForTheAircraft();
         if (easaLoadouts == "") { return; }
