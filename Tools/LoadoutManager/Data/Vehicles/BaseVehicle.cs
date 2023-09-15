@@ -39,6 +39,9 @@ public abstract class BaseVehicle : InterfaceVehicle
     // Position index for the turret on the vehicle.
     protected int turretPos { get; set; }
 
+    // Protected member holding the price of the vehicle
+    protected int inGamePrice { get; set; }
+
     // Protected member holding the factory level required for this vehicle.
     protected int inGameFactoryLevel { get; set; }
 
@@ -52,7 +55,7 @@ public abstract class BaseVehicle : InterfaceVehicle
     public int ConstructionTime { get; set; }
     public int UnknownValue1 { get; set; } = -2;
     public int UnknownValue2 { get; set; } = 3;
-    public int UnknownValue3 { get; set; } = 0;
+    public int UnknownValue3 { get; set; } = 3;
 
     // Mapping of weapon types to the factory levels at which they should be removed from the vehicle.
     protected Dictionary<WeaponType, int> weaponsToRemoveUntilFactoryLevelOnAVehicle { get; set; }
@@ -77,8 +80,7 @@ public abstract class BaseVehicle : InterfaceVehicle
 
     // Generate SQF code for initializing a vehicle. Example:
     //_c = _c + ['L159_ACR'];
-    //_i = _i + [['','',24395,40,-2,3,3,0,'USMC',[]]];
-
+    //_i = _i + [['L159TEST','',24395,40,-2,3,3,0,'USMC',[]]];
     public string GenerateSQFCodeForCoreFiles()
     {
         // Unknown values (kept as-is)
@@ -91,7 +93,9 @@ public abstract class BaseVehicle : InterfaceVehicle
 
         // Generate the SQF code line
         string sqfCode = $"_c = _c + ['{EnumExtensions.GetEnumMemberAttrValue(VehicleType)}'];\n";
-        sqfCode += $"_i = _i + [['{inGameDisplayName}','',{InGameFactoryLevel},{ConstructionTime},{sqfUnknownValue1},{sqfUnknownValue2},{sqfUnknownValue3},0,'{sqfFactionName}',[]]];";
+        sqfCode += $"_i = _i + [['{inGameDisplayName}','',{inGamePrice},{ConstructionTime},{InGameFactoryLevel},{sqfUnknownValue1},{sqfUnknownValue2},{sqfUnknownValue3},0,'{sqfFactionName}',[]]];";
+
+        Console.Write( sqfCode ); // temp
 
         return sqfCode;
     }

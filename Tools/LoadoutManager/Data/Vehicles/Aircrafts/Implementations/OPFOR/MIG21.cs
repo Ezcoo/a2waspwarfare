@@ -29,6 +29,8 @@
         };
 
         inGameDisplayName = "MiG-21";
+        inGamePrice = 49999;
+        ConstructionTime = 50;
         inGameFactoryLevel = 5;
         producedFromFactoryType = FactoryType.AIRCRAFTFACTORY;
 
