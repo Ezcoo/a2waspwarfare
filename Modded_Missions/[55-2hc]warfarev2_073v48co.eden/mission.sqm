@@ -9,12 +9,14 @@ class Mission
 		"ca_highcommand",
 		"warfare2vehicles",
 		"ca_animals2_chicken",
+        "PRACS_Molatian_MiG21",
 		"ca_communityconfigurationproject_e"
 	};
 	addOnsAuto[]=
 	{
 		"ca_modules_functions",
 		"cacharacters2",
+		"PRACS_Molatian_MiG21",
 		"sap_everon"
 	};
 	randomSeed=10034581;
