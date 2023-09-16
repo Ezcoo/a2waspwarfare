@@ -5,13 +5,12 @@
         VehicleType = VehicleType.MIG21;
         pylonAmount = 4;
 
-        //weapons[] = { "GSh23L", "PRACS_AA8_Launcher", "CMFlareLauncher" };
-        //magazines[] = { "520Rnd_23mm_GSh23L", "PRACS_AA8x4", "60Rnd_CMFlare_Chaff_Magazine" };
+        //weapons[] = { "GSh23L", "CMFlareLauncher" };
+        //magazines[] = { "520Rnd_23mm_GSh23L", "60Rnd_CMFlare_Chaff_Magazine" };
 
         // Only test for now
         base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
-                { AmmunitionType.MODDED_FOURR60ROUND, 2},
             };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
