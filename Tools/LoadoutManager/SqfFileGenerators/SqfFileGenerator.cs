@@ -3,12 +3,15 @@
 // beginning and ending segments of EASA files, as well as methods for handling loadouts for 
 // various vehicle types. In addition, it includes methods for writing these configurations 
 // to files onto different terrains.
+
 public class SqfFileGenerator
 {
     // aircraftEasaLoadoutsFile stores the text for the respective EASA loadouts or initialization files.
     private static string aircraftEasaLoadoutsFile = string.Empty;
+    private static string aircraftEasaLoadoutsFileForModdedMaps = string.Empty;
     // commonBalanceInitFile stores the text for the respective Common_BalanceInit loadouts or initialization files.
     private static string commonBalanceInitFile = string.Empty;
+    private static string commonBalanceInitFileForModdedMaps = string.Empty;
 
     // GenerateStartOfTheEasaFile creates the initial part of the SQF file.
     // It returns a string that forms the starting block of the SQF file.
@@ -66,20 +69,84 @@ public class SqfFileGenerator
         return endOfTheEasaFile;
     }
 
+    public static string GenerateStartOfTheCoreFile()
+    {
+        string code = "Private ['_c','_get','_i','_p','_z'];\n";
+        code += "_c = [];\n";
+        code += "_i = [];\n";
+
+        return code;
+    }
+
+    public static string GenerateEndOfTheCoreFile()
+    {
+        string endCode = "";
+        endCode += "for '_z' from 0 to (count _c)-1 do {\n";
+        endCode += "    if (isClass (configFile >> 'CfgVehicles' >> (_c select _z))) then {\n";
+        endCode += "        missionNamespace getVariable (_c select _z);\n";
+        endCode += "            if (isNil '_get') then {\n";
+        endCode += "                if ((_i select _z) select 0 == '') then {(_i select _z) set [0, [_c select _z,'displayName'] Call GetConfigInfo]};\n";
+        endCode += "                if (typeName((_i select _z) select 4) == 'SCALAR') then {\n";
+        endCode += "                                        if (((_i select _z) select 4) == -2) then {\n";
+        endCode += "                                    _ret = (_c select _z) Call Compile preprocessFile \"Common\\Functions\\Common_GetConfigVehicleCrewSlot.sqf\";\n";
+        endCode += "                                    (_i select _z) set[4, _ret select 0];\n";
+        endCode += "                                    (_i select _z) set[9, _ret select 1];\n";
+        endCode += "                                };\n";
+        endCode += "                            };\n";
+        endCode += "                            if (WF_Debug) then { (_i select _z) set[3, 1]};\n";
+        endCode += "                            _p = if ((_c select _z) isKindOf 'Man') then { 'portrait'} else { 'picture'};\n";
+        endCode += "                            (_i select _z) set[1, [_c select _z, _p] Call GetConfigInfo];\n";
+        endCode += "                            missionNamespace setVariable[_c select _z, _i select _z];\n";
+        endCode += "                       } else {\n";
+        endCode += "		                            diag_log Format[\"[WFBE (INIT)][frameno:%2 | ticktime:%3] Core_MOD: Duplicated Element found '%1'\", (_c select _z), diag_frameno, diag_tickTime];\n";
+        endCode += "                    };\n";
+    	endCode += "                            } else\n";
+        endCode += "                   {\n";
+        endCode += "                       diag_log Format[\"[WFBE (ERROR)][frameno:%2 | ticktime:%3] Core_MOD: Element '%1' is not a valid class.\", (_c select _z),diag_frameno,diag_tickTime] ;\n";
+        endCode += "                  };\n";
+        endCode += "                        };\n";
+        endCode += "                    diag_log Format[\"[WFBE (INIT)][frameno:%2 | ticktime:%3] Core_MOD: Initialization (%1 Elements) - [Done]\", count _c, diag_frameno, diag_tickTime] ;\n";
+        return endCode;
+    }
+
     // GenerateCommonBalanceInitAndTheEasaFileForEachTerrain initializes and writes EASA and common balance files for each terrain.
     // The method first locates the A2 Wasp Warfare directory and then proceeds to generate loadouts and file strings.
     // The generated strings are then written to files specific to different terrains.
     public static void GenerateCommonBalanceInitAndTheEasaFileForEachTerrain()
     {
         GenerateLoadoutsForAllVehicleTypes();
-        string easaFileString = GenerateEasaFileString();
-        string commonBalanceFileString = GenerateCommonBalanceFileString();
+        var easaFileStrings = GenerateEasaFileString();
+        var commonBalanceFileStrings = GenerateCommonBalanceFileString();
+        string coreModFileStrings = GenerateCoreModFileString();
 
         // First go through vanilla maps (copied to mod maps later)
-        WriteAndUpdateToFilesForATerrain(easaFileString, commonBalanceFileString, TerrainName.CHERNARUS);
-        WriteAndUpdateToFilesForATerrain(easaFileString, commonBalanceFileString, TerrainName.TAKISTAN);
+        WriteAndUpdateToFilesForATerrain(easaFileStrings.vanilla, commonBalanceFileStrings.vanilla, TerrainName.CHERNARUS);
+        WriteAndUpdateToFilesForATerrain(easaFileStrings.vanilla, commonBalanceFileStrings.vanilla, TerrainName.TAKISTAN);
 
-        WriteAndUpdateToFilesForModdedTerrains(easaFileString, commonBalanceFileString);
+        // Write to the modded maps
+        WriteAndUpdateToFilesForModdedTerrains(easaFileStrings.modded, commonBalanceFileStrings.modded, coreModFileStrings);
+    }
+
+    // Generates file for the Core files, with vehicle name, price, construction time etc.
+    private static string GenerateCoreModFileString()
+    {
+        string coreModString = GenerateStartOfTheCoreFile();
+
+        foreach (VehicleType vehicleType in Enum.GetValues(typeof(VehicleType)))
+        {
+            var interfaceVehicle = (InterfaceVehicle)EnumExtensions.GetInstance(vehicleType.ToString());
+
+            if (!interfaceVehicle.ModdedVehicle)
+            {
+                continue;
+            }
+
+            coreModString += interfaceVehicle.GenerateSQFCodeForCoreFiles() + "\n\n";
+        }
+
+        coreModString += GenerateEndOfTheCoreFile();
+
+        return coreModString;
     }
 
     // GenerateLoadoutsForAllVehicleTypes iterates through all vehicle types defined in the VehicleType enum.
@@ -93,25 +160,43 @@ public class SqfFileGenerator
     }
 
     // GenerateEasaFileString() stores the path for the respective EASA loadouts or initialization files.
-    private static string GenerateEasaFileString()
+    private static MapFileProperties GenerateEasaFileString()
     {
+        MapFileProperties properties = new MapFileProperties();
+
         string easaFileString = GenerateStartOfTheEasaFile();
         easaFileString += "\n" + aircraftEasaLoadoutsFile;
+
+        properties.modded = easaFileString;
+        properties.modded += aircraftEasaLoadoutsFileForModdedMaps;
+
         easaFileString += GenerateEndOfTheEasaFile();
-        return easaFileString;
+        properties.modded += GenerateEndOfTheEasaFile();
+
+        properties.vanilla = easaFileString;
+        return properties;
     }
 
     // GenerateCommonBalanceFileString() stores the path for the respective EASA loadouts or initialization files.
-    private static string GenerateCommonBalanceFileString()
+    private static MapFileProperties GenerateCommonBalanceFileString()
     {
+        MapFileProperties properties = new MapFileProperties();
+
         string commonBalanceFileString = @"Private[""_currentFactoryLevel""];" + "\n\n";
         commonBalanceFileString += "// After adding Pandur and BTR-90 to this script," +
             " it's necessary to exit on the server to prevent an occassional freeze\n";
         commonBalanceFileString += "if (isServer) exitWith {};\n\n";
         commonBalanceFileString += "switch (typeOf _this) do\n{\n";
         commonBalanceFileString += commonBalanceInitFile;
+
+        properties.modded = commonBalanceFileString;
+        properties.modded += commonBalanceInitFileForModdedMaps;
+
         commonBalanceFileString += "};";
-        return commonBalanceFileString;
+        properties.modded += "};";
+
+        properties.vanilla = commonBalanceFileString;
+        return properties;
     }
 
     // GenerateAircraftSpecificLoadouts takes a VehicleType enum as an argument and generates specific loadouts for aircraft.
@@ -120,23 +205,41 @@ public class SqfFileGenerator
     private static void GenerateAircraftSpecificLoadouts(VehicleType _vehicleType)
     {
         var interfaceVehicle = (InterfaceVehicle)EnumExtensions.GetInstance(_vehicleType.ToString());
-        commonBalanceInitFile += interfaceVehicle.StartGeneratingCommonBalanceInitForTheVehicle() + "\n\n";
+        string commonBalanceInit = interfaceVehicle.StartGeneratingCommonBalanceInitForTheVehicle() + "\n\n";
 
+        // Decide which static variables to update based on _isModded
+        if (interfaceVehicle.ModdedVehicle)
+        {
+            commonBalanceInitFileForModdedMaps += commonBalanceInit;
+        }
+        else
+        {
+            commonBalanceInitFile += commonBalanceInit;
+        }
+
+        // Skips non aircrafts
         var baseAircraft = interfaceVehicle as BaseAircraft;
+        if (baseAircraft == null)
+        {
+            return;
+        }
+
+        string easaLoadouts = baseAircraft.GenerateLoadoutsForTheAircraft();
+        if (easaLoadouts == "") { return; }
 
         // Skip non-aircraft for easa
         if (baseAircraft == null)
         {
             return;
         }
+        else if (interfaceVehicle.ModdedVehicle)
+        {
+            aircraftEasaLoadoutsFileForModdedMaps += "\n" + easaLoadouts + "\n";
+            return;
+        }
 
-        string result = baseAircraft.GenerateLoadoutsForTheAircraft();
-
-        if (result == "") { return; }
-
-        aircraftEasaLoadoutsFile += "\n" + result + "\n";
+        aircraftEasaLoadoutsFile += "\n" + easaLoadouts + "\n";
     }
-
 
     // WriteAndUpdateToFilesForATerrain takes in a DirectoryInfo object and two strings for EASA and common balance files.
     // It takes a defined terrain (Chernarus) and writes or updates the respective files of that terrain
@@ -152,7 +255,7 @@ public class SqfFileGenerator
     //WriteAndUpdateToFilesForTerrains takes in a DirectoryInfo object and two strings for EASA and common balance files.
     //It iterates through all defined terrains and writes or updates the respective files.
     private static void WriteAndUpdateToFilesForModdedTerrains(
-        string _easaFileString, string _commonBalanceFileString)
+        string _easaFileString, string _commonBalanceFileString, string _coreModFile)
     {
         foreach (var terrainName in Enum.GetValues(typeof(TerrainName)))
         {
@@ -160,7 +263,7 @@ public class SqfFileGenerator
             if (!terrainInstance.isModdedTerrain) continue;
 
             Console.WriteLine();
-            terrainInstance.WriteAndUpdateTerrainFiles(_easaFileString, _commonBalanceFileString);
+            terrainInstance.WriteAndUpdateTerrainFiles(_easaFileString, _commonBalanceFileString, _coreModFile);
         }
     }
 }

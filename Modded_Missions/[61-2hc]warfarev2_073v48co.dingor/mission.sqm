@@ -17,6 +17,7 @@ class Mission
 		"ca_communityconfigurationproject_e",
 		"CACharacters_BAF",
 		"cacharacters2",
+		"PRACS_Molatian_MiG21",
 		"ibr_dingor"
 	};
 	addOnsAuto[]=
@@ -25,6 +26,7 @@ class Mission
 		"CACharacters_BAF",
 		"cacharacters2",
 		"ca_modules_functions",
+		"PRACS_Molatian_MiG21",
 		"ibr_dingor"
 	};
 	randomSeed=6848509;

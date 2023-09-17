@@ -10,6 +10,7 @@ class Mission
 		"warfare2vehicles",
 		"ca_animals2_chicken",
 		"ca_communityconfigurationproject_e",
+		"PRACS_Molatian_MiG21",
 		"CorePatch_CCP_70799"
 	};
 	addOnsAuto[]=
@@ -17,6 +18,7 @@ class Mission
 		"ca_modules_functions",
 		"cacharacters2",
 		"CorePatch_CCP_70799",
+		"PRACS_Molatian_MiG21",
 		"tasmania2010"
 	};
 	randomSeed=10034581;

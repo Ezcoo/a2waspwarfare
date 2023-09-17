@@ -34,26 +34,52 @@ _u = _u		+ ['TK_Soldier_Officer_EP1'];
 missionNamespace setVariable [Format ["WFBE_%1BARRACKSUNITS", _side], _u];
 if (local player) then {['BARRACKS', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
-_u 			= ['TT650_TK_EP1'];
-_u = _u		+ ['UAZ_Unarmed_TK_EP1'];
-_u = _u		+ ['SUV_TK_EP1'];
-_u = _u		+ ['UAZ_MG_TK_EP1'];
-_u = _u		+ ['UAZ_AGS30_TK_EP1'];
-_u = _u		+ ['LandRover_MG_TK_EP1'];
-_u = _u		+ ['LandRover_SPG9_TK_EP1'];
-_u = _u		+ ['V3S_TK_EP1'];
-_u = _u		+ ['V3S_Open_TK_EP1'];
-_u = _u		+ ['UralRepair_TK_EP1'];
-_u = _u		+ ['UralReammo_TK_EP1'];
-_u = _u		+ ['UralRefuel_TK_EP1'];
-_u = _u		+ ['UralSalvage_TK_EP1'];
-if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['UralSupply_TK_EP1']};
-_u = _u		+ ['M113Ambul_TK_EP1'];
-_u = _u		+ ['BRDM2_TK_EP1'];
-_u = _u		+ ['BRDM2_ATGM_TK_EP1'];
-_u = _u		+ ['BTR60_TK_EP1'];
-_u = _u		+ ['Ural_ZU23_TK_EP1'];
-_u = _u		+ ['GRAD_TK_EP1'];
+if (IS_chernarus_map_dependent) then {
+    _u 			= ['TT650_TK_EP1'];
+    _u = _u		+ ['UAZ_Unarmed_TK_EP1'];
+    _u = _u		+ ['SUV_TK_EP1'];
+    _u = _u		+ ['UAZ_MG_TK_EP1'];
+    _u = _u		+ ['UAZ_AGS30_TK_EP1'];
+    _u = _u		+ ['LandRover_MG_TK_EP1'];
+    _u = _u		+ ['LandRover_SPG9_TK_EP1'];
+    _u = _u		+ ['V3S_TK_EP1'];
+    _u = _u		+ ['V3S_Open_TK_EP1'];
+    _u = _u		+ ['UralRepair_TK_EP1'];
+    _u = _u		+ ['UralReammo_TK_EP1'];
+    _u = _u		+ ['UralRefuel_TK_EP1'];
+    _u = _u		+ ['UralSalvage_TK_EP1'];
+    if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['UralSupply_TK_EP1']};
+    _u = _u		+ ['M113Ambul_TK_EP1'];
+    _u = _u		+ ['BRDM2_TK_EP1'];
+    _u = _u		+ ['BRDM2_ATGM_TK_EP1'];
+    _u = _u		+ ['BTR60_TK_EP1'];
+    _u = _u		+ ['Ural_ZU23_TK_EP1'];
+    _u = _u		+ ['GRAD_TK_EP1'];
+} else {
+    _u 			= ['TT650_TK_EP1'];
+    _u = _u		+ ['UAZ_Unarmed_TK_EP1'];
+    _u = _u		+ ['SUV_TK_EP1'];
+    _u = _u		+ ['BTR40_TK_INS_EP1'];
+    _u = _u		+ ['BTR40_MG_TK_INS_EP1'];
+    _u = _u		+ ['UAZ_MG_TK_EP1'];
+    _u = _u		+ ['UAZ_AGS30_TK_EP1'];
+    _u = _u		+ ['LandRover_MG_TK_EP1'];
+    _u = _u		+ ['LandRover_SPG9_TK_EP1'];
+    _u = _u		+ ['V3S_TK_EP1'];
+    _u = _u		+ ['V3S_Open_TK_EP1'];
+    _u = _u		+ ['UralRepair_TK_EP1'];
+    _u = _u		+ ['UralReammo_TK_EP1'];
+    _u = _u		+ ['UralRefuel_TK_EP1'];
+    _u = _u		+ ['UralSalvage_TK_EP1'];
+    if ((missionNamespace getVariable "WFBE_C_ECONOMY_SUPPLY_SYSTEM") == 0) then {_u = _u		+ ['UralSupply_TK_EP1']};
+    _u = _u		+ ['M113Ambul_TK_EP1'];
+    _u = _u		+ ['BRDM2_TK_EP1'];
+    _u = _u		+ ['BRDM2_ATGM_TK_EP1'];
+    _u = _u		+ ['BRDM2_ATGM_INS'];
+    _u = _u		+ ['BTR60_TK_EP1'];
+    _u = _u		+ ['Ural_ZU23_TK_EP1'];
+    _u = _u		+ ['GRAD_TK_EP1'];
+};
 
 missionNamespace setVariable [Format ["WFBE_%1LIGHTUNITS", _side], _u];
 if (local player) then {['LIGHT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
@@ -86,15 +112,30 @@ _u = _u		+ ['Su25_TK_EP1'];
 missionNamespace setVariable [Format ["WFBE_%1AIRPORTUNITS", _side], _u];
 if (local player) then {['AIRPORT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
-_u 			= ["Old_bike_TK_CIV_EP1"];
-_u = _u		+ ["TT650_TK_CIV_EP1"];
-_u = _u		+ ["Lada2_TK_CIV_EP1"];
-_u = _u		+ ["VolhaLimo_TK_CIV_EP1"];
-_u = _u		+ ["Volha_2_TK_CIV_EP1"];
-_u = _u		+ ["Ural_TK_CIV_EP1"];
-_u = _u		+ ["S1203_TK_CIV_EP1"];
-if ((missionNamespace getVariable "WFBE_C_UNITS_TOWN_PURCHASE") > 0) then {
-	_u = _u		+ [missionNamespace getVariable "WFBE_EASTSOLDIER"];
+if (IS_chernarus_map_dependent) then {
+    _u 			= ["Old_bike_TK_CIV_EP1"];
+    _u = _u		+ ["TT650_TK_CIV_EP1"];
+    _u = _u		+ ["Lada2_TK_CIV_EP1"];
+    _u = _u		+ ["VolhaLimo_TK_CIV_EP1"];
+    _u = _u		+ ["Volha_2_TK_CIV_EP1"];
+    _u = _u		+ ["Ural_TK_CIV_EP1"];
+    _u = _u		+ ["S1203_TK_CIV_EP1"];
+    if ((missionNamespace getVariable "WFBE_C_UNITS_TOWN_PURCHASE") > 0) then {
+    	_u = _u		+ [missionNamespace getVariable "WFBE_EASTSOLDIER"];
+    };
+} else {
+    _u 			= ["Old_bike_TK_CIV_EP1"];
+    _u = _u		+ ["TT650_TK_CIV_EP1"];
+    _u = _u		+ ["Lada2_TK_CIV_EP1"];
+    _u = _u		+ ["VolhaLimo_TK_CIV_EP1"];
+    _u = _u		+ ["Volha_2_TK_CIV_EP1"];
+    _u = _u		+ ["Ural_TK_CIV_EP1"];
+    _u = _u		+ ["S1203_TK_CIV_EP1"];
+    _u = _u		+ ["V3S_TK_EP1"];
+    _u = _u		+ ["UralRefuel_TK_EP1"];
+    if ((missionNamespace getVariable "WFBE_C_UNITS_TOWN_PURCHASE") > 0) then {
+        _u = _u		+ [missionNamespace getVariable "WFBE_EASTSOLDIER"];
+    };
 };
 
 missionNamespace setVariable [Format ["WFBE_%1DEPOTUNITS", _side], _u];

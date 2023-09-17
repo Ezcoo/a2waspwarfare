@@ -19,6 +19,8 @@ public abstract class BaseVehicle : InterfaceVehicle
     // Indicates the type of factory where this vehicle is produced.
     public FactoryType ProducedFromFactoryType { get => producedFromFactoryType; set => producedFromFactoryType = value; }
 
+    public bool ModdedVehicle { get => moddedVehicle; set => moddedVehicle = value; }
+
     // Protected member holding the actual type of the vehicle.
     protected VehicleType vehicleType { get; set; }
 
@@ -37,6 +39,9 @@ public abstract class BaseVehicle : InterfaceVehicle
     // Position index for the turret on the vehicle.
     protected int turretPos { get; set; }
 
+    // Protected member holding the price of the vehicle
+    protected int inGamePrice { get; set; }
+
     // Protected member holding the factory level required for this vehicle.
     protected int inGameFactoryLevel { get; set; }
 
@@ -45,6 +50,14 @@ public abstract class BaseVehicle : InterfaceVehicle
 
     // Protected member for the in-game display name of the vehicle.
     protected string inGameDisplayName { get; set; }
+    protected bool moddedVehicle { get; set; }
+    protected FactionType factionType { get; set; }
+
+    // Added based on SQF Code (for unknown values)
+    public int ConstructionTime { get; set; }
+    public int UnknownValue1 { get; set; } = -2;
+    public int UnknownValue2 { get; set; } = 3;
+    public int UnknownValue3 { get; set; } = 3;
 
     // Mapping of weapon types to the factory levels at which they should be removed from the vehicle.
     protected Dictionary<WeaponType, int> weaponsToRemoveUntilFactoryLevelOnAVehicle { get; set; }
@@ -66,6 +79,24 @@ public abstract class BaseVehicle : InterfaceVehicle
     }
 
     protected abstract string GenerateCommentForTheSqfCode();
+
+    // Generate SQF code for initializing a vehicle. Example:
+    //_c = _c + ['L159_ACR'];
+    //_i = _i + [['L159TEST','',24395,40,-2,3,3,0,'USMC',[]]];
+    public string GenerateSQFCodeForCoreFiles()
+    {
+        // Unknown values (kept as-is)
+        int sqfUnknownValue1 = UnknownValue1;
+        int sqfUnknownValue2 = UnknownValue2;
+        int sqfUnknownValue3 = UnknownValue3;
+
+        // Generate the SQF code line
+        string sqfCode = $"_c = _c + ['{EnumExtensions.GetEnumMemberAttrValue(VehicleType)}'];\n";
+        sqfCode += $"_i = _i + [['{inGameDisplayName}','',{inGamePrice},{ConstructionTime},{sqfUnknownValue1},{InGameFactoryLevel}," +
+            $"{sqfUnknownValue2},{sqfUnknownValue3},0,'{EnumExtensions.GetEnumMemberAttrValue(factionType)}',[]]];";
+
+        return sqfCode;
+    }
 
     // Initiates the generation of SQF code for balancing the vehicle's weapons and loadouts.
     // This method takes into account both the default and turret-specific loadouts,
@@ -161,7 +192,7 @@ public abstract class BaseVehicle : InterfaceVehicle
     // A string containing SQF code for initializing the loadout balance.
     public string GenerateCommonBalanceInitForTheVehicle(Loadout _vanillaLoadout, Loadout _defaultLoadout, string _turret = "")
     {
-        // Use trycatch
+        // Temp, use trycatch
         bool error = false;
 
         Dictionary<string, List<string>> weaponsAndMagazinesToAdd = new();
@@ -170,7 +201,7 @@ public abstract class BaseVehicle : InterfaceVehicle
         List<string> extraWeaponsToAdd = new();
         List<string> extraWeaponsToRemove = new();
 
-        // Use trycatch
+        // Temp, use trycatch
         if (error)
         {
             Console.WriteLine("Error!!! " + nameof(weaponsAndMagazinesToRemove) +

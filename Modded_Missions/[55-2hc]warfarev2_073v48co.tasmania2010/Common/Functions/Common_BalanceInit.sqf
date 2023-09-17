@@ -365,4 +365,11 @@ if (_currentFactoryLevel < 4) then {
 };
 };
 
+// MiG-21MF Fishbed [AF5] - 4 pylons
+case "ibrPRACS_MiG21mol": {
+    _this addMagazine "2Rnd_R73";
+    _this addMagazine "2Rnd_R73";
+    _this addWeapon "R73Launcher_2";
+};
+
 };
