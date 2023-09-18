@@ -11,7 +11,7 @@ class Params {
 		title = "$STR_WF_PARAMETER_AFK_Time";
 		values[] = {1,5,10,15,20,30};
 		texts[] = {"1 minute", "5 minutes","10 minutes", "15 minutes", "20 minutes", "30 minutes"};
-		default = 10;
+		default = 15;
 	};
 	class WFBE_C_AI_DELEGATION {
 		title = "$STR_WF_PARAMETER_AI_Delegation";
@@ -421,14 +421,6 @@ class Params {
 		texts[] = {"$STR_WF_Disabled","$STR_WF_PARAMETER_Light","$STR_WF_PARAMETER_Medium","$STR_WF_PARAMETER_Hard","$STR_WF_PARAMETER_Impossible"};
 		default = 2;
 	};
-	#ifdef COMBINEDOPS
-		class WFBE_C_UNITS_FACTION_GUER {
-			title = "$STR_WF_PARAMETER_Reinforcement_Type";
-			values[] = {0,1,2};
-			texts[] = {"Guerillas","Private Military Company","Takistani Locals"};
-			default = 2;
-		};
-	#endif
 	class WFBE_C_TOWNS_GEAR {
 		title = "$STR_WF_PARAMETER_TownsGear";
 		values[] = {0,1,2,3};
@@ -441,54 +433,6 @@ class Params {
 		texts[] = {"$STR_WF_Disabled","$STR_WF_PARAMETER_Light","$STR_WF_PARAMETER_Medium","$STR_WF_PARAMETER_Hard","$STR_WF_PARAMETER_Impossible"};
 		default = 1;
 	};
-	#ifdef VANILLA
-		class WFBE_C_UNITS_FACTION_EAST {
-			title = "$STR_WF_PARAMETER_Occupation_Type_East";
-			values[] = {0,1};
-			texts[] = {"Insurgents","Takistan Army"};
-			default = 1;
-		};
-	#endif
-	#ifdef VANILLA
-		class WFBE_C_UNITS_FACTION_WEST {
-			title = "$STR_WF_PARAMETER_Occupation_Type_West";
-			values[] = {0,1};
-			texts[] = {"Chernarussian Defence Force","United States"};
-			default = 1;
-		};
-	#endif
-	#ifdef ARROWHEAD
-		class WFBE_C_UNITS_FACTION_EAST {
-			title = "$STR_WF_PARAMETER_Occupation_Type_East";
-			values[] = {0};
-			texts[] = {"Takistan Army"};
-			default = 0;
-		};
-	#endif
-	#ifdef ARROWHEAD
-		class WFBE_C_UNITS_FACTION_WEST {
-			title = "$STR_WF_PARAMETER_Occupation_Type_West";
-			values[] = {0};
-			texts[] = {"United States"};
-			default = 0;
-		};
-	#endif
-	#ifdef COMBINEDOPS
-		class WFBE_C_UNITS_FACTION_EAST {
-			title = "$STR_WF_PARAMETER_Occupation_Type_East";
-			values[] = {0,1,2};
-			texts[] = {"Insurgents","Russians","Takistan Army"};
-			default = 2;
-		};
-	#endif
-	#ifdef COMBINEDOPS
-		class WFBE_C_UNITS_FACTION_WEST {
-			title = "$STR_WF_PARAMETER_Occupation_Type_West";
-			values[] = {0,1,2};
-			texts[] = {"Chernarussian Defence Force","United States","United States Marine Corps"};
-			default = 1;
-		};
-	#endif
 	class WFBE_C_TOWNS_PATROLS {
 		title = "$STR_WF_PARAMETER_MaxResPatrols";
 		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,22,24,26,28,30,32,34,36,38,40,50,60,70,80,90,100};

@@ -277,11 +277,11 @@ public abstract class BaseTerrain : InterfaceTerrain
     private string GenerateWFLogContent()
     {
 #if DEBUG
-        return "#define WF_LOG_CONTENT 1";
+        return "#define WF_LOG_CONTENT";
 #elif SERVER_DEBUG
-        return "#define WF_LOG_CONTENT 1";
+        return "#define WF_LOG_CONTENT";
 #else
-            return "// #define WF_LOG_CONTENT 1";
+            return "// #define WF_LOG_CONTENT";
 #endif
     }
 }

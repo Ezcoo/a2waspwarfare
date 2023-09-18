@@ -2,7 +2,6 @@
 // It provides methods to copy files and directories from a source to a destination while ensuring the destination directory exists.
 // It also has methods for recursively copying subdirectories and for cleaning up extra files and directories at the destination.
 public class FileManager
-
 {
     // Orchestrates the process of copying files and directories from the source to the destination.
     // Ensures the destination directory exists, copies the files, and cleans up any extra files and directories.
@@ -61,11 +60,8 @@ public class FileManager
                _fileName.EndsWith("Init_Server.sqf", StringComparison.OrdinalIgnoreCase) ||
                _fileName.EndsWith("texHeaders.bin", StringComparison.OrdinalIgnoreCase) ||
                _fileName.EndsWith("StartVeh.sqf", StringComparison.OrdinalIgnoreCase) ||
-               _fileName.EndsWith("Parameters.hpp", StringComparison.OrdinalIgnoreCase) ||
                _fileName.EndsWith("loadScreen.jpg", StringComparison.OrdinalIgnoreCase)
                )&&
-
-
                !_fileName.EndsWith("Init_Version.sqf", StringComparison.OrdinalIgnoreCase); // because there's version.sqf
     }
 
