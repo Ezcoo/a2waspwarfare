@@ -2,7 +2,6 @@
 // It provides methods to copy files and directories from a source to a destination while ensuring the destination directory exists.
 // It also has methods for recursively copying subdirectories and for cleaning up extra files and directories at the destination.
 public class FileManager
-
 {
     // Orchestrates the process of copying files and directories from the source to the destination.
     // Ensures the destination directory exists, copies the files, and cleans up any extra files and directories.
