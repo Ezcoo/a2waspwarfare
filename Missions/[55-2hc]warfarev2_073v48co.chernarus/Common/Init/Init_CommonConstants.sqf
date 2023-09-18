@@ -305,12 +305,20 @@ if (WF_A2_Vanilla) then {
 	//--- Units Factions.
 switch (true) do {
 	case (WF_A2_CombinedOps): {
-			//if (isNil "WFBE_C_UNITS_FACTION_EAST") then {WFBE_C_UNITS_FACTION_EAST = 1}; //--- East Faction.
-			//if (isNil "WFBE_C_UNITS_FACTION_GUER") then {WFBE_C_UNITS_FACTION_GUER = 0}; //--- Guerilla Faction.
-			//if (isNil "WFBE_C_UNITS_FACTION_WEST") then {WFBE_C_UNITS_FACTION_WEST = 2}; //--- West Faction.
 			WFBE_C_UNITS_FACTIONS_EAST = ['INS','RU','TKA']; //--- East Factions.
 			WFBE_C_UNITS_FACTIONS_GUER = ['GUE','PMC','TKGUE']; //--- Guerilla Factions.
 			WFBE_C_UNITS_FACTIONS_WEST = ['CDF','US','USMC']; //--- West Factions.
+
+			// Reworked to use the the cherno/takistan parameter
+            if (IS_chernarus_map_dependent) then {
+                missionNamespace setVariable ['WFBE_C_UNITS_FACTION_WEST', 2]; // USMC index
+                missionNamespace setVariable ['WFBE_C_UNITS_FACTION_EAST', 1]; // RU index
+                missionNamespace setVariable ['WFBE_C_UNITS_FACTION_GUER', 0]; // GUE index
+            } else {
+                missionNamespace setVariable ['WFBE_C_UNITS_FACTION_WEST', 1]; // US index
+                missionNamespace setVariable ['WFBE_C_UNITS_FACTION_EAST', 2]; // TKA index
+                missionNamespace setVariable ['WFBE_C_UNITS_FACTION_GUER', 2]; // TKGUE index
+            };
 	};
 };
 

@@ -249,21 +249,10 @@ switch (true) do {
 
 ["INITIALIZATION", "Init_Common.sqf: Core Files are loaded."] Call WFBE_CO_FNC_LogContent;
 
-// Removed with removal of the faction parameters
-//_grpWest = (missionNamespace getVariable 'WFBE_C_UNITS_FACTIONS_WEST') select (missionNamespace getVariable 'WFBE_C_UNITS_FACTION_WEST');
-//_grpEast = (missionNamespace getVariable 'WFBE_C_UNITS_FACTIONS_EAST') select (missionNamespace getVariable 'WFBE_C_UNITS_FACTION_EAST');
-//_grpRes = (missionNamespace getVariable 'WFBE_C_UNITS_FACTIONS_GUER') select (missionNamespace getVariable 'WFBE_C_UNITS_FACTION_GUER');
-
 // Reworked to use the the cherno/takistan parameter
-if (IS_chernarus_map_dependent) then {
-    _grpEast = ['RU']; //--- East Faction
-    _grpRes = ['GUE']; //--- Guerilla Faction
-    _grpWest = ['USMC']; //--- West Faction
-}else{
-    _grpEast = ['TKA']; //--- East Faction
-    _grpRes = ['TKGUE']; //--- Guerilla Faction
-    _grpWest = ['US']; //--- West Faction
-};
+_grpWest = (missionNamespace getVariable 'WFBE_C_UNITS_FACTIONS_WEST') select (missionNamespace getVariable 'WFBE_C_UNITS_FACTION_WEST');
+_grpEast = (missionNamespace getVariable 'WFBE_C_UNITS_FACTIONS_EAST') select (missionNamespace getVariable 'WFBE_C_UNITS_FACTION_EAST');
+_grpRes = (missionNamespace getVariable 'WFBE_C_UNITS_FACTIONS_GUER') select (missionNamespace getVariable 'WFBE_C_UNITS_FACTION_GUER');
 
 
 ["INITIALIZATION", Format["Init_Common.sqf: Using groups - West [%1], East [%2], Resistance [%3].",_grpWest,_grpEast,_grpRes]] Call WFBE_CO_FNC_LogContent;
