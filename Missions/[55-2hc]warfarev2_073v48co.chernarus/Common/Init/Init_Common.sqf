@@ -256,13 +256,13 @@ switch (true) do {
 
 // Reworked to use the the cherno/takistan parameter
 if (IS_chernarus_map_dependent) then {
-    _grpEast = 'RU'; //--- East Faction
-    _grpRes = 'GUE'; //--- Guerilla Faction
-    _grpWest = 'USMC'; //--- West Faction
+    _grpEast = ['RU']; //--- East Faction
+    _grpRes = ['GUE']; //--- Guerilla Faction
+    _grpWest = ['USMC']; //--- West Faction
 }else{
-    _grpEast = 'TKA'; //--- East Faction
-    _grpRes = 'TKGUE'; //--- Guerilla Faction
-    _grpWest = 'US'; //--- West Faction
+    _grpEast = ['TKA']; //--- East Faction
+    _grpRes = ['TKGUE']; //--- Guerilla Faction
+    _grpWest = ['US']; //--- West Faction
 };
 
 
