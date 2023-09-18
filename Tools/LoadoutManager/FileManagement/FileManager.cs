@@ -64,8 +64,6 @@ public class FileManager
                //_fileName.EndsWith("Parameters.hpp", StringComparison.OrdinalIgnoreCase) ||
                _fileName.EndsWith("loadScreen.jpg", StringComparison.OrdinalIgnoreCase)
                )&&
-
-
                !_fileName.EndsWith("Init_Version.sqf", StringComparison.OrdinalIgnoreCase); // because there's version.sqf
     }
 
