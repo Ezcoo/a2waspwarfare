@@ -305,9 +305,9 @@ if (WF_A2_Vanilla) then {
 	//--- Units Factions.
 switch (true) do {
 	case (WF_A2_CombinedOps): {
-			if (isNil "WFBE_C_UNITS_FACTION_EAST") then {WFBE_C_UNITS_FACTION_EAST = 1}; //--- East Faction.
-			if (isNil "WFBE_C_UNITS_FACTION_GUER") then {WFBE_C_UNITS_FACTION_GUER = 0}; //--- Guerilla Faction.
-			if (isNil "WFBE_C_UNITS_FACTION_WEST") then {WFBE_C_UNITS_FACTION_WEST = 2}; //--- West Faction.
+			//if (isNil "WFBE_C_UNITS_FACTION_EAST") then {WFBE_C_UNITS_FACTION_EAST = 1}; //--- East Faction.
+			//if (isNil "WFBE_C_UNITS_FACTION_GUER") then {WFBE_C_UNITS_FACTION_GUER = 0}; //--- Guerilla Faction.
+			//if (isNil "WFBE_C_UNITS_FACTION_WEST") then {WFBE_C_UNITS_FACTION_WEST = 2}; //--- West Faction.
 			WFBE_C_UNITS_FACTIONS_EAST = ['INS','RU','TKA']; //--- East Factions.
 			WFBE_C_UNITS_FACTIONS_GUER = ['GUE','PMC','TKGUE']; //--- Guerilla Factions.
 			WFBE_C_UNITS_FACTIONS_WEST = ['CDF','US','USMC']; //--- West Factions.
