@@ -11,7 +11,7 @@ class Params {
 		title = "$STR_WF_PARAMETER_AFK_Time";
 		values[] = {1,5,10,15,20,30};
 		texts[] = {"1 minute", "5 minutes","10 minutes", "15 minutes", "20 minutes", "30 minutes"};
-		default = 10;
+		default = 15;
 	};
 	class WFBE_C_AI_DELEGATION {
 		title = "$STR_WF_PARAMETER_AI_Delegation";
