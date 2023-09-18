@@ -3,11 +3,13 @@
 //--- Define which 'part' of the game to run.
 #include "version.sqf"
 
+LOG_CONTENT_STATE = "";
+
 //WF_LOG_CONTENT
 #ifdef WF_LOG_CONTENT
-	#define LOG_CONTENT_STATE "ACTIVATED"
+	LOG_CONTENT_STATE = "ACTIVATED";
 #else 
-	#define LOG_CONTENT_STATE "NOT ACTIVATED"
+	LOG_CONTENT_STATE = "NOT ACTIVATED";
 #endif
 
 CBA_display_ingame_warnings = false;
