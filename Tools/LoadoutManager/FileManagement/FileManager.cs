@@ -61,7 +61,7 @@ public class FileManager
                _fileName.EndsWith("Init_Server.sqf", StringComparison.OrdinalIgnoreCase) ||
                _fileName.EndsWith("texHeaders.bin", StringComparison.OrdinalIgnoreCase) ||
                _fileName.EndsWith("StartVeh.sqf", StringComparison.OrdinalIgnoreCase) ||
-               _fileName.EndsWith("Parameters.hpp", StringComparison.OrdinalIgnoreCase) ||
+               //_fileName.EndsWith("Parameters.hpp", StringComparison.OrdinalIgnoreCase) ||
                _fileName.EndsWith("loadScreen.jpg", StringComparison.OrdinalIgnoreCase)
                )&&
 
