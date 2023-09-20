@@ -28,8 +28,8 @@ _markerSide		= playerSide;
 
 //Send audio + text message to the team side to warn them
 _playerName 	= name player;
-_text_message 	= localize "STR_WF_INFO_Arty_called_message";
-_text_message 	= format[_text_message, str(_playerName)];
+
+_Compile_Multi_language_message	= format [" format[localize ""STR_WF_INFO_Arty_called_message"", %1 ];", str(_playerName)];
 
 _audio_message 	= "ARTY_message_to_friendly_players_v2"; //In case of failure in conditions below, faction is considered as american by default to determine the audio message.
 if (IS_Takistan_Faction_On_This_Map  && playerSide == east) then {_audio_message 	= "ARTY_message_to_friendly_takistanish_v1"	};
@@ -38,7 +38,9 @@ if (IS_American_Faction_on_this_map  && playerSide == west) then {_audio_message
 
 _side = playerSide ;
 
-[_text_message, _audio_message, _side ] call WF_sendMessage ;
+_is_multi_language_message = true ;
+
+[_Compile_Multi_language_message, _audio_message, _side, _is_multi_language_message ] call WF_sendMessage ;
 //Marty.
 
 // Marty arty countdown to finish
