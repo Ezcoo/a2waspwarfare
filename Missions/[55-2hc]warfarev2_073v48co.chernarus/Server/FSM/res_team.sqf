@@ -49,26 +49,12 @@ while{!_end}do{
 
 	if(_action_type == "moveto")then{
 
-		// Marty : fixing source of the bug when function SortByDistance is called. We need to give objects or positions BUT NOT strings :
-		_WestBaseStructures = (west) Call WFBE_CO_FNC_GetSideStructures;
-		_EastBaseStructures = (east) Call WFBE_CO_FNC_GetSideStructures;
-		//_WestBaseStructures = missionNamespace getVariable Format["WFBE_%1STRUCTURES",west];
-		//_EastBaseStructures = missionNamespace getVariable Format["WFBE_%1STRUCTURES",east];
-
+		_WestBaseStructures = missionNamespace getVariable Format["WFBE_%1STRUCTURES",west];
+		_EastBaseStructures = missionNamespace getVariable Format["WFBE_%1STRUCTURES",east];
 		_WestMHQ = (west) Call WFBE_CO_FNC_GetSideHQ;
 		_EastMHQ = (east) Call WFBE_CO_FNC_GetSideHQ;
-				
 		_buildings = (_WestBaseStructures) + (_EastBaseStructures) + [_EastMHQ,_WestMHQ];
-
-		// Marty : debugging Common_SortByDistance.sqf
-		diag_log format["7.0. DEBUG Common_SortByDistance.sqf CALLED BY res_team.sqf"]; 
-		//diag_log format[ "7.1. DEBUG res_team.sqf _buildings = %1 | type = %2", _buildings, typeName _buildings ];
-		//diag_log format[ "7.2. DEBUG res_team.sqf _barrack = %1 | type = %2", _barrack, typeName _barrack ];
-		
 		_near = [_barrack, _buildings] Call SortByDistance;
-
-		//diag_log format[ "7.3. DEBUG res_team.sqf _near = %1 | type = %2", _near, typeName _near ]; // Marty debugging.
-
 		_target = _near select 0;
 		[_inf_group, true, [[_target, 'SAD', 100, 60, "", []]]] Call AIWPAdd;
 
