@@ -1,5 +1,5 @@
 /* 
-	Author: Marty
+	Original Author: Marty
 	Name: Client_onEventHandler_SEND_MESSAGE.sqf
 	Parameters:
 	Parameters are given by the EH "SEND_MESSAGE" addPublicVariableEventHandler
@@ -18,9 +18,15 @@ _SEND_MESSAGE_infos = _this select 1; // select 1 not 0 to get the value !
 _messageText				= _SEND_MESSAGE_infos select 0;
 _messageSoundName			= _SEND_MESSAGE_infos select 1;
 _side_who_receive_message	= _SEND_MESSAGE_infos select 2;
+_is_multi_language_message	= _SEND_MESSAGE_infos select 3;
 
 if (playerSide == _side_who_receive_message) then 
 {
+	if _is_multi_language_message then 
+	{
+		_messageText = call compile _messageText
+	};
+
 	// Send a text and audio message to all clients who are supposed to receive it.
 	systemChat _messageText; 
 	playSound _messageSoundName;

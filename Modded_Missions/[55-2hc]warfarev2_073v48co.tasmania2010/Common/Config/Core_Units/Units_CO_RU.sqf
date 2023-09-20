@@ -210,6 +210,14 @@ missionNamespace setVariable [Format ["WFBE_%1AIRCRAFTUNITS", _side], _u];
 if (local player) then {['AIRCRAFT', _side, _u] Call Compile preProcessFile 'Client\Init\Init_Faction.sqf'};
 
 _u = [];
+
+// Mi-8 from the airport hangar
+if (IS_chernarus_map_dependent) then {
+    _u = _u		+ ['Mi17_Ins'];
+} else {
+    _u = _u		+ ['Mi17_TK_EP1'];
+};
+
 _u = _u		+ ['An2_TK_EP1'];
 _u = _u		+ ['L39_TK_EP1'];
 _u = _u		+ ['Su25_Ins'];

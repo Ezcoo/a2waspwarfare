@@ -1859,20 +1859,6 @@
                 <Russian>Город: Захват</Russian>
                 <Italian>Città: Occupazione</Italian>
             </Key>
-            <Key ID="STR_WF_PARAMETER_Occupation_Type_East"><!--shared U-->
-                <English>TOWNS: Occupation Faction - East</English>
-                <French>VILLES: Faction d'Occupation Est</French>
-                <German>STÄDTE: Besatzer-Fraktion (Ostblock)</German>
-                <Russian>Город: Охраняющая Фракция - Восток</Russian>
-                <Italian>Towns: Occupation Faction - East</Italian>
-            </Key>
-            <Key ID="STR_WF_PARAMETER_Occupation_Type_West"><!--shared U-->
-                <English>TOWNS: Occupation Faction - West</English>
-                <French>VILLES: Faction d'Occupation Ouest</French>
-                <German>STÄDTE: Besatzer-Fraktion (Westmächte)</German>
-                <Russian>Город: Охраняющая Фракция - Запад</Russian>
-                <Italian>Towns: Occupation Faction - West</Italian>
-            </Key>
             <Key ID="STR_WF_PARAMETER_Reinforcement_Occupation">
                 <English>TOWNS: Occupation Reinforcements</English>
                 <French>VILLES: Renforts d'Occupation</French>
@@ -1907,13 +1893,6 @@
                 <German>TOWNS: Defender</German>
                 <Russian>TOWNS: Defender</Russian>
                 <Italian>TOWNS: Defender</Italian>
-            </Key>
-            <Key ID="STR_WF_PARAMETER_Reinforcement_Type"><!--shared U-->
-                <English>TOWNS: Resistance Faction</English>
-                <French>VILLES: Faction Résistante</French>
-                <German>STÄDTE: Widerstand (Fraktion)</German>
-                <Russian>Город: Фракция сопротивления</Russian>
-                <Italian>Towns: Fazione Resistenza</Italian>
             </Key>
             <Key ID="STR_WF_PARAMETER_Reinforcement_Resistance">
                 <English>TOWNS: Resistance Reinforcements</English>
