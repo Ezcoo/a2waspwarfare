@@ -1,5 +1,5 @@
 /* 
-	Author: Marty
+	Original Author: Marty
 	Name: Common_CreateMarker.sqf
 	Parameters:
 	0 - _markerName : string - correspond to the name of the marker to create.
