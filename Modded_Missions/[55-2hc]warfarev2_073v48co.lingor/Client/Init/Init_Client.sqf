@@ -319,7 +319,7 @@ sideHQ = _HQRadio;
 ["INITIALIZATION", "Init_Client.sqf: Radio announcer is initialized."] Call WFBE_CO_FNC_LogContent;
 
 /* Wait for a valid signal (Teamswaping) with failover */
-if (isMultiplayer && (missionNamespace getVariable "WFBE_C_GAMEPLAY_TEAMSWAP_DISABLE") > 0 && time > 7) then {
+if (isMultiplayer && ((missionNamespace getVariable "WFBE_C_GAMEPLAY_TEAMSWAP_DISABLE") > 0 && !WF_Debug) && time > 7) then {
 	Private ["_get","_timelaps"];
 	_get = true;
 
