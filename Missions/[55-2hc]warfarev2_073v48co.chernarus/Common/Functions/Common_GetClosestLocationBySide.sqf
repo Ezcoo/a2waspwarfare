@@ -10,7 +10,7 @@ _nearest = objNull;
 if (count _enemyTowns > 0) then {
 
 	// Marty : debugging Common_SortByDistance.sqf
-	//diag_log format["6. DEBUG Common_SortByDistance.sqf CALLED BY Common_GetClosestLocationBySide.sqf"];
+	diag_log format["6. DEBUG Common_SortByDistance.sqf CALLED BY Common_GetClosestLocationBySide.sqf"]; 
 
 	_nearests = [_object,_enemyTowns] Call SortByDistance;
 	if (_cvar != "") then {

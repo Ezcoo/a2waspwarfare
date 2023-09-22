@@ -61,7 +61,7 @@ while{!_end}do{
 		_buildings = (_WestBaseStructures) + (_EastBaseStructures) + [_EastMHQ,_WestMHQ];
 
 		// Marty : debugging Common_SortByDistance.sqf
-		//diag_log format["7.0. DEBUG Common_SortByDistance.sqf CALLED BY res_team.sqf"];
+		diag_log format["7.0. DEBUG Common_SortByDistance.sqf CALLED BY res_team.sqf"]; 
 		//diag_log format[ "7.1. DEBUG res_team.sqf _buildings = %1 | type = %2", _buildings, typeName _buildings ];
 		//diag_log format[ "7.2. DEBUG res_team.sqf _barrack = %1 | type = %2", _barrack, typeName _barrack ];
 		

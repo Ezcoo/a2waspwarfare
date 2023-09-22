@@ -486,7 +486,7 @@ switch (missionNamespace getVariable "WFBE_C_STRUCTURES_COLLIDING") do {
                		if (count _strs == 0) exitWith {};
 
 				// Marty : debugging Common_SortByDistance.sqf
-				//diag_log format["4. DEBUG Common_SortByDistance.sqf CALLED BY Init_Client.sqf"];
+				diag_log format["4. DEBUG Common_SortByDistance.sqf CALLED BY Init_Client.sqf"]; 
 					
                 	_sort = [_preview,_strs] Call SortByDistance;
                 	_building = _sort select 0;
@@ -514,7 +514,7 @@ switch (missionNamespace getVariable "WFBE_C_STRUCTURES_COLLIDING") do {
 				if (count _factories == 0) exitWith {};
 
 				// Marty : debugging Common_SortByDistance.sqf
-				//diag_log format["5. DEBUG Common_SortByDistance.sqf CALLED BY Init_Client.sqf"];
+				diag_log format["5. DEBUG Common_SortByDistance.sqf CALLED BY Init_Client.sqf"]; 
 
                 _sorted = [_preview,_factories] Call SortByDistance;
                 _factory = _sorted select 0;
