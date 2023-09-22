@@ -34,14 +34,14 @@ class inboundMissileGround {
 class ICBM_message_to_enemy_players
 	{
 		name	= "ICBM_message_to_enemy_players";
-		sound[]	= {"\Sounds\warning_Enemy_ICBM_v2.ogg", db - 100, 1.0};
+		sound[]	= {"\Sounds\warning_Enemy_ICBM_v2.ogg", 1.0, 1.0};
 		titles[] = {};
 	};
 
 class ICBM_message_to_friendly_players
 	{
 		name	= "ICBM_message_to_friendly_players";
-		sound[]	= {"\Sounds\warning_Friendly_ICBM_v2.ogg", db - 100, 1.0};
+		sound[]	= {"\Sounds\warning_Friendly_ICBM_v2.ogg", 1.0, 1.0};
 		titles[] = {};
 	};
 

@@ -217,6 +217,10 @@ while {alive player && dialog} do {
 			default {
 				_buildings = (sideJoined) Call WFBE_CO_FNC_GetSideStructures;
 				_factories = [sideJoined,missionNamespace getVariable Format ['WFBE_%1%2TYPE',sideJoinedText,_type],_buildings] Call GetFactories;
+				
+				// Marty : debugging Common_SortByDistance.sqf
+				diag_log format["3. DEBUG Common_SortByDistance.sqf CALLED BY GUI_Menu_BuyUnits.sqf"]; 
+
 				_sorted = [vehicle player,_factories] Call SortByDistance;
 				_closest = _sorted select 0;
 				_countAlive = count _factories;
