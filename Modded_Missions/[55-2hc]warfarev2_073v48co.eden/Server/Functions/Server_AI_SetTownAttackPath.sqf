@@ -34,7 +34,7 @@ if (_wp_origin distance _wp_dest > _distance_node) then {
 	};
 
 	// Marty : debugging Common_SortByDistance.sqf
-	diag_log format["11. DEBUG Common_SortByDistance.sqf CALLED BY Server_AI_SetTownAttackPath.sqf"]; 
+	//diag_log format["11. DEBUG Common_SortByDistance.sqf CALLED BY Server_AI_SetTownAttackPath.sqf"];
 
 	_nodes_a = [_wp_origin, _nodes_a] Call WFBE_CO_FNC_SortByDistance;
 	_max_hops = (missionNamespace getVariable "WFBE_C_AI_TOWN_ATTACK_HOPS_WP")-2;
@@ -67,7 +67,7 @@ if (_wp_origin distance _wp_dest > _distance_node) then {
 		_nodes_a set [0, false];_nodes_a = _nodes_a - [false];
 
 	// Marty : debugging Common_SortByDistance.sqf
-	diag_log format["12. DEBUG Common_SortByDistance.sqf CALLED BY Server_AI_SetTownAttackPath.sqf"]; 
+	//diag_log format["12. DEBUG Common_SortByDistance.sqf CALLED BY Server_AI_SetTownAttackPath.sqf"];
 
 		_nodes_a = [_select, _nodes_a] Call WFBE_CO_FNC_SortByDistance;
 		if !([_select, _nodes_a select 0, 10] Call WFBE_SE_FNC_AI_SetTownAttackPath_PathIsSafe) exitWith {};
@@ -90,7 +90,7 @@ if (random 100 > 50) then {
 		_camps = _town_assigned getVariable "camps";
 
 	// Marty : debugging Common_SortByDistance.sqf
-	diag_log format["13. DEBUG Common_SortByDistance.sqf CALLED BY Server_AI_SetTownAttackPath.sqf"]; 
+	//diag_log format["13. DEBUG Common_SortByDistance.sqf CALLED BY Server_AI_SetTownAttackPath.sqf"];
 
 		_camps = [_select, _camps] Call WFBE_CO_FNC_SortByDistance;
 		_behaviour = ["AWARE","","VEE","NORMAL"];

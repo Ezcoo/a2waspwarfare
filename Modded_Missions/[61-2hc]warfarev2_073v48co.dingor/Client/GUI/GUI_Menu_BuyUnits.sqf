@@ -219,7 +219,7 @@ while {alive player && dialog} do {
 				_factories = [sideJoined,missionNamespace getVariable Format ['WFBE_%1%2TYPE',sideJoinedText,_type],_buildings] Call GetFactories;
 				
 				// Marty : debugging Common_SortByDistance.sqf
-				diag_log format["3. DEBUG Common_SortByDistance.sqf CALLED BY GUI_Menu_BuyUnits.sqf"]; 
+				//diag_log format["3. DEBUG Common_SortByDistance.sqf CALLED BY GUI_Menu_BuyUnits.sqf"];
 
 				_sorted = [vehicle player,_factories] Call SortByDistance;
 				_closest = _sorted select 0;
