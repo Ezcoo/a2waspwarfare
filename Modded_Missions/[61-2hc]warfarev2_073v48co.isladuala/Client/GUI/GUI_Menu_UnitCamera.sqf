@@ -1,13 +1,22 @@
+/*
+ Original author: 	Benny?
+ Contributors : 	Marty
+*/
+
 disableSerialization;
 _display = _this select 0;
 MenuAction = -1;
 mouseButtonUp = -1;
+WF_MenuAction = -1; 
 
 _cameraModes = ["Internal","External","Gunner","Group"];
 
 _n = 1;
 {lbAdd[21002,Format["[%1] %2",_n,name (leader _x)]];_n = _n + 1} forEach clientTeams;
-_id = clientTeams find playerTeam;
+
+_player_group = group player; 
+_id = clientTeams find _player_group; 
+
 lbSetCurSel[21002,_id];
 _currentUnit = (player) Call GetUnitVehicle;
 _currentMode = "Internal";

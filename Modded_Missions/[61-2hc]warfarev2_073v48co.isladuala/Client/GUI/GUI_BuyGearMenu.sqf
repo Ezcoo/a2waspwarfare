@@ -399,11 +399,19 @@ while {true} do {
 		_ui_lnb_currow = lnbCurSelRow _lb_main;
 		if (_ui_lnb_currow > -1) then {
 			_item_selected = lnbData[_lb_main,[_ui_lnb_currow, 0]];
-			_get = missionNamespace getVariable _item_selected;
-			if ((_get select 4) in [0,1,2,3,4]) then {
-				lnbClear _lb_secondary;
-				[_lb_secondary, [[_get select 6, "Mag_"]]] Call WFBE_CL_FNC_UI_Gear_FillList;
+
+			if !isNil(_item_selected) then // Marty : test to avoid the weird bug when the player select a template in the gear list. 
+			{
+				_get = missionNamespace getVariable _item_selected;
+
+				if ((_get select 4) in [0,1,2,3,4]) then {
+					lnbClear _lb_secondary;
+					[_lb_secondary, [[_get select 6, "Mag_"]]] Call WFBE_CL_FNC_UI_Gear_FillList;
+				};
+
 			};
+
+
 		};
 	};
 

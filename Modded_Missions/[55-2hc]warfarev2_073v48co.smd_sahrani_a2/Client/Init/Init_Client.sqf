@@ -484,6 +484,10 @@ switch (missionNamespace getVariable "WFBE_C_STRUCTURES_COLLIDING") do {
                 	Private["_building","_sort","_strs","_lax","_lay"];
                 	_strs = ((position _preview) nearObjects ["House",25]) - [_preview];
                		if (count _strs == 0) exitWith {};
+
+				// Marty : debugging Common_SortByDistance.sqf
+				//diag_log format["4. DEBUG Common_SortByDistance.sqf CALLED BY Init_Client.sqf"];
+					
                 	_sort = [_preview,_strs] Call SortByDistance;
                 	_building = _sort select 0;
                 	_lax=((boundingBox _building) select 1) select 0;
@@ -508,6 +512,10 @@ switch (missionNamespace getVariable "WFBE_C_STRUCTURES_COLLIDING") do {
 				if ((count _entities > 0) && {side _x != sideJoined} count _entities !=0) then {_color = _colorRed};
                 _factories =	 nearestObjects[_preview,["Warfare_HQ_base_unfolded","WarfareBBaseStructure","Base_WarfareBContructionSite"],25];
 				if (count _factories == 0) exitWith {};
+
+				// Marty : debugging Common_SortByDistance.sqf
+				//diag_log format["5. DEBUG Common_SortByDistance.sqf CALLED BY Init_Client.sqf"];
+
                 _sorted = [_preview,_factories] Call SortByDistance;
                 _factory = _sorted select 0;
                 _type=typeOf _factory;

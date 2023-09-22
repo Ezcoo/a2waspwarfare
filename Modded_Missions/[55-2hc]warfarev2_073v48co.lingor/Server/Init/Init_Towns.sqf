@@ -13,6 +13,9 @@ switch (missionNamespace getVariable "WFBE_C_TOWNS_STARTING_MODE") do {
 		_nearTownsW = [];
 		_nearTownsE = [];
 		
+		// Marty : debugging Common_SortByDistance.sqf
+		//diag_log format["8. DEBUG Common_SortByDistance.sqf CALLED BY Init_Towns.sqf"];
+
 		_near = [_wStart,towns] Call SortByDistance;
 		if (count _near > 0) then {
 			for [{_z = 0},{_z < _half},{_z = _z + 1}] do {_nearTownsW = _nearTownsW + [_near select _z]};
@@ -41,11 +44,18 @@ switch (missionNamespace getVariable "WFBE_C_TOWNS_STARTING_MODE") do {
 		_nearTownsW = [];
 		_nearTownsE = [];
 		
+
+		// Marty : debugging Common_SortByDistance.sqf
+		//diag_log format["9. DEBUG Common_SortByDistance.sqf CALLED BY Init_Towns.sqf"];
+
 		_near = [_wStart,towns] Call SortByDistance;
 		if (count _near > 0) then {
 			for [{_z = 0},{_z < _limit},{_z = _z + 1}] do {_nearTownsW = _nearTownsW + [_near select _z]};
 		};
 		
+		// Marty : debugging Common_SortByDistance.sqf
+		//diag_log format["10. DEBUG Common_SortByDistance.sqf CALLED BY Init_Towns.sqf"];
+
 		_near = [_eStart,(towns - _nearTownsW)] Call SortByDistance;
 		if (count _near > 0) then {
 			for [{_z = 0},{_z < _limit},{_z = _z + 1}] do {_nearTownsE = _nearTownsE + [_near select _z]};
