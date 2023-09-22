@@ -18,7 +18,15 @@ for '_i' from 0 to count(_objects)-1 do {
 
 	for '_j' from count(_objects)-1 to 0 step -1 do {
 		_current = _objects select _j;
+		
+		// Marty : debugging Common_SortByDistance.sqf
+		//diag_log format[ "DEBUG Common_SortByDistance.sqf _current = %1 | type = %2", _current, typeName _current ]; // Marty debugging.
+		//diag_log format[ "DEBUG Common_SortByDistance.sqf _object = %1 | type = %2", _object, typeName _object ]; // Marty debugging.
+
 		_distance = _current distance _object;
+
+		//diag_log format[ "DEBUG Common_SortByDistance.sqf _distance = %1 | type = %2", _distance, typeName _distance ]; // Marty debugging.
+		
 		if (_distance < _nearestDistance) then {_nearest = _current;_nearestDistance = _distance;_index = _j};
 	};
 

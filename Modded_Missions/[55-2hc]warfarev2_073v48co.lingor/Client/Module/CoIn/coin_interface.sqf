@@ -627,7 +627,9 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 			};
 
 			//--- Place
-			if (!_new && !isnull _preview && ((BIS_CONTROL_CAM_LMB && 65536 in (actionKeys "DefaultAction")) || {_x in (actionKeys "DefaultAction")} count BIS_CONTROL_CAM_keys > 0) && _color == _colorGreen) then {
+			// Marty: bug fix, replacing isnull by isNil :
+			//if (!_new && !isnull _preview && ((BIS_CONTROL_CAM_LMB && 65536 in (actionKeys "DefaultAction")) || {_x in (actionKeys "DefaultAction")} count BIS_CONTROL_CAM_keys > 0) && _color == _colorGreen) then {
+			if (!_new && !isNil "_preview" && ((BIS_CONTROL_CAM_LMB && 65536 in (actionKeys "DefaultAction")) || {_x in (actionKeys "DefaultAction")} count BIS_CONTROL_CAM_keys > 0) && _color == _colorGreen) then {
 				_pos = position _preview;
 				_dir = direction _preview;
 				deleteVehicle _preview;
@@ -742,68 +744,71 @@ while {!isNil "BIS_CONTROL_CAM"} do {
 		};
 
 		_oldTooltip = _logic getVariable "BIS_COIN_tooltip";
-		if ((_tooltipType + _tooltip) != _oldTooltip || commandingMenu != _oldMenu || _logic getVariable "WF_RequestUpdate") then {
-			_logic setVariable ["WF_RequestUpdate",false];
+		if (!isNil "_oldTooltip") then // Marty : fix bug
+		{
+			if ((_tooltipType + _tooltip) != _oldTooltip || commandingMenu != _oldMenu || _logic getVariable "WF_RequestUpdate") then {
+				_logic setVariable ["WF_RequestUpdate",false];
 
-			//--- Description
-			_type = _tooltip;
+				//--- Description
+				_type = _tooltip;
 
-			//--- Header & preview picture
-			_textHeader = "<t size='1.2'><br /></t>";
-			_textPicture = "<t size='2.8'><br /></t><br /><br />";
-			_fileIcon = getText (configFile >> "cfgvehicles" >> _type >> "icon");
-			if (str(configFile >> "CfgVehicleIcons" >> _fileIcon) != "") then {_fileIcon = getText (configFile >> "CfgVehicleIcons" >> _fileIcon)};
-			_filePicture = getText (configFile >> "cfgvehicles" >> _type >> "picture");
-			if (str(configFile >> "CfgVehicleIcons" >> _filePicture) != "") then {_filePicture = getText (configFile >> "CfgVehicleIcons" >> _filePicture)};
+				//--- Header & preview picture
+				_textHeader = "<t size='1.2'><br /></t>";
+				_textPicture = "<t size='2.8'><br /></t><br /><br />";
+				_fileIcon = getText (configFile >> "cfgvehicles" >> _type >> "icon");
+				if (str(configFile >> "CfgVehicleIcons" >> _fileIcon) != "") then {_fileIcon = getText (configFile >> "CfgVehicleIcons" >> _fileIcon)};
+				_filePicture = getText (configFile >> "cfgvehicles" >> _type >> "picture");
+				if (str(configFile >> "CfgVehicleIcons" >> _filePicture) != "") then {_filePicture = getText (configFile >> "CfgVehicleIcons" >> _filePicture)};
 
-			if (_tooltipType != "empty") then {
-				_textHeader = format ["<t color='#42b6ff' shadow='1' align='center' size='1.8'> %1 </t><br />",
-					getText (configFile >> "cfgvehicles" >> _type >> "displayname"),
-					if (isnull _selected) then {""} else {str round ((1 - damage _selected) * 100) + "%"}
-				];
-				_textPicture = format ["<t color='#42b6ff' shadow='2' align='left' size='2.8'><img image='%1'/></t> ",_filePicture];
+				if (_tooltipType != "empty") then {
+					_textHeader = format ["<t color='#42b6ff' shadow='1' align='center' size='1.8'> %1 </t><br />",
+						getText (configFile >> "cfgvehicles" >> _type >> "displayname"),
+						if (isnull _selected) then {""} else {str round ((1 - damage _selected) * 100) + "%"}
+					];
+					_textPicture = format ["<t color='#42b6ff' shadow='2' align='left' size='2.8'><img image='%1'/></t> ",_filePicture];
+				};
+
+				_text1 = if (count _params > 0) then {"<t color='#42b6ff' shadow='2'>" + localize "str_coin_rotate" + "<t align='right'>" + call compile (keyname 29) + "</t></t><br />"} else {"<br />"};
+
+				_status = if (manningDefense) then {localize "STR_WF_On"} else {localize "STR_WF_Off"};
+				_text2 = if (count _params > 0) then {"<t color='#42b6ff' shadow='2'>" + localize "str_coin_build" + "<t align='right'>" + call compile (actionKeysNames ["DefaultAction",1]) + "</t></t><br />"} else {"<t color='#42b6ff' shadow='2'>" + localize "STR_WF_AutoDefense" + ":<t align='right'>" + _status + "</t></t><br />"};
+
+				_text3 = if (commandingMenu != "#USER:BIS_Coin_categories_0") then {
+					//--- Back hint
+					if (isNil "BIS_Coin_noExit") then {
+						"<t color='#eee544' shadow='2'>" + localize "str_coin_back" + "<t align='right'>" + call compile (actionKeysNames ["MenuBack",1]) + "</t></t>";
+					} else {""};
+				} else {
+					//--- Exit hint
+					if (isNil "BIS_Coin_noExit") then {
+						"<t color='#eee544' shadow='2'>" + localize "str_coin_exit" + "<t align='right'>" + call compile (actionKeysNames ["MenuBack",1]) + "</t></t>";
+					} else {""};
+				};
+
+				//--- Compose text
+				_textHint = (
+					_textPicture +
+					_textHeader +
+					""
+				);
+
+				_textControls = (
+					_text1 +
+					_text2 +
+					_text3 +
+					""
+				);
+
+				//--- Set box
+				((uiNamespace getVariable "wfbe_title_coin") displayCtrl 112211) ctrlShow true;
+				((uiNamespace getVariable "wfbe_title_coin") displayCtrl 112211) ctrlCommit 0;
+				((uiNamespace getVariable "wfbe_title_coin") displayCtrl 112214) ctrlSetStructuredText (parseText _textHint);
+				((uiNamespace getVariable "wfbe_title_coin") displayCtrl 112214) ctrlShow true;
+				((uiNamespace getVariable "wfbe_title_coin") displayCtrl 112214) ctrlCommit 0;
+				((uiNamespace getVariable "wfbe_title_coin") displayCtrl 112215) ctrlSetStructuredText (parseText _textControls);
+				((uiNamespace getVariable "wfbe_title_coin") displayCtrl 112215) ctrlShow true;
+				((uiNamespace getVariable "wfbe_title_coin") displayCtrl 112215) ctrlCommit 0;
 			};
-
-			_text1 = if (count _params > 0) then {"<t color='#42b6ff' shadow='2'>" + localize "str_coin_rotate" + "<t align='right'>" + call compile (keyname 29) + "</t></t><br />"} else {"<br />"};
-
-			_status = if (manningDefense) then {localize "STR_WF_On"} else {localize "STR_WF_Off"};
-			_text2 = if (count _params > 0) then {"<t color='#42b6ff' shadow='2'>" + localize "str_coin_build" + "<t align='right'>" + call compile (actionKeysNames ["DefaultAction",1]) + "</t></t><br />"} else {"<t color='#42b6ff' shadow='2'>" + localize "STR_WF_AutoDefense" + ":<t align='right'>" + _status + "</t></t><br />"};
-
-			_text3 = if (commandingMenu != "#USER:BIS_Coin_categories_0") then {
-				//--- Back hint
-				if (isNil "BIS_Coin_noExit") then {
-					"<t color='#eee544' shadow='2'>" + localize "str_coin_back" + "<t align='right'>" + call compile (actionKeysNames ["MenuBack",1]) + "</t></t>";
-				} else {""};
-			} else {
-				//--- Exit hint
-				if (isNil "BIS_Coin_noExit") then {
-					"<t color='#eee544' shadow='2'>" + localize "str_coin_exit" + "<t align='right'>" + call compile (actionKeysNames ["MenuBack",1]) + "</t></t>";
-				} else {""};
-			};
-
-			//--- Compose text
-			_textHint = (
-			 	_textPicture +
-				_textHeader +
-				""
-			);
-
-			_textControls = (
-				_text1 +
-				_text2 +
-				_text3 +
-				""
-			);
-
-			//--- Set box
-			((uiNamespace getVariable "wfbe_title_coin") displayCtrl 112211) ctrlShow true;
-			((uiNamespace getVariable "wfbe_title_coin") displayCtrl 112211) ctrlCommit 0;
-			((uiNamespace getVariable "wfbe_title_coin") displayCtrl 112214) ctrlSetStructuredText (parseText _textHint);
-			((uiNamespace getVariable "wfbe_title_coin") displayCtrl 112214) ctrlShow true;
-			((uiNamespace getVariable "wfbe_title_coin") displayCtrl 112214) ctrlCommit 0;
-			((uiNamespace getVariable "wfbe_title_coin") displayCtrl 112215) ctrlSetStructuredText (parseText _textControls);
-			((uiNamespace getVariable "wfbe_title_coin") displayCtrl 112215) ctrlShow true;
-			((uiNamespace getVariable "wfbe_title_coin") displayCtrl 112215) ctrlCommit 0;
 		};
 
 		//--- Amount of funds changed
