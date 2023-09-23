@@ -8,10 +8,12 @@
         base.vanillaGameDefaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.EIGHTROUNDHELLFIRE, 2},
+                { AmmunitionType.SIXTYROUNDCMFLAREMAGAZINE, 2},
             };
         base.defaultLoadout.AmmunitionTypesWithCount = new Dictionary<AmmunitionType, int>
             {
                 { AmmunitionType.EIGHTROUNDHELLFIRE, 2},
+                { AmmunitionType.SIXTYROUNDCMFLAREMAGAZINE, 4},
             };
 
         allowedAmmunitionTypesWithTheirLimitationAmount = new Dictionary<AmmunitionType, int>
