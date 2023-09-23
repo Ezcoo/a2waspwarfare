@@ -19,7 +19,7 @@ if (count _units < 1 || _type < 0) exitWith {};
 _marker_name 	= format["ARTY_%1", diag_tickTime];
 _markerPosition = _destination;
 _markerType		= "Warning";
-_markerText 	= format[" ARTY called by %1", name player];
+_markerText 	= format["ARTY [%1]", name player];
 _markerColor	= "ColorRed";
 _markerSide		= playerSide;
 
