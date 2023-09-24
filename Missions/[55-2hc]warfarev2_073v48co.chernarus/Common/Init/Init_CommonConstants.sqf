@@ -85,7 +85,14 @@ with missionNamespace do {
 	WFBE_C_ARTILLERY_AMMO_RANGE_LASER = 175; //--- Artillery laser rounds detection range (Per Shell).
 	WFBE_C_ARTILLERY_AMMO_RANGE_SADARM = 200; //--- Artillery SADARM rounds operative range (Per Shell).
 	WFBE_C_ARTILLERY_AREA_MAX = 300; //---  Maximum spread area of artillery support.
-	WFBE_C_ARTILLERY_INTERVALS = [400, 350, 300, 250]; //--- Delay between each fire mission for each upgrades.
+	if WF_Debug then 
+	{
+		WFBE_C_ARTILLERY_INTERVALS = [15, 15, 15, 15]; // In debug mod, arty reload is set to 15 seconds.
+	} else 
+	{
+		WFBE_C_ARTILLERY_INTERVALS = [400, 350, 300, 250]; //--- Delay between each fire mission for each upgrades.
+	};
+	
 
 	//--- Base
 	if (isNil "WFBE_C_BASE_AREA") then {WFBE_C_BASE_AREA = 2}; //--- Force the bases to be grouped by areas.
