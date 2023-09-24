@@ -18,8 +18,8 @@ if (count _units < 1 || _type < 0) exitWith {};
 //Marty : add artillery marker on map with the player name who call it
 _marker_name 	= format["ARTY_%1", diag_tickTime];
 _markerPosition = _destination;
-_markerType		= "Warning";
-_markerText 	= format[" ARTY called by %1", name player];
+_markerType		= "Destroy";
+_markerText 	= format["ARTY [%1]", name player];
 _markerColor	= "ColorRed";
 _markerSide		= playerSide;
 
