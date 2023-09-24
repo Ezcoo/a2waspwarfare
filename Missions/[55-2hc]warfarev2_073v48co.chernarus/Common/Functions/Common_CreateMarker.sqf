@@ -2,27 +2,37 @@
 	Original Author: Marty
 	Name: Common_CreateMarker.sqf
 	Parameters:
-	0 - _markerName : string - correspond to the name of the marker to create.
-	1 - _position	: array or position object - correspond to the coordinates of the marker position
-	2 - _markerType : string - the marker type shape. See cfgMarkers on wiki offcial dans check the list.
-	3 - _markerText : string - the text label that will be displayed on map.
-	4 - _markerColor: string - marker color name. See CfgMarkerColors on wiki official to check the list.
-	5 - _side_who_see_marker - side object - can be east or west.
+	0 - _markerName 			: string - correspond to the name of the marker to create.
+	1 - _markerObject			: array or object - if array, it correspond to the coordinates of the marker position, if object it correspond to the object we want to determine its position itself
+	2 - _markerType 			: string - the marker type shape. See cfgMarkers on wiki offcial dans check the list.
+	3 - _markerText 			: string - the text label that will be displayed on map.
+	4 - _markerColor			: string - marker color name. See CfgMarkerColors on wiki official to check the list.
+	5 - _side_who_see_marker 	: side object - can be east or west.
 
 	Description: This function is meant to create a marker only visible for specific side (west or east).
 	    
 */
+private["_markerPosition"];
 
 // Extract the value from the array to get specific infos for the marker creation :
 _markerName 	= _this select 0;
-_markerPosition	= _this select 1;
+_markerObject	= _this select 1;
 _markerType		= _this select 2;
 _markerText		= _this select 3;
 _markerColor	= _this select 4;
 _side_who_see_marker = _this select 5;
 
+// We handle if the argument sent in _markerObject is a type "OBJECT" corresponding to the object that we want to know its position, or if we get directly the position as an "ARRAY" type coordinates.
+if (typeName _markerObject == "OBJECT") then 
+{
+	_markerPosition = getPos _markerObject;
+} else 
+{
+	_markerPosition = _markerObject ;
+};
+
 // We need to create a global marker and not a local one, because it must be visible on others clients and also to clients who are not already online ! At this point the marker is still not visible and we'll decide later who can see it selectively.
-_markerName = createMarker [_markerName, _markerPosition]; 
+_markerName = createMarker [_markerName, _markerObject]; 
 
 if (playerSide == _side_who_see_marker) then 
 {
@@ -30,7 +40,15 @@ if (playerSide == _side_who_see_marker) then
 	_markerName setMarkerTypeLocal _markerType; // this make visible the marker at this point.
 	_markerName setMarkerTextLocal _markerText;
 	_markerName setMarkerColorLocal _markerColor;	
+
+	// Update the marker position if the object moves :
+	if (typeName _markerObject == "OBJECT") then 
+	{		
+		[_markerObject, _markerName]  call WF_UpdateMarker;
+	};
+
 };
+
 
 _MARKER_infos =  _this ; // get the array containing all the value given during the call of the function.
 
