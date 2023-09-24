@@ -37,7 +37,7 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_COSTS", _side], [
 	[[500,0],[1500,0]], //--- Respawn Range
 	[[1000,0]], //--- Airlift
 	[[4500,0]], //--- Custom Flares
-	[[1000,0],[1800,0],[3300,0],[5900,0],[10700,0],[19400,0],[35000,0]], //--- Artillery Time
+	[[800,0],[1400,0],[2200,0],[3700,0],[6100,0],[10000,0]], //--- Artillery Time
 	[[50000,80000]], //--- ICBM
 	[[1500,0]], //--- Fast Travel
 	[[250,0],[650,0],[1200,0],[2100,0],[2400,0]], //--- Gear
@@ -61,7 +61,7 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LEVELS", _side], [
 	2, //--- Respawn Range
 	1, //--- Airlift
 	1, //--- Custom Flares
-	7, //--- Artillery Time
+	6, //--- Artillery Time
 	1, //--- ICBM
 	1, //--- Fast Travel
 	5, //--- Gear
@@ -89,7 +89,7 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_LINKS", _side], [
 	[[WFBE_UP_LIGHT,1],[],[]], //--- Respawn Range
 	[[WFBE_UP_AIR,1]], //--- Airlift
 	[[WFBE_UP_AIR,2]], //--- Custom Flares
-    [[],[],[],[],[],[],[]], //--- Artillery Time
+    [[],[],[],[],[],[]], //--- Artillery Time
 	[[WFBE_UP_AIR,5]], //--- ICBM
 	[
 		[[WFBE_UP_LIGHT,1],[WFBE_UP_SUPPLYRATE,1]]
@@ -119,7 +119,7 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_TIMES", _side], [
 	[30,60,90], //--- Respawn Range
 	[45], //--- Airlift
 	[100], //--- Custom Flares
-	[40, 70, 100, 130, 160, 190, 220], //--- Artillery Time
+	[40, 70, 100, 130, 160, 190], //--- Artillery Time
 	[300], //--- ICBM
 	[60], //--- Fast Travel
 	[25,50,75,100,125], //--- Gear
