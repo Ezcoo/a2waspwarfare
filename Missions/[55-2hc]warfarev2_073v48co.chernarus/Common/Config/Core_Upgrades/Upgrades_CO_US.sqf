@@ -117,7 +117,7 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_TIMES", _side], [
 	[60], //--- UAV
 	[60,80,120], //--- Supply
 	[30,60,90], //--- Respawn Range
-	[45], //--- Airlift
+	[30], //--- Airlift
 	[100], //--- Custom Flares
 	[40, 70, 100, 130, 160, 190], //--- Artillery Time
 	[300], //--- ICBM
