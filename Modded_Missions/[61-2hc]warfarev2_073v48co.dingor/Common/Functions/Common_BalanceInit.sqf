@@ -138,26 +138,17 @@ case "Mi24_D_CZ_ACR": {
 // AH-64D (TOW) [AF3] - 4 pylons
 case "AH64D": {
     _this removeMagazine "8Rnd_Hellfire";
-    _this removeMagazine "60Rnd_CMFlareMagazine";
     _this removeWeapon "HellfireLauncher";
     _this addMagazine "6Rnd_TOW2";
-    _this addMagazine "60Rnd_CMFlareMagazine";
-    _this addMagazine "60Rnd_CMFlareMagazine";
     _this addWeapon "TOWLauncherSingle";
 };
 
 // AH-64D (Hellfire) [AF4] - 4 pylons
 case "AH64D_EP1": {
-    _this removeMagazine "60Rnd_CMFlareMagazine";
-    _this addMagazine "60Rnd_CMFlareMagazine";
-    _this addMagazine "60Rnd_CMFlareMagazine";
 };
 
 // Apache AH1 [AF4] - 4 pylons
 case "BAF_Apache_AH1_D": {
-    _this removeMagazine "60Rnd_CMFlareMagazine";
-    _this addMagazine "60Rnd_CMFlareMagazine";
-    _this addMagazine "60Rnd_CMFlareMagazine";
 };
 
 // AH-1Z [AF5] - 4 pylons
