@@ -38,7 +38,7 @@ missionNamespace setVariable [Format["WFBE_C_UPGRADES_%1_COSTS", _side], [
 	[[1000,0]], //--- Airlift
 	[[4500,0]], //--- Custom Flares
 	[[2000,0],[2500,0],[3500,0]], //--- Artillery Time
-	[[50000,80000]], //--- ICBM
+	[[49500,80000]], //--- ICBM
 	[[1500,0]], //--- Fast Travel
 	[[250,0],[650,0],[1200,0],[2100,0],[2400,0]], //--- Gear
 	[[750,0]], //--- Build Ammo
