@@ -32,8 +32,6 @@ _bounty = switch  (true) do {
 
 };
 
-["DEBUG (Paratroops)", Format ["%1 | %2 | %3 | %4 | %5 | %6 ", _type, _assist, _ai, _get, _name, _bounty]] Call WFBE_CO_FNC_LogContent;
-
 sleep (random 3);
 
 //--- Are we dealing with a kill assist or a full kill.
