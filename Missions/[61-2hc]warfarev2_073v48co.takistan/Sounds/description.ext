@@ -58,6 +58,12 @@ class ARTY_message_to_friendly_russian_v1
 		sound[]	= {"\Sounds\ARTY_warning_Friendly_message_russian_v1.ogg", 10, 1.0};
 		titles[] = {};
 	};
+class ARTY_cooldown_over
+	{
+		name	= "ARTY_cooldown_over";
+		sound[]	= {"Sounds\ARTY_cooldown_over.ogg", 1.0, 1.0};
+		titles[] = {};
+	};
 class ARTY_message_to_friendly_takistanish_v1
 	{
 		name	= "ARTY_message_to_friendly_takistanish_v1";
