@@ -56,6 +56,8 @@ _is_multi_language_message = true ;
     };
 
     _text_when_arty_ready_again = localize "STR_WF_INFO_Arty_cool_down_over";
-    hint _text_when_arty_ready_again ;
+    //hint _text_when_arty_ready_again ;
+    titleText [_text_when_arty_ready_again, "PLAIN DOWN", 2];
+    playSound "ARTY_cooldown_over";
 
 };
