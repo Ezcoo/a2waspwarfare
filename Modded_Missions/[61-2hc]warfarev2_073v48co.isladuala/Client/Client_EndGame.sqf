@@ -22,19 +22,11 @@ _track = [];
 		_logik = (_x) Call WFBE_CO_FNC_GetSideLogic;
 		_hq = _logik getVariable "wfbe_hq";
 		_track_hq = _track_hq + [_hq];
-
-		// Marty : debugging Common_SortByDistance.sqf
-		//diag_log format["1. DEBUG Common_SortByDistance.sqf CALLED BY Client_EndGame.sqf"];
-
 		_track = _track + ([_hq, (_x) Call WFBE_CO_FNC_GetSideStructures] Call SortByDistance);
 	};
 } forEach ([west,east,resistance] - [_side]);
 
 _hq = (_side) Call WFBE_CO_FNC_GetSideHQ;
-		
-// Marty : debugging Common_SortByDistance.sqf
-//diag_log format["2. DEBUG Common_SortByDistance.sqf CALLED BY Client_EndGame.sqf"];
-
 _blist = [_hq] + _track_hq + ([_hq, (_side) Call WFBE_CO_FNC_GetSideStructures] Call SortByDistance) + _track;
 
 // _base = WestMHQ;
