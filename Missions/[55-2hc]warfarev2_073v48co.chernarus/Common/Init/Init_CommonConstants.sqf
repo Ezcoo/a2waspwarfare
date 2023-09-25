@@ -87,7 +87,7 @@ with missionNamespace do {
 	WFBE_C_ARTILLERY_AREA_MAX = 300; //---  Maximum spread area of artillery support.
 	if WF_Debug then 
 	{
-		WFBE_C_ARTILLERY_INTERVALS = [15, 15, 15, 15]; // In debug mod, arty reload is set to 15 seconds.
+		WFBE_C_ARTILLERY_INTERVALS = [15, 15, 15, 15, 15, 15, 15]; // In debug mod, arty reload is set to 15 seconds.
 	} else 
 	{
 		WFBE_C_ARTILLERY_INTERVALS = [500, 450, 400, 350, 300, 250, 200]; //--- Delay between each fire mission for each upgrades.
