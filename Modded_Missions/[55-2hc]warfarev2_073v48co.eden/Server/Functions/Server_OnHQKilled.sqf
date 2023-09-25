@@ -66,14 +66,73 @@ if (_side != side _killer) then
 
 // Marty : Marking HQ wreck on map 
 _marker_name 		= "HQ_WRECK_" + str(_side) ;
-//_marker_position 	= getPos _structure ;
-_marker_Object		=  _structure; 
+_marker_position 	= getPos _structure ;
 _markerType 		= "Flag";
 _markerText 		= "HQ WRECK must be repaired";
 _markerColor 		= "ColorRed";
 _markerSide			= _side;
 
-[_marker_name, _marker_Object, _markerType, _markerText, _markerColor, _markerSide] call WF_createMarker ;
+[_marker_name, _marker_position, _markerType, _markerText, _markerColor, _markerSide] call WF_createMarker ;
+
+// Marty : updating hq wreck mark in case of moron moving it for some reasons (very rare but some do it)
+if (_side == west) then 
+{
+	//diag_log format[ "1. DEBUG _side = %1 | type = %2", _side, typeName _side ];
+	//diag_log format[ "2. DEBUG _marker_name = %1 | type = %2", _marker_name, typeName _marker_name ];
+
+	//_IS_WEST_HQ_WRECK_ALIVE = false;
+	missionNamespace setVariable ["IS_WEST_HQ_WRECK_ALIVE", false];
+	publicVariable "IS_WEST_HQ_WRECK_ALIVE"; 
+
+	[_structure] spawn
+	{
+		_HQ_wreck = _this select 0;
+
+		sleep 2 ; //waiting for marker to be created 
+
+		_is_west_hq_wreck_alive =  missionNamespace getVariable "IS_WEST_HQ_WRECK_ALIVE";
+		//diag_log format[ "3. DEBUG _is_west_hq_wreck_alive = %1 | type = %2", _is_west_hq_wreck_alive, typeName _is_west_hq_wreck_alive ];
+
+		while {!_is_west_hq_wreck_alive} do
+		{
+			_marker_HQ_wreck_Position = getPos _HQ_wreck ;
+			"HQ_WRECK_WEST" setMarkerPos _marker_HQ_wreck_Position ;
+			_is_west_hq_wreck_alive =  missionNamespace getVariable "IS_WEST_HQ_WRECK_ALIVE";
+			sleep 1 ; // we can increase this value in order to reduce cpu usage if we want.
+		};
+		//diag_log format[ "4. DEBUG _is_west_hq_wreck_alive = %1 | type = %2", _is_west_hq_wreck_alive, typeName _is_west_hq_wreck_alive ];
+		
+	};
+
+};
+
+if (_side == east) then 
+{
+	//diag_log format[ "1. DEBUG _side = %1 | type = %2", _side, typeName _side ];
+	missionNamespace setVariable ["IS_EAST_HQ_WRECK_ALIVE", false];
+	publicVariable "IS_EAST_HQ_WRECK_ALIVE"; 
+
+	[_structure] spawn
+	{
+		_HQ_wreck = _this select 0;
+
+		sleep 2 ; //waiting for marker to be created 
+
+		_is_east_hq_wreck_alive =  missionNamespace getVariable "IS_EAST_HQ_WRECK_ALIVE";
+		//diag_log format[ "2. DEBUG _is_east_hq_wreck_alive = %1 | type = %2", _is_east_hq_wreck_alive, typeName _is_east_hq_wreck_alive ];
+
+		while {!_is_east_hq_wreck_alive} do
+		{
+			_marker_HQ_wreck_Position = getPos _HQ_wreck ;
+			"HQ_WRECK_EAST" setMarkerPos _marker_HQ_wreck_Position ;
+			_is_east_hq_wreck_alive =  missionNamespace getVariable "IS_EAST_HQ_WRECK_ALIVE";
+			sleep 1 ; // we can increase this value in order to reduce cpu usage if we want.
+		};
+		//diag_log format[ "3. DEBUG _is_west_hq_wreck_alive = %1 | type = %2", _is_west_hq_wreck_alive, typeName _is_west_hq_wreck_alive ];
+
+	};
+
+};
 
 ["INFORMATION", Format["Server_OnHQKilled.sqf : [%1] HQ [%2] has been destroyed by [%3], Teamkill? [%4], Side Teamkill? [%5]", _side, _structure_kind, name _killer, _teamkill, side _killer]] Call WFBE_CO_FNC_LogContent;
 

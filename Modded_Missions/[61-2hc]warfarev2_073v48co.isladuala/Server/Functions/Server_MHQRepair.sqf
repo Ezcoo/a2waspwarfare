@@ -56,4 +56,16 @@ deleteVehicle _hq;
 _marker_name = "HQ_WRECK_" + str(_side) ;
 [_marker_name, 0]call WFBE_CL_FNC_Delete_Marker;	
 
+if (_side == west) then 
+{
+	missionNamespace setVariable ["IS_WEST_HQ_WRECK_ALIVE", true];
+	publicVariable "IS_WEST_HQ_WRECK_ALIVE"; 
+};
+
+if (_side == east) then 
+{
+	missionNamespace setVariable ["IS_EAST_HQ_WRECK_ALIVE", true];
+	publicVariable "IS_EAST_HQ_WRECK_ALIVE"; 
+};
+
 ["INFORMATION", Format ["Server_MHQRepair.sqf: [%1] MHQ has been repaired.", _sideText]] Call WFBE_CO_FNC_LogContent;
