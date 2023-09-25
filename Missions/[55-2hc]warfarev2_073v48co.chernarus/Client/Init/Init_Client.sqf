@@ -484,10 +484,6 @@ switch (missionNamespace getVariable "WFBE_C_STRUCTURES_COLLIDING") do {
                 	Private["_building","_sort","_strs","_lax","_lay"];
                 	_strs = ((position _preview) nearObjects ["House",25]) - [_preview];
                		if (count _strs == 0) exitWith {};
-
-				// Marty : debugging Common_SortByDistance.sqf
-				//diag_log format["4. DEBUG Common_SortByDistance.sqf CALLED BY Init_Client.sqf"];
-					
                 	_sort = [_preview,_strs] Call SortByDistance;
                 	_building = _sort select 0;
                 	_lax=((boundingBox _building) select 1) select 0;
@@ -512,10 +508,6 @@ switch (missionNamespace getVariable "WFBE_C_STRUCTURES_COLLIDING") do {
 				if ((count _entities > 0) && {side _x != sideJoined} count _entities !=0) then {_color = _colorRed};
                 _factories =	 nearestObjects[_preview,["Warfare_HQ_base_unfolded","WarfareBBaseStructure","Base_WarfareBContructionSite"],25];
 				if (count _factories == 0) exitWith {};
-
-				// Marty : debugging Common_SortByDistance.sqf
-				//diag_log format["5. DEBUG Common_SortByDistance.sqf CALLED BY Init_Client.sqf"];
-
                 _sorted = [_preview,_factories] Call SortByDistance;
                 _factory = _sorted select 0;
                 _type=typeOf _factory;
@@ -621,7 +613,7 @@ sleep 3;
 
 /* Client death handler. */
 WFBE_PLAYERKEH = player addEventHandler ['Killed', {[_this select 0,_this select 1] Spawn WFBE_CL_FNC_OnKilled; [_this select 0,_this select 1, sideID] Spawn WFBE_CO_FNC_OnUnitKilled}];
-hint parseText "<t color='#ffff00'>v22092023<br/>MODPACK V9<br/>Full changelogs are available in our Discord!<br/><br/>Be sure to join it:<br/>discord.me/warfare<br/>or<br/>https://discord.gg/gRhPHUuWpy<br/><br/>Remember to read the rules at:<br/> https://pastebin.com/t2a4sbya<br/>Also @a2waspTerrainsv10 for the next 24.9's air mod event (with new mod vehicles) will be released later!<br/><br/>New players, check the Guides section for the #tips-and-tricks channel and read the #commanding-guide. More guides coming soon(tm). If you have any questions, don't hesitate to ask in the side chat preferably, or on our discord! <br/><br/>Veterans! Check the #game-status channel before joining the game, and balance the game accordingly (count other veterans per team and see the bot's message for the current score status of the match)!<br/><br/>As always, thanks to our contributors for helping me to develop the mission:<br/>An-2 is a good plane<br/>Quad<br/>0=1<br/>Cleinstein<br/>Jupiter<br/>Marty<br/><br/>Remember to check our discord every 1-2 weeks or so for new suggestions that we're voting on the #vote-suggestions channel (will @everyone ping for this). It will help us to prioritise things for development that the community wants! Thanks again, and have fun on the server! :)</t>";
+hint parseText "<t color='#ffff00'>v25092023<br/>MODPACK V9<br/>Full changelogs are available in our Discord!<br/><br/>Be sure to join it:<br/>discord.me/warfare<br/>or<br/>https://discord.gg/gRhPHUuWpy<br/><br/>Remember to read the rules at:<br/> https://pastebin.com/t2a4sbya<br/><br/>New players, check the Guides section for the #tips-and-tricks channel and read the #commanding-guide. More guides coming soon(tm). If you have any questions, don't hesitate to ask in the side chat preferably, or on our discord! <br/><br/>Veterans! Check the #game-status channel before joining the game, and balance the game accordingly (count other veterans per team and see the bot's message for the current score status of the match)!<br/><br/>As always, thanks to our contributors for helping me to develop the mission:<br/>An-2 is a good plane<br/>Quad<br/>0=1<br/>Cleinstein<br/>Jupiter<br/>Marty<br/><br/>Remember to check our discord every 1-2 weeks or so for new suggestions that we're voting on the #vote-suggestions channel (will @everyone ping for this). It will help us to prioritise things for development that the community wants! Thanks again, and have fun on the server! :)</t>";
 //--- Valhalla init.
 [] Spawn {
 	[] Call Compile preprocessFile "Client\Module\Valhalla\Init_Valhalla.sqf";

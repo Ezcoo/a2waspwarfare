@@ -3,9 +3,19 @@ scriptName "Client\GUI\GUI_TransferMenu.sqf";
 //--- Register the UI.
 uiNamespace setVariable ["wfbe_display_transfer", _this select 0];
 
+// Marty : Modifying the script in order to display only human player and not bots in the advanced fund transfer list :
+
+private ["_list_Players"];
+_list_Players = [];
+
 {
-	_name_leader = if (isNull leader _x) then {"No leader"} else {name leader _x};
-	lnbAddRow[505001, [Format ["$%1.",_x Call WFBE_CO_FNC_GetTeamFunds], _name_leader]];
+	if (isPlayer (leader _x)) then 
+	{
+		_list_Players = _list_Players + [_x] ;
+		_name_player = name (leader _x) ;
+		lnbAddRow[505001, [Format ["$%1.",_x Call WFBE_CO_FNC_GetTeamFunds], "   " ,_name_player]];
+	};
+
 } forEach WFBE_Client_Teams;
 
 _funds_last = -1;
@@ -21,11 +31,20 @@ while {alive player && dialog} do {
 
 	if (time - _last_update > 1) then {
 		_last_update = time;
-		for '_i' from 0 to WFBE_Client_Teams_Count-1 do {
-			_funds_team = (WFBE_Client_Teams select _i) Call WFBE_CO_FNC_GetTeamFunds;
-			_name_leader = if (isNull(leader(WFBE_Client_Teams select _i))) then {"No leader"} else {name(leader(WFBE_Client_Teams select _i))};
-			if ((((uiNamespace getVariable "wfbe_display_transfer") displayCtrl 505001) lnbText [_i, 0]) != Format["$%1.",_funds_team]) then {lnbSetText [505001, [_i, 0], Format ["$%1.",_funds_team]]};
-			if ((((uiNamespace getVariable "wfbe_display_transfer") displayCtrl 505001) lnbText [_i, 1]) != _name_leader) then {lnbSetText [505001, [_i, 1], _name_leader]};
+		for '_i' from 0 to count _list_Players -1 do 
+		{
+			_funds_team = (_list_Players select _i) Call WFBE_CO_FNC_GetTeamFunds;
+			_name_leader = name(leader(_list_Players select _i));
+
+			if ((((uiNamespace getVariable "wfbe_display_transfer") displayCtrl 505001) lnbText [_i, 0]) != Format["$%1.",_funds_team]) then 
+			{
+				lnbSetText [505001, [_i, 0], Format ["$%1.",_funds_team]] ;
+			};
+			
+			if ((((uiNamespace getVariable "wfbe_display_transfer") displayCtrl 505001) lnbText [_i, 2]) != _name_leader) then 
+			{
+				lnbSetText [505001, [_i, 2], _name_leader] ;
+			};
 		};
 		//reload if everyone funds is different, reload on timer or fund transfer.
 	};
@@ -42,7 +61,9 @@ while {alive player && dialog} do {
 		_cando = if (_funds_transfering > 0 && _funds_transfering <= _funds) then {true} else {false};
 		if (_cando) then {
 			if (_ui_lnb_currow != -1) then {
-				_selected = WFBE_Client_Teams select _ui_lnb_currow;
+
+				_selected = _list_Players select _ui_lnb_currow;
+
 				if !(isNull leader _selected) then {
 					if (_selected != group player) then {
 						hint parseText format [localize "STR_WF_INFO_Funds_Sent", _funds_transfering, name leader _selected];

@@ -18,8 +18,8 @@ if (count _units < 1 || _type < 0) exitWith {};
 //Marty : add artillery marker on map with the player name who call it
 _marker_name 	= format["ARTY_%1", diag_tickTime];
 _markerPosition = _destination;
-_markerType		= "Warning";
-_markerText 	= format[" ARTY called by %1", name player];
+_markerType		= "Destroy";
+_markerText 	= format["ARTY [%1]", name player];
 _markerColor	= "ColorRed";
 _markerSide		= playerSide;
 
@@ -56,6 +56,8 @@ _is_multi_language_message = true ;
     };
 
     _text_when_arty_ready_again = localize "STR_WF_INFO_Arty_cool_down_over";
-    hint _text_when_arty_ready_again ;
+    //hint _text_when_arty_ready_again ;
+    titleText [_text_when_arty_ready_again, "PLAIN DOWN", 2];
+    playSound "ARTY_cooldown_over";
 
 };

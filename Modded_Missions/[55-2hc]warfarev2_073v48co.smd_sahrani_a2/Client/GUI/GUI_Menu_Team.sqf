@@ -27,12 +27,27 @@ _lasttg = currentTG;
 _timer = 0;
 _need_save = false;
 
+// Marty : players 
+private ["_list_Players"];
+_list_Players = [];
+
+{
+	if (isPlayer (leader _x)) then {_list_Players = _list_Players + [_x]};
+	
+} forEach clientTeams;
+
 _i = 1;
 {
-	_xtra = if (isPlayer (leader _x)) then {name (leader _x)} else {"AI"};
-	lbAdd[13008,Format ["[%1] %2",_i,_xtra]];
-	_i = _i + 1;
+	//_xtra = if (isPlayer (leader _x)) then {name (leader _x)} else {"AI"};	
+	if (isPlayer (leader _x)) then 
+	{
+		_xtra = name (leader _x);
+		lbAdd[13008,Format ["[%1] %2",_i,_xtra]];
+		_i = _i + 1;
+	};
+
 } forEach clientTeams; 
+
 lbSetCurSel[13008,0];
 
 _units = ((units group player) Call GetLiveUnits);
@@ -70,13 +85,13 @@ while {alive player && dialog} do {
 	
 	if (MenuAction == 1) then {
 		MenuAction = -1;
-		if ((_transferAmount != 0)&&((clientTeams select _curSel) != group player)) then {
-			[(clientTeams select _curSel),_transferAmount] Call ChangeTeamFunds;
+		if ((_transferAmount != 0)&&((_list_Players select _curSel) != group player)) then {
+			[(_list_Players select _curSel),_transferAmount] Call ChangeTeamFunds;
 			-_transferAmount Call ChangePlayerFunds;
 			_funds = Call GetPlayerFunds;
-			if (isPlayer leader (clientTeams select _curSel)) then {
+			if (isPlayer leader (_list_Players select _curSel)) then {
 				// if (WF_A2_Vanilla) then {
-					[getPlayerUID(leader (clientTeams select _curSel)), "LocalizeMessage",['FundsTransfer',_transferAmount,name player]] Call WFBE_CO_FNC_SendToClients;
+					[getPlayerUID(leader (_list_Players select _curSel)), "LocalizeMessage",['FundsTransfer',_transferAmount,name player]] Call WFBE_CO_FNC_SendToClients;
 				// } else {
 					// [leader (clientTeams select _curSel), "LocalizeMessage",['FundsTransfer',_transferAmount,name player]] Call WFBE_CO_FNC_SendToClient;
 				// };
