@@ -833,12 +833,19 @@
                 <English>Information:\n\n %1 %2 Needed in order to repair the MHQ.</English>
                 <French>Information:\n\n %1 %2 Manquant afin de réparer le PC.</French>
                 <German>Information:\n\n %1 %2 sind erforderlich um das MHQ zu reparieren.</German>
-                <Russian>Информация:\n\n %1 %2 необходимо для восстановления КШМ.</Russian>
-                <Italian>Informazioni:\n\n %1 %2 Needed in order to repair the MHQ.</Italian>
-            </Key>
-            <Key ID="STR_WF_INFO_Repair_MHQ_None"><!--need rework -0.71-->
-                <English>Information:\n\n There is no MHQ to repair around.</English>
-                <French>Information:\n\n Il n'y a aucun PC à réparer a proximité.</French>
+        <Russian>Информация:\n\n %1 %2 необходимо для восстановления КШМ.</Russian>
+        <Italian>Informazioni:\n\n %1 %2 Needed in order to repair the MHQ.</Italian>
+      </Key>
+        <Key ID="STR_WF_INFO_MHQ_Repairs_Used">
+            <English>Information:\n\n The MHQ has been repaired 3 times already, it can't be repaired anymore.</English>
+            <French>Information:\n\n The MHQ has been repaired 3 times already, it can't be repaired anymore.</French>
+            <German>Information:\n\n Das MHQ wurde bereits 3 mal repariert. Es kann nicht mehr repariert werden.</German>
+            <Russian>Информация:\n\n The MHQ has been repaired 3 times already, it can't be repaired anymore.</Russian>
+            <Italian>Informazioni:\n\n The MHQ has been repaired 3 times already, it can't be repaired anymore.</Italian>
+        </Key>
+      <Key ID="STR_WF_INFO_Repair_MHQ_None"><!--need rework -0.71-->
+        <English>Information:\n\n There is no MHQ to repair around.</English>
+        <French>Information:\n\n Il n'y a aucun PC à réparer a proximité.</French>
                 <German>Information:\n\n Es ist kein MHQ in der Nähe das repariert werden muss.\n\n Verichere dich, dass der Reparatur LKW nah genug am MHQ steht.</German>
                 <Russian>Информация:\n\n в зоне ремонта MHQ отсутствует.</Russian>
                 <Italian>Informazioni:\n\n There is no MHQ to repair around.</Italian>
