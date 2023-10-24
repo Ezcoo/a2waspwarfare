@@ -14,7 +14,7 @@ if (_dammages <= 0) exitWith {};
 WFBE_SK_V_LastUse_LR = time;
 
 _skip = false;
-for [{_z = 0},{_z < 4},{_z = _z + 1}] do {
+for [{_z = 0},{_z < 5},{_z = _z + 1}] do {
 	sleep 0.5;
 	player playMove "AinvPknlMstpSlayWrflDnon_medic";
 	sleep 0.5;

@@ -40,15 +40,17 @@ switch (WFBE_SK_V_Type) do {
 			//_unit addAction ["<t color='#11ec52'>" + localize 'STR_WF_Repair_Camp' + "</t>",'Client\Action\Action_RepairCampEngineer.sqf', [], 97, false, true, '', 'alive _target'];
 			
 	};
+	case 'SpecOps': {
+		// Supply truck mission
 _unit addAction [
-			(localize "STR_WASP_actions_fastrep"),
-			(WFBE_SK_V_Root + 'LR' + '.sqf'), 
+			"<t color='#00e83e'>" + 'LOAD SUPPLIES TO TRUCK' + "</t>",
+			'Client\Module\supplyMission\supplyMissionStart.sqf',
 			[], 
 			80, 
 			false, 
 			true, 
 			"", 
-			"(time - WFBE_SK_V_LastUse_LR > WFBE_SK_V_Reload_LR)&&((cursorTarget isKindOf 'Landvehicle' )|| (cursorTarget isKindOf 'Air'))&&(player distance cursorTarget<5)"
+			"(player distance (call GetClosestFriendlyLocation) < 70) && (typeOf cursorTarget in ['WarfareSupplyTruck_RU', 'WarfareSupplyTruck_USMC', 'WarfareSupplyTruck_INS', 'WarfareSupplyTruck_Gue', 'WarfareSupplyTruck_CDF', 'UralSupply_TK_EP1', 'MtvrSupply_DES_EP1'])"
 		];
 		
 	};

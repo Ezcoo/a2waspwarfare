@@ -1,8 +1,8 @@
-Private ['_HQRadio','_base','_buildings','_condition','_get','_idbl','_isDeployed','_oc','_weat','_rearmor'];
+Private ['_HQRadio','_base','_buildings','_condition','_get','_idbl','_isDeployed','_oc','_weat','_rearmor','_playerObject'];
 
 ["INITIALIZATION", Format ["Init_Client.sqf: Client initialization begins at [%1]", time]] Call WFBE_CO_FNC_LogContent;
 
-sideJoined = side group player;
+sideJoined = side player;
 sideJoinedText = str sideJoined;
 //--- WF3 Compatible.
 WFBE_Client_SideJoined = sideJoined;
@@ -105,6 +105,13 @@ WFBE_CL_FNC_UI_Gear_UpdatePrice = Compile preprocessFileLineNumbers "Client\Func
 WFBE_CL_FNC_UI_Gear_UpdateTarget = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Gear_UpdateTarget.sqf";
 WFBE_CL_FNC_UI_Gear_UpdateView = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Gear_UpdateView.sqf";
 WFBE_CL_FNC_UI_Respawn_Selector = Compile preprocessFileLineNumbers "Client\Functions\Client_UI_Respawn_Selector.sqf";
+WFBE_CL_FNC_SupplyMissionCompletedMessage = Call Compile preprocessFileLineNumbers "Client\Module\supplyMission\supplyMissionCompletedMessage.sqf";
+WFBE_CL_FNC_SupplyMissionStart = Call Compile preprocessFileLineNumbers "Client\Module\supplyMission\supplyMissionStart.sqf";
+WFBE_CL_FNC_TownSupplyStatus = Call Compile preprocessFileLineNumbers "Client\Module\supplyMission\townSupplyStatus.sqf";
+WFBE_CL_FNC_CheckCCProximity = Compile preprocessFileLineNumbers "Client\Module\supplyMission\checkCCProximity.sqf";
+WFBE_CL_FNC_ReceiverMASHmarker = Call Compile preprocessFileLineNumbers "Client\Module\MASH\receiverMASHmarker.sqf";
+WFBE_CL_FNC_FindVariableInNestedArray = Compile preprocessFileLineNumbers "Client\Functions\Client_FindVariableInNestedArray.sqf";
+WFBE_CL_PV_ReceiveSupplyValue = Call Compile preprocessFileLineNumbers "Client\Functions\Client_ReceiveSupplyValue.sqf";
 
 //Affichage Rubber maps:
 	Local_GUIWorking = false;
@@ -112,7 +119,7 @@ WFBE_CL_FNC_UI_Respawn_Selector = Compile preprocessFileLineNumbers "Client\Func
 	zoomgps = 0.025;
 
 	[]spawn{
-		while {!gameover} do{
+		while {!WFBE_gameover} do{
 			if (/*Local_GUIActive &&*/ !Local_GUIWorking /*&& (isNull Local_Camera)*/ && !(visibleMap) && (isNil "BIS_CONTROL_CAM") /*&& (RUBOSD == 1)*/) then {Local_GUIWorking=true; 1365 cutRsc ["RscOverlay","PLAIN",0]};//if GUI is not working, but it should - restart it
 			sleep 0.8;
 		};
@@ -123,7 +130,7 @@ Call Compile preprocessFileLineNumbers 'Client\Functions\Client_FNC_Groups.sqf';
 Call Compile preprocessFileLineNumbers 'Client\Functions\Client_FNC_OnFired.sqf'; //--- FUNCTIONS: onFired EH.
 Call Compile preprocessFileLineNumbers 'Client\Functions\Client_FNC_Special.sqf'; //--- FUNCTIONS: Specials.
 
-//clientInitComplete = true;
+clientInitComplete = true;
 
 //--- UI Namespace release from previous possible games (only on titles dialog!).
 {uiNamespace setVariable [_x, displayNull]} forEach ["wfbe_title_capture"];
@@ -199,6 +206,8 @@ WFBE_Client_IsRespawning = false;
 WFBE_Client_LastGroupJoinRequest = -5000;
 WFBE_Client_PendingRequests = [];
 WFBE_Client_PendingRequests_Accepted = [];
+WFBE_Client_SupplyMissionActive = false;
+WFBE_C_VAR_FRIENDLYCOMMANDCENTERINPROXIMITY = false;
 
 commanderTeam = objNull;
 buildingMarker = 0;
@@ -279,8 +288,9 @@ if ((missionNamespace getVariable "WFBE_C_UNITS_TRACK_LEADERS") > 0) then {[] ex
 	[] execVM "Client\FSM\updatetownmarkers.sqf";
 	waitUntil {!isNil {WFBE_Client_Logic getVariable "wfbe_structures"}};
 	if ((missionNamespace getVariable "WFBE_C_ECONOMY_CURRENCY_SYSTEM") == 0) then {
-		waitUntil {!isNil {WFBE_Client_Logic getVariable "wfbe_supply"}};
+		waitUntil {!isNil {missionNamespace getVariable format ["wfbe_supply_%1", sideJoinedText]}};
 	};
+	missionNamespace setVariable ["wfbe_supply", missionNamespace getVariable Format ["wfbe_supply_%1", sideJoinedText]];
 	/* Handle the client actions */
 	["INITIALIZATION", "Init_Client.sqf: Initializing the Available Actions FSM"] Call WFBE_CO_FNC_LogContent;
 	[] execFSM "Client\FSM\updateavailableactions.fsm";
@@ -620,14 +630,36 @@ sleep 3;
 
 /* Client death handler. */
 WFBE_PLAYERKEH = player addEventHandler ['Killed', {[_this select 0,_this select 1] Spawn WFBE_CL_FNC_OnKilled; [_this select 0,_this select 1, sideID] Spawn WFBE_CO_FNC_OnUnitKilled}];
-hint parseText "<t color='#ffff00'>v25092023<br/>MODPACK V9<br/>Full changelogs are available in our Discord!<br/><br/>Be sure to join it:<br/>discord.me/warfare<br/>or<br/>https://discord.gg/gRhPHUuWpy<br/><br/>Remember to read the rules at:<br/> https://pastebin.com/t2a4sbya<br/><br/>New players, check the Guides section for the #tips-and-tricks channel and read the #commanding-guide. More guides coming soon(tm). If you have any questions, don't hesitate to ask in the side chat preferably, or on our discord! <br/><br/>Veterans! Check the #game-status channel before joining the game, and balance the game accordingly (count other veterans per team and see the bot's message for the current score status of the match)!<br/><br/>As always, thanks to our contributors for helping me to develop the mission:<br/>An-2 is a good plane<br/>Quad<br/>0=1<br/>Cleinstein<br/>Jupiter<br/>Marty<br/><br/>Remember to check our discord every 1-2 weeks or so for new suggestions that we're voting on the #vote-suggestions channel (will @everyone ping for this). It will help us to prioritise things for development that the community wants! Thanks again, and have fun on the server! :)</t>";
+
+hint parseText "<t color='#28ff14'>If you're a new player:</t> <br/><br/>Read the instructions that will show in chat soon. <br/><br/>Our Discord server: <br/><br/><t color='#28ff14'>discord.me/warfare</t>  <br/><br/>(Open the link with a web browser like Chrome) <br/><br/>Ask in chat or on our Discord server if you want to know how something works. <br/><br/>You and your units are marked with <t color='#FFAC1C'>orange</t> color on map. <br/><br/>Friendly towns are marked with <t color='#1ff026'>green</t> color. <t color='#000bde'>Blue</t> and <t color='#de0300'>red</t> towns are controlled by enemy. <br/><br/>Note that you see friendly players and units on map. <br/><br/><t color='#42b6ff'>WF menu</t> is important. You can open it by using action menu (mouse scroll). <br/><br/>Welcome and good luck, soldier! :)";
+
 //--- Valhalla init.
 [] Spawn {
 	[] Call Compile preprocessFile "Client\Module\Valhalla\Init_Valhalla.sqf";
 };
 
+if (!WF_Debug) then {playMusic "Track11_Large_Scale_Assault";};
+
+
+waitUntil {!(isNull player)};
+
+WFBE_C_PLAYER_OBJECT = [player, getPlayerUID player];
+publicVariableServer "WFBE_C_PLAYER_OBJECT";
+
+{
+
+	_town = _x;
+
+	missionNamespace setVariable ["WFBE_Client_PV_IsSupplyMissionActiveInTown", [player, _town]];
+			
+	publicVariableServer "WFBE_Client_PV_IsSupplyMissionActiveInTown";
+
+} forEach towns;
+
+
 /* Client Init Done - Remove the blackout */
 12452 cutText [(localize 'STR_WF_Loading')+"...","BLACK IN",5];
 
+player setVariable ["score", 0];
+
 ["INITIALIZATION", Format ["Init_Client.sqf: Client initialization ended at [%1]", time]] Call WFBE_CO_FNC_LogContent;
-clientInitComplete = true;

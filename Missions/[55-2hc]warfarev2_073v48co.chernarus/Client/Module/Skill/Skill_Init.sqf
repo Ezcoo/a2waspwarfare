@@ -12,7 +12,7 @@ WFBE_SK_FNC_Apply = Compile preprocessFile "Client\Module\Skill\Skill_Apply.sqf"
 /* Define which classname belong to which skill group */
 WFBE_SK_V_Engineers = ['USMC_SoldierS_Engineer','CDF_Soldier_Engineer','Ins_Soldier_Sapper','TK_Soldier_Engineer_EP1','Ins_Soldier_CO','US_Soldier_Engineer_EP1','US_Soldier_Officer_EP1','BAF_Soldier_SL_DDPM','MVD_Soldier_TL','USMC_Soldier_TL','TK_Soldier_Officer_EP1']; // description="Engineer (Repair, Camps restore)";
 WFBE_SK_V_Soldiers = ['CDF_Soldier','RUS_Soldier1','US_Delta_Force_EP1','TK_Special_Forces_EP1','FR_Miles','FR_R','Ins_Soldier_1']; // description="Soldier (Double team size, Camp restore)";
-WFBE_SK_V_SpecsOps = ['US_Soldier_TL_EP1','CDF_Soldier_TL','RUS_Commander','Ins_Soldier_2','GER_Soldier_Scout_EP1','TK_Special_Forces_TL_EP1','RUS_Soldier_TL','US_Delta_Force_TL_EP1','FR_TL']; // description="SpecOPS (Lockpick)";
+WFBE_SK_V_SpecsOps = ['FR_TL','RUS_Soldier_TL','US_Soldier_TL_EP1','US_Delta_Force_TL_EP1','TK_Special_Forces_TL_EP1','CDF_Soldier_TL','Ins_Soldier_2']; // description="SpecOPS (Lockpick, Supply run)";
 WFBE_SK_V_Spotters = ['US_Soldier_Sniper_EP1','TK_Soldier_Sniper_EP1','Ins_Soldier_Sniper','CDF_Soldier_Sniper','USMC_SoldierS_Sniper','RU_Soldier_Sniper']; // description="Sniper (Spot marks on map, Camps restore)";
 WFBE_SK_V_Medics = ['FR_Corpsman','US_Soldier_Medic_EP1','TK_Soldier_Medic_EP1','RUS_Soldier_Medic','GER_Soldier_Medic_EP1','BAF_Soldier_Medic_DDPM','RU_Soldier_Medic','US_Delta_Force_Medic_EP1','USMC_Soldier_Medic']; // description="Medic (Fast heal, Camps restore)";
 

@@ -23,6 +23,7 @@ FireArtillery = Compile preprocessFileLineNumbers "Common\Functions\Common_FireA
 GetAIDigit = Compile preprocessFileLineNumbers "Common\Functions\Common_GetAIDigit.sqf";
 GetClosestLocation = Compile preprocessFileLineNumbers "Common\Functions\Common_GetClosestLocation.sqf";
 GetClosestLocationBySide = Compile preprocessFileLineNumbers "Common\Functions\Common_GetClosestLocationBySide.sqf";
+GetClosestFriendlyLocation = Compile preprocessFileLineNumbers "Common\Functions\Common_GetClosestFriendlyTown.sqf";
 GetCommanderTeam = Compile preprocessFileLineNumbers "Common\Functions\Common_GetCommanderTeam.sqf";
 GetConfigInfo = Compile preprocessFileLineNumbers "Common\Functions\Common_GetConfigInfo.sqf";
 GetFactories = Compile preprocessFileLineNumbers "Common\Functions\Common_GetFactories.sqf";
@@ -188,7 +189,8 @@ WFBE_Logic_Airfield = "LocationLogicAirport";
 WFBE_Logic_Camp = "LocationLogicCamp";
 WFBE_Logic_Depot = "LocationLogicDepot";
 
-isAutoWallConstructingEnabled = true;
+isAutoWallConstructingEnabled = false;
+WFBE_CO_VAR_SupplyMissionRegenInterval = 1800;
 
 /* Wait for BIS Module Init */
 waitUntil {!(isNil 'BIS_fnc_init')};
