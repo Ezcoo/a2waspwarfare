@@ -60,7 +60,27 @@ WFBE_SE_FNC_SetLocalityOwner = if !(WF_A2_Vanilla) then {Compile preprocessFileL
 WFBE_SE_FNC_SpawnTownDefense = Compile preprocessFileLineNumbers "Server\Functions\Server_SpawnTownDefense.sqf";
 WFBE_SE_FNC_VoteForCommander = Compile preprocessFileLineNumbers "Server\Functions\Server_VoteForCommander.sqf";
 WFBE_SE_FNC_AssignForCommander = Compile preprocessFileLineNumbers "Server\Functions\Server_AssignNewCommander.sqf";
-
+WFBE_CO_FNC_InitAFKkickHandler = Compile preprocessFileLineNumbers "Server\Module\afkKick\initAFKkickHandler.sqf";
+WFBE_CO_FNC_LogGameEnd = Compile preprocessFileLineNumbers "Server\Functions\Server_LogGameEnd.sqf";
+// WFBE_CO_FNC_monitorServerFPS = Compile preprocessFileLineNumbers "Server\Module\serverFPS\monitorServerFPS.sqf";
+WFBE_SE_FNC_SupplyMissionCompleted = Call Compile preprocessFileLineNumbers "Server\Module\supplyMission\supplyMissionCompleted.sqf";
+WFBE_SE_FNC_IsSupplyMissionActiveInTown = Call Compile preprocessFileLineNumbers "Server\Module\supplyMission\isSupplyMissionActiveInTown.sqf";
+WFBE_SE_FNC_SupplyMissionStarted = Call Compile preprocessFileLineNumbers "Server\Module\supplyMission\supplyMissionStarted.sqf";
+WFBE_SE_FNC_PlayerObjectsList = Call Compile preprocessFileLineNumbers "Server\Module\supplyMission\playerObjectsList.sqf";
+WFBE_SE_FNC_MASH_MARKER = Call Compile preprocessFileLineNumbers "Server\Module\MASH\MASHMarker.sqf";
+WFBE_SE_FNC_SupplyMissionTimerForTown = Compile preprocessFileLineNumbers "Server\Module\supplyMission\supplyMissionTimerForTown.sqf";
+// WFBE_SE_FNC_CallDatabaseRetrieve = Compile preprocessFileLineNumbers "Server\Module\AntiStack\callDatabaseRetrieve.sqf";
+// WFBE_SE_FNC_CallDatabaseStore = Compile preprocessFileLineNumbers "Server\Module\AntiStack\callDatabaseStore.sqf";
+// WFBE_SE_FNC_CallDatabaseStoreSide = Compile preprocessFileLineNumbers "Server\Module\AntiStack\callDatabaseStoreSide.sqf";
+// WFBE_SE_FNC_GetTeamScore = Compile preprocessFileLineNumbers "Server\Module\AntiStack\getTeamScore.sqf";
+// WFBE_SE_FNC_CountPlayerScores = Compile preprocessFileLineNumbers "Server\Module\AntiStack\countPlayerScores.sqf";
+// WFBE_SE_FNC_CompareTeamScores = Compile preprocessFileLineNumbers "Server\Module\AntiStack\compareTeamScores.sqf";
+// WFBE_SE_FNC_CallDatabaseSendPlayerList = Compile preprocessFileLineNumbers "Server\Module\AntiStack\callDatabaseSendPlayerList.sqf";
+// WFBE_SE_FNC_GetTeamScoreMonitor = Compile preprocessFileLineNumbers "Server\Module\AntiStack\getTeamScoreMonitor.sqf";
+// WFBE_SE_PVEH_ClientHasConnectedAtLaunch = Call Compile preprocessFileLineNumbers "Server\Module\AntiStack\clientHasConnectedAtLaunch.sqf";
+WFBE_SE_FNC_SupplyMissionActive = Compile preprocessFileLineNumbers "Server\Module\supplyMission\supplyMissionActive.sqf";
+WFBE_SE_FNC_ChangeSideSupply = Call Compile preprocessFileLineNumbers "Server\Functions\Server_ChangeSideSupply.sqf";
+WFBE_SE_PV_RequestSupplyValue = Call Compile preprocessFileLineNumbers "Server\Functions\Server_PV_RequestSupplyValue.sqf";
 
 //--- Define Headless Client functions (server ones).
 if (ARMA_VERSION >= 162 && ARMA_RELEASENUMBER >= 101334 || ARMA_VERSION > 162) then {
