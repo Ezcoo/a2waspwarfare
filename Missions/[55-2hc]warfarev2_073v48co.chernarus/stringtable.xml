@@ -278,12 +278,19 @@
                 <French>$%1 Perdu pour la neutralisation d'un civil! soyer prudent!</French>
                 <German>$%1 Strafe für die Tötung eines Zivilisten! Ab zum Augenarzt...</German>
                 <Russian>-$%1 - Штраф за убийство гражданского! Будьте осторожны!</Russian>
-                <Italian>$%1 Perduti per aver neutralizzato un civile! stai attento!</Italian>
-            </Key>
-            <Key ID="STR_WF_CHAT_PlayerCommander"><!--shared U-->
-                <English>You are the new Commander! Good luck!</English>
-                <French>Vous êtes le Commandeur! Bonne Chance!</French>
-                <German>Du bist der neue Commander! Viel Erfolg!</German>
+        <Italian>$%1 Perduti per aver neutralizzato un civile! stai attento!</Italian>
+      </Key>
+      <Key ID="STR_WF_CHAT_PlayerCommander"><!--shared U-->
+        <English>You are the new Commander! Good luck! &lt;br/&gt;&lt;br/&gt;If you're new to commanding: &lt;br/&gt;&lt;br/&gt;It's important to build some factories in Construction Menu (HQ) (mouse scroll, you also need to be right next to the friendly HQ) but it's often even more important to do upgrades: >> WF menu (use your mouse scroll again) -> Factory Upgrade. &lt;br/&gt;&lt;br/&gt;Spend your supply carefully and build only necessary factories and focus on the relevant technology upgrades. &lt;br/&gt;&lt;br/&gt;You can also move the base if needed by undeploying HQ (if not undeployed already), moving it to another position and deploying it there. &lt;br/&gt;&lt;br/&gt;Don't worry too much, you'll learn by doing and you can always ask for guidance! </English>
+        <French>Vous êtes le Commandeur! Bonne Chance!</French>
+        <German>Du bist der neue Commander! Viel Erfolg!</German>
+        <Russian>Вы Командующий!</Russian>
+        <Italian>Sei il Comandante!</Italian>
+      </Key>
+      <Key ID="STR_WF_CHAT_PlayerCommanderTitleText"><!--shared U-->
+        <English>You are the new Commander! Good luck!</English>
+        <French>Vous êtes le Commandeur! Bonne Chance!</French>
+        <German>Du bist der neue Commander! Viel Erfolg!</German>
                 <Russian>Вы Командующий!</Russian>
                 <Italian>Sei il Comandante!</Italian>
             </Key>
