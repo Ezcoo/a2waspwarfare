@@ -19,9 +19,9 @@ class newCommander {
 		titles[] = {};
 	};
 
-class icbmLaunch {
-		name = "icbmLaunch";
-		sound[] = {"\sounds\icbmLaunch.ogg",10,1};
+class airRaid {
+        name = "airRaid";
+        sound[] = {"\sounds\airRaid.ogg",10,1};
 		titles[] = {};
 	};
 
