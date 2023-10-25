@@ -13,9 +13,9 @@ class Bipod_ON {
 		titles[] = {};
 	};
 
-class playerSelectedAsCommander {
-		name = "playerSelectedAsCommander";
-		sound[] = {"\sounds\playerSelectedAsCommander.ogg",10,1};
+class newCommander {
+        name = "newCommander";
+        sound[] = {"\sounds\newCommander.ogg",10,1};
 		titles[] = {};
 	};
 
@@ -25,9 +25,9 @@ class icbmLaunch {
 		titles[] = {};
 	};
 
-class inboundMissileGround {
-		name = "inboundMissileGround";
-		sound[] = {"\sounds\inboundMissileGround.ogg",10,1};
+class commanderNotification {
+        name = "commanderNotification";
+        sound[] = {"\sounds\commanderNotification.ogg",10,1};
 		titles[] = {};
 	};
 
